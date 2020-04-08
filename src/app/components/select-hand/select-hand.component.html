@@ -1,0 +1,19 @@
+<div id = "initial-table" class = "cardSet">
+  <h2 id ="choose-cards-number" class = "header">Choose {{ character.handCardSize }} cards</h2>
+  <div align="center">
+    <p id = "card-counter" align="center">{{ cardCount }} / {{ character.handCardSize }}</p>
+  </div>
+
+  <div id = "confirm-buttons" align = "center">
+    <button class="button" type="button">Go Back To Perks</button>
+    <button [disabled]="cardCount !== character.handCardSize " (click)="onConfirmHand()" class = "button"type="button" title="Must Have a Full Hand">Confirm Hand</button>
+  </div>
+
+  <table class ="cardTable" align = "center">
+    <tr id = "level-1">
+      <td class = "level">Level 1:</td>
+      <td *ngFor="let card of cardsList" class = "chooseCardsTable">
+        <img src="assets/{{card.src}}" (click)="onCardClick(card)" class="chooseCards" [class.add-border]="card.selected"/>
+      </td>
+    </tr>
+  </table>

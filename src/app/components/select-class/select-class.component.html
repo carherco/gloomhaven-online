@@ -1,0 +1,20 @@
+
+
+<div id = "level-selection" align = "center" style="width: 100%;">
+  <h2 class = "header" align = "center" style= "color:white;">Select Your Level</h2>
+  <p id = "level-counter">Level: {{level}}</p><br/>
+  <button [disabled]="level === 1"  type ="button" style="font-size:40px;" (click)="levelDown()">-</button>
+  <button [disabled]="level === 9" type ="button" style="font-size:40px;" (click)="levelUp()">+</button><br/>
+  <button [disabled]="!characterSelected" (click)="confirmCharacter()" class = "button tooltip" type="button" align = "center" title = "Must Select A Character">Confirm Character</button>
+</div>
+
+<div id = "select-class-section" align = "center">
+  <h2 class = "header" align = "center" style = "color:white;">Select Your Character</h2>
+  <div style="width: 100%;">
+    <div *ngFor="let character of characters" style="float:left">
+      <img class="character" (click)="select(character)" [class.character-selected]="character === characterSelected" src="./assets/{{character.image}}" />
+      <br/>
+      <p class = "character-title" align = "center">{{ character.class }}
+    </div>
+  </div>
+</div>

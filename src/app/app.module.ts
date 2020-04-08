@@ -3,10 +3,32 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SelectClassComponent } from './components/select-class/select-class.component';
+import { PerksSectionComponent } from './components/perks-section/perks-section.component';
+import { HandCardsComponent } from './components/hand-cards/hand-cards.component';
+import { SelectLevelComponent } from './components/select-level/select-level.component';
+import { SelectCharacterPageComponent } from './pages/select-character-page/select-character-page.component';
+import { SelectPerksPageComponent } from './pages/select-perks-page/select-perks-page.component';
+import { SelectHandPageComponent } from './pages/select-hand-page/select-hand-page.component';
+import { SelectHandComponent } from './components/select-hand/select-hand.component';
+import { GamePageComponent } from './pages/game-page/game-page.component';
+import { PlayerBoardComponent } from './components/player-board/player-board.component';
+import { AttackModifierDeckComponent } from './components/attack-modifier-deck/attack-modifier-deck.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SelectClassComponent,
+    PerksSectionComponent,
+    HandCardsComponent,
+    SelectLevelComponent,
+    SelectCharacterPageComponent,
+    SelectPerksPageComponent,
+    SelectHandPageComponent,
+    SelectHandComponent,
+    GamePageComponent,
+    PlayerBoardComponent,
+    AttackModifierDeckComponent
   ],
   imports: [
     BrowserModule,
