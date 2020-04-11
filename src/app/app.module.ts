@@ -14,6 +14,9 @@ import { SelectHandComponent } from './components/select-hand/select-hand.compon
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { PlayerBoardComponent } from './components/player-board/player-board.component';
 import { AttackModifierDeckComponent } from './components/attack-modifier-deck/attack-modifier-deck.component';
+import { PlayersPageComponent } from './pages/players-page/players-page.component';
+import { Hex3dPageComponent } from './pages/hex3d-page/hex3d-page.component';
+import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-responsive-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { AttackModifierDeckComponent } from './components/attack-modifier-deck/a
     SelectHandComponent,
     GamePageComponent,
     PlayerBoardComponent,
-    AttackModifierDeckComponent
+    AttackModifierDeckComponent,
+    PlayersPageComponent,
+    Hex3dPageComponent,
+    HexResponsivePageComponent
   ],
   imports: [
     BrowserModule,

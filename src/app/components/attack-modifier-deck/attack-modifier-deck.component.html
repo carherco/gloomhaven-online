@@ -1,11 +1,12 @@
 <div id ="attack-modifier-deck" align = "center">
-  <h2 id ="mustShuffle" class = "invisible" style = "color: red">Must Shuffle At End of Turn</h2>
-  <h2 id ="cardsInDeck" style = "color: white">Cards in Deck: </h2>
-  <h6 id ="blessesInDeck" style = "color: white">Extra Blesses in Deck: 0</h6>
-  <h6 id ="cursesInDeck" style = "color: white">Extra Curses in Deck: 0</h6>
-  <img id ="amDeck" class = "attack-modifier" src = "./assets/amBack.png"/>
-  <img id = "playedModifiers" class = "attack-modifier hiding" style = "display: hidden;" src = ""/><br/>
-  <button id ="shuffleMods" class = "button" type = "button">Shuffle Modifiers</button><br/>
+  <h2 id ="mustShuffle" [class.invisible]="!mustShuffle" style = "color: red">Must Shuffle At End of Turn</h2>
+  <h2 id ="cardsInDeck" style = "color: white">Cards in Deck: {{ modifierDeck.length }}</h2>
+  <h6 id ="blessesInDeck" style = "color: white">Extra Blesses in Deck: {{ extraBlesses }}</h6>
+  <h6 id ="cursesInDeck" style = "color: white">Extra Curses in Deck: {{ extraCurses }}</h6>
+  <img *ngIf="modifierDeck.length" id ="amDeck" (click)="drawCard()" class="attack-modifier" src="./assets/amBack.png"/>
+  <img *ngIf="playedModifierDeck.length" id = "playedModifiers" class = "attack-modifier" src="assets/{{lastModifier.src}}"/>
+  <br/>
+  <button id ="shuffleMods" (click)="shuffleClick()" class="button" type="button">Shuffle Modifiers</button><br/>
   <button id ="bless" class = "button" type = "button">Bless</button>
   <button id ="curse" class = "button" type = "button">Curse</button>
   <button id ="add-minus-1" class = "button" type = "button">Add -1 Card</button>

@@ -1,0 +1,38 @@
+<!--<span class="tooltip" [style.top.px]="tooltipTop" [style.left.px]="tooltipLeft">
+    <strong>CSSScript</strong>
+    <small>i'm a hexagonnnnnn</small>
+</span>-->
+
+<div id="board">
+  <ul id="hexGrid" *ngFor="let row of matrix; let odd=odd; let rowIndex=index;" >
+    <li class="hex" *ngFor="let cell of row; let colIndex=index;" [class.odd]="odd">
+      <div class="hexIn" >
+        <a class="hexLink" *ngIf="cell==='0'" (drop)="drop(rowIndex, colIndex, $event)" (dragover)="allowDrop($event)">
+          <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt=""/>
+        </a>
+        <a class="hexLink player" *ngIf="cell==='1'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+          <img src="assets/Cragheart_token.png" alt="" />
+          <div class="info">11</div>
+        </a>
+        <a class="hexLink player" *ngIf="cell==='2'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+          <img src="assets/Tinkerer_token.png" alt=""/>
+          <div class="info">9</div>
+        </a>
+        <a class="hexLink player" *ngIf="cell==='3'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+          <img src="assets/Scoundrel_token.png" alt="" />
+          <div class="info">11</div>
+        </a>
+        <a class="hexLink player" *ngIf="cell==='4'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+          <img src="assets/Mindthief_token.png" alt="" />
+          <div class="info">7</div>
+        </a>
+        <a class="hexLink enemy" *ngIf="cell==='E'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+          <img src="assets/Brute_token.png" alt="" />
+          <div class="info">13</div>
+          <h1>Archer</h1>
+          <p>3M 2A 2R</p>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>

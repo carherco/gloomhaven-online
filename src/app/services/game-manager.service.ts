@@ -1,24 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Player } from '../model/player';
 import { Cragheart } from 'src/app/data/charactersDef';
+import { Players } from '../data/players';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameManagerService {
 
-  player: Player = {
-    name: 'Lorkham',
-    character: Cragheart,
-    level: 2,
-    hitPoints: 11,
-    experience: 0,
-    ownedAbilityCards: [],
-    ownedItems: [],
-    scenarioAbilityCards: [],
-    scenarioItems: [],
-    attacModifierCards: [],
-  }
+  player: Player = Players[0];
   handCards: [
     { id: 'ch00' },
     { id: 'ch01' },

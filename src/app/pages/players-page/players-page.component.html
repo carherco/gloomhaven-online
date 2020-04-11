@@ -1,0 +1,15 @@
+<div *ngFor="let player of players" class="player">
+  <div class="player-img">
+      <img class="character" src="./assets/{{player.character.image}}" />
+  </div>
+  <div class="player-stats">
+    <div align="center">{{player.name}}</div>
+    <div>{{player.character.race}} {{player.character.class}}</div>
+    <div>Personal Quest: {{player.personalQuest.title}} ({{player.personalQuest.progress}} / {{player.personalQuest.total}})</div>
+    <div>Level: {{player.level}}</div>
+    <div>XP: {{player.experience}}</div>
+    <div>Gold {{player.gold}}</div>
+    <div>Perk ticks {{player.perkTicks}}</div>
+  </div>
+</div>
+

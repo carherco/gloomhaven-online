@@ -1,4 +1,5 @@
 import { Character } from './../model/character';
+import { Plus0, Plus1, Minus1, Plus1Inmobilize, Plus2Muddle, Minus2, Plus2 } from './modifiers';
 
 export const Brute: Character = {
   id: 'brute',
@@ -55,15 +56,15 @@ export const Cragheart  = {
   level8Cards: [],
   level9Cards: [],
   perks: [
-    { id: 'chPerk1', title: 'Remove Four +0 Cards', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk2-1', title: 'Replace One -1 Card With One +1 Card', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk2-2', title: 'Replace One -1 Card With One +1 Card', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk2-3', title: 'Replace One -1 Card With One +1 Card', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk3', title: 'Add One -2 Card and Two +2 Cards', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk4-1', title: 'Add One +1 Immobilize Card', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk4-2', title: 'Add One +1 Immobilize Card', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk5-1', title: 'Add One +2 Muddle Card', addModifiers: [], removeModifiers: [] },
-    { id: 'chPerk5-2', title: 'Add One +2 Muddle Card', addModifiers: [], removeModifiers: [] },
+    { id: 'chPerk1', title: 'Remove Four +0 Cards', addModifiers: [], removeModifiers: [new Plus0(), new Plus0(), new Plus0(), new Plus0()] },
+    { id: 'chPerk2-1', title: 'Replace One -1 Card With One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'chPerk2-2', title: 'Replace One -1 Card With One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'chPerk2-3', title: 'Replace One -1 Card With One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'chPerk3', title: 'Add One -2 Card and Two +2 Cards', addModifiers: [new Minus2(), new Plus2(), new Plus2()], removeModifiers: [] },
+    { id: 'chPerk4-1', title: 'Add One +1 Immobilize Card', addModifiers: [new Plus1Inmobilize()], removeModifiers: [] },
+    { id: 'chPerk4-2', title: 'Add One +1 Immobilize Card', addModifiers: [new Plus1Inmobilize()], removeModifiers: [] },
+    { id: 'chPerk5-1', title: 'Add One +2 Muddle Card', addModifiers: [new Plus2Muddle()], removeModifiers: [] },
+    { id: 'chPerk5-2', title: 'Add One +2 Muddle Card', addModifiers: [new Plus2Muddle()], removeModifiers: [] },
     { id: 'chPerk6', title: 'Add Two Rolling Push 2 Cards', addModifiers: [], removeModifiers: [] },
     { id: 'chPerk7-1', title: 'Add Two Rolling Infuse Earth Cards', addModifiers: [], removeModifiers: [] },
     { id: 'chPerk7-2', title: 'Add Two Rolling Infuse Earth Cards', addModifiers: [], removeModifiers: [] },
@@ -75,7 +76,7 @@ export const Cragheart  = {
 
 export const Mindthief = {
   id: 'mindthief',
-  race: '',
+  race: 'Vermling',
   class: 'Mindthief',
   handCardSize: 10,
   image: 'Mindthief.png',
@@ -95,7 +96,7 @@ export const Mindthief = {
 
 export const Spellweaver = {
   id: 'spellweaver',
-  race: 'Orchyd',
+  race: 'Orchid',
   class: 'Spellweaver',
   handCardSize: 8,
   image: 'Spellweaver.png',
@@ -135,7 +136,7 @@ export const Scoundrel = {
 
 export const Tinkerer = {
   id: 'tinkerer',
-  race: 'Inox',
+  race: 'Quatryl',
   class: 'Tinkerer',
   handCardSize: 12,
   image: 'Tinkerer.png',
