@@ -90,17 +90,26 @@
 .hex .info {
   width: 100%;
   margin: 0 auto;
-  padding: 2.5%;
-  padding-bottom:50%;
+  height: 15px;
+  margin-top: 50%;
   box-sizing:border-box;
-  color: rgba(255, 0, 0, 1);
-  font-weight: bolder;
-  font-size: larger;
   -webkit-transform:translate3d(0,100%,0);
       -ms-transform:translate3d(0,100%,0);
           transform:translate3d(0,100%,0);
 }
 
+.hex .player .info {
+  font-size: larger;
+  color: white;
+}
+
+.hex .enemy .info {
+  color: white;
+}
+
+.hex .enemy.elite .info {
+  color: yellow;
+}
 
 .hex h1, .hex p {
   width: 100%;
@@ -115,7 +124,7 @@
 .hex h1 {
   bottom: 50%;
   padding-top:50%;
-  font-size: 1.5em;
+  font-size: 1em;
   z-index: 1;
   -webkit-transform:translate3d(0,-100%,0);
       -ms-transform:translate3d(0,-100%,0);
@@ -209,7 +218,7 @@
 
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 #hexGrid{
-  padding-bottom: 4.4%
+  padding-bottom: 3.9%
 }
 .hex {
   width: 5%; /* = 100 / 20  => Filas de 20 - 19 - 20 - 19 - 20 - 19... */

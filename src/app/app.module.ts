@@ -17,6 +17,7 @@ import { AttackModifierDeckComponent } from './components/attack-modifier-deck/a
 import { PlayersPageComponent } from './pages/players-page/players-page.component';
 import { Hex3dPageComponent } from './pages/hex3d-page/hex3d-page.component';
 import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-responsive-page.component';
+import { GetSrcItemPipe } from './pipes/get-src-item.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-resp
     AttackModifierDeckComponent,
     PlayersPageComponent,
     Hex3dPageComponent,
-    HexResponsivePageComponent
+    HexResponsivePageComponent,
+    GetSrcItemPipe
   ],
   imports: [
     BrowserModule,

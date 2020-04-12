@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Map18Matrix } from 'src/app/data/mapsDef';
 
 @Component({
   selector: 'app-hex-responsive-page',
@@ -8,24 +9,12 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class HexResponsivePageComponent implements OnInit {
 
-  @Input() matrix = [
-    ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
-      ['0', 'E', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-    ['0', 'E', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-      ['-', '-', '0', '0', '-', '-', '-', '-', '-', '0', '0', '-', '-'],
-    ['-', '-', '0', '0', '0', '-', '-', '-', '-', '0', '0', '0', '-', '-'],
-      ['-', '-', '0', '0', '-', '-', '-', '-', '-', '0', '0', '-', '-'],
-    ['-', '-', '0', '1', '3', '-', '-', '-', '-', '0', '0', '0', '-', '-'],
-      ['-', '-', '2', '4', '-', '-', '-', '-', '-', '0', '0', '-', '-'],
-    ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '0', '-', '-', '-'],
-      ['-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '-'],
-    ['-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '-'],
-      ['-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '0'],
-    ['-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '-'],
-      ['-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '0'],
-    ['-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '-'],
-      ['-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '-'],
-  ];
+  @Input() originalMatrix = Map18Matrix;
+
+  currentMatrix;
+
+  private dragType: 'setup'|'play' = null;
+  private dragContent: string;
 
   private dragOrigin = {
     row: -1,
@@ -37,21 +26,38 @@ export class HexResponsivePageComponent implements OnInit {
     column: -1,
   };
 
-  constructor() { }
+  constructor() {
+    this.currentMatrix = this.originalMatrix.map(arr => arr.slice(0));
+  }
 
   ngOnInit(): void {
   }
 
-  dragstart(row: number, column: number, event) {
+  dragStartSetup(content: string) {
+    this.dragType = 'setup';
+    this.dragContent = content;
+  }
+
+  dragStartPlay(row: number, column: number) {
+    this.dragType = 'play';
     this.dragOrigin = {row, column};
   }
 
-  drop(row: number, column: number, event) {
+  drop(row: number, column: number) {
     this.dragEnd = {row, column};
-    const originContent = this.matrix[this.dragOrigin.row][this.dragOrigin.column];
-    this.matrix[this.dragEnd.row][this.dragEnd.column] = originContent;
-    this.matrix[this.dragOrigin.row][this.dragOrigin.column] = '0';
-    this.matrix = [...this.matrix];
+
+    if (this.dragType === 'setup') {
+      this.currentMatrix[this.dragEnd.row][this.dragEnd.column] = this.dragContent;
+    }
+
+    if (this.dragType === 'play') {
+      const originContent = this.currentMatrix[this.dragOrigin.row][this.dragOrigin.column];
+      this.currentMatrix[this.dragEnd.row][this.dragEnd.column] = originContent;
+      this.currentMatrix[this.dragOrigin.row][this.dragOrigin.column] = this.originalMatrix[this.dragOrigin.row][this.dragOrigin.column];
+    }
+
+    this.currentMatrix = [...this.currentMatrix];
+    this.dragType = null;
   }
 
   allowDrop(event) {

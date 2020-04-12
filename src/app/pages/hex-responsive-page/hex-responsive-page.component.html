@@ -3,34 +3,82 @@
     <small>i'm a hexagonnnnnn</small>
 </span>-->
 
+
+<div id="available-tokens">
+    <img src="assets/Cragheart_token.png" alt="" width="70" (dragstart)="dragStartSetup('1')">
+    <img src="assets/Tinkerer_token.png" alt="" width="70" (dragstart)="dragStartSetup('2')">
+    <img src="assets/Scoundrel_token.png" alt="" width="70" (dragstart)="dragStartSetup('3')">
+    <img src="assets/Mindthief_token.png" alt="" width="70" (dragstart)="dragStartSetup('4')">
+    <img src="assets/Ooze_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Ooze')">
+    <img src="assets/Ooze_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Ooze_elite')">
+    <img src="assets/Giant-Viper_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Giant-Viper')">
+    <img src="assets/Giant-Viper_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Giant-Viper_elite')">
+    <img src="assets/Vermling-Scout_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Vermling-Scout')">
+    <img src="assets/Vermling-Scout_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Vermling-Scout_elite')">
+</div>
+
+
 <div id="board">
-  <ul id="hexGrid" *ngFor="let row of matrix; let odd=odd; let rowIndex=index;" >
+  <ul id="hexGrid" *ngFor="let row of currentMatrix; let odd=odd; let rowIndex=index;" >
     <li class="hex" *ngFor="let cell of row; let colIndex=index;" [class.odd]="odd">
       <div class="hexIn" >
-        <a class="hexLink" *ngIf="cell==='0'" (drop)="drop(rowIndex, colIndex, $event)" (dragover)="allowDrop($event)">
-          <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt=""/>
+        <a class="hexLink" *ngIf="cell==='0'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
+          <img src="assets/corridor-stone_token.png" alt=""/>
         </a>
-        <a class="hexLink player" *ngIf="cell==='1'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+        <a class="hexLink player" *ngIf="cell==='1'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
           <img src="assets/Cragheart_token.png" alt="" />
           <div class="info">11</div>
         </a>
-        <a class="hexLink player" *ngIf="cell==='2'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+        <a class="hexLink player" *ngIf="cell==='2'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
           <img src="assets/Tinkerer_token.png" alt=""/>
           <div class="info">9</div>
         </a>
-        <a class="hexLink player" *ngIf="cell==='3'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+        <a class="hexLink player" *ngIf="cell==='3'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
           <img src="assets/Scoundrel_token.png" alt="" />
           <div class="info">11</div>
         </a>
-        <a class="hexLink player" *ngIf="cell==='4'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
+        <a class="hexLink player" *ngIf="cell==='4'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
           <img src="assets/Mindthief_token.png" alt="" />
           <div class="info">7</div>
         </a>
-        <a class="hexLink enemy" *ngIf="cell==='E'" draggable="true" (dragstart)="dragstart(rowIndex, colIndex, $event)">
-          <img src="assets/Brute_token.png" alt="" />
-          <div class="info">13</div>
-          <h1>Archer</h1>
-          <p>3M 2A 2R</p>
+        <a class="hexLink enemy" *ngIf="cell==='Ooze'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
+          <img src="assets/Ooze_token.jpg" alt="" />
+          <div class="info">7 - (1)</div>
+          <h1>Ooze</h1>
+          <p>1M 2A 3R</p>
+        </a>
+        <a class="hexLink enemy elite" *ngIf="cell==='Ooze_elite'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
+            <img src="assets/Ooze_token.jpg" alt="" />
+            <div class="info">11 - (1)</div>
+            <h1>Ooze</h1>
+            <p>1M 3A 3R</p>
+          </a>
+        <a class="hexLink enemy" *ngIf="cell==='Giant-Viper'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
+          <img src="assets/Giant-Viper_token.jpg" alt="" />
+          <div class="info">4</div>
+          <h1>Giant Viper</h1>
+          <p>3M 1A -R</p>
+        </a>
+        <a class="hexLink enemy elite" *ngIf="cell==='Giant-Viper_elite'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
+          <img src="assets/Giant-Viper_token.jpg" alt="" />
+          <div class="info">7</div>
+          <h1>Giant Viper</h1>
+          <p>3M 2A -R</p>
+        </a>
+        <a class="hexLink enemy" *ngIf="cell==='Vermling-Scout'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
+          <img src="assets/Vermling-Scout.jpg" alt="" />
+          <div class="info">3</div>
+          <h1>Vermling Scout</h1>
+          <p>3M 2A -R</p>
+        </a>
+        <a class="hexLink enemy elite" *ngIf="cell==='Vermling-Scout_elite'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
+          <img src="assets/Vermling-Scout.jpg" alt="" />
+          <div class="info">5</div>
+          <h1>Vermling Scout</h1>
+          <p>4M 3A -R</p>
+        </a>
+        <a class="hexLink difficult-terrain" *ngIf="cell==='W'">
+          <img src="assets/water_token.png" alt="" />
         </a>
       </div>
     </li>
