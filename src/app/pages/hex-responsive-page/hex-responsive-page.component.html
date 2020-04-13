@@ -77,7 +77,7 @@
           <h1>Vermling Scout</h1>
           <p>4M 3A -R</p>
         </a>
-        <a class="hexLink difficult-terrain" *ngIf="cell==='W'">
+        <a class="hexLink difficult-terrain" *ngIf="cell==='W'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
           <img src="assets/water_token.png" alt="" />
         </a>
       </div>
