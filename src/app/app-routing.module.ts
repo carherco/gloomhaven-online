@@ -10,7 +10,7 @@ import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-resp
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
 
 const routes: Routes = [
-  { path: '', component: SelectCharacterPageComponent },
+  { path: '', redirectTo: '/players', pathMatch: 'full' },
   { path: 'perks', component: SelectPerksPageComponent },
   { path: 'hand', component: SelectHandPageComponent },
   { path: 'play', component: GamePageComponent },

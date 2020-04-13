@@ -15,6 +15,10 @@
     <img src="assets/Giant-Viper_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Giant-Viper_elite')">
     <img src="assets/Vermling-Scout_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Vermling-Scout')">
     <img src="assets/Vermling-Scout_token.jpg" alt="" width="70" (dragstart)="dragStartSetup('Vermling-Scout_elite')">
+    <img src="assets/images/overlay-tokens/traps/poison-gas-trap.png" alt="" width="70" (dragstart)="dragStartSetup('poison-gas')">
+    <img src="assets/images/overlay-tokens/treasures/treasure.png" alt="" width="70" (dragstart)="dragStartSetup('treasure')">
+    <img src="assets/images/overlay-tokens/treasures/coin-1.png" alt="" width="70" (dragstart)="dragStartSetup('coin-1')">
+
 </div>
 
 
@@ -79,6 +83,15 @@
         </a>
         <a class="hexLink difficult-terrain" *ngIf="cell==='W'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
           <img src="assets/water_token.png" alt="" />
+        </a>
+        <a class="hexLink trap" *ngIf="cell==='poison-gas'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
+          <img src="assets/images/overlay-tokens/traps/poison-gas-trap.png" alt="" />
+        </a>
+        <a class="hexLink loot" *ngIf="cell==='treasure'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
+          <img src="assets/images/overlay-tokens/treasures/treasure.png" alt="" />
+        </a>
+        <a class="hexLink loot" *ngIf="cell==='coin-1'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
+          <img src="assets/images/overlay-tokens/treasures/coin-1.png" alt="" />
         </a>
       </div>
     </li>
