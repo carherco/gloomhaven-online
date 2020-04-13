@@ -18,6 +18,7 @@ import { PlayersPageComponent } from './pages/players-page/players-page.componen
 import { Hex3dPageComponent } from './pages/hex3d-page/hex3d-page.component';
 import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-responsive-page.component';
 import { GetSrcItemPipe } from './pipes/get-src-item.pipe';
+import { ShopPageComponent } from './pages/shop-page/shop-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { GetSrcItemPipe } from './pipes/get-src-item.pipe';
     PlayersPageComponent,
     Hex3dPageComponent,
     HexResponsivePageComponent,
-    GetSrcItemPipe
+    GetSrcItemPipe,
+    ShopPageComponent
   ],
   imports: [
     BrowserModule,

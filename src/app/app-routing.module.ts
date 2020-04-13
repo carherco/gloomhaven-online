@@ -7,6 +7,7 @@ import { GamePageComponent } from './pages/game-page/game-page.component';
 import { PlayersPageComponent } from './pages/players-page/players-page.component';
 import { Hex3dPageComponent } from './pages/hex3d-page/hex3d-page.component';
 import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-responsive-page.component';
+import { ShopPageComponent } from './pages/shop-page/shop-page.component';
 
 const routes: Routes = [
   { path: '', component: SelectCharacterPageComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'hand', component: SelectHandPageComponent },
   { path: 'play', component: GamePageComponent },
   { path: 'players', component: PlayersPageComponent },
+  { path: 'shop', component: ShopPageComponent },
   { path: 'hex3d', component: Hex3dPageComponent },
   { path: 'hexresponsive', component: HexResponsivePageComponent },
 ];

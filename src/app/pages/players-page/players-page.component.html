@@ -1,4 +1,4 @@
-<div *ngFor="let player of players" class="player">
+<div *ngFor="let player of players" class="player" [style.backgroundImage]="'url(assets/background.png)'">
   <div class="player-img">
       <img class="character" src="./assets/{{player.character.image}}" />
   </div>
