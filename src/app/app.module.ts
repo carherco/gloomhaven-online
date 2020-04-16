@@ -24,6 +24,9 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HistoryPageComponent } from './pages/history-page/history-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,8 @@ import { MapDialogComponent } from './components/map-dialog/map-dialog.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     MatDialogModule
   ],
   providers: [],

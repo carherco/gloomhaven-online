@@ -6,7 +6,6 @@
   Por hacer:
   <ul>
     <li>Poner y quitar estados (veneno, herida, stun...)</li>
-    <li>Tokens de puertas</li>
   </ul>
 </div>
 
@@ -50,7 +49,7 @@
         <a *ngIf="uppestToken.id!=='-'" class="hexLink {{uppestToken.type}}" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)" (click)="onShowStats(uppestToken, rowIndex, colIndex)">
           <img [src]="uppestToken.src" alt=""/>
           <div class="info" *ngIf="uppestToken.health">{{uppestToken.health}}</div>
-          <h1 *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.name}}</h1>
+          <h1 *ngIf="['enemy','enemy elite','summon_player'].includes(uppestToken.type)">{{uppestToken.name}}</h1>
           <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.move}}M {{uppestToken.attack}}A {{uppestToken.range}}R</p>
         </a>
         <!-- <a class="hexLink" *ngIf="cell.slice(-1).pop().id==='0'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">

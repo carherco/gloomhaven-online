@@ -162,7 +162,7 @@
           transform:translate3d(0,0,0);
 }
 
-.summon:hover h1, .summon:focus h1 {
+.summon_player:hover h1, .summon_player:focus h1 {
   -webkit-transform:translate3d(0,0,0);
       -ms-transform:translate3d(0,0,0);
           transform:translate3d(0,0,0);

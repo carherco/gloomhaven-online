@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "gloomhaven-card-manager",
+      "public": "dist/gloomhaven-card-manager",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

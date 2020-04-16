@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gloomhaven-dcf29": {
+      "hosting": {
+        "gloomhaven-card-manager": [
+          "gloomhaven-dcf29"
+        ]
+      }
+    }
+  }
+}
