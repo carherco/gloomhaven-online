@@ -4,7 +4,7 @@
 }
 
 #board {
-  padding-top: 100px;
+  padding-top: 50px;
   display: block;
   /* display: flex;
   flex-wrap: wrap; */
@@ -103,6 +103,11 @@
   color: white;
 }
 
+.hex .summon .info {
+  font-size: larger;
+  color: white;
+}
+
 .hex .enemy .info {
   color: white;
 }
@@ -157,7 +162,11 @@
           transform:translate3d(0,0,0);
 }
 
-
+.summon:hover h1, .summon:focus h1 {
+  -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0);
+}
 
 /* .hex .content {
   display: block;

@@ -8,6 +8,7 @@ import { PlayersPageComponent } from './pages/players-page/players-page.componen
 import { Hex3dPageComponent } from './pages/hex3d-page/hex3d-page.component';
 import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-responsive-page.component';
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
+import { HistoryPageComponent } from './pages/history-page/history-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/players', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'shop', component: ShopPageComponent },
   { path: 'hex3d', component: Hex3dPageComponent },
   { path: 'map', component: HexResponsivePageComponent },
+  { path: 'history', component: HistoryPageComponent },
 ];
 
 @NgModule({

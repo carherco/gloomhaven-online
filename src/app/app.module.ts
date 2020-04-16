@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,9 @@ import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-resp
 import { GetSrcItemPipe } from './pipes/get-src-item.pipe';
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { HistoryPageComponent } from './pages/history-page/history-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +44,15 @@ import { MenuComponent } from './components/menu/menu.component';
     HexResponsivePageComponent,
     GetSrcItemPipe,
     ShopPageComponent,
-    MenuComponent
+    MenuComponent,
+    HistoryPageComponent,
+    MapDialogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
