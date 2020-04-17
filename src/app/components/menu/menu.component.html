@@ -1,7 +1,13 @@
 <ul [style.backgroundImage]="'url(assets/background.png)'">
   <li><a routerLink="/players" routerLinkActive="active">Home</a></li>
   <li><a routerLink="/shop" routerLinkActive="active">Shop</a></li>
-  <li><a routerLink="/map" routerLinkActive="active">Map</a></li>
+  <li class="dropdown" routerLinkActive="active">
+    <a href="javascript:void(0)" class="dropbtn">Maps</a>
+    <div class="dropdown-content">
+      <a routerLink="/map/16">Map 16 - Mountain Pass</a>
+      <a routerLink="/map/18">Map 18 - Abandoned Sewers</a>
+    </div>
+  </li>
   <li><a routerLink="/play" routerLinkActive="active">Player</a></li>
   <li><a routerLink="/history" routerLinkActive="active">History</a></li>
 </ul>

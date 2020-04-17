@@ -2,22 +2,9 @@
   <img *ngFor="let token of availableTokens" [src]="token.src" alt="" width="70" (dragstart)="dragStartFromPool(token)">
 </div>
 
-<div>
-  Por hacer:
-  <ul>
-    <li>Poner y quitar estados (veneno, herida, stun...)</li>
-  </ul>
-</div>
-
 <div *ngIf="showStats">
-  <div>
-    <p id="health-counter"style="font-size: 35px; color:red;">{{ elementSelected.health }}</p><br/>
-    <button (click)="damageButtonClick()" [disabled]="elementSelected.health === 0" type ="button" style="font-size:15px;">-</button>
-    <button (click)="healButtonClick()" [disabled]="elementSelected.health === elementSelected.maxHealth || elementSelected.status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">+</button>
-    <button (click)="hideElementStats()">Close</button>
-  </div>
 
-  <div id ="status-effects" align ="center" colspan="4">Status Effects
+  <div id ="status-effects" align ="center">Status Effects
     <img *ngIf="elementSelected.status.poisoned" class="status" src = "./assets/poisoned.png"/>
     <img *ngIf="elementSelected.status.wounded" class="status" src = "./assets/wounded.png"/>
     <img *ngIf="elementSelected.status.immobilized" class="status" src = "./assets/immobilized.png"/>
@@ -38,6 +25,14 @@
   </div>
 
   <div>
+    <br/>
+    <p id="health-counter" style="font-size: 35px; color:red;">{{ elementSelected.health }}</p>
+    <button (click)="damageButtonClick()" [disabled]="elementSelected.health === 0" type ="button" style="font-size:15px;">Damage 1</button>
+    <button (click)="healButtonClick()" [disabled]="elementSelected.health === elementSelected.maxHealth || elementSelected.status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
+    <button (click)="hideElementStats()">Close</button>
+  </div>
+
+  <div>
     <button (click)="removeToken()">Remove Token</button>
   </div>
 </div>
@@ -48,7 +43,17 @@
       <div class="hexIn" *ngIf="cell.slice(-1).pop(); let uppestToken">
         <a *ngIf="uppestToken.id!=='-'" class="hexLink {{uppestToken.type}}" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)" (click)="onShowStats(uppestToken, rowIndex, colIndex)">
           <img [src]="uppestToken.src" alt=""/>
-          <div class="info" *ngIf="uppestToken.health">{{uppestToken.health}}</div>
+          <div class="token-status" align ="center" *ngIf="uppestToken.status">
+            <img *ngIf="uppestToken.status.poisoned" class="status" src = "./assets/poisoned.png"/>
+            <img *ngIf="uppestToken.status.wounded" class="status" src = "./assets/wounded.png"/>
+            <img *ngIf="uppestToken.status.immobilized" class="status" src = "./assets/immobilized.png"/>
+            <img *ngIf="uppestToken.status.disarmed" class="status" src = "./assets/disarmed.png"/>
+            <img *ngIf="uppestToken.status.stunned" class="status" src = "./assets/stunned.png"/>
+            <img *ngIf="uppestToken.status.muddled" class="status" src = "./assets/muddled.png"/>
+            <img *ngIf="uppestToken.status.invisible" class="status" src = "./assets/invisible.png"/>
+            <img *ngIf="uppestToken.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
+          </div>
+          <div class="info" *ngIf="uppestToken.health">{{uppestToken.health}} <ng-container *ngIf="uppestToken.shield"> - ({{uppestToken.shield}})</ng-container></div>
           <h1 *ngIf="['enemy','enemy elite','summon_player'].includes(uppestToken.type)">{{uppestToken.name}}</h1>
           <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.move}}M {{uppestToken.attack}}A {{uppestToken.range}}R</p>
         </a>

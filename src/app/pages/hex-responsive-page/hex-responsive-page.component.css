@@ -87,6 +87,26 @@
           transform: rotate3d(0,0,0,0deg);
 }
 
+.hex .token-status {
+  margin: 0 auto;
+  margin-top: 10%;
+  box-sizing:border-box;
+  -webkit-transform:translate3d(0,100%,0);
+      -ms-transform:translate3d(0,100%,0);
+          transform:translate3d(0,100%,0);
+}
+
+.hex .token-status img {
+  position: relative;
+  left: 0;
+  height: 30px;
+  top: -50px;
+  box-sizing:border-box;
+  -webkit-transform:translate3d(0,100%,0);
+      -ms-transform:translate3d(0,100%,0);
+          transform:translate3d(0,100%,0);
+}
+
 .hex .info {
   width: 100%;
   margin: 0 auto;
@@ -127,10 +147,9 @@
 }
 
 .hex h1 {
-  bottom: 50%;
+  bottom: 35%;
   padding-top:50%;
   font-size: 1em;
-  z-index: 1;
   -webkit-transform:translate3d(0,-100%,0);
       -ms-transform:translate3d(0,-100%,0);
           transform:translate3d(0,-100%,0);

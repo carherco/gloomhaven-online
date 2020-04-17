@@ -1,9 +1,10 @@
-import { Map18Tokens } from './../../data/mapsDef';
+import { Map18Tokens, Map16Matrix, Map16Tokens } from './../../data/mapsDef';
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Map18Matrix } from 'src/app/data/mapsDef';
 import { Token } from 'src/app/model/token';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hex-responsive-page',
@@ -13,11 +14,11 @@ import { ScenarioSnapshot } from 'src/app/model/scenario';
 })
 export class HexResponsivePageComponent implements OnInit {
 
-  @Input() originalMatrix = Map18Matrix;
-  @Input() availableTokens: Token[] = Map18Tokens;
+  @Input() originalMatrix = Map16Matrix;
+  @Input() availableTokens: Token[] = Map16Tokens;
 
   currentMatrix: Token[][][];
-  currentMatrixFirebaseId = '5n0N7kVlX5Q5I8aV30nu';
+  currentMatrixFirebaseId: string;
 
   private dragType: 'fromPool'|'fromMap' = null;
   private dragContent: Token;
@@ -39,8 +40,28 @@ export class HexResponsivePageComponent implements OnInit {
 
   firebaseItemsCollection;
 
-  constructor(private afs: AngularFirestore, private cdr: ChangeDetectorRef) {
+  constructor(private route: ActivatedRoute, private afs: AngularFirestore, private cdr: ChangeDetectorRef) {
     this.currentMatrix = [];
+    this.route.params.subscribe( p => {
+      switch (p.id) {
+        case '16':
+          this.originalMatrix = Map16Matrix;
+          this.availableTokens = Map16Tokens;
+          this.currentMatrixFirebaseId = 'envelope_openers_16';
+          break;
+        case '18':
+          this.originalMatrix = Map18Matrix;
+          this.availableTokens = Map18Tokens;
+          this.currentMatrixFirebaseId = 'envelope_openers_18';
+          break;
+        default:
+          this.originalMatrix = Map16Matrix;
+          this.availableTokens = Map16Tokens;
+          this.currentMatrixFirebaseId = 'envelope_openers_16';
+          break;
+      }
+      this.ngOnInit();
+    });
   }
 
   ngOnInit(): void {
@@ -70,16 +91,14 @@ export class HexResponsivePageComponent implements OnInit {
     //   )
     // );
 
-    // console.log(this.currentMatrix);
-
     // const scenarioSnapshot: ScenarioSnapshot = {
-    //   scenarioId: 18,
-    //   currentMatrix: this.currentMatrix
+    //   scenarioId: 16,
+    //   currentMatrix: JSON.stringify(this.currentMatrix)
     // };
 
     // Para dar de alta el escenario en la base de datos
     this.firebaseItemsCollection = this.afs.collection<ScenarioSnapshot>('escenarios');
-    // this.firebaseItemsCollection.add({scenarioId: 18, currentMatrix: JSON.stringify(this.currentMatrix)});
+    // this.firebaseItemsCollection.add({ id: this.currentMatrixFirebaseId, scenarioId: 18, currentMatrix: scenarioSnapshot.currentMatrix});
 
     // Dar de alta creando yo el id
     // const id = this.afs.createId();

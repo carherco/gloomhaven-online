@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'players', component: PlayersPageComponent },
   { path: 'shop', component: ShopPageComponent },
   { path: 'hex3d', component: Hex3dPageComponent },
-  { path: 'map', component: HexResponsivePageComponent },
+  { path: 'map/:id', component: HexResponsivePageComponent },
   { path: 'history', component: HistoryPageComponent },
 ];
 
