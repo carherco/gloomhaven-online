@@ -27,6 +27,7 @@ import { MapDialogComponent } from './components/map-dialog/map-dialog.component
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { LogPageComponent } from './pages/log-page/log-page.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     ShopPageComponent,
     MenuComponent,
     HistoryPageComponent,
-    MapDialogComponent
+    MapDialogComponent,
+    LogPageComponent
   ],
   imports: [
     BrowserModule,

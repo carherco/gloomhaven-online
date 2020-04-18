@@ -20,10 +20,10 @@ export const Map18Matrix = [
 ];
 
 export const Map18Tokens: Token[] = [
-  {id: 'player1', type: 'player', src: 'assets/Cragheart_token.png', maxHealth: 11, health: 11, status: {} },
-  {id: 'player2', type: 'player', src: 'assets/Tinkerer_token.png', maxHealth: 9, health: 9, status: {} },
+  {id: 'player1', type: 'player', src: 'assets/Cragheart_token.png', maxHealth: 12, health: 12, status: {} },
+  {id: 'player2', type: 'player', src: 'assets/Tinkerer_token.png', maxHealth: 11, health: 11, status: {} },
   {id: 'summon_bob', name: 'Bob', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6, status: {} },
-  {id: 'player3', type: 'player', src: 'assets/Scoundrel_token.png', maxHealth: 11, health: 11, status: {} },
+  {id: 'player3', type: 'player', src: 'assets/Scoundrel_token.png', maxHealth: 9, health: 9, status: {} },
   {id: 'player4', type: 'player', src: 'assets/Mindthief_token.png', maxHealth: 7, health: 7, status: {} },
   {id: 'summon_rats', name: 'rats', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6, attack: 1, status: {} },
   {id: 'Ooze', name: 'Ooze', type: 'enemy', src: 'assets/Ooze_token.jpg', maxHealth: 7, health: 7, shield: 1, move: 1, attack: 2, range: 3, status: {} },
