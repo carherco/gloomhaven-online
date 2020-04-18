@@ -1,19 +1,32 @@
-<div *ngFor="let player of players" class="player" [style.backgroundImage]="'url(assets/background.png)'">
-  <div class="player-img">
-      <img class="character" src="./assets/{{player.character.image}}" />
-  </div>
-  <div class="player-stats">
-    <div align="center">{{player.name}}</div>
-    <div>{{player.character.race}} {{player.character.class}}</div>
-    <div>Personal Quest: </div>
-    <div>{{player.personalQuest.title}} ({{player.personalQuest.progress}} / {{player.personalQuest.total}})</div>
-    <div>Level: {{player.level}}</div>
-    <div>XP: {{player.experience}}</div>
-    <div>Gold {{player.gold}}</div>
-    <div>Perk ticks {{player.perkTicks}}</div>
-  </div>
-  <div class="player-items">
-    <img *ngFor="let item of player.ownedItems" [src]="item|getSrcItem" width="120">
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let player of players" class="col-md-6 col-sm-12 " [style.backgroundImage]="'url(assets/background.png)'">
+      <div  class="player" >
+        <div class="row">
+          <div align="center" class="col-12 player-name">{{player.name}}</div>
+        </div>
+        <div class="row">
+          <div class="player-img">
+              <img class="character" src="./assets/{{player.character.image}}" />
+          </div>
+          <div class="player-stats">
+            <div>{{player.character.race}} {{player.character.class}}</div>
+            <div>Personal Quest: </div>
+            <div>{{player.personalQuest.title}} ({{player.personalQuest.progress}} / {{player.personalQuest.total}})</div>
+            <div>Level: {{player.level}}</div>
+            <div>XP: {{player.experience}}</div>
+            <div>Gold {{player.gold}}</div>
+            <div>Perk ticks {{player.perkTicks}}</div>
+          </div>
+          <div class="player-items">
+            <img *ngFor="let item of player.ownedItems" [src]="item|getSrcItem" width="120">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
   </div>
 </div>
 

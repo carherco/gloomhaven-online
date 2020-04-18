@@ -1,4 +1,10 @@
-# GloomhavenCardManager
+# Gloomhaven Helper
+
+Recursos:
+
+- https://github.com/any2cards/gloomhaven
+- https://asgrabowski.github.io/
+- https://imagecompressor.com/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
