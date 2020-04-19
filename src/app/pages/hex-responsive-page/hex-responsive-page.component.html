@@ -40,6 +40,7 @@
 
 <div class="row">
   <div id="available-tokens" class="col-1">
+    <button class="btn btn-danger" (click)="resetScenario()">Reset Scenario</button>
     <img *ngFor="let token of availableTokens" [src]="token.src" alt="" width="70" (dragstart)="dragStartFromPool(token)">
   </div>
 

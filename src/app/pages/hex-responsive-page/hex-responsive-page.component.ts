@@ -6,6 +6,8 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
 import { Map18Tokens, Map16Matrix, Map16Tokens } from './../../data/mapsDef';
+import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-hex-responsive-page',
@@ -18,6 +20,7 @@ export class HexResponsivePageComponent implements OnInit {
   @Input() originalMatrix = Map16Matrix;
   @Input() availableTokens: Token[] = Map16Tokens;
 
+  scenarioId: number;
   currentMatrix: Token[][][];
   currentMatrixFirebaseId: string;
 
@@ -41,9 +44,16 @@ export class HexResponsivePageComponent implements OnInit {
 
   firebaseItemsCollection;
 
-  constructor(private route: ActivatedRoute, private afs: AngularFirestore, private cdr: ChangeDetectorRef, private modalService: NgbModal) {
+  constructor(
+    private scenarioCreator: ScenarioCreatorService,
+    private route: ActivatedRoute,
+    private afs: AngularFirestore,
+    private cdr: ChangeDetectorRef,
+    private modalService: NgbModal
+    ) {
     this.currentMatrix = [];
     this.route.params.subscribe( p => {
+      this.scenarioId = p.id;
       switch (p.id) {
         case '16':
           this.originalMatrix = Map16Matrix;
@@ -66,45 +76,8 @@ export class HexResponsivePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.currentMatrix = this.originalMatrix.map(
-    //   fila => fila.map(
-    //     celda => {
-    //       let token: Token[];
-    //       switch (celda) {
-    //         case '-':
-    //           token = [{ id: '-', type: 'terrain', src: 'assets/corridor-stone_token.png' }];
-    //           break;
-    //         case '0':
-    //           token = [{ id: '0', type: 'terrain', src: 'assets/corridor-stone_token.png' }];
-    //           break;
-    //         case 'D':
-    //           token = [{ id: 'D', type: 'door', src: 'assets/images/overlay-tokens/doors/stone-door.png' }];
-    //           break;
-    //         case 'W':
-    //           token = [{ id: 'W', type: 'difficult-terrain', src: 'assets/water_token.png' }];
-    //           break;
-    //         default:
-    //           token = [];
-    //           break;
-    //       }
-    //       return token;
-    //     }
-    //   )
-    // );
 
-    // const scenarioSnapshot: ScenarioSnapshot = {
-    //   scenarioId: 16,
-    //   currentMatrix: JSON.stringify(this.currentMatrix)
-    // };
-
-    // Para dar de alta el escenario en la base de datos
     this.firebaseItemsCollection = this.afs.collection<ScenarioSnapshot>('escenarios');
-    // this.firebaseItemsCollection.add({ id: this.currentMatrixFirebaseId, scenarioId: 18, currentMatrix: scenarioSnapshot.currentMatrix});
-
-    // Dar de alta creando yo el id
-    // const id = this.afs.createId();
-    // const item: Item = { id, name };
-    // this.itemsCollection.doc(id).set(item);
 
     // Para hacer un Get del escenario
     const currentMatrixDoc = this.afs.doc<ScenarioSnapshot>('escenarios/' + this.currentMatrixFirebaseId);
@@ -112,8 +85,34 @@ export class HexResponsivePageComponent implements OnInit {
       doc => {
         this.currentMatrix = JSON.parse(doc.currentMatrix);
         this.cdr.detectChanges();
+        console.log(this.currentMatrix);
       }
     );
+  }
+
+  initMap() {
+    this.currentMatrix = this.scenarioCreator.createFromMatrix(this.originalMatrix);
+  }
+
+  addMap() {
+    const scenarioSnapshot: ScenarioSnapshot = {
+      scenarioId: this.scenarioId,
+      currentMatrix: JSON.stringify(this.currentMatrix)
+    };
+
+    // Para dar de alta el escenario en la base de datos
+    this.firebaseItemsCollection = this.afs.collection<ScenarioSnapshot>('escenarios');
+    this.firebaseItemsCollection.add({ id: this.currentMatrixFirebaseId, scenarioId: 18, currentMatrix: scenarioSnapshot.currentMatrix});
+
+    // Dar de alta generando previamente un id
+    // const id = this.afs.createId();
+    // const item: Item = { id, name };
+    // this.itemsCollection.doc(id).set(item);
+  }
+
+  resetScenario() {
+    this.initMap();
+    this.save();
   }
 
   dragStartFromPool(token: Token) {
@@ -182,7 +181,7 @@ export class HexResponsivePageComponent implements OnInit {
   }
 
   save() {
-    const preparedDoc = {scenarioId: 18, currentMatrix: JSON.stringify(this.currentMatrix)};
+    const preparedDoc = {scenarioId: this.scenarioId, currentMatrix: JSON.stringify(this.currentMatrix)};
     this.firebaseItemsCollection.doc(this.currentMatrixFirebaseId).set(preparedDoc);
   }
 
