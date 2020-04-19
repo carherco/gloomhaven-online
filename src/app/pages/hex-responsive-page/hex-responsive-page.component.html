@@ -1,141 +1,70 @@
-<div id="available-tokens">
-  <img *ngFor="let token of availableTokens" [src]="token.src" alt="" width="70" (dragstart)="dragStartFromPool(token)">
-</div>
-
-<div *ngIf="showStats">
-
-  <div id ="status-effects" align ="center">Status Effects
-    <img *ngIf="elementSelected.status.poisoned" class="status" src = "./assets/poisoned.png"/>
-    <img *ngIf="elementSelected.status.wounded" class="status" src = "./assets/wounded.png"/>
-    <img *ngIf="elementSelected.status.immobilized" class="status" src = "./assets/immobilized.png"/>
-    <img *ngIf="elementSelected.status.disarmed" class="status" src = "./assets/disarmed.png"/>
-    <img *ngIf="elementSelected.status.stunned" class="status" src = "./assets/stunned.png"/>
-    <img *ngIf="elementSelected.status.muddled" class="status" src = "./assets/muddled.png"/>
-    <img *ngIf="elementSelected.status.invisible" class="status" src = "./assets/invisible.png"/>
-    <img *ngIf="elementSelected.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
-    <br/>
-    <button (click)="elementSelected.status.poisoned = !elementSelected.status.poisoned" type = "button">Toggle Poisoned</button>
-    <button (click)="elementSelected.status.wounded = !elementSelected.status.wounded" type = "button">Toggle Wounded</button>
-    <button (click)="elementSelected.status.immobilized = !elementSelected.status.immobilized" type = "button">Toggle Immobilized</button>
-    <button (click)="elementSelected.status.disarmed = !elementSelected.status.disarmed" type = "button">Toggle Disarmed</button>
-    <button (click)="elementSelected.status.stunned = !elementSelected.status.stunned" type = "button">Toggle Stunned</button>
-    <button (click)="elementSelected.status.muddled = !elementSelected.status.muddled" type = "button">Toggle Muddled</button>
-    <button (click)="elementSelected.status.invisible = !elementSelected.status.invisible" type = "button">Toggle Invisible</button>
-    <button (click)="elementSelected.status.strengthened = !elementSelected.status.strengthened" type = "button">Toggle Strengthened</button>
+<ng-template #modalContent let-modal>
+  <div class="modal-header" [style.backgroundImage]="'url(assets/background.png)'">
+    <h4 class="modal-title">Character Stats<button class="btn btn-danger" (click)="removeToken(modal)">Remove Token</button></h4>
   </div>
+  <div class="modal-body">
+      <div *ngIf="showStats">
+        <div id ="status-effects">Status Effects:
+          <img *ngIf="elementSelected.status.poisoned" class="status" src = "./assets/poisoned.png"/>
+          <img *ngIf="elementSelected.status.wounded" class="status" src = "./assets/wounded.png"/>
+          <img *ngIf="elementSelected.status.immobilized" class="status" src = "./assets/immobilized.png"/>
+          <img *ngIf="elementSelected.status.disarmed" class="status" src = "./assets/disarmed.png"/>
+          <img *ngIf="elementSelected.status.stunned" class="status" src = "./assets/stunned.png"/>
+          <img *ngIf="elementSelected.status.muddled" class="status" src = "./assets/muddled.png"/>
+          <img *ngIf="elementSelected.status.invisible" class="status" src = "./assets/invisible.png"/>
+          <img *ngIf="elementSelected.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
+          <br/>
+          <button (click)="elementSelected.status.poisoned = !elementSelected.status.poisoned" type = "button">Toggle Poisoned</button>
+          <button (click)="elementSelected.status.wounded = !elementSelected.status.wounded" type = "button">Toggle Wounded</button>
+          <button (click)="elementSelected.status.immobilized = !elementSelected.status.immobilized" type = "button">Toggle Immobilized</button>
+          <button (click)="elementSelected.status.disarmed = !elementSelected.status.disarmed" type = "button">Toggle Disarmed</button>
+          <button (click)="elementSelected.status.stunned = !elementSelected.status.stunned" type = "button">Toggle Stunned</button>
+          <button (click)="elementSelected.status.muddled = !elementSelected.status.muddled" type = "button">Toggle Muddled</button>
+          <button (click)="elementSelected.status.invisible = !elementSelected.status.invisible" type = "button">Toggle Invisible</button>
+          <button (click)="elementSelected.status.strengthened = !elementSelected.status.strengthened" type = "button">Toggle Strengthened</button>
+        </div>
 
-  <div>
-    <br/>
-    <p id="health-counter" style="font-size: 35px; color:red;">{{ elementSelected.health }}</p>
-    <button (click)="damageButtonClick()" [disabled]="elementSelected.health === 0" type ="button" style="font-size:15px;">Damage 1</button>
-    <button (click)="healButtonClick()" [disabled]="elementSelected.health === elementSelected.maxHealth || elementSelected.status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
-    <button (click)="hideElementStats()">Close</button>
-  </div>
+        <div align ="center">
+          <button class="btn btn-danger" (click)="damageButtonClick()" [disabled]="elementSelected.health === 0" type ="button" style="font-size:15px;">Damage 1</button>
+          <span id="health-counter">{{ elementSelected.health }}</span>
+          <button class="btn btn-success" (click)="healButtonClick()" [disabled]="elementSelected.health === elementSelected.maxHealth || elementSelected.status.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
+        </div>
 
-  <div>
-    <button (click)="removeToken()">Remove Token</button>
-  </div>
-</div>
-
-<div id="board">
-  <ul id="hexGrid" *ngFor="let row of currentMatrix; let odd=odd; let rowIndex=index;" >
-    <li class="hex" *ngFor="let cell of row; let colIndex=index;" [class.odd]="odd">
-      <div class="hexIn" *ngIf="cell.slice(-1).pop(); let uppestToken">
-        <a *ngIf="uppestToken.id!=='-'" class="hexLink {{uppestToken.type}}" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)" (click)="onShowStats(uppestToken, rowIndex, colIndex)">
-          <img [src]="uppestToken.src" alt=""/>
-          <div class="token-status" align ="center" *ngIf="uppestToken.status">
-            <img *ngIf="uppestToken.status.poisoned" class="status" src = "./assets/poisoned.png"/>
-            <img *ngIf="uppestToken.status.wounded" class="status" src = "./assets/wounded.png"/>
-            <img *ngIf="uppestToken.status.immobilized" class="status" src = "./assets/immobilized.png"/>
-            <img *ngIf="uppestToken.status.disarmed" class="status" src = "./assets/disarmed.png"/>
-            <img *ngIf="uppestToken.status.stunned" class="status" src = "./assets/stunned.png"/>
-            <img *ngIf="uppestToken.status.muddled" class="status" src = "./assets/muddled.png"/>
-            <img *ngIf="uppestToken.status.invisible" class="status" src = "./assets/invisible.png"/>
-            <img *ngIf="uppestToken.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
-          </div>
-          <div class="info" *ngIf="uppestToken.health">{{uppestToken.health}} <ng-container *ngIf="uppestToken.shield"> - ({{uppestToken.shield}})</ng-container></div>
-          <h1 *ngIf="['enemy','enemy elite','summon_player'].includes(uppestToken.type)">{{uppestToken.name}}</h1>
-          <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.move}}M {{uppestToken.attack}}A {{uppestToken.range}}R</p>
-        </a>
-        <!-- <a class="hexLink" *ngIf="cell.slice(-1).pop().id==='0'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
-          <img src="assets/corridor-stone_token.png" alt=""/>
-        </a>
-        <a class="hexLink player" *ngIf="cell.slice(-1).pop().id==='player1'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/Cragheart_token.png" alt="" />
-          <div class="info">11</div>
-        </a>
-        <a class="hexLink player" *ngIf="cell.slice(-1).pop().id==='player2'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/Tinkerer_token.png" alt=""/>
-          <div class="info">9</div>
-        </a>
-        <a class="hexLink player" *ngIf="cell.slice(-1).pop().id==='player3'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/Scoundrel_token.png" alt="" />
-          <div class="info">11</div>
-        </a>
-        <a class="hexLink player" *ngIf="cell.slice(-1).pop().id==='player4'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/Mindthief_token.png" alt="" />
-          <div class="info">7</div>
-        </a>
-        <a class="hexLink enemy" *ngIf="cell.slice(-1).pop().id==='Ooze'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)" >
-          <img src="assets/Ooze_token.jpg" alt="" />
-          <div class="info">7 - (1)</div>
-          <h1>Ooze</h1>
-          <p>1M 2A 3R</p>
-        </a>
-        <a class="hexLink enemy elite" *ngIf="cell.slice(-1).pop().id==='Ooze_elite'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-            <img src="assets/Ooze_token.jpg" alt="" />
-            <div class="info">11 - (1)</div>
-            <h1>Ooze</h1>
-            <p>1M 3A 3R</p>
-          </a>
-        <a class="hexLink enemy" *ngIf="cell.slice(-1).pop().id==='Giant-Viper'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/Giant-Viper_token.jpg" alt="" />
-          <div class="info">4</div>
-          <h1>Giant Viper</h1>
-          <p>3M 1A -R</p>
-        </a>
-        <a class="hexLink enemy elite" *ngIf="cell.slice(-1).pop().id==='Giant-Viper_elite'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/Giant-Viper_token.jpg" alt="" />
-          <div class="info">7</div>
-          <h1>Giant Viper</h1>
-          <p>3M 2A -R</p>
-        </a>
-        <a class="hexLink enemy" *ngIf="cell.slice(-1).pop().id==='Vermling-Scout'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/corridor-stone_token.png" alt=""/>
-          <img src="assets/Vermling-Scout.jpg" alt="" />
-          <div class="info">3</div>
-          <h1>Vermling Scout</h1>
-          <p>3M 2A -R</p>
-        </a>
-        <a class="hexLink enemy elite" *ngIf="cell.slice(-1).pop().id==='Vermling-Scout_elite'" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/Vermling-Scout.jpg" alt="" />
-          <div class="info">5</div>
-          <h1>Vermling Scout</h1>
-          <p>4M 3A -R</p>
-        </a>
-        <a class="hexLink difficult-terrain" *ngIf="cell.slice(-1).pop().id==='W'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
-          <img src="assets/water_token.png" alt="" />
-        </a>
-        <a class="hexLink trap" *ngIf="cell.slice(-1).pop().id==='poison-gas'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
-          <img src="assets/images/overlay-tokens/traps/poison-gas-trap.png" alt="" />
-        </a>
-        <a class="hexLink loot" *ngIf="cell.slice(-1).pop().id==='treasure'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
-          <img src="assets/images/overlay-tokens/treasures/treasure.png" alt="" />
-        </a>
-        <a class="hexLink loot" *ngIf="cell.slice(-1).pop().id==='coin-1'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)">
-          <img src="assets/images/overlay-tokens/treasures/coin-1.png" alt="" />
-        </a>
-        <a class="hexLink summon_player" *ngIf="cell.slice(-1).pop().id==='summon_bob'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/images/summons/summons.png" alt="" />
-          <div class="info">6</div>
-          <h1>Bob</h1>
-        </a>
-        <a class="hexLink summon_player" *ngIf="cell.slice(-1).pop().id==='summon_rats'" (drop)="drop(rowIndex, colIndex)" (dragover)="allowDrop($event)" (dragstart)="dragStartPlay(rowIndex, colIndex)">
-          <img src="assets/images/summons/summons.png" alt="" />
-          <div class="info">6</div>
-          <h1>Rats</h1>
-        </a> -->
       </div>
-    </li>
-  </ul>
+  </div>
+  <div class="modal-footer">
+
+    <button class="btn btn-primary" (click)="closeModal(modal)">Save & Close</button>
+  </div>
+</ng-template>
+
+<div class="row">
+  <div id="available-tokens" class="col-1">
+    <img *ngFor="let token of availableTokens" [src]="token.src" alt="" width="70" (dragstart)="dragStartFromPool(token)">
+  </div>
+
+  <div id="board" class="col-11">
+    <ul id="hexGrid" *ngFor="let row of currentMatrix; let odd=odd; let rowIndex=index;" >
+      <li class="hex" *ngFor="let cell of row; let colIndex=index;" [class.odd]="odd">
+        <div class="hexIn" *ngIf="cell.slice(-1).pop(); let uppestToken">
+          <a *ngIf="uppestToken.id!=='-'" class="hexLink {{uppestToken.type}}" (drop)="drop(rowIndex, colIndex, $event)" (dragover)="allowDrop($event)" draggable="true" (dragstart)="dragStartPlay(rowIndex, colIndex)" (click)="onShowStats(uppestToken, rowIndex, colIndex, modalContent)">
+            <img [src]="uppestToken.src" alt=""/>
+            <div class="token-status" align ="center" *ngIf="uppestToken.status">
+              <img *ngIf="uppestToken.status.poisoned" class="status" src = "./assets/poisoned.png"/>
+              <img *ngIf="uppestToken.status.wounded" class="status" src = "./assets/wounded.png"/>
+              <img *ngIf="uppestToken.status.immobilized" class="status" src = "./assets/immobilized.png"/>
+              <img *ngIf="uppestToken.status.disarmed" class="status" src = "./assets/disarmed.png"/>
+              <img *ngIf="uppestToken.status.stunned" class="status" src = "./assets/stunned.png"/>
+              <img *ngIf="uppestToken.status.muddled" class="status" src = "./assets/muddled.png"/>
+              <img *ngIf="uppestToken.status.invisible" class="status" src = "./assets/invisible.png"/>
+              <img *ngIf="uppestToken.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
+            </div>
+            <div class="info" *ngIf="uppestToken.health">{{uppestToken.health}} <ng-container *ngIf="uppestToken.shield"> - ({{uppestToken.shield}})</ng-container></div>
+            <h1 *ngIf="['enemy','enemy elite','summon_player'].includes(uppestToken.type)">{{uppestToken.name}}</h1>
+            <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.move}}M {{uppestToken.attack}}A {{uppestToken.range}}R</p>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

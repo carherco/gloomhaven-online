@@ -1,10 +1,11 @@
-import { Map18Tokens, Map16Matrix, Map16Tokens } from './../../data/mapsDef';
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Map18Matrix } from 'src/app/data/mapsDef';
 import { Token } from 'src/app/model/token';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
+import { Map18Tokens, Map16Matrix, Map16Tokens } from './../../data/mapsDef';
 
 @Component({
   selector: 'app-hex-responsive-page',
@@ -40,7 +41,7 @@ export class HexResponsivePageComponent implements OnInit {
 
   firebaseItemsCollection;
 
-  constructor(private route: ActivatedRoute, private afs: AngularFirestore, private cdr: ChangeDetectorRef) {
+  constructor(private route: ActivatedRoute, private afs: AngularFirestore, private cdr: ChangeDetectorRef, private modalService: NgbModal) {
     this.currentMatrix = [];
     this.route.params.subscribe( p => {
       switch (p.id) {
@@ -126,7 +127,8 @@ export class HexResponsivePageComponent implements OnInit {
     this.dragContent = this.currentMatrix[this.dragOrigin.row][this.dragOrigin.column].slice(-1)[0];
   }
 
-  drop(row: number, column: number) {
+  drop(row: number, column: number, event) {
+    event.preventDefault();
     this.dragEnd = {row, column};
 
     if (['terrain', 'difficult-terrain', 'door'].includes(this.dragContent.type)) {
@@ -152,11 +154,12 @@ export class HexResponsivePageComponent implements OnInit {
     event.preventDefault();
   }
 
-  onShowStats(token: Token, row: number, column: number) {
+  onShowStats(token: Token, row: number, column: number, modalContent) {
     this.elementSelected = token;
     this.rowSelected = row;
     this.columnSelected = column;
     this.showStats = true;
+    this.modalService.open(modalContent, { centered: true });
   }
 
   damageButtonClick() {
@@ -167,14 +170,15 @@ export class HexResponsivePageComponent implements OnInit {
     this.elementSelected.health++;
   }
 
-  hideElementStats() {
+  closeModal(modal) {
     this.showStats = false;
     this.save();
+    modal.close();
   }
 
-  removeToken() {
+  removeToken(modal) {
     this.currentMatrix[this.rowSelected][this.columnSelected].pop();
-    this.hideElementStats();
+    this.closeModal(modal);
   }
 
   save() {
