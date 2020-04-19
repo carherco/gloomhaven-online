@@ -1,3 +1,52 @@
+.nav {
+  width: 100%;
+}
+
+.nav-link, .btn {
+  color: black;
+  font: 400 14px/20px Roboto,Helvetica Neue,sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: normal;
+  padding: 14px 16px;
+  width: 100%;
+}
+
+.nav-item div {
+  width: max-content;
+}
+
+.nav-pills .show > .nav-link {
+  color: black;
+  background-color: #B4805E;
+}
+
+.nav-pills .nav-link.active {
+  color: black;
+  background-color: red;
+}
+
+.nav-item:hover, .nav-pills .show > .nav-link:hover {
+  background-color: red;
+}
+
+.dropdown-menu {
+  padding: 0 0 0 0;
+}
+
+/* nav {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+
+
+.nav-link.active {
+  background-color: red;
+} */
+
+/*
 ul {
   font-size: 20px;
   font-weight: bold;
@@ -23,10 +72,6 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
-  /*background-color: white;*/
-}
-
 .active {
   background-color: red;
 }
@@ -42,7 +87,6 @@ li.dropdown {
 .dropdown-content {
   display: none;
   position: absolute;
-  /*background-color: #f9f9f9;*/
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -60,4 +104,4 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+} */

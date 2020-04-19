@@ -1,6 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
-html{
+body{
   background-color: black;
   color: white;
   font-family: "Palatino Linotype", sans-serif;

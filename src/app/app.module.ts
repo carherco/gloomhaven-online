@@ -25,7 +25,6 @@ import { ShopPageComponent } from './pages/shop-page/shop-page.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HistoryPageComponent } from './pages/history-page/history-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -52,7 +51,6 @@ import { LogPageComponent } from './pages/log-page/log-page.component';
     ShopPageComponent,
     MenuComponent,
     HistoryPageComponent,
-    MapDialogComponent,
     LogPageComponent
   ],
   imports: [
