@@ -4,7 +4,7 @@
   </div>
   <div class="modal-body">
       <div *ngIf="showStats">
-        <div id ="status-effects">Status Effects:
+        <div *ngIf="elementSelected.status" id ="status-effects">Status Effects:
           <img *ngIf="elementSelected.status.poisoned" class="status" src = "./assets/poisoned.png"/>
           <img *ngIf="elementSelected.status.wounded" class="status" src = "./assets/wounded.png"/>
           <img *ngIf="elementSelected.status.immobilized" class="status" src = "./assets/immobilized.png"/>
