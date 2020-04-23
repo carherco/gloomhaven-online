@@ -10,6 +10,7 @@ import { HexResponsivePageComponent } from './pages/hex-responsive-page/hex-resp
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
 import { HistoryPageComponent } from './pages/history-page/history-page.component';
 import { LogPageComponent } from './pages/log-page/log-page.component';
+import { MapCreatorPageComponent } from './pages/map-creator-page/map-creator-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/players', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'map/:id', component: HexResponsivePageComponent },
   { path: 'history', component: HistoryPageComponent },
   { path: 'log', component: LogPageComponent },
+  { path: 'map-creator', component: MapCreatorPageComponent },
 ];
 
 @NgModule({

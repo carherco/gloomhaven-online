@@ -1,11 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatDialogModule } from '@angular/material/dialog';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
+
 import { SelectClassComponent } from './components/select-class/select-class.component';
 import { PerksSectionComponent } from './components/perks-section/perks-section.component';
 import { HandCardsComponent } from './components/hand-cards/hand-cards.component';
@@ -24,11 +28,9 @@ import { GetSrcItemPipe } from './pipes/get-src-item.pipe';
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HistoryPageComponent } from './pages/history-page/history-page.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { environment } from 'src/environments/environment';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LogPageComponent } from './pages/log-page/log-page.component';
+import { MapCreatorPageComponent } from './pages/map-creator-page/map-creator-page.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { LogPageComponent } from './pages/log-page/log-page.component';
     ShopPageComponent,
     MenuComponent,
     HistoryPageComponent,
-    LogPageComponent
+    LogPageComponent,
+    MapCreatorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { LogPageComponent } from './pages/log-page/log-page.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

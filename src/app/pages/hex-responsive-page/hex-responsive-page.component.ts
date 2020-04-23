@@ -7,7 +7,6 @@ import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
 import { Map18Tokens, Map16Matrix, Map16Tokens } from './../../data/mapsDef';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
-import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-hex-responsive-page',
