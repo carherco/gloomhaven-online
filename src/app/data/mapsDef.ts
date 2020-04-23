@@ -64,7 +64,7 @@ export const Map16Tokens: Token[] = [
   {id: 'Wind-Demon', name: 'Wind-Demon', type: 'enemy', src: 'assets/Wind-Demon_token.jpg', maxHealth: 4, health: 4, shield: 2, move: 4, attack: 2, range: 3, status: {} },
   {id: 'Wind-Demon_elite', name: 'Wind-Demon', type: 'enemy elite', src: 'assets/Wind-Demon_token.jpg', maxHealth: 7, health: 7, shield: 2, move: 5, attack: 3, range: 4, status: {} },
   {id: 'Inox-Guard', name: 'Inox-Guard', type: 'enemy', src: 'assets/Inox-Guard_token.jpg', maxHealth: 9, health: 9, move: 2, attack: 3, status: {} },
-  {id: 'Inox-Guard_elite', name: 'Inox-Guard_elite', type: 'enemy elite', src: 'assets/Inox-Guard_token.jpg', maxHealth: 12, health: 12,  move: 2, attack: 4, status: {} },
+  {id: 'Inox-Guard_elite', name: 'Inox-Guard_elite', type: 'enemy elite', src: 'assets/Inox-Guard_token.jpg', maxHealth: 12, health: 12,  move: 2, attack: 4, retaliate: 2, status: {} },
   {id: 'Inox-Archer', name: 'Inox-Archer', type: 'enemy', src: 'assets/Inox-Archer_token.jpg', maxHealth: 8, health: 8, move: 2, attack: 2, range: 3, status: {} },
   {id: 'Inox-Archer_elite', name: 'Inox-Archer_elite', type: 'enemy elite', src: 'assets/Inox-Archer_token.jpg', maxHealth: 11, health: 11,  move: 2, attack: 3, range: 4, status: {} },
   {id: 'spike-pit', type: 'trap', src: 'assets/images/overlay-tokens/traps/spike-pit-trap.png' },

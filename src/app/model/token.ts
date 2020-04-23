@@ -11,6 +11,7 @@ interface Token {
   move?: number;
   attack?: number;
   range?: number;
+  retaliate?: number;
   status?: any;
   extraInfo?: string;
 }
