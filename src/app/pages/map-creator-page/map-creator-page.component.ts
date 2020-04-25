@@ -17,7 +17,7 @@ export class MapCreatorPageComponent implements DoCheck {
   scenarioId: number;
   currentMatrix: Token[][][];
 
-  prueba: string;
+  matrixForSave: string;
 
   constructor(private scenarioCreator: ScenarioCreatorService) {
     this.currentMatrix = this.scenarioCreator.createFromMatrix(this.originalMatrix);
@@ -26,6 +26,7 @@ export class MapCreatorPageComponent implements DoCheck {
 
   ngDoCheck(): void {
     this.currentMatrix = this.scenarioCreator.createFromMatrix(this.fromTextAreaToStringMatrix(this.textAreaValue));
+    this.matrixForSave = this.convertToJsonString(this.textAreaValue);
   }
 
   fromStringMatrix2TextArea(matrix: string[][]): string {
@@ -52,5 +53,22 @@ export class MapCreatorPageComponent implements DoCheck {
     }
     salida = salida.replace(/,\]/g, ']');
     return JSON.parse('[[' + salida + ']]');
+  }
+
+  convertToJsonString(text: string): string {
+    let salida = '';
+    for (const char of text) {
+      switch (char) {
+        case '\n':
+          salida += '],[';
+          break;
+        case ' ':
+          break;
+        default:
+          salida += '"' + char + '",';
+      }
+    }
+    salida = salida.replace(/,\]/g, ']');
+    return '[[' + salida + ']]';
   }
 }
