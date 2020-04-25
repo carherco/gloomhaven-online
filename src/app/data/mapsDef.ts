@@ -73,3 +73,38 @@ export const Map16Tokens: Token[] = [
   {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
 ];
 
+export const Map24Matrix = [
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1', '1', '-', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1', 'D', '0', '0', '0'],
+  ['1', '1', '1', '1', '1', '-', '-', '-', '-', '-', '-', '1', '1', '1', '-', '0', '0', '0', '0'],
+    ['1', '1', '1', '1', '-', '-', '-', '-', '-', '-', '-', 'D', '-', '-', '0', '0', '0', '0'],
+  ['1', '1', '1', '1', '1', '-', '-', '-', '-', '-', '1', '1', '1', '1', '1', 'D', '0', '0'],
+    ['1', '1', '1', '1', 'D', '0', '0', '0', '0', 'D', '1', '1', '1', '1', '1', '1'],
+  ['1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '1', '1', '1', '1', '1'],
+    ['1', '1', '1', '1', '-', '-', 'D', '-', '-', '-', 'D', 'D', '-', '-', '1', '1', '1'],
+  ['1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '-', '-', '1', '1', '1'],
+  ['-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '0', '0', '-', '-', '-', '1', '1', '1'],
+  ['-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '0', '0', '0', '-', '-', '-', '1'],
+];
+
+export const Map24Tokens: Token[] = [
+  {id: 'player1', type: 'player', src: 'assets/Cragheart_token.png', maxHealth: 11, health: 11 },
+  {id: 'player2', type: 'player', src: 'assets/Tinkerer_token.png', maxHealth: 9, health: 9 },
+  {id: 'summon_bob', name: 'Bob', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6 },
+  {id: 'player3', type: 'player', src: 'assets/Scoundrel_token.png', maxHealth: 11, health: 11 },
+  {id: 'player4', type: 'player', src: 'assets/Mindthief_token.png', maxHealth: 7, health: 7 },
+  {id: 'summon_rats', name: 'rats', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6, attack: 1 },
+  {id: 'Rending-Drake', name: 'Rending-Drake', type: 'enemy', src: 'assets/Rending-Drake_token.jpg', maxHealth: 7, health: 7, move: 4, attack: 3, status: {} },
+  {id: 'Rending-Drake_elite', name: 'Rending-Drake_elite', type: 'enemy elite', src: 'assets/Rending-Drake_token.jpg', maxHealth: 9, health: 9, move: 5, attack: 5, status: {} },
+  {id: 'Ooze', name: 'Ooze', type: 'enemy', src: 'assets/Ooze_token.jpg', maxHealth: 7, health: 7, shield: 1, move: 1, attack: 2, range: 3, status: {} },
+  {id: 'Ooze_elite', name: 'Ooze', type: 'enemy elite', src: 'assets/Ooze_token.jpg', maxHealth: 11, health: 11, shield: 1, move: 1, attack: 3, range: 3, status: {} },
+  {id: 'Living-Spirit', name: 'Living-Spirit', type: 'enemy', src: 'assets/Living-Spirit_token.jpg', maxHealth: 2, health: 2, shield: 2, move: 3, attack: 2, range: 3, status: {} },
+  {id: 'Living-Spirit_elite', name: 'Living-Spirit', type: 'enemy elite', src: 'assets/Living-Spirit_token.jpg', maxHealth: 3, health: 3, shield: 3, move: 4, attack: 3, range: 4, status: {} },
+  {id: 'spike-pit', type: 'trap', src: 'assets/images/overlay-tokens/traps/spike-pit-trap.png' },
+  {id: 'rock-column', type: 'obstacle', src: 'assets/images/overlay-tokens/obstacles/rock-column.png' },
+  {id: 'nest', type: 'obstacle', src: 'assets/images/overlay-tokens/obstacles/nest.png' },
+  {id: 'treasure', type: 'loot', src: 'assets/images/overlay-tokens/treasures/treasure.png' },
+  {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
+];

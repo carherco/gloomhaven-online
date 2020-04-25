@@ -5,7 +5,7 @@ import { Token } from 'src/app/model/token';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
-import { Map18Tokens, Map16Matrix, Map16Tokens } from './../../data/mapsDef';
+import { Map18Tokens, Map16Matrix, Map16Tokens, Map24Matrix, Map24Tokens } from './../../data/mapsDef';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
 
 @Component({
@@ -64,6 +64,11 @@ export class HexResponsivePageComponent implements OnInit {
           this.availableTokens = Map18Tokens;
           this.currentMatrixFirebaseId = 'envelope_openers_18';
           break;
+        case '24':
+          this.originalMatrix = Map24Matrix;
+          this.availableTokens = Map24Tokens;
+          this.currentMatrixFirebaseId = 'envelope_openers_24';
+          break;
         default:
           this.originalMatrix = Map16Matrix;
           this.availableTokens = Map16Tokens;
@@ -101,7 +106,7 @@ export class HexResponsivePageComponent implements OnInit {
 
     // Para dar de alta el escenario en la base de datos
     this.firebaseItemsCollection = this.afs.collection<ScenarioSnapshot>('escenarios');
-    this.firebaseItemsCollection.add({ id: this.currentMatrixFirebaseId, scenarioId: 18, currentMatrix: scenarioSnapshot.currentMatrix});
+    this.firebaseItemsCollection.add({ id: this.currentMatrixFirebaseId, scenarioId: 24, currentMatrix: scenarioSnapshot.currentMatrix});
 
     // Dar de alta generando previamente un id
     // const id = this.afs.createId();
