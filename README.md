@@ -20,17 +20,30 @@ Para generar una página (dentro del directorio pages y con sufijo "page" en el 
 
 > ng generate component pages/nombre-pagina-page
 
+Ejemplo:
+
+> ng generate component pages/history-page
+
 Para generar un componente que no sea una página (dentro del directorio components y sin sufijo):
 
 > ng generate component components/nombre-componente
 
+Ejemplo:
+
+> ng generate component pages/menu
+
 Si te has equivocado creando un componente y lo quires borrar:
-- 1) Eliminar el directorio del componente con los 4 archivos
-- 2) Eliminar la declaración componente en la sección declarations de app.module.ts y eliminar el import de dicho componente en ese mismo fichero.
+
+1) Eliminar el directorio del componente con los 4 archivos
+2) Eliminar la declaración componente en la sección declarations de app.module.ts y eliminar el import de dicho componente en ese mismo fichero.
 
 Para generar un servicio (dentro del directorio services y sin sufijo):
 
 > ng generate service services/nombre-servicio
+
+Ejemplo:
+
+> ng generate service services/scenario-creator
 
 ## Build
 
