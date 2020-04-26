@@ -30,7 +30,7 @@ Para generar un componente que no sea una página (dentro del directorio compone
 
 Ejemplo:
 
-> ng generate component pages/menu
+> ng generate component components/menu
 
 Si te has equivocado creando un componente y lo quires borrar:
 
