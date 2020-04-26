@@ -16,17 +16,29 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+Para generar una página (dentro del directorio pages y con sufijo "page" en el nombre):
+
+> ng generate component pages/nombre-pagina-page
+
+Para generar un componente que no sea una página (dentro del directorio components y sin sufijo):
+
+> ng generate component components/nombre-componente
+
+Si te has equivocado creando un componente y lo quires borrar:
+- 1) Eliminar el directorio del componente con los 4 archivos
+- 2) Eliminar la declaración componente en la sección declarations de app.module.ts y eliminar el import de dicho componente en ese mismo fichero.
+
+Para generar un servicio (dentro del directorio services y sin sufijo):
+
+> ng generate service services/nombre-servicio
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+Como el proyecto no está alojado en la raíz del dominio, sino que está en https://carherco.es/envelope-openers, hay que hacer el build indicando el base-href:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+> ng build --base-href=/envelope-openers/ --prod
 
 ## Further help
 
