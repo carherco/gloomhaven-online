@@ -9,7 +9,7 @@ import { Players } from 'src/app/data/players';
 })
 export class PlayersPageComponent implements OnInit {
 
-  players = Players;
+  players: Player[] = Players;
   constructor() { }
 
   ngOnInit(): void {
