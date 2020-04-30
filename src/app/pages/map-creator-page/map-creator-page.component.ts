@@ -1,5 +1,5 @@
 import { Component, DoCheck } from '@angular/core';
-import { Map16Matrix, Map16Tokens } from 'src/app/data/mapsDef';
+import { Scenarios } from 'src/app/data/mapsDef';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
 import { Token } from 'src/app/model/token';
 
@@ -10,8 +10,8 @@ import { Token } from 'src/app/model/token';
 })
 export class MapCreatorPageComponent implements DoCheck {
 
-  originalMatrix = Map16Matrix;
-  availableTokens: Token[] = Map16Tokens;
+  originalMatrix = Scenarios[16].matrix;
+  availableTokens: Token[] = Scenarios[16].tokens;
   textAreaValue: string;
 
   scenarioId: number;

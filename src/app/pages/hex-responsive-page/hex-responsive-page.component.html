@@ -39,8 +39,12 @@
 </ng-template>
 
 <div class="row">
-  <img [src]="scenarioAvatar">
-  <span>18</span> - <span>Abandoned Sewers</span>
+  <h1>
+      <img [src]="scenarioAvatar">
+      <span>{{ scenarioId }}</span> - <span>{{ scenarioName }}</span>
+      <span> ({{ scenarioGoal }})</span>
+  </h1>
+
 </div>
 
 <div class="row">

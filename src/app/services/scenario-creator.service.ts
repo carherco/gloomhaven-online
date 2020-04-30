@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Token, CorridorManMadeStoneToken, WaterToken, CorridorNaturalStoneToken } from '../model/token';
+import { Scenarios } from '../data/mapsDef';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,9 @@ export class ScenarioCreatorService {
 
   getUrlScenarioAvatar(id): string {
     return 'assets/images/world-map/' + id + '.png';
+  }
+
+  getScenarioData(id) {
+    return Scenarios[id];
   }
 }

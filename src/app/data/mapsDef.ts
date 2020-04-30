@@ -1,6 +1,6 @@
 import { Token } from '../model/token';
 
-export const Map18Matrix = [
+const Scenario18Matrix = [
   ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
     ['0', '0', 'W', '0', '0', '0', 'D', '0', '0', '0', '0', '0', '0'],
   ['0', '0', 'W', '0', '0', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W'],
@@ -19,7 +19,7 @@ export const Map18Matrix = [
     ['-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '-'],
 ];
 
-export const Map18Tokens: Token[] = [
+const Scenario18Tokens: Token[] = [
   {id: 'player1', type: 'player', src: 'assets/Cragheart_token.png', maxHealth: 12, health: 12, status: {} },
   {id: 'player2', type: 'player', src: 'assets/Tinkerer_token.png', maxHealth: 11, health: 11, status: {} },
   {id: 'summon_bob', name: 'Bob', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6, status: {} },
@@ -37,7 +37,15 @@ export const Map18Tokens: Token[] = [
   {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
 ];
 
-export const Map16Matrix = [
+const Scenario18 = {
+  id: 18,
+  name: 'Abandoned Sewers',
+  goal: 'Kill all enemies',
+  matrix: Scenario18Matrix,
+  tokens: Scenario18Tokens
+};
+
+const Scenario16Matrix = [
   ['1', '1', '1', '1', '1', '1'],
     ['1', '1', '1', '1', '1'],
   ['1', '1', '1', '1', '1', '1', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1'],
@@ -52,7 +60,7 @@ export const Map16Matrix = [
     ['-', '-', '-', '1', '1', '1', '1'],
 ];
 
-export const Map16Tokens: Token[] = [
+const Scenario16Tokens: Token[] = [
   {id: 'player1', type: 'player', src: 'assets/Cragheart_token.png', maxHealth: 11, health: 11 },
   {id: 'player2', type: 'player', src: 'assets/Tinkerer_token.png', maxHealth: 9, health: 9 },
   {id: 'summon_bob', name: 'Bob', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6 },
@@ -73,7 +81,15 @@ export const Map16Tokens: Token[] = [
   {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
 ];
 
-export const Map24Matrix = [
+const Scenario16 = {
+  id: 16,
+  name: 'Mountain Pass',
+  goal: 'Kill all enemies',
+  matrix: Scenario16Matrix,
+  tokens: Scenario16Tokens
+};
+
+const Scenario24Matrix = [
   ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1'],
   ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1'],
   ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1', '1', '-', '0'],
@@ -89,7 +105,7 @@ export const Map24Matrix = [
   ['-', '-', '-', '-', '-', '0', '0', '0', '0', '0', '0', '0', '0', '-', '-', '-', '1'],
 ];
 
-export const Map24Tokens: Token[] = [
+const Scenario24Tokens: Token[] = [
   {id: 'player1', type: 'player', src: 'assets/Cragheart_token.png', maxHealth: 11, health: 11 },
   {id: 'player2', type: 'player', src: 'assets/Tinkerer_token.png', maxHealth: 9, health: 9 },
   {id: 'summon_bob', name: 'Bob', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6 },
@@ -109,7 +125,15 @@ export const Map24Tokens: Token[] = [
   {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
 ];
 
-export const Map25Matrix = [
+const Scenario24 = {
+  id: 24,
+  name: 'Echo Chamber',
+  goal: 'Open all doors (fog tiles)',
+  matrix: Scenario24Matrix,
+  tokens: Scenario24Tokens
+};
+
+const Scenario25Matrix = [
   ['-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1', '1'],
   ['-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1', '1', '1'],
   ['-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1', '1', '1'],
@@ -132,7 +156,7 @@ export const Map25Matrix = [
   ['1', '1', '1', '1', '1', '1', '1', '1'],
 ];
 
-export const Map25Tokens: Token[] = [
+const Scenario25Tokens: Token[] = [
   {id: 'player1', type: 'player', src: 'assets/Cragheart_token.png', maxHealth: 11, health: 11 },
   {id: 'player2', type: 'player', src: 'assets/Tinkerer_token.png', maxHealth: 9, health: 9 },
   {id: 'summon_bob', name: 'Bob', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6 },
@@ -150,3 +174,19 @@ export const Map25Tokens: Token[] = [
   {id: 'treasure', type: 'loot', src: 'assets/images/overlay-tokens/treasures/treasure.png' },
   {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
 ];
+
+const Scenario25 = {
+  id: 25,
+  name: 'Icecrag Ascent',
+  goal: 'All characters must escape through the exit',
+  matrix: Scenario25Matrix,
+  tokens: Scenario25Tokens
+};
+
+
+export const Scenarios = {
+  16: Scenario16,
+  18: Scenario18,
+  24: Scenario24,
+  25: Scenario25,
+};

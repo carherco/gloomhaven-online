@@ -1,11 +1,10 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Map18Matrix } from 'src/app/data/mapsDef';
 import { Token } from 'src/app/model/token';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
-import { Map18Tokens, Map16Matrix, Map16Tokens, Map24Matrix, Map24Tokens, Map25Matrix, Map25Tokens } from './../../data/mapsDef';
+// import { Map18Tokens, Map16Matrix, Map16Tokens, Map24Matrix, Map24Tokens, Map25Matrix, Map25Tokens } from './../../data/mapsDef';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
 
 @Component({
@@ -16,11 +15,13 @@ import { ScenarioCreatorService } from 'src/app/services/scenario-creator.servic
 })
 export class HexResponsivePageComponent implements OnInit {
 
-  @Input() originalMatrix = Map16Matrix;
-  @Input() availableTokens: Token[] = Map16Tokens;
+  @Input() originalMatrix;
+  @Input() availableTokens;
 
   scenarioId: number;
   scenarioAvatar: string;
+  scenarioName: string;
+  scenarioGoal: string;
   currentMatrix: Token[][][];
   currentMatrixFirebaseId: string;
 
@@ -54,33 +55,12 @@ export class HexResponsivePageComponent implements OnInit {
     this.currentMatrix = [];
     this.route.params.subscribe( p => {
       this.scenarioId = p.id;
-      switch (p.id) {
-        case '16':
-          this.originalMatrix = Map16Matrix;
-          this.availableTokens = Map16Tokens;
-          this.currentMatrixFirebaseId = 'envelope_openers_16';
-          break;
-        case '18':
-          this.originalMatrix = Map18Matrix;
-          this.availableTokens = Map18Tokens;
-          this.currentMatrixFirebaseId = 'envelope_openers_18';
-          break;
-        case '24':
-          this.originalMatrix = Map24Matrix;
-          this.availableTokens = Map24Tokens;
-          this.currentMatrixFirebaseId = 'envelope_openers_24';
-          break;
-        case '25':
-          this.originalMatrix = Map25Matrix;
-          this.availableTokens = Map25Tokens;
-          this.currentMatrixFirebaseId = 'envelope_openers_25';
-          break;
-        default:
-          this.originalMatrix = Map16Matrix;
-          this.availableTokens = Map16Tokens;
-          this.currentMatrixFirebaseId = 'envelope_openers_16';
-          break;
-      }
+      const scenario = this.scenarioCreator.getScenarioData(this.scenarioId);
+      this.originalMatrix = scenario.matrix;
+      this.availableTokens = scenario.tokens;
+      this.scenarioName = scenario.name;
+      this.scenarioGoal = scenario.goal;
+      this.currentMatrixFirebaseId = 'envelope_openers_' + this.scenarioId;
       this.scenarioAvatar = this.scenarioCreator.getUrlScenarioAvatar(this.scenarioId);
       this.ngOnInit();
     });
