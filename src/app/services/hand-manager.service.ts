@@ -10,8 +10,8 @@ export class HandManagerService {
   discardedCards = [];
   lostCards = [];
   activeCards = [];
-  playCard1 = [];
-  playCard2 = [];
+  playCard1 = {};
+  playCard2 = {};
 
   constructor() { }
 }
