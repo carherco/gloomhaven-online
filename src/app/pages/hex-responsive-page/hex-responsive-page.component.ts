@@ -6,6 +6,7 @@ import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
 // import { Map18Tokens, Map16Matrix, Map16Tokens, Map24Matrix, Map24Tokens, Map25Matrix, Map25Tokens } from './../../data/mapsDef';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
+import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
 
 @Component({
   selector: 'app-hex-responsive-page',
@@ -47,6 +48,7 @@ export class HexResponsivePageComponent implements OnInit {
 
   constructor(
     private scenarioCreator: ScenarioCreatorService,
+    private campaignManager: CampaignManagerService,
     private route: ActivatedRoute,
     private afs: AngularFirestore,
     private cdr: ChangeDetectorRef,
@@ -57,7 +59,7 @@ export class HexResponsivePageComponent implements OnInit {
       this.scenarioId = p.id;
       const scenario = this.scenarioCreator.getScenarioData(this.scenarioId);
       this.originalMatrix = scenario.matrix;
-      this.availableTokens = scenario.tokens;
+      this.availableTokens =  this.campaignManager.getPlayersTokens().concat(scenario.tokens);
       this.scenarioName = scenario.name;
       this.scenarioGoal = scenario.goal;
       this.currentMatrixFirebaseId = 'envelope_openers_' + this.scenarioId;

@@ -38,22 +38,23 @@
   </div>
 </ng-template>
 
+<div id="available-tokens">
+  <div>
+    <button class="btn btn-danger" (click)="resetScenario()">Reset Scenario</button>
+    <img *ngFor="let token of availableTokens" [src]="token.src" alt="" [title]="token.name" width="70" draggable="true" (dragstart)="dragStartFromPool(token)">
+  </div>
+</div>
+
 <div class="row">
   <h1>
       <img [src]="scenarioAvatar">
       <span>{{ scenarioId }}</span> - <span>{{ scenarioName }}</span>
       <span> ({{ scenarioGoal }})</span>
   </h1>
-
 </div>
 
 <div class="row">
-  <div id="available-tokens" class="col-1">
-    <button class="btn btn-danger" (click)="resetScenario()">Reset Scenario</button>
-    <img *ngFor="let token of availableTokens" [src]="token.src" alt="" width="70" draggable="true" (dragstart)="dragStartFromPool(token)">
-  </div>
-
-  <div id="board" class="col-11">
+  <div id="board" class="col-12">
     <ul id="hexGrid" *ngFor="let row of currentMatrix; let odd=odd; let rowIndex=index;" >
       <li class="hex" *ngFor="let cell of row; let colIndex=index;" [class.odd]="odd">
         <div class="hexIn" *ngIf="cell.slice(-1).pop(); let uppestToken">

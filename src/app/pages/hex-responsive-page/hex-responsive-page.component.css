@@ -26,6 +26,15 @@
   list-style-type: none;
 }
 
+#available-tokens {
+  float:right; 
+  width: 180px;
+}
+
+#available-tokens div {
+  position: fixed;
+}
+
 #hexGrid {
   display: block;
   width: 90%;
