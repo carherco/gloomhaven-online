@@ -170,7 +170,9 @@ export class HexResponsivePageComponent implements OnInit {
   }
 
   removeToken(modal) {
-    this.currentMatrix[this.rowSelected][this.columnSelected].pop();
+    if (this.currentMatrix[this.rowSelected][this.columnSelected].length > 1) {
+      this.currentMatrix[this.rowSelected][this.columnSelected].pop();
+    }
     this.closeModal(modal);
   }
 
