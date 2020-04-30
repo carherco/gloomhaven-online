@@ -20,6 +20,7 @@ export class HexResponsivePageComponent implements OnInit {
   @Input() availableTokens: Token[] = Map16Tokens;
 
   scenarioId: number;
+  scenarioAvatar: string;
   currentMatrix: Token[][][];
   currentMatrixFirebaseId: string;
 
@@ -80,6 +81,7 @@ export class HexResponsivePageComponent implements OnInit {
           this.currentMatrixFirebaseId = 'envelope_openers_16';
           break;
       }
+      this.scenarioAvatar = this.scenarioCreator.getUrlScenarioAvatar(this.scenarioId);
       this.ngOnInit();
     });
   }

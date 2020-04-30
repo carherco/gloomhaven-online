@@ -38,4 +38,8 @@ export class ScenarioCreatorService {
       )
     );
   }
+
+  getUrlScenarioAvatar(id): string {
+    return 'assets/images/world-map/' + id + '.png';
+  }
 }
