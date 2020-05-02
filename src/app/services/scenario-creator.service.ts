@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Token, CorridorManMadeStoneToken, WaterToken, CorridorNaturalStoneToken } from '../model/token';
+import { Token, CorridorManMadeStoneToken, WaterToken, CorridorNaturalStoneToken, EnemyToken, LootToken, TrapToken } from '../model/token';
 import { Scenarios } from '../data/mapsDef';
 
 @Injectable({
@@ -7,8 +7,7 @@ import { Scenarios } from '../data/mapsDef';
 })
 export class ScenarioCreatorService {
 
-  enemiesNotBossesIds = ['Ooze', 'Giant-Viper', 'Vermling-Scout'];
-  enemiesBossesIds = [];
+  scenarioLevel = 2;
   constructor() { }
 
   createFromMatrix(matrix: string[][]): Token[][][] {
@@ -47,29 +46,49 @@ export class ScenarioCreatorService {
   }
 
   getScenarioData(id) {
-    return Scenarios[id];
+    return {...Scenarios[id], tokens: this.getScenarioTokens(id)};
   }
 
   getScenarioTokens(id): Token[] {
 
-    // function partition(array, isValid) {
-    //   return array.reduce(([pass, fail], elem) => {
-    //     return isValid(elem) ? [[...pass, elem], fail] : [pass, [...fail, elem]];
-    //   }, [[], []]);
-    // }
+    // const tokensIds = Scenarios[id].tokens;
+    const tokensIds = [
+      {id: 'Ooze', type: 'enemy'},
+      {id: 'Giant-Viper', type: 'enemy'},
+      {id: 'Vermling-Scout', type: 'enemy'},
+      {id: 'poison-gas', type: 'trap'},
+      {id: 'treasure', type: 'loot'},
+      {id: 'coin-1', type: 'loot'},
+    ];
 
-    const tokensIds = ['Ooze', 'Giant-Viper', 'Vermling-Scout', 'poison-gas', 'treasure', 'coin-1'];
-    // let enemiesIds, bossesIds, others;
+    const output = tokensIds.flatMap(
+      t => {
+        let tokens: Token[];
+        switch (t.type) {
+          case 'enemy':
+            tokens = [
+              new EnemyToken(t.id, 'normal', this.scenarioLevel) as Token,
+              new EnemyToken(t.id, 'elite', this.scenarioLevel) as Token
+            ];
+            break;
+          case 'boss':
+            tokens = [];
+            break;
+          case 'trap':
+            tokens = [new TrapToken(t.id, this.scenarioLevel) as Token];
+            break;
+          case 'loot':
+            tokens = [new LootToken(t.id) as Token];
+            break;
 
-    // [enemiesIds, bossesIds] = partition(tokensIds, (t) => this.enemiesNotBossesIds.includes(id));
-    // [bossesIds, others] = partition(others, (t) => this.enemiesBossesIds.includes(id));
-
-    function createClassByName(name,...a) {
-      const c = eval(name);
-      return new c(...a);
-    }
-    return tokensIds.flatMap(
-      t => this.enemiesNotBossesIds.includes(id) ? [createClassByName(t), createClassByName(t + 'Elite')] : [createClassByName(t)]
+          default:
+            tokens = [];
+            break;
+        }
+        return tokens;
+      }
     );
+
+    return output;
   }
 }

@@ -25,9 +25,9 @@
         </div>
 
         <div align ="center">
-          <button class="btn btn-danger" (click)="damageButtonClick()" [disabled]="elementSelected.health === 0" type ="button" style="font-size:15px;">Damage 1</button>
-          <span id="health-counter">{{ elementSelected.health }}</span>
-          <button class="btn btn-success" (click)="healButtonClick()" [disabled]="elementSelected.health === elementSelected.maxHealth || elementSelected.status?.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
+          <button class="btn btn-danger" (click)="damageButtonClick()" [disabled]="elementSelected.stats.h === 0" type ="button" style="font-size:15px;">Damage 1</button>
+          <span id="health-counter">{{ elementSelected.stats.h }}</span>
+          <button class="btn btn-success" (click)="healButtonClick()" [disabled]="elementSelected.stats.h === elementSelected.maxHealth || elementSelected.status?.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
         </div>
 
       </div>
@@ -70,9 +70,9 @@
               <img *ngIf="uppestToken.status.invisible" class="status" src = "./assets/invisible.png"/>
               <img *ngIf="uppestToken.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
             </div>
-            <div class="info" *ngIf="uppestToken.health">{{uppestToken.health}} <ng-container *ngIf="uppestToken.shield"> - ({{uppestToken.shield}})</ng-container><ng-container *ngIf="uppestToken.retaliate"> - *{{uppestToken.retaliate}}</ng-container></div>
+            <div class="info" *ngIf="uppestToken.stats?.h">{{uppestToken.stats.h}} <ng-container *ngIf="uppestToken.stats?.s"> - ({{uppestToken.stats.s}})</ng-container><ng-container *ngIf="uppestToken.stats?.re"> - *{{uppestToken.stats.re}}</ng-container></div>
             <h1 *ngIf="['enemy','enemy elite','summon_player'].includes(uppestToken.type)">{{uppestToken.name}}</h1>
-            <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.move}}M {{uppestToken.attack}}A {{uppestToken.range}}R</p>
+            <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.stats.m}}M {{uppestToken.stats.a}}A {{uppestToken.stats.r}}R</p>
           </a>
         </div>
       </li>

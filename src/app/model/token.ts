@@ -9,12 +9,6 @@ interface Token {
   name?: string;
   stats?: Stats;
   maxHealth?: number;
-  health?: number;
-  shield?: number;
-  move?: number;
-  attack?: number;
-  range?: number;
-  retaliate?: number;
   poison?: boolean;
   flying?: boolean;
   status?: any;
@@ -43,11 +37,12 @@ class EnemyToken {
   constructor(id: string, type: 'normal'|'elite', level: number) {
     let token: Token;
     const enemyDef = EnemyDefs[id];
+    console.log(id, type, level);
     if (type === 'elite') {
       token = {
         id,
         type: 'enemy elite',
-        src: '',
+        src: 'assets/' + id + '_token.jpg',
         name: id,
         stats: enemyDef.stats[level].elite,
         extraInfo: enemyDef.description,
@@ -56,7 +51,7 @@ class EnemyToken {
       token = {
         id,
         type: 'enemy',
-        src: '',
+        src: 'assets/' + id + '_token.jpg',
         name: id,
         stats: enemyDef.stats[level].normal,
         extraInfo: enemyDef.description,
@@ -66,10 +61,42 @@ class EnemyToken {
   }
 }
 
+class BossToken {
+
+}
+
+class LootToken {
+  constructor(id: string) {
+    const token: Token = {
+      id,
+      type: 'loot',
+      src: '',
+      name: id
+    };
+    return token;
+  }
+}
+
+class TrapToken {
+  constructor(id: string, level: number) {
+    const token: Token = {
+      id,
+      type: 'trap',
+      src: '',
+      name: id
+    };
+    return token;
+  }
+}
+
 export {
   TokenType,
   Token,
   CorridorManMadeStoneToken,
   CorridorNaturalStoneToken,
-  WaterToken
+  WaterToken,
+  EnemyToken,
+  BossToken,
+  LootToken,
+  TrapToken
 };

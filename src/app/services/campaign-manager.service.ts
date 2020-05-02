@@ -23,13 +23,37 @@ export class CampaignManagerService {
         type: 'player',
         src: 'assets/' + player.character.class + '_token.png',
         maxHealth: player.hitPoints,
-        health: player.hitPoints
+        stats: {
+          h: player.hitPoints
+        }
       };
     });
 
     const summonTokens: Token[] = [
-      {id: 'summon_bob', name: 'Bob', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6 },
-      {id: 'summon_rats', name: 'rats', type: 'summon_player', src: 'assets/images/summons/summons.png', maxHealth: 6, health: 6, attack: 1 },
+      {
+        id: 'summon_bob', 
+        name: 'Bob', 
+        type: 'summon_player', 
+        src: 'assets/images/summons/summons.png', 
+        maxHealth: 6, 
+        stats: {
+          h: 6,
+          m: 2,
+          a: 2
+        } 
+      },
+      {
+        id: 'summon_rats', 
+        name: 'rats', 
+        type: 'summon_player', 
+        src: 'assets/images/summons/summons.png', 
+        maxHealth: 6, 
+        stats: {
+          h: 6, 
+          m: 2,
+          a: 1
+        } 
+      },
     ];
     
     return playerTokens.concat(summonTokens);

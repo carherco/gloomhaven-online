@@ -11,7 +11,7 @@ import { Token } from 'src/app/model/token';
 export class MapCreatorPageComponent implements DoCheck {
 
   originalMatrix = Scenarios[16].matrix;
-  availableTokens: Token[] = Scenarios[16].tokens;
+  // availableTokens: TokenDef[] = Scenarios[16].tokens;
   textAreaValue: string;
 
   scenarioId: number;

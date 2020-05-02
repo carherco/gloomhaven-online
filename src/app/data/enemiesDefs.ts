@@ -1,7 +1,7 @@
 export interface Stats {
   h: number; // hit points
-  m: number; // move points
-  a: number; // attack
+  m?: number; // move points
+  a?: number; // attack
   r?: number; // range
   f?: boolean; // flying
   s?: number; // shield
@@ -17,7 +17,7 @@ export interface EnemyDef {
 }
 
 const VermlingScout: EnemyDef = {
-  id: 'VermlingScout',
+  id: 'Vermling-Scout',
   description: '',
   stats: {
     1: {
@@ -36,7 +36,7 @@ const VermlingScout: EnemyDef = {
 };
 
 const GiantViper: EnemyDef = {
-  id: 'GiantViper',
+  id: 'Giant-Viper',
   description: '',
   stats: {
     1: {
@@ -74,7 +74,7 @@ const Ooze: EnemyDef = {
 };
 
 export const EnemyDefs = {
-  VermlingScout,
-  GiantViper,
+  'Vermling-Scout': VermlingScout,
+  'Giant-Viper': GiantViper,
   Ooze
 };

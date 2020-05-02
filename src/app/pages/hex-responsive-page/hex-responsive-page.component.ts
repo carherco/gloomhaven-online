@@ -78,7 +78,6 @@ export class HexResponsivePageComponent implements OnInit {
       doc => {
         this.currentMatrix = JSON.parse(doc.currentMatrix);
         this.cdr.detectChanges();
-        console.log(this.currentMatrix);
       }
     );
   }
@@ -158,11 +157,11 @@ export class HexResponsivePageComponent implements OnInit {
   }
 
   damageButtonClick() {
-    this.elementSelected.health--;
+    this.elementSelected.stats.h--;
   }
 
   healButtonClick() {
-    this.elementSelected.health++;
+    this.elementSelected.stats.h++;
   }
 
   closeModal(modal) {
