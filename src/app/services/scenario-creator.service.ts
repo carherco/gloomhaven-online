@@ -7,6 +7,8 @@ import { Scenarios } from '../data/mapsDef';
 })
 export class ScenarioCreatorService {
 
+  enemiesNotBossesIds = ['Ooze', 'Giant-Viper', 'Vermling-Scout'];
+  enemiesBossesIds = [];
   constructor() { }
 
   createFromMatrix(matrix: string[][]): Token[][][] {
@@ -46,5 +48,28 @@ export class ScenarioCreatorService {
 
   getScenarioData(id) {
     return Scenarios[id];
+  }
+
+  getScenarioTokens(id): Token[] {
+
+    // function partition(array, isValid) {
+    //   return array.reduce(([pass, fail], elem) => {
+    //     return isValid(elem) ? [[...pass, elem], fail] : [pass, [...fail, elem]];
+    //   }, [[], []]);
+    // }
+
+    const tokensIds = ['Ooze', 'Giant-Viper', 'Vermling-Scout', 'poison-gas', 'treasure', 'coin-1'];
+    // let enemiesIds, bossesIds, others;
+
+    // [enemiesIds, bossesIds] = partition(tokensIds, (t) => this.enemiesNotBossesIds.includes(id));
+    // [bossesIds, others] = partition(others, (t) => this.enemiesBossesIds.includes(id));
+
+    function createClassByName(name,...a) {
+      const c = eval(name);
+      return new c(...a);
+    }
+    return tokensIds.flatMap(
+      t => this.enemiesNotBossesIds.includes(id) ? [createClassByName(t), createClassByName(t + 'Elite')] : [createClassByName(t)]
+    );
   }
 }

@@ -27,7 +27,7 @@
         <div align ="center">
           <button class="btn btn-danger" (click)="damageButtonClick()" [disabled]="elementSelected.health === 0" type ="button" style="font-size:15px;">Damage 1</button>
           <span id="health-counter">{{ elementSelected.health }}</span>
-          <button class="btn btn-success" (click)="healButtonClick()" [disabled]="elementSelected.health === elementSelected.maxHealth || elementSelected.status.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
+          <button class="btn btn-success" (click)="healButtonClick()" [disabled]="elementSelected.health === elementSelected.maxHealth || elementSelected.status?.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
         </div>
 
       </div>

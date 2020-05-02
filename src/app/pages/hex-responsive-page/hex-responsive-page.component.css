@@ -21,6 +21,7 @@
   display: block;
   width: 100%;
   margin: 0 auto;
+  
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   list-style-type: none;
@@ -28,11 +29,15 @@
 
 #available-tokens {
   float:right; 
-  width: 180px;
+  width: 150px;
 }
 
 #available-tokens div {
   position: fixed;
+}
+
+.row { /* Si se solapa con #available-tokens, dejan de tener drag-drop */
+  margin-right: 150px;
 }
 
 #hexGrid {

@@ -10,7 +10,8 @@ describe('ScenarioCreatorService', () => {
     service = TestBed.inject(ScenarioCreatorService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('Prueba de getScenarioTokens', () => {
+    const output = service.getScenarioTokens('18');
+    console.log(output);
   });
 });
