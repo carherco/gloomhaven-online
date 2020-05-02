@@ -30,7 +30,7 @@ const Scenario18Tokens: TokenDef[] = [
   {id: 'Ooze', type: 'enemy'},
   {id: 'Giant-Viper', type: 'enemy'},
   {id: 'Vermling-Scout', type: 'enemy'},
-  {id: 'poison-gas', type: 'trap'},
+  {id: 'poison-gas-trap', type: 'trap'},
   {id: 'treasure', type: 'loot'},
   {id: 'coin-1', type: 'loot'},
 ];

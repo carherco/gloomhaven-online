@@ -70,7 +70,7 @@ class LootToken {
     const token: Token = {
       id,
       type: 'loot',
-      src: '',
+      src: 'assets/images/overlay-tokens/treasures/' + id + '.png',
       name: id
     };
     return token;
@@ -82,7 +82,7 @@ class TrapToken {
     const token: Token = {
       id,
       type: 'trap',
-      src: '',
+      src: 'assets/images/overlay-tokens/traps/' + id + '.png',
       name: id
     };
     return token;

@@ -51,16 +51,7 @@ export class ScenarioCreatorService {
 
   getScenarioTokens(id): Token[] {
 
-    // const tokensIds = Scenarios[id].tokens;
-    const tokensIds = [
-      {id: 'Ooze', type: 'enemy'},
-      {id: 'Giant-Viper', type: 'enemy'},
-      {id: 'Vermling-Scout', type: 'enemy'},
-      {id: 'poison-gas', type: 'trap'},
-      {id: 'treasure', type: 'loot'},
-      {id: 'coin-1', type: 'loot'},
-    ];
-
+    const tokensIds = Scenarios[id].tokens;
     const output = tokensIds.flatMap(
       t => {
         let tokens: Token[];
