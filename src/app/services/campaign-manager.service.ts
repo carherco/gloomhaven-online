@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Players } from 'src/app/data/players';
 import { Player } from 'src/app/model/player';
 import { Token } from '../model/token';
+import { Scenarios } from '../data/mapsDef';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class CampaignManagerService {
 
   getPlayers(): Player[] {
     return this.players;
+  }
+
+  getScenarios() {
+    return Object.entries(Scenarios).map( s => s[1]);
   }
 
   getPlayersTokens(): Token[] {
@@ -31,31 +36,31 @@ export class CampaignManagerService {
 
     const summonTokens: Token[] = [
       {
-        id: 'summon_bob', 
-        name: 'Bob', 
-        type: 'summon_player', 
-        src: 'assets/images/summons/summons.png', 
-        maxHealth: 6, 
+        id: 'summon_bob',
+        name: 'Bob',
+        type: 'summon_player',
+        src: 'assets/images/summons/summons.png',
+        maxHealth: 6,
         stats: {
           h: 6,
           m: 2,
           a: 2
-        } 
+        }
       },
       {
-        id: 'summon_rats', 
-        name: 'rats', 
-        type: 'summon_player', 
-        src: 'assets/images/summons/summons.png', 
-        maxHealth: 6, 
+        id: 'summon_rats',
+        name: 'rats',
+        type: 'summon_player',
+        src: 'assets/images/summons/summons.png',
+        maxHealth: 6,
         stats: {
-          h: 6, 
+          h: 6,
           m: 2,
           a: 1
-        } 
+        }
       },
     ];
-    
+
     return playerTokens.concat(summonTokens);
   }
 }
