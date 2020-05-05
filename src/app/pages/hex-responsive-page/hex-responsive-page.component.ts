@@ -76,10 +76,24 @@ export class HexResponsivePageComponent implements OnInit {
     const currentMatrixDoc = this.afs.doc<ScenarioSnapshot>('escenarios/' + this.currentMatrixFirebaseId);
     currentMatrixDoc.valueChanges().subscribe(
       doc => {
-        this.currentMatrix = JSON.parse(doc.currentMatrix);
+        if (doc) {
+          this.currentMatrix = JSON.parse(doc.currentMatrix);
+        } else {
+          this.currentMatrix = [];
+        }
         this.cdr.detectChanges();
       }
     );
+  }
+
+  registerMap() {
+    this.initMap();
+    this.addMap();
+  }
+
+  resetScenario() {
+    this.initMap();
+    this.save();
   }
 
   initMap() {
@@ -94,17 +108,7 @@ export class HexResponsivePageComponent implements OnInit {
 
     // Para dar de alta el escenario en la base de datos
     this.firebaseItemsCollection = this.afs.collection<ScenarioSnapshot>('escenarios');
-    this.firebaseItemsCollection.add({ id: this.currentMatrixFirebaseId, scenarioId: 25, currentMatrix: scenarioSnapshot.currentMatrix});
-
-    // Dar de alta generando previamente un id
-    // const id = this.afs.createId();
-    // const item: Item = { id, name };
-    // this.itemsCollection.doc(id).set(item);
-  }
-
-  resetScenario() {
-    this.initMap();
-    this.save();
+    this.firebaseItemsCollection.doc(this.currentMatrixFirebaseId).set({ id: this.currentMatrixFirebaseId, scenarioId: this.scenarioId, currentMatrix: scenarioSnapshot.currentMatrix});
   }
 
   dragStartFromPool(token: Token) {
