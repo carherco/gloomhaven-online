@@ -77,6 +77,46 @@ const Scenario16 = {
   tokens: Scenario16Tokens
 };
 
+const Scenario23Matrix = [
+  ["-","-","-","-","-","-","-","-","-","-","-","-","-","0","0","0","0"],
+    ["-","-","-","-","-","-","-","-","-","-","-","-","0","0","0","0","0"],
+  ["-","0","0","0","-","-","-","-","-","-","-","-","0","0","0","0","0","0"],
+    ["0","0","0","0","-","-","-","-","-","-","-","-","0","0","0","0","0"],
+  ["0","0","0","0","0","-","-","-","-","-","-","-","0","0","0","0","0","0"],
+    ["0","0","0","0","-","-","-","-","-","-","-","-","0","0","0","0","0"],
+  ["-","0","0","0","D","0","0","-","-","-","0","0","D","0","0","0","0"],
+    ["-","-","-","-","0","0","0","-","-","0","0","0"],
+  ["-","-","-","-","-","0","0","0","-","0","0","0"],
+    ["-","-","-","-","-","0","0","0","0","0","0"],
+  ["-","-","-","-","-","-","0","0","0","0","0"],
+    ["-","-","-","-","-","-","0","0","0","0"],
+  ["-","-","-","-","-","-","-","-","D"],
+    ["-","-","-","-","-","0","0","0","0","0","0"],
+  ["-","-","-","-","-","-","0","0","0","0","0"],
+    ["-","-","-","-","-","0","0","0","0","0","0"],
+  ["-","-","-","-","-","-","0","0","0","0","0"],
+    ["-","-","-","-","-","0","0","0","0","0","0"]
+];
+
+const Scenario23Tokens: TokenDef[] = [
+  {id: 'Stone-Golem', type: 'enemy' },
+  {id: 'Ancient-Artillery', type: 'enemy' },
+  {id: 'Living-Bones', type: 'enemy' },
+  {id: 'Living-Spirit', type: 'enemy' },
+  {id: 'damage-trap', type: 'trap' },
+  {id: 'boulder', type: 'obstacle' },
+  {id: 'treasure', type: 'loot' },
+  {id: 'coin-1', type: 'loot' },
+];
+
+const Scenario23 = {
+  id: 23,
+  name: 'Deep Ruins',
+  goal: 'Occupy all pressure plates simultaneously',
+  matrix: Scenario23Matrix,
+  tokens: Scenario23Tokens
+};
+
 const Scenario24Matrix = [
   ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1'],
   ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1'],
@@ -100,8 +140,8 @@ const Scenario24Tokens: TokenDef[] = [
   {id: 'spike-pit', type: 'trap', src: 'assets/images/overlay-tokens/traps/spike-pit-trap.png' },
   {id: 'rock-column', type: 'obstacle', src: 'assets/images/overlay-tokens/obstacles/rock-column.png' },
   {id: 'nest', type: 'obstacle', src: 'assets/images/overlay-tokens/obstacles/nest.png' },
-  {id: 'treasure', type: 'loot', src: 'assets/images/overlay-tokens/treasures/treasure.png' },
-  {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
+  {id: 'treasure', type: 'loot' },
+  {id: 'coin-1', type: 'loot' },
 ];
 
 const Scenario24 = {
@@ -141,8 +181,8 @@ const Scenario25Tokens: TokenDef[] = [
   {id: 'Spitting-Drake', name: 'Spitting-Drake', type: 'enemy' },
   {id: 'spike-pit', type: 'trap', src: 'assets/images/overlay-tokens/traps/spike-pit-trap.png' },
   {id: 'boulder', type: 'obstacle', src: 'assets/images/overlay-tokens/obstacles/boulder-1.png' },
-  {id: 'treasure', type: 'loot', src: 'assets/images/overlay-tokens/treasures/treasure.png' },
-  {id: 'coin-1', type: 'loot', src: 'assets/images/overlay-tokens/treasures/coin-1.png' },
+  {id: 'treasure', type: 'loot' },
+  {id: 'coin-1', type: 'loot' },
 ];
 
 const Scenario25 = {
@@ -157,6 +197,7 @@ const Scenario25 = {
 export const Scenarios = {
   16: Scenario16,
   18: Scenario18,
+  23: Scenario23,
   24: Scenario24,
   25: Scenario25,
 };

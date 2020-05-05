@@ -4,8 +4,9 @@ export interface Stats {
   a?: number; // attack
   r?: number; // range
   s?: number; // shield
-  p?: boolean; // poison
+  ta?: number; // target
   re?: number; // retaliate
+  po?: boolean; // poison
   mu?: boolean; // muddle
   wo?: boolean; // wound
   im?: boolean; // immobilize
@@ -18,6 +19,63 @@ export interface EnemyDef {
   flying?: boolean
   stats: {1: {normal: Stats, elite: Stats}, 2: {normal: Stats, elite: Stats}, 3: {normal: Stats, elite: Stats}};
 }
+
+const AncientArtillery: EnemyDef = {
+  id: 'Ancient-Artillery',
+  description: '',
+  stats: {
+    1: {
+      normal: {h:6, a:2, r:4},
+      elite: {h:9, a:3, r:5},
+    },
+    2: {
+      normal: {h:7, a:2, r:5},
+      elite: {h:11, a:3, r:6},
+    },
+    3: {
+      normal: {h:8, a:3, r:5},
+      elite: {h:13, a:4, r:6},
+    }
+  }
+};
+
+const LivingBones: EnemyDef = {
+  id: 'Living-Bones',
+  description: '',
+  stats: {
+    1: {
+      normal: {h:5, m:3, a:1, s:1, ta:2},
+      elite: {h:6, m:4, a:2, s:1, ta:3},
+    },
+    2: {
+      normal: {h:5, m:3, a:2, s:1, ta:2},
+      elite: {h:7, m:4, a:3, s:1, ta:3},
+    },
+    3: {
+      normal: {h:7, m:3, a:2, s:1, ta:2},
+      elite: {h:10, m:4, a:3, s:1, ta:3},
+    }
+  }
+};
+
+const LivingCorpse: EnemyDef = {
+  id: 'Living-Corpse',
+  description: '',
+  stats: {
+    1: {
+      normal: {h:7, m:1, a:3},
+      elite: {h:10, m:1, a:4},
+    },
+    2: {
+      normal: {h:9, m:1, a:3},
+      elite: {h:13, m:1, a:4},
+    },
+    3: {
+      normal: {h:10, m:1, a:4},
+      elite: {h:13, m:2, a:5},
+    }
+  }
+};
 
 const LivingSpirit: EnemyDef = {
   id: 'Living-Spirit',
@@ -63,16 +121,16 @@ const GiantViper: EnemyDef = {
   description: '',
   stats: {
     1: {
-      normal: {h:3, m:2, a:1, p:true},
-      elite: {h:5, m:2, a:2, p:true},
+      normal: {h:3, m:2, a:1, po:true},
+      elite: {h:5, m:2, a:2, po:true},
     },
     2: {
-      normal: {h:4, m:3, a:1, p:true},
-      elite: {h:7, m:3, a:2, p:true},
+      normal: {h:4, m:3, a:1, po:true},
+      elite: {h:7, m:3, a:2, po:true},
     },
     3: {
-      normal: {h:4, m:3, a:2, p:true},
-      elite: {h:8, m:3, a:3, p:true},
+      normal: {h:4, m:3, a:2, po:true},
+      elite: {h:8, m:3, a:3, po:true},
     }
   }
 };
@@ -91,7 +149,7 @@ const Ooze: EnemyDef = {
     },
     3: {
       normal: {h:8, m:1, a:3, r:3, s:1},
-      elite: {h:11, m:2, a:3, r:4, s:1, p:true},
+      elite: {h:11, m:2, a:3, r:4, s:1, po:true},
     }
   }
 };
@@ -226,12 +284,35 @@ const WindDemon: EnemyDef = {
     },
     3: {
       normal: {h:8, m:1, a:3, r:3, s:1},
-      elite: {h:11, m:2, a:3, r:4, s:1, p:true},
+      elite: {h:11, m:2, a:3, r:4, s:1, po:true},
     }
   }
 };
 
+const StoneGolem: EnemyDef = {
+  id: 'Stone-Golem',
+  description: '',
+  stats: {
+    1: {
+      normal: {h:10, m:1, a:3, s:1},
+      elite: {h:11, m:2, a:4, s:2},
+    },
+    2: {
+      normal: {h:11, m:1, a:4, s:1},
+      elite: {h:14, m:2, a:5, s:2},
+    },
+    3: {
+      normal: {h:11, m:1, a:4, s:2},
+      elite: {h:15, m:2, a:5, s:3},
+    }
+  }
+};
+
+
 export const EnemyDefs = {
+  'Ancient-Artillery': AncientArtillery,
+  'Living-Bones': LivingBones,
+  'Living-Corpse': LivingCorpse,
   'Living-Spirit': LivingSpirit,
   'Inox-Guard': InoxGuard,
   'Inox-Archer': InoxArcher,
@@ -239,8 +320,9 @@ export const EnemyDefs = {
   'Wind-Demon': WindDemon,
   'Vermling-Scout': VermlingScout,
   'Giant-Viper': GiantViper,
-  'Ooze': Ooze,
+  Ooze,
   'Spitting-Drake': SpittingDrake,
   'Rending-Drake': RendingDrake,
-  'Hound': Hound,
+  Hound,
+  'Stone-Golem': StoneGolem
 };
