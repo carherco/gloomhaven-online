@@ -10,14 +10,32 @@ export interface Stats {
   mu?: boolean; // muddle
   wo?: boolean; // wound
   im?: boolean; // immobilize
+  ad?: boolean; // advantage
+  di?: boolean; // Attackers gain disadvantage
+  special1?: string;
+  special2?: string;
 }
 
 export interface EnemyDef {
   id: string;
   description: string;
-  isBoss?: boolean;
   flying?: boolean
   stats: {1: {normal: Stats, elite: Stats}, 2: {normal: Stats, elite: Stats}, 3: {normal: Stats, elite: Stats}};
+}
+
+export interface BossDef {
+  id: string;
+  description: string;
+  flying?: boolean;
+  inmuneTo?: {
+    po: boolean;
+    mu: boolean;
+    wo: boolean;
+    im: boolean;
+    st: boolean;
+    cu: boolean;
+  };
+  stats: {1: Stats, 2: Stats, 3: Stats};
 }
 
 const AncientArtillery: EnemyDef = {
@@ -289,6 +307,45 @@ const WindDemon: EnemyDef = {
   }
 };
 
+const SunDemon: EnemyDef = {
+  id: 'Sun-Demon',
+  description: '',
+  flying: true,
+  stats: {
+    1: {
+      normal: {h:7, m:2, a:2, s:1, ad: true},
+      elite: {h:12, m:2, a:3, s:1, ad: true},
+    },
+    2: {
+      normal: {h:9, m:2, a:2, s:1, ad: true},
+      elite: {h:13, m:2, a:4, s:1, ad: true},
+    },
+    3: {
+      normal: {h:10, m:2, a:3, s:1, ad: true},
+      elite: {h:15, m:3, a:4, s:1, ad: true},
+    }
+  }
+};
+
+const NightDemon: EnemyDef = {
+  id: 'Night-Demon',
+  description: '',
+  stats: {
+    1: {
+      normal: {h:5, m:3, a:3, di: true},
+      elite: {h:8, m:4, a:4, di: true},
+    },
+    2: {
+      normal: {h:6, m:3, a:4, di: true},
+      elite: {h:11, m:4, a:4, di: true},
+    },
+    3: {
+      normal: {h:7, m:4, a:4, di: true},
+      elite: {h:13, m:4, a:5, di: true},
+    }
+  }
+};
+
 const StoneGolem: EnemyDef = {
   id: 'Stone-Golem',
   description: '',
@@ -308,6 +365,28 @@ const StoneGolem: EnemyDef = {
   }
 };
 
+const TheColorless: BossDef = {
+  id: 'The-Colorless',
+  description: '',
+  stats: {
+    1: {
+      h:40, m:3, a:3,
+      special1: "Invisible, Self. Consumes Night => Summon Night Demon",
+      special2: "Heal 4, Self. Shield 1. Consumes Sun => Summon Sun Demon",
+    },
+    2: {
+      h:44, m:4, a:3,
+      special1: "Invisible, Self. Consumes Night => Summon Night Demon",
+      special2: "Heal 5, Self. Shield 1. Consumes Sun => Summon Sun Demon",
+    },
+    3: {
+      h:48, m:4, a:4,
+      special1: "Invisible, Self. Consumes Night => Summon Night Demon",
+      special2: "Heal 5, Self. Shield 1. Consumes Sun => Summon Sun Demon",
+    },
+  }
+};
+
 
 export const EnemyDefs = {
   'Ancient-Artillery': AncientArtillery,
@@ -318,6 +397,8 @@ export const EnemyDefs = {
   'Inox-Archer': InoxArcher,
   'Earth-Demon': EarthDemon,
   'Wind-Demon': WindDemon,
+  'Night-Demon': NightDemon,
+  'Sun-Demon': SunDemon,
   'Vermling-Scout': VermlingScout,
   'Giant-Viper': GiantViper,
   Ooze,
@@ -325,4 +406,8 @@ export const EnemyDefs = {
   'Rending-Drake': RendingDrake,
   Hound,
   'Stone-Golem': StoneGolem
+};
+
+export const BossDefs = {
+  'The-Colorless': TheColorless,
 };

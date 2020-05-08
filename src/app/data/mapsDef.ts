@@ -193,6 +193,39 @@ const Scenario25 = {
   tokens: Scenario25Tokens
 };
 
+const Scenario81Matrix = [
+  ["-","-","-","-","1","1","1","1","1","0","0","0","0","0"],
+    ["-","-","1","1","1","1","1","1","D","0","0","0","0","0","0"],
+  ["-","-","1","1","1","1","1","1","1","0","0","0","0","0","0","0"],
+    ["-","1","1","1","-","-","-","-","-","-","-","-","-","0","0","0"],
+  ["-","1","1","1","-","-","-","-","-","-","-","-","-","-","0","0","0"],
+    ["1","1","1","-","0","0","0","-","-","-","-","-","-","-","0","0","0"],
+  ["-","-","1","D","0","0","0","0","-","-","-","-","-","-","-","0"],
+    ["-","-","-","0","0","0","0","0"],
+  ["-","-","-","-","0","0","0","0"],
+    ["-","-","-","-","0","0","0"]
+];
+
+const Scenario81Tokens: TokenDef[] = [
+  {id: 'Night-Demon', type: 'enemy' },
+  {id: 'Sun-Demon', type: 'enemy' },
+  {id: 'Stone-Golem', type: 'enemy' },
+  {id: 'Ancient-Artillery', type: 'enemy' },
+  {id: 'The-Colorless', type: 'boss' },
+  {id: 'poison-gas-trap', type: 'trap'},
+  {id: 'altar', type: 'obstacle' },
+  {id: 'stone-pillar', type: 'obstacle' },
+  {id: 'treasure', type: 'loot' },
+  {id: 'coin-1', type: 'loot' },
+];
+
+const Scenario81 = {
+  id: 81,
+  name: 'Temple of the Eclipse',
+  goal: 'Kill the Colorless',
+  matrix: Scenario81Matrix,
+  tokens: Scenario81Tokens
+};
 
 export const Scenarios = {
   16: Scenario16,
@@ -200,4 +233,5 @@ export const Scenarios = {
   23: Scenario23,
   24: Scenario24,
   25: Scenario25,
+  81: Scenario81,
 };

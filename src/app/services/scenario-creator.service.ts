@@ -1,5 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Token, CorridorManMadeStoneToken, WaterToken, CorridorNaturalStoneToken, EnemyToken, LootToken, TrapToken } from '../model/token';
+import {
+  Token,
+  CorridorManMadeStoneToken,
+  WaterToken,
+  CorridorNaturalStoneToken,
+  EnemyToken,
+  BossToken,
+  ObstacleToken,
+  LootToken,
+  TrapToken
+} from '../model/token';
 import { Scenarios } from '../data/mapsDef';
 
 @Injectable({
@@ -63,7 +73,10 @@ export class ScenarioCreatorService {
             ];
             break;
           case 'boss':
-            tokens = [];
+            tokens = [new BossToken(t.id, this.scenarioLevel) as Token];
+            break;
+          case 'obstacle':
+            tokens = [new ObstacleToken(t.id) as Token];
             break;
           case 'trap':
             tokens = [new TrapToken(t.id, this.scenarioLevel) as Token];

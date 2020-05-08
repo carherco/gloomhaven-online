@@ -11,7 +11,6 @@ export class MenuComponent implements OnInit {
   scenarios;
   constructor(private campaing: CampaignManagerService) {
     this.scenarios = this.campaing.getScenarios();
-    console.log(this.scenarios);
   }
 
   ngOnInit(): void {

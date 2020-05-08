@@ -1,10 +1,11 @@
-import { EnemyDefs, Stats } from '../data/enemiesDefs';
+import { EnemyDefs, BossDefs, Stats } from '../data/enemiesDefs';
 
-type TokenType = 'terrain'|'obstacle'|'difficult-terrain'|'player'|'enemy'|'enemy elite'|'summon_player'|'loot'|'door'|'trap';
+type TokenType = 'terrain'|'obstacle'|'difficult-terrain'|'player'|'enemy'|'enemy elite'|'boss'|'summon_player'|'loot'|'door'|'trap';
 
 interface Token {
   id: string;
   type: TokenType;
+  srcBig?: string;
   src: string;
   name?: string;
   stats?: Stats;
@@ -51,6 +52,7 @@ class EnemyToken {
       token = {
         id,
         type: 'enemy',
+        srcBig: 'assets/' + id + '.jpg',
         src: 'assets/' + id + '_token.jpg',
         name: id,
         stats: enemyDef.stats[level].normal,
@@ -62,7 +64,21 @@ class EnemyToken {
 }
 
 class BossToken {
-
+  constructor(id: string, level: number) {
+    let token: Token;
+    const bossDef = BossDefs[id];
+    console.log(id, level);
+    token = {
+      id,
+      type: 'boss',
+      srcBig: 'assets/' + id + '.jpg',
+      src: 'assets/' + id + '_token.jpg',
+      name: id,
+      stats: bossDef.stats[level],
+      extraInfo: bossDef.description,
+    };
+    return token;
+  }
 }
 
 class LootToken {
@@ -89,6 +105,18 @@ class TrapToken {
   }
 }
 
+class ObstacleToken {
+  constructor(id: string) {
+    const token: Token = {
+      id,
+      type: 'trap',
+      src: 'assets/images/overlay-tokens/obstacles/' + id + '.png',
+      name: id
+    };
+    return token;
+  }
+}
+
 export {
   TokenType,
   Token,
@@ -98,5 +126,6 @@ export {
   EnemyToken,
   BossToken,
   LootToken,
-  TrapToken
+  TrapToken,
+  ObstacleToken,
 };
