@@ -18,8 +18,32 @@ export class SelectHandComponent implements OnInit {
   cardCount = 0;
   constructor(private router: Router, private game: GameManagerService) {
     this.cardsList = this.character.levelXCards
-                                   .concat(this.character.level1Cards)
-                                   .map(c => { c.src = c.id + '.jpg', c.selected = false; return c; });
+    this.cardsList = this.cardsList.concat(this.character.level1Cards);
+    if(this.player.level > 3) {
+      this.cardsList = this.cardsList.concat(this.character.level2Cards);
+    }
+    if(this.player.level > 4) {
+      this.cardsList = this.cardsList.concat(this.character.level3Cards);
+    }
+    if(this.player.level > 5) {
+      this.cardsList = this.cardsList.concat(this.character.level4Cards);
+    }
+    if(this.player.level > 6) {
+      this.cardsList = this.cardsList.concat(this.character.level5Cards);
+    }
+    if(this.player.level > 7) {
+      this.cardsList = this.cardsList.concat(this.character.level6Cards);
+    }
+    if(this.player.level > 7) {
+      this.cardsList = this.cardsList.concat(this.character.level7Cards);
+    }
+    if(this.player.level > 7) {
+      this.cardsList = this.cardsList.concat(this.character.level8Cards);
+    }
+    if(this.player.level > 8) {
+      this.cardsList = this.cardsList.concat(this.character.level9Cards);
+    }
+    this.cardsList = this.cardsList.map(c => { c.src = c.id + '.jpg', c.selected = false; return c; });
   }
 
   ngOnInit() { }
