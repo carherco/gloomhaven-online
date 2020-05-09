@@ -158,7 +158,7 @@ export class HexResponsivePageComponent implements OnInit {
     this.columnSelected = column;
     this.showStats = true;
     console.log(this.elementSelected);
-    this.modalService.open(modalContent, { centered: true });
+    this.modalService.open(modalContent, { centered: true, size: 'lg' });
   }
 
   damageButtonClick() {
