@@ -30,7 +30,8 @@ export class CampaignManagerService {
         maxHealth: player.hitPoints,
         stats: {
           h: player.hitPoints
-        }
+        },
+        status: {}
       };
     });
 
@@ -45,7 +46,8 @@ export class CampaignManagerService {
           h: 6,
           m: 2,
           a: 2
-        }
+        },
+        status: {}
       },
       {
         id: 'summon_rats',
@@ -57,7 +59,8 @@ export class CampaignManagerService {
           h: 6,
           m: 2,
           a: 1
-        }
+        },
+        status: {}
       },
     ];
 

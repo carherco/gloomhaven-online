@@ -1,39 +1,13 @@
 <ng-template #modalContent let-modal>
   <div class="modal-header" [style.backgroundImage]="'url(assets/background.png)'">
-    <h4 class="modal-title">Character Stats<button class="btn btn-danger" (click)="removeToken(modal)">Remove Token</button></h4>
+    <h4 class="modal-title">{{elementSelected.name}}<button class="btn btn-danger" (click)="removeToken(modal)">Remove Token</button></h4>
   </div>
   <div class="modal-body">
       <div *ngIf="showStats">
-        <div *ngIf="elementSelected.status" id ="status-effects">Status Effects:
-          <img *ngIf="elementSelected.status.poisoned" class="status" src = "./assets/poisoned.png"/>
-          <img *ngIf="elementSelected.status.wounded" class="status" src = "./assets/wounded.png"/>
-          <img *ngIf="elementSelected.status.immobilized" class="status" src = "./assets/immobilized.png"/>
-          <img *ngIf="elementSelected.status.disarmed" class="status" src = "./assets/disarmed.png"/>
-          <img *ngIf="elementSelected.status.stunned" class="status" src = "./assets/stunned.png"/>
-          <img *ngIf="elementSelected.status.muddled" class="status" src = "./assets/muddled.png"/>
-          <img *ngIf="elementSelected.status.invisible" class="status" src = "./assets/invisible.png"/>
-          <img *ngIf="elementSelected.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
-          <br/>
-          <button (click)="elementSelected.status.poisoned = !elementSelected.status.poisoned" type = "button">Toggle Poisoned</button>
-          <button (click)="elementSelected.status.wounded = !elementSelected.status.wounded" type = "button">Toggle Wounded</button>
-          <button (click)="elementSelected.status.immobilized = !elementSelected.status.immobilized" type = "button">Toggle Immobilized</button>
-          <button (click)="elementSelected.status.disarmed = !elementSelected.status.disarmed" type = "button">Toggle Disarmed</button>
-          <button (click)="elementSelected.status.stunned = !elementSelected.status.stunned" type = "button">Toggle Stunned</button>
-          <button (click)="elementSelected.status.muddled = !elementSelected.status.muddled" type = "button">Toggle Muddled</button>
-          <button (click)="elementSelected.status.invisible = !elementSelected.status.invisible" type = "button">Toggle Invisible</button>
-          <button (click)="elementSelected.status.strengthened = !elementSelected.status.strengthened" type = "button">Toggle Strengthened</button>
-        </div>
-
-        <div align ="center">
-          <button class="btn btn-danger" (click)="damageButtonClick()" [disabled]="elementSelected.stats.h === 0" type ="button" style="font-size:15px;">Damage 1</button>
-          <span id="health-counter">{{ elementSelected.stats.h }}</span>
-          <button class="btn btn-success" (click)="healButtonClick()" [disabled]="elementSelected.stats.h === elementSelected.maxHealth || elementSelected.status?.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
-        </div>
-
+        <app-modal-token-stats [token]="elementSelected"></app-modal-token-stats>
       </div>
   </div>
   <div class="modal-footer">
-
     <button class="btn btn-primary" (click)="closeModal(modal)">Save & Close</button>
   </div>
 </ng-template>

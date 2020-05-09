@@ -89,6 +89,7 @@ export class ScenarioCreatorService {
             tokens = [];
             break;
         }
+        console.log(tokens);
         return tokens;
       }
     );

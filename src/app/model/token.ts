@@ -43,9 +43,12 @@ class EnemyToken {
       token = {
         id,
         type: 'enemy elite',
+        srcBig: 'assets/' + id + '.jpg',
         src: 'assets/' + id + '_token.jpg',
         name: id,
         stats: enemyDef.stats[level].elite,
+        maxHealth: enemyDef.stats[level].elite.h,
+        status: {},
         extraInfo: enemyDef.description,
       };
     } else {
@@ -56,6 +59,8 @@ class EnemyToken {
         src: 'assets/' + id + '_token.jpg',
         name: id,
         stats: enemyDef.stats[level].normal,
+        maxHealth: enemyDef.stats[level].normal.h,
+        status: {},
         extraInfo: enemyDef.description,
       };
     }
@@ -75,6 +80,8 @@ class BossToken {
       src: 'assets/' + id + '_token.jpg',
       name: id,
       stats: bossDef.stats[level],
+      maxHealth: bossDef.stats[level].h,
+      status: {},
       extraInfo: bossDef.description,
     };
     return token;

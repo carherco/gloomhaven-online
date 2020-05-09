@@ -30,6 +30,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HistoryPageComponent } from './pages/history-page/history-page.component';
 import { LogPageComponent } from './pages/log-page/log-page.component';
 import { MapCreatorPageComponent } from './pages/map-creator-page/map-creator-page.component';
+import { ModalTokenStatsComponent } from './components/modal-token-stats/modal-token-stats.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { MapCreatorPageComponent } from './pages/map-creator-page/map-creator-pa
     MenuComponent,
     HistoryPageComponent,
     LogPageComponent,
-    MapCreatorPageComponent
+    MapCreatorPageComponent,
+    ModalTokenStatsComponent
   ],
   imports: [
     BrowserModule,

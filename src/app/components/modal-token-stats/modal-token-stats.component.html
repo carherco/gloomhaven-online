@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-4">
+    <img [src]="token.srcBig" height="200">
+  </div>
+  <div class="col-8" *ngIf="token.status" id ="status-effects">
+    <div>
+      Current:
+      <img *ngIf="token.status.poisoned" (click)="token.status.poisoned = false" class="status" src="./assets/poisoned.png"/>
+      <img *ngIf="token.status.wounded" (click)="token.status.wounded = false" class="status" src="./assets/wounded.png"/>
+      <img *ngIf="token.status.immobilized" (click)="token.status.immobilized = false" class="status" src="./assets/immobilized.png"/>
+      <img *ngIf="token.status.disarmed" (click)="token.status.disarmed = false" class="status" src="./assets/disarmed.png"/>
+      <img *ngIf="token.status.stunned" (click)="token.status.stunned = false" class="status" src="./assets/stunned.png"/>
+      <img *ngIf="token.status.muddled" (click)="token.status.muddled = false" class="status" src="./assets/muddled.png"/>
+      <img *ngIf="token.status.invisible" (click)="token.status.invisible = false" class="status" src="./assets/invisible.png"/>
+      <img *ngIf="token.status.strengthened" (click)="token.status.strengthened = false" class="status" src="./assets/Strengthen.png"/>
+    </div>
+    <div>
+      Available:
+      <img *ngIf="!token.status.poisoned" class="status" (click)="token.status.poisoned = true" src="./assets/poisoned.png" />
+      <img *ngIf="!token.status.wounded" class="status" (click)="token.status.wounded = true" src="./assets/wounded.png" />
+      <img *ngIf="!token.status.immobilized" class="status" (click)="token.status.immobilized = true" src="./assets/immobilized.png"/>
+      <img *ngIf="!token.status.disarmed" class="status" (click)="token.status.poisoned = true" src="./assets/disarmed.png"/>
+      <img *ngIf="!token.status.stunned" class="status" (click)="token.status.stunned = true" src="./assets/stunned.png"/>
+      <img *ngIf="!token.status.muddled" class="status" (click)="token.status.muddled = true" src="./assets/muddled.png"/>
+      <img *ngIf="!token.status.invisible" class="status" (click)="token.status.invisible = true" src="./assets/invisible.png"/>
+      <img *ngIf="!token.status.strengthened" class="status" (click)="token.status.strengthened = true" src="./assets/Strengthen.png"/>
+    </div>
+
+    <div align ="center">
+        <button class="btn btn-danger" (click)="damageButtonClick()" [disabled]="token.stats.h === 0" type ="button" style="font-size:15px;">Damage 1</button>
+        <span id="health-counter">{{ token.stats.h }}</span>
+        <button class="btn btn-success" (click)="healButtonClick()" [disabled]="token.stats.h === token.maxHealth || token.status?.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
+      </div>
+  </div>
+</div>
