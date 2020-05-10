@@ -3,6 +3,7 @@ import { Plus0, Plus1, Minus1, Plus1Inmobilize, Plus2Muddle, Minus2, Plus2 } fro
 
 export const Brute: Character = {
   id: 'brute',
+  key: 'BT',
   race: 'Inox',
   class: 'Brute',
   handCardSize: 10,
@@ -21,8 +22,9 @@ export const Brute: Character = {
   perks: [],
 };
 
-export const Cragheart  = {
+export const Cragheart: Character = {
   id: 'cragheart',
+  key: 'CH',
   race: 'Savvas',
   class: 'Cragheart',
   handCardSize: 11,
@@ -83,57 +85,34 @@ export const Cragheart  = {
   ],
 };
 
-export const Mindthief = {
+export const Mindthief: Character = {
   id: 'mindthief',
+  key: 'MT',
   race: 'Vermling',
   class: 'Mindthief',
   handCardSize: 10,
   image: 'Mindthief.png',
   hitPoints: [6, 7, 8, 9, 10, 11, 12, 13, 14],
-  levelXCards: [
-    { id: 'ti12' },
-    { id: 'ti13' },
-    { id: 'ti14' },
-  ],
+  levelXCards: ['frigid-apparition', 'possession', 'withering-claw'],
   level1Cards: [
-    { id: 'ti00' },
-    { id: 'ti01' },
-    { id: 'ti02' },
-    { id: 'ti03' },
-    { id: 'ti04' },
-    { id: 'ti05' },
-    { id: 'ti06' },
-    { id: 'ti07' },
-    { id: 'ti08' },
-    { id: 'ti09' },
-    { id: 'ti10' },
-    { id: 'ti11' },
+    'empathetic-assault', 'fearsome-blade', 'feedback-loop',
+    'gnawing-horde', 'into-the-night', 'parasitic-influence',
+    'perverse-edge', 'scurry', 'submissive-affliction', 'the-minds-weakness'
   ],
-  level2Cards: [
-    { id: 'ti15' },
-    { id: 'ti16' },
-  ],
-  level3Cards: [
-    { id: 'ti17' },
-    { id: 'ti18' },
-  ],
-  level4Cards: [
-    { id: 'ti19' },
-    { id: 'ti20' },
-  ],
-  level5Cards: [
-    { id: 'ti21' },
-    { id: 'ti22' },
-  ],
-  level6Cards: [],
-  level7Cards: [],
-  level8Cards: [],
-  level9Cards: [],
+  level2Cards: ['hostile-takeover', 'withering-claw'],
+  level3Cards: ['brain-leech', 'silent-scream'],
+  level4Cards: ['cranium-overload', 'pilfer'],
+  level5Cards: ['frozen-mind', 'mass-hysteria'],
+  level6Cards: ['corrupting-embrace', 'dark-frenzy'],
+  level7Cards: ['psychic-projection', 'vicious-blood'],
+  level8Cards: ['domination', 'shared-nightmare'],
+  level9Cards: ['many-as-one', 'phantasmal-killer'],
   perks: [],
 };
 
-export const Spellweaver = {
+export const Spellweaver: Character = {
   id: 'spellweaver',
+  key: 'SW',
   race: 'Orchid',
   class: 'Spellweaver',
   handCardSize: 8,
@@ -152,8 +131,9 @@ export const Spellweaver = {
   perks: [],
 };
 
-export const Scoundrel = {
+export const Scoundrel: Character = {
   id: 'scoundrel',
+  key: 'SC',
   race: 'Human',
   class: 'Scoundrel',
   handCardSize: 10,
@@ -172,8 +152,9 @@ export const Scoundrel = {
   perks: [],
 };
 
-export const Tinkerer = {
+export const Tinkerer: Character = {
   id: 'tinkerer',
+  key: 'TI',
   race: 'Quatryl',
   class: 'Tinkerer',
   handCardSize: 12,

@@ -1,5 +1,6 @@
 export interface Character {
   id: string;
+  key: string;
   race: string;
   class: string;
   handCardSize: number;

@@ -9,19 +9,7 @@ import { Players } from '../data/players';
 export class GameManagerService {
 
   player: Player = Players[0];
-  handCards: [
-    { id: 'ch00' },
-    { id: 'ch01' },
-    { id: 'ch02' },
-    { id: 'ch03' },
-    { id: 'ch04' },
-    { id: 'ch05' },
-    { id: 'ch06' },
-    { id: 'ch07' },
-    { id: 'ch08' },
-    { id: 'ch09' },
-    { id: 'ch10' },
-  ];
+  handCards;
   playedCards: [];
   activeCards: [];
   discardedCards: [];
@@ -30,10 +18,11 @@ export class GameManagerService {
   constructor() { }
 
   setHand(handCards) {
-    this.handCards = handCards;
+    this.handCards = handCards.map(c => ({...c, selected: false }));
+    localStorage.setItem('handCards', JSON.stringify(this.handCards));
   }
 
   getHand() {
-    return this.handCards;
+    return this.handCards || JSON.parse(localStorage.getItem('handCards'));
   }
 }

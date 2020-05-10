@@ -1,43 +1,75 @@
 <div id = "play-game" align="center">
-    <table id ="play-area" align = "center">
-      <tr>
-        <td id = "chosen-cards-title" colspan = "2">Chosen Cards<br/>
+  <div id ="play-area" class="row">
+      <div id ="hp-xp-loot" align = "center" class="col-1">
+          <div id ="health" align = "center" colspan = "1">Health<br/>
+            <div>
+              <p id="health-counter"style="font-size: 35px; color:red;">{{ health }}</p><br/>
+              <button (click)="damageButtonClick()" [disabled]="health === 0" type ="button" style="font-size:15px;">-</button>
+              <button (click)="healButtonClick()" [disabled]="health === maxHealth || status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">+</button>
+            </div>
+          </div>
+          <div id ="xp" align = "center" colspan = "1">XP<br/>
+            <p id="xp-counter" style="font-size: 35px; color:cyan;">{{ experience }}</p><br/>
+            <button (click)="xpDownClick()" [disabled]="experience === 0" type ="button" style="font-size:15px;">-</button>
+            <button (click)="xpUpClick()" type ="button" style="font-size:15px;">+</button>
+          </div>
+          <div id ="loot" align = "center" colspan = "1">Loot<br/>
+            <p id="loot-counter" style="font-size: 35px; color:gold;">{{ loot }}</p><br/>
+            <button (click)="lootDownClick()" [disabled]="loot === 0" type ="button" style="font-size:15px;">-</button>
+            <button (click)="lootUpClick()" type ="button" style="font-size:15px;">+</button>
+          </div>
+      </div>
+
+      <div class="col-4" id = "chosen-cards-title">
+        <div>Chosen Cards</div>
         <div>
-          <img id = "chosen-card-1" class = "card-in-play flipped" src = "./assets/chBack.jpg"/>
-          <img id = "chosen-card-2" class = "card-in-play flipped" src = "./assets/chBack.jpg"/>
+          <img id = "chosen-card-1" class = "card-in-play flipped" [src] = "srcImageBackCard"/>
+          <img id = "chosen-card-2" class = "card-in-play flipped" [src] = "srcImageBackCard"/>
           <br/>
           <button id = "discard-button" class = "button tooltip" type="button" title = "Must Have a Card In Play Selected">Discard Card</button>
           <button id = "lose-button" class = "button tooltip"type="button"title = "Must Have a Card In Play Selected">Lose Card</button>
           <button id = "activate-button" class = "button tooltip" type="button" title = "Must Have a Card In Play Selected">Move Card to Active</button>
         </div>
         <app-attack-modifier-deck></app-attack-modifier-deck>
-        </td>
-        <td id = "active-cards-title" colspan = "2">Active Cards<br/>
-          <table id ="active-table" align = "center">
-            <tr>
-              <td> <img id = "active1" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                    <button id = "tracker1-1" class = "tracker-button tracker-button1 invisible" type = "button">1</button><button id = "tracker1-2" class = "tracker-button1 invisible" type = "button">2</button><button id = "tracker1-3" class = "tracker-button1 invisible" type = "button">3</button><button id = "tracker1-4" class = "tracker-button1 invisible" type = "button">4</button><button id = "tracker1-5" class = "tracker-button1 invisible" type = "button">5</button><button id = "tracker1-6" class = "tracker-button1 invisible" type = "button">6</button></td>
-              <td> <img id = "active2" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                    <button id = "tracker2-1" class = "tracker-button tracker-button2 invisible" type = "button">1</button><button id = "tracker2-2" class = "tracker-button2 invisible" type = "button">2</button><button id = "tracker2-3" class = "tracker-button2 invisible" type = "button">3</button><button id = "tracker2-4" class = "tracker-button2 invisible" type = "button">4</button><button id = "tracker2-5" class = "tracker-button2 invisible" type = "button">5</button><button id = "tracker2-6" class = "tracker-button2 invisible" type = "button">6</button></td>
-              <td> <img id = "active3" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                    <button id = "tracker3-1" class = "tracker-button tracker-button3 invisible" type = "button">1</button><button id = "tracker3-2" class = "tracker-button3 invisible" type = "button">2</button><button id = "tracker3-3" class = "tracker-button3 invisible" type = "button">3</button><button id = "tracker3-4" class = "tracker-button3 invisible" type = "button">4</button><button id = "tracker3-5" class = "tracker-button3 invisible" type = "button">5</button><button id = "tracker3-6" class = "tracker-button3 invisible" type = "button">6</button></td>
-            </tr>
-            <tr>
-              <td> <img id = "active4" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                    <button id = "tracker4-1" class = "tracker-button tracker-button4 invisible" type = "button">1</button><button id = "tracker4-2" class = "tracker-button4 invisible" type = "button">2</button><button id = "tracker4-3" class = "tracker-button4 invisible" type = "button">3</button><button id = "tracker4-4" class = "tracker-button4 invisible" type = "button">4</button><button id = "tracker4-5" class = "tracker-button4 invisible" type = "button">5</button><button id = "tracker4-6" class = "tracker-button4 invisible" type = "button">6</button></td>
-              <td> <img id = "active5" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                    <button id = "tracker5-1" class = "tracker-button tracker-button5 invisible" type = "button">1</button><button id = "tracker5-2" class = "tracker-button5 invisible" type = "button">2</button><button id = "tracker5-3" class = "tracker-button5 invisible" type = "button">3</button><button id = "tracker5-4" class = "tracker-button5 invisible" type = "button">4</button><button id = "tracker5-5" class = "tracker-button5 invisible" type = "button">5</button><button id = "tracker5-6" class = "tracker-button5 invisible" type = "button">6</button></td>
-              <td> <img id = "active6" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                    <button id = "tracker6-1" class = "tracker-button tracker-button6 invisible" type = "button">1</button><button id = "tracker6-2" class = "tracker-button6 invisible" type = "button">2</button><button id = "tracker6-3" class = "tracker-button6 invisible" type = "button">3</button><button id = "tracker6-4" class = "tracker-button6 invisible" type = "button">4</button><button id = "tracker6-5" class = "tracker-button6 invisible" type = "button">5</button><button id = "tracker6-6" class = "tracker-button6 invisible" type = "button">6</button></td>
-            </tr>
-          </table>
-        <button id = "discard-active-card" class = "button tooltip"type="button"title = "Must Have an Active Card Selected">Discard Active Card</button>
+      </div>
+
+      <div class="col-7">
+        <div>Active Cards</div>
+        <div id ="active-table" align = "center">
+            <div> <img id = "active1" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
+                  <button id = "tracker1-1" class = "tracker-button tracker-button1 invisible" type = "button">1</button><button id = "tracker1-2" class = "tracker-button1 invisible" type = "button">2</button><button id = "tracker1-3" class = "tracker-button1 invisible" type = "button">3</button><button id = "tracker1-4" class = "tracker-button1 invisible" type = "button">4</button><button id = "tracker1-5" class = "tracker-button1 invisible" type = "button">5</button><button id = "tracker1-6" class = "tracker-button1 invisible" type = "button">6</button></div>
+            <div> <img id = "active2" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
+                  <button id = "tracker2-1" class = "tracker-button tracker-button2 invisible" type = "button">1</button><button id = "tracker2-2" class = "tracker-button2 invisible" type = "button">2</button><button id = "tracker2-3" class = "tracker-button2 invisible" type = "button">3</button><button id = "tracker2-4" class = "tracker-button2 invisible" type = "button">4</button><button id = "tracker2-5" class = "tracker-button2 invisible" type = "button">5</button><button id = "tracker2-6" class = "tracker-button2 invisible" type = "button">6</button></div>
+            <div> <img id = "active3" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
+                  <button id = "tracker3-1" class = "tracker-button tracker-button3 invisible" type = "button">1</button><button id = "tracker3-2" class = "tracker-button3 invisible" type = "button">2</button><button id = "tracker3-3" class = "tracker-button3 invisible" type = "button">3</button><button id = "tracker3-4" class = "tracker-button3 invisible" type = "button">4</button><button id = "tracker3-5" class = "tracker-button3 invisible" type = "button">5</button><button id = "tracker3-6" class = "tracker-button3 invisible" type = "button">6</button></div>
+
+            <div> <img id = "active4" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
+                  <button id = "tracker4-1" class = "tracker-button tracker-button4 invisible" type = "button">1</button><button id = "tracker4-2" class = "tracker-button4 invisible" type = "button">2</button><button id = "tracker4-3" class = "tracker-button4 invisible" type = "button">3</button><button id = "tracker4-4" class = "tracker-button4 invisible" type = "button">4</button><button id = "tracker4-5" class = "tracker-button4 invisible" type = "button">5</button><button id = "tracker4-6" class = "tracker-button4 invisible" type = "button">6</button></div>
+            <div> <img id = "active5" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
+                  <button id = "tracker5-1" class = "tracker-button tracker-button5 invisible" type = "button">1</button><button id = "tracker5-2" class = "tracker-button5 invisible" type = "button">2</button><button id = "tracker5-3" class = "tracker-button5 invisible" type = "button">3</button><button id = "tracker5-4" class = "tracker-button5 invisible" type = "button">4</button><button id = "tracker5-5" class = "tracker-button5 invisible" type = "button">5</button><button id = "tracker5-6" class = "tracker-button5 invisible" type = "button">6</button></div>
+            <div> <img id = "active6" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
+                  <button id = "tracker6-1" class = "tracker-button tracker-button6 invisible" type = "button">1</button><button id = "tracker6-2" class = "tracker-button6 invisible" type = "button">2</button><button id = "tracker6-3" class = "tracker-button6 invisible" type = "button">3</button><button id = "tracker6-4" class = "tracker-button6 invisible" type = "button">4</button><button id = "tracker6-5" class = "tracker-button6 invisible" type = "button">5</button><button id = "tracker6-6" class = "tracker-button6 invisible" type = "button">6</button></div>
+        </div>
+        <button id = "discard-active-card" class = "button tooltip"type="button" title = "Must Have an Active Card Selected">Discard Active Card</button>
         <button id = "lose-active-card"class = "button tooltip" type = "button" title = "Must Have an Active Card Selected">Lose Active Card</button><br/>
         <button id = "create-active-tracker" class = "button tooltip" type = "button" title = "Must Have an Active Card Without a Tracker Selected">Create Card Tracker</button><br/>
         <p id = "tracker-size" style ="font-size:18px; font-family: 'Palatino Linotype'; color:white;">Tracker Size: 1</p><br/>
         <button id = "decrease-tracker-size" class = "button" type = "button">-</button>
-        <button id = "increase-tracker-size" class = "button" type = "button">+</button><br/></td>
-      </tr>
+        <button id = "increase-tracker-size" class = "button" type = "button">+</button>
+      </div>
+  </div>
+
+  <div class="row">
+    <div align="center" class="col-12">Hand Cards</div>
+    <div align="center" class="col-12">
+      <app-hand-cards [cards]="handCards"></app-hand-cards>
+    </div>
+    <div align="center" class="col-12">
+      <button id = "play-cards-button" class="button visible" type="button" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
+      <button id = "lose-hand-card" class="button visible" type = "button" title="Must Have One Card Selected">Lose Card To Avoid Damage</button>
+    </div>
+  </div>
+
       <tr>
         <td id = "discarded-cards-title" colspan = "2">Discarded Cards<br/>
           <table id ="discard-table">
@@ -110,32 +142,6 @@
           <button (click)="status.invisible = !status.invisible" type = "button">Toggle Invisible</button>
           <button (click)="status.strengthened = !status.strengthened" type = "button">Toggle Strengthened</button></td>
         </tr>
-      </table>
-      <table id ="hp-xp-loot" align = "center">
-        <tr>
-          <td id ="health" align = "center" colspan = "1">Health<br/>
-            <div>
-              <p id="health-counter"style="font-size: 35px; color:red;">{{ health }}</p><br/>
-              <button (click)="damageButtonClick()" [disabled]="health === 0" type ="button" style="font-size:15px;">-</button>
-              <button (click)="healButtonClick()" [disabled]="health === maxHealth || status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">+</button>
-            </div>
-          </td>
-          <td id ="xp" align = "center" colspan = "1">Experience<br/>
-            <p id="xp-counter" style="font-size: 35px; color:cyan;">{{ experience }}</p><br/>
-            <button (click)="xpDownClick()" [disabled]="experience === 0" type ="button" style="font-size:15px;">-</button>
-            <button (click)="xpUpClick()" type ="button" style="font-size:15px;">+</button>
-          </td>
-          <td id ="loot" align = "center" colspan = "1">Loot<br/>
-            <p id="loot-counter" style="font-size: 35px; color:gold;">{{ loot }}</p><br/>
-            <button (click)="lootDownClick()" [disabled]="loot === 0" type ="button" style="font-size:15px;">-</button>
-            <button (click)="lootUpClick()" type ="button" style="font-size:15px;">+</button>
-          </td>
-        </tr>
-      </table>
   </div>
 
-  <app-hand-cards></app-hand-cards>
-  <div id = "confirm-buttons" align = "center">
-    <button id = "play-cards-button" class="button visible" type="button" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
-    <button id = "lose-hand-card" class="button visible" type = "button" title="Must Have One Card Selected">Lose Card To Avoid Damage</button>
-  </div>
+  

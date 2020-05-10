@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hand-cards',
@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class HandCardsComponent implements OnInit {
 
+  @Input() cards: any[];
   handSize = 0;
   @ViewChild('card1') cardHand1: ElementRef;
   @ViewChild('card2') cardHand2: ElementRef;
@@ -24,6 +25,12 @@ export class HandCardsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.cards);
+    this.handSize = this.cards.length;
+  }
+
+  onCardClick(card) {
+
   }
 
 }

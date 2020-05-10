@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameManagerService } from 'src/app/services/game-manager.service';
 import { Character } from 'src/app/model/character';
-import { Cragheart } from 'src/app/data/charactersDef';
+import { Players } from 'src/app/data/players';
 import { Player } from 'src/app/model/player';
 
 @Component({
@@ -12,14 +12,15 @@ import { Player } from 'src/app/model/player';
 })
 export class PlayerBoardComponent implements OnInit {
 
-  character: Character = Cragheart;
-  player: Player;
+  player: Player = Players[3];
+  character: Character = this.player.character;
 
   handCards = [];
   playedCards = [];
   activeCards = [];
   discardedCards = [];
   LostCards = [];
+  srcImageBackCard = 'assets/images/character-ability-cards/' + this.character.key + '/' + this.character.key.toLowerCase() + '-back.png';
 
   maxHealth = 0;
   health = 0;
@@ -40,7 +41,7 @@ export class PlayerBoardComponent implements OnInit {
   constructor(private router: Router, private game: GameManagerService) {
     this.handCards = this.game.getHand();
     this.player = this.game.player;
-    this.maxHealth = this.character.hitPoints[this.player.level - 1];
+    this.maxHealth = this.character.hitPoints[this.player.level];
     this.health = this.maxHealth;
   }
 

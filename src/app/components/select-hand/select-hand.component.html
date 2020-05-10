@@ -9,11 +9,8 @@
     <button [disabled]="cardCount !== character.handCardSize " (click)="onConfirmHand()" class = "button"type="button" title="Must Have a Full Hand">Confirm Hand</button>
   </div>
 
-  <table class ="cardTable" align = "center">
-    <tr id = "level-1">
-      <td class = "level">Level 1:</td>
-      <td *ngFor="let card of cardsList" class = "chooseCardsTable">
-        <img src="assets/{{card.src}}" (click)="onCardClick(card)" class="chooseCards" [class.add-border]="card.selected"/>
-      </td>
-    </tr>
-  </table>
+  <div class="row">
+    <div class="col" *ngFor="let card of cardsList">
+      <img [src]="card.src" (click)="onCardClick(card)" class="chooseCards" [class.add-border]="card.selected"/>
+    </div>
+  </div>

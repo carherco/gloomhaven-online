@@ -1,184 +1,188 @@
 [
   {
-    "name": "be-back",
-    "points": 0,
-    "image": "character-ability-cards/BE/be-back.png",
-    "xws": "beback"
-  },
-  {
-    "name": "blood pact",
-    "points": 1,
-    "image": "character-ability-cards/BE/blood-pact.png",
-    "xws": "bloodpact"
-  },
-  {
-    "name": "bone breaker",
-    "points": 2,
-    "image": "character-ability-cards/BE/bone-breaker.png",
-    "xws": "bonebreaker"
-  },
-  {
-    "name": "bounce back",
-    "points": 3,
-    "image": "character-ability-cards/BE/bounce-back.png",
-    "xws": "bounceback"
-  },
-  {
-    "name": "break the chains",
-    "points": 4,
-    "image": "character-ability-cards/BE/break-the-chains.png",
-    "xws": "breakthechains"
-  },
-  {
-    "name": "burning hatred",
-    "points": 5,
-    "image": "character-ability-cards/BE/burning-hatred.png",
-    "xws": "burninghatred"
-  },
-  {
-    "name": "careless charge",
-    "points": 6,
-    "image": "character-ability-cards/BE/careless-charge.png",
-    "xws": "carelesscharge"
-  },
-  {
-    "name": "cauterize",
-    "points": 7,
-    "image": "character-ability-cards/BE/cauterize.png",
-    "xws": "cauterize"
-  },
-  {
-    "name": "dazing wound",
-    "points": 8,
-    "image": "character-ability-cards/BE/dazing-wound.png",
-    "xws": "dazingwound"
-  },
-  {
-    "name": "defiance of death",
-    "points": 9,
-    "image": "character-ability-cards/BE/defiance-of-death.png",
-    "xws": "defianceofdeath"
-  },
-  {
-    "name": "devil horns",
-    "points": 10,
-    "image": "character-ability-cards/BE/devil-horns.png",
-    "xws": "devilhorns"
-  },
-  {
-    "name": "fatal fury",
-    "points": 11,
-    "image": "character-ability-cards/BE/fatal-fury.png",
-    "xws": "fatalfury"
-  },
-  {
-    "name": "final fight",
-    "points": 12,
-    "image": "character-ability-cards/BE/final-fight.png",
-    "xws": "finalfight"
-  },
-  {
-    "name": "flurry of axes",
-    "points": 13,
-    "image": "character-ability-cards/BE/flurry-of-axes.png",
-    "xws": "flurryofaxes"
-  },
-  {
-    "name": "from the brink",
-    "points": 14,
-    "image": "character-ability-cards/BE/from-the-brink.png",
-    "xws": "fromthebrink"
-  },
-  {
-    "name": "furious aid",
-    "points": 15,
-    "image": "character-ability-cards/BE/furious-aid.png",
-    "xws": "furiousaid"
-  },
-  {
-    "name": "glass hammer",
-    "points": 16,
-    "image": "character-ability-cards/BE/glass-hammer.png",
-    "xws": "glasshammer"
-  },
-  {
-    "name": "growing rage",
-    "points": 17,
-    "image": "character-ability-cards/BE/growing-rage.png",
-    "xws": "growingrage"
-  },
-  {
-    "name": "immortality",
-    "points": 18,
-    "image": "character-ability-cards/BE/immortality.png",
-    "xws": "immortality"
-  },
-  {
-    "name": "numb the pain",
-    "points": 19,
-    "image": "character-ability-cards/BE/numb-the-pain.png",
-    "xws": "numbthepain"
-  },
-  {
-    "name": "reckless offensive",
-    "points": 20,
-    "image": "character-ability-cards/BE/reckless-offensive.png",
-    "xws": "recklessoffensive"
-  },
-  {
-    "name": "resolute stand",
-    "points": 21,
-    "image": "character-ability-cards/BE/resolute-stand.png",
-    "xws": "resolutestand"
-  },
-  {
-    "name": "seeing red",
-    "points": 22,
-    "image": "character-ability-cards/BE/seeing-red.png",
-    "xws": "seeingred"
-  },
-  {
-    "name": "shiny distraction",
-    "points": 23,
-    "image": "character-ability-cards/BE/shiny-distraction.png",
-    "xws": "shinydistraction"
-  },
-  {
-    "name": "spiked armor",
-    "points": 24,
-    "image": "character-ability-cards/BE/spiked-armor.png",
-    "xws": "spikedarmor"
-  },
-  {
-    "name": "strength in agony",
-    "points": 25,
-    "image": "character-ability-cards/BE/strength-in-agony.png",
-    "xws": "strengthinagony"
-  },
-  {
-    "name": "the maw of madness",
-    "points": 26,
-    "image": "character-ability-cards/BE/the-maw-of-madness.png",
-    "xws": "themawofmadness"
-  },
-  {
-    "name": "unbridled power",
-    "points": 27,
-    "image": "character-ability-cards/BE/unbridled-power.png",
-    "xws": "unbridledpower"
-  },
-  {
-    "name": "unstoppable destruction",
-    "points": 28,
-    "image": "character-ability-cards/BE/unstoppable-destruction.png",
-    "xws": "unstoppabledestruction"
-  },
-  {
-    "name": "vengeful barrage",
-    "points": 29,
-    "image": "character-ability-cards/BE/vengeful-barrage.png",
-    "xws": "vengefulbarrage"
-  },
+    "BE": [
+      {
+        "name": "be-back",
+        "points": 0,
+        "image": "character-ability-cards/BE/be-back.png",
+        "xws": "beback"
+      },
+      {
+        "name": "blood pact",
+        "points": 1,
+        "image": "character-ability-cards/BE/blood-pact.png",
+        "xws": "bloodpact"
+      },
+      {
+        "name": "bone breaker",
+        "points": 2,
+        "image": "character-ability-cards/BE/bone-breaker.png",
+        "xws": "bonebreaker"
+      },
+      {
+        "name": "bounce back",
+        "points": 3,
+        "image": "character-ability-cards/BE/bounce-back.png",
+        "xws": "bounceback"
+      },
+      {
+        "name": "break the chains",
+        "points": 4,
+        "image": "character-ability-cards/BE/break-the-chains.png",
+        "xws": "breakthechains"
+      },
+      {
+        "name": "burning hatred",
+        "points": 5,
+        "image": "character-ability-cards/BE/burning-hatred.png",
+        "xws": "burninghatred"
+      },
+      {
+        "name": "careless charge",
+        "points": 6,
+        "image": "character-ability-cards/BE/careless-charge.png",
+        "xws": "carelesscharge"
+      },
+      {
+        "name": "cauterize",
+        "points": 7,
+        "image": "character-ability-cards/BE/cauterize.png",
+        "xws": "cauterize"
+      },
+      {
+        "name": "dazing wound",
+        "points": 8,
+        "image": "character-ability-cards/BE/dazing-wound.png",
+        "xws": "dazingwound"
+      },
+      {
+        "name": "defiance of death",
+        "points": 9,
+        "image": "character-ability-cards/BE/defiance-of-death.png",
+        "xws": "defianceofdeath"
+      },
+      {
+        "name": "devil horns",
+        "points": 10,
+        "image": "character-ability-cards/BE/devil-horns.png",
+        "xws": "devilhorns"
+      },
+      {
+        "name": "fatal fury",
+        "points": 11,
+        "image": "character-ability-cards/BE/fatal-fury.png",
+        "xws": "fatalfury"
+      },
+      {
+        "name": "final fight",
+        "points": 12,
+        "image": "character-ability-cards/BE/final-fight.png",
+        "xws": "finalfight"
+      },
+      {
+        "name": "flurry of axes",
+        "points": 13,
+        "image": "character-ability-cards/BE/flurry-of-axes.png",
+        "xws": "flurryofaxes"
+      },
+      {
+        "name": "from the brink",
+        "points": 14,
+        "image": "character-ability-cards/BE/from-the-brink.png",
+        "xws": "fromthebrink"
+      },
+      {
+        "name": "furious aid",
+        "points": 15,
+        "image": "character-ability-cards/BE/furious-aid.png",
+        "xws": "furiousaid"
+      },
+      {
+        "name": "glass hammer",
+        "points": 16,
+        "image": "character-ability-cards/BE/glass-hammer.png",
+        "xws": "glasshammer"
+      },
+      {
+        "name": "growing rage",
+        "points": 17,
+        "image": "character-ability-cards/BE/growing-rage.png",
+        "xws": "growingrage"
+      },
+      {
+        "name": "immortality",
+        "points": 18,
+        "image": "character-ability-cards/BE/immortality.png",
+        "xws": "immortality"
+      },
+      {
+        "name": "numb the pain",
+        "points": 19,
+        "image": "character-ability-cards/BE/numb-the-pain.png",
+        "xws": "numbthepain"
+      },
+      {
+        "name": "reckless offensive",
+        "points": 20,
+        "image": "character-ability-cards/BE/reckless-offensive.png",
+        "xws": "recklessoffensive"
+      },
+      {
+        "name": "resolute stand",
+        "points": 21,
+        "image": "character-ability-cards/BE/resolute-stand.png",
+        "xws": "resolutestand"
+      },
+      {
+        "name": "seeing red",
+        "points": 22,
+        "image": "character-ability-cards/BE/seeing-red.png",
+        "xws": "seeingred"
+      },
+      {
+        "name": "shiny distraction",
+        "points": 23,
+        "image": "character-ability-cards/BE/shiny-distraction.png",
+        "xws": "shinydistraction"
+      },
+      {
+        "name": "spiked armor",
+        "points": 24,
+        "image": "character-ability-cards/BE/spiked-armor.png",
+        "xws": "spikedarmor"
+      },
+      {
+        "name": "strength in agony",
+        "points": 25,
+        "image": "character-ability-cards/BE/strength-in-agony.png",
+        "xws": "strengthinagony"
+      },
+      {
+        "name": "the maw of madness",
+        "points": 26,
+        "image": "character-ability-cards/BE/the-maw-of-madness.png",
+        "xws": "themawofmadness"
+      },
+      {
+        "name": "unbridled power",
+        "points": 27,
+        "image": "character-ability-cards/BE/unbridled-power.png",
+        "xws": "unbridledpower"
+      },
+      {
+        "name": "unstoppable destruction",
+        "points": 28,
+        "image": "character-ability-cards/BE/unstoppable-destruction.png",
+        "xws": "unstoppabledestruction"
+      },
+      {
+        "name": "vengeful barrage",
+        "points": 29,
+        "image": "character-ability-cards/BE/vengeful-barrage.png",
+        "xws": "vengefulbarrage"
+      },
+    ],
+    "BR": [
   {
     "name": "balanced measure",
     "points": 30,
@@ -359,6 +363,8 @@
     "image": "character-ability-cards/BR/whirlwind.png",
     "xws": "whirlwind"
   },
+],
+"BS": [
   {
     "name": "bioluminescence",
     "points": 60,
@@ -545,6 +551,8 @@
     "image": "character-ability-cards/BS/wasteland.png",
     "xws": "wasteland"
   },
+],
+"BT": [
   {
     "name": "ancient ward",
     "points": 91,
@@ -731,6 +739,8 @@
     "image": "character-ability-cards/BT/vicious-ally.png",
     "xws": "viciousally"
   },
+],
+"CH": [
   {
     "name": "avalanche",
     "points": 122,
@@ -917,6 +927,8 @@
     "image": "character-ability-cards/CH/unstable-upheaval.png",
     "xws": "unstableupheaval"
   },
+],
+"DS": [
   {
     "name": "a moment's peace",
     "points": 153,
@@ -1109,6 +1121,8 @@
     "image": "character-ability-cards/DS/wild-command.png",
     "xws": "wildcommand"
   },
+],
+"EL": [
   {
     "name": "boiling arc",
     "points": 185,
@@ -1289,186 +1303,190 @@
     "image": "character-ability-cards/EL/winters-edge.png",
     "xws": "wintersedge"
   },
-  {
-    "name": "brain leech",
-    "points": 215,
-    "image": "character-ability-cards/MT/brain-leech.png",
-    "xws": "brainleech"
-  },
-  {
-    "name": "corrupting embrace",
-    "points": 216,
-    "image": "character-ability-cards/MT/corrupting-embrace.png",
-    "xws": "corruptingembrace"
-  },
-  {
-    "name": "cranium overload",
-    "points": 217,
-    "image": "character-ability-cards/MT/cranium-overload.png",
-    "xws": "craniumoverload"
-  },
-  {
-    "name": "dark frenzy",
-    "points": 218,
-    "image": "character-ability-cards/MT/dark-frenzy.png",
-    "xws": "darkfrenzy"
-  },
-  {
-    "name": "domination",
-    "points": 219,
-    "image": "character-ability-cards/MT/domination.png",
-    "xws": "domination"
-  },
-  {
-    "name": "empathetic assault",
-    "points": 220,
-    "image": "character-ability-cards/MT/empathetic-assault.png",
-    "xws": "empatheticassault"
-  },
-  {
-    "name": "fearsome blade",
-    "points": 221,
-    "image": "character-ability-cards/MT/fearsome-blade.png",
-    "xws": "fearsomeblade"
-  },
-  {
-    "name": "feedback loop",
-    "points": 222,
-    "image": "character-ability-cards/MT/feedback-loop.png",
-    "xws": "feedbackloop"
-  },
-  {
-    "name": "frigid apparition",
-    "points": 223,
-    "image": "character-ability-cards/MT/frigid-apparition.png",
-    "xws": "frigidapparition"
-  },
-  {
-    "name": "frozen mind",
-    "points": 224,
-    "image": "character-ability-cards/MT/frozen-mind.png",
-    "xws": "frozenmind"
-  },
-  {
-    "name": "gnawing horde",
-    "points": 225,
-    "image": "character-ability-cards/MT/gnawing-horde.png",
-    "xws": "gnawinghorde"
-  },
-  {
-    "name": "hostile takeover",
-    "points": 226,
-    "image": "character-ability-cards/MT/hostile-takeover.png",
-    "xws": "hostiletakeover"
-  },
-  {
-    "name": "into the night",
-    "points": 227,
-    "image": "character-ability-cards/MT/into-the-night.png",
-    "xws": "intothenight"
-  },
-  {
-    "name": "many as one",
-    "points": 228,
-    "image": "character-ability-cards/MT/many-as-one.png",
-    "xws": "manyasone"
-  },
-  {
-    "name": "mass hysteria",
-    "points": 229,
-    "image": "character-ability-cards/MT/mass-hysteria.png",
-    "xws": "masshysteria"
-  },
-  {
-    "name": "mt-back",
-    "points": 230,
-    "image": "character-ability-cards/MT/mt-back.png",
-    "xws": "mtback"
-  },
-  {
-    "name": "parasitic influence",
-    "points": 231,
-    "image": "character-ability-cards/MT/parasitic-influence.png",
-    "xws": "parasiticinfluence"
-  },
-  {
-    "name": "perverse edge",
-    "points": 232,
-    "image": "character-ability-cards/MT/perverse-edge.png",
-    "xws": "perverseedge"
-  },
-  {
-    "name": "phantasmal killer",
-    "points": 233,
-    "image": "character-ability-cards/MT/phantasmal-killer.png",
-    "xws": "phantasmalkiller"
-  },
-  {
-    "name": "pilfer",
-    "points": 234,
-    "image": "character-ability-cards/MT/pilfer.png",
-    "xws": "pilfer"
-  },
-  {
-    "name": "possession",
-    "points": 235,
-    "image": "character-ability-cards/MT/possession.png",
-    "xws": "possession"
-  },
-  {
-    "name": "psychic projection",
-    "points": 236,
-    "image": "character-ability-cards/MT/psychic-projection.png",
-    "xws": "psychicprojection"
-  },
-  {
-    "name": "scurry",
-    "points": 237,
-    "image": "character-ability-cards/MT/scurry.png",
-    "xws": "scurry"
-  },
-  {
-    "name": "shared nightmare",
-    "points": 238,
-    "image": "character-ability-cards/MT/shared-nightmare.png",
-    "xws": "sharednightmare"
-  },
-  {
-    "name": "silent scream",
-    "points": 239,
-    "image": "character-ability-cards/MT/silent-scream.png",
-    "xws": "silentscream"
-  },
-  {
-    "name": "submissive affliction",
-    "points": 240,
-    "image": "character-ability-cards/MT/submissive-affliction.png",
-    "xws": "submissiveaffliction"
-  },
-  {
-    "name": "the mind's weakness",
-    "points": 241,
-    "image": "character-ability-cards/MT/the-minds-weakness.png",
-    "xws": "themindsweakness"
-  },
-  {
-    "name": "vicious blood",
-    "points": 242,
-    "image": "character-ability-cards/MT/vicious-blood.png",
-    "xws": "viciousblood"
-  },
-  {
-    "name": "withering claw",
-    "points": 243,
-    "image": "character-ability-cards/MT/withering-claw.png",
-    "xws": "witheringclaw"
-  },
-  {
-    "name": "wretched creature",
-    "points": 244,
-    "image": "character-ability-cards/MT/wretched-creature.png",
-    "xws": "wretchedcreature"
-  },
+],
+"MT": [
+    {
+      "name": "brain leech",
+      "points": 215,
+      "image": "character-ability-cards/MT/brain-leech.png",
+      "xws": "brainleech"
+    },
+    {
+      "name": "corrupting embrace",
+      "points": 216,
+      "image": "character-ability-cards/MT/corrupting-embrace.png",
+      "xws": "corruptingembrace"
+    },
+    {
+      "name": "cranium overload",
+      "points": 217,
+      "image": "character-ability-cards/MT/cranium-overload.png",
+      "xws": "craniumoverload"
+    },
+    {
+      "name": "dark frenzy",
+      "points": 218,
+      "image": "character-ability-cards/MT/dark-frenzy.png",
+      "xws": "darkfrenzy"
+    },
+    {
+      "name": "domination",
+      "points": 219,
+      "image": "character-ability-cards/MT/domination.png",
+      "xws": "domination"
+    },
+    {
+      "name": "empathetic assault",
+      "points": 220,
+      "image": "character-ability-cards/MT/empathetic-assault.png",
+      "xws": "empatheticassault"
+    },
+    {
+      "name": "fearsome blade",
+      "points": 221,
+      "image": "character-ability-cards/MT/fearsome-blade.png",
+      "xws": "fearsomeblade"
+    },
+    {
+      "name": "feedback loop",
+      "points": 222,
+      "image": "character-ability-cards/MT/feedback-loop.png",
+      "xws": "feedbackloop"
+    },
+    {
+      "name": "frigid apparition",
+      "points": 223,
+      "image": "character-ability-cards/MT/frigid-apparition.png",
+      "xws": "frigidapparition"
+    },
+    {
+      "name": "frozen mind",
+      "points": 224,
+      "image": "character-ability-cards/MT/frozen-mind.png",
+      "xws": "frozenmind"
+    },
+    {
+      "name": "gnawing horde",
+      "points": 225,
+      "image": "character-ability-cards/MT/gnawing-horde.png",
+      "xws": "gnawinghorde"
+    },
+    {
+      "name": "hostile takeover",
+      "points": 226,
+      "image": "character-ability-cards/MT/hostile-takeover.png",
+      "xws": "hostiletakeover"
+    },
+    {
+      "name": "into the night",
+      "points": 227,
+      "image": "character-ability-cards/MT/into-the-night.png",
+      "xws": "intothenight"
+    },
+    {
+      "name": "many as one",
+      "points": 228,
+      "image": "character-ability-cards/MT/many-as-one.png",
+      "xws": "manyasone"
+    },
+    {
+      "name": "mass hysteria",
+      "points": 229,
+      "image": "character-ability-cards/MT/mass-hysteria.png",
+      "xws": "masshysteria"
+    },
+    {
+      "name": "mt-back",
+      "points": 230,
+      "image": "character-ability-cards/MT/mt-back.png",
+      "xws": "mtback"
+    },
+    {
+      "name": "parasitic influence",
+      "points": 231,
+      "image": "character-ability-cards/MT/parasitic-influence.png",
+      "xws": "parasiticinfluence"
+    },
+    {
+      "name": "perverse edge",
+      "points": 232,
+      "image": "character-ability-cards/MT/perverse-edge.png",
+      "xws": "perverseedge"
+    },
+    {
+      "name": "phantasmal killer",
+      "points": 233,
+      "image": "character-ability-cards/MT/phantasmal-killer.png",
+      "xws": "phantasmalkiller"
+    },
+    {
+      "name": "pilfer",
+      "points": 234,
+      "image": "character-ability-cards/MT/pilfer.png",
+      "xws": "pilfer"
+    },
+    {
+      "name": "possession",
+      "points": 235,
+      "image": "character-ability-cards/MT/possession.png",
+      "xws": "possession"
+    },
+    {
+      "name": "psychic projection",
+      "points": 236,
+      "image": "character-ability-cards/MT/psychic-projection.png",
+      "xws": "psychicprojection"
+    },
+    {
+      "name": "scurry",
+      "points": 237,
+      "image": "character-ability-cards/MT/scurry.png",
+      "xws": "scurry"
+    },
+    {
+      "name": "shared nightmare",
+      "points": 238,
+      "image": "character-ability-cards/MT/shared-nightmare.png",
+      "xws": "sharednightmare"
+    },
+    {
+      "name": "silent scream",
+      "points": 239,
+      "image": "character-ability-cards/MT/silent-scream.png",
+      "xws": "silentscream"
+    },
+    {
+      "name": "submissive affliction",
+      "points": 240,
+      "image": "character-ability-cards/MT/submissive-affliction.png",
+      "xws": "submissiveaffliction"
+    },
+    {
+      "name": "the mind's weakness",
+      "points": 241,
+      "image": "character-ability-cards/MT/the-minds-weakness.png",
+      "xws": "themindsweakness"
+    },
+    {
+      "name": "vicious blood",
+      "points": 242,
+      "image": "character-ability-cards/MT/vicious-blood.png",
+      "xws": "viciousblood"
+    },
+    {
+      "name": "withering claw",
+      "points": 243,
+      "image": "character-ability-cards/MT/withering-claw.png",
+      "xws": "witheringclaw"
+    },
+    {
+      "name": "wretched creature",
+      "points": 244,
+      "image": "character-ability-cards/MT/wretched-creature.png",
+      "xws": "wretchedcreature"
+    },
+],
+"NS": [
   {
     "name": "angel of death",
     "points": 245,
@@ -1643,6 +1661,8 @@
     "image": "character-ability-cards/NS/wings-of-the-night.png",
     "xws": "wingsofthenight"
   },
+],
+"PH": [
   {
     "name": "accelerated end",
     "points": 274,
@@ -1829,6 +1849,8 @@
     "image": "character-ability-cards/PH/wretched-swarm.png",
     "xws": "wretchedswarm"
   },
+],
+"QM": [
   {
     "name": "bag of holding",
     "points": 305,
@@ -2003,6 +2025,8 @@
     "image": "character-ability-cards/QM/side-pouch.png",
     "xws": "sidepouch"
   },
+],
+"SB": [
   {
     "name": "amputate",
     "points": 334,
@@ -2195,6 +2219,8 @@
     "image": "character-ability-cards/SB/vital-strike.png",
     "xws": "vitalstrike"
   },
+],
+"SC": [
   {
     "name": "backstab",
     "points": 366,
@@ -2369,6 +2395,8 @@
     "image": "character-ability-cards/SC/watch-it-burn.png",
     "xws": "watchitburn"
   },
+],
+"SK": [
   {
     "name": "angelic ascension",
     "points": 395,
@@ -2555,6 +2583,8 @@
     "image": "character-ability-cards/SK/weapon-of-purity.png",
     "xws": "weaponofpurity"
   },
+],
+"SS": [
   {
     "name": "booming proclamation",
     "points": 426,
@@ -2729,6 +2759,8 @@
     "image": "character-ability-cards/SS/wistful-wounding.png",
     "xws": "wistfulwounding"
   },
+],
+"SU": [
   {
     "name": "biting wind",
     "points": 455,
@@ -2903,6 +2935,8 @@
     "image": "character-ability-cards/SU/wild-animation.png",
     "xws": "wildanimation"
   },
+],
+"SW": [
   {
     "name": "aid from the ether",
     "points": 484,
@@ -3071,6 +3105,8 @@
     "image": "character-ability-cards/SW/zephyr-wings.png",
     "xws": "zephyrwings"
   },
+],
+"TI": [
   {
     "name": "auto turret",
     "points": 512,
@@ -3263,6 +3299,8 @@
     "image": "character-ability-cards/TI/volatile-concoction.png",
     "xws": "volatileconcoction"
   },
+],
+"DR": [
   {
     "name": "anguish and salvation",
     "points": 544,
@@ -3437,6 +3475,8 @@
     "image": "character-ability-cards/DR/void-snare.png",
     "xws": "voidsnare"
   },
+],
+"OTHERS": [
   {
     "name": "lightning moths",
     "points": 573,
@@ -3700,5 +3740,7 @@
     "points": 616,
     "image": "character-ability-cards/DR/planar-fissure.png",
     "xws": "planarfissure"
+  }
+]
   }
 ]

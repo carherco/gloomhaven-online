@@ -74,7 +74,7 @@ export const Players = [
     experience: 151,
     gold: 17,
     perkTicks: 3,
-    ownedAbilityCards: [],
+    ownedAbilityCards: [ ...Mindthief.levelXCards, ...Mindthief.level1Cards, 'hostile-takeover', 'silent-scream', 'cranium-overload' ],
     ownedItems: [11, 13, 1, 8, 16, 12, 20, 21],
     scenarioAbilityCards: [],
     scenarioItems: [],

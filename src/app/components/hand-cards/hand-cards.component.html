@@ -1,22 +1,7 @@
 <div id = "hand-cards" >
-  <table align = "center">
-    <tr>
-      <td><img id = "card1" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card2" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card3" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card4" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-    </tr>
-    <tr>
-      <td><img id = "card5" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card6" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card7" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card8" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-    </tr>
-    <tr>
-      <td><img id = "card9" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card10" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card11" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-      <td><img id = "card12" class = "hand flipped" src = "./assets/Card Back.png" /></td>
-    </tr>
-  </table>
+  <div class="row">
+    <div class="col" *ngFor="let card of cards">
+      <img [src]="card.src" (click)="onCardClick(card)" class="chooseCards" [class.add-border]="card.selected"/>
+    </div>
+  </div>
 </div>
