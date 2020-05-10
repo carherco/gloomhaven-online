@@ -27,7 +27,18 @@
         <app-attack-modifier-deck></app-attack-modifier-deck>
       </div>
 
-      <div class="col-5">
+      <div class="col-1">
+        <img class="status" [class.transparent]="!status.poisoned" (click)="status.poisoned = !status.poisoned" src="./assets/poisoned.png"/>
+        <img class="status" [class.transparent]="!status.wounded" (click)="status.wounded = !status.wounded" src = "./assets/wounded.png"/>
+        <img class="status" [class.transparent]="!status.invisible" (click)="status.invisible = !status.invisible" src = "./assets/invisible.png"/>
+        <img class="status" [class.transparent]="!status.immobilized" (click)="status.immobilized = !status.immobilized" src = "./assets/immobilized.png"/>
+        <img class="status" [class.transparent]="!status.disarmed" (click)="status.disarmed = !status.disarmed" src = "./assets/disarmed.png"/>
+        <img class="status" [class.transparent]="!status.stunned" (click)="status.stunned = !status.stunned" src = "./assets/stunned.png"/>
+        <img class="status" [class.transparent]="!status.muddled" (click)="status.muddled = !status.muddled" src = "./assets/muddled.png"/>
+        <img class="status" [class.transparent]="!status.strengthened" (click)="status.strengthened = !status.strengthened" src = "./assets/Strengthen.png"/>
+      </div>
+
+      <div class="col-4">
         <div>Active Cards</div>
         <div>
             <span *ngFor="let card of activeCards" style="float: right">
