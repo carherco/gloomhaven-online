@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hand-cards',
@@ -22,15 +22,23 @@ export class HandCardsComponent implements OnInit {
   @ViewChild('card11') cardHand11: ElementRef;
   @ViewChild('card12') cardHand12: ElementRef;
 
+  @Input() selectedCount = 0;
+  selectedMax = 2;
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.cards);
     this.handSize = this.cards.length;
   }
 
   onCardClick(card) {
-
+    if (card.selected) {
+      this.selectedCount--;
+      card.selected = false;
+    } else if (this.selectedCount < this.selectedMax) {
+      this.selectedCount++;
+      card.selected = true;
+    }
   }
 
 }

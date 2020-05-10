@@ -1,6 +1,6 @@
 <div id ="attack-modifier-deck" align = "center">
-  <h2 id ="mustShuffle" [class.invisible]="!mustShuffle" style = "color: red">Must Shuffle At End of Turn</h2>
-  <h2 id ="cardsInDeck" style = "color: white">Cards in Deck: {{ modifierDeck.length }}</h2>
+  <h3 id ="mustShuffle" [class.invisible]="!mustShuffle" style = "color: red">Must Shuffle At End of Turn</h3>
+  <h3 id ="cardsInDeck" style = "color: white">Cards in Deck: {{ modifierDeck.length }}</h3>
   <h6 id ="blessesInDeck" style = "color: white">Extra Blesses in Deck: {{ extraBlesses }}</h6>
   <h6 id ="cursesInDeck" style = "color: white">Extra Curses in Deck: {{ extraCurses }}</h6>
   <img *ngIf="modifierDeck.length" id ="amDeck" (click)="drawCard()" class="attack-modifier" src="./assets/amBack.png"/>

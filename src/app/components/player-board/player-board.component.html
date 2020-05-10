@@ -1,147 +1,129 @@
 <div id = "play-game" align="center">
   <div id ="play-area" class="row">
-      <div id ="hp-xp-loot" align = "center" class="col-1">
-          <div id ="health" align = "center" colspan = "1">Health<br/>
-            <div>
-              <p id="health-counter"style="font-size: 35px; color:red;">{{ health }}</p><br/>
-              <button (click)="damageButtonClick()" [disabled]="health === 0" type ="button" style="font-size:15px;">-</button>
-              <button (click)="healButtonClick()" [disabled]="health === maxHealth || status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">+</button>
-            </div>
-          </div>
-          <div id ="xp" align = "center" colspan = "1">XP<br/>
-            <p id="xp-counter" style="font-size: 35px; color:cyan;">{{ experience }}</p><br/>
-            <button (click)="xpDownClick()" [disabled]="experience === 0" type ="button" style="font-size:15px;">-</button>
-            <button (click)="xpUpClick()" type ="button" style="font-size:15px;">+</button>
-          </div>
-          <div id ="loot" align = "center" colspan = "1">Loot<br/>
-            <p id="loot-counter" style="font-size: 35px; color:gold;">{{ loot }}</p><br/>
-            <button (click)="lootDownClick()" [disabled]="loot === 0" type ="button" style="font-size:15px;">-</button>
-            <button (click)="lootUpClick()" type ="button" style="font-size:15px;">+</button>
-          </div>
+      <div class="col-1">
+        <app-hp-xp-loot-tracker
+          [maxHealth]="maxHealth"
+          [health]="health"
+          [experience]="experience"
+          [loot]="loot"
+          [status]="status">
+        </app-hp-xp-loot-tracker>
       </div>
 
       <div class="col-4" id = "chosen-cards-title">
         <div>Chosen Cards</div>
-        <div>
-          <img id = "chosen-card-1" class = "card-in-play flipped" [src] = "srcImageBackCard"/>
-          <img id = "chosen-card-2" class = "card-in-play flipped" [src] = "srcImageBackCard"/>
+        <div *ngIf="playedCards.length === 0">
+            <img id = "chosen-card-1" class="card-in-play" [src]="srcImageBackCard"/>
+            <img id = "chosen-card-2" class="card-in-play" [src]="srcImageBackCard"/>
+        </div>
+        <div *ngIf="playedCards.length > 0">
+          <img class="card-in-play" [src]="playedCards[0].src" (click)="onPlayedCardClick(playedCards[0])" [class.add-border]="playedCards[0].selected"/>
+          <img *ngIf="playedCards[1]" class="card-in-play" [src]="playedCards[1].src" (click)="onPlayedCardClick(playedCards[1])" [class.add-border]="playedCards[1].selected"/>
           <br/>
-          <button id = "discard-button" class = "button tooltip" type="button" title = "Must Have a Card In Play Selected">Discard Card</button>
-          <button id = "lose-button" class = "button tooltip"type="button"title = "Must Have a Card In Play Selected">Lose Card</button>
-          <button id = "activate-button" class = "button tooltip" type="button" title = "Must Have a Card In Play Selected">Move Card to Active</button>
+          <button id="discard-button" class = "button" type="button" (click)="onDiscardPlayedCardClick()" [disabled]="playedCardsSelectedCount!==1" title = "Must Have a Card In Play Selected">Discard Card</button>
+          <button id="lose-button" class = "button" type="button" (click)="onLosePlayedCardClick()" [disabled]="playedCardsSelectedCount!==1" title = "Must Have a Card In Play Selected">Lose Card</button>
+          <button id="activate-button" class = "button" type="button" (click)="onActivatePlayedCardClick()" [disabled]="playedCardsSelectedCount!==1" title = "Must Have a Card In Play Selected">Move Card to Active</button>
         </div>
         <app-attack-modifier-deck></app-attack-modifier-deck>
       </div>
 
-      <div class="col-7">
+      <div class="col-5">
         <div>Active Cards</div>
-        <div id ="active-table" align = "center">
-            <div> <img id = "active1" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                  <button id = "tracker1-1" class = "tracker-button tracker-button1 invisible" type = "button">1</button><button id = "tracker1-2" class = "tracker-button1 invisible" type = "button">2</button><button id = "tracker1-3" class = "tracker-button1 invisible" type = "button">3</button><button id = "tracker1-4" class = "tracker-button1 invisible" type = "button">4</button><button id = "tracker1-5" class = "tracker-button1 invisible" type = "button">5</button><button id = "tracker1-6" class = "tracker-button1 invisible" type = "button">6</button></div>
-            <div> <img id = "active2" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                  <button id = "tracker2-1" class = "tracker-button tracker-button2 invisible" type = "button">1</button><button id = "tracker2-2" class = "tracker-button2 invisible" type = "button">2</button><button id = "tracker2-3" class = "tracker-button2 invisible" type = "button">3</button><button id = "tracker2-4" class = "tracker-button2 invisible" type = "button">4</button><button id = "tracker2-5" class = "tracker-button2 invisible" type = "button">5</button><button id = "tracker2-6" class = "tracker-button2 invisible" type = "button">6</button></div>
-            <div> <img id = "active3" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                  <button id = "tracker3-1" class = "tracker-button tracker-button3 invisible" type = "button">1</button><button id = "tracker3-2" class = "tracker-button3 invisible" type = "button">2</button><button id = "tracker3-3" class = "tracker-button3 invisible" type = "button">3</button><button id = "tracker3-4" class = "tracker-button3 invisible" type = "button">4</button><button id = "tracker3-5" class = "tracker-button3 invisible" type = "button">5</button><button id = "tracker3-6" class = "tracker-button3 invisible" type = "button">6</button></div>
-
-            <div> <img id = "active4" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                  <button id = "tracker4-1" class = "tracker-button tracker-button4 invisible" type = "button">1</button><button id = "tracker4-2" class = "tracker-button4 invisible" type = "button">2</button><button id = "tracker4-3" class = "tracker-button4 invisible" type = "button">3</button><button id = "tracker4-4" class = "tracker-button4 invisible" type = "button">4</button><button id = "tracker4-5" class = "tracker-button4 invisible" type = "button">5</button><button id = "tracker4-6" class = "tracker-button4 invisible" type = "button">6</button></div>
-            <div> <img id = "active5" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                  <button id = "tracker5-1" class = "tracker-button tracker-button5 invisible" type = "button">1</button><button id = "tracker5-2" class = "tracker-button5 invisible" type = "button">2</button><button id = "tracker5-3" class = "tracker-button5 invisible" type = "button">3</button><button id = "tracker5-4" class = "tracker-button5 invisible" type = "button">4</button><button id = "tracker5-5" class = "tracker-button5 invisible" type = "button">5</button><button id = "tracker5-6" class = "tracker-button5 invisible" type = "button">6</button></div>
-            <div> <img id = "active6" class = "active-card flipped hiding" src = "./assets/chBack.jpg"/><br/>
-                  <button id = "tracker6-1" class = "tracker-button tracker-button6 invisible" type = "button">1</button><button id = "tracker6-2" class = "tracker-button6 invisible" type = "button">2</button><button id = "tracker6-3" class = "tracker-button6 invisible" type = "button">3</button><button id = "tracker6-4" class = "tracker-button6 invisible" type = "button">4</button><button id = "tracker6-5" class = "tracker-button6 invisible" type = "button">5</button><button id = "tracker6-6" class = "tracker-button6 invisible" type = "button">6</button></div>
+        <div>
+            <span *ngFor="let card of activeCards" style="float: right">
+              <img class = "active-card flipped" [src]="card.src" [class.add-border]="card.selected"/>
+              <div>
+                <button type = "button">1</button>
+                <button type = "button">2</button>
+                <button type = "button">3</button>
+                <button type = "button">4</button>
+                <button type = "button">5</button>
+                <button type = "button">6</button>
+              </div>
+            </span>
         </div>
-        <button id = "discard-active-card" class = "button tooltip"type="button" title = "Must Have an Active Card Selected">Discard Active Card</button>
-        <button id = "lose-active-card"class = "button tooltip" type = "button" title = "Must Have an Active Card Selected">Lose Active Card</button><br/>
-        <button id = "create-active-tracker" class = "button tooltip" type = "button" title = "Must Have an Active Card Without a Tracker Selected">Create Card Tracker</button><br/>
-        <p id = "tracker-size" style ="font-size:18px; font-family: 'Palatino Linotype'; color:white;">Tracker Size: 1</p><br/>
-        <button id = "decrease-tracker-size" class = "button" type = "button">-</button>
-        <button id = "increase-tracker-size" class = "button" type = "button">+</button>
+        <div>
+          <button id = "discard-active-card" class = "button tooltip"type="button" title = "Must Have an Active Card Selected">Discard Active Card</button>
+          <button id = "lose-active-card"class = "button tooltip" type = "button" title = "Must Have an Active Card Selected">Lose Active Card</button>
+          <button id = "create-active-tracker" class = "button tooltip" type = "button" title = "Must Have an Active Card Without a Tracker Selected">Create Card Tracker</button>
+          <p id = "tracker-size" style ="font-size:18px; font-family: 'Palatino Linotype'; color:white;">Tracker Size: {{cardTrackerSize}}</p>
+          <button class="button" type="button" (click)="cardTrackerSize = cardTrackerSize - 1" [disabled]="cardTrackerSize <= 1">-</button>
+          <button class="button" type="button" (click)="cardTrackerSize = cardTrackerSize + 1" [disabled]="cardTrackerSize >= 6">+</button>
+        </div>
+      </div>
+      <div class="col-2">
+        <app-items-tracker [items]="player.ownedItems"></app-items-tracker>
       </div>
   </div>
 
   <div class="row">
     <div align="center" class="col-12">Hand Cards</div>
     <div align="center" class="col-12">
-      <app-hand-cards [cards]="handCards"></app-hand-cards>
+      <div id = "hand-cards">
+        <div class="row">
+          <div class="col" *ngFor="let card of handCards">
+            <img [src]="card.src" (click)="onHandCardClick(card)" class="chooseCards" [class.add-border]="card.selected"/>
+          </div>
+        </div>
+      </div>
     </div>
     <div align="center" class="col-12">
-      <button id = "play-cards-button" class="button visible" type="button" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
+      <button id = "play-cards-button" (click)="onPlayCardsButton()" class="button visible" type="button" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
       <button id = "lose-hand-card" class="button visible" type = "button" title="Must Have One Card Selected">Lose Card To Avoid Damage</button>
     </div>
   </div>
 
-      <tr>
-        <td id = "discarded-cards-title" colspan = "2">Discarded Cards<br/>
-          <table id ="discard-table">
-            <tr>
-              <td> <img id = "discard1" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard2" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard3" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard4" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard5" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-            </tr>
-            <tr>
-              <td> <img id = "discard6" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard7" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard8" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard9" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "discard10" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-            </tr>
-            <td> <img id = "discard11" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-            <td> <img id = "discard12" class = "discarded flipped hiding" src = "./assets/Card Back.png"/></td>
-            <tr>
-            </tr>
-          </table>
+  <div class="row">
+    <div class="col-8">
+        <div>Discarded Cards</div>
+
+        <span *ngFor="let card of discardedCards" class="col-1">
+          <img class="discarded" [src]="card.src" [class.add-border]="card.selected"/>
+        </span>
+
+        <div class="col-12">
           <button id = "short-rest-button" class = "button"type="button" title = "Must Have At Least 2 Discarded Cards And No Cards in Play">Short Rest</button>
           <button id = "long-rest-button" class = "button"type="button"title = "Must Have At Least 2 Discarded Cards And No Cards in Play">Long Rest</button>
           <button id = "recover-discard-button"class = "button" type="button"title="Must Have A Discarded Card Selected">Recover Discarded Card</button><br/>
           <button id = "lose-discard-button" class = "button"type = "button" title="Must Be Resting">Lose Card From Rest</button>
           <button id = "reroll-random-card-button" class = "button"type = "button" title = "Can Only Be Used Once Per Short Rest">Reroll Lost Card</button>
           <button id = "lose-discard-button2" class = "button not-without-more-selected"type = "button" title="Must Have A Discarded Card Selected - Must Lose 2 to Avoid Damage">Lose Card To Avoid Damage</button>
-        </td>
-        <td id = "lost-cards-title" colspan = "2">Lost Cards<br/>
-          <table id ="lost-table">
-            <tr>
-              <td> <img id = "lost1" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost2" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost3" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost4" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost5" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-            </tr>
-            <tr>
-              <td> <img id = "lost6" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost7" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost8" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost9" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost10" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-            </tr>
-            <tr>
-              <td> <img id = "lost11" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-              <td> <img id = "lost12" class = "lost flipped hiding" src = "./assets/Card Back.png"/></td>
-            </tr>
-          </table>
-          <button id = "recover-lost" class = "button"type="button" title = "Must Have a Lost Card Selected">Recover Lost Card</button></td>
-        </tr>
-        <tr>
-          <td id ="status-effects" align ="center" colspan="4">Status Effects<br/>
-          <img *ngIf="status.poisoned" class="status" src = "./assets/poisoned.png"/>
-          <img *ngIf="status.wounded" class="status" src = "./assets/wounded.png"/>
-          <img *ngIf="status.immobilized" class="status" src = "./assets/immobilized.png"/>
-          <img *ngIf="status.disarmed" class="status" src = "./assets/disarmed.png"/>
-          <img *ngIf="status.stunned" class="status" src = "./assets/stunned.png"/>
-          <img *ngIf="status.muddled" class="status" src = "./assets/muddled.png"/>
-          <img *ngIf="status.invisible" class="status" src = "./assets/invisible.png"/>
-          <img *ngIf="status.strengthened" class="status" src = "./assets/Strengthen.png"/>
-          <br/>
-          <button (click)="status.poisoned = !status.poisoned" type = "button">Toggle Poisoned</button>
-          <button (click)="status.wounded = !status.wounded" type = "button">Toggle Wounded</button>
-          <button (click)="status.immobilized = !status.immobilized" type = "button">Toggle Immobilized</button>
-          <button (click)="status.disarmed = !status.disarmed" type = "button">Toggle Disarmed</button>
-          <button (click)="status.stunned = !status.stunned" type = "button">Toggle Stunned</button>
-          <button (click)="status.muddled = !status.muddled" type = "button">Toggle Muddled</button>
-          <button (click)="status.invisible = !status.invisible" type = "button">Toggle Invisible</button>
-          <button (click)="status.strengthened = !status.strengthened" type = "button">Toggle Strengthened</button></td>
-        </tr>
+        </div>
+    </div>
+
+
+    <div class="col-4">
+      <div>Lost Cards</div>
+
+      <span *ngFor="let card of lostCards" class="col-1">
+        <img class= "lost" [src]="card.src" [class.add-border]="card.selected"/>
+      </span>
+
+      <button id = "recover-lost" class = "button"type="button" title = "Must Have a Lost Card Selected">Recover Lost Card</button>
+    </div>
   </div>
 
-  
+  <div>
+    <td id ="status-effects" align ="center">Status Effects<br/>
+    <img *ngIf="status.poisoned" class="status" src = "./assets/poisoned.png"/>
+    <img *ngIf="status.wounded" class="status" src = "./assets/wounded.png"/>
+    <img *ngIf="status.immobilized" class="status" src = "./assets/immobilized.png"/>
+    <img *ngIf="status.disarmed" class="status" src = "./assets/disarmed.png"/>
+    <img *ngIf="status.stunned" class="status" src = "./assets/stunned.png"/>
+    <img *ngIf="status.muddled" class="status" src = "./assets/muddled.png"/>
+    <img *ngIf="status.invisible" class="status" src = "./assets/invisible.png"/>
+    <img *ngIf="status.strengthened" class="status" src = "./assets/Strengthen.png"/>
+    <br/>
+    <button (click)="status.poisoned = !status.poisoned" type = "button">Toggle Poisoned</button>
+    <button (click)="status.wounded = !status.wounded" type = "button">Toggle Wounded</button>
+    <button (click)="status.immobilized = !status.immobilized" type = "button">Toggle Immobilized</button>
+    <button (click)="status.disarmed = !status.disarmed" type = "button">Toggle Disarmed</button>
+    <button (click)="status.stunned = !status.stunned" type = "button">Toggle Stunned</button>
+    <button (click)="status.muddled = !status.muddled" type = "button">Toggle Muddled</button>
+    <button (click)="status.invisible = !status.invisible" type = "button">Toggle Invisible</button>
+    <button (click)="status.strengthened = !status.strengthened" type = "button">Toggle Strengthened</button>
+  </div>
+
+</div>
+
+

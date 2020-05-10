@@ -16,10 +16,26 @@ export class PlayerBoardComponent implements OnInit {
   character: Character = this.player.character;
 
   handCards = [];
+  handCardsSelectedCount = 0;
+  handCardsSelectedMax = 2;
+
   playedCards = [];
+  playedCardsSelectedCount = 0;
+  playedCardsSelectedMax = 1;
+
   activeCards = [];
+  activeCardsSelectedCount = 0;
+  activeCardsSelectedMax = 1;
+  cardTrackerSize = 1;
+
   discardedCards = [];
-  LostCards = [];
+  discardedCardsSelectedCount = 0;
+  discardedCardsSelectedMax = 2;
+
+  lostCards = [];
+  lostCardsSelectedCount = 0;
+  lostCardsSelectedMax = 1;
+
   srcImageBackCard = 'assets/images/character-ability-cards/' + this.character.key + '/' + this.character.key.toLowerCase() + '-back.png';
 
   maxHealth = 0;
@@ -40,7 +56,7 @@ export class PlayerBoardComponent implements OnInit {
 
   constructor(private router: Router, private game: GameManagerService) {
     this.handCards = this.game.getHand();
-    this.player = this.game.player;
+    //this.player = this.game.player;
     this.maxHealth = this.character.hitPoints[this.player.level];
     this.health = this.maxHealth;
   }
@@ -48,40 +64,78 @@ export class PlayerBoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  healButtonClick = () => {
-    if (!this.status.poisoned) {
-      this.health++;
-    }
-    this.status.wounded = false;
-    this.status.poisoned = false;
-  }
-
-  damageButtonClick = () => {
-    if (this.health > 0) {
-      this.health--;
+  onHandCardClick(card) {
+    if (card.selected) {
+      this.handCardsSelectedCount--;
+      card.selected = false;
+    } else if (this.handCardsSelectedCount < this.handCardsSelectedMax) {
+      this.handCardsSelectedCount++;
+      card.selected = true;
     }
   }
 
-  xpUpClick = () => {
-    this.experience++;
+  onPlayCardsButton() {
+    this.playedCards = this.handCards.filter(c => c.selected);
+    this.handCards = [...this.handCards.filter(c => !c.selected)];
+    this.playedCards[0].selected = false;
+    this.playedCards[1].selected = false;
+    this.handCardsSelectedCount = 0;
   }
 
-  xpDownClick = () => {
-    if (this.experience > 0) {
-      this.experience--;
+  onPlayedCardClick(card) {
+    if (card.selected) {
+      this.playedCardsSelectedCount--;
+      card.selected = false;
+    } else if (this.playedCardsSelectedCount < this.playedCardsSelectedMax) {
+      this.playedCardsSelectedCount++;
+      card.selected = true;
     }
   }
 
-  lootUpClick = () => {
-    this.loot++;
-  }
-
-  lootDownClick = () => {
-    if (this.loot > 0) {
-      this.loot--;
+  onDiscardPlayedCardClick() {
+    if (this.playedCards[0].selected) {
+      this.playedCards[0].selected = false;
+      this.discardedCards.push(this.playedCards[0]);
+      this.playedCards.splice(0, 1);
+      this.playedCardsSelectedCount--;
+      console.log(this.playedCards);
+    } else if (this.playedCards[1].selected) {
+      this.playedCards[1].selected = false;
+      this.discardedCards.push(this.playedCards[1]);
+      this.playedCards.splice(1, 1);
+      this.playedCardsSelectedCount--;
     }
   }
 
+  onLosePlayedCardClick() {
+    if (this.playedCards[0].selected) {
+      this.playedCards[0].selected = false;
+      this.lostCards.push(this.playedCards[0]);
+      this.playedCards.splice(0, 1);
+      this.playedCardsSelectedCount--;
+      console.log(this.playedCards);
+    } else if (this.playedCards[1].selected) {
+      this.playedCards[1].selected = false;
+      this.lostCards.push(this.playedCards[1]);
+      this.playedCards.splice(1, 1);
+      this.playedCardsSelectedCount--;
+    }
+  }
+
+  onActivatePlayedCardClick() {
+    if (this.playedCards[0].selected) {
+      this.playedCards[0].selected = false;
+      this.activeCards.push(this.playedCards[0]);
+      this.playedCards.splice(0, 1);
+      this.playedCardsSelectedCount--;
+      console.log(this.playedCards);
+    } else if (this.playedCards[1].selected) {
+      this.playedCards[1].selected = false;
+      this.activeCards.push(this.playedCards[1]);
+      this.playedCards.splice(1, 1);
+      this.playedCardsSelectedCount--;
+    }
+  }
 
   // function for clicking Hand
 // var hand = document.querySelectorAll(".hand");

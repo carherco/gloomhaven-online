@@ -14,7 +14,7 @@ body{
 }
 
 .attack-modifier{
-  width:15%;
+  width:25%;
   cursor: pointer;
   border: 1px solid beige;
 }
@@ -101,19 +101,16 @@ body{
 }
 
 #chosen-cards-title{
-  padding:20px;
+  padding:10px;
 }
 #active-cards-title {
-  padding: 20px;
+  padding: 10px;
 }
 #discarded-cards-title {
-  padding: 20px;
+  padding: 10px;
   }
 #lost-cards-title {
-  padding: 20px;
-}
-#hp-xp-loot, #play-area{
-  width:1400px;
+  padding: 10px;
 }
 
 .card-in-play, .active-card{

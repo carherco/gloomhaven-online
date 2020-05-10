@@ -31,6 +31,8 @@ import { HistoryPageComponent } from './pages/history-page/history-page.componen
 import { LogPageComponent } from './pages/log-page/log-page.component';
 import { MapCreatorPageComponent } from './pages/map-creator-page/map-creator-page.component';
 import { ModalTokenStatsComponent } from './components/modal-token-stats/modal-token-stats.component';
+import { HpXpLootTrackerComponent } from './components/hp-xp-loot-tracker/hp-xp-loot-tracker.component';
+import { ItemsTrackerComponent } from './components/items-tracker/items-tracker.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { ModalTokenStatsComponent } from './components/modal-token-stats/modal-t
     HistoryPageComponent,
     LogPageComponent,
     MapCreatorPageComponent,
-    ModalTokenStatsComponent
+    ModalTokenStatsComponent,
+    HpXpLootTrackerComponent,
+    ItemsTrackerComponent
   ],
   imports: [
     BrowserModule,
