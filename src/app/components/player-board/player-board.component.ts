@@ -36,6 +36,10 @@ export class PlayerBoardComponent implements OnInit {
   lostCardsSelectedCount = 0;
   lostCardsSelectedMax = 1;
 
+  shortResting = false;
+  longResting = false;
+  shortRestRerolls = 0;
+
   srcImageBackCard = 'assets/images/character-ability-cards/' + this.character.key + '/' + this.character.key.toLowerCase() + '-back.png';
 
   maxHealth = 0;
@@ -79,6 +83,14 @@ export class PlayerBoardComponent implements OnInit {
     this.handCards = [...this.handCards.filter(c => !c.selected)];
     this.playedCards[0].selected = false;
     this.playedCards[1].selected = false;
+    this.handCardsSelectedCount = 0;
+  }
+
+  onLoseHandCardButton() {
+    const selectedCard = this.handCards.find(c => c.selected);
+    this.handCards = [...this.handCards.filter(c => !c.selected)];
+    selectedCard.selected = false;
+    this.lostCards.push(selectedCard);
     this.handCardsSelectedCount = 0;
   }
 
@@ -135,6 +147,84 @@ export class PlayerBoardComponent implements OnInit {
       this.playedCards.splice(1, 1);
       this.playedCardsSelectedCount--;
     }
+  }
+
+  onDiscardedCardClick(card) {
+    if (card.selected) {
+      this.discardedCardsSelectedCount--;
+      card.selected = false;
+    } else if (this.discardedCardsSelectedCount < this.discardedCardsSelectedMax) {
+      this.discardedCardsSelectedCount++;
+      card.selected = true;
+    }
+  }
+
+  onShortRestButton() {
+    const selectedCard = this.lostCards.find(c => c.selected);
+    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
+    selectedCard.selected = false;
+    this.handCards.push(selectedCard);
+    this.lostCardsSelectedCount = 0;
+  }
+
+  onLongRestButton() {
+    const selectedCard = this.lostCards.find(c => c.selected);
+    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
+    selectedCard.selected = false;
+    this.handCards.push(selectedCard);
+    this.lostCardsSelectedCount = 0;
+  }
+
+  onRecoverDiscardedCardButton() {
+    const selectedCard = this.discardedCards.find(c => c.selected);
+    this.discardedCards = [...this.discardedCards.filter(c => !c.selected)];
+    selectedCard.selected = false;
+    this.handCards.push(selectedCard);
+    this.discardedCardsSelectedCount = 0;
+  }
+
+  onLoseDiscardedCardFromRestButton() {
+    const selectedCard = this.lostCards.find(c => c.selected);
+    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
+    selectedCard.selected = false;
+    this.handCards.push(selectedCard);
+    this.lostCardsSelectedCount = 0;
+  }
+
+  onRerollRandomCardButton() {
+    const selectedCard = this.lostCards.find(c => c.selected);
+    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
+    selectedCard.selected = false;
+    this.handCards.push(selectedCard);
+    this.lostCardsSelectedCount = 0;
+  }
+
+  onLoseDiscardedCardButton() {
+    const selectedCards = this.discardedCards.filter(c => c.selected);
+    this.discardedCards = [...this.discardedCards.filter(c => !c.selected)];
+    selectedCards[0].selected = false;
+    selectedCards[1].selected = false;
+    this.lostCards.push(selectedCards[0]);
+    this.lostCards.push(selectedCards[1]);
+    this.discardedCardsSelectedCount = 0;
+  }
+
+  onLostCardClick(card) {
+    if (card.selected) {
+      this.lostCardsSelectedCount--;
+      card.selected = false;
+    } else if (this.lostCardsSelectedCount < this.lostCardsSelectedMax) {
+      this.lostCardsSelectedCount++;
+      card.selected = true;
+    }
+  }
+
+  onRecoverLostCardButton() {
+    const selectedCard = this.lostCards.find(c => c.selected);
+    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
+    selectedCard.selected = false;
+    this.handCards.push(selectedCard);
+    this.lostCardsSelectedCount = 0;
   }
 
   // function for clicking Hand

@@ -27,18 +27,7 @@
         <app-attack-modifier-deck></app-attack-modifier-deck>
       </div>
 
-      <div class="col-1">
-        <img class="status" [class.transparent]="!status.poisoned" (click)="status.poisoned = !status.poisoned" src="./assets/poisoned.png"/>
-        <img class="status" [class.transparent]="!status.wounded" (click)="status.wounded = !status.wounded" src = "./assets/wounded.png"/>
-        <img class="status" [class.transparent]="!status.invisible" (click)="status.invisible = !status.invisible" src = "./assets/invisible.png"/>
-        <img class="status" [class.transparent]="!status.immobilized" (click)="status.immobilized = !status.immobilized" src = "./assets/immobilized.png"/>
-        <img class="status" [class.transparent]="!status.disarmed" (click)="status.disarmed = !status.disarmed" src = "./assets/disarmed.png"/>
-        <img class="status" [class.transparent]="!status.stunned" (click)="status.stunned = !status.stunned" src = "./assets/stunned.png"/>
-        <img class="status" [class.transparent]="!status.muddled" (click)="status.muddled = !status.muddled" src = "./assets/muddled.png"/>
-        <img class="status" [class.transparent]="!status.strengthened" (click)="status.strengthened = !status.strengthened" src = "./assets/Strengthen.png"/>
-      </div>
-
-      <div class="col-4">
+      <div class="col-5">
         <div>Active Cards</div>
         <div>
             <span *ngFor="let card of activeCards" style="float: right">
@@ -79,8 +68,8 @@
       </div>
     </div>
     <div align="center" class="col-12">
-      <button id = "play-cards-button" (click)="onPlayCardsButton()" class="button visible" type="button" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
-      <button id = "lose-hand-card" class="button visible" type = "button" title="Must Have One Card Selected">Lose Card To Avoid Damage</button>
+      <button id = "play-cards-button" (click)="onPlayCardsButton()" class="button visible" type="button" [disabled]="handCardsSelectedCount !== 2 || playedCards.length > 0" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
+      <button id = "lose-hand-card" (click)="onLoseHandCardButton()" class="button visible" type = "button" [disabled]="handCardsSelectedCount !== 1" title="Must Have One Card Selected">Lose Card To Avoid Damage</button>
     </div>
   </div>
 
@@ -89,16 +78,16 @@
         <div>Discarded Cards</div>
 
         <span *ngFor="let card of discardedCards" class="col-1">
-          <img class="discarded" [src]="card.src" [class.add-border]="card.selected"/>
+          <img class="discarded" [src]="card.src" (click)="onDiscardedCardClick(card)" [class.add-border]="card.selected"/>
         </span>
 
         <div class="col-12">
-          <button id = "short-rest-button" class = "button"type="button" title = "Must Have At Least 2 Discarded Cards And No Cards in Play">Short Rest</button>
-          <button id = "long-rest-button" class = "button"type="button"title = "Must Have At Least 2 Discarded Cards And No Cards in Play">Long Rest</button>
-          <button id = "recover-discard-button"class = "button" type="button"title="Must Have A Discarded Card Selected">Recover Discarded Card</button><br/>
-          <button id = "lose-discard-button" class = "button"type = "button" title="Must Be Resting">Lose Card From Rest</button>
-          <button id = "reroll-random-card-button" class = "button"type = "button" title = "Can Only Be Used Once Per Short Rest">Reroll Lost Card</button>
-          <button id = "lose-discard-button2" class = "button not-without-more-selected"type = "button" title="Must Have A Discarded Card Selected - Must Lose 2 to Avoid Damage">Lose Card To Avoid Damage</button>
+          <button id="short-rest-button" class="button" type="button" [disabled]="discardedCards.length < 2 || playedCards.length > 0" title = "Must Have At Least 2 Discarded Cards And No Cards in Play">Short Rest</button>
+          <button id="long-rest-button" class = "button" type="button" [disabled]="discardedCards.length < 2 || playedCards.length > 0" title="Must Have At Least 2 Discarded Cards And No Cards in Play">Long Rest</button>
+          <button id="recover-discard-button" (click)="onRecoverDiscardedCardButton()" class="button" type="button" [disabled]="discardedCardsSelectedCount !== 1" title="Must Have A Discarded Card Selected">Recover Discarded Card</button><br/>
+          <button id="lose-discard-button" class="button" type = "button" [disabled]="!(shortResting || longResting)" title="Must Be Resting">Lose Card From Rest</button>
+          <button id="reroll-random-card-button" class="button" type = "button" [disabled]="!resting || shortRestRerolls > 0 || health < 2" title = "Can Only Be Used Once Per Short Rest">Reroll Lost Card</button>
+          <button id="lose-discard-button2" (click)="onLoseDiscardedCardButton()" class="button" type="button" [disabled]="discardedCardsSelectedCount !== 2" title="Must Select 2 Cards">Lose Card To Avoid Damage</button>
         </div>
     </div>
 
@@ -107,10 +96,10 @@
       <div>Lost Cards</div>
 
       <span *ngFor="let card of lostCards" class="col-1">
-        <img class= "lost" [src]="card.src" [class.add-border]="card.selected"/>
+        <img class= "lost" [src]="card.src" (click)="onLostCardClick(card)" [class.add-border]="card.selected"/>
       </span>
 
-      <button id = "recover-lost" class = "button"type="button" title = "Must Have a Lost Card Selected">Recover Lost Card</button>
+      <button id="recover-lost" (click)="onRecoverLostCardButton()" class="button" type="button" [disabled]="lostCardsSelectedCount !== 1" title="Must Have a Lost Card Selected">Recover Lost Card</button>
     </div>
   </div>
 

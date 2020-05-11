@@ -1,17 +1,28 @@
-<div id ="health" align = "center">Health<br/>
+<div id="status-effects">
+  <img class="status" [class.transparent]="!status.poisoned" (click)="status.poisoned = !status.poisoned" src="./assets/poisoned.png"/>
+  <img class="status" [class.transparent]="!status.wounded" (click)="status.wounded = !status.wounded" src = "./assets/wounded.png"/>
+  <img class="status" [class.transparent]="!status.invisible" (click)="status.invisible = !status.invisible" src = "./assets/invisible.png"/>
+  <img class="status" [class.transparent]="!status.immobilized" (click)="status.immobilized = !status.immobilized" src = "./assets/immobilized.png"/>
+  <img class="status" [class.transparent]="!status.disarmed" (click)="status.disarmed = !status.disarmed" src = "./assets/disarmed.png"/>
+  <img class="status" [class.transparent]="!status.stunned" (click)="status.stunned = !status.stunned" src = "./assets/stunned.png"/>
+  <img class="status" [class.transparent]="!status.muddled" (click)="status.muddled = !status.muddled" src = "./assets/muddled.png"/>
+  <img class="status" [class.transparent]="!status.strengthened" (click)="status.strengthened = !status.strengthened" src = "./assets/Strengthen.png"/>
+</div>
+<div id="health" align="center">Health<br/>
   <div>
-    <p id="health-counter"style="font-size: 35px; color:red;">{{ health }}</p><br/>
+    <p id="health-counter"style="font-size: 35px; color:red;">{{ health }}</p>
     <button (click)="damageButtonClick()" [disabled]="health === 0" type ="button" style="font-size:15px;">-</button>
     <button (click)="healButtonClick()" [disabled]="health === maxHealth || status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">+</button>
   </div>
 </div>
-<div id ="xp" align = "center">XP<br/>
-  <p id="xp-counter" style="font-size: 35px; color:cyan;">{{ experience }}</p><br/>
+<div id="xp" align="center">XP<br/>
+  <p id="xp-counter" style="font-size: 35px; color:cyan;">{{ experience }}</p>
   <button (click)="xpDownClick()" [disabled]="experience === 0" type ="button" style="font-size:15px;">-</button>
   <button (click)="xpUpClick()" type ="button" style="font-size:15px;">+</button>
 </div>
-<div id ="loot" align = "center">Loot<br/>
-  <p id="loot-counter" style="font-size: 35px; color:gold;">{{ loot }}</p><br/>
+<div id="loot" align="center">Loot<br/>
+  <p id="loot-counter" style="font-size: 35px; color:gold;">{{ loot }}</p>
   <button (click)="lootDownClick()" [disabled]="loot === 0" type ="button" style="font-size:15px;">-</button>
   <button (click)="lootUpClick()" type ="button" style="font-size:15px;">+</button>
 </div>
+
