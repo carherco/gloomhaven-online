@@ -103,27 +103,6 @@
     </div>
   </div>
 
-  <div>
-    <td id ="status-effects" align ="center">Status Effects<br/>
-    <img *ngIf="status.poisoned" class="status" src = "./assets/poisoned.png"/>
-    <img *ngIf="status.wounded" class="status" src = "./assets/wounded.png"/>
-    <img *ngIf="status.immobilized" class="status" src = "./assets/immobilized.png"/>
-    <img *ngIf="status.disarmed" class="status" src = "./assets/disarmed.png"/>
-    <img *ngIf="status.stunned" class="status" src = "./assets/stunned.png"/>
-    <img *ngIf="status.muddled" class="status" src = "./assets/muddled.png"/>
-    <img *ngIf="status.invisible" class="status" src = "./assets/invisible.png"/>
-    <img *ngIf="status.strengthened" class="status" src = "./assets/Strengthen.png"/>
-    <br/>
-    <button (click)="status.poisoned = !status.poisoned" type = "button">Toggle Poisoned</button>
-    <button (click)="status.wounded = !status.wounded" type = "button">Toggle Wounded</button>
-    <button (click)="status.immobilized = !status.immobilized" type = "button">Toggle Immobilized</button>
-    <button (click)="status.disarmed = !status.disarmed" type = "button">Toggle Disarmed</button>
-    <button (click)="status.stunned = !status.stunned" type = "button">Toggle Stunned</button>
-    <button (click)="status.muddled = !status.muddled" type = "button">Toggle Muddled</button>
-    <button (click)="status.invisible = !status.invisible" type = "button">Toggle Invisible</button>
-    <button (click)="status.strengthened = !status.strengthened" type = "button">Toggle Strengthened</button>
-  </div>
-
 </div>
 
 
