@@ -45,7 +45,7 @@ export class GameManagerService {
   private addModifiers(currentDeck: Modifier[], modifiers: Modifier[], key: string): Modifier[] {
     const srcPrefix = key.toLowerCase() + 'Perks/' + key.toLowerCase();
     const modifiersWithCorrectSrc = modifiers.map(
-      m => ({...m, src: srcPrefix + m.src})
+      m => ({...m, src: srcPrefix + m.src.charAt(0).toUpperCase() + m.src.slice(1)})
     );
     return currentDeck.concat(modifiersWithCorrectSrc);
   }

@@ -66,9 +66,34 @@ export const defaultDeck = [
   new Fail(),
 ];
 
+export class Plus0AddTarget {
+  id = 'plus0AddTarget';
+  src = 'plus0AddTarget.png';
+}
+
+export class Plus1Rolling {
+  id = 'plus1Rolling';
+  src = 'RollingPlus1.png';
+}
+
 export class Plus1Immobilize {
-  id = 'plus1Inmobilize';
-  src = 'Plus1Inmobilize.png';
+  id = 'plus1Immobilize';
+  src = 'Plus1Immobilize.png';
+}
+
+export class Plus1Wound {
+  id = 'plus1wound';
+  src = 'Plus1Wound.png';
+}
+
+export class Plus1Heal2 {
+  id = 'plus1Heal2';
+  src = 'plus1Heal2.png';
+}
+
+export class Pull1Rolling {
+  id = 'pull1Rolling';
+  src = 'RollingPull1.png';
 }
 
 export class Plus2Muddle {
@@ -81,14 +106,14 @@ export class Plus2Ice {
   src = 'FrostPlus2.png';
 }
 
-export class Plus1Rolling {
-  id = 'plus1Rolling';
-  src = 'RollingPlus1.png';
+export class Push2Rolling {
+  id = 'push2Rolling';
+  src = 'RollingPush2.png';
 }
 
-export class Pull1Rolling {
-  id = 'pull1Rolling';
-  src = 'RollingPull1.png';
+export class Plus3 {
+  id = 'plus3';
+  src = 'Plus3.png';
 }
 
 export class MuddleRolling {
@@ -111,6 +136,20 @@ export class DisarmRolling {
   src = 'RollingDisarm.png';
 }
 
+export class EarthRolling {
+  id = 'earthRolling';
+  src = 'RollingEarth.png';
+}
+
+export class WindRolling {
+  id = 'windRolling';
+  src = 'RollingWind.png';
+}
+
+export class FireRolling {
+  id = 'fireRolling';
+  src = 'RollingFire.png';
+}
 
 const mod1 = 'assets/plus0.png';
 const mod2 = 'assets/plus0.png';

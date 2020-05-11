@@ -18,7 +18,7 @@ export const Players = [
     ownedItems: [1, 14, 3, 13, 130, 81],
     scenarioAbilityCards: [],
     scenarioItems: [],
-    perks: [],
+    perks: ['chPerk2-1', 'chPerk10'],
   },
   {
     name: 'Farts like Thunder',
@@ -38,7 +38,13 @@ export const Players = [
     ownedItems: [6, 14, 125, 16, 20, 21, 13],
     scenarioAbilityCards: [],
     scenarioItems: [],
-    perks: [],
+    perks: [
+      'tiPerk1-1',
+      'tiPerk1-2',
+      'tiPerk3',
+      'tiPerk2',
+      'tiPerk7-1'
+    ],
   },
   {
     name: 'Nightmare',
@@ -79,10 +85,10 @@ export const Players = [
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
-      'chPerk8',
-      'chPerk5-1',
-      'chPerk1-1',
-      'chPerk1-2',
+      'mtPerk8',
+      'mtPerk5-1',
+      'mtPerk1-1',
+      'mtPerk1-2',
     ],
   }
 ];
