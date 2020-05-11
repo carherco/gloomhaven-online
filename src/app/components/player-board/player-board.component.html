@@ -86,7 +86,7 @@
           <button id="long-rest-button" class = "button" type="button" [disabled]="discardedCards.length < 2 || playedCards.length > 0" title="Must Have At Least 2 Discarded Cards And No Cards in Play">Long Rest</button>
           <button id="recover-discard-button" (click)="onRecoverDiscardedCardButton()" class="button" type="button" [disabled]="discardedCardsSelectedCount !== 1" title="Must Have A Discarded Card Selected">Recover Discarded Card</button><br/>
           <button id="lose-discard-button" class="button" type = "button" [disabled]="!(shortResting || longResting)" title="Must Be Resting">Lose Card From Rest</button>
-          <button id="reroll-random-card-button" class="button" type = "button" [disabled]="!resting || shortRestRerolls > 0 || health < 2" title = "Can Only Be Used Once Per Short Rest">Reroll Lost Card</button>
+          <button id="reroll-random-card-button" class="button" type = "button" [disabled]="!shortResting || shortRestRerolls > 0 || health < 2" title = "Can Only Be Used Once Per Short Rest">Reroll Lost Card</button>
           <button id="lose-discard-button2" (click)="onLoseDiscardedCardButton()" class="button" type="button" [disabled]="discardedCardsSelectedCount !== 2" title="Must Select 2 Cards">Lose Card To Avoid Damage</button>
         </div>
     </div>
