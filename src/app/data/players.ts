@@ -18,7 +18,7 @@ export const Players = [
     ownedItems: [1, 14, 3, 13, 130, 81],
     scenarioAbilityCards: [],
     scenarioItems: [],
-    attacModifierCards: [],
+    perks: [],
   },
   {
     name: 'Farts like Thunder',
@@ -38,7 +38,7 @@ export const Players = [
     ownedItems: [6, 14, 125, 16, 20, 21, 13],
     scenarioAbilityCards: [],
     scenarioItems: [],
-    attacModifierCards: [],
+    perks: [],
   },
   {
     name: 'Nightmare',
@@ -58,7 +58,7 @@ export const Players = [
     ownedItems: [4, 13, 2, 5, 11, 8, 17, 12],
     scenarioAbilityCards: [],
     scenarioItems: [],
-    attacModifierCards: [],
+    perks: [],
   },
   {
     name: 'Psycho',
@@ -78,6 +78,11 @@ export const Players = [
     ownedItems: [11, 13, 1, 8, 16, 12, 20, 21],
     scenarioAbilityCards: [],
     scenarioItems: [],
-    attacModifierCards: [],
+    perks: [
+      'chPerk8',
+      'chPerk5-1',
+      'chPerk1-1',
+      'chPerk1-2',
+    ],
   }
 ];

@@ -66,15 +66,51 @@ export const defaultDeck = [
   new Fail(),
 ];
 
-export class Plus1Inmobilize {
+export class Plus1Immobilize {
   id = 'plus1Inmobilize';
-  src = 'plus1Inmobilize.png';
+  src = 'Plus1Inmobilize.png';
 }
 
 export class Plus2Muddle {
   id = 'plus2Muddle';
-  src = 'plus2Muddle.png';
+  src = 'Plus2Muddle.png';
 }
+
+export class Plus2Ice {
+  id = 'plus2Ice';
+  src = 'FrostPlus2.png';
+}
+
+export class Plus1Rolling {
+  id = 'plus1Rolling';
+  src = 'RollingPlus1.png';
+}
+
+export class Pull1Rolling {
+  id = 'pull1Rolling';
+  src = 'RollingPull1.png';
+}
+
+export class MuddleRolling {
+  id = 'muddleRolling';
+  src = 'RollingMuddle.png';
+}
+
+export class ImmobilizeRolling {
+  id = 'immobilizeRolling';
+  src = 'RollingImmobilize.png';
+}
+
+export class StunRolling {
+  id = 'stunRolling';
+  src = 'RollingStun.png';
+}
+
+export class DisarmRolling {
+  id = 'disarmRolling';
+  src = 'RollingDisarm.png';
+}
+
 
 const mod1 = 'assets/plus0.png';
 const mod2 = 'assets/plus0.png';

@@ -24,7 +24,7 @@
           <button id="lose-button" class = "button" type="button" (click)="onLosePlayedCardClick()" [disabled]="playedCardsSelectedCount!==1" title = "Must Have a Card In Play Selected">Lose Card</button>
           <button id="activate-button" class = "button" type="button" (click)="onActivatePlayedCardClick()" [disabled]="playedCardsSelectedCount!==1" title = "Must Have a Card In Play Selected">Move Card to Active</button>
         </div>
-        <app-attack-modifier-deck></app-attack-modifier-deck>
+        <app-attack-modifier-deck [modifierDeck]="attackModifierDeck"></app-attack-modifier-deck>
       </div>
 
       <div class="col-5">

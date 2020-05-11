@@ -15,8 +15,8 @@ export interface Player {
   gold: number;
   perkTicks: number;
   ownedAbilityCards: any[];
-  ownedItems: any[];
+  ownedItems: number[];
   scenarioAbilityCards: any[];
   scenarioItems: any[];
-  attacModifierCards: any[];
+  perks: string[];
 }

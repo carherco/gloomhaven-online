@@ -4,6 +4,7 @@ import { GameManagerService } from 'src/app/services/game-manager.service';
 import { Character } from 'src/app/model/character';
 import { Players } from 'src/app/data/players';
 import { Player } from 'src/app/model/player';
+import { Modifier } from 'src/app/model/modifier';
 
 @Component({
   selector: 'app-player-board',
@@ -14,6 +15,7 @@ export class PlayerBoardComponent implements OnInit {
 
   player: Player = Players[3];
   character: Character = this.player.character;
+  attackModifierDeck: Modifier[];
 
   handCards = [];
   handCardsSelectedCount = 0;
@@ -63,6 +65,7 @@ export class PlayerBoardComponent implements OnInit {
     //this.player = this.game.player;
     this.maxHealth = this.character.hitPoints[this.player.level - 1];
     this.health = this.maxHealth;
+    this.attackModifierDeck = this.game.getAttackModifierDeck();
   }
 
   ngOnInit(): void {

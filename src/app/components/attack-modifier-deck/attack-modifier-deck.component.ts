@@ -1,8 +1,6 @@
-import { Minus1 } from './../../data/modifiers';
-import { Component, OnInit } from '@angular/core';
-import { defaultDeck, Critic, Fail, Bless, Curse } from 'src/app/data/modifiers';
+import { Component, OnInit, Input } from '@angular/core';
+import { defaultDeck, Critic, Fail, Bless, Curse, Minus1 } from 'src/app/data/modifiers';
 import { Modifier } from 'src/app/model/modifier';
-import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-attack-modifier-deck',
@@ -11,7 +9,7 @@ import { VirtualTimeScheduler } from 'rxjs';
 })
 export class AttackModifierDeckComponent implements OnInit {
 
-  modifierDeck: Modifier[] = defaultDeck;
+  @Input() modifierDeck: Modifier[] = defaultDeck;
   playedModifierDeck: Modifier[] = [];
   lastModifier: Modifier;
   extraBlesses = 0;
@@ -23,11 +21,10 @@ export class AttackModifierDeckComponent implements OnInit {
   private blessId = (new Bless()).id;
   private curseId = (new Curse()).id;
 
-  constructor() {
-    this.modifierDeck = this.shuffle(this.modifierDeck);
-  }
+  constructor() {}
 
   ngOnInit(): void {
+    this.modifierDeck = this.shuffle(this.modifierDeck);
   }
 
   drawCard() {

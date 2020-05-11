@@ -1,5 +1,20 @@
 import { Character } from './../model/character';
-import { Plus0, Plus1, Minus1, Plus1Inmobilize, Plus2Muddle, Minus2, Plus2 } from './modifiers';
+import {
+  Plus0,
+  Plus1,
+  Minus1,
+  Plus1Immobilize,
+  Plus2Muddle,
+  Minus2,
+  Plus2,
+  Plus2Ice,
+  Plus1Rolling,
+  Pull1Rolling,
+  MuddleRolling,
+  ImmobilizeRolling,
+  StunRolling,
+  DisarmRolling
+} from './modifiers';
 
 export const Brute: Character = {
   id: 'brute',
@@ -72,8 +87,8 @@ export const Cragheart: Character = {
     { id: 'chPerk2-2', title: 'Replace One -1 Card With One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
     { id: 'chPerk2-3', title: 'Replace One -1 Card With One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
     { id: 'chPerk3', title: 'Add One -2 Card and Two +2 Cards', addModifiers: [new Minus2(), new Plus2(), new Plus2()], removeModifiers: [] },
-    { id: 'chPerk4-1', title: 'Add One +1 Immobilize Card', addModifiers: [new Plus1Inmobilize()], removeModifiers: [] },
-    { id: 'chPerk4-2', title: 'Add One +1 Immobilize Card', addModifiers: [new Plus1Inmobilize()], removeModifiers: [] },
+    { id: 'chPerk4-1', title: 'Add One +1 Immobilize Card', addModifiers: [new Plus1Immobilize()], removeModifiers: [] },
+    { id: 'chPerk4-2', title: 'Add One +1 Immobilize Card', addModifiers: [new Plus1Immobilize()], removeModifiers: [] },
     { id: 'chPerk5-1', title: 'Add One +2 Muddle Card', addModifiers: [new Plus2Muddle()], removeModifiers: [] },
     { id: 'chPerk5-2', title: 'Add One +2 Muddle Card', addModifiers: [new Plus2Muddle()], removeModifiers: [] },
     { id: 'chPerk6', title: 'Add Two Rolling Push 2 Cards', addModifiers: [], removeModifiers: [] },
@@ -107,7 +122,23 @@ export const Mindthief: Character = {
   level7Cards: ['psychic-projection', 'vicious-blood'],
   level8Cards: ['domination', 'shared-nightmare'],
   level9Cards: ['many-as-one', 'phantasmal-killer'],
-  perks: [],
+  perks: [
+    { id: 'chPerk1-1', title: 'Remove two -1 cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'chPerk1-2', title: 'Remove two -1 cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'chPerk2', title: 'Remove four +0 cards', addModifiers: [], removeModifiers: [new Plus0(), new Plus0(), new Plus0(), new Plus0()] },
+    { id: 'chPerk3', title: 'Replace two +1 cards with two +2 cards', addModifiers: [new Plus2(), new Plus2()], removeModifiers: [new Minus1(), new Plus1()] },
+    { id: 'chPerk4', title: 'Replace one -2 card with one 0 card', addModifiers: [new Plus0()], removeModifiers: [new Minus2()] },
+    { id: 'chPerk5-1', title: 'Add one +2 Infuse Ice card', addModifiers: [new Plus2Ice()], removeModifiers: [] },
+    { id: 'chPerk5-2', title: 'Add one +2 Infuse Ice card', addModifiers: [new Plus2Ice()], removeModifiers: [] },
+    { id: 'chPerk6-1', title: 'Add two Rolling +1 cards', addModifiers: [new Plus1Rolling()], removeModifiers: [] },
+    { id: 'chPerk6-2', title: 'Add two Rolling +1 cards', addModifiers: [new Plus1Rolling()], removeModifiers: [] },
+    { id: 'chPerk7', title: 'Add three Rolling Pull 1 Cards', addModifiers: [new Pull1Rolling(), new Pull1Rolling(), new Pull1Rolling()], removeModifiers: [] },
+    { id: 'chPerk8', title: 'Add three Rolling Muddle Cards', addModifiers: [new MuddleRolling(), new MuddleRolling(), new MuddleRolling()], removeModifiers: [] },
+    { id: 'chPerk9', title: 'Add two Rolling Immobilize Cards', addModifiers: [new ImmobilizeRolling(), new ImmobilizeRolling()], removeModifiers: [] },
+    { id: 'chPerk10', title: 'Add one Rolling Stun card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'chPerk11', title: 'Add one Rolling Disarm card and one Rolling Muddle card', addModifiers: [new DisarmRolling(), new MuddleRolling()], removeModifiers: [] },
+    { id: 'chPerk12', title: 'Ignore Negative Scenario Effects', addModifiers: [], removeModifiers: [] },
+  ],
 };
 
 export const Spellweaver: Character = {
