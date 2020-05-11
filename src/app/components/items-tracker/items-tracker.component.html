@@ -1,1 +1,7 @@
-<img *ngFor="let item of items" [src]="item|getSrcItem" width="50%">
+<img *ngFor="let item of items"
+    [src]="item.id|getSrcItem"
+    (click)="toggleSpent(item)"
+    [class.spent]="item.spent"
+    [class.consumed]="item.consumed"
+    [class.flipped]="item.consumed"
+    width="50%">
