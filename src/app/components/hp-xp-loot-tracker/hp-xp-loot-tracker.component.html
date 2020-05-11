@@ -10,7 +10,7 @@
 </div>
 <div id="health" align="center">Health<br/>
   <div>
-    <p id="health-counter"style="font-size: 35px; color:red;">{{ health }}</p>
+    <p id="health-counter"style="font-size: 35px; color:red;">{{ health }} / {{ maxHealth }}</p>
     <button (click)="damageButtonClick()" [disabled]="health === 0" type ="button" style="font-size:15px;">-</button>
     <button (click)="healButtonClick()" [disabled]="health === maxHealth || status.poisoned" type ="button" style="font-size:15px;" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">+</button>
   </div>

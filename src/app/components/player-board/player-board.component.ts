@@ -61,7 +61,7 @@ export class PlayerBoardComponent implements OnInit {
   constructor(private router: Router, private game: GameManagerService) {
     this.handCards = this.game.getHand();
     //this.player = this.game.player;
-    this.maxHealth = this.character.hitPoints[this.player.level];
+    this.maxHealth = this.character.hitPoints[this.player.level - 1];
     this.health = this.maxHealth;
   }
 
@@ -150,6 +150,10 @@ export class PlayerBoardComponent implements OnInit {
   }
 
   onDiscardedCardClick(card) {
+    if (this.shortResting) {
+      return;
+    }
+
     if (card.selected) {
       this.discardedCardsSelectedCount--;
       card.selected = false;
@@ -160,43 +164,44 @@ export class PlayerBoardComponent implements OnInit {
   }
 
   onShortRestButton() {
-    const selectedCard = this.lostCards.find(c => c.selected);
-    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
-    selectedCard.selected = false;
-    this.handCards.push(selectedCard);
-    this.lostCardsSelectedCount = 0;
+    this.shortResting = true;
+    const selectedCard = this.discardedCards[Math.floor(Math.random() * this.discardedCards.length)];
+    selectedCard.selected = true;
   }
 
   onLongRestButton() {
-    const selectedCard = this.lostCards.find(c => c.selected);
-    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
-    selectedCard.selected = false;
-    this.handCards.push(selectedCard);
-    this.lostCardsSelectedCount = 0;
+    this.longResting = true;
   }
 
   onRecoverDiscardedCardButton() {
     const selectedCard = this.discardedCards.find(c => c.selected);
-    this.discardedCards = [...this.discardedCards.filter(c => !c.selected)];
+    this.discardedCards = this.discardedCards.filter(c => !c.selected);
     selectedCard.selected = false;
     this.handCards.push(selectedCard);
     this.discardedCardsSelectedCount = 0;
   }
 
   onLoseDiscardedCardFromRestButton() {
-    const selectedCard = this.lostCards.find(c => c.selected);
-    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
+    const selectedCard = this.discardedCards.find(c => c.selected);
+    const recoveredCards = [...this.discardedCards.filter(c => !c.selected)];
     selectedCard.selected = false;
-    this.handCards.push(selectedCard);
-    this.lostCardsSelectedCount = 0;
+    this.lostCards.push(selectedCard);
+    this.handCards = this.handCards.concat(recoveredCards);
+    this.discardedCards = [];
+    this.discardedCardsSelectedCount = 0;
+    this.longResting = false;
+    this.shortResting = false;
+    this.shortRestRerolls = 0;
   }
 
   onRerollRandomCardButton() {
-    const selectedCard = this.lostCards.find(c => c.selected);
-    this.lostCards = [...this.lostCards.filter(c => !c.selected)];
-    selectedCard.selected = false;
-    this.handCards.push(selectedCard);
-    this.lostCardsSelectedCount = 0;
+    const previousSelectedCard = this.discardedCards.find(c => c.selected);
+    const otherCards = this.discardedCards.filter(c => !c.selected);
+    const selectedCard = otherCards[Math.floor(Math.random() * otherCards.length)];
+    previousSelectedCard.selected = false;
+    selectedCard.selected = true;
+    this.health--;
+    this.shortRestRerolls = 1;
   }
 
   onLoseDiscardedCardButton() {
