@@ -31,24 +31,20 @@
         <div>Active Cards</div>
         <div>
             <span *ngFor="let card of activeCards" style="float: right">
-              <img class = "active-card flipped" [src]="card.src" [class.add-border]="card.selected"/>
+              <img class = "active-card flipped" [src]="card.src" (click)="onActiveCardClick(card)" [class.add-border]="card.selected"/>
               <div>
-                <button type = "button">1</button>
-                <button type = "button">2</button>
-                <button type = "button">3</button>
-                <button type = "button">4</button>
-                <button type = "button">5</button>
-                <button type = "button">6</button>
+                <button appMutable type="button">1</button>
+                <button appMutable type="button">2</button>
+                <button appMutable type="button">3</button>
+                <button appMutable type="button">4</button>
+                <button appMutable type="button">5</button>
+                <button appMutable type="button">6</button>
               </div>
             </span>
         </div>
         <div>
-          <button id = "discard-active-card" class = "button tooltip"type="button" title = "Must Have an Active Card Selected">Discard Active Card</button>
-          <button id = "lose-active-card"class = "button tooltip" type = "button" title = "Must Have an Active Card Selected">Lose Active Card</button>
-          <button id = "create-active-tracker" class = "button tooltip" type = "button" title = "Must Have an Active Card Without a Tracker Selected">Create Card Tracker</button>
-          <p id = "tracker-size" style ="font-size:18px; font-family: 'Palatino Linotype'; color:white;">Tracker Size: {{cardTrackerSize}}</p>
-          <button class="button" type="button" (click)="cardTrackerSize = cardTrackerSize - 1" [disabled]="cardTrackerSize <= 1">-</button>
-          <button class="button" type="button" (click)="cardTrackerSize = cardTrackerSize + 1" [disabled]="cardTrackerSize >= 6">+</button>
+          <button id="discard-active-card" (click)="onDiscardActiveCardClick()" class="button" type="button" [disabled]="activeCardsSelectedCount !== 1" title="Must Have an Active Card Selected">Discard Active Card</button>
+          <button id="lose-active-card" (click)="onLoseActiveCardClick()" class="button" type="button" [disabled]="activeCardsSelectedCount !== 1" title="Must Have an Active Card Selected">Lose Active Card</button>
         </div>
       </div>
       <div class="col-2">

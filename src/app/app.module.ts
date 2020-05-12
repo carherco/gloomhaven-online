@@ -33,6 +33,7 @@ import { MapCreatorPageComponent } from './pages/map-creator-page/map-creator-pa
 import { ModalTokenStatsComponent } from './components/modal-token-stats/modal-token-stats.component';
 import { HpXpLootTrackerComponent } from './components/hp-xp-loot-tracker/hp-xp-loot-tracker.component';
 import { ItemsTrackerComponent } from './components/items-tracker/items-tracker.component';
+import { MutableDirective } from './directives/mutable.directive';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { ItemsTrackerComponent } from './components/items-tracker/items-tracker.
     MapCreatorPageComponent,
     ModalTokenStatsComponent,
     HpXpLootTrackerComponent,
-    ItemsTrackerComponent
+    ItemsTrackerComponent,
+    MutableDirective
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,6 @@ export class PlayerBoardComponent implements OnInit {
   activeCards = [];
   activeCardsSelectedCount = 0;
   activeCardsSelectedMax = 1;
-  cardTrackerSize = 1;
 
   discardedCards = [];
   discardedCardsSelectedCount = 0;
@@ -150,6 +149,32 @@ export class PlayerBoardComponent implements OnInit {
       this.playedCards.splice(1, 1);
       this.playedCardsSelectedCount--;
     }
+  }
+
+  onActiveCardClick(card) {
+    if (card.selected) {
+      this.activeCardsSelectedCount--;
+      card.selected = false;
+    } else if (this.activeCardsSelectedCount < this.activeCardsSelectedMax) {
+      this.activeCardsSelectedCount++;
+      card.selected = true;
+    }
+  }
+
+  onDiscardActiveCardClick() {
+    const selectedCard = this.activeCards.find(c => c.selected);
+    this.activeCards = this.activeCards.filter(c => !c.selected);
+    selectedCard.selected = false;
+    this.discardedCards.push(selectedCard);
+    this.activeCardsSelectedCount = 0;
+  }
+
+  onLoseActiveCardClick() {
+    const selectedCard = this.activeCards.find(c => c.selected);
+    this.activeCards = this.activeCards.filter(c => !c.selected);
+    selectedCard.selected = false;
+    this.lostCards.push(selectedCard);
+    this.activeCardsSelectedCount = 0;
   }
 
   onDiscardedCardClick(card) {
