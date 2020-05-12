@@ -13,7 +13,7 @@ import { Players } from 'src/app/data/players';
 })
 export class SelectHandComponent implements OnInit {
 
-  player: Player = Players[3];
+  player: Player = Players[0];
   character: Character = this.player.character;
   cardsList = [];
   cardCount = 0;

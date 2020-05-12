@@ -5,7 +5,6 @@
   </div>
 
   <div id = "confirm-buttons" align = "center">
-    <button class="button" type="button">Go Back To Perks</button>
     <button [disabled]="cardCount !== character.handCardSize " (click)="onConfirmHand()" class = "button"type="button" title="Must Have a Full Hand">Confirm Hand</button>
   </div>
 
@@ -14,3 +13,4 @@
       <img [src]="card.src" (click)="onCardClick(card)" class="chooseCards" [class.add-border]="card.selected"/>
     </div>
   </div>
+</div>

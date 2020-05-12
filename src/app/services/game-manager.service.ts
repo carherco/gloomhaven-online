@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Player } from '../model/player';
-import { Cragheart } from 'src/app/data/charactersDef';
 import { Players } from '../data/players';
 import { Modifier } from '../model/modifier';
 import { defaultDeck } from '../data/modifiers';
