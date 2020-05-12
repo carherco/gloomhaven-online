@@ -5,3 +5,7 @@
 .status {
   float: left;
 }
+
+#exit-button {
+  margin: 5px 0 5px 0;
+}

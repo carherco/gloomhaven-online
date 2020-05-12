@@ -261,4 +261,11 @@ export class PlayerBoardComponent implements OnInit {
     this.lostCardsSelectedCount = 0;
   }
 
+  onExitButtonClick() {
+    const respuesta = window.confirm('¿Quieres salir de esta pantalla para elegir otro jugador / perks / cartas?');
+    if (respuesta) {
+      this.router.navigate(['/select-player']);
+    }
+  }
+
 }

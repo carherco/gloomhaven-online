@@ -32,8 +32,8 @@
     <div align ="center">
       <button class="btn btn-danger" (click)="damageButtonClick()" [disabled]="token.stats.h === 0" type ="button" style="font-size:15px;">Damage 1</button>
       <span id="health-counter">{{ token.stats.h }}
-        <svg class="bi bi-droplet-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M8 16a6 6 0 006-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 006 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z" clip-rule="evenodd"/>
+        <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
         </svg>
       </span>
       <button class="btn btn-success" (click)="healButtonClick()" [disabled]="token.stats.h === token.maxHealth || token.status?.poisoned" type ="button" title="If Poisoned, Heal Skills Must Remove Poison Instead of Increasing Health">Heal 1</button>
@@ -46,7 +46,7 @@
       <img *ngIf="token.status.immobilized" (click)="token.status.immobilized = false" class="status" src="./assets/immobilized.png"/>
       <img *ngIf="token.status.disarmed" (click)="token.status.disarmed = false" class="status" src="./assets/disarmed.png"/>
       <img *ngIf="token.status.stunned" (click)="token.status.stunned = false" class="status" src="./assets/stunned.png"/>
-      <img *ngIf="token.status.muddled" (click)="token.status.muddled = false" class="status" src="./assets/muddled.png"/> 
+      <img *ngIf="token.status.muddled" (click)="token.status.muddled = false" class="status" src="./assets/muddled.png"/>
       <img *ngIf="token.status.strengthened" (click)="token.status.strengthened = false" class="status" src="./assets/Strengthen.png"/>
       <img *ngIf="token.status.invisible" (click)="token.status.invisible = false" class="status" src="./assets/invisible.png"/>
     </div>
