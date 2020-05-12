@@ -10,6 +10,7 @@ import { Modifier } from 'src/app/model/modifier';
 export class AttackModifierDeckComponent implements OnInit {
 
   @Input() modifierDeck: Modifier[] = defaultDeck;
+  initialModifierDeck: Modifier[];
   playedModifierDeck: Modifier[] = [];
   lastModifier: Modifier;
   extraBlesses = 0;
@@ -24,7 +25,17 @@ export class AttackModifierDeckComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.initialModifierDeck = [...this.modifierDeck];
     this.modifierDeck = this.shuffle(this.modifierDeck);
+  }
+
+  resetDeck() {
+    this.modifierDeck = this.shuffle(this.initialModifierDeck);
+    this.extraBlesses = 0;
+    this.extraCurses = 0;
+    this.mustShuffle = false;
+    this.lastModifier = null;
+    this.playedModifierDeck = []
   }
 
   drawCard() {
@@ -47,9 +58,6 @@ export class AttackModifierDeckComponent implements OnInit {
         this.extraBlesses--;
       }
     }
-    console.log(this.modifierDeck);
-    console.log(this.lastModifier);
-    console.log(this.playedModifierDeck);
   }
 
   shuffleClick = () => {
@@ -71,16 +79,16 @@ export class AttackModifierDeckComponent implements OnInit {
     return a;
   }
 
-  bless() {
-    if (this.extraBlesses<10) {
+  addBless() {
+    if (this.extraBlesses < 10) {
       this.modifierDeck.push(new Bless());
       this.extraBlesses++;
       this.shuffleModifierDeck();
     }
   }
 
-  curse() {
-    if (this.extraCurses<10) {
+  addCurse() {
+    if (this.extraCurses < 10) {
       this.modifierDeck.push(new Curse());
       this.extraCurses++;
       this.shuffleModifierDeck();
@@ -89,6 +97,10 @@ export class AttackModifierDeckComponent implements OnInit {
 
   addMinus1() {
     this.modifierDeck.push(new Minus1());
+  }
+
+  reset() {
+    this.resetDeck();
   }
 
   // attack modifiers

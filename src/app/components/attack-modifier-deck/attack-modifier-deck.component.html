@@ -7,10 +7,10 @@
   <img *ngIf="playedModifierDeck.length" id = "playedModifiers" class = "attack-modifier" src="assets/{{lastModifier.src}}"/>
   <br/>
   <button id ="shuffleMods" (click)="shuffleClick()" class="button" type="button">Shuffle Modifiers</button><br/>
-  <button id ="bless" class = "button" type = "button">Bless</button>
-  <button id ="curse" class = "button" type = "button">Curse</button>
-  <button id ="add-minus-1" class = "button" type = "button">Add -1 Card</button>
-  <button id = "reset-deck" class = "button" type = "button">Reset Modifier Deck</button>
+  <button id ="bless" (click)="addBless()" class = "button" type = "button">Bless</button>
+  <button id ="curse" (click)="addCurse()" class = "button" type = "button">Curse</button>
+  <button id ="add-minus-1" (click)="addMinus1()" class = "button" type = "button">Add -1 Card</button>
+  <button id = "reset-deck" (click)="reset()" class = "button" type = "button">Reset Modifier Deck</button>
 </div>
 
 <div id = "zoomModal">
