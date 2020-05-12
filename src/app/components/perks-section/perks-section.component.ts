@@ -27,11 +27,11 @@ export class PerksSectionComponent implements OnInit {
   }
 
   confirmPerks() {
-    this.router.navigate(['/hand']);
+    this.router.navigate(['/select-hand']);
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/select-player']);
   }
 
 }

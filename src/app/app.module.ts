@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +34,7 @@ import { ModalTokenStatsComponent } from './components/modal-token-stats/modal-t
 import { HpXpLootTrackerComponent } from './components/hp-xp-loot-tracker/hp-xp-loot-tracker.component';
 import { ItemsTrackerComponent } from './components/items-tracker/items-tracker.component';
 import { MutableDirective } from './directives/mutable.directive';
+import { SelectPlayerPageComponent } from './pages/select-player-page/select-player-page.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { MutableDirective } from './directives/mutable.directive';
     ModalTokenStatsComponent,
     HpXpLootTrackerComponent,
     ItemsTrackerComponent,
-    MutableDirective
+    MutableDirective,
+    SelectPlayerPageComponent
   ],
   imports: [
     BrowserModule,

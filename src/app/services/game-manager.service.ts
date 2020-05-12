@@ -9,7 +9,7 @@ import { defaultDeck } from '../data/modifiers';
 })
 export class GameManagerService {
 
-  player: Player = Players[3];
+  player: Player;
   handCards;
   playedCards: [];
   activeCards: [];
@@ -18,17 +18,47 @@ export class GameManagerService {
 
   constructor() { }
 
+  setPlayer(player) {
+    this.player = player;
+    localStorage.setItem('player', JSON.stringify(this.player));
+  }
+
+  getPlayer(): Player {
+
+    let player;
+
+    player = this.player;
+
+    if (player) {
+      return player;
+    }
+
+    player = JSON.parse(localStorage.getItem('player'));
+
+    if (player) {
+      this.player = player;
+      return player;
+    }
+
+    return null;
+  }
+
+  isPlayerSelected() {
+    return this.getPlayer() ? true : false;
+  }
+
   setHand(handCards) {
     this.handCards = handCards.map(c => ({...c, selected: false }));
     localStorage.setItem('handCards', JSON.stringify(this.handCards));
   }
 
-  getHand() {
+  getHand(): any[] {
     return this.handCards || JSON.parse(localStorage.getItem('handCards'));
   }
 
   getAttackModifierDeck(): Modifier[] {
     let deck: Modifier[] = [...defaultDeck];
+    console.log(this.player);
     const playerPerksNames = this.player.perks;
     const characterPerks = this.player.character.perks;
     playerPerksNames.forEach(

@@ -13,19 +13,23 @@ import { Players } from 'src/app/data/players';
 })
 export class SelectHandComponent implements OnInit {
 
-  player: Player = Players[0];
-  character: Character = this.player.character;
+  player: Player;
+  character: Character;
   cardsList = [];
   cardCount = 0;
   constructor(private router: Router, private game: GameManagerService) {
+    this.player = this.game.getPlayer();
+    this.character = this.player.character;
+    const previousSelectedCards = this.game.getHand();
     this.cardsList = this.player.ownedAbilityCards.map(
       c => {
         return {
           id: c,
           src: 'assets/images/character-ability-cards/' + this.character.key + '/' + c + '.png',
-          selected: false
+          selected: previousSelectedCards.some(card => card.id === c)
         };
       });
+    this.cardCount = this.cardsList.filter( c => c.selected ).length;
   }
 
   ngOnInit() { }

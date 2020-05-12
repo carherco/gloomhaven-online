@@ -5,7 +5,7 @@
   <li class="nav-item">
     <a class="nav-link" routerLink="/shop" routerLinkActive="active">Shop</a>
   </li>
-  <li class="nav-item" ngbDropdown #map (mouseenter)="map.open()">
+  <li class="nav-item" ngbDropdown #map (mouseenter)="open()">
     <button class="btn" id="dropdownBasic1" ngbDropdownToggle>Maps</button>
     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
       <a *ngFor="let scenario of scenarios" class="nav-link"  routerLink="/map/{{scenario.id}}">Map {{scenario.id}} - {{scenario.name}}</a>

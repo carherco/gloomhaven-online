@@ -1,0 +1,14 @@
+<div id = "select-class-section" align = "center">
+  <h2 class = "header" align = "center" style = "color:white;">Select Your Player</h2>
+  <div class="row">
+    <div *ngFor="let player of players" class="col">
+      <img class="character" (click)="select(player)" [class.character-selected]="player === playerSelected" src="./assets/{{player.character.image}}" />
+      <br/>
+      <p class = "character-title" align = "center">{{ player.name }}
+    </div>
+  </div>
+
+  <div class="row">
+    <button [disabled]="!playerSelected" (click)="confirmPlayer()" class="btn btn-secondary col" type="button" title = "Must Select A Player">Confirm Player</button>
+  </div>
+</div>
