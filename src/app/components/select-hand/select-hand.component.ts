@@ -20,7 +20,7 @@ export class SelectHandComponent implements OnInit {
   constructor(private router: Router, private game: GameManagerService) {
     this.player = this.game.getPlayer();
     this.character = this.player.character;
-    const previousSelectedCards = this.game.getHand();
+    const previousSelectedCards = this.game.getHand() || [];
     this.cardsList = this.player.ownedAbilityCards.map(
       c => {
         return {
