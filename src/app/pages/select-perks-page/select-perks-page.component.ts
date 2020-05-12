@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/app/model/player';
+import { Players } from 'src/app/data/players';
 
 @Component({
   selector: 'app-select-perks-page',
@@ -7,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectPerksPageComponent implements OnInit {
 
-  
-  constructor() { }
+  player: Player = Players[3];
+  availablePerks = [];
+  selectedPerks: string[] = [];
+
+  constructor() {
+    this.availablePerks = this.player.character.perks;
+    this.selectedPerks = this.player.perks;
+  }
 
   ngOnInit(): void { }
 
