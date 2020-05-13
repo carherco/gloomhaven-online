@@ -20,10 +20,10 @@
 </div>
 
 <div class="row">
+  <img [src]="scenarioAvatar">
   <h1>
-      <img [src]="scenarioAvatar">
-      <span>{{ scenarioId }}</span> - <span>{{ scenarioName }}</span>
-      <span> ({{ scenarioGoal }})</span>
+      <span>{{ scenarioId }} - {{ scenarioName }}</span>
+      <span style = "display: block;">Goal: {{ scenarioGoal }}</span>
   </h1>
 </div>
 
