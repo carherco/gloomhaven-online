@@ -24,11 +24,12 @@
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   list-style-type: none;
+  margin-bottom: 180px;
 }
 
 #available-tokens {
-  float:right;
-  width: 150px;
+  width: 1600px;
+  float:left;
 }
 
 #available-tokens img {
@@ -37,10 +38,11 @@
 
 #available-tokens div {
   position: fixed;
+  bottom: 0;
 }
 
 .row { /* Si se solapa con #available-tokens, dejan de tener drag-drop */
-  margin-right: 150px;
+  /*margin-right: 150px;*/
 }
 
 #hexGrid {
@@ -208,18 +210,17 @@
 
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 #hexGrid{
-  padding-bottom: 4.5%;
-}
-.hex {
-  width: 5%; /* = 100 / 20  => Filas de 20 - 19 - 20 - 19 - 20 - 19... */
+  width: 1600px;
+  clear: both;
+  padding-bottom: 5px;
 }
 
-#hexGrid.odd {
-  /*padding-left:2.5%; /* = width of .hex / 2  to indent even rows */
+.hex {
+  width: 80px; /* = 100 / 20  => Filas de 20 - 19 - 20 - 19 - 20 - 19... */
 }
 
 .hex.odd:nth-child(1) { /* primer hexágono de las filas pares  */
-  margin-left:2.5%; /* = width of .hex / 2  to indent even rows */
+  margin-left:40px; /* = width of .hex / 2  to indent even rows */
 }
 
 @media (max-width: 700px) {

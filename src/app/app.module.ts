@@ -35,6 +35,9 @@ import { HpXpLootTrackerComponent } from './components/hp-xp-loot-tracker/hp-xp-
 import { ItemsTrackerComponent } from './components/items-tracker/items-tracker.component';
 import { MutableDirective } from './directives/mutable.directive';
 import { SelectPlayerPageComponent } from './pages/select-player-page/select-player-page.component';
+import { ScenarioResponsiveComponent } from './components/scenario-responsive/scenario-responsive.component';
+import { ScenarioFixedComponent } from './components/scenario-fixed/scenario-fixed.component';
+import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.component';
 
 
 @NgModule({
@@ -64,7 +67,10 @@ import { SelectPlayerPageComponent } from './pages/select-player-page/select-pla
     HpXpLootTrackerComponent,
     ItemsTrackerComponent,
     MutableDirective,
-    SelectPlayerPageComponent
+    SelectPlayerPageComponent,
+    ScenarioResponsiveComponent,
+    ScenarioFixedComponent,
+    ScenarioPageComponent
   ],
   imports: [
     BrowserModule,
