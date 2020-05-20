@@ -21,6 +21,9 @@ import {
   FireRolling,
   Plus1Wound,
   Plus1Heal2,
+  Plus1Poison,
+  Plus0Stun,
+  AddTargetRolling,
   Plus0AddTarget
 } from './modifiers';
 
@@ -209,6 +212,48 @@ export const Tinkerer: Character = {
     { id: 'tiPerk9-2', title: 'Add one +1 Heal 2 card', addModifiers: [new Plus1Heal2(), new Plus1Heal2()], removeModifiers: [] },
     { id: 'tiPerk10', title: 'Add one +0 Add Target card', addModifiers: [new Plus0AddTarget()], removeModifiers: [] },
     { id: 'tiPerk11', title: 'Ignore Negative Scenario Effects', addModifiers: [], removeModifiers: [] },
+  ],
+};
+
+export const Doomstalker: Character = {
+  id: 'Doomstalker',
+  key: 'DS',
+  race: 'Orchids',
+  class: 'Doomstalker',
+  handCardSize: 12,
+  image: 'Doomstalker.png',
+  hitPoints: [8, 9, 11, 12, 14, 15, 17, 18, 20],
+  levelXCards: ['fresh-kill', 'sap-life', 'the-hunt-begins'],
+  level1Cards: [
+    'a-moments-peace', 'crippling-noose', 'detonation',
+    'felling-swoop', 'foot-snare', 'frightening-curse',
+    'multi-pronged-assault', 'race-to-the-grave', 'rain-of-arrows',
+    'solid-bow', 'swift-trickery', 'vital-charge'
+  ],
+  level2Cards: ['expose', 'relentless-offensive'],
+  level3Cards: ['darkened-skies', 'press-the-attack'],
+  level4Cards: ['flight-of-flame', 'singular-focus'],
+  level5Cards: ['inescapable-fate', 'wild-command'],
+  level6Cards: ['camouflage', 'natures-hunger'],
+  level7Cards: ['crashing-wave', 'impending-end'],
+  level8Cards: ['feral-instincts', 'rising-momentum'],
+  level9Cards: ['lead-to-slaughter', 'predator-and-prey'],
+  perks: [
+    { id: 'chPerk1-1', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'chPerk1-2', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'chPerk2-1', title: 'Replace Two +0 Cards with Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [new Plus0(), new Plus0()] },
+    { id: 'chPerk2-2', title: 'Replace Two +0 Cards with Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [new Plus0(), new Plus0()] },
+    { id: 'chPerk2-3', title: 'Replace Two +0 Cards with Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [new Plus0(), new Plus0()] },
+    { id: 'chPerk3-1', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'chPerk3-2', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'chPerk4', title: 'Add One +2 Muddle Card', addModifiers: [new Plus2Muddle()], removeModifiers: [] },
+    { id: 'chPerk5', title: 'Add One +1 Poison Card', addModifiers: [new Plus1Poison()], removeModifiers: [] },
+    { id: 'chPerk6', title: 'Add One +1 Wound Card', addModifiers: [new Plus1Wound()], removeModifiers: [] },
+    { id: 'chPerk7', title: 'Add One +1 Immobilize Card', addModifiers: [new Plus1Immobilize()], removeModifiers: [] },
+    { id: 'chPerk8', title: 'Add One +0 Stun Card', addModifiers: [new Plus0Stun()], removeModifiers: [] },
+    { id: 'chPerk9-1', title: 'Add One Rolling Add Target Card', addModifiers: [new AddTargetRolling()], removeModifiers: [] },
+    { id: 'chPerk9-2', title: 'Add One Rolling Add Target Card', addModifiers: [new AddTargetRolling()], removeModifiers: [] },
+    { id: 'chPerk10', title: 'Ignore Negative Scenario Effects', addModifiers: [], removeModifiers: [] },
   ],
 };
 

@@ -151,6 +151,21 @@ export class FireRolling {
   src = 'RollingFire.png';
 }
 
+export class Plus1Poison {
+  id = 'plus1poison';
+  src = 'Plus1Poison.png';
+}
+
+export class Plus0Stun {
+  id = 'plus0stun';
+  src = 'Plus0Stun.png';
+}
+
+export class AddTargetRolling {
+  id = 'addtargetrolling';
+  src = 'AddTargetRolling.png';
+}
+
 const mod1 = 'assets/plus0.png';
 const mod2 = 'assets/plus0.png';
 const mod3 = 'assets/plus0.png';

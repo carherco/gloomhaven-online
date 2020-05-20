@@ -1,6 +1,7 @@
-import { Cragheart, Tinkerer, Scoundrel, Mindthief } from './charactersDef';
+import { Cragheart, Tinkerer, Scoundrel, Mindthief, Doomstalker } from './charactersDef';
 export const Players = [
-  {
+  // DEP
+  /*{
     name: 'Lorkham',
     character: Cragheart,
     personalQuest: {
@@ -19,7 +20,7 @@ export const Players = [
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: ['chPerk2-1', 'chPerk10'],
-  },
+  }, */
   {
     name: 'Farts like Thunder',
     character: Tinkerer,
@@ -90,5 +91,29 @@ export const Players = [
       'mtPerk1-1',
       'mtPerk1-2',
     ],
-  }
+  },
+  {
+    name: 'Divayth Fyr',
+    character: Doomstalker,
+    personalQuest: {
+      id: 530,
+      title: 'Augmented Abilities',
+      progress: 0,
+      total: 4,
+    },
+    level: 3,
+    hitPoints: 11,
+    experience: 95,
+    gold: 13,
+    perkTicks: 0,
+    ownedAbilityCards: [ ...Doomstalker.levelXCards, ...Doomstalker.level1Cards, 'expose', 'press-the-attack' ],
+    ownedItems: [1,13],
+    scenarioAbilityCards: [],
+    scenarioItems: [],
+    perks: [
+      'chPerk1-1',
+      'chPerk1-2',
+      'chPerk9-1',
+    ],
+  },
 ];
