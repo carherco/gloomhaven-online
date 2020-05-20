@@ -19,8 +19,9 @@ export interface Stats {
 export interface EnemyDef {
   id: string;
   description: string;
-  flying?: boolean
+  flying?: boolean;
   stats: {1: {normal: Stats, elite: Stats}, 2: {normal: Stats, elite: Stats}, 3: {normal: Stats, elite: Stats}};
+  cardsId: string;
 }
 
 export interface BossDef {
@@ -36,6 +37,7 @@ export interface BossDef {
     cu: boolean;
   };
   stats: {1: Stats, 2: Stats, 3: Stats};
+  cardsId: 'bo';
 }
 
 const AncientArtillery: EnemyDef = {
@@ -54,7 +56,8 @@ const AncientArtillery: EnemyDef = {
       normal: {h:8, a:3, r:5},
       elite: {h:13, a:4, r:6},
     }
-  }
+  },
+  cardsId: 'aa'
 };
 
 const LivingBones: EnemyDef = {
@@ -73,7 +76,8 @@ const LivingBones: EnemyDef = {
       normal: {h:7, m:3, a:2, s:1, ta:2},
       elite: {h:10, m:4, a:3, s:1, ta:3},
     }
-  }
+  },
+  cardsId: ''
 };
 
 const LivingCorpse: EnemyDef = {
@@ -92,7 +96,8 @@ const LivingCorpse: EnemyDef = {
       normal: {h:10, m:1, a:4},
       elite: {h:13, m:2, a:5},
     }
-  }
+  },
+  cardsId: 'lc'
 };
 
 const LivingSpirit: EnemyDef = {
@@ -112,7 +117,8 @@ const LivingSpirit: EnemyDef = {
       normal: {h:3, m:3, a:3, r:3, s:2},
       elite: {h:4, m:4, a:4, r:4, s:3},
     }
-  }
+  },
+  cardsId: 'ls'
 };
 
 const VermlingScout: EnemyDef = {
@@ -131,7 +137,8 @@ const VermlingScout: EnemyDef = {
       normal: {h:5, m:3, a:3},
       elite: {h:7, m:4, a:3},
     }
-  }
+  },
+  cardsId: 'sc'
 };
 
 const GiantViper: EnemyDef = {
@@ -150,7 +157,8 @@ const GiantViper: EnemyDef = {
       normal: {h:4, m:3, a:2, po:true},
       elite: {h:8, m:3, a:3, po:true},
     }
-  }
+  },
+  cardsId: 'gv'
 };
 
 const Ooze: EnemyDef = {
@@ -169,7 +177,8 @@ const Ooze: EnemyDef = {
       normal: {h:8, m:1, a:3, r:3, s:1},
       elite: {h:11, m:2, a:3, r:4, s:1, po:true},
     }
-  }
+  },
+  cardsId: 'oo'
 };
 
 const InoxGuard: EnemyDef = {
@@ -188,7 +197,8 @@ const InoxGuard: EnemyDef = {
       normal: {h:11, m:3, a:3},
       elite: {h:15, m:2, a:4, re:3},
     }
-  }
+  },
+  cardsId: 'gu'
 };
 
 const InoxArcher: EnemyDef = {
@@ -207,7 +217,8 @@ const InoxArcher: EnemyDef = {
       normal: {h:9, m:2, a:3, r:3},
       elite: {h:13, m:2, a:4, r:4},
     }
-  }
+  },
+  cardsId: 'ar'
 };
 
 const SpittingDrake: EnemyDef = {
@@ -227,7 +238,8 @@ const SpittingDrake: EnemyDef = {
       normal: {h:8, m:3, a:4, r:4, mu: true},
       elite: {h:12, m:3, a:5, r:5, mu: true},
     }
-  }
+  },
+  cardsId: 'spd'
 };
 
 const RendingDrake: EnemyDef = {
@@ -246,7 +258,8 @@ const RendingDrake: EnemyDef = {
       normal: {h:7, m:4, a:4, wo: true},
       elite: {h:10, m:5, a:6, wo: true},
     }
-  }
+  },
+  cardsId: 'rd'
 };
 
 const Hound: EnemyDef = {
@@ -265,7 +278,8 @@ const Hound: EnemyDef = {
       normal: {h:8, m:4, a:2, re:1},
       elite: {h:86, m:5, a:4, re:2},
     }
-  }
+  },
+  cardsId: 'ho'
 };
 
 const EarthDemon: EnemyDef = {
@@ -284,7 +298,8 @@ const EarthDemon: EnemyDef = {
       normal: {h:13, m:2, a:3},
       elite: {h:20, m:2, a:4, im: true},
     }
-  }
+  },
+  cardsId: 'ed'
 };
 
 const WindDemon: EnemyDef = {
@@ -304,7 +319,8 @@ const WindDemon: EnemyDef = {
       normal: {h:8, m:1, a:3, r:3, s:1},
       elite: {h:11, m:2, a:3, r:4, s:1, po:true},
     }
-  }
+  },
+  cardsId: 'wd'
 };
 
 const SunDemon: EnemyDef = {
@@ -324,7 +340,8 @@ const SunDemon: EnemyDef = {
       normal: {h:10, m:2, a:3, s:1, ad: true},
       elite: {h:15, m:3, a:4, s:1, ad: true},
     }
-  }
+  },
+  cardsId: 'sud'
 };
 
 const NightDemon: EnemyDef = {
@@ -343,7 +360,8 @@ const NightDemon: EnemyDef = {
       normal: {h:7, m:4, a:4, di: true},
       elite: {h:13, m:4, a:5, di: true},
     }
-  }
+  },
+  cardsId: 'nd'
 };
 
 const StoneGolem: EnemyDef = {
@@ -362,7 +380,8 @@ const StoneGolem: EnemyDef = {
       normal: {h:11, m:1, a:4, s:2},
       elite: {h:15, m:2, a:5, s:3},
     }
-  }
+  },
+  cardsId: 'sg'
 };
 
 const TheColorless: BossDef = {
@@ -384,7 +403,8 @@ const TheColorless: BossDef = {
       special1: "Invisible, Self. Consumes Night => Summon Night Demon",
       special2: "Heal 5, Self. Shield 1. Consumes Sun => Summon Sun Demon",
     },
-  }
+  },
+  cardsId: 'bo'
 };
 
 
