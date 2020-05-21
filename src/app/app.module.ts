@@ -38,6 +38,7 @@ import { SelectPlayerPageComponent } from './pages/select-player-page/select-pla
 import { ScenarioResponsiveComponent } from './components/scenario-responsive/scenario-responsive.component';
 import { ScenarioFixedComponent } from './components/scenario-fixed/scenario-fixed.component';
 import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.component';
+import { IntiativeTrackerComponent } from './components/intiative-tracker/intiative-tracker.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.compo
     SelectPlayerPageComponent,
     ScenarioResponsiveComponent,
     ScenarioFixedComponent,
-    ScenarioPageComponent
+    ScenarioPageComponent,
+    IntiativeTrackerComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,7 @@ import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.compo
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

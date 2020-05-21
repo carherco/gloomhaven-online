@@ -1,0 +1,8 @@
+<div *ngFor="let player of playersTrackers">
+  <img [src]="player.src" width="80">
+</div>
+
+<div *ngFor="let enemy of enemiesTrackers">
+  <img [src]="enemy.src" width="80">
+  <img src="assets/images/{{enemy?.cardBack?.image}}" width="80">
+</div>

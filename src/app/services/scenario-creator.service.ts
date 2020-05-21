@@ -11,6 +11,9 @@ import {
   TrapToken
 } from '../model/token';
 import { Scenarios } from '../data/mapsDef';
+import { MonsterAbilityCardBack, MonsterAbilityCardFront, EnemyTracker } from '../model/monsterAbilityCard';
+import { MonsterAbilityCards } from '../data/monster-ability-cards';
+import { EnemyDef } from '../data/enemiesDefs';
 
 @Injectable({
   providedIn: 'root'
@@ -95,5 +98,37 @@ export class ScenarioCreatorService {
     );
 
     return output;
+  }
+
+  getEnemyDeck(cardsId: string): [MonsterAbilityCardBack, MonsterAbilityCardFront[]] {
+    // console.log(cardsId);
+    const cards = MonsterAbilityCards.filter( c => c.name.includes('--' + cardsId + '--'));
+    // console.log(cards);
+    return [
+      cards.find(c => c.name.includes('back')),
+      cards.filter(c => !c.name.includes('back')) as MonsterAbilityCardFront[]
+    ];
+  }
+
+  // id: string;
+  // src: string;
+  // cardsId: string;
+  // cardBack: MonsterAbilityCardBack;
+  // cards: MonsterAbilityCardFront[];
+  getEnemiesTrackers(tokens: Token[]): any[] {
+    console.log(tokens);
+    return tokens
+      .filter( t => ['enemy', 'boss'].includes(t.type))
+      // .map(
+      //   e => {
+      //     const [cardBack, cards] = this.getEnemyDeck(e.cardsId);
+      //     // console.log(cardBack, cards);
+      //     return {
+      //       ...e,
+      //       cardBack,
+      //       cards
+      //     };
+      //   }
+      // );
   }
 }

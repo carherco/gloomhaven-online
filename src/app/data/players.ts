@@ -1,26 +1,29 @@
 import { Cragheart, Tinkerer, Scoundrel, Mindthief, Doomstalker } from './charactersDef';
 export const Players = [
-  // DEP
-  /*{
-    name: 'Lorkham',
-    character: Cragheart,
+  {
+    name: 'Divayth Fyr',
+    character: Doomstalker,
     personalQuest: {
-      id: 528,
-      title: 'Goliath Toppler',
-      progress: 3,
+      id: 530,
+      title: 'Augmented Abilities',
+      progress: 0,
       total: 4,
     },
     level: 3,
-    hitPoints: 14,
-    experience: 127,
-    gold: 37,
-    perkTicks: 1,
-    ownedAbilityCards: [ ...Cragheart.levelXCards, ...Cragheart.level1Cards, 'sentient-growth', 'blunt-force' ],
-    ownedItems: [1, 14, 3, 13, 130, 81],
+    hitPoints: 11,
+    experience: 95,
+    gold: 28,
+    perkTicks: 0,
+    ownedAbilityCards: [ ...Doomstalker.levelXCards, ...Doomstalker.level1Cards, 'expose', 'press-the-attack' ],
+    ownedItems: [1, 13],
     scenarioAbilityCards: [],
     scenarioItems: [],
-    perks: ['chPerk2-1', 'chPerk10'],
-  }, */
+    perks: [
+      'dsPerk1-1',
+      'dsPerk1-2',
+      'dsPerk9-1',
+    ],
+  },
   {
     name: 'Farts like Thunder',
     character: Tinkerer,
@@ -90,30 +93,6 @@ export const Players = [
       'mtPerk5-1',
       'mtPerk1-1',
       'mtPerk1-2',
-    ],
-  },
-  {
-    name: 'Divayth Fyr',
-    character: Doomstalker,
-    personalQuest: {
-      id: 530,
-      title: 'Augmented Abilities',
-      progress: 0,
-      total: 4,
-    },
-    level: 3,
-    hitPoints: 11,
-    experience: 95,
-    gold: 28,
-    perkTicks: 0,
-    ownedAbilityCards: [ ...Doomstalker.levelXCards, ...Doomstalker.level1Cards, 'expose', 'press-the-attack' ],
-    ownedItems: [1, 13],
-    scenarioAbilityCards: [],
-    scenarioItems: [],
-    perks: [
-      'dsPerk1-1',
-      'dsPerk1-2',
-      'dsPerk9-1',
     ],
   },
 ];
