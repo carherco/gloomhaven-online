@@ -76,7 +76,7 @@ export const Players = [
     personalQuest: {
       id: 521,
       title: 'Take Back the Trees',
-      progress: 1,
+      progress: 2,
       total: 3,
     },
     level: 4,
