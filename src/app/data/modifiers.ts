@@ -71,6 +71,11 @@ export class Plus0AddTarget {
   src = 'plus0AddTarget.png';
 }
 
+export class Plus0Stun {
+  id = 'plus0stun';
+  src = 'Plus0Stun.png';
+}
+
 export class Plus1Rolling {
   id = 'plus1Rolling';
   src = 'RollingPlus1.png';
@@ -79,6 +84,11 @@ export class Plus1Rolling {
 export class Plus1Immobilize {
   id = 'plus1Immobilize';
   src = 'Plus1Immobilize.png';
+}
+
+export class Plus1Poison {
+  id = 'plus1poison';
+  src = 'Plus1Poison.png';
 }
 
 export class Plus1Wound {
@@ -151,19 +161,9 @@ export class FireRolling {
   src = 'RollingFire.png';
 }
 
-export class Plus1Poison {
-  id = 'plus1poison';
-  src = 'Plus1Poison.png';
-}
-
-export class Plus0Stun {
-  id = 'plus0stun';
-  src = 'Plus0Stun.png';
-}
-
 export class AddTargetRolling {
   id = 'addtargetrolling';
-  src = 'AddTargetRolling.png';
+  src = 'RollingAddTarget.png';
 }
 
 const mod1 = 'assets/plus0.png';
