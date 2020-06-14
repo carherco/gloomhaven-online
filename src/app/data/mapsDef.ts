@@ -1,6 +1,6 @@
 import { Token } from '../model/token';
 
-interface TokenDef {
+export interface TokenDef {
   id: string;
   type: string;
   name?: string;

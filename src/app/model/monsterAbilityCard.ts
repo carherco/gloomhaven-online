@@ -19,7 +19,10 @@ export interface MonsterAbilityCardBack {
 export interface EnemyTracker {
   id: string;
   src: string;
+  type: 'player'|'enemy';
   cardsId: string;
   cardBack: MonsterAbilityCardBack;
   cards: MonsterAbilityCardFront[];
+  currentCard: MonsterAbilityCardBack | MonsterAbilityCardFront;
+  currentInitiative: number;
 }

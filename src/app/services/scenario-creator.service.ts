@@ -10,10 +10,10 @@ import {
   LootToken,
   TrapToken
 } from '../model/token';
-import { Scenarios } from '../data/mapsDef';
+import { Scenarios, TokenDef } from '../data/mapsDef';
 import { MonsterAbilityCardBack, MonsterAbilityCardFront, EnemyTracker } from '../model/monsterAbilityCard';
 import { MonsterAbilityCards } from '../data/monster-ability-cards';
-import { EnemyDef } from '../data/enemiesDefs';
+import { EnemyDef, EnemyDefs } from '../data/enemiesDefs';
 
 @Injectable({
   providedIn: 'root'
@@ -101,34 +101,31 @@ export class ScenarioCreatorService {
   }
 
   getEnemyDeck(cardsId: string): [MonsterAbilityCardBack, MonsterAbilityCardFront[]] {
-    // console.log(cardsId);
-    const cards = MonsterAbilityCards.filter( c => c.name.includes('--' + cardsId + '--'));
-    // console.log(cards);
+    const cards = MonsterAbilityCards.filter( c => c.name.includes('-' + cardsId + '-'));
     return [
       cards.find(c => c.name.includes('back')),
       cards.filter(c => !c.name.includes('back')) as MonsterAbilityCardFront[]
     ];
   }
 
-  // id: string;
-  // src: string;
-  // cardsId: string;
-  // cardBack: MonsterAbilityCardBack;
-  // cards: MonsterAbilityCardFront[];
-  getEnemiesTrackers(tokens: Token[]): any[] {
+  getEnemiesTrackers(tokens: TokenDef[]): EnemyTracker[] {
     console.log(tokens);
     return tokens
       .filter( t => ['enemy', 'boss'].includes(t.type))
-      // .map(
-      //   e => {
-      //     const [cardBack, cards] = this.getEnemyDeck(e.cardsId);
-      //     // console.log(cardBack, cards);
-      //     return {
-      //       ...e,
-      //       cardBack,
-      //       cards
-      //     };
-      //   }
-      // );
+      .map(
+        (e: Token) => {
+          const cardsId = EnemyDefs[e.id].cardsId;
+          const [cardBack, cards] = this.getEnemyDeck(cardsId);
+          return {
+            ...e,
+            type: 'enemy',
+            cardsId,
+            cardBack,
+            cards,
+            currentCard: cardBack,
+            currentInitiative: null
+          };
+        }
+      );
   }
 }
