@@ -23,6 +23,8 @@ export interface EnemyTracker {
   cardsId: string;
   cardBack: MonsterAbilityCardBack;
   cards: MonsterAbilityCardFront[];
-  currentCard: MonsterAbilityCardBack | MonsterAbilityCardFront;
+  deckCards: MonsterAbilityCardFront[];
+  drawnCards: MonsterAbilityCardFront[];
+  currentCard: MonsterAbilityCardFront;
   currentInitiative: number;
 }

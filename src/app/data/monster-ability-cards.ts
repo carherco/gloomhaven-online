@@ -1,65 +1,49 @@
 export const MonsterAbilityCards = [
   {
     name: 'ma-aa-1',
-    initiative: 46,
-    mustShuffle: false,
-    points: 0,
+    initiative: 46, mustShuffle: false, points: 0,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-1.png',
     xws: 'maaa1'
   },
   {
     name: 'ma-aa-2',
-    initiative: 71,
-    mustShuffle: true,
-    points: 1,
+    initiative: 71, mustShuffle: true, points: 1,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-2.png',
     xws: 'maaa2'
   },
   {
     name: 'ma-aa-3',
-    initiative: 71,
-    mustShuffle: true,
-    points: 2,
+    initiative: 71, mustShuffle: true, points: 2,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-3.png',
     xws: 'maaa3'
   },
   {
     name: 'ma-aa-4',
-    initiative: 37,
-    mustShuffle: false,
-    points: 3,
+    initiative: 37, mustShuffle: false, points: 3,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-4.png',
     xws: 'maaa4'
   },
   {
     name: 'ma-aa-5',
-    initiative: 37,
-    mustShuffle: false,
-    points: 4,
+    initiative: 37, mustShuffle: false, points: 4,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-5.png',
     xws: 'maaa5'
   },
   {
     name: 'ma-aa-6',
-    initiative: 95,
-    mustShuffle: false,
-    points: 5,
+    initiative: 95, mustShuffle: false, points: 5,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-6.png',
     xws: 'maaa6'
   },
   {
     name: 'ma-aa-7',
-    initiative: 17,
-    mustShuffle: false,
-    points: 6,
+    initiative: 17, mustShuffle: false, points: 6,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-7.png',
     xws: 'maaa7'
   },
   {
     name: 'ma-aa-8',
-    initiative: 46,
-    mustShuffle: false,
-    points: 7,
+    initiative: 46, mustShuffle: false, points: 7,
     image: 'monster-ability-cards/ancient-artillery/ma-aa-8.png',
     xws: 'maaa8'
   },
@@ -119,7 +103,7 @@ export const MonsterAbilityCards = [
   },
   {
     name: 'ma-ar-back',
-    initiative: 46, mustShuffle: false, points: 17,
+    points: 17,
     image: 'monster-ability-cards/archer/ma-ar-back.png',
     xws: 'maarback'
   },
@@ -341,49 +325,49 @@ export const MonsterAbilityCards = [
   },
   {
     name: 'ma-ed-1',
-    initiative: 46, mustShuffle: false, points: 54,
+    initiative: 40, mustShuffle: true, points: 54,
     image: 'monster-ability-cards/earth-demon/ma-ed-1.png',
     xws: 'maed1'
   },
   {
     name: 'ma-ed-2',
-    initiative: 46, mustShuffle: false, points: 55,
+    initiative: 42, mustShuffle: true, points: 55,
     image: 'monster-ability-cards/earth-demon/ma-ed-2.png',
     xws: 'maed2'
   },
   {
     name: 'ma-ed-3',
-    initiative: 46, mustShuffle: false, points: 56,
+    initiative: 62, mustShuffle: false, points: 56,
     image: 'monster-ability-cards/earth-demon/ma-ed-3.png',
     xws: 'maed3'
   },
   {
     name: 'ma-ed-4',
-    initiative: 46, mustShuffle: false, points: 57,
+    initiative: 71, mustShuffle: false, points: 57,
     image: 'monster-ability-cards/earth-demon/ma-ed-4.png',
     xws: 'maed4'
   },
   {
     name: 'ma-ed-5',
-    initiative: 46, mustShuffle: false, points: 58,
+    initiative: 83, mustShuffle: false, points: 58,
     image: 'monster-ability-cards/earth-demon/ma-ed-5.png',
     xws: 'maed5'
   },
   {
     name: 'ma-ed-6',
-    initiative: 46, mustShuffle: false, points: 59,
+    initiative: 93, mustShuffle: false, points: 59,
     image: 'monster-ability-cards/earth-demon/ma-ed-6.png',
     xws: 'maed6'
   },
   {
     name: 'ma-ed-7',
-    initiative: 46, mustShuffle: false, points: 60,
+    initiative: 79, mustShuffle: false, points: 60,
     image: 'monster-ability-cards/earth-demon/ma-ed-7.png',
     xws: 'maed7'
   },
   {
     name: 'ma-ed-8',
-    initiative: 46, mustShuffle: false, points: 61,
+    initiative: 87, mustShuffle: false, points: 61,
     image: 'monster-ability-cards/earth-demon/ma-ed-8.png',
     xws: 'maed8'
   },

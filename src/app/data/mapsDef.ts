@@ -193,6 +193,48 @@ const Scenario25 = {
   tokens: Scenario25Tokens
 };
 
+const Scenario57Matrix = [
+  ["-","0","0","0"],
+    ["0","0","0","0"],
+  ["-","0","0","0"],
+    ["-","0","0","-","1","1","1","1","1","1"],
+  ["-","-","D","-","-","1","1","1","1","1"],
+    ["-","0","0","0","1","1","1","1","1","1"],
+  ["-","-","0","0","D","1","1","1","1","1"],
+    ["-","0","0","0","1","1","1","1","1","1"],
+  ["-","-","0","0"],
+    ["-","0","0","0"],
+  ["-","-","0","0"],
+    ["-","0","0","0"],
+  ["-","-","0","0","D","1","1","1","1"],
+    ["-","0","0","0","1","1","1","1","1"],
+  ["-","-","D"],
+    ["-","0","0"],
+  ["-","0","0","0"],
+    ["0","0","0","0"],
+  ["-","0","0","0"],
+];
+
+const Scenario57Tokens: TokenDef[] = [
+  // {id: 'City-Guard', type: 'enemy' },
+  // {id: 'City-Archer', type: 'enemy' },
+  // {id: 'Hound', type: 'enemy' },
+  // {id: 'damage-trap', type: 'trap'},
+  // {id: 'boulder', type: 'obstacle' },
+  // {id: 'table', type: 'obstacle' },
+  {id: 'treasure', type: 'loot' },
+  {id: 'coin-1', type: 'loot' },
+];
+
+const Scenario57 = {
+  id: 57,
+  name: 'Investigation',
+  requirements: ['"Vengeance" personal quest'],
+  goal: 'Kill the Infiltrator',
+  matrix: Scenario57Matrix,
+  tokens: Scenario57Tokens
+};
+
 const Scenario81Matrix = [
   ["-","-","-","-","1","1","1","1","1","0","0","0","0","0"],
     ["-","-","1","1","1","1","1","1","D","0","0","0","0","0","0"],
@@ -233,5 +275,6 @@ export const Scenarios = {
   23: Scenario23,
   24: Scenario24,
   25: Scenario25,
+  57: Scenario57,
   81: Scenario81,
 };

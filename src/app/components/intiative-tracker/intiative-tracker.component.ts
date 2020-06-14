@@ -54,9 +54,23 @@ export class IntiativeTrackerComponent implements OnInit {
   }
 
   onDrawCards(): void {
-    // Sacar cartas de monstruos
+    this.drawMonstersCards();
+    this.orderTrackersByInitiatives();
+    this.roundStatus = 'round';
+  }
 
-    // Ordenar por iniciativas
+  drawMonstersCards() {
+    this.enemiesTrackers = this.enemiesTrackers.map(
+      tracker => {
+        tracker.currentCard = tracker.deckCards.pop();
+        tracker.drawnCards.push(tracker.currentCard);
+        tracker.currentInitiative = tracker.currentCard.initiative;
+        return {...tracker};
+      }
+    );
+  }
+
+  orderTrackersByInitiatives() {
     const allTrackers: {id: string, type: string, currentInitiative: number}[] = this.playersTrackers.concat(this.enemiesTrackers);
     this.allTrackersOrderedByInitiative = allTrackers.sort(
       (a, b) => {
@@ -68,8 +82,6 @@ export class IntiativeTrackerComponent implements OnInit {
         }
         return a.type === 'player' ? -1 : 1;
       });
-
-    this.roundStatus = 'round';
   }
 
 }

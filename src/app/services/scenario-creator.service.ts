@@ -122,7 +122,9 @@ export class ScenarioCreatorService {
             cardsId,
             cardBack,
             cards,
-            currentCard: cardBack,
+            deckCards: [...cards],
+            drawnCards: [],
+            currentCard: null,
             currentInitiative: null
           };
         }

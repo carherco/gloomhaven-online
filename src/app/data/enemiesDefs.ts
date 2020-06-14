@@ -181,6 +181,46 @@ const Ooze: EnemyDef = {
   cardsId: 'oo'
 };
 
+const CityGuard: EnemyDef = {
+  id: 'City-Guard',
+  description: '',
+  stats: {
+    1: {
+      normal: {h:8, m:2, a:2},
+      elite: {h:10, m:2, a:3, re:2},
+    },
+    2: {
+      normal: {h:9, m:2, a:3},
+      elite: {h:12, m:2, a:4, re:2},
+    },
+    3: {
+      normal: {h:11, m:3, a:3},
+      elite: {h:15, m:2, a:4, re:3},
+    }
+  },
+  cardsId: 'gu'
+};
+
+const CityArcher: EnemyDef = {
+  id: 'City-Archer',
+  description: '',
+  stats: {
+    1: {
+      normal: {h:6, m:2, a:2, r:3},
+      elite: {h:8, m:2, a:3, r:4},
+    },
+    2: {
+      normal: {h:8, m:2, a:2, r:3},
+      elite: {h:11, m:2, a:3, r:4},
+    },
+    3: {
+      normal: {h:9, m:2, a:3, r:3},
+      elite: {h:13, m:2, a:4, r:4},
+    }
+  },
+  cardsId: 'ar'
+};
+
 const InoxGuard: EnemyDef = {
   id: 'Inox-Guard',
   description: '',
@@ -413,6 +453,8 @@ export const EnemyDefs = {
   'Living-Bones': LivingBones,
   'Living-Corpse': LivingCorpse,
   'Living-Spirit': LivingSpirit,
+  'City-Guard': CityGuard,
+  'City-Archer': CityArcher,
   'Inox-Guard': InoxGuard,
   'Inox-Archer': InoxArcher,
   'Earth-Demon': EarthDemon,
