@@ -1,4 +1,4 @@
-import { Tinkerer, Scoundrel, Mindthief, Doomstalker } from './charactersDef';
+import { Tinkerer, Scoundrel, Mindthief, Doomstalker, Spellweaver } from './charactersDef';
 export const Players = [
   {
     name: 'Divayth Fyr',
@@ -70,21 +70,21 @@ export const Players = [
     ],
   },
   {
-    name: 'Nightmare',
-    character: Scoundrel,
+    name: 'Medea',
+    character: Spellweaver,
     personalQuest: {
-      id: 526,
-      title: 'Vengeance',
-      progress: 4,
-      total: 4,
+      id: 531,
+      title: 'Elemental Samples',
+      progress: 0,
+      total: 6,
     },
-    level: 5,
-    hitPoints: Scoundrel.hitPoints[4], // el nivel -1
-    experience: 215,
-    gold: 32,
-    perkTicks: 14,
+    level: 4,
+    hitPoints: Spellweaver.hitPoints[3], // el nivel -1
+    experience: 150,
+    gold: 8,
+    perkTicks: 0,
     ownedAbilityCards: [],
-    ownedItems: [4, 13, 2, 5, 11, 8, 17, 12, 44],
+    ownedItems: [5, 31, 34],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [],

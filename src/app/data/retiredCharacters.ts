@@ -1,4 +1,4 @@
-import { Cragheart } from './charactersDef';
+import { Cragheart, Scoundrel } from './charactersDef';
 
 export const RetiredCharacters = [
   {
@@ -21,5 +21,25 @@ export const RetiredCharacters = [
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: ['chPerk2-1', 'chPerk10'],
+  },
+  {
+    name: 'Nightmare',
+    character: Scoundrel,
+    personalQuest: {
+      id: 526,
+      title: 'Vengeance',
+      progress: 4,
+      total: 4,
+    },
+    level: 5,
+    hitPoints: Scoundrel.hitPoints[4], // el nivel -1
+    experience: 215,
+    gold: 32,
+    perkTicks: 14,
+    ownedAbilityCards: [],
+    ownedItems: [4, 13, 2, 5, 11, 8, 17, 12, 44],
+    scenarioAbilityCards: [],
+    scenarioItems: [],
+    perks: [],
   },
 ];
