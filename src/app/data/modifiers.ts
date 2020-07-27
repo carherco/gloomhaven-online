@@ -101,6 +101,11 @@ export class Plus1Heal2 {
   src = 'plus1Heal2.png';
 }
 
+export class Plus1Curse {
+  id = 'plus1Curse';
+  src = 'plus1Curse.png';
+}
+
 export class Pull1Rolling {
   id = 'pull1Rolling';
   src = 'RollingPull1.png';
@@ -114,6 +119,16 @@ export class Plus2Muddle {
 export class Plus2Ice {
   id = 'plus2Ice';
   src = 'FrostPlus2.png';
+}
+
+export class Plus2Frost {
+  id = 'plus2Ice';
+  src = 'Plus2Frost.png';
+}
+
+export class Plus2Fire {
+  id = 'plus2Fire';
+  src = 'Plus2Fire.png';
 }
 
 export class Push2Rolling {
@@ -159,6 +174,16 @@ export class WindRolling {
 export class FireRolling {
   id = 'fireRolling';
   src = 'RollingFire.png';
+}
+
+export class LightRolling {
+  id = 'lightRolling';
+  src = 'RollingLight.png';
+}
+
+export class DarkRolling {
+  id = 'darkRolling';
+  src = 'RollingDark.png';
 }
 
 export class AddTargetRolling {
