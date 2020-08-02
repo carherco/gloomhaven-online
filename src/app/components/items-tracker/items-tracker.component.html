@@ -1,5 +1,5 @@
 <img *ngFor="let item of items"
-    [src]="item.id|getSrcItem"
+    [src]="item.image|prefix:'assets/images/'"
     (click)="toggleSpent(item)"
     [class.spent]="item.spent"
     [class.consumed]="item.consumed"

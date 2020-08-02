@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemType, ItemDef } from 'src/app/model/item';
+import { ITEMS } from 'src/app/data/items';
 
 @Component({
   selector: 'app-shop-page',
@@ -6,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shop-page.component.css']
 })
 export class ShopPageComponent implements OnInit {
-  items = [
+  itemIndexes = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
     15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25, 26, 27, 28,
     29, 30, 31, 32, 33, 34, 35,
     107, 113, 81, 88, 130, 116, 74, 44
   ];
+  items: ItemDef[] = [];
+  itemTypeSelected: ItemType = 'all';
 
   priceModifier;
 
@@ -25,6 +29,7 @@ export class ShopPageComponent implements OnInit {
 
   constructor() {
     this.priceModifier = this.priceModifierMap[20 - this.reputation];
+    this.items = ITEMS.filter( (item, index) => this.itemIndexes.includes(index + 1) );
   }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from 'src/app/model/item';
+import { ItemInPlay } from 'src/app/model/item';
+import { ITEMS } from 'src/app/data/items';
 
 @Component({
   selector: 'app-items-tracker',
@@ -9,25 +10,26 @@ import { Item } from 'src/app/model/item';
 export class ItemsTrackerComponent implements OnInit {
 
   @Input() itemNumbers: number[] = [];
-  items: Item[] = [];
+  items: ItemInPlay[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.items = this.itemNumbers.map(
-      id => { return {id, spent: false, consumed: false, flipped: false}; }
-    );
+    this.items = ITEMS
+                   .filter( (item, index) => this.itemNumbers.includes(index + 1) )
+                   .map( item => ({...item, spent: false, consumed: false, flipped: false}) );
+
   }
 
-  toggleSpent(item: Item) {
+  toggleSpent(item: ItemInPlay) {
     item.spent = !item.spent;
   }
 
-  toggleConsumed(item: Item) {
+  toggleConsumed(item: ItemInPlay) {
     item.consumed = !item.consumed;
   }
 
-  toggleFlipped(item: Item) {
+  toggleFlipped(item: ItemInPlay) {
     item.flipped = !item.flipped;
   }
 

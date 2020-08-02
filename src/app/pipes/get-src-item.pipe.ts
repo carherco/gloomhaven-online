@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { items } from '../data/items';
+import { ITEMS } from '../data/items';
 
 @Pipe({
   name: 'getSrcItem'
@@ -7,7 +7,7 @@ import { items } from '../data/items';
 export class GetSrcItemPipe implements PipeTransform {
 
   transform(item: number): string {
-    return 'assets/images/' + items[item - 1].image;
+    return 'assets/images/' + ITEMS[item - 1].image;
   }
 
 }
