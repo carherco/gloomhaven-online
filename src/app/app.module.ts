@@ -39,6 +39,8 @@ import { ScenarioResponsiveComponent } from './components/scenario-responsive/sc
 import { ScenarioFixedComponent } from './components/scenario-fixed/scenario-fixed.component';
 import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.component';
 import { IntiativeTrackerComponent } from './components/intiative-tracker/intiative-tracker.component';
+import { FilterItemsByTipePipe } from './pipes/filter-items-by-tipe.pipe';
+import { PrefixPipe } from './pipes/prefix.pipe';
 
 
 @NgModule({
@@ -72,7 +74,9 @@ import { IntiativeTrackerComponent } from './components/intiative-tracker/intiat
     ScenarioResponsiveComponent,
     ScenarioFixedComponent,
     ScenarioPageComponent,
-    IntiativeTrackerComponent
+    IntiativeTrackerComponent,
+    FilterItemsByTipePipe,
+    PrefixPipe
   ],
   imports: [
     BrowserModule,
