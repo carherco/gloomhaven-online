@@ -11,15 +11,15 @@ export const Players = [
     },
     level: 4,
     hitPoints: Doomstalker.hitPoints[3], // el nivel -1
-    experience: 156,
-    gold: 17,
-    perkTicks: 4,
+    experience: 173,
+    gold: 37,
+    perkTicks: 6,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
       ...Doomstalker.level1Cards,
       'expose',
       'press-the-attack',
-
+      'flight-of-flame'
     ],
     ownedItems: [1, 13, 5, 12],
     scenarioAbilityCards: [],
@@ -29,6 +29,8 @@ export const Players = [
       'dsPerk1-2',
       'dsPerk9-1',
       'dsPerk9-2',
+      'dsPerk10',
+      'dsPerk2-1',
     ],
   },
   {
@@ -42,9 +44,9 @@ export const Players = [
     },
     level: 6,
     hitPoints: Tinkerer.hitPoints[5], // el nivel -1
-    experience: 306,
+    experience: 335,
     gold: 13,
-    perkTicks: 12,
+    perkTicks: 13,
     ownedAbilityCards: [
       ...Tinkerer.levelXCards,
       ...Tinkerer.level1Cards,
@@ -70,19 +72,19 @@ export const Players = [
     ],
   },
   {
-    name: 'Medea',
+    name: 'Medeas',
     character: Spellweaver,
     personalQuest: {
       id: 531,
       title: 'Elemental Samples',
-      progress: 0,
+      progress: 1,
       total: 6,
     },
     level: 4,
     hitPoints: Spellweaver.hitPoints[3], // el nivel -1
-    experience: 150,
-    gold: 8,
-    perkTicks: 0,
+    experience: 168,
+    gold: 20,
+    perkTicks: 1,
     ownedAbilityCards: [
       ...Spellweaver.levelXCards,
       ...Spellweaver.level1Cards,
@@ -111,8 +113,8 @@ export const Players = [
     },
     level: 5,
     hitPoints: Mindthief.hitPoints[4], // el nivel -1
-    experience: 255,
-    gold: 19,
+    experience: 272,
+    gold: 25,
     perkTicks: 4,
     ownedAbilityCards: [
       ...Mindthief.levelXCards,
