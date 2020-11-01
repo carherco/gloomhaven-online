@@ -9,24 +9,26 @@ export const Players = [
       progress: 0,
       total: 4,
     },
-    level: 4,
-    hitPoints: Doomstalker.hitPoints[3], // el nivel -1
-    experience: 173,
-    gold: 37,
-    perkTicks: 6,
+    level: 5,
+    hitPoints: Doomstalker.hitPoints[4], // el nivel -1
+    experience: 227,
+    gold: 32,
+    perkTicks: 8,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
       ...Doomstalker.level1Cards,
       'expose',
       'press-the-attack',
-      'flight-of-flame'
+      'flight-of-flame',
+      'wild-command'
     ],
-    ownedItems: [1, 13, 5, 12],
+    ownedItems: [1, 13, 5, 12, 147],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
       'dsPerk1-1',
       'dsPerk1-2',
+      'dsPerk2-1',
       'dsPerk9-1',
       'dsPerk9-2',
       'dsPerk10',
@@ -42,11 +44,11 @@ export const Players = [
       progress: 0,
       total: 8,
     },
-    level: 6,
-    hitPoints: Tinkerer.hitPoints[5], // el nivel -1
-    experience: 335,
-    gold: 13,
-    perkTicks: 13,
+    level: 7,
+    hitPoints: Tinkerer.hitPoints[6], // el nivel -1
+    experience: 378,
+    gold: 3,
+    perkTicks: 15,
     ownedAbilityCards: [
       ...Tinkerer.levelXCards,
       ...Tinkerer.level1Cards,
@@ -55,8 +57,9 @@ export const Players = [
       'dangerous-contraption',
       'noxious-vials',
       'auto-turret',
+      'curative-aerosol'
     ],
-    ownedItems: [6, 14, 125, 16, 20, 21, 13, 33, 15],
+    ownedItems: [6, 14, 125, 16, 20, 21, 13, 33, 15, 135, 34],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -68,6 +71,8 @@ export const Players = [
       'tiPerk7-2',
       'tiPerk4',
       'tiPerk9-1',
+      'tiPerk9-1',
+      'tiPerk10',
       'tiPerk11',
     ],
   },
@@ -77,13 +82,13 @@ export const Players = [
     personalQuest: {
       id: 531,
       title: 'Elemental Samples',
-      progress: 1,
+      progress: 2,
       total: 6,
     },
     level: 4,
     hitPoints: Spellweaver.hitPoints[3], // el nivel -1
-    experience: 168,
-    gold: 20,
+    experience: 201,
+    gold: 0,
     perkTicks: 1,
     ownedAbilityCards: [
       ...Spellweaver.levelXCards,
@@ -92,7 +97,7 @@ export const Players = [
       'cold-fire',
       'spirit-of-doom',
     ],
-    ownedItems: [5, 31, 34],
+    ownedItems: [5, 31, 34, 27],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -108,13 +113,13 @@ export const Players = [
     personalQuest: {
       id: 521,
       title: 'Take Back the Trees',
-      progress: 2,
+      progress: 3,
       total: 3,
     },
-    level: 5,
-    hitPoints: Mindthief.hitPoints[4], // el nivel -1
-    experience: 272,
-    gold: 25,
+    level: 6,
+    hitPoints: Mindthief.hitPoints[5], // el nivel -1
+    experience: 332,
+    gold: 18,
     perkTicks: 4,
     ownedAbilityCards: [
       ...Mindthief.levelXCards,
@@ -123,8 +128,9 @@ export const Players = [
       'silent-scream',
       'cranium-overload',
       'mass-hysteria',
+      'dark-frenzy'
     ],
-    ownedItems: [11, 13, 1, 8, 16, 12, 20, 21],
+    ownedItems: [11, 13, 1, 8, 16, 12, 20, 21, 139, 27],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from "@angular/fire/auth";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
@@ -41,6 +42,7 @@ import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.compo
 import { IntiativeTrackerComponent } from './components/intiative-tracker/intiative-tracker.component';
 import { FilterItemsByTipePipe } from './pipes/filter-items-by-tipe.pipe';
 import { PrefixPipe } from './pipes/prefix.pipe';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
 @NgModule({
@@ -76,7 +78,8 @@ import { PrefixPipe } from './pipes/prefix.pipe';
     ScenarioPageComponent,
     IntiativeTrackerComponent,
     FilterItemsByTipePipe,
-    PrefixPipe
+    PrefixPipe,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +87,7 @@ import { PrefixPipe } from './pipes/prefix.pipe';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     NgbModule,
     FormsModule,
   ],

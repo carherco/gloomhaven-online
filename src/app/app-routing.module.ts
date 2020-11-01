@@ -11,6 +11,7 @@ import { MapCreatorPageComponent } from './pages/map-creator-page/map-creator-pa
 import { PlayerSelectedGuard } from './guards/player-selected.guard';
 import { SelectPlayerPageComponent } from './pages/select-player-page/select-player-page.component';
 import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/players', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'history', component: HistoryPageComponent },
   { path: 'log', component: LogPageComponent },
   { path: 'map-creator', component: MapCreatorPageComponent },
+  { path: 'login', component: LoginPageComponent },
 ];
 
 @NgModule({

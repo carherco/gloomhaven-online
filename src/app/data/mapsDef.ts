@@ -278,3 +278,45 @@ export const Scenarios = {
   57: Scenario57,
   81: Scenario81,
 };
+
+
+const HallwayHovelCabinMatrix = [
+  ['0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1'],
+  ['0', '0', '0', '0', '0', '0', '0', 'D', '1', '1', '1'],
+  ['0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '-', '-', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', '1', '-', '0', '0', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '1', 'D', '0', '0', '0', '0', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '1', '1', '-', '0', '0', '0', '0', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0', '0', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '0', '0', '0'],
+  ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '0']
+];
+
+const HallwayHovelCabinTokens = [
+  {id: 'Night-Demon', type: 'enemy' },
+  {id: 'Sun-Demon', type: 'enemy' },
+  {id: 'Stone-Golem', type: 'enemy' },
+  {id: 'Ancient-Artillery', type: 'enemy' },
+  {id: 'The-Colorless', type: 'boss' },
+  {id: 'poison-gas-trap', type: 'trap'},
+  {id: 'altar', type: 'obstacle' },
+  {id: 'stone-pillar', type: 'obstacle' },
+  {id: 'treasure', type: 'loot' },
+  {id: 'coin-1', type: 'loot' },
+];
+
+const RandomScenarioHallwayHovelCabin = {
+  id: 1,
+  name: 'Random1',
+  goal: 'Kill all enemies',
+  matrix: HallwayHovelCabinMatrix,
+  tokens: HallwayHovelCabinTokens
+};
+
+export const RandomScenarios = {
+  1: RandomScenarioHallwayHovelCabin
+};

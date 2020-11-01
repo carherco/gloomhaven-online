@@ -10,6 +10,7 @@
       <img [src]="player.src" width="80" height="80">
       <input
         type="number"
+        inputmode="numeric"
         style="width:50px;"
         name="initiative_{{i}}"
         [(ngModel)]="player.currentInitiative"
@@ -29,6 +30,7 @@
         <img [src]="tracker.src" width="80" height="80">
         <input
           type="number"
+          inputmode="numeric"
           style="width:50px;"
           name="initiative_{{i}}"
           [(ngModel)]="tracker.currentInitiative"
