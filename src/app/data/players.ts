@@ -6,14 +6,14 @@ export const Players = [
     personalQuest: {
       id: 530,
       title: 'Augmented Abilities',
-      progress: 0,
+      progress: 1,
       total: 4,
     },
     level: 5,
     hitPoints: Doomstalker.hitPoints[4], // el nivel -1
-    experience: 227,
-    gold: 32,
-    perkTicks: 8,
+    experience: 263,
+    gold: 17,
+    perkTicks: 11,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
       ...Doomstalker.level1Cards,
@@ -29,6 +29,8 @@ export const Players = [
       'dsPerk1-1',
       'dsPerk1-2',
       'dsPerk2-1',
+      'dsPerk2-2',
+      'dsPerk2-3',
       'dsPerk9-1',
       'dsPerk9-2',
       'dsPerk10',
@@ -44,11 +46,11 @@ export const Players = [
       progress: 0,
       total: 8,
     },
-    level: 7,
-    hitPoints: Tinkerer.hitPoints[6], // el nivel -1
-    experience: 378,
-    gold: 3,
-    perkTicks: 15,
+    level: 8,
+    hitPoints: Tinkerer.hitPoints[7], // el nivel -1
+    experience: 421,
+    gold: 34,
+    perkTicks: 18,
     ownedAbilityCards: [
       ...Tinkerer.levelXCards,
       ...Tinkerer.level1Cards,
@@ -57,7 +59,8 @@ export const Players = [
       'dangerous-contraption',
       'noxious-vials',
       'auto-turret',
-      'curative-aerosol'
+      'curative-aerosol',
+      'hars-stimulants'
     ],
     ownedItems: [6, 14, 125, 16, 20, 21, 13, 33, 15, 135, 34],
     scenarioAbilityCards: [],
@@ -74,6 +77,8 @@ export const Players = [
       'tiPerk9-1',
       'tiPerk10',
       'tiPerk11',
+      'tiPerk8-1',
+      'tiPerk8-2',
     ],
   },
   {
@@ -87,9 +92,9 @@ export const Players = [
     },
     level: 4,
     hitPoints: Spellweaver.hitPoints[3], // el nivel -1
-    experience: 201,
-    gold: 0,
-    perkTicks: 1,
+    experience: 238,
+    gold: 29,
+    perkTicks: 3,
     ownedAbilityCards: [
       ...Spellweaver.levelXCards,
       ...Spellweaver.level1Cards,
@@ -97,11 +102,12 @@ export const Players = [
       'cold-fire',
       'spirit-of-doom',
     ],
-    ownedItems: [5, 31, 34, 27],
+    ownedItems: [5, 31, 34, 27, 12],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
       'swPerk2-1',
+      'swPerk2-2',
       'swPerk5',
       'swPerk8-1',
       'swPerk9-1',
@@ -116,11 +122,11 @@ export const Players = [
       progress: 3,
       total: 3,
     },
-    level: 6,
-    hitPoints: Mindthief.hitPoints[5], // el nivel -1
-    experience: 332,
-    gold: 18,
-    perkTicks: 4,
+    level: 7,
+    hitPoints: Mindthief.hitPoints[6], // el nivel -1
+    experience: 379,
+    gold: 20,
+    perkTicks: 6,
     ownedAbilityCards: [
       ...Mindthief.levelXCards,
       ...Mindthief.level1Cards,
@@ -128,7 +134,8 @@ export const Players = [
       'silent-scream',
       'cranium-overload',
       'mass-hysteria',
-      'dark-frenzy'
+      'dark-frenzy',
+      'psychic-projection'
     ],
     ownedItems: [11, 13, 1, 8, 16, 12, 20, 21, 139, 27],
     scenarioAbilityCards: [],
@@ -139,6 +146,9 @@ export const Players = [
       'mtPerk1-1',
       'mtPerk1-2',
       'mtPerk11',
+      'mtPerk12',
+      'mtPerk4',
+      'mtPerk10',
     ],
   },
 ];
