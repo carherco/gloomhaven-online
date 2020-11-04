@@ -90,8 +90,8 @@ export const Players = [
       progress: 2,
       total: 6,
     },
-    level: 4,
-    hitPoints: Spellweaver.hitPoints[3], // el nivel -1
+    level: 5,
+    hitPoints: Spellweaver.hitPoints[4], // el nivel -1
     experience: 238,
     gold: 29,
     perkTicks: 3,
@@ -101,16 +101,18 @@ export const Players = [
       'flashing-burst',
       'cold-fire',
       'spirit-of-doom',
+      'chromatic-explosion'
     ],
     ownedItems: [5, 31, 34, 27, 12],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
       'swPerk2-1',
-      'swPerk2-2',
+      'swPerk3-1',
       'swPerk5',
       'swPerk8-1',
       'swPerk9-1',
+      'swPerk11',
     ],
   },
   {
