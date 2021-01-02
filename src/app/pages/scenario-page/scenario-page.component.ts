@@ -58,7 +58,7 @@ export class ScenarioPageComponent implements OnInit {
       this.scenarioId = p.id;
       const scenario = this.scenarioCreator.getScenarioData(this.scenarioId);
       this.originalMatrix = scenario.matrix;
-      this.availableTokens =  this.campaignManager.getPlayersTokens().concat(scenario.tokens);
+      this.availableTokens =  this.campaignManager.getCharactersTokens().concat(scenario.tokens);
       this.scenarioName = scenario.name;
       this.scenarioGoal = scenario.goal;
       this.currentMatrixFirebaseId = 'envelope_openers_' + this.scenarioId;

@@ -1,11 +1,11 @@
 <div id = "initial-table" class = "cardSet">
-  <h2 id ="choose-cards-number" class = "header">Choose {{ character.handCardSize }} cards</h2>
+  <h2 id ="choose-cards-number" class = "header">Choose {{ characterClass.handCardSize }} cards</h2>
   <div align="center">
-    <p id = "card-counter" align="center">{{ cardCount }} / {{ character.handCardSize }}</p>
+    <p id = "card-counter" align="center">{{ cardCount }} / {{ characterClass.handCardSize }}</p>
   </div>
 
   <div id = "confirm-buttons" align = "center">
-    <button [disabled]="cardCount !== character.handCardSize " (click)="onConfirmHand()" class = "button"type="button" title="Must Have a Full Hand">Confirm Hand</button>
+    <button [disabled]="cardCount !== characterClass.handCardSize " (click)="onConfirmHand()" class = "button"type="button" title="Must Have a Full Hand">Confirm Hand</button>
   </div>
 
   <div class="row">

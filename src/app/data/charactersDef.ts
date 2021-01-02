@@ -1,4 +1,4 @@
-import { Character } from './../model/character';
+import { CharacterClass } from './../model/character-class';
 import {
   Plus0,
   Plus1,
@@ -32,11 +32,11 @@ import {
   Plus0AddTarget
 } from './modifiers';
 
-export const Brute: Character = {
+export const Brute: CharacterClass = {
   id: 'brute',
   key: 'BT',
   race: 'Inox',
-  class: 'Brute',
+  className: 'Brute',
   handCardSize: 10,
   image: 'Brute.png',
   hitPoints: [10, 12, 14, 16, 18, 20, 22, 24, 26],
@@ -53,11 +53,11 @@ export const Brute: Character = {
   perks: [],
 };
 
-export const Cragheart: Character = {
+export const Cragheart: CharacterClass = {
   id: 'cragheart',
   key: 'CH',
   race: 'Savvas',
-  class: 'Cragheart',
+  className: 'Cragheart',
   handCardSize: 11,
   image: 'Cragheart.png',
   hitPoints: [10, 12, 14, 16, 18, 20, 22, 24, 26],
@@ -95,11 +95,11 @@ export const Cragheart: Character = {
   ],
 };
 
-export const Mindthief: Character = {
+export const Mindthief: CharacterClass = {
   id: 'mindthief',
   key: 'MT',
   race: 'Vermling',
-  class: 'Mindthief',
+  className: 'Mindthief',
   handCardSize: 10,
   image: 'Mindthief.png',
   hitPoints: [6, 7, 8, 9, 10, 11, 12, 13, 14],
@@ -136,11 +136,11 @@ export const Mindthief: Character = {
   ],
 };
 
-export const Spellweaver: Character = {
+export const Spellweaver: CharacterClass = {
   id: 'spellweaver',
   key: 'SW',
   race: 'Orchid',
-  class: 'Spellweaver',
+  className: 'Spellweaver',
   handCardSize: 8,
   image: 'Spellweaver.png',
   hitPoints: [6, 7, 8, 9, 10, 11, 12, 13, 14],
@@ -177,11 +177,11 @@ export const Spellweaver: Character = {
   ],
 };
 
-export const Scoundrel: Character = {
+export const Scoundrel: CharacterClass = {
   id: 'scoundrel',
   key: 'SC',
   race: 'Human',
-  class: 'Scoundrel',
+  className: 'Scoundrel',
   handCardSize: 10,
   image: 'Scoundrel.png',
   hitPoints: [8, 9, 11, 12, 14, 15, 17, 18, 20],
@@ -198,11 +198,11 @@ export const Scoundrel: Character = {
   perks: [],
 };
 
-export const Tinkerer: Character = {
+export const Tinkerer: CharacterClass = {
   id: 'tinkerer',
   key: 'TI',
   race: 'Quatryl',
-  class: 'Tinkerer',
+  className: 'Tinkerer',
   handCardSize: 12,
   image: 'Tinkerer.png',
   hitPoints: [8, 9, 11, 12, 14, 15, 17, 18, 20],
@@ -240,11 +240,11 @@ export const Tinkerer: Character = {
   ],
 };
 
-export const Doomstalker: Character = {
+export const Doomstalker: CharacterClass = {
   id: 'Doomstalker',
   key: 'DS',
   race: 'Orchid',
-  class: 'Doomstalker',
+  className: 'Doomstalker',
   handCardSize: 12,
   image: 'Doomstalker.png',
   hitPoints: [8, 9, 11, 12, 14, 15, 17, 18, 20],
@@ -282,7 +282,7 @@ export const Doomstalker: Character = {
   ],
 };
 
-export const AvailableCharacters: Character[] = [
+export const AvailableCharacters: CharacterClass[] = [
   Brute,
   Cragheart,
   Mindthief,

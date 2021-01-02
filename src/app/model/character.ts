@@ -1,20 +1,24 @@
+import { CharacterClass } from './character-class';
+import { Player } from './player';
+
 export interface Character {
-  id: string;
-  key: string;
-  race: string;
-  class: string;
-  handCardSize: number;
-  image: string;
-  hitPoints: number[];
-  levelXCards: any[];
-  level1Cards: any[];
-  level2Cards: any[];
-  level3Cards: any[];
-  level4Cards: any[];
-  level5Cards: any[];
-  level6Cards: any[];
-  level7Cards: any[];
-  level8Cards: any[];
-  level9Cards: any[];
-  perks: any[];
+  owner: Player;
+  name: string;
+  characterClass: CharacterClass;
+  personalQuest: {
+    id: number;
+    title: string;
+    progress: number;
+    total: number;
+  };
+  level: number;
+  hitPoints: number;
+  experience: number;
+  gold: number;
+  perkTicks: number;
+  ownedAbilityCards: any[];
+  ownedItems: number[];
+  scenarioAbilityCards: any[];
+  scenarioItems: any[];
+  perks: string[];
 }

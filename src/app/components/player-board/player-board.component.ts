@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameManagerService } from 'src/app/services/game-manager.service';
+import { CharacterClass } from 'src/app/model/character-class';
+import { Characters } from 'src/app/data/characters';
 import { Character } from 'src/app/model/character';
-import { Players } from 'src/app/data/players';
-import { Player } from 'src/app/model/player';
 import { Modifier } from 'src/app/model/modifier';
 
 @Component({
@@ -13,7 +13,7 @@ import { Modifier } from 'src/app/model/modifier';
 })
 export class PlayerBoardComponent implements OnInit {
 
-  player: Player;
+  player: Character;
   attackModifierDeck: Modifier[];
 
   handCards = [];
@@ -59,13 +59,13 @@ export class PlayerBoardComponent implements OnInit {
   };
 
   constructor(private router: Router, private game: GameManagerService) {
-    this.player = this.game.getPlayer();
+    this.player = this.game.getCharacter();
     this.handCards = this.game.getHand();
-    const character = this.player.character;
-    this.maxHealth = character.hitPoints[this.player.level - 1];
+    const characterClass = this.player.characterClass;
+    this.maxHealth = characterClass.hitPoints[this.player.level - 1];
     this.health = this.maxHealth;
     this.attackModifierDeck = this.game.getAttackModifierDeck();
-    this.srcImageBackCard = 'assets/images/character-ability-cards/' + character.key + '/' + character.key.toLowerCase() + '-back.png';
+    this.srcImageBackCard = 'assets/images/character-ability-cards/' + characterClass.key + '/' + characterClass.key.toLowerCase() + '-back.png';
   }
 
   ngOnInit(): void {

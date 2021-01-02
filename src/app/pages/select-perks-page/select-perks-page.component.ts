@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from 'src/app/model/player';
-import { Players } from 'src/app/data/players';
+import { Character } from 'src/app/model/character';
+import { Characters } from 'src/app/data/characters';
 import { GameManagerService } from 'src/app/services/game-manager.service';
 
 @Component({
@@ -10,13 +10,13 @@ import { GameManagerService } from 'src/app/services/game-manager.service';
 })
 export class SelectPerksPageComponent implements OnInit {
 
-  player: Player;
+  player: Character;
   availablePerks = [];
   selectedPerks: string[] = [];
 
   constructor(private game: GameManagerService) {
-    this.player = this.game.getPlayer();
-    this.availablePerks = this.player.character.perks;
+    this.player = this.game.getCharacter();
+    this.availablePerks = this.player.characterClass.perks;
     this.selectedPerks = this.player.perks;
   }
 

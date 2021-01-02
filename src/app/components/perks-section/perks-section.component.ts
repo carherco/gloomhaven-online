@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Character } from 'src/app/model/character';
+import { CharacterClass } from 'src/app/model/character-class';
 import { Brute, Cragheart } from './../../data/charactersDef';
-import { Player } from 'src/app/model/player';
+import { Character } from 'src/app/model/character';
 import { Router } from '@angular/router';
 
 @Component({

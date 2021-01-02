@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from 'src/app/model/character';
+import { CharacterClass } from 'src/app/model/character-class';
 import { AvailableCharacters } from 'src/app/data/charactersDef';
 import { Router } from '@angular/router';
 
@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class SelectClassComponent implements OnInit {
 
-  characterSelected: Character = null;
-  characters: Character[] = AvailableCharacters;
+  characterSelected: CharacterClass = null;
+  characters: CharacterClass[] = AvailableCharacters;
   level = 1;
   constructor(private router: Router) { }
 
   ngOnInit(): void { }
 
-  select(character: Character) {
+  select(character: CharacterClass) {
     this.characterSelected = character;
   }
 

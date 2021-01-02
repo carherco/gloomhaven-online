@@ -1,10 +1,10 @@
 import { GameManagerService } from './../../services/game-manager.service';
 import { Component, OnInit } from '@angular/core';
-import { Character } from 'src/app/model/character';
+import { CharacterClass } from 'src/app/model/character-class';
 import { Cragheart } from 'src/app/data/charactersDef';
-import { Player } from 'src/app/model/player';
+import { Character } from 'src/app/model/character';
 import { Router } from '@angular/router';
-import { Players } from 'src/app/data/players';
+import { Characters } from 'src/app/data/characters';
 
 @Component({
   selector: 'app-select-hand',
@@ -13,19 +13,19 @@ import { Players } from 'src/app/data/players';
 })
 export class SelectHandComponent implements OnInit {
 
-  player: Player;
-  character: Character;
+  private character: Character;
+  characterClass: CharacterClass;
   cardsList = [];
   cardCount = 0;
   constructor(private router: Router, private game: GameManagerService) {
-    this.player = this.game.getPlayer();
-    this.character = this.player.character;
+    this.character = this.game.getCharacter();
+    this.characterClass = this.character.characterClass;
     const previousSelectedCards = this.game.getHand() || [];
-    this.cardsList = this.player.ownedAbilityCards.map(
+    this.cardsList = this.character.ownedAbilityCards.map(
       c => {
         return {
           id: c,
-          src: 'assets/images/character-ability-cards/' + this.character.key + '/' + c + '.png',
+          src: 'assets/images/character-ability-cards/' + this.characterClass.key + '/' + c + '.png',
           selected: previousSelectedCards.some(card => card.id === c)
         };
       });
@@ -38,7 +38,7 @@ export class SelectHandComponent implements OnInit {
     if (card.selected) {
       this.cardCount--;
       card.selected = false;
-    } else if (this.cardCount < this.character.handCardSize) {
+    } else if (this.cardCount < this.characterClass.handCardSize) {
       this.cardCount++;
       card.selected = true;
     }

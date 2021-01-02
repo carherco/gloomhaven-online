@@ -21,10 +21,10 @@
               <img class="character" src="./assets/{{player.character.image}}" />
           </div>
           <div class="player-stats">
-            <div>{{player.character.race}} {{player.character.class}}</div>
+            <div>{{player.character.race}} {{player.characterClass}}</div>
             <div>Personal Quest: </div>
             <div>
-              {{player.personalQuest.title}} ({{player.personalQuest.progress}} / {{player.personalQuest.total}}) 
+              {{player.personalQuest.title}} ({{player.personalQuest.progress}} / {{player.personalQuest.total}})
               <span (click)="openPQModal(modalContent, player)">
                 <svg class="bi bi-eye-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.5 8a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>

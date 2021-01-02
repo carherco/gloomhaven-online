@@ -1,10 +1,12 @@
 import { Cragheart, Scoundrel } from './charactersDef';
+import { Character } from '../model/character';
+import { PLAYERS } from './players';
 
-export const RetiredCharacters = [
+export const RetiredCharacters: Character[] = [
   {
     name: 'Lorkham',
-    owner: 'player0',
-    character: Cragheart,
+    owner: PLAYERS[0],
+    characterClass: Cragheart,
     personalQuest: {
       id: 528,
       title: 'Goliath Toppler',
@@ -24,7 +26,8 @@ export const RetiredCharacters = [
   },
   {
     name: 'Nightmare',
-    character: Scoundrel,
+    owner: PLAYERS[2],
+    characterClass: Scoundrel,
     personalQuest: {
       id: 526,
       title: 'Vengeance',

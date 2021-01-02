@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from 'src/app/model/player';
-import { Players } from 'src/app/data/players';
+import { Character } from 'src/app/model/character';
+import { Characters } from 'src/app/data/characters';
 import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,17 +11,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PlayersPageComponent implements OnInit {
 
-  players: Player[];
-  selectedPlayer: Player;
+  players: Character[];
+  selectedPlayer: Character;
 
   constructor(private campService: CampaignManagerService, private modalService: NgbModal) {
-    this.players = this.campService.getPlayers();
+    this.players = this.campService.getCharacters();
   }
 
   ngOnInit(): void {
   }
 
-  openPQModal(modalContent, player: Player) {
+  openPQModal(modalContent, player: Character) {
     this.selectedPlayer = player;
     this.modalService.open(modalContent, { centered: true });
   }

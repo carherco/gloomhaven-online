@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Player } from '../model/player';
-import { Players } from '../data/players';
+import { Character } from '../model/character';
+import { Characters } from '../data/characters';
 import { Modifier } from '../model/modifier';
 import { defaultDeck } from '../data/modifiers';
 
@@ -9,7 +9,7 @@ import { defaultDeck } from '../data/modifiers';
 })
 export class GameManagerService {
 
-  player: Player;
+  player: Character;
   handCards;
   playedCards: [];
   activeCards: [];
@@ -23,7 +23,7 @@ export class GameManagerService {
     localStorage.setItem('player', JSON.stringify(this.player));
   }
 
-  getPlayer(): Player {
+  getCharacter(): Character {
 
     let player;
 
@@ -44,7 +44,7 @@ export class GameManagerService {
   }
 
   isPlayerSelected() {
-    return this.getPlayer() ? true : false;
+    return this.getCharacter() ? true : false;
   }
 
   setHand(handCards) {
@@ -60,12 +60,12 @@ export class GameManagerService {
     let deck: Modifier[] = [...defaultDeck];
     console.log(this.player);
     const playerPerksNames = this.player.perks;
-    const characterPerks = this.player.character.perks;
+    const characterPerks = this.player.characterClass.perks;
     playerPerksNames.forEach(
       perkName => {
         const perkObject = characterPerks.find( p => p.id === perkName );
-        deck = this.addModifiers([...deck], [...perkObject.addModifiers], this.player.character.key);
-        deck = this.removeModifiers([...deck], perkObject.removeModifiers, this.player.character.key);
+        deck = this.addModifiers([...deck], [...perkObject.addModifiers], this.player.characterClass.key);
+        deck = this.removeModifiers([...deck], perkObject.removeModifiers, this.player.characterClass.key);
       }
     );
     return deck;

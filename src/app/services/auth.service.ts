@@ -3,7 +3,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { User } from '../model/user';
+import { User } from '../model/player';
 
 @Injectable({
   providedIn: 'root'

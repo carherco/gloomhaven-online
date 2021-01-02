@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from 'src/app/model/player';
-import { Players } from 'src/app/data/players';
+import { Character } from 'src/app/model/character';
+import { Characters } from 'src/app/data/characters';
 import { Router } from '@angular/router';
 import { GameManagerService } from 'src/app/services/game-manager.service';
 
@@ -11,13 +11,13 @@ import { GameManagerService } from 'src/app/services/game-manager.service';
 })
 export class SelectPlayerPageComponent implements OnInit {
 
-  playerSelected: Player = null;
-  players: Player[] = Players;
+  playerSelected: Character = null;
+  players: Character[] = Characters;
   constructor(private router: Router, private game: GameManagerService) { }
 
   ngOnInit(): void { }
 
-  select(player: Player) {
+  select(player: Character) {
     this.playerSelected = player;
   }
 

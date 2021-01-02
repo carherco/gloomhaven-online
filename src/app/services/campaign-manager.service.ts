@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Players } from 'src/app/data/players';
-import { Player } from 'src/app/model/player';
+import { Characters } from 'src/app/data/characters';
+import { Character } from 'src/app/model/character';
 import { Token } from '../model/token';
 import { Scenarios } from '../data/mapsDef';
 
@@ -9,11 +9,11 @@ import { Scenarios } from '../data/mapsDef';
 })
 export class CampaignManagerService {
 
-  players: Player[] = Players;
+  players: Character[] = Characters;
 
   constructor() { }
 
-  getPlayers(): Player[] {
+  getCharacters(): Character[] {
     return this.players;
   }
 
@@ -21,12 +21,12 @@ export class CampaignManagerService {
     return Object.entries(Scenarios).map( s => s[1]);
   }
 
-  getPlayersTokens(): Token[] {
+  getCharactersTokens(): Token[] {
     const playerTokens: Token[] = this.players.map( player => {
       return {
         id: 'player' + player.name,
         type: 'player',
-        src: 'assets/' + player.character.class + '_token.png',
+        src: 'assets/' + player.characterClass + '_token.png',
         maxHealth: player.hitPoints,
         stats: {
           h: player.hitPoints
