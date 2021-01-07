@@ -13,7 +13,7 @@ import { Modifier } from 'src/app/model/modifier';
 })
 export class PlayerBoardComponent implements OnInit {
 
-  player: Character;
+  character: Character;
   attackModifierDeck: Modifier[];
 
   handCards = [];
@@ -59,10 +59,11 @@ export class PlayerBoardComponent implements OnInit {
   };
 
   constructor(private router: Router, private game: GameManagerService) {
-    this.player = this.game.getCharacter();
+    this.character = this.game.getCharacter();
     this.handCards = this.game.getHand();
-    const characterClass = this.player.characterClass;
-    this.maxHealth = characterClass.hitPoints[this.player.level - 1];
+    console.log(this.character);
+    const characterClass = this.character.characterClass;
+    this.maxHealth = characterClass.hitPoints[this.character.level - 1];
     this.health = this.maxHealth;
     this.attackModifierDeck = this.game.getAttackModifierDeck();
     this.srcImageBackCard = 'assets/images/character-ability-cards/' + characterClass.key + '/' + characterClass.key.toLowerCase() + '-back.png';

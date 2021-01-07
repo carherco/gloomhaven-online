@@ -680,9 +680,9 @@ export const ITEMS: ItemDef[] = [
     name: 'chain hood',
     points: 75,
     image: 'items/64-151/chain-hood.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'head',
+    use: 'permanent',
+    price: 40,
     xws: 'chainhood'
   },
   {
@@ -1211,9 +1211,9 @@ export const ITEMS: ItemDef[] = [
     name: 'focusing ray',
     points: 134,
     image: 'items/64-151/focusing-ray.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'one-hand',
+    use: 'consume',
+    price: 50,
     xws: 'focusingray'
   },
   {
@@ -1247,9 +1247,9 @@ export const ITEMS: ItemDef[] = [
     name: 'psychic knife',
     points: 138,
     image: 'items/64-151/psychic-knife.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'one-hand',
+    use: 'permanent',
+    price: 50,
     xws: 'psychicknife'
   },
   {
@@ -1319,9 +1319,9 @@ export const ITEMS: ItemDef[] = [
     name: 'cloak of the hunter',
     points: 146,
     image: 'items/64-151/cloak-of-the-hunter.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'body',
+    use: 'permanent',
+    price: 50,
     xws: 'cloakofthehunter'
   },
   {

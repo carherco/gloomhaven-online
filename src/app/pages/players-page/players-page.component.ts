@@ -11,18 +11,19 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PlayersPageComponent implements OnInit {
 
-  players: Character[];
-  selectedPlayer: Character;
+  characters: Character[];
+  selectedCharacter: Character;
 
   constructor(private campService: CampaignManagerService, private modalService: NgbModal) {
-    this.players = this.campService.getCharacters();
+    this.characters = this.campService.getCharacters();
+    console.log(this.characters);
   }
 
   ngOnInit(): void {
   }
 
-  openPQModal(modalContent, player: Character) {
-    this.selectedPlayer = player;
+  openPQModal(modalContent, character: Character) {
+    this.selectedCharacter = character;
     this.modalService.open(modalContent, { centered: true });
   }
 
