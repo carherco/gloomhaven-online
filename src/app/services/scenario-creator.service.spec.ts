@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ScenarioCreatorService } from './scenario-creator.service';
 
-fdescribe('ScenarioCreatorService', () => {
+describe('ScenarioCreatorService', () => {
   let service: ScenarioCreatorService;
 
   beforeEach(() => {

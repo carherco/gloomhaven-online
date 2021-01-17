@@ -14,7 +14,7 @@ export class ShopPageComponent implements OnInit {
     22, 23, 24, 25, 26, 27, 28,
     29, 30, 31, 32, 33, 34, 35,
     107, 113, 81, 88, 130, 116, 74, 44, 98,
-    135, 139, 147, 76
+    135, 139, 147, 76, 108
   ];
   items: ItemDef[] = [];
   itemTypeSelected: ItemType = 'all';

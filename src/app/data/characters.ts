@@ -13,9 +13,9 @@ export const Characters = [
     },
     level: 6,
     hitPoints: Doomstalker.hitPoints[5], // el nivel -1
-    experience: 296,
-    gold: 33,
-    perkTicks: 12,
+    experience: 335,
+    gold: 42,
+    perkTicks: 17,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
       ...Doomstalker.level1Cards,
@@ -25,7 +25,7 @@ export const Characters = [
       'wild-command',
       'camouflage'
     ],
-    ownedItems: [1, 13, 5, 12, 147],
+    ownedItems: [1, 13, 5, 12, 147, 108],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -52,8 +52,8 @@ export const Characters = [
     },
     level: 8,
     hitPoints: Tinkerer.hitPoints[7], // el nivel -1
-    experience: 458,
-    gold: 44,
+    experience: 497,
+    gold: 53,
     perkTicks: 18,
     ownedAbilityCards: [
       ...Tinkerer.levelXCards,
@@ -95,18 +95,19 @@ export const Characters = [
       progress: 3,
       total: 6,
     },
-    level: 5,
-    hitPoints: Spellweaver.hitPoints[4], // el nivel -1
-    experience: 269,
-    gold: 42,
-    perkTicks: 7,
+    level: 6,
+    hitPoints: Spellweaver.hitPoints[5], // el nivel -1
+    experience: 322,
+    gold: 63,
+    perkTicks: 10,
     ownedAbilityCards: [
       ...Spellweaver.levelXCards,
       ...Spellweaver.level1Cards,
       'flashing-burst',
       'cold-fire',
       'spirit-of-doom',
-      'chromatic-explosion'
+      'chromatic-explosion',
+      'frozen-night'
     ],
     ownedItems: [5, 31, 34, 27, 12, 1],
     scenarioAbilityCards: [],
@@ -131,11 +132,11 @@ export const Characters = [
       progress: 0,
       total: 12,
     },
-    level: 4,
-    hitPoints: Brute.hitPoints[3], // el nivel -1
-    experience: 199,
-    gold: 23,
-    perkTicks: 1,
+    level: 5,
+    hitPoints: Brute.hitPoints[4], // el nivel -1
+    experience: 249,
+    gold: 44,
+    perkTicks: 3,
     ownedAbilityCards: [
       ...Brute.levelXCards,
       ...Brute.level1Cards
