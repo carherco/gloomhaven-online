@@ -16,7 +16,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/winged-shoes.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'wingedshoes'
   },
   {

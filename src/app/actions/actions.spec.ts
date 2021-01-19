@@ -1,7 +1,8 @@
 import { Player } from '../model/player';
-import { CampaignStatusService, INITIAL_STATUS, CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload } from '../services/campaign-status.service';
 import { Cragheart, Tinkerer } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
+import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload } from '../data/actions';
+import { INITIAL_STATUS, CampaignStatusService } from '../services/campaign-status.service';
 
 console.log(1, INITIAL_STATUS);
 
@@ -142,7 +143,7 @@ describe('Party Achievement', () => {
   });
 });
 
-fdescribe('Scenarios', () => {
+describe('Scenarios', () => {
   it('Complete Scenario', () => {
     // Setup
     let campaign: CampaignStatusService;
@@ -218,3 +219,260 @@ fdescribe('Scenarios', () => {
     expect(status.party.reputation).toEqual(1);
   });
 });
+
+describe('Shop', () => {
+  it('Buy Item', () => {
+    // Setup
+    let campaign: CampaignStatusService;
+    campaign = new CampaignStatusService();
+
+    campaign.createCharacter({
+      playerId: players[0].uid,
+      characterClass: Cragheart,
+      name: 'Lorkham',
+      personalQuest: PERSONAL_QUESTS[528]
+    });
+
+    campaign.createCharacter({
+      playerId: players[1].uid,
+      characterClass: Tinkerer,
+      name: 'Farts Like Thunder',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[2].uid,
+      characterClass: Tinkerer,
+      name: 'Nightmare',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[3].uid,
+      characterClass: Tinkerer,
+      name: 'Psycho',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    // Act
+    const payload: BuyItemPayload = {
+      playerName: 'Nightmare',
+      itemId: 2
+    };
+    campaign.buyItem(payload);
+
+    // Asserts
+    // Los personajes han sido creados con los 30 de oro iniciales
+    // El ítem vale 20
+    const status = campaign.getStatus();
+    expect(status.characters[2].gold).toEqual(10);
+    expect(status.characters[2].ownedItems.includes(2)).toBeTrue;
+  });
+
+  it('Sell Item', () => {
+    // Setup
+    let campaign: CampaignStatusService;
+    campaign = new CampaignStatusService();
+
+    campaign.createCharacter({
+      playerId: players[0].uid,
+      characterClass: Cragheart,
+      name: 'Lorkham',
+      personalQuest: PERSONAL_QUESTS[528]
+    });
+
+    campaign.createCharacter({
+      playerId: players[1].uid,
+      characterClass: Tinkerer,
+      name: 'Farts Like Thunder',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[2].uid,
+      characterClass: Tinkerer,
+      name: 'Nightmare',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[3].uid,
+      characterClass: Tinkerer,
+      name: 'Psycho',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.buyItem({
+      playerName: 'Nightmare',
+      itemId: 2
+    });
+
+    // Act
+    const payload: SellItemPayload = {
+      playerName: 'Nightmare',
+      itemId: 2
+    };
+    campaign.sellItem(payload);
+
+    // Asserts
+    // Los personajes han sido creados con los 30 de oro iniciales
+    // El ítem vale 20
+    const status = campaign.getStatus();
+    expect(status.characters[2].gold).toEqual(20);
+    expect(status.characters[2].ownedItems.includes(2)).toBeFalse;
+  });
+});
+
+describe('Donations to the Sanctuary of the Great Oak', () => {
+  it('Make donation', () => {
+    // Setup
+    let campaign: CampaignStatusService;
+    campaign = new CampaignStatusService();
+
+    campaign.createCharacter({
+      playerId: players[0].uid,
+      characterClass: Cragheart,
+      name: 'Lorkham',
+      personalQuest: PERSONAL_QUESTS[528]
+    });
+
+    campaign.createCharacter({
+      playerId: players[1].uid,
+      characterClass: Tinkerer,
+      name: 'Farts Like Thunder',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[2].uid,
+      characterClass: Tinkerer,
+      name: 'Nightmare',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[3].uid,
+      characterClass: Tinkerer,
+      name: 'Psycho',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    // Act
+    const payload: MakeDonationPayload = {
+      playerName: 'Nightmare',
+    };
+    campaign.makeDonation(payload);
+
+    // Asserts
+    // Los personajes han sido creados con los 30 de oro iniciales
+    // La donación cuesta 10
+    const status = campaign.getStatus();
+    expect(status.characters[2].gold).toEqual(20);
+    expect(status.amountGoldDonated).toEqual(10);
+  });
+});
+
+describe('City Events', () => {
+  it('Resolve City Event', () => {
+    // Setup
+    let campaign: CampaignStatusService;
+    campaign = new CampaignStatusService();
+
+    campaign.createCharacter({
+      playerId: players[0].uid,
+      characterClass: Cragheart,
+      name: 'Lorkham',
+      personalQuest: PERSONAL_QUESTS[528]
+    });
+
+    campaign.createCharacter({
+      playerId: players[1].uid,
+      characterClass: Tinkerer,
+      name: 'Farts Like Thunder',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[2].uid,
+      characterClass: Tinkerer,
+      name: 'Nightmare',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[3].uid,
+      characterClass: Tinkerer,
+      name: 'Psycho',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    // Act
+    const payload: ResolveCityEventPayload = {
+      eventId: 1,
+      rewards: { reputation: 1 },
+      discard: false
+    };
+    campaign.resolveCityEvent(payload);
+
+    // Asserts
+    // Los personajes han sido creados con los 30 de oro iniciales
+    // La donación cuesta 10
+    const status = campaign.getStatus();
+    expect(status.party.reputation).toEqual(1);
+    expect(status.cityEventsDeck.includes(1)).toBeTrue;
+  });
+});
+
+describe('Road Events', () => {
+  it('Resolve Road Event', () => {
+    // Setup
+    let campaign: CampaignStatusService;
+    campaign = new CampaignStatusService();
+
+    campaign.createCharacter({
+      playerId: players[0].uid,
+      characterClass: Cragheart,
+      name: 'Lorkham',
+      personalQuest: PERSONAL_QUESTS[528]
+    });
+
+    campaign.createCharacter({
+      playerId: players[1].uid,
+      characterClass: Tinkerer,
+      name: 'Farts Like Thunder',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[2].uid,
+      characterClass: Tinkerer,
+      name: 'Nightmare',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    campaign.createCharacter({
+      playerId: players[3].uid,
+      characterClass: Tinkerer,
+      name: 'Psycho',
+      personalQuest: PERSONAL_QUESTS[513]
+    });
+
+    // Act
+    const payload: ResolveRoadEventPayload = {
+      eventId: 8,
+      discard: true
+    };
+    campaign.resolveCityEvent(payload);
+
+    // Asserts
+    // Los personajes han sido creados con los 30 de oro iniciales
+    // La donación cuesta 10
+    const status = campaign.getStatus();
+    expect(status.party.reputation).toEqual(1);
+    expect(status.roadEventsDeck.includes(8)).toBeFalse;
+  });
+});
+
+
+
+
