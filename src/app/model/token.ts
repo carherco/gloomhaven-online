@@ -38,7 +38,6 @@ class EnemyToken {
   constructor(id: string, type: 'normal'|'elite', level: number) {
     let token: Token;
     const enemyDef = EnemyDefs[id];
-    console.log(id, type, level);
     if (type === 'elite') {
       token = {
         id,
@@ -72,7 +71,6 @@ class BossToken {
   constructor(id: string, level: number) {
     let token: Token;
     const bossDef = BossDefs[id];
-    console.log(id, level);
     token = {
       id,
       type: 'boss',

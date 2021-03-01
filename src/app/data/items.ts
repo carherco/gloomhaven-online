@@ -7,7 +7,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/boots-of-striding.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'bootsofstriding'
   },
   {
@@ -34,7 +34,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/leather-armor.png',
     type: 'body',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'leatherarmor'
   },
   {
@@ -43,7 +43,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/cloak-of-invisibility.png',
     type: 'body',
     use: 'consume',
-    price: 10,
+    price: 20,
     xws: 'cloakofinvisibility'
   },
   {
@@ -52,7 +52,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/eagle-eye-goggles.png',
     type: 'head',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'eagleeyegoggles'
   },
   {
@@ -79,7 +79,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/piercing-bow.png',
     type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'piercingbow'
   },
   {
@@ -88,7 +88,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/war-hammer.png',
     type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'warhammer'
   },
   {
@@ -97,7 +97,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/poison-dagger.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'poisondagger'
   },
   {
@@ -133,7 +133,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/15-21/boots-of-speed.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'bootsofspeed'
   },
   {
@@ -142,7 +142,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/15-21/cloak-of-pockets.png',
     type: 'body',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'cloakofpockets'
   },
   {
@@ -151,7 +151,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/15-21/empowering-talisman.png',
     type: 'head',
     use: 'spend',
-    price: 10,
+    price: 45,
     xws: 'empoweringtalisman'
   },
   {
@@ -160,7 +160,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/15-21/battle-axe.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'battleaxe'
   },
   {
@@ -169,7 +169,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/15-21/weighted-net.png',
     type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'weightednet'
   },
   {
@@ -187,7 +187,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/15-21/stun-powder.png',
     type: 'small-item',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'stunpowder'
   },
   {
@@ -196,7 +196,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/22-28/heavy-greaves.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'heavygreaves'
   },
   {
@@ -205,7 +205,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/22-28/chainmail.png',
     type: 'body',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'chainmail'
   },
   {
@@ -214,7 +214,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/22-28/amulet-of-life.png',
     type: 'head',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'amuletoflife'
   },
   {
@@ -223,7 +223,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/22-28/jagged-sword.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'jaggedsword'
   },
   {
@@ -232,7 +232,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/22-28/long-spear.png',
     type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'longspear'
   },
   {
@@ -241,7 +241,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/22-28/major-healing-potion.png',
     type: 'small-item',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'majorhealingpotion'
   },
   {
@@ -250,7 +250,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/22-28/moon-earring.png',
     type: 'small-item',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'moonearring'
   },
   {
@@ -259,7 +259,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/29-35/comfortable-shoes.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'comfortableshoes'
   },
   {
@@ -268,7 +268,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/29-35/studded-leather.png',
     type: 'body',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'studdedleather'
   },
   {
@@ -277,7 +277,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/29-35/hawk-helm.png',
     type: 'head',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'hawkhelm'
   },
   {
@@ -286,7 +286,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/29-35/tower-shield.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'towershield'
   },
   {
@@ -295,7 +295,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/29-35/volatile-bomb.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'volatilebomb'
   },
   {
@@ -304,7 +304,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/29-35/major-stamina-potion.png',
     type: 'small-item',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'majorstaminapotion'
   },
   {
@@ -313,7 +313,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/29-35/falcon-figurine.png',
     type: 'small-item',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'falconfigurine'
   },
   {
@@ -394,7 +394,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/43-49/splintmail.png',
     type: 'body',
     use: 'spend',
-    price: 10,
+    price: 35,
     xws: 'splintmail'
   },
   {
@@ -664,7 +664,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/swordedge-armor.png',
     type: 'body',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'swordedgearmor'
   },
   {
@@ -727,7 +727,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/brilliant-blade.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'brilliantblade'
   },
   {
@@ -790,7 +790,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/wand-of-darkness.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'wandofdarkness'
   },
   {
@@ -880,7 +880,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/drakescale-boots.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'drakescaleboots'
   },
   {
@@ -961,7 +961,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/horned-helm.png',
     type: 'head',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'hornedhelm'
   },
   {
@@ -1015,7 +1015,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/skullbane-axe.png',
     type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'skullbaneaxe'
   },
   {
@@ -1042,7 +1042,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/fueled-falchion.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'fueledfalchion'
   },
   {
@@ -1168,7 +1168,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/helix-ring.png',
     type: 'small-item',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'helixring'
   },
   {

@@ -61,7 +61,6 @@ export class PlayerBoardComponent implements OnInit {
   constructor(private router: Router, private game: GameManagerService) {
     this.character = this.game.getCharacter();
     this.handCards = this.game.getHand();
-    console.log(this.character);
     const characterClass = this.character.characterClass;
     this.maxHealth = characterClass.hitPoints[this.character.level - 1];
     this.health = this.maxHealth;
@@ -114,7 +113,6 @@ export class PlayerBoardComponent implements OnInit {
       this.discardedCards.push(this.playedCards[0]);
       this.playedCards.splice(0, 1);
       this.playedCardsSelectedCount--;
-      console.log(this.playedCards);
     } else if (this.playedCards[1].selected) {
       this.playedCards[1].selected = false;
       this.discardedCards.push(this.playedCards[1]);
@@ -129,7 +127,6 @@ export class PlayerBoardComponent implements OnInit {
       this.lostCards.push(this.playedCards[0]);
       this.playedCards.splice(0, 1);
       this.playedCardsSelectedCount--;
-      console.log(this.playedCards);
     } else if (this.playedCards[1].selected) {
       this.playedCards[1].selected = false;
       this.lostCards.push(this.playedCards[1]);
@@ -144,7 +141,6 @@ export class PlayerBoardComponent implements OnInit {
       this.activeCards.push(this.playedCards[0]);
       this.playedCards.splice(0, 1);
       this.playedCardsSelectedCount--;
-      console.log(this.playedCards);
     } else if (this.playedCards[1].selected) {
       this.playedCards[1].selected = false;
       this.activeCards.push(this.playedCards[1]);

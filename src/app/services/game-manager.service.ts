@@ -58,7 +58,6 @@ export class GameManagerService {
 
   getAttackModifierDeck(): Modifier[] {
     let deck: Modifier[] = [...defaultDeck];
-    console.log(this.player);
     const playerPerksNames = this.player.perks;
     const characterPerks = this.player.characterClass.perks;
     playerPerksNames.forEach(

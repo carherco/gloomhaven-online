@@ -92,7 +92,6 @@ export class ScenarioCreatorService {
             tokens = [];
             break;
         }
-        console.log(tokens);
         return tokens;
       }
     );
@@ -109,7 +108,6 @@ export class ScenarioCreatorService {
   }
 
   getEnemiesTrackers(tokens: TokenDef[]): EnemyTracker[] {
-    console.log(tokens);
     return tokens
       .filter( t => ['enemy', 'boss'].includes(t.type))
       .map(

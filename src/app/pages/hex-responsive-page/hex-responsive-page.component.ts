@@ -112,20 +112,17 @@ export class HexResponsivePageComponent implements OnInit {
   }
 
   dragStartFromPool(token: Token) {
-    console.log('dragStartFromPool');
     this.dragType = 'fromPool';
     this.dragContent = {...token};
   }
 
   dragStartPlay(row: number, column: number) {
-    console.log('dragStartPlay');
     this.dragType = 'fromMap';
     this.dragOrigin = {row, column};
     this.dragContent = this.currentMatrix[this.dragOrigin.row][this.dragOrigin.column].slice(-1)[0];
   }
 
   drop(row: number, column: number, event) {
-    console.log('drop', event, row, column);
     event.preventDefault();
     this.dragEnd = {row, column};
 
@@ -157,7 +154,6 @@ export class HexResponsivePageComponent implements OnInit {
     this.rowSelected = row;
     this.columnSelected = column;
     this.showStats = true;
-    console.log(this.elementSelected);
     this.modalService.open(modalContent, { centered: true, size: 'lg' });
   }
 

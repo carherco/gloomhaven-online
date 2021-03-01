@@ -16,7 +16,6 @@ export class PlayersPageComponent implements OnInit {
 
   constructor(private campService: CampaignManagerService, private modalService: NgbModal) {
     this.characters = this.campService.getCharacters();
-    console.log(this.characters);
   }
 
   ngOnInit(): void {

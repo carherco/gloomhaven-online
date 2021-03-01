@@ -4,7 +4,8 @@ import { CharacterClass } from '../model/character-class';
 import { Character } from '../model/character';
 import { PersonalQuestDef } from '../data/personal-quests';
 import { ITEMS } from '../data/items';
-import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, FailScenarioPayload } from '../data/actions';
+import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, FailScenarioPayload, RetireCharacterPayload, EnhanceAbilityPayload, CompleteSoloScenarioPayload, UnblockCharacterPayload } from '../data/actions';
+import { BehaviorSubject, ReplaySubject } from 'rxjs';
 
 export interface CampaignStatus {
   party: {
@@ -52,16 +53,56 @@ export const INITIAL_STATUS: CampaignStatus = {
   ],
 };
 
+const EXPERIENCE_MILESTONES = [0, 45, 95, 150, 210, 275, 345, 420, 500];
+const PROSPERITY_MILESTONES = [4, 9, 15, 22, 30, 39];
+const DONATIONS_MILESTONES = [100, 150, 200, 250, 300, 350, 400, 450, 500];
+const PRICE_MODIFIER_MAP = [
+  -5, -5, -4, -4, -4, -4, -3, -3, -3, -3, -2, -2, -2, -2, -1, -1, -1, -1,
+  0, 0, 0, 0, 0,
+  1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5
+];
+
 @Injectable({
   providedIn: 'root'
 })
 export class CampaignStatusService {
 
   private status: CampaignStatus;
+  // private status$ = new ReplaySubject();
 
   constructor() {
-    console.log('constructorx', INITIAL_STATUS);
     this.status = {...INITIAL_STATUS};
+    this.status = this.cloneStatus();
+  }
+
+  getStatus(): CampaignStatus {
+    return {...this.status};
+  }
+
+  loadStatus(status: CampaignStatus): void {
+    this.status = {...status};
+    this.status = this.cloneStatus();
+  }
+
+  cloneStatus() {
+    return {
+      party: {
+        name: this.status.party.name,
+        reputation: 0,
+        achievements: [...this.status.party.achievements]
+      },
+      players: [...this.status.players],
+      characters: [...this.status.characters],
+      retiredCharacters: [...this.status.retiredCharacters],
+      city: {
+        prosperityPoints: this.status.city.prosperityPoints,
+        prosperityLevel: this.status.city.prosperityLevel,
+        achievements: [...this.status.city.achievements]
+      },
+      amountGoldDonated: this.status.amountGoldDonated,
+      cityEventsDeck: [...this.status.cityEventsDeck],
+      roadEventsDeck: [...this.status.roadEventsDeck],
+    };
   }
 
   createCampaign(partyName: string, players: Player[]) {
@@ -71,27 +112,19 @@ export class CampaignStatusService {
     this.status = newStatus;
   }
 
-  getStatus(): CampaignStatus {
-    return {...this.status};
-  }
-
-  loadStatus(status: CampaignStatus): void {
-    //console.log(status);
-    this.status = {...status};
-  }
-
   createCharacter(payload: CreateCharacterPayload): void {
     const owner = this.findPlayerByUid(payload.playerId);
+    const level = this.status.city.prosperityLevel;
 
     const newCharacter: Character = {
       owner,
       name: payload.name,
       characterClass: payload.characterClass,
       personalQuest: {...payload.personalQuest, progress: 0},
-      level: this.status.city.prosperityLevel,
+      level: level,
       hitPoints: 0,
-      experience: 0,
-      gold: 15 * this.status.city.prosperityLevel + 15,
+      experience: EXPERIENCE_MILESTONES[level - 1],
+      gold: 15 * level + 15,
       perkTicks: 0,
       ownedAbilityCards: [],
       ownedItems: [],
@@ -100,8 +133,19 @@ export class CampaignStatusService {
       perks: []
     };
 
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
     this.status.characters.push(newCharacter);
+  }
+
+  retireCharacter(payload: RetireCharacterPayload): void {
+    this.status = this.cloneStatus();
+
+    const character = this.findCharacterByName(payload.name);
+    this.status.retiredCharacters.push(character);
+    this.status.characters = this.status.characters.filter(
+      c => c.name !== payload.name
+    );
+    this.gainProsperity();
   }
 
   private findPlayerByUid(uid: string): Player {
@@ -113,17 +157,60 @@ export class CampaignStatusService {
   }
 
   gainGlobalAchievement(payload: GainGlobalAchievementPayload) {
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
     this.status.city.achievements.push(payload.name);
   }
 
   gainPartyAchievement(payload: GainPartyAchievementPayload) {
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
     this.status.party.achievements.push(payload.name);
   }
 
+  gainProsperity(amount: number = 1) {
+    console.log(amount);
+    this.status = this.cloneStatus();
+    this.status.city.prosperityPoints += amount;
+    if (this.status.city.prosperityPoints >= PROSPERITY_MILESTONES[this.status.city.prosperityLevel - 1]) {
+      this.status.city.prosperityLevel += 1;
+    }
+  }
+
+  private checkLevelUps() {
+    this.status.characters = this.status.characters.map(
+      character => {
+        const currentLevel = character.level;
+        if ( character.experience >= EXPERIENCE_MILESTONES[currentLevel]) {
+          character.level += 1;
+        }
+        return character;
+      }
+    );
+  }
+
   completeScenario(payload: CompleteScenarioPayload) {
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
+    const bonusExperience = 4 + 2 * payload.level;
+
+    // Player Results
+    payload.playersResults.forEach(
+      player => {
+        const character = this.findCharacterByName(player.playerName);
+        character.experience += bonusExperience + player.playerResults.xp + (payload.rewards?.xp ?? 0);
+        character.gold += (player.playerResults.g ?? 0) + (payload.rewards?.gold ?? 0);
+        character.perkTicks += player.playerResults.t ?? 0;
+      }
+    );
+
+    // Other Rewards
+    if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
+    this.status.party.reputation += payload.rewards?.reputation ?? 0;
+
+    // Check if any player has leveled up
+    this.checkLevelUps();
+  }
+
+  completeSoloScenario(payload: CompleteSoloScenarioPayload) {
+    this.status = this.cloneStatus();
     const bonusExperience = 4 + 2 * payload.level;
 
     // Player Results
@@ -131,18 +218,17 @@ export class CampaignStatusService {
       player => {
         const character = this.findCharacterByName(player.playerName);
         character.experience += bonusExperience + player.playerResults.xp;
-        character.gold += (player.playerResults.g ?? 0) + (payload.rewards?.gold ?? 0);
+        character.gold += (player.playerResults.g ?? 0);
         character.perkTicks += player.playerResults.t ?? 0;
       }
     );
 
-    // Other Rewards
-    this.status.city.prosperityPoints += payload.rewards?.prosperity ?? 0;
-    this.status.party.reputation += payload.rewards?.reputation ?? 0;
+    // Check if any player has leveled up
+    this.checkLevelUps();
   }
 
   failScenario(payload: FailScenarioPayload) {
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
 
     // Player Results
     payload.playersResults.forEach(
@@ -152,19 +238,23 @@ export class CampaignStatusService {
         character.gold += (player.playerResults.g ?? 0);
       }
     );
+
+    // Check if any player has leveled up
+    this.checkLevelUps();
   }
 
   buyItem(payload: BuyItemPayload) {
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
     const character = this.findCharacterByName(payload.playerName);
     const itemIndex = payload.itemId - 1;
     const item = ITEMS[itemIndex];
-    character.gold -= item.price;
+    const priceModifier = PRICE_MODIFIER_MAP[20 - this.status.party.reputation];
+    character.gold -= (item.price + priceModifier);
     character.ownedItems.push(payload.itemId);
   }
 
   sellItem(payload: SellItemPayload) {
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
     const character = this.findCharacterByName(payload.playerName);
     const itemIndex = payload.itemId - 1;
     const item = ITEMS[itemIndex];
@@ -177,13 +267,18 @@ export class CampaignStatusService {
   }
 
   makeDonation(payload: MakeDonationPayload) {
-    this.status = {...this.status};
+    this.status = this.cloneStatus();
     const character = this.findCharacterByName(payload.playerName);
     character.gold -= 10;
     this.status.amountGoldDonated += 10;
+    if (DONATIONS_MILESTONES.includes(this.status.amountGoldDonated)) {
+      this.gainProsperity(1);
+    }
   }
 
   resolveCityEvent(payload: ResolveCityEventPayload) {
+    this.status = this.cloneStatus();
+
     // Player Results
     if(payload.playersResults) {
       payload.playersResults.forEach(
@@ -197,7 +292,7 @@ export class CampaignStatusService {
     }
 
     // Other Rewards
-    this.status.city.prosperityPoints += payload.rewards?.prosperity ?? 0;
+    if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
     this.status.party.reputation += payload.rewards?.reputation ?? 0;
 
     // Discard or not
@@ -208,9 +303,14 @@ export class CampaignStatusService {
     } else {
       // Poner al final del mazo
     }
+
+    // Check if any player has leveled up
+    this.checkLevelUps();
   }
 
   resolveRoadEvent(payload: ResolveRoadEventPayload) {
+    this.status = this.cloneStatus();
+
     // Player Results
     if(payload.playersResults) {
       payload.playersResults.forEach(
@@ -224,7 +324,7 @@ export class CampaignStatusService {
     }
 
     // Other Rewards
-    this.status.city.prosperityPoints += payload.rewards?.prosperity ?? 0;
+    if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
     this.status.party.reputation += payload.rewards?.reputation ?? 0;
 
     // Discard or not
@@ -235,5 +335,30 @@ export class CampaignStatusService {
     } else {
       // Poner al final del mazo
     }
+
+    // Check if any player has leveled up
+    this.checkLevelUps();
+  }
+
+  addCityEvent(eventId: number) {
+    this.status = this.cloneStatus();
+    this.status.cityEventsDeck.push(eventId);
+  }
+
+  addRoadEvent(eventId: number) {
+    this.status = this.cloneStatus();
+    this.status.roadEventsDeck.push(eventId);
+  }
+
+  enhanceAbility(payload: EnhanceAbilityPayload) {
+    this.status = this.cloneStatus();
+    const character = this.findCharacterByName(payload.playerName);
+    character.gold -= payload.gold;
+  }
+
+  unblockCharacter(payload: UnblockCharacterPayload) {
+    this.status = this.cloneStatus();
+    payload.cityEventsToAdd.forEach( eventId => this.addCityEvent(eventId));
+    payload.roadEventsToAdd.forEach( eventId => this.addRoadEvent(eventId));
   }
 }

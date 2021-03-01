@@ -87,7 +87,7 @@ export const Characters = [
   },
   {
     owner: PLAYERS[2],
-    name: 'Medeas',
+    name: 'Medea',
     characterClass: Spellweaver,
     personalQuest: {
       id: 531,
