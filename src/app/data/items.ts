@@ -322,34 +322,34 @@ export const ITEMS: ItemDef[] = [
     image: 'items/36-42/boots-of-dashing.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'bootsofdashing'
   },
   {
     name: 'robes of evocation',
     points: 36,
     image: 'items/36-42/robes-of-evocation.png',
-    type: 'legs',
+    type: 'body',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'robesofevocation'
   },
   {
     name: 'heavy basinet',
     points: 37,
     image: 'items/36-42/heavy-basinet.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'head',
+    use: 'permanent',
+    price: 30,
     xws: 'heavybasinet'
   },
   {
     name: 'hooked chain',
     points: 38,
     image: 'items/36-42/hooked-chain.png',
-    type: 'legs',
+    type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'hookedchain'
   },
   {
@@ -357,8 +357,8 @@ export const ITEMS: ItemDef[] = [
     points: 39,
     image: 'items/36-42/versatile-dagger.png',
     type: 'one-hand',
-    use: 'spend',
-    price: 10,
+    use: 'permanent',
+    price: 25,
     xws: 'versatiledagger'
   },
   {
@@ -366,8 +366,8 @@ export const ITEMS: ItemDef[] = [
     points: 40,
     image: 'items/36-42/major-power-potion.png',
     type: 'small-item',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 40,
     xws: 'majorpowerpotion'
   },
   {
@@ -375,8 +375,8 @@ export const ITEMS: ItemDef[] = [
     points: 41,
     image: 'items/36-42/ring-of-haste.png',
     type: 'small-item',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 30,
     xws: 'ringofhaste'
   },
   {
@@ -690,8 +690,8 @@ export const ITEMS: ItemDef[] = [
     points: 76,
     image: 'items/64-151/frigid-blade.png',
     type: 'one-hand',
-    use: 'spend',
-    price: 10,
+    use: 'permanent',
+    price: 30,
     xws: 'frigidblade'
   },
   {

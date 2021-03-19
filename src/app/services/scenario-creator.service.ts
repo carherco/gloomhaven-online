@@ -20,7 +20,7 @@ import { EnemyDef, EnemyDefs } from '../data/enemiesDefs';
 })
 export class ScenarioCreatorService {
 
-  scenarioLevel = 2;
+  scenarioLevel = 4;
   constructor() { }
 
   createFromMatrix(matrix: string[][]): Token[][][] {

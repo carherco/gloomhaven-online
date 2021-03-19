@@ -84,7 +84,9 @@ export interface ResolveCityEventPayload {
     partyAchievement?: string,
     globalAchievement?: string,
     prosperity?: number,
-    reputation?: number
+    reputation?: number,
+    addCityEvents?: number[],
+    addRoadEvents?: number[],
   };
   discard: boolean;
 }
@@ -96,7 +98,9 @@ export interface ResolveRoadEventPayload {
     partyAchievement?: string,
     globalAchievement?: string,
     prosperity?: number,
-    reputation?: number
+    reputation?: number,
+    addCityEvents?: number[],
+    addRoadEvents?: number[],
   };
   discard: boolean;
 }
@@ -289,7 +293,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Nightmare', itemId: 8});
   campaign.buyItem({playerName: 'Psycho', itemId: 8});
 
-  campaign.resolveCityEvent({eventId: 16, playersResults: [
+  campaign.resolveCityEvent({eventId: 4, playersResults: [
     { playerName: 'Farts Like Thunder', playerResults: {t: -1} },
     { playerName: 'Psycho', playerResults: {t: -1} },
   ], rewards: {reputation: 1}, discard: true});
@@ -318,7 +322,7 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Psycho', playerResults: {xp: 10} },
     { playerName: 'Nightmare', playerResults: {xp: 10} },
     { playerName: 'Lorkham', playerResults: {xp: 10} },
-  ], rewards: {reputation: 1}, discard: false});
+  ], discard: false});
 
   campaign.buyItem({playerName: 'Farts Like Thunder', itemId: 16});
   campaign.buyItem({playerName: 'Farts Like Thunder', itemId: 20});
@@ -345,8 +349,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Lorkham'});
   campaign.makeDonation({playerName: 'Psycho'});
 
-  // TODO: Añadir city event 73
-  campaign.resolveRoadEvent({eventId: 11, rewards: {}, discard: true});
+  campaign.resolveRoadEvent({eventId: 11, rewards: {addCityEvents: [73]}, discard: true});
 
   campaign.completeScenario({
     scenarioId: 16,
@@ -446,8 +449,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Psycho'});
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
 
-  // TODO: buscar los eventos que había que añadir aquí
-  campaign.retireCharacter({name: 'Lorkham', cityEventsToAdd: [], roadEventsToAdd: []});
+  campaign.retireCharacter({name: 'Lorkham', cityEventsToAdd: [46], roadEventsToAdd: [46]});
 
   campaign.unblockCharacter({name: 'Doomstalker', cityEventsToAdd: [38], roadEventsToAdd: [38]});
 
@@ -521,7 +523,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
   campaign.makeDonation({playerName: 'Nightmare'});
 
-  campaign.resolveCityEvent({eventId: 27, rewards: {prosperity: -1}, discard: true});
+  campaign.resolveCityEvent({eventId: 27, rewards: {prosperity: 1}, discard: true});
 
   campaign.completeScenario({
     scenarioId: 58,
@@ -544,7 +546,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.buyItem({playerName: 'Farts Like Thunder', itemId: 15});
 
-  campaign.resolveCityEvent({eventId: 27, rewards: {reputation: 2}, discard: true});
+  campaign.resolveCityEvent({eventId: 14, rewards: {reputation: 2}, discard: true});
 
   campaign.makeDonation({playerName: 'Nightmare'});
 
@@ -565,8 +567,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.makeDonation({playerName: 'Psycho'});
 
-  // TODO: Add city event 71
-  campaign.resolveRoadEvent({eventId: 10, discard: true});
+  campaign.resolveRoadEvent({eventId: 10, rewards: {addCityEvents: [71]}, discard: true});
 
   campaign.completeScenario({
     scenarioId: 14,
@@ -606,7 +607,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 12, g: 3, t: 2} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 12, g: 0, t: 2} },
     ]
   });
 
@@ -636,7 +637,6 @@ export function loadCampaing(): CampaignStatus {
   campaign.resolveCityEvent({eventId: 10, playersResults: [
     { playerName: 'Divayth Fyr', playerResults: {g: -5} },
     { playerName: 'Farts Like Thunder', playerResults: {g: -5} },
-    { playerName: 'Medea', playerResults: {g: -5} },
     { playerName: 'Psycho', playerResults: {g: -5} },
   ], discard: true});
 
@@ -715,7 +715,7 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 6, g: 6} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 10, g: 3} },
-      { playerName: 'Medea', playerResults: {xp: 6, g: 0, t: 2} },
+      { playerName: 'Medea', playerResults: {xp: 6, g: 12, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 5, g: 12} },
     ],
     rewards: {partyAchievement: 'The Voice’s Command'}
@@ -763,11 +763,12 @@ export function loadCampaing(): CampaignStatus {
     ],
     rewards: {globalAchievement: `The Voice's Silenced`}
   });
+
   // THE CREATOR HAS MADE A REQUEST FOR OUR SPOILS
 
   campaign.resolveCityEvent({eventId: 1, rewards: {reputation: 1}, discard: false});
 
-  campaign.unblockCharacter({name: 'Sunkeeper', cityEventsToAdd: [31], roadEventsToAdd: [31]})
+  campaign.unblockCharacter({name: 'Sunkeeper', cityEventsToAdd: [31], roadEventsToAdd: [31]});
 
   campaign.resolveRoadEvent({eventId: 30, rewards: {reputation: 1}, discard: true});
 
@@ -798,6 +799,111 @@ export function loadCampaing(): CampaignStatus {
     ],
     rewards: {partyAchievement: `The Drake's Command`}
   });
+
+  campaign.resolveCityEvent({eventId: 45, rewards: {addCityEvents: [62]}, discard: true});
+
+  campaign.buyItem({playerName: 'Farts Like Thunder', itemId: 35});
+
+  campaign.resolveRoadEvent({eventId: 38, rewards: {prosperity: 1}, discard: true});
+
+    // TODO: 5 forest imps
+  campaign.failScenario({
+    scenarioId: 72,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 9, g: 12} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 0} },
+      { playerName: 'Medea', playerResults: {xp: 13, g: 8} },
+      { playerName: 'Einar', playerResults: {xp: 9, g: 12} },
+    ]
+  });
+
+  campaign.sellItem({playerName: 'Farts Like Thunder', itemId: 125});
+  campaign.buyItem({playerName: 'Einar', itemId: 34});
+
+  campaign.makeDonation({playerName: 'Divayth Fyr'});
+  campaign.makeDonation({playerName: 'Farts Like Thunder'});
+  campaign.makeDonation({playerName: 'Medea'});
+  campaign.makeDonation({playerName: 'Einar'});
+
+  campaign.resolveCityEvent({eventId: 30, playersResults: [
+    { playerName: 'Divayth Fyr', playerResults: {g: -5} },
+    { playerName: 'Farts Like Thunder', playerResults: {g: -5} },
+    { playerName: 'Medea', playerResults: {g: -5} },
+    { playerName: 'Einar', playerResults: {g: -5} },
+  ], discard: false});
+
+  campaign.resolveRoadEvent({eventId: 15, discard: false});
+
+  // TODO: 3 forest imps
+  campaign.completeScenario({
+    scenarioId: 72,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 6, g: 0} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 4} },
+      { playerName: 'Medea', playerResults: {xp: 19, g: 16, t: 1} },
+      { playerName: 'Einar', playerResults: {xp: 16, g: 20, t: 1} },
+    ],
+    rewards: {prosperity: 1, reputation: 1}
+  });
+
+  // Por el Town Records
+  campaign.addCityEvent(80);
+
+  campaign.sellItem({playerName: 'Divayth Fyr', itemId: 147});
+  campaign.buyItem({playerName: 'Einar', itemId: 20});
+
+  // Aquí va 1 de prosperity automático ya contemplado
+  campaign.makeDonation({playerName: 'Farts Like Thunder'});
+
+  // Enhancement: Divayth Fyr: XXXXXXX, Bless (-50g)
+  campaign.enhanceAbility({playerName: 'Divayth Fyr', gold: 50});
+  // Enhancement: Medea: Impaling Eruption, +1 Range (-60g)
+  campaign.enhanceAbility({playerName: 'Medea', gold: 60});
+
+  campaign.resolveCityEvent({eventId: 38, rewards: {
+    prosperity: 1,
+    reputation: -1
+  }, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 27, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 59,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 9, g: 24, t: 2} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 8} },
+      { playerName: 'Medea', playerResults: {xp: 8, g: 20, t: 1} },
+      { playerName: 'Einar', playerResults: {xp: 5, g: 28, t: 1} },
+    ],
+    scenariosUnblocked: [60]
+  });
+
+  campaign.makeDonation({playerName: 'Farts Like Thunder'});
+
+  campaign.resolveCityEvent({eventId: 71, playersResults: [
+    { playerName: 'Einar', playerResults: {t: -1} },
+  ], discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 60,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 5, g: 0} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 0} },
+      { playerName: 'Medea', playerResults: {xp: 12, g: 4, t: 2} },
+      { playerName: 'Einar', playerResults: {xp: 9, g: 4, t: 1} },
+    ],
+    rewards: {prosperity: 1}
+  });
+
+  campaign.makeDonation({playerName: 'Farts Like Thunder'});
+  campaign.makeDonation({playerName: 'Medea'});
+
+  // Random Item 077, Random Map 65
+  campaign.retireCharacter({name: 'Farts Like Thunder', cityEventsToAdd: [43], roadEventsToAdd: [43]});
 
   return campaign.getStatus();
 }

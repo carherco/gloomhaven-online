@@ -8,14 +8,14 @@ export const Characters = [
     personalQuest: {
       id: 530,
       title: 'Augmented Abilities',
-      progress: 1,
+      progress: 2,
       total: 4,
     },
-    level: 6,
-    hitPoints: Doomstalker.hitPoints[5], // el nivel -1
-    experience: 335,
+    level: 7,
+    hitPoints: Doomstalker.hitPoints[6], // el nivel -1
+    experience: 400,
     gold: 42,
-    perkTicks: 17,
+    perkTicks: 18,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
       ...Doomstalker.level1Cards,
@@ -25,7 +25,7 @@ export const Characters = [
       'wild-command',
       'camouflage'
     ],
-    ownedItems: [1, 13, 5, 12, 147, 108],
+    ownedItems: [1, 13, 5, 12, 108],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -50,9 +50,9 @@ export const Characters = [
       progress: 0,
       total: 8,
     },
-    level: 8,
-    hitPoints: Tinkerer.hitPoints[7], // el nivel -1
-    experience: 497,
+    level: 9,
+    hitPoints: Tinkerer.hitPoints[8], // el nivel -1
+    experience: 500,
     gold: 53,
     perkTicks: 18,
     ownedAbilityCards: [
@@ -66,7 +66,7 @@ export const Characters = [
       'curative-aerosol',
       'disintegration-beam'
     ],
-    ownedItems: [6, 14, 125, 16, 20, 21, 13, 33, 15, 135, 34],
+    ownedItems: [6, 14, 16, 20, 21, 13, 33, 15, 135, 34, 35],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -95,11 +95,11 @@ export const Characters = [
       progress: 3,
       total: 6,
     },
-    level: 6,
-    hitPoints: Spellweaver.hitPoints[5], // el nivel -1
-    experience: 322,
-    gold: 63,
-    perkTicks: 10,
+    level: 7,
+    hitPoints: Spellweaver.hitPoints[6], // el nivel -1
+    experience: 401,
+    gold: 27,
+    perkTicks: 14,
     ownedAbilityCards: [
       ...Spellweaver.levelXCards,
       ...Spellweaver.level1Cards,
@@ -129,19 +129,19 @@ export const Characters = [
     personalQuest: {
       id: 527,
       title: 'Zealot of the Blood God',
-      progress: 0,
+      progress: 2,
       total: 12,
     },
-    level: 5,
-    hitPoints: Brute.hitPoints[4], // el nivel -1
-    experience: 249,
-    gold: 44,
-    perkTicks: 3,
+    level: 6,
+    hitPoints: Brute.hitPoints[5], // el nivel -1
+    experience: 309,
+    gold: 58,
+    perkTicks: 5,
     ownedAbilityCards: [
       ...Brute.levelXCards,
       ...Brute.level1Cards
     ],
-    ownedItems: [7, 34, 74],
+    ownedItems: [7, 34, 74, 20],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [

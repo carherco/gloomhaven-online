@@ -85,10 +85,14 @@ export class CampaignStatusService {
   }
 
   cloneStatus() {
+    // console.log('Prosperity: ' + this.status.city.prosperityPoints);
+    // console.log('Reputation: ' + this.status.party.reputation);
+    console.log('D: ' + this.findCharacterByName('Divayth Fyr')?.gold);
+
     return {
       party: {
         name: this.status.party.name,
-        reputation: 0,
+        reputation: this.status.party.reputation,
         achievements: [...this.status.party.achievements]
       },
       players: [...this.status.players],
@@ -167,7 +171,6 @@ export class CampaignStatusService {
   }
 
   gainProsperity(amount: number = 1) {
-    console.log(amount);
     this.status = this.cloneStatus();
     this.status.city.prosperityPoints += amount;
     if (this.status.city.prosperityPoints >= PROSPERITY_MILESTONES[this.status.city.prosperityLevel - 1]) {
@@ -294,6 +297,8 @@ export class CampaignStatusService {
     // Other Rewards
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
     this.status.party.reputation += payload.rewards?.reputation ?? 0;
+    if (payload.rewards?.addCityEvents) { payload.rewards?.addCityEvents.forEach( eventId => this.addCityEvent(eventId) ); }
+    if (payload.rewards?.addRoadEvents) { payload.rewards?.addRoadEvents.forEach( eventId => this.addRoadEvent(eventId) ); }
 
     // Discard or not
     if (payload.discard) {
@@ -326,6 +331,8 @@ export class CampaignStatusService {
     // Other Rewards
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
     this.status.party.reputation += payload.rewards?.reputation ?? 0;
+    if (payload.rewards?.addCityEvents) { payload.rewards?.addCityEvents.forEach( eventId => this.addCityEvent(eventId) ); }
+    if (payload.rewards?.addRoadEvents) { payload.rewards?.addRoadEvents.forEach( eventId => this.addRoadEvent(eventId) ); }
 
     // Discard or not
     if (payload.discard) {
