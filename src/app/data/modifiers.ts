@@ -191,6 +191,15 @@ export class AddTargetRolling {
   src = 'RollingAddTarget.png';
 }
 
+export class Heal1 {
+  id = 'Heal1';
+  src = 'Heal1.png';
+}
+export class Shield1Rolling {
+  id = 'shield1Rolling';
+  src = 'RollingShield1.png';
+}
+
 const mod1 = 'assets/plus0.png';
 const mod2 = 'assets/plus0.png';
 const mod3 = 'assets/plus0.png';

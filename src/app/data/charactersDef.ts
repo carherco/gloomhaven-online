@@ -28,6 +28,8 @@ import {
   Plus0Stun,
   Plus2Fire,
   Plus2Frost,
+  Heal1,
+  Shield1Rolling,
   AddTargetRolling,
   Plus0AddTarget
 } from './modifiers';
@@ -282,6 +284,90 @@ export const Doomstalker: CharacterClass = {
   ],
 };
 
+export const Sunkeeper: CharacterClass = {
+  id: 'Sunkeeper',
+  key: 'SK',
+  race: 'Valrath',
+  className: 'Sunkeeper',
+  handCardSize: 11,
+  image: 'Sunkeeper.png',
+  hitPoints: [10, 12, 14, 16, 18, 20, 22, 24, 26],
+  levelXCards: ['beacon-of-light', 'daybreak', 'glorious-bolt'],
+  level1Cards: [
+    'brilliant-prayer', 'cautious-advance', 'dazzling-charge',
+    'defensive-stance', 'empowering-command', 'hammer-blow',
+    'holy-strike', 'lay-on-hands', 'protective-blessing',
+    'purifying-aura', 'tactical-order'
+  ],
+  level2Cards: ['practical-plans', 'unwavering-mandate'],
+  level3Cards: ['burning-flash', 'mobilizing-axiom'],
+  level4Cards: ['engulfing-radiance', 'righteous-strength'],
+  level5Cards: ['path-of-glory', 'scales-of-justice'],
+  level6Cards: ['illuminate-the-target', 'supportive-chant'],
+  level7Cards: ['bright-aegis', 'weapon-of-purity'],
+  level8Cards: ['cleansing-force', 'inspiring-sanctity'],
+  level9Cards: ['angelic-ascension', 'divine-intervention'],
+  perks: [
+    { id: 'skPerk1-1', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'skPerk1-2', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'skPerk2', title: 'Replace Four +0 Cards', addModifiers: [], removeModifiers: [new Plus0(), new Plus0(), new Plus0(), new Plus0()] },
+    { id: 'skPerk3', title: 'Replace One -2 Card with One 0 Card', addModifiers: [new Plus0()], removeModifiers: [new Minus2()] },
+    { id: 'skPerk4', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'skPerk5-1', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'skPerk5-2', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'skPerk6-1', title: 'Add two Heal 1 Card', addModifiers: [new Heal1(), new Heal1()], removeModifiers: [] },
+    { id: 'skPerk6-2', title: 'Add two Heal 1 Card', addModifiers: [new Heal1(), new Heal1()], removeModifiers: [] },
+    { id: 'skPerk7', title: 'Add one Rolling Stun Card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'skPerk8-1', title: 'Add Two Rolling Infuse Light Cards', addModifiers: [new LightRolling(), new LightRolling()], removeModifiers: [] },
+    { id: 'skPerk8-2', title: 'Add Two Rolling Infuse Light Cards', addModifiers: [new LightRolling(), new LightRolling()], removeModifiers: [] },
+    { id: 'skPerk9', title: 'Add Two Rolling Shield 1 Cards', addModifiers: [new Shield1Rolling(), new Shield1Rolling()], removeModifiers: [] },
+    { id: 'skPerk10', title: 'Ignore Negative Item Effects and Add Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
+    { id: 'skPerk11', title: 'Ignore Negative Scenario Effects', addModifiers: [], removeModifiers: [] },
+  ],
+};
+
+export const Elementalist: CharacterClass = {
+  id: 'Elementalist',
+  key: 'EL',
+  race: 'Savvas',
+  className: 'Elementalist',
+  handCardSize: 11,
+  image: 'Elementalist.jpg',
+  hitPoints: [10, 12, 14, 16, 18, 20, 22, 24, 26],
+  levelXCards: ['beacon-of-light', 'daybreak', 'glorious-bolt'],
+  level1Cards: [
+    'brilliant-prayer', 'cautious-advance', 'dazzling-charge',
+    'defensive-stance', 'empowering-command', 'hammer-blow',
+    'holy-strike', 'lay-on-hands', 'protective-blessing',
+    'purifying-aura', 'tactical-order'
+  ],
+  level2Cards: ['practical-plans', 'unwavering-mandate'],
+  level3Cards: ['burning-flash', 'mobilizing-axiom'],
+  level4Cards: ['engulfing-radiance', 'righteous-strength'],
+  level5Cards: ['path-of-glory', 'scales-of-justice'],
+  level6Cards: ['illuminate-the-target', 'supportive-chant'],
+  level7Cards: ['bright-aegis', 'weapon-of-purity'],
+  level8Cards: ['cleansing-force', 'inspiring-sanctity'],
+  level9Cards: ['angelic-ascension', 'divine-intervention'],
+  perks: [
+    { id: 'skPerk1-1', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'skPerk1-2', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'skPerk2', title: 'Replace Four +0 Cards', addModifiers: [], removeModifiers: [new Plus0(), new Plus0(), new Plus0(), new Plus0()] },
+    { id: 'skPerk3', title: 'Replace One -2 Card with One 0 Card', addModifiers: [new Plus0()], removeModifiers: [new Minus2()] },
+    { id: 'skPerk4', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'skPerk5-1', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'skPerk5-2', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'skPerk6-1', title: 'Add two Heal 1 Card', addModifiers: [new Heal1(), new Heal1()], removeModifiers: [] },
+    { id: 'skPerk6-2', title: 'Add two Heal 1 Card', addModifiers: [new Heal1(), new Heal1()], removeModifiers: [] },
+    { id: 'skPerk7', title: 'Add one Rolling Stun Card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'skPerk8-1', title: 'Add Two Rolling Infuse Light Cards', addModifiers: [new LightRolling(), new LightRolling()], removeModifiers: [] },
+    { id: 'skPerk8-2', title: 'Add Two Rolling Infuse Light Cards', addModifiers: [new LightRolling(), new LightRolling()], removeModifiers: [] },
+    { id: 'skPerk9', title: 'Add Two Rolling Shield 1 Cards', addModifiers: [new Shield1Rolling(), new Shield1Rolling()], removeModifiers: [] },
+    { id: 'skPerk10', title: 'Ignore Negative Item Effects and Add Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
+    { id: 'skPerk11', title: 'Ignore Negative Scenario Effects', addModifiers: [], removeModifiers: [] },
+  ],
+};
+
 export const AvailableCharacters: CharacterClass[] = [
   Brute,
   Cragheart,
@@ -289,5 +375,7 @@ export const AvailableCharacters: CharacterClass[] = [
   Spellweaver,
   Scoundrel,
   Tinkerer,
-  Doomstalker
+  Doomstalker,
+  Sunkeeper,
+  Elementalist
 ];

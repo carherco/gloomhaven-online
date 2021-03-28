@@ -87,7 +87,7 @@ export class CampaignStatusService {
   cloneStatus() {
     // console.log('Prosperity: ' + this.status.city.prosperityPoints);
     // console.log('Reputation: ' + this.status.party.reputation);
-    console.log('D: ' + this.findCharacterByName('Divayth Fyr')?.gold);
+    // console.log('E: ' + this.findCharacterByName('Einar')?.gold);
 
     return {
       party: {

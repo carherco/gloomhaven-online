@@ -43,6 +43,7 @@ import { IntiativeTrackerComponent } from './components/intiative-tracker/intiat
 import { FilterItemsByTipePipe } from './pipes/filter-items-by-tipe.pipe';
 import { PrefixPipe } from './pipes/prefix.pipe';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     AngularFireAuthModule,
     NgbModule,
     FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1004,9 +1004,9 @@ export const ITEMS: ItemDef[] = [
     name: 'ancient drill',
     points: 111,
     image: 'items/64-151/ancient-drill.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'two-hands',
+    use: 'consume',
+    price: 30,
     xws: 'ancientdrill'
   },
   {

@@ -1,4 +1,4 @@
-import { Tinkerer, Doomstalker, Spellweaver, Brute } from './charactersDef';
+import { Tinkerer, Doomstalker, Spellweaver, Brute, Sunkeeper, Elementalist } from './charactersDef';
 import { PLAYERS } from '../data/players';
 export const Characters = [
   {
@@ -11,10 +11,10 @@ export const Characters = [
       progress: 2,
       total: 4,
     },
-    level: 7,
-    hitPoints: Doomstalker.hitPoints[6], // el nivel -1
-    experience: 400,
-    gold: 42,
+    level: 8,
+    hitPoints: Doomstalker.hitPoints[7], // el nivel -1
+    experience: 439,
+    gold: 60,
     perkTicks: 18,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
@@ -42,74 +42,63 @@ export const Characters = [
   },
   {
     owner: PLAYERS[1],
-    name: 'Farts like Thunder',
-    characterClass: Tinkerer,
+    name: 'Lux Lucitana',
+    characterClass: Sunkeeper,
     personalQuest: {
-      id: 513,
-      title: 'Finding the Cure',
+      id: 533,
+      title: 'The Perfect Poison',
       progress: 0,
-      total: 8,
+      total: 9,
     },
-    level: 9,
-    hitPoints: Tinkerer.hitPoints[8], // el nivel -1
-    experience: 500,
-    gold: 53,
-    perkTicks: 18,
+    level: 5,
+    hitPoints: Sunkeeper.hitPoints[8], // el nivel -1
+    experience: 232,
+    gold: 18,
+    perkTicks: 0,
     ownedAbilityCards: [
-      ...Tinkerer.levelXCards,
-      ...Tinkerer.level1Cards,
-      'stamina-booster',
-      'crank-bow',
-      'dangerous-contraption',
-      'noxious-vials',
-      'auto-turret',
-      'curative-aerosol',
-      'disintegration-beam'
+      ...Sunkeeper.levelXCards,
+      ...Sunkeeper.level1Cards,
+      ...Sunkeeper.level2Cards,
+      ...Sunkeeper.level3Cards,
+      ...Sunkeeper.level4Cards,
+      ...Sunkeeper.level5Cards,
+      ...Sunkeeper.level6Cards,
+      ...Sunkeeper.level7Cards,
+      ...Sunkeeper.level8Cards,
+      ...Sunkeeper.level9Cards
     ],
-    ownedItems: [6, 14, 16, 20, 21, 13, 33, 15, 135, 34, 35],
+    ownedItems: [74, 38, 2, 20],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
-      'tiPerk1-1',
-      'tiPerk1-2',
-      'tiPerk3',
-      'tiPerk2',
-      'tiPerk7-1',
-      'tiPerk7-2',
-      'tiPerk4',
-      'tiPerk9-1',
-      'tiPerk9-1',
-      'tiPerk10',
-      'tiPerk11',
-      'tiPerk8-1',
-      'tiPerk8-2',
+
     ],
   },
   {
     owner: PLAYERS[2],
-    name: 'Medea',
-    characterClass: Spellweaver,
+    name: '?????',
+    characterClass: Elementalist,
     personalQuest: {
-      id: 531,
-      title: 'Elemental Samples',
-      progress: 3,
-      total: 6,
+      id: 525,
+      title: 'Piety in All Things',
+      progress: 0,
+      total: 12,
     },
-    level: 7,
-    hitPoints: Spellweaver.hitPoints[6], // el nivel -1
-    experience: 401,
-    gold: 27,
-    perkTicks: 14,
+    level: 5,
+    hitPoints: Elementalist.hitPoints[4], // el nivel -1
+    experience: 231,
+    gold: 26,
+    perkTicks: 1,
     ownedAbilityCards: [
-      ...Spellweaver.levelXCards,
-      ...Spellweaver.level1Cards,
+      ...Elementalist.levelXCards,
+      ...Elementalist.level1Cards,
       'flashing-burst',
       'cold-fire',
       'spirit-of-doom',
       'chromatic-explosion',
       'frozen-night'
     ],
-    ownedItems: [5, 31, 34, 27, 12, 1],
+    ownedItems: [2, 5, 6, 34],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -129,19 +118,19 @@ export const Characters = [
     personalQuest: {
       id: 527,
       title: 'Zealot of the Blood God',
-      progress: 2,
+      progress: 4,
       total: 12,
     },
-    level: 6,
-    hitPoints: Brute.hitPoints[5], // el nivel -1
-    experience: 309,
-    gold: 58,
-    perkTicks: 5,
+    level: 7,
+    hitPoints: Brute.hitPoints[6], // el nivel -1
+    experience: 353,
+    gold: 66,
+    perkTicks: 7,
     ownedAbilityCards: [
       ...Brute.levelXCards,
       ...Brute.level1Cards
     ],
-    ownedItems: [7, 34, 74, 20],
+    ownedItems: [7, 74, 36, 34, 27, 20],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [

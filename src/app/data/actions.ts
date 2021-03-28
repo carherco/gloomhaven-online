@@ -1,7 +1,7 @@
 import { CharacterClass } from '../model/character-class';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
-import { Brute, Cragheart, Doomstalker, Mindthief, Spellweaver, Tinkerer } from './charactersDef';
+import { Brute, Cragheart, Doomstalker, Elementalist, Mindthief, Spellweaver, Sunkeeper, Tinkerer } from './charactersDef';
 import { PersonalQuestDef, PERSONAL_QUESTS } from './personal-quests';
 
 export type ACTION_TYPES = 'GAME_START' | 'GLOBAL_ACHIEVEMENT' | 'ITEM_DESIGN' |
@@ -819,7 +819,7 @@ export function loadCampaing(): CampaignStatus {
   });
 
   campaign.sellItem({playerName: 'Farts Like Thunder', itemId: 125});
-  campaign.buyItem({playerName: 'Einar', itemId: 34});
+  campaign.buyItem({playerName: 'Einar', itemId: 27});
 
   campaign.makeDonation({playerName: 'Divayth Fyr'});
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
@@ -904,6 +904,78 @@ export function loadCampaing(): CampaignStatus {
 
   // Random Item 077, Random Map 65
   campaign.retireCharacter({name: 'Farts Like Thunder', cityEventsToAdd: [43], roadEventsToAdd: [43]});
+
+  campaign.createCharacter({
+    playerId: players[1].uid,
+    characterClass: Sunkeeper,
+    name: 'Lux Lucitana',
+    personalQuest: PERSONAL_QUESTS[533]
+  });
+
+  campaign.buyItem({playerName: 'Einar', itemId: 36});
+  campaign.buyItem({playerName: 'Lux Lucitana', itemId: 74});
+  campaign.buyItem({playerName: 'Lux Lucitana', itemId: 38});
+  campaign.buyItem({playerName: 'Lux Lucitana', itemId: 2});
+  campaign.buyItem({playerName: 'Lux Lucitana', itemId: 20});
+
+  campaign.resolveCityEvent({eventId: 20, playersResults: [
+    { playerName: 'Lux Lucitana', playerResults: {g: 4} },
+    { playerName: 'Einar', playerResults: {g: 3} },
+    { playerName: 'Divayth Fyr', playerResults: {g: 3} },
+  ], discard: false});
+
+  campaign.resolveRoadEvent({eventId: 1, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 68,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 4, g: 8} },
+      { playerName: 'Lux Lucitana', playerResults: {xp: 10, g: 16} },
+      { playerName: 'Medea', playerResults: {xp: 20, g: 8} },
+      { playerName: 'Einar', playerResults: {xp: 11, g: 28, t: 1} },
+    ]
+  });
+
+  campaign.makeDonation({playerName: 'Medea'});
+
+  campaign.resolveCityEvent({eventId: 22, rewards: {
+    reputation: 2
+  }, discard: false});
+
+  campaign.retireCharacter({name: 'Medea', cityEventsToAdd: [44], roadEventsToAdd: [44]});
+  campaign.unblockCharacter({name: 'Elementalist', cityEventsToAdd: [40], roadEventsToAdd: [40]});
+
+  campaign.createCharacter({
+    playerId: players[2].uid,
+    characterClass: Elementalist,
+    name: 'eeeee',
+    personalQuest: PERSONAL_QUESTS[525]
+  });
+
+  campaign.buyItem({playerName: 'eeeee', itemId: 2});
+  campaign.buyItem({playerName: 'eeeee', itemId: 5});
+  campaign.buyItem({playerName: 'eeeee', itemId: 6});
+  campaign.buyItem({playerName: 'eeeee', itemId: 34});
+
+  campaign.sellItem({playerName: 'Divayth Fyr', itemId: 19});
+  campaign.buyItem({playerName: 'Divayth Fyr', itemId: 33});
+
+  campaign.resolveRoadEvent({eventId: 7, playersResults: [
+    { playerName: 'Einar', playerResults: {xp: 5} },
+    { playerName: 'Divayth Fyr', playerResults: {xp: 5} },
+    { playerName: 'eeeee', playerResults: {xp: 5} },
+  ], discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 65,
+    level: 3,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 24} },
+      { playerName: 'eeeee', playerResults: {xp: 6, g: 24, t: 1} },
+      { playerName: 'Einar', playerResults: {xp: 6, g: 15, t: 1} },
+    ]
+  });
 
   return campaign.getStatus();
 }
