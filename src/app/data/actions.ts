@@ -4,15 +4,15 @@ import { CampaignStatus, CampaignStatusService } from '../services/campaign-stat
 import { Brute, Cragheart, Doomstalker, Elementalist, Mindthief, Spellweaver, Sunkeeper, Tinkerer } from './charactersDef';
 import { PersonalQuestDef, PERSONAL_QUESTS } from './personal-quests';
 
-export type ACTION_TYPES = 'GAME_START' | 'GLOBAL_ACHIEVEMENT' | 'ITEM_DESIGN' |
+export type ACTION_TYPES = 'GAME_START' | 'ITEM_DESIGN' |
 'CAMPAIGN_CREATE' | 'PARTY_ACHIEVEMENT' | 'GLOBAL_ACHIEVEMENT' | 'PARTY_GAIN_REPUTATION' | 'PARTY_LOSE_REPUTATION' |
 'CHARACTER_CREATE' | 'CHARACTER_RETIRE' | 'CHARACTER_UNLOCK' | 'CHARACTER_LEVEL_UP' | 'CHARACTER_BUY_ITEM' | 'CHARACTER_SELL_ITEM' |
 'CHARACTER_GAIN_XP' | 'CHARACTER_GAIN_GOLD' | 'CHARACTER_PAY_GOLD' | 'CHARACTER_GAIN_TICK' | 'CHARACTER_LOSE_TICK' | 'CHARACTER_GAIN_PERK' |
 'CHARACTER_MAKE_DONATION' | 'CHARACTER_GAIN_ITEM' |
 'SCENARIO_UNLOCK' | 'SCENARIO_COMPLETE' | 'SCENARIO_FAIL' |
 'CITY_PROSPERITY_ADD' | 'CITY_LEVEL_UP' |
-'CITY_EVENT_PLAY' | 'CITY_EVENT_PLAY' | 'CITY_EVENT_DISCARD' | 'CITY_EVENT_ADD' | 'CITY_EVENT_SHUFFLE' |
-'ROAD_EVENT_PLAY' | 'ROAD_EVENT_PLAY' | 'ROAD_EVENT_DISCARD' | 'ROAD_EVENT_ADD' | 'ROAD_EVENT_SHUFFLE'
+'CITY_EVENT_PLAY' | 'CITY_EVENT_DISCARD' | 'CITY_EVENT_ADD' | 'CITY_EVENT_SHUFFLE' |
+'ROAD_EVENT_PLAY' | 'ROAD_EVENT_DISCARD' | 'ROAD_EVENT_ADD' | 'ROAD_EVENT_SHUFFLE'
 ;
 
 export interface CreateCharacterPayload {
@@ -40,7 +40,7 @@ export interface GainPartyAchievementPayload {
 export interface CompleteScenarioPayload {
   scenarioId: number;
   level: number;
-  playersResults: {playerName: string, playerResults: {xp: number, g?: number, t?: number}}[];
+  playersResults: {playerName: string, playerResults: {xp: number, g?: number, t?: number, pq?: number, items?: number[] }}[];
   rewards?: {
     partyAchievement?: string,
     globalAchievement?: string,
@@ -48,19 +48,20 @@ export interface CompleteScenarioPayload {
     reputation?: number,
     gold?: number,
     xp?: number,
+    itemDesigns?: number[],
   };
   scenariosUnblocked?: number[];
 }
 
 export interface CompleteSoloScenarioPayload {
   level: number;
-  playersResults: {playerName: string, playerResults: {xp: number, g?: number, t?: number}}[];
+  playersResults: {playerName: string, playerResults: {xp: number, g?: number, t?: number, items?: number[]}}[];
 }
 
 export interface FailScenarioPayload {
   scenarioId: number;
   level: number;
-  playersResults: {playerName: string, playerResults: {xp: number, g?: number}}[];
+  playersResults: {playerName: string, playerResults: {xp: number, g?: number, pq?: number, items?: number[]}}[];
 }
 
 export interface BuyItemPayload {
@@ -79,7 +80,7 @@ export interface MakeDonationPayload {
 
 export interface ResolveCityEventPayload {
   eventId: number;
-  playersResults?: {playerName: string, playerResults: {xp?: number, g?: number, t?: number}}[];
+  playersResults?: {playerName: string, playerResults: {xp?: number, g?: number, t?: number, items?: number[]}}[];
   rewards?: {
     partyAchievement?: string,
     globalAchievement?: string,
@@ -87,13 +88,14 @@ export interface ResolveCityEventPayload {
     reputation?: number,
     addCityEvents?: number[],
     addRoadEvents?: number[],
+    itemDesigns?: number[],
   };
   discard: boolean;
 }
 
 export interface ResolveRoadEventPayload {
   eventId: number;
-  playersResults?: {playerName: string, playerResults: {xp?: number, g?: number, t?: number}}[];
+  playersResults?: {playerName: string, playerResults: {xp?: number, g?: number, t?: number, items?: number[]}}[];
   rewards?: {
     partyAchievement?: string,
     globalAchievement?: string,
@@ -101,6 +103,7 @@ export interface ResolveRoadEventPayload {
     reputation?: number,
     addCityEvents?: number[],
     addRoadEvents?: number[],
+    itemDesigns?: number[],
   };
   discard: boolean;
 }
@@ -237,12 +240,11 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Nightmare', itemId: 5});
   campaign.buyItem({playerName: 'Psycho', itemId: 1});
 
-  //TODO: Este evento necesita más payload (ítem 125 ganado por Farts Like Thunder)
   campaign.resolveCityEvent({eventId: 3, playersResults: [
     { playerName: 'Lorkham', playerResults: {g: -3} },
-    { playerName: 'Farts Like Thunder', playerResults: {g: -4} },
+    { playerName: 'Farts Like Thunder', playerResults: {g: -4, items: [125]} },
     { playerName: 'Psycho', playerResults: {g: -3} },
-  ],rewards: {partyAchievement: 'Ancient Technology'}, discard: true});
+  ], rewards: {partyAchievement: 'Ancient Technology'}, discard: true});
 
   campaign.resolveRoadEvent({eventId: 3, discard: false});
 
@@ -270,14 +272,13 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Psycho', playerResults: {g: -2} },
   ],rewards: {}, discard: true});
 
-  //TODO: item 023 conseguido por Nightmare
   campaign.failScenario({
     scenarioId: 11,
     level: 1,
     playersResults: [
       { playerName: 'Lorkham', playerResults: {xp: 6, g: 0} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 10, g: 4} },
-      { playerName: 'Nightmare', playerResults: {xp: 7, g: 6} },
+      { playerName: 'Nightmare', playerResults: {xp: 7, g: 6, items: [23]} },
       { playerName: 'Psycho', playerResults: {xp: 7, g: 8} },
     ]
   });
@@ -312,7 +313,8 @@ export function loadCampaing(): CampaignStatus {
     rewards: {
       prosperity: 2,
       gold: 15,
-      globalAchievement: "City Rule: Economic y End of Invasion"
+      globalAchievement: "City Rule: Economic y End of Invasion",
+      itemDesigns: [113]
     },
     scenariosUnblocked: [16, 18]
   });
@@ -406,12 +408,11 @@ export function loadCampaing(): CampaignStatus {
   ],
   rewards: {reputation: -1}, discard: true});
 
-  // TODO: Ítem 130 para Lorkham
   campaign.failScenario({
     scenarioId: 81,
     level: 2,
     playersResults: [
-      { playerName: 'Lorkham', playerResults: {xp: 3, g: 0} },
+      { playerName: 'Lorkham', playerResults: {xp: 3, g: 0, items: [130]} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 7, g: 3} },
       { playerName: 'Nightmare', playerResults: {xp: 9, g: 12} },
       { playerName: 'Psycho', playerResults: {xp: 7, g: 6} },
@@ -485,13 +486,12 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Divayth Fyr', itemId: 5});
   campaign.buyItem({playerName: 'Divayth Fyr', itemId: 12});
 
-  // TODO: Ítem 33 para Farts
   campaign.completeScenario({
     scenarioId: 26,
     level: 2,
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 16, t: 1} },
-      { playerName: 'Farts Like Thunder', playerResults: {xp: 15, g: 16, t: 1} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 15, g: 16, t: 1, items: [33]} },
       { playerName: 'Nightmare', playerResults: {xp: 6, g: 13, t: 2} },
       { playerName: 'Psycho', playerResults: {xp: 13, g: 3} },
     ],
@@ -504,17 +504,16 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Psycho', playerResults: {t: -1} },
   ], rewards: {reputation: 1, prosperity: 1}, discard: true});
 
-  // TODO: Ítem 74 para Divayth Fyr
   campaign.completeScenario({
     scenarioId: 57,
     level: 3,
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 4, g: 6, t: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 10, g: 3, t: 1} },
-      { playerName: 'Nightmare', playerResults: {xp: 6, g: 3, t: 1} },
+      { playerName: 'Nightmare', playerResults: {xp: 6, g: 3, t: 1, items: [44]} },
       { playerName: 'Psycho', playerResults: {xp: 8, g: 3} },
     ],
-    rewards: {reputation: 1},
+    rewards: {reputation: 1, itemDesigns: [74]},
     scenariosUnblocked: [58]
   });
 
@@ -587,27 +586,24 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.makeDonation({playerName: 'Psycho'});
 
-  // Solo Scenario: P: 23xp, 9g (10xp, ítem 139)
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
-      { playerName: 'Psycho', playerResults: {xp: 23, g: 9} },
+      { playerName: 'Psycho', playerResults: {xp: 23, g: 9, items: [139]} },
     ]
   });
 
-  // Solo Scenario: F: 11xp, 3g, 1t (10xp, ítem 135)
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
-      { playerName: 'Farts Like Thunder', playerResults: {xp: 11, g: 3, t: 1} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 11, g: 3, t: 1, items: [135]} },
     ]
   });
 
-  // Solo Scenario: D: 12xp, 0g, 2t (10xp, ítem 147)
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 12, g: 0, t: 2} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 12, g: 0, t: 2, items: [147]} },
     ]
   });
 
@@ -618,7 +614,6 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Psycho', playerResults: {xp: 5, t: -1} },
   ], discard: true});
 
-  // TODO: ítem 98 para Psycho
   campaign.completeScenario({
     scenarioId: 43,
     level: 3,
@@ -626,7 +621,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Divayth Fyr', playerResults: {xp: 17, g: 0, t: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 7, g: 21, t: 2} },
       { playerName: 'Medea', playerResults: {xp: 18, g: 9, t: 1} },
-      { playerName: 'Psycho', playerResults: {xp: 12, g: 3, t: 1} },
+      { playerName: 'Psycho', playerResults: {xp: 12, g: 3, t: 1, items: [98]} },
     ],
     rewards: {globalAchievement: 'Water Breath'},
   });
@@ -772,12 +767,11 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveRoadEvent({eventId: 30, rewards: {reputation: 1}, discard: true});
 
-  // TODO: Item 108 para Divayth Fyr
   campaign.failScenario({
     scenarioId: 25,
     level: 3,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 7, g: 3} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 7, g: 3, items: [108]} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 6, g: 3} },
       { playerName: 'Medea', playerResults: {xp: 7, g: 15} },
       { playerName: 'Einar', playerResults: {xp: 12, g: 6} },
@@ -930,7 +924,7 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 68,
     level: 4,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 4, g: 8} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 4, g: 8, items: [19]} },
       { playerName: 'Lux Lucitana', playerResults: {xp: 10, g: 16} },
       { playerName: 'Medea', playerResults: {xp: 20, g: 8} },
       { playerName: 'Einar', playerResults: {xp: 11, g: 28, t: 1} },
@@ -994,12 +988,11 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveRoadEvent({eventId: 3, discard: false});
 
-  // TODO: Item 103 para Divayth Fyr
   campaign.completeScenario({
     scenarioId: 34,
     level: 4,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 5, g: 12} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 5, g: 12, items: [103]} },
       { playerName: 'Lux Lucitana', playerResults: {xp: 7, g: 12} },
       { playerName: 'El Alquimista', playerResults: {xp: 6, g: 4, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 10, g: 0} },
@@ -1023,7 +1016,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Lux Lucitana', playerResults: {xp: 12, g: 24, t: 2} },
       { playerName: 'El Alquimista', playerResults: {xp: 7, g: 16, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 12, g: 16, t: 1} },
-    ]
+    ],
+    rewards: {itemDesigns: [123]}
   });
 
   return campaign.getStatus();

@@ -201,6 +201,7 @@ export class CampaignStatusService {
         character.experience += bonusExperience + player.playerResults.xp + (payload.rewards?.xp ?? 0);
         character.gold += (player.playerResults.g ?? 0) + (payload.rewards?.gold ?? 0);
         character.perkTicks += player.playerResults.t ?? 0;
+        character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
       }
     );
 
@@ -223,6 +224,7 @@ export class CampaignStatusService {
         character.experience += bonusExperience + player.playerResults.xp;
         character.gold += (player.playerResults.g ?? 0);
         character.perkTicks += player.playerResults.t ?? 0;
+        character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
       }
     );
 
@@ -239,6 +241,7 @@ export class CampaignStatusService {
         const character = this.findCharacterByName(player.playerName);
         character.experience +=  player.playerResults.xp;
         character.gold += (player.playerResults.g ?? 0);
+        character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
       }
     );
 
@@ -290,6 +293,7 @@ export class CampaignStatusService {
           character.experience += player.playerResults.xp ?? 0;
           character.gold += player.playerResults.g ?? 0;
           character.perkTicks += player.playerResults.t ?? 0;
+          character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
         }
       );
     }
@@ -324,6 +328,7 @@ export class CampaignStatusService {
           character.experience += player.playerResults.xp ?? 0;
           character.gold += player.playerResults.g ?? 0;
           character.perkTicks += player.playerResults.t ?? 0;
+          character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
         }
       );
     }
