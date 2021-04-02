@@ -13,8 +13,8 @@ export const Characters = [
     },
     level: 8,
     hitPoints: Doomstalker.hitPoints[7], // el nivel -1
-    experience: 439,
-    gold: 60,
+    experience: 476,
+    gold: 112,
     perkTicks: 18,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
@@ -25,7 +25,7 @@ export const Characters = [
       'wild-command',
       'camouflage'
     ],
-    ownedItems: [1, 13, 5, 12, 108],
+    ownedItems: [1, 13, 5, 12, 33, 108],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -47,14 +47,14 @@ export const Characters = [
     personalQuest: {
       id: 533,
       title: 'The Perfect Poison',
-      progress: 0,
+      progress: 3,
       total: 9,
     },
-    level: 5,
-    hitPoints: Sunkeeper.hitPoints[8], // el nivel -1
-    experience: 232,
-    gold: 18,
-    perkTicks: 0,
+    level: 6,
+    hitPoints: Sunkeeper.hitPoints[5], // el nivel -1
+    experience: 275,
+    gold: 66,
+    perkTicks: 2,
     ownedAbilityCards: [
       ...Sunkeeper.levelXCards,
       ...Sunkeeper.level1Cards,
@@ -67,7 +67,7 @@ export const Characters = [
       ...Sunkeeper.level8Cards,
       ...Sunkeeper.level9Cards
     ],
-    ownedItems: [74, 38, 2, 20],
+    ownedItems: [74, 38, 2, 20, 13],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -76,19 +76,19 @@ export const Characters = [
   },
   {
     owner: PLAYERS[2],
-    name: '?????',
+    name: 'El Alquimista',
     characterClass: Elementalist,
     personalQuest: {
       id: 525,
       title: 'Piety in All Things',
-      progress: 0,
+      progress: 2,
       total: 12,
     },
     level: 5,
     hitPoints: Elementalist.hitPoints[4], // el nivel -1
-    experience: 231,
-    gold: 26,
-    perkTicks: 1,
+    experience: 268,
+    gold: 38,
+    perkTicks: 4,
     ownedAbilityCards: [
       ...Elementalist.levelXCards,
       ...Elementalist.level1Cards,
@@ -98,7 +98,7 @@ export const Characters = [
       'chromatic-explosion',
       'frozen-night'
     ],
-    ownedItems: [2, 5, 6, 34],
+    ownedItems: [2, 5, 6, 34, 14],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -118,19 +118,19 @@ export const Characters = [
     personalQuest: {
       id: 527,
       title: 'Zealot of the Blood God',
-      progress: 4,
+      progress: 6,
       total: 12,
     },
     level: 7,
     hitPoints: Brute.hitPoints[6], // el nivel -1
-    experience: 353,
-    gold: 66,
-    perkTicks: 7,
+    experience: 399,
+    gold: 39,
+    perkTicks: 8,
     ownedAbilityCards: [
       ...Brute.levelXCards,
       ...Brute.level1Cards
     ],
-    ownedItems: [7, 74, 36, 34, 27, 20],
+    ownedItems: [7, 74, 36, 34, 27, 20, 18, 28, 25],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [

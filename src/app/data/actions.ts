@@ -949,14 +949,14 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[2].uid,
     characterClass: Elementalist,
-    name: 'eeeee',
+    name: 'El Alquimista',
     personalQuest: PERSONAL_QUESTS[525]
   });
 
-  campaign.buyItem({playerName: 'eeeee', itemId: 2});
-  campaign.buyItem({playerName: 'eeeee', itemId: 5});
-  campaign.buyItem({playerName: 'eeeee', itemId: 6});
-  campaign.buyItem({playerName: 'eeeee', itemId: 34});
+  campaign.buyItem({playerName: 'El Alquimista', itemId: 2});
+  campaign.buyItem({playerName: 'El Alquimista', itemId: 5});
+  campaign.buyItem({playerName: 'El Alquimista', itemId: 6});
+  campaign.buyItem({playerName: 'El Alquimista', itemId: 34});
 
   campaign.sellItem({playerName: 'Divayth Fyr', itemId: 19});
   campaign.buyItem({playerName: 'Divayth Fyr', itemId: 33});
@@ -964,7 +964,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.resolveRoadEvent({eventId: 7, playersResults: [
     { playerName: 'Einar', playerResults: {xp: 5} },
     { playerName: 'Divayth Fyr', playerResults: {xp: 5} },
-    { playerName: 'eeeee', playerResults: {xp: 5} },
+    { playerName: 'El Alquimista', playerResults: {xp: 5} },
   ], discard: true});
 
   campaign.completeScenario({
@@ -972,8 +972,57 @@ export function loadCampaing(): CampaignStatus {
     level: 3,
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 24} },
-      { playerName: 'eeeee', playerResults: {xp: 6, g: 24, t: 1} },
+      { playerName: 'El Alquimista', playerResults: {xp: 6, g: 24, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 6, g: 15, t: 1} },
+    ]
+  });
+
+  campaign.buyItem({playerName: 'Einar', itemId: 18});
+  campaign.buyItem({playerName: 'Einar', itemId: 28});
+  campaign.buyItem({playerName: 'Einar', itemId: 25});
+  campaign.buyItem({playerName: 'Lux Lucitana', itemId: 13});
+
+  campaign.makeDonation({playerName: 'El Alquimista'});
+
+  // TODO: Unlock Scenario 84
+  campaign.resolveCityEvent({eventId: 73, playersResults: [
+    { playerName: 'Lux Lucitana', playerResults: {g: -1} },
+    { playerName: 'Einar', playerResults: {g: -2} },
+    { playerName: 'Divayth Fyr', playerResults: {g: -1} },
+    { playerName: 'El Alquimista', playerResults: {g: -1} },
+  ], discard: true});
+
+  campaign.resolveRoadEvent({eventId: 3, discard: false});
+
+  // TODO: Item 103 para Divayth Fyr
+  campaign.completeScenario({
+    scenarioId: 34,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 5, g: 12} },
+      { playerName: 'Lux Lucitana', playerResults: {xp: 7, g: 12} },
+      { playerName: 'El Alquimista', playerResults: {xp: 6, g: 4, t: 1} },
+      { playerName: 'Einar', playerResults: {xp: 10, g: 0} },
+    ], rewards: {gold: 20, reputation: 2, prosperity: 1}
+  });
+
+  campaign.sellItem({playerName: 'Divayth Fyr', itemId: 103});
+  campaign.buyItem({playerName: 'El Alquimista', itemId: 14});
+
+  campaign.makeDonation({playerName: 'El Alquimista'});
+
+  campaign.resolveCityEvent({eventId: 71, rewards: {addCityEvents: [72]}, discard: true});
+  campaign.resolveRoadEvent({eventId: 14, discard: false});
+
+  // TODO: Item design 123
+  campaign.completeScenario({
+    scenarioId: 4,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 16} },
+      { playerName: 'Lux Lucitana', playerResults: {xp: 12, g: 24, t: 2} },
+      { playerName: 'El Alquimista', playerResults: {xp: 7, g: 16, t: 2} },
+      { playerName: 'Einar', playerResults: {xp: 12, g: 16, t: 1} },
     ]
   });
 

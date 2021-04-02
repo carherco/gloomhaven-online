@@ -924,8 +924,8 @@ export const ITEMS: ItemDef[] = [
     points: 102,
     image: 'items/64-151/drakescale-armor.png',
     type: 'body',
-    use: 'spend',
-    price: 10,
+    use: 'permanent',
+    price: 50,
     xws: 'drakescalearmor'
   },
   {
@@ -1104,8 +1104,8 @@ export const ITEMS: ItemDef[] = [
     points: 122,
     image: 'items/64-151/ring-of-skulls.png',
     type: 'small-item',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 50,
     xws: 'ringofskulls'
   },
   {
