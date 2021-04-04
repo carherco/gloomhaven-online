@@ -421,7 +421,7 @@ export const MonsterAbilityCards = [
   },
   {
     name: 'ma-fld-8',
-    initiative: 08, mustShuffle: false, points: 70,
+    initiative: 8, mustShuffle: false, points: 70,
     image: 'monster-ability-cards/flame-demon/ma-fld-8.png',
     xws: 'mafld8'
   },
@@ -649,13 +649,13 @@ export const MonsterAbilityCards = [
   },
   {
     name: 'ma-ho-1',
-    initiative: 06, mustShuffle: false, points: 108,
+    initiative: 6, mustShuffle: false, points: 108,
     image: 'monster-ability-cards/hound/ma-ho-1.png',
     xws: 'maho1'
   },
   {
     name: 'ma-ho-2',
-    initiative: 07, mustShuffle: false, points: 109,
+    initiative: 7, mustShuffle: false, points: 109,
     image: 'monster-ability-cards/hound/ma-ho-2.png',
     xws: 'maho2'
   },
