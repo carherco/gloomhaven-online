@@ -10,8 +10,9 @@ import { CampaignStatusService } from './services/campaign-status.service';
 export class AppComponent {
   title = 'gloomhaven-card-manager';
 
-  constructor() {
+  constructor(campaign: CampaignStatusService) {
     const status = loadCampaing();
     console.log(status);
+    campaign.setStatus(status);
   }
 }

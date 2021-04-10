@@ -995,7 +995,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Divayth Fyr', playerResults: {xp: 5, g: 12, items: [103]} },
       { playerName: 'Lux Lucitana', playerResults: {xp: 7, g: 12} },
       { playerName: 'El Alquimista', playerResults: {xp: 6, g: 4, t: 1} },
-      { playerName: 'Einar', playerResults: {xp: 10, g: 0} },
+      { playerName: 'Einar', playerResults: {xp: 10, g: 0, pq: 1} },
     ], rewards: {gold: 20, reputation: 2, prosperity: 1}
   });
 
@@ -1015,10 +1015,11 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 16} },
       { playerName: 'Lux Lucitana', playerResults: {xp: 12, g: 24, t: 2} },
       { playerName: 'El Alquimista', playerResults: {xp: 7, g: 16, t: 2} },
-      { playerName: 'Einar', playerResults: {xp: 12, g: 16, t: 1} },
+      { playerName: 'Einar', playerResults: {xp: 12, g: 16, t: 1, pq: 1} },
     ],
     rewards: {itemDesigns: [123]}
   });
 
+  campaign.emitStatus();
   return campaign.getStatus();
 }

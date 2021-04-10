@@ -5,7 +5,7 @@ import { Character } from '../model/character';
 import { PersonalQuestDef } from '../data/personal-quests';
 import { ITEMS } from '../data/items';
 import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, FailScenarioPayload, RetireCharacterPayload, EnhanceAbilityPayload, CompleteSoloScenarioPayload, UnblockCharacterPayload } from '../data/actions';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 
 export interface CampaignStatus {
   party: {
@@ -67,16 +67,28 @@ const PRICE_MODIFIER_MAP = [
 })
 export class CampaignStatusService {
 
-  private status: CampaignStatus;
-  // private status$ = new ReplaySubject();
+  private status: CampaignStatus = {...INITIAL_STATUS};
+  private status$ = new BehaviorSubject<CampaignStatus>(this.status);
 
   constructor() {
-    this.status = {...INITIAL_STATUS};
     this.status = this.cloneStatus();
   }
 
   getStatus(): CampaignStatus {
     return {...this.status};
+  }
+
+  getStatus$(): Observable<CampaignStatus> {
+    return this.status$.asObservable();
+  }
+
+  setStatus(status: CampaignStatus): void {
+    this.status = {...status};
+    this.emitStatus();
+  }
+
+  emitStatus(): void {
+    this.status$.next(this.getStatus());
   }
 
   loadStatus(status: CampaignStatus): void {
@@ -201,6 +213,7 @@ export class CampaignStatusService {
         character.experience += bonusExperience + player.playerResults.xp + (payload.rewards?.xp ?? 0);
         character.gold += (player.playerResults.g ?? 0) + (payload.rewards?.gold ?? 0);
         character.perkTicks += player.playerResults.t ?? 0;
+        character.personalQuest.progress += player.playerResults.pq ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
       }
     );
@@ -241,6 +254,7 @@ export class CampaignStatusService {
         const character = this.findCharacterByName(player.playerName);
         character.experience +=  player.playerResults.xp;
         character.gold += (player.playerResults.g ?? 0);
+        character.personalQuest.progress += player.playerResults.pq ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
       }
     );

@@ -1,0 +1,3 @@
+<span *ngFor="let check_value of checks; let i=index" class="material-icons" [style.color]="isMilestone(i+1)?milestoneColor:defaultColor">
+  {{check_value}}
+</span>

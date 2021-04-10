@@ -44,6 +44,10 @@ import { FilterItemsByTipePipe } from './pipes/filter-items-by-tipe.pipe';
 import { PrefixPipe } from './pipes/prefix.pipe';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ProsperityTrackComponent } from './components/prosperity-track/prosperity-track.component';
+import { DonationsTrackComponent } from './components/donations-track/donations-track.component';
+import { ReputationTrackComponent } from './components/reputation-track/reputation-track.component';
 
 
 @NgModule({
@@ -80,7 +84,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     IntiativeTrackerComponent,
     FilterItemsByTipePipe,
     PrefixPipe,
-    LoginPageComponent
+    LoginPageComponent,
+    HomePageComponent,
+    ProsperityTrackComponent,
+    DonationsTrackComponent,
+    ReputationTrackComponent
   ],
   imports: [
     BrowserModule,
