@@ -1020,6 +1020,5 @@ export function loadCampaing(): CampaignStatus {
     rewards: {itemDesigns: [123]}
   });
 
-  campaign.emitStatus();
   return campaign.getStatus();
 }
