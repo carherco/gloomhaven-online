@@ -1,13 +1,14 @@
 export const SCENARIO_MONSTERS = [
+  {}, // dummy scenario 0, just to make indexing by scenario number easier - eg. scenarios[1] refers to scenario number 1
   { name: '#1 Black Barrow'
-    , decks:
-        [   {name: 'Bandit Guard', deck_name: 'Guard'}
-        ,   {name: 'Bandit Archer', deck_name: 'Archer'}
-        ,   {name: 'Living Bones', deck_name: 'Living Bones'}
+    , monsters:
+        [   {name: 'Bandit Guard'}
+        ,   {name: 'Bandit Archer'}
+        ,   {name: 'Living Bones'}
         ]
     },
     { name: '#2 Barrow Lair'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Archer'}
         ,   {name: 'Bandit Commander'}
         ,   {name: 'Living Bones'}
@@ -15,14 +16,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#3 Inox Encampment'
-    , decks:
+    , monsters:
         [   {name: 'Inox Guard'}
         ,   {name: 'Inox Archer'}
         ,   {name: 'Inox Shaman'}
         ]
     },
     { name: '#4 Crypt of the Damned'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Bandit Archer'}
         ,   {name: 'Cultist'}
@@ -31,7 +32,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#5 Ruinous Crypt'
-    , decks:
+    , monsters:
         [   {name: 'Cultist'}
         ,   {name: 'Living Bones'}
         ,   {name: 'Living Corpse'}
@@ -41,14 +42,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#6 Decaying Crypt'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'Living Spirit'}
         ]
     },
     { name: '#7 Vibrant Grotto'
-    , decks:
+    , monsters:
         [   {name: 'Forest Imp'}
         ,   {name: 'Cave Bear'}
         ,   {name: 'Inox Shaman'}
@@ -56,28 +57,28 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#8 Gloomhaven Warehouse'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'Inox Bodyguard'}
         ]
     },
     { name: '#9 Diamond Mine'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Vermling Scout'}
         ,   {name: 'Merciless Overseer'}
         ]
     },
     { name: '#10 Plane of Elemental Power'
-    , decks:
+    , monsters:
         [   {name: 'Flame Demon'}
         ,   {name: 'Earth Demon'}
         ,   {name: 'Sun Demon'}
         ]
     },
     { name: '#11 Gloomhaven Square A'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'City Guard'}
@@ -86,7 +87,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#12 Gloomhaven Square B'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'Cultist'}
@@ -96,7 +97,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#13 Temple of the Seer'
-    , decks:
+    , monsters:
         [   {name: 'Stone Golem'}
         ,   {name: 'Cave Bear'}
         ,   {name: 'Living Spirit'}
@@ -104,14 +105,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#14 Frozen Hollow'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Living Spirit'}
         ,   {name: 'Frost Demon'}
         ]
     },
     { name: '#15 Shrine of Strength'
-    , decks:
+    , monsters:
         [   {name: 'Stone Golem'}
         ,   {name: 'Savvas Icestorm'}
         ,   {name: 'Frost Demon'}
@@ -120,7 +121,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#16 Mountain Pass'
-    , decks:
+    , monsters:
         [   {name: 'Earth Demon'}
         ,   {name: 'Wind Demon'}
         ,   {name: 'Inox Guard'}
@@ -128,21 +129,21 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#17 Lost Island'
-    , decks:
+    , monsters:
         [   {name: 'Vermling Scout'}
         ,   {name: 'Vermling Shaman'}
         ,   {name: 'Cave Bear'}
         ]
     },
     { name: '#18 Abandoned Sewers'
-    , decks:
+    , monsters:
         [   {name: 'Giant Viper'}
         ,   {name: 'Ooze'}
         ,   {name: 'Vermling Scout'}
         ]
     },
     { name: '#19 Forgotten Crypt'
-    , decks:
+    , monsters:
         [   {name: 'Cultist'}
         ,   {name: 'Living Bones'}
         ,   {name: 'Living Spirit'}
@@ -150,7 +151,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#20 Necromancer\'s Sanctum'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Cultist'}
         ,   {name: 'Night Demon'}
@@ -159,7 +160,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#21 Infernal Throne'
-    , decks:
+    , monsters:
         [   {name: 'Sun Demon'}
         ,   {name: 'Frost Demon'}
         ,   {name: 'Night Demon'}
@@ -170,7 +171,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#22 Temple of the Elements'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Cultist'}
         ,   {name: 'Earth Demon'}
@@ -180,7 +181,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#23 Deep Ruins'
-    , decks:
+    , monsters:
         [   {name: 'Stone Golem'}
         ,   {name: 'Ancient Artillery'}
         ,   {name: 'Living Bones'}
@@ -188,21 +189,21 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#24 Echo Chamber'
-    , decks:
+    , monsters:
         [   {name: 'Rending Drake'}
         ,   {name: 'Ooze'}
         ,   {name: 'Living Spirit'}
         ]
     },
     { name: '#25 Icecrag Ascent'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Rending Drake'}
         ,   {name: 'Spitting Drake'}
         ]
     },
     { name: '#26 Ancient Cistern'
-    , decks:
+    , monsters:
         [   {name: 'Living Corpse'}
         ,   {name: 'Ooze'}
         ,   {name: 'Night Demon'}
@@ -210,7 +211,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#27 Ruinous Rift'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Wind Demon'}
         ,   {name: 'Frost Demon'}
@@ -220,7 +221,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#28 Outer Ritual Chamber'
-    , decks:
+    , monsters:
         [   {name: 'Living Corpse'}
         ,   {name: 'Cultist'}
         ,   {name: 'Living Bones'}
@@ -229,7 +230,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#29 Sanctuary of Gloom'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'Living Spirit'}
@@ -237,21 +238,21 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#30 Shrine of the Depths'
-    , decks:
+    , monsters:
         [   {name: 'Ooze'}
         ,   {name: 'Lurker'}
         ,   {name: 'Deep Terror'}
         ]
     },
     { name: '#31 Plane of the Night'
-    , decks:
+    , monsters:
         [   {name: 'Deep Terror'}
         ,   {name: 'Night Demon'}
         ,   {name: 'Black Imp'}
         ]
     },
     { name: '#32 Decrepit Wood'
-    , decks:
+    , monsters:
         [   {name: 'Harrower Infester'}
         ,   {name: 'Giant Viper'}
         ,   {name: 'Deep Terror'}
@@ -259,7 +260,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#33 Savvas Armory'
-    , decks:
+    , monsters:
         [   {name: 'Savvas Icestorm'}
         ,   {name: 'Savvas Lavaflow'}
         ,   {name: 'Frost Demon'}
@@ -269,14 +270,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#34 Scorched Summit'
-    , decks:
+    , monsters:
         [   {name: 'Rending Drake'}
         ,   {name: 'Spitting Drake'}
         ,   {name: 'Elder Drake'}
         ]
     },
     { name: '#35 Gloomhaven Battlements A'
-    , decks:
+    , monsters:
         [   {name: 'Flame Demon'}
         ,   {name: 'Frost Demon'}
         ,   {name: 'Earth Demon'}
@@ -284,7 +285,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#36 Gloomhaven Battlements B'
-    , decks:
+    , monsters:
         [   {name: 'Flame Demon'}
         ,   {name: 'Frost Demon'}
         ,   {name: 'Earth Demon'}
@@ -294,14 +295,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#37 Doom Trench'
-    , decks:
+    , monsters:
         [   {name: 'Lurker'}
         ,   {name: 'Deep Terror'}
         ,   {name: 'Harrower Infester'}
         ]
     },
     { name: '#38 Slave Pens'
-    , decks:
+    , monsters:
         [   {name: 'Inox Guard'}
         ,   {name: 'Inox Archer'}
         ,   {name: 'Inox Shaman'}
@@ -309,7 +310,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#39 Treacherous Divide'
-    , decks:
+    , monsters:
         [   {name: 'Cave Bear'}
         ,   {name: 'Frost Demon'}
         ,   {name: 'Spitting Drake'}
@@ -318,7 +319,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#40 Ancient Defense Network'
-    , decks:
+    , monsters:
         [   {name: 'Living Corpse'}
         ,   {name: 'Flame Demon'}
         ,   {name: 'Cave Bear'}
@@ -327,7 +328,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#41 Timeworn Tomb'
-    , decks:
+    , monsters:
         [   {name: 'Ancient Artillery'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'Living Spirit'}
@@ -335,21 +336,21 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#42 Realm of the Voice'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Wind Demon'}
         ,   {name: 'Living Spirit'}
         ]
     },
     { name: '#43 - Drake Nest'
-    , decks:
+    , monsters:
         [   {name: 'Flame Demon'}
         ,   {name: 'Rending Drake'}
         ,   {name: 'Spitting Drake'}
         ]
     },
     { name: '#44 Tribal Assault'
-    , decks:
+    , monsters:
         [   {name: 'Inox Guard'}
         ,   {name: 'Inox Archer'}
         ,   {name: 'Hound'}
@@ -357,14 +358,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#45 Rebel Swamp'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ,   {name: 'City Archer'}
         ,   {name: 'Hound'}
         ]
     },
     { name: '#46 Nightmare Peak'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Frost Demon'}
         ,   {name: 'Wind Demon'}
@@ -373,7 +374,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#47 Lair of the Unseeing Eye'
-    , decks:
+    , monsters:
         [   {name: 'Lurker'}
         ,   {name: 'Deep Terror'}
         ,   {name: 'Harrower Infester'}
@@ -381,7 +382,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#48 - Shadow Weald'
-    , decks:
+    , monsters:
         [   {name: 'Forest Imp'}
         ,   {name: 'Earth Demon'}
         ,   {name: 'Harrower Infester'}
@@ -389,7 +390,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#49 Rebel\'s Stand'
-    , decks:
+    , monsters:
         [   {name: 'Giant Viper'}
         ,   {name: 'City Archer'}
         ,   {name: 'City Guard'}
@@ -397,19 +398,19 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#50 Ghost Fortress'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Sun Demon'}
         ,   {name: 'Earth Demon'}
         ]
     },
     { name: '#51 The Void'
-    , decks:
+    , monsters:
         [   {name: 'The Gloom'}
         ]
     },
     { name: '#52 Noxious Cellar'
-    , decks:
+    , monsters:
         [   {name: 'Spitting Drake'}
         ,   {name: 'Ooze'}
         ,   {name: 'Vermling Scout'}
@@ -418,7 +419,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#53 Crypt Basement'
-    , decks:
+    , monsters:
         [   {name: 'Ooze'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'Living Spirit'}
@@ -427,7 +428,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#54 Palace of Ice'
-    , decks:
+    , monsters:
         [   {name: 'Cave Bear'}
         ,   {name: 'Living Spirit'}
         ,   {name: 'Frost Demon'}
@@ -436,11 +437,11 @@ export const SCENARIO_MONSTERS = [
     },
     // TODO Show message that this is random, use deck tab instead
     { name: '#55 Foggy Thicket'
-    , decks:
+    , monsters:
         [ ]
     },
     { name: '#56 Bandit\'s Wood'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Bandit Archer'}
         ,   {name: 'Rending Drake'}
@@ -448,14 +449,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#57 Investigation'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ,   {name: 'City Archer'}
         ,   {name: 'Hound'}
         ]
     },
     { name: '#58 Bloody Shack'
-    , decks:
+    , monsters:
         [   {name: 'Earth Demon'}
         ,   {name: 'Harrower Infester'}
         ,   {name: 'Black Imp'}
@@ -463,14 +464,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#59 Forgotten Grove'
-    , decks:
+    , monsters:
         [   {name: 'Cave Bear'}
         ,   {name: 'Hound'}
         ,   {name: 'Forest Imp'}
         ]
     },
     { name: '#60 Alchemy Lab'
-    , decks:
+    , monsters:
         [   {name: 'Ooze'}
         ,   {name: 'Giant Viper'}
         ,   {name: 'Hound'}
@@ -479,7 +480,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#61 Fading Lighthouse'
-    , decks:
+    , monsters:
         [   {name: 'Ooze'}
         ,   {name: 'Giant Viper'}
         ,   {name: 'Frost Demon'}
@@ -487,13 +488,13 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#62 Pit of Souls'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Living Spirit'}
         ]
     },
     { name: '#63 Magma Pit'
-    , decks:
+    , monsters:
         [   {name: 'Vermling Scout'}
         ,   {name: 'Inox Guard'}
         ,   {name: 'Inox Archer'}
@@ -501,21 +502,21 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#64 Underwater Lagoon'
-    , decks:
+    , monsters:
         [   {name: 'Ooze'}
         ,   {name: 'Forest Imp'}
         ,   {name: 'Rending Drake'}
         ]
     },
     { name: '#65 Sulfur Mine'
-    , decks:
+    , monsters:
         [   {name: 'Vermling Scout'}
         ,   {name: 'Hound'}
         ,   {name: 'Inox Shaman'}
         ]
     },
     { name: '#66 Clockwork Cove'
-    , decks:
+    , monsters:
         [   {name: 'Ooze'}
         ,   {name: 'Ancient Artillery'}
         ,   {name: 'Living Spirit'}
@@ -523,14 +524,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#67 Arcane Library'
-    , decks:
+    , monsters:
         [   {name: 'Forest Imp'}
         ,   {name: 'Cave Bear'}
         ,   {name: 'Stone Golem'}
         ]
     },
     { name: '#68 Toxic Moor'
-    , decks:
+    , monsters:
         [   {name: 'Rending Drake'}
         ,   {name: 'Black Imp'}
         ,   {name: 'Giant Viper'}
@@ -538,7 +539,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#69 Well of the Unfortunate'
-    , decks:
+    , monsters:
         [   {name: 'Vermling Scout'}
         ,   {name: 'Vermling Shaman'}
         ,   {name: 'Forest Imp'}
@@ -547,28 +548,28 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#70 Chained Isle'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Wind Demon'}
         ,   {name: 'Living Spirit'}
         ]
     },
     { name: '#71 Windswept Highlands'
-    , decks:
+    , monsters:
         [   {name: 'Spitting Drake'}
         ,   {name: 'Wind Demon'}
         ,   {name: 'Sun Demon'}
         ]
     },
     { name: '#72 Oozing Grove'
-    , decks:
+    , monsters:
         [   {name: 'Ooze'}
         ,   {name: 'Forest Imp'}
         ,   {name: 'Giant Viper'}
         ]
     },
     { name: '#73 Rockslide Ridge'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Inox Archer'}
         ,   {name: 'Ancient Artillery'}
@@ -577,7 +578,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#74 Merchant Ship'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Guard'}
         ,   {name: 'Bandit Archer'}
         ,   {name: 'Lurker'}
@@ -585,14 +586,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#75 Overgrown Graveyard'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Living Corpse'}
         ,   {name: 'Living Spirit'}
         ]
     },
     { name: '#76 Harrower Hive'
-    , decks:
+    , monsters:
         [   {name: 'Giant Viper'}
         ,   {name: 'Living Bones'}
         ,   {name: 'Night Demon'}
@@ -600,7 +601,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#77 Vault of Secrets'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ,   {name: 'City Archer'}
         ,   {name: 'Stone Golem'}
@@ -608,7 +609,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#78 Sacrifice Pit'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Guard'}
         ,   {name: 'Bandit Archer'}
         ,   {name: 'Cultist'}
@@ -617,14 +618,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#79 Lost Temple'
-    , decks:
+    , monsters:
         [   {name: 'Stone Golem'}
         ,   {name: 'Giant Viper'}
         ,   {name: 'The Betrayer'}
         ]
     },
     { name: '#80 Vigil Keep'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ,   {name: 'City Archer'}
         ,   {name: 'Ancient Artillery'}
@@ -632,7 +633,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#81 Temple of the Eclipse'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Sun Demon'}
         ,   {name: 'Stone Golem'}
@@ -641,14 +642,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#82 Burning Mountain'
-    , decks:
+    , monsters:
         [   {name: 'Earth Demon'}
         ,   {name: 'Flame Demon'}
         ,   {name: 'Stone Golem'}
         ]
     },
     { name: '#83 Shadows Within'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Cultist'}
         ,   {name: 'Living Bones'}
@@ -657,14 +658,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#84 Crystalline Cave'
-    , decks:
+    , monsters:
         [   {name: 'Flame Demon'}
         ,   {name: 'Frost Demon'}
         ,   {name: 'Earth Demon'}
         ]
     },
     { name: '#85 Sun Temple'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Black Imp'}
         ,   {name: 'Night Demon'}
@@ -672,7 +673,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#86 Harried Village'
-    , decks:
+    , monsters:
         [   {name: 'Cave Bear'}
         ,   {name: 'Vermling Shaman'}
         ,   {name: 'Vermling Scout'}
@@ -680,7 +681,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#87 Corrupted Cove'
-    , decks:
+    , monsters:
         [   {name: 'Lurker'}
         ,   {name: 'Deep Terror'}
         ,   {name: 'Ooze'}
@@ -688,14 +689,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#88 Plane of Water'
-    , decks:
+    , monsters:
         [   {name: 'Frost Demon'}
         ,   {name: 'Ooze'}
         ,   {name: 'Lurker'}
         ]
     },
     { name: '#89 Syndicate Hideout'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Archer'}
         ,   {name: 'Bandit Guard'}
         ,   {name: 'Cultist'}
@@ -704,7 +705,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#90 Demonic Rift'
-    , decks:
+    , monsters:
         [   {name: 'Earth Demon'}
         ,   {name: 'Wind Demon'}
         ,   {name: 'Night Demon'}
@@ -712,7 +713,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#91 Wild Melee'
-    , decks:
+    , monsters:
         [   {name: 'Cave Bear'}
         ,   {name: 'Hound'}
         ,   {name: 'Bandit Guard'}
@@ -721,7 +722,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#92 Back Alley Brawl'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Guard'}
         ,   {name: 'City Guard'}
         ,   {name: 'Inox Guard'}
@@ -733,14 +734,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#93 Sunken Vessel'
-    , decks:
+    , monsters:
         [   {name: 'Lurker'}
         ,   {name: 'Frost Demon'}
         ,   {name: 'Living Spirit'}
         ]
     },
     { name: '#94 Vermling Nest'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Vermling Scout'}
         ,   {name: 'Vermling Shaman'}
@@ -748,7 +749,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#95 Payment Due'
-    , decks:
+    , monsters:
         [   {name: 'Deep Terror'}
         ,   {name: 'Flame Demon'}
         ,   {name: 'Earth Demon'}
@@ -757,7 +758,7 @@ export const SCENARIO_MONSTERS = [
     },
     // Kickstarter scenarios
     { name: '#K1 Just Another Night'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Archer'}
         ,   {name: 'Bandit Guard'}
         ,   {name: 'Inox Archer'}
@@ -766,14 +767,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#K2 A Quatryl Scorned'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Archer'}
         ,   {name: 'Bandit Guard'}
         ,   {name: 'Ancient Artillery'}
         ]
     },
     { name: '#K3 Unreliable Medicine'
-    , decks:
+    , monsters:
         [   {name: 'Giant Viper'}
         ,   {name: 'Earth Demon'}
         ,   {name: 'Vermling Scout'}
@@ -781,13 +782,13 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#K4 Unlikely Allies'
-    , decks:
+    , monsters:
         [   {name: 'Vermling Scout'}
         ,   {name: 'Giant Viper'}
         ]
     },
     { name: '#K5 The Sun Spire'
-    , decks:
+    , monsters:
         [   {name: 'Vermling Scout'}
         ,   {name: 'Sun Demon'}
         ,   {name: 'Black Imp'}
@@ -795,14 +796,14 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#K6 A Ship in a Storm'
-    , decks:
+    , monsters:
         [   {name: 'Wind Demon'}
         ,   {name: 'Lurker'}
         ,   {name: 'Frost Demon'}
         ]
     },
     { name: '#K7 Arrival in Chains'
-    , decks:
+    , monsters:
         [   {name: 'Cave Bear'}
         ,   {name: 'Rending Drake'}
         ,   {name: 'Spitting Drake'}
@@ -810,7 +811,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#K8 The Doctor\'s Lab'
-    , decks:
+    , monsters:
         [   {name: 'Living Bones'}
         ,   {name: 'Ancient Artillery'}
         ,   {name: 'Ooze'}
@@ -818,7 +819,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#K9 Skewed Perspective'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Cultist'}
         ,   {name: 'Living Spirit'}
@@ -826,56 +827,56 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#K10 Panic Room'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Deep Terror'}
         ]
     },
     // solo scenarios
     { name: '#S1 - Brute - Return to the Black Barrow'
-    , decks:
+    , monsters:
         [   {name: 'Bandit Guard'}
         ,   {name: 'Bandit Archer'}
         ,   {name: 'Living Bones'}
         ]
     },
     { name: '#S2 - Tinkerer - An Unfortunate Intrusion'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ,   {name: 'Vermling Scout'}
         ,   {name: 'Vermling Shaman'}
         ]
     },
     { name: '#S3 - Spellweaver - Corrupted Library'
-    , decks:
+    , monsters:
         [   {name: 'Black Imp'}
         ,   {name: 'Spitting Drake'}
         ,   {name: 'Stone Golem'}
         ]
     },
     { name: '#S4 - Scoundrel - Armory Heist'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ,   {name: 'Stone Golem'}
         ,   {name: 'Ancient Artillery'}
         ]
     },
     { name: '#S5 - Cragheart - Stone Defense'
-    , decks:
+    , monsters:
         [   {name: 'Cave Bear'}
         ,   {name: 'Ooze'}
         ,   {name: 'Sun Demon'}
         ]
     },
     { name: '#S6 - Mindthief - Rodent Liberation'
-    , decks:
+    , monsters:
         [   {name: 'Vermling Scout'}
         ,   {name: 'Vermling Shaman'}
         ,   {name: 'Earth Demon'}
         ]
     },
     { name: '#S7 - Sunkeeper - Caravan Escort'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ,   {name: 'Bandit Guard'}
         ,   {name: 'Bandit Archer'}
@@ -888,7 +889,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#S8 - Berserker - Unnatural Insults'
-    , decks:
+    , monsters:
         [   {name: 'Living Corpse'}
         ,   {name: 'Living Bones'}
         ,   {name: 'Cultist'}
@@ -896,33 +897,33 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#S9 - Quartermaster - Storage Fees'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Bandit Guard'}
         ,   {name: 'Bandit Archer'}
         ]
     },
     { name: '#S10 - Summoner - Plane of the Wild Beasts'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Spitting Drake'}
         ,   {name: 'Cave Bear'}
         ]
     },
     { name: '#S11 - Nightshroud - Harvesting the Night'
-    , decks:
+    , monsters:
         [   {name: 'Night Demon'}
         ,   {name: 'Deep Terror'}
         ]
     },
     { name: '#S12 - Plagueherald - Plagued Crypt'
-    , decks:
+    , monsters:
         [   {name: 'Giant Viper'}
         ,   {name: 'Black Imp'}
         ]
     },
     { name: '#S13 - Soothsinger - Battle of the Bards'
-    , decks:
+    , monsters:
         [   {name: 'Bandit  Guard'}
         ,   {name: 'Bandit Archer'}
         ,   {name: 'City Guard'}
@@ -932,7 +933,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#S14 - Doomstalker - Corrupted Hunt'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Earth Demon'}
         ,   {name: 'Flame Demon'}
@@ -941,12 +942,12 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#S15 - Sawbones - Aftermath'
-    , decks:
+    , monsters:
         [   {name: 'City Guard'}
         ]
     },
     { name: '#S16 - Elementalist - Elemental Secrets'
-    , decks:
+    , monsters:
         [   {name: 'Flame Demon'}
         ,   {name: 'Earth Demon'}
         ,   {name: 'Frost Demon'}
@@ -954,7 +955,7 @@ export const SCENARIO_MONSTERS = [
         ]
     },
     { name: '#S17 - Beast Tyrant - The Caged Bear'
-    , decks:
+    , monsters:
         [   {name: 'Hound'}
         ,   {name: 'Forest Imp'}
         ,   {name: 'Rending Drake'}

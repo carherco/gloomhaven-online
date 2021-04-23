@@ -124,7 +124,7 @@ const AncientArtillery: EnemyDef = {
             m: 0,
             a: 4,
             r: 6,
-            ta: '2'
+            ta: 2
         }
     },
     5: {
@@ -139,7 +139,7 @@ const AncientArtillery: EnemyDef = {
             m: 0,
             a: 4,
             r: 7,
-            ta: '2'
+            ta: 2
         }
     },
     6: {
@@ -154,7 +154,7 @@ const AncientArtillery: EnemyDef = {
             m: 0,
             a: 5,
             r: 7,
-            ta: '2'
+            ta: 2
         }
     },
     7: {
@@ -169,7 +169,7 @@ const AncientArtillery: EnemyDef = {
             m: 0,
             a: 5,
             r: 7,
-            ta: '2'
+            ta: 2
         }
     }
 },
@@ -424,7 +424,7 @@ const BanditGuard: EnemyDef = {
             a: 5,
             r: 0,
             mu: true,
-            s: '3'
+            s: 3
         }
     }
 },

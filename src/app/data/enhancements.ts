@@ -1,5 +1,24 @@
 
-const playerPlusOneAbilityLines = {
+export interface PlayerPlusOneAbilityLines {
+  move: EnhancementType;
+  attack: EnhancementType;
+  range: EnhancementType;
+  shield: EnhancementType;
+  push: EnhancementType;
+  pull: EnhancementType;
+  pierce: EnhancementType;
+  retaliate: EnhancementType;
+  heal: EnhancementType;
+  target: EnhancementType;
+}
+export interface EnhancementType {
+  cost: number;
+  title: string;
+  icon: string;
+}
+
+
+const playerPlusOneAbilityLines: PlayerPlusOneAbilityLines = {
   move: { cost: 30, title: 'Move', icon: 'generalMove' },
   attack: { cost: 50, title: 'Attack', icon: 'generalAttack' },
   range: { cost: 30, title: 'Range', icon: 'generalRange' },

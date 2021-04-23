@@ -1,4 +1,13 @@
-export const MonsterAbilityCards = [
+export interface MonsterAbilityCard {
+  name: string;
+  initiative?: number;
+  mustShuffle?: boolean;
+  points: number;
+  image: string;
+  xws: string;
+}
+
+export const MonsterAbilityCards: MonsterAbilityCard[] = [
   {
     name: 'ma-aa-1',
     initiative: 46, mustShuffle: false, points: 0,
@@ -247,7 +256,7 @@ export const MonsterAbilityCards = [
   },
   {
     name: 'ma-cu-6',
-    initiative: 63, mustShuffle: TextTrackCue, points: 41,
+    initiative: 63, mustShuffle: true, points: 41,
     image: 'monster-ability-cards/cultist/ma-cu-6.png',
     xws: 'macu6'
   },
@@ -1309,7 +1318,7 @@ export const MonsterAbilityCards = [
   },
   {
     name: 'ma-sh-3',
-    initiative: 23, mustShuffle: TextTrackCue, points: 218,
+    initiative: 23, mustShuffle: true, points: 218,
     image: 'monster-ability-cards/shaman/ma-sh-3.png',
     xws: 'mash3'
   },
