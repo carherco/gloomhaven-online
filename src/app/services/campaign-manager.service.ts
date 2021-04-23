@@ -26,7 +26,7 @@ export class CampaignManagerService {
       return {
         id: 'player' + player.name,
         type: 'player',
-        src: 'assets/' + player.characterClass + '_token.png',
+        src: 'assets/' + player.characterClass.id + '_token.png',
         maxHealth: player.hitPoints,
         stats: {
           h: player.hitPoints

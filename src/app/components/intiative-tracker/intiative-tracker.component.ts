@@ -4,6 +4,25 @@ import { ScenarioCreatorService } from 'src/app/services/scenario-creator.servic
 import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
 import { EnemyTracker } from 'src/app/model/monsterAbilityCard';
 import { TokenDef } from 'src/app/data/mapsDef';
+import { Stats } from 'src/app/data/enemiesDefs';
+
+export interface Tracker {
+  id: string;
+  type: 'player'|'enemy';
+  src: string;
+  currentInitiative?: number;
+}
+
+export interface PlayerTracker {
+  id: string;
+  type: 'player'|'enemy';
+  src: string;
+  maxHealth?: number;
+  stats?: Object;
+  status?: Object;
+  currentInitiative?: number;
+}
+
 
 @Component({
   selector: 'app-intiative-tracker',
@@ -13,7 +32,7 @@ import { TokenDef } from 'src/app/data/mapsDef';
 export class IntiativeTrackerComponent implements OnInit {
 
   scenarioId: number;
-  playersTrackers: {id: string, type: 'player'|'enemy', currentInitiative: number}[] = [];
+  playersTrackers: PlayerTracker[] = [];
   summonsTrackers = [];
   enemiesTrackers: EnemyTracker[] = [];
   allTrackersOrderedByInitiative;
@@ -30,12 +49,14 @@ export class IntiativeTrackerComponent implements OnInit {
       const playersTokens =  this.campaignManager.getCharactersTokens().filter( t => t.type === 'player');
       const enemies: TokenDef[] = scenario.tokens.filter( t => ['enemy', 'boss'].includes(t.type));
       this.playersTrackers = playersTokens.map( pt => ({...pt, type: 'player', currentInitiative: null}) );
+      console.log(this.playersTrackers);
       this.enemiesTrackers = this.scenarioCreator.getEnemiesTrackers(enemies);
       this.roundStatus = 'pre-round';
     });
   }
 
   ngOnInit(): void {
+    this.shuffleAllMosntersDecks();
   }
 
   onNextRound() {
@@ -49,8 +70,34 @@ export class IntiativeTrackerComponent implements OnInit {
     this.playersTrackers = this.playersTrackers.map( pt => ({...pt, currentInitiative: null}) );
   }
 
-  shuffleRequiredMosntersDecks() {
+  private shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
 
+  shuffleAllMosntersDecks() {
+    this.enemiesTrackers.forEach(tracker => {
+        tracker.deckCards = tracker.deckCards.concat(tracker.drawnCards);
+        tracker.drawnCards = [];
+        tracker.currentCard = null;
+        this.shuffle(tracker.deckCards);
+      }
+    );
+  }
+
+  shuffleRequiredMosntersDecks() {
+    this.enemiesTrackers.forEach(tracker => {
+        if (tracker.currentCard?.mustShuffle) {
+          tracker.deckCards = tracker.deckCards.concat(tracker.drawnCards);
+          tracker.drawnCards = [];
+          tracker.currentCard = null;
+          this.shuffle(tracker.deckCards);
+        }
+      }
+    );
   }
 
   onDrawCards(): void {
@@ -71,7 +118,7 @@ export class IntiativeTrackerComponent implements OnInit {
   }
 
   orderTrackersByInitiatives() {
-    const allTrackers: {id: string, type: string, currentInitiative: number}[] = this.playersTrackers.concat(this.enemiesTrackers);
+    const allTrackers: Tracker[] = this.playersTrackers.concat(this.enemiesTrackers);
     this.allTrackersOrderedByInitiative = [...allTrackers].sort(
       (a, b) => {
         if (a.currentInitiative < b.currentInitiative) {

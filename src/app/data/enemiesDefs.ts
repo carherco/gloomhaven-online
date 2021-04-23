@@ -330,7 +330,7 @@ const BanditGuard: EnemyDef = {
             m: 2,
             a: 3,
             r: 0,
-            s: '1'
+            s: 1
         }
     },
     2: {
@@ -345,7 +345,7 @@ const BanditGuard: EnemyDef = {
             m: 2,
             a: 4,
             r: 0,
-            s: '1'
+            s: 1
         }
     },
     3: {
@@ -360,7 +360,7 @@ const BanditGuard: EnemyDef = {
             m: 3,
             a: 4,
             r: 0,
-            s: '2'
+            s: 2
         }
     },
     4: {
@@ -376,7 +376,7 @@ const BanditGuard: EnemyDef = {
             a: 4,
             r: 0,
             mu: true,
-            s: '2'
+            s: 2
         }
     },
     5: {
@@ -392,7 +392,7 @@ const BanditGuard: EnemyDef = {
             a: 5,
             r: 0,
             mu: true,
-            s: '2'
+            s: 2
         }
     },
     6: {
@@ -408,7 +408,7 @@ const BanditGuard: EnemyDef = {
             a: 5,
             r: 0,
             mu: true,
-            s: '2'
+            s: 2
         }
     },
     7: {

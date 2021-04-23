@@ -21,6 +21,7 @@
       <img [src]="enemy.src" width="80" height="80">
       <img *ngIf="enemy.currentCard" src="assets/images/{{enemy.currentCard?.image}}" height="80">
       <img *ngIf="!enemy.currentCard" src="assets/images/{{enemy.cardBack.image}}" height="80">
+      <span>{{enemy.deckCards.length}}</span>
     </div>
   </ng-container>
 

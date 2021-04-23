@@ -592,7 +592,7 @@ export const MonsterAbilityCards: MonsterAbilityCard[] = [
   },
   {
     name: 'ma-gu-8',
-    initiative: 15, mustShuffle: false, points: 97,
+    initiative: 15, mustShuffle: true, points: 97,
     image: 'monster-ability-cards/guard/ma-gu-8.png',
     xws: 'magu8'
   },
