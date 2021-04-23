@@ -247,7 +247,7 @@ export const Tinkerer: CharacterClass = {
 };
 
 export const Doomstalker: CharacterClass = {
-  id: 'Doomstalker',
+  id: 'doomstalker',
   key: 'DS',
   race: 'Orchid',
   className: 'Doomstalker',
@@ -289,7 +289,7 @@ export const Doomstalker: CharacterClass = {
 };
 
 export const Sunkeeper: CharacterClass = {
-  id: 'Sunkeeper',
+  id: 'sunkeeper',
   key: 'SK',
   race: 'Valrath',
   className: 'Sunkeeper',
@@ -331,7 +331,7 @@ export const Sunkeeper: CharacterClass = {
 };
 
 export const Elementalist: CharacterClass = {
-  id: 'Elementalist',
+  id: 'elementalist',
   key: 'EL',
   race: 'Savvas',
   className: 'Elementalist',
