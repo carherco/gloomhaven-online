@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SelectPlayerPageComponent } from './select-player-page.component';
 
@@ -6,7 +6,7 @@ describe('SelectPlayerPageComponent', () => {
   let component: SelectPlayerPageComponent;
   let fixture: ComponentFixture<SelectPlayerPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SelectPlayerPageComponent ]
     })

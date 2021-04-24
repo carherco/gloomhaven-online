@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SelectLevelComponent } from './select-level.component';
 
@@ -6,7 +6,7 @@ describe('SelectLevelComponent', () => {
   let component: SelectLevelComponent;
   let fixture: ComponentFixture<SelectLevelComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SelectLevelComponent ]
     })

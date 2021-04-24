@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HpXpLootTrackerComponent } from './hp-xp-loot-tracker.component';
 
@@ -6,7 +6,7 @@ describe('HpXpLootTrackerComponent', () => {
   let component: HpXpLootTrackerComponent;
   let fixture: ComponentFixture<HpXpLootTrackerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HpXpLootTrackerComponent ]
     })

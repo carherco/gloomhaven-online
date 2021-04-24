@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ScenarioResponsiveComponent } from './scenario-responsive.component';
 
@@ -6,7 +6,7 @@ describe('ScenarioResponsiveComponent', () => {
   let component: ScenarioResponsiveComponent;
   let fixture: ComponentFixture<ScenarioResponsiveComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ScenarioResponsiveComponent ]
     })

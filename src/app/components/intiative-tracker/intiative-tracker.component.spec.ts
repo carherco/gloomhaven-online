@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IntiativeTrackerComponent } from './intiative-tracker.component';
 
@@ -6,7 +6,7 @@ describe('IntiativeTrackerComponent', () => {
   let component: IntiativeTrackerComponent;
   let fixture: ComponentFixture<IntiativeTrackerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ IntiativeTrackerComponent ]
     })

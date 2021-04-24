@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalTokenStatsComponent } from './modal-token-stats.component';
 
@@ -6,7 +6,7 @@ describe('ModalTokenStatsComponent', () => {
   let component: ModalTokenStatsComponent;
   let fixture: ComponentFixture<ModalTokenStatsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ModalTokenStatsComponent ]
     })
