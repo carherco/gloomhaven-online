@@ -13,12 +13,14 @@ import { SelectPlayerPageComponent } from './pages/select-player-page/select-pla
 import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'players', component: PlayersPageComponent },
   { path: 'shop', component: ShopPageComponent },
+  { path: 'maps', component: ScenariosPageComponent},
   { path: 'map/:id', component: ScenarioPageComponent },
   { path: 'play', component: GamePageComponent, canActivate: [PlayerSelectedGuard] },
   { path: 'select-player', component: SelectPlayerPageComponent },

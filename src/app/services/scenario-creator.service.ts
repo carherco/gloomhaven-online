@@ -14,6 +14,8 @@ import { Scenarios, TokenDef } from '../data/mapsDef';
 import { MonsterAbilityCardBack, MonsterAbilityCardFront, EnemyTracker } from '../model/monsterAbilityCard';
 import { MonsterAbilityCards } from '../data/monster-ability-cards';
 import { EnemyDef, EnemyDefs } from '../data/enemiesDefs';
+import { SCENARIOS } from '../data/scenarios';
+import { SCENARIO_MONSTERS } from '../data/scenario_mosnters';
 
 @Injectable({
   providedIn: 'root'
@@ -59,22 +61,23 @@ export class ScenarioCreatorService {
   }
 
   getScenarioData(id) {
-    return {...Scenarios[id], tokens: this.getScenarioTokens(id)};
+    return {...Scenarios[id], ...SCENARIOS[id], enemies: SCENARIO_MONSTERS[id].monsters, tokens: this.getScenarioTokens(id)};
   }
 
   getScenarioTokens(id): Token[] {
 
+
     const tokensIds = Scenarios[id].tokens;
-    const output = tokensIds.flatMap(
+    const mapTokens = tokensIds.flatMap(
       t => {
         let tokens: Token[];
         switch (t.type) {
-          case 'enemy':
-            tokens = [
-              new EnemyToken(t.id, 'normal', this.scenarioLevel) as Token,
-              new EnemyToken(t.id, 'elite', this.scenarioLevel) as Token
-            ];
-            break;
+          // case 'enemy':  // Deprecated (no more 'enemy' in map definition)
+          //   tokens = [
+          //     new EnemyToken(t.id, 'normal', this.scenarioLevel) as Token,
+          //     new EnemyToken(t.id, 'elite', this.scenarioLevel) as Token
+          //   ];
+          //   break;
           case 'boss':
             tokens = [new BossToken(t.id, this.scenarioLevel) as Token];
             break;
@@ -84,9 +87,9 @@ export class ScenarioCreatorService {
           case 'trap':
             tokens = [new TrapToken(t.id, this.scenarioLevel) as Token];
             break;
-          case 'loot':
-            tokens = [new LootToken(t.id) as Token];
-            break;
+          // case 'loot': // Deprecated (no more 'treasure' nor 'coin-1' in map definition)
+          //   tokens = [new LootToken(t.id) as Token];
+          //   break;
 
           default:
             tokens = [];
@@ -96,6 +99,21 @@ export class ScenarioCreatorService {
       }
     );
 
+    const enemyTokens: Token[] = [];
+    SCENARIO_MONSTERS[id].monsters.forEach(
+      mosnter => {
+        const normalToken = new EnemyToken(mosnter.name, 'normal', this.scenarioLevel) as Token;
+        const eliteToken = new EnemyToken(mosnter.name, 'elite', this.scenarioLevel) as Token;
+        enemyTokens.push(normalToken, eliteToken)
+      }
+    );
+
+    const output: Token[] = [
+      ...enemyTokens,
+      ...mapTokens,
+      new LootToken('treasure') as Token,
+      new LootToken('coin-1') as Token
+    ];
     return output;
   }
 

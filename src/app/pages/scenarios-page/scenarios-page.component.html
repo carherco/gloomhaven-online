@@ -1,0 +1,5 @@
+<div>Select Scenario</div>
+
+<div *ngFor="let scenario of scenarios; let i=index;">
+  <a [routerLink]="['/map/',i+1]" [class.completed]="completedScenariosIds.includes(i+1)">{{i+1}} {{scenario.title}}</a>
+</div>

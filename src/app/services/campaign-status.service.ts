@@ -24,6 +24,7 @@ export interface CampaignStatus {
   amountGoldDonated: number;
   cityEventsDeck: number[];
   roadEventsDeck: number[];
+  completedScenarios: number[];
 }
 
 export const INITIAL_STATUS: CampaignStatus = {
@@ -51,6 +52,7 @@ export const INITIAL_STATUS: CampaignStatus = {
     10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
   ],
+  completedScenarios: [],
 };
 
 const EXPERIENCE_MILESTONES = [0, 45, 95, 150, 210, 275, 345, 420, 500];
@@ -118,6 +120,7 @@ export class CampaignStatusService {
       amountGoldDonated: this.status.amountGoldDonated,
       cityEventsDeck: [...this.status.cityEventsDeck],
       roadEventsDeck: [...this.status.roadEventsDeck],
+      completedScenarios: [...this.status.completedScenarios],
     };
   }
 
@@ -205,6 +208,7 @@ export class CampaignStatusService {
   completeScenario(payload: CompleteScenarioPayload) {
     this.status = this.cloneStatus();
     const bonusExperience = 4 + 2 * payload.level;
+    this.status.completedScenarios.push(payload.scenarioId);
 
     // Player Results
     payload.playersResults.forEach(

@@ -36,6 +36,7 @@ class WaterToken implements Token {
 
 class EnemyToken {
   constructor(id: string, type: 'normal'|'elite', level: number) {
+    id = id.split(' ').join('-');
     let token: Token;
     const enemyDef = EnemyDefs[id];
     if (type === 'elite') {

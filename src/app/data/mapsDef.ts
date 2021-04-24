@@ -99,14 +99,14 @@ const Scenario23Matrix = [
 ];
 
 const Scenario23Tokens: TokenDef[] = [
-  {id: 'Stone-Golem', type: 'enemy' },
-  {id: 'Ancient-Artillery', type: 'enemy' },
-  {id: 'Living-Bones', type: 'enemy' },
-  {id: 'Living-Spirit', type: 'enemy' },
+  // {id: 'Stone-Golem', type: 'enemy' },
+  // {id: 'Ancient-Artillery', type: 'enemy' },
+  // {id: 'Living-Bones', type: 'enemy' },
+  // {id: 'Living-Spirit', type: 'enemy' },
   {id: 'damage-trap', type: 'trap' },
   {id: 'boulder', type: 'obstacle' },
-  {id: 'treasure', type: 'loot' },
-  {id: 'coin-1', type: 'loot' },
+  // {id: 'treasure', type: 'loot' },
+  // {id: 'coin-1', type: 'loot' },
 ];
 
 const Scenario23 = {

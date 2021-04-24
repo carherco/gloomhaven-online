@@ -48,6 +48,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProsperityTrackComponent } from './components/prosperity-track/prosperity-track.component';
 import { DonationsTrackComponent } from './components/donations-track/donations-track.component';
 import { ReputationTrackComponent } from './components/reputation-track/reputation-track.component';
+import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { ReputationTrackComponent } from './components/reputation-track/reputati
     HomePageComponent,
     ProsperityTrackComponent,
     DonationsTrackComponent,
-    ReputationTrackComponent
+    ReputationTrackComponent,
+    ScenariosPageComponent
   ],
   imports: [
     BrowserModule,
