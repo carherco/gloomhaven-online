@@ -49,6 +49,7 @@ import { ProsperityTrackComponent } from './components/prosperity-track/prosperi
 import { DonationsTrackComponent } from './components/donations-track/donations-track.component';
 import { ReputationTrackComponent } from './components/reputation-track/reputation-track.component';
 import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
+import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/player-campaigns-page.component';
 
 
 @NgModule({
@@ -90,7 +91,8 @@ import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.co
     ProsperityTrackComponent,
     DonationsTrackComponent,
     ReputationTrackComponent,
-    ScenariosPageComponent
+    ScenariosPageComponent,
+    PlayerCampaignsPageComponent
   ],
   imports: [
     BrowserModule,

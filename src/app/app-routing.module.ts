@@ -14,6 +14,7 @@ import { ScenarioPageComponent } from './pages/scenario-page/scenario-page.compo
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
+import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/player-campaigns-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'log', component: LogPageComponent },
   { path: 'map-creator', component: MapCreatorPageComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'campaigns', component: PlayerCampaignsPageComponent },
 ];
 
 @NgModule({

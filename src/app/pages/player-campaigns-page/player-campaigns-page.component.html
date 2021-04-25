@@ -1,0 +1,7 @@
+<p>Select your campaign</p>
+
+<div *ngFor="let campaign of campaigns$ | async">
+  {{ campaign.partyName }}
+</div>
+
+<button>Create new Campaign</button>
