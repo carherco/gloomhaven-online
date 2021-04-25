@@ -55,6 +55,7 @@
   <ng-template #elseBlock>
     <div id="board" class="col-12">
       <p>El mapa no ha sido registrado en la base de datos.</p>
+      <button class="btn btn-primary" (click)="goTocreateMap()">Crear Mapa</button>
       <button class="btn btn-primary" (click)="registerMap()">Registrar</button>
     </div>
   </ng-template>

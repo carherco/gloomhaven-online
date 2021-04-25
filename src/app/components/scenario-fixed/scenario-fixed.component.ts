@@ -3,7 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Token } from 'src/app/model/token';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
 import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
 
@@ -49,6 +49,7 @@ export class ScenarioFixedComponent implements OnInit {
     private scenarioCreator: ScenarioCreatorService,
     private campaignManager: CampaignManagerService,
     private route: ActivatedRoute,
+    private router: Router,
     private afs: AngularFirestore,
     private cdr: ChangeDetectorRef,
     private modalService: NgbModal
@@ -180,6 +181,10 @@ export class ScenarioFixedComponent implements OnInit {
   save() {
     const preparedDoc = {scenarioId: this.scenarioId, currentMatrix: JSON.stringify(this.currentMatrix)};
     this.firebaseItemsCollection.doc(this.currentMatrixFirebaseId).set(preparedDoc);
+  }
+
+  goTocreateMap() {
+    this.router.navigate(['map-creator']);
   }
 
 }
