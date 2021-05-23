@@ -13,8 +13,8 @@ export const Characters = [
     },
     level: 8,
     hitPoints: Doomstalker.hitPoints[7], // el nivel -1
-    experience: 476,
-    gold: 112,
+    experience: 493,
+    gold: 152,
     perkTicks: 18,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
@@ -52,9 +52,9 @@ export const Characters = [
     },
     level: 6,
     hitPoints: Sunkeeper.hitPoints[5], // el nivel -1
-    experience: 275,
+    experience: 296,
     gold: 66,
-    perkTicks: 2,
+    perkTicks: 3,
     ownedAbilityCards: [
       ...Sunkeeper.levelXCards,
       ...Sunkeeper.level1Cards,
@@ -67,7 +67,7 @@ export const Characters = [
       ...Sunkeeper.level8Cards,
       ...Sunkeeper.level9Cards
     ],
-    ownedItems: [74, 38, 2, 20, 13],
+    ownedItems: [74, 38, 2, 20, 13, 18],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -81,13 +81,13 @@ export const Characters = [
     personalQuest: {
       id: 525,
       title: 'Piety in All Things',
-      progress: 2,
+      progress: 4,
       total: 12,
     },
-    level: 5,
+    level: 6,
     hitPoints: Elementalist.hitPoints[4], // el nivel -1
-    experience: 268,
-    gold: 38,
+    experience: 287,
+    gold: 6,
     perkTicks: 4,
     ownedAbilityCards: [
       ...Elementalist.levelXCards,
@@ -95,27 +95,22 @@ export const Characters = [
       'crystallizing-blast',
       'chain-lightning',
       'primal-duality',
-      '?????',
-      ...Elementalist.level2Cards,
-      ...Elementalist.level3Cards,
-      ...Elementalist.level4Cards,
-      ...Elementalist.level5Cards,
-      ...Elementalist.level6Cards,
-      ...Elementalist.level7Cards,
-      ...Elementalist.level8Cards,
-      ...Elementalist.level9Cards,
+      'winters-edge',
+      'simulacrum'
     ],
-    ownedItems: [2, 5, 6, 34, 14],
+    ownedItems: [2, 5, 6, 34, 14, 20, 33],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
-      'swPerk2-1',
-      'swPerk2-2',
-      'swPerk3-1', // No funciona bien este perk, no se marca en el html
-      'swPerk5',
-      'swPerk8-1',
-      'swPerk9-1',
-      'swPerk11',
+      'elPerk1-1',
+      'elPerk1-2',
+      'elPerk4',
+      'elPerk5',
+      'elPerk6',
+      'elPerk7',
+      'elPerk8',
+      'elPerk9',
+      'elPerk11',
     ],
   },
   {
@@ -128,11 +123,11 @@ export const Characters = [
       progress: 6,
       total: 12,
     },
-    level: 7,
+    level: 8,
     hitPoints: Brute.hitPoints[6], // el nivel -1
-    experience: 399,
-    gold: 39,
-    perkTicks: 8,
+    experience: 427,
+    gold: 55,
+    perkTicks: 9,
     ownedAbilityCards: [
       ...Brute.levelXCards,
       ...Brute.level1Cards

@@ -75,6 +75,25 @@ export class Plus0Stun {
   id = 'plus0stun';
   src = 'Plus0Stun.png';
 }
+export class Plus0Fire {
+  id = 'plus0Fire';
+  src = 'Plus0Fire.png';
+}
+
+export class Plus0Frost {
+  id = 'plus0Frost';
+  src = 'Plus0Frost.png';
+}
+
+export class Plus0Wind {
+  id = 'plus0Wind';
+  src = 'Plus0Wind.png';
+}
+
+export class Plus0Earth {
+  id = 'plus0Earth';
+  src = 'Plus0Earth.png';
+}
 
 export class Plus1Rolling {
   id = 'plus1Rolling';
@@ -109,6 +128,11 @@ export class Plus1Curse {
 export class Pull1Rolling {
   id = 'pull1Rolling';
   src = 'RollingPull1.png';
+}
+
+export class Plus1Push1 {
+  id = 'plus1Push1';
+  src = 'Plus1Push1.png';
 }
 
 export class Plus2Muddle {

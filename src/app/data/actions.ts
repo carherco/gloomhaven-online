@@ -1020,5 +1020,35 @@ export function loadCampaing(): CampaignStatus {
     rewards: {itemDesigns: [123]}
   });
 
+  campaign.resolveCityEvent({eventId: 23, rewards: {reputation: 1}, discard: true});
+
+  campaign.makeDonation({playerName: 'El Alquimista'});
+
+  campaign.buyItem({playerName: 'Lux Lucitana', itemId: 18});
+
+  // Unlock "Demonic Rift (90)"
+  campaign.resolveRoadEvent({eventId: 44,  discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 76,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 5, g: 20} },
+      { playerName: 'Lux Lucitana', playerResults: {xp: 9, g: 16, t: 1} },
+      { playerName: 'El Alquimista', playerResults: {xp: 7, g: 20} },
+      { playerName: 'Einar', playerResults: {xp: 16, g: 16, t: 1} },
+    ]
+  });
+
+  // We burrow deep but the central clue cannot be found.
+  // It is lost to us.
+  // The only thing left to do is ask the creator directly.
+  // Send him "dust" and nothing else.
+  // => "S".
+
+  campaign.buyItem({playerName: 'El Alquimista', itemId: 20});
+  campaign.buyItem({playerName: 'El Alquimista', itemId: 33});
+  campaign.makeDonation({playerName: 'El Alquimista'});
+
   return campaign.getStatus();
 }
