@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemType, ItemDef } from 'src/app/model/item';
 import { ITEMS } from 'src/app/data/items';
+import { CampaignStatusService } from 'src/app/services/campaign-status.service';
 
 @Component({
   selector: 'app-shop-page',
@@ -20,17 +21,26 @@ export class ShopPageComponent implements OnInit {
   items: ItemDef[] = [];
   itemTypeSelected: ItemType = 'all';
 
-  priceModifier;
+  priceModifier = 0;
 
-  reputation = 14;
+  reputation = 0;
+  prosperityLevel = 0;
   private priceModifierMap = [
     -5, -5, -4, -4, -4, -4, -3, -3, -3, -3, -2, -2, -2, -2, -1, -1, -1, -1,
     0, 0, 0, 0, 0,
     1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5
   ];
 
-  constructor() {
-    this.priceModifier = this.priceModifierMap[20 - this.reputation];
+  constructor(private campaign: CampaignStatusService) {
+    const status$ = this.campaign.getStatus$();
+    status$.subscribe(
+      status => {
+        this.prosperityLevel = status.city.prosperityLevel;
+        this.reputation = status.party.reputation;
+        this.priceModifier = this.priceModifierMap[20 - this.reputation];
+      }
+    );
+
     this.items = ITEMS.filter( (item, index) => this.itemIndexes.includes(index + 1) );
   }
 

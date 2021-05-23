@@ -23,7 +23,8 @@ export const Characters = [
       'press-the-attack',
       'flight-of-flame',
       'wild-command',
-      'camouflage'
+      'camouflage',
+      'impeding-end'
     ],
     ownedItems: [1, 13, 5, 12, 33, 108],
     scenarioAbilityCards: [],
@@ -37,7 +38,12 @@ export const Characters = [
       'dsPerk9-1',
       'dsPerk9-2',
       'dsPerk10',
-      'dsPerk2-1',
+      'dsPerk3-1',
+      'dsPerk3-2',
+      'dsPerk4',
+      'dsPerk5',
+      'dsPerk6',
+      'dsPerk8',
     ],
   },
   {
@@ -110,7 +116,6 @@ export const Characters = [
       'elPerk7',
       'elPerk8',
       'elPerk9',
-      'elPerk11',
     ],
   },
   {
