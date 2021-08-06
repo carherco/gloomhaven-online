@@ -56,3 +56,7 @@ Como el proyecto no está alojado en la raíz del dominio, sino que está en htt
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Repo Visualizer
+
+![Visualization of the codebase](./diagram.svg)
