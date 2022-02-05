@@ -1,7 +1,16 @@
 import { Player } from '../model/player';
 import { Cragheart, Tinkerer } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
-import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload } from '../data/actions';
+import {
+  CreateCharacterPayload,
+  GainGlobalAchievementPayload,
+  GainPartyAchievementPayload,
+  CompleteScenarioPayload,
+  BuyItemPayload, SellItemPayload,
+  MakeDonationPayload,
+  ResolveCityEventPayload,
+  ResolveRoadEventPayload
+} from '../data/actions';
 import { INITIAL_STATUS, CampaignStatusService, CampaignStatus } from '../services/campaign-status.service';
 
 const players: Player[] = [
@@ -29,6 +38,8 @@ function getClonedInitialStatus(): CampaignStatus {
     amountGoldDonated: INITIAL_STATUS.amountGoldDonated,
     cityEventsDeck: [...INITIAL_STATUS.cityEventsDeck],
     roadEventsDeck: [...INITIAL_STATUS.roadEventsDeck],
+    completedScenarios: [...INITIAL_STATUS.completedScenarios],
+    unlockedScenarios: [...INITIAL_STATUS.unlockedScenarios],
   };
 }
 
@@ -287,7 +298,7 @@ fdescribe('Scenarios', () => {
         prosperity: 1,
         reputation: 1
       },
-      scenariosUnblocked: [2]
+      scenariosUnlocked: [2]
     };
     campaign.completeScenario(payload);
 
@@ -361,7 +372,7 @@ fdescribe('Shop', () => {
     // El ítem vale 20
     const status = campaign.getStatus();
     expect(status.characters[2].gold).toEqual(10);
-    expect(status.characters[2].ownedItems.includes(2)).toBeTrue;
+    expect(status.characters[2].ownedItems.includes(2)).toBeTrue();
   });
 
   it('Sell Item', () => {
@@ -414,7 +425,7 @@ fdescribe('Shop', () => {
     // El ítem vale 20
     const status = campaign.getStatus();
     expect(status.characters[2].gold).toEqual(20);
-    expect(status.characters[2].ownedItems.includes(2)).toBeFalse;
+    expect(status.characters[2].ownedItems.includes(2)).toBeFalse();
   });
 });
 
@@ -512,7 +523,7 @@ fdescribe('City Events', () => {
     // Asserts
     const status = campaign.getStatus();
     expect(status.party.reputation).toEqual(1);
-    expect(status.cityEventsDeck.includes(1)).toBeTrue;
+    expect(status.cityEventsDeck.includes(1)).toBeTrue();
   });
 });
 
@@ -533,7 +544,7 @@ fdescribe('Road Events', () => {
     // Asserts
     const status = campaign.getStatus();
     expect(status.party.reputation).toEqual(1);
-    expect(status.roadEventsDeck.includes(8)).toBeFalse;
+    expect(status.roadEventsDeck.includes(8)).toBeFalse();
   });
 });
 

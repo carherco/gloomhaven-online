@@ -50,7 +50,7 @@ export interface CompleteScenarioPayload {
     xp?: number,
     itemDesigns?: number[],
   };
-  scenariosUnblocked?: number[];
+  scenariosUnlocked?: number[];
 }
 
 export interface CompleteSoloScenarioPayload {
@@ -195,7 +195,7 @@ export function loadCampaing(): CampaignStatus {
     rewards: {
       partyAchievement: 'First Steps',
     },
-    scenariosUnblocked: [2]
+    scenariosUnlocked: [2]
   });
 
   campaign.completeScenario({
@@ -211,7 +211,7 @@ export function loadCampaing(): CampaignStatus {
       prosperity: 1,
       gold: 10
     },
-    scenariosUnblocked: [3, 4]
+    scenariosUnlocked: [3, 4]
   });
 
   campaign.buyItem({playerName: 'Nightmare', itemId: 2});
@@ -232,7 +232,7 @@ export function loadCampaing(): CampaignStatus {
       prosperity: 1,
       gold: 15
     },
-    scenariosUnblocked: [8, 9]
+    scenariosUnlocked: [8, 9]
   });
 
   campaign.buyItem({playerName: 'Lorkham', itemId: 3});
@@ -261,7 +261,7 @@ export function loadCampaing(): CampaignStatus {
       prosperity: 1,
       gold: 20
     },
-    scenariosUnblocked: [11, 12]
+    scenariosUnlocked: [11, 12]
   });
 
   //TODO: Este evento necesita más payload (añadir evento ciudad 70 )
@@ -316,7 +316,7 @@ export function loadCampaing(): CampaignStatus {
       globalAchievement: "City Rule: Economic y End of Invasion",
       itemDesigns: [113]
     },
-    scenariosUnblocked: [16, 18]
+    scenariosUnlocked: [16, 18]
   });
 
   campaign.resolveCityEvent({eventId: 24, playersResults: [
@@ -362,7 +362,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Nightmare', playerResults: {xp: 5, g: 0, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 13, g: 15, t: 1} },
     ],
-    scenariosUnblocked: [24, 25]
+    scenariosUnlocked: [24, 25]
   });
 
   campaign.resolveCityEvent({eventId: 28, playersResults: [
@@ -388,7 +388,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Nightmare', playerResults: {xp: 5, g: 15, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 9, g: 21, t: 1} },
     ],
-    scenariosUnblocked: [14, 23, 26, 43]
+    scenariosUnlocked: [14, 23, 26, 43]
   });
 
   // TODO: Unlock scenario 81
@@ -514,7 +514,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Psycho', playerResults: {xp: 8, g: 3} },
     ],
     rewards: {reputation: 1, itemDesigns: [74]},
-    scenariosUnblocked: [58]
+    scenariosUnlocked: [58]
   });
 
   campaign.makeDonation({playerName: 'Divayth Fyr'});
@@ -872,7 +872,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 8, g: 20, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 5, g: 28, t: 1} },
     ],
-    scenariosUnblocked: [60]
+    scenariosUnlocked: [60]
   });
 
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
@@ -1017,7 +1017,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'El Alquimista', playerResults: {xp: 7, g: 16, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 12, g: 16, t: 1, pq: 1} },
     ],
-    rewards: {itemDesigns: [123]}
+    rewards: {itemDesigns: [123]},
+    scenariosUnlocked: [5, 6]
   });
 
   campaign.resolveCityEvent({eventId: 23, rewards: {reputation: 1}, discard: true});

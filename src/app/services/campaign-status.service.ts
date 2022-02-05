@@ -25,6 +25,7 @@ export interface CampaignStatus {
   cityEventsDeck: number[];
   roadEventsDeck: number[];
   completedScenarios: number[];
+  unlockedScenarios: number[];
 }
 
 export const INITIAL_STATUS: CampaignStatus = {
@@ -53,6 +54,7 @@ export const INITIAL_STATUS: CampaignStatus = {
     20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
   ],
   completedScenarios: [],
+  unlockedScenarios: [],
 };
 
 const EXPERIENCE_MILESTONES = [0, 45, 95, 150, 210, 275, 345, 420, 500];
@@ -121,6 +123,7 @@ export class CampaignStatusService {
       cityEventsDeck: [...this.status.cityEventsDeck],
       roadEventsDeck: [...this.status.roadEventsDeck],
       completedScenarios: [...this.status.completedScenarios],
+      unlockedScenarios: [...this.status.unlockedScenarios],
     };
   }
 
@@ -225,6 +228,7 @@ export class CampaignStatusService {
     // Other Rewards
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
     this.status.party.reputation += payload.rewards?.reputation ?? 0;
+    if (payload.scenariosUnlocked) {this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.scenariosUnlocked); }
 
     // Check if any player has leveled up
     this.checkLevelUps();
