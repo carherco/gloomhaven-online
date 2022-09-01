@@ -920,6 +920,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveRoadEvent({eventId: 1, discard: false});
 
+  // Premio de 2 Major Healing Potion
   campaign.completeScenario({
     scenarioId: 68,
     level: 4,
@@ -1045,11 +1046,29 @@ export function loadCampaing(): CampaignStatus {
   // It is lost to us.
   // The only thing left to do is ask the creator directly.
   // Send him "dust" and nothing else.
+  // Enviar un email al creador del juego y te responde:
   // => "S".
 
   campaign.buyItem({playerName: 'El Alquimista', itemId: 20});
   campaign.buyItem({playerName: 'El Alquimista', itemId: 33});
   campaign.makeDonation({playerName: 'El Alquimista'});
+  campaign.buyItem({playerName: 'Divayth Fyr', itemId: 27});
+
+  campaign.resolveCityEvent({eventId: 43, playersResults: [
+    { playerName: 'Divayth Fyr', playerResults: {g: -5} },
+  ], rewards: {addCityEvents: [61]}, discard: true});
+  campaign.resolveRoadEvent({eventId: 1, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 84,
+    level: 4,
+    playersResults: [
+      { playerName: 'Divayth Fyr', playerResults: {xp: 12, g: 20} },
+      { playerName: 'El Alquimista', playerResults: {xp: 8, g: 24, items: [133]} },
+      { playerName: 'Einar', playerResults: {xp: 12, g: 24, t: 1, pq: 1} },
+    ],
+    rewards: {prosperity: 1, itemDesigns: [75]}
+  });
 
   return campaign.getStatus();
 }

@@ -11,10 +11,10 @@ export const Characters = [
       progress: 2,
       total: 4,
     },
-    level: 8,
-    hitPoints: Doomstalker.hitPoints[7], // el nivel -1
-    experience: 493,
-    gold: 152,
+    level: 9,
+    hitPoints: Doomstalker.hitPoints[8], // el nivel -1
+    experience: 517,
+    gold: 141,
     perkTicks: 18,
     ownedAbilityCards: [
       ...Doomstalker.levelXCards,
@@ -24,9 +24,11 @@ export const Characters = [
       'flight-of-flame',
       'wild-command',
       'camouflage',
-      'impeding-end'
+      'impending-end',
+      'feral-instincts',
+      'predator-and-prey'
     ],
-    ownedItems: [1, 13, 5, 12, 33, 108],
+    ownedItems: [1, 13, 5, 12, 33, 108, 27],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -44,6 +46,7 @@ export const Characters = [
       'dsPerk5',
       'dsPerk6',
       'dsPerk8',
+      'dsPerk7',
     ],
   },
   {
@@ -64,20 +67,23 @@ export const Characters = [
     ownedAbilityCards: [
       ...Sunkeeper.levelXCards,
       ...Sunkeeper.level1Cards,
-      ...Sunkeeper.level2Cards,
-      ...Sunkeeper.level3Cards,
-      ...Sunkeeper.level4Cards,
-      ...Sunkeeper.level5Cards,
-      ...Sunkeeper.level6Cards,
-      ...Sunkeeper.level7Cards,
-      ...Sunkeeper.level8Cards,
-      ...Sunkeeper.level9Cards
+      'practical-plans',
+      'mobilizing-axiom',
+      'righteous-strength',
+      'path-of-glory',
+      'supportive-chant'
     ],
     ownedItems: [74, 38, 2, 20, 13, 18],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
-
+      'skPerk1-1',
+      'skPerk1-2',
+      'skPerk2',
+      'skPerk8-1',
+      'skPerk8-2',
+      'skPerk10',
+      'skPerk11'
     ],
   },
   {
@@ -92,8 +98,8 @@ export const Characters = [
     },
     level: 6,
     hitPoints: Elementalist.hitPoints[4], // el nivel -1
-    experience: 287,
-    gold: 6,
+    experience: 307,
+    gold: 30,
     perkTicks: 4,
     ownedAbilityCards: [
       ...Elementalist.levelXCards,
@@ -104,7 +110,7 @@ export const Characters = [
       'winters-edge',
       'simulacrum'
     ],
-    ownedItems: [2, 5, 6, 34, 14, 20, 33],
+    ownedItems: [2, 5, 6, 34, 14, 20, 33, 133],
     scenarioAbilityCards: [],
     scenarioItems: [],
     perks: [
@@ -125,14 +131,14 @@ export const Characters = [
     personalQuest: {
       id: 527,
       title: 'Zealot of the Blood God',
-      progress: 6,
+      progress: 7,
       total: 12,
     },
     level: 8,
     hitPoints: Brute.hitPoints[6], // el nivel -1
-    experience: 427,
-    gold: 55,
-    perkTicks: 9,
+    experience: 451,
+    gold: 79,
+    perkTicks: 10,
     ownedAbilityCards: [
       ...Brute.levelXCards,
       ...Brute.level1Cards
