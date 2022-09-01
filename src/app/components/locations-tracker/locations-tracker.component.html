@@ -1,0 +1,7 @@
+<h2>Locations</h2>
+
+<ul>
+  <li *ngFor="let location of locations" class.available="location.status === 'Available" class.completed="location.status === 'Completed" class.blocked="location.status === 'Blocked">
+    {{location.id}} {{location.title}} ({{location.status}})
+  </li>
+</ul>

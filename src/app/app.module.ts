@@ -50,6 +50,7 @@ import { DonationsTrackComponent } from './components/donations-track/donations-
 import { ReputationTrackComponent } from './components/reputation-track/reputation-track.component';
 import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
 import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/player-campaigns-page.component';
+import { LocationsTrackerComponent } from './components/locations-tracker/locations-tracker.component';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/play
     DonationsTrackComponent,
     ReputationTrackComponent,
     ScenariosPageComponent,
-    PlayerCampaignsPageComponent
+    PlayerCampaignsPageComponent,
+    LocationsTrackerComponent
   ],
   imports: [
     BrowserModule,

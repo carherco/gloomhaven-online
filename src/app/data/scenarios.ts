@@ -1,8 +1,23 @@
 import * as ACHIEVEMENTS from './achievements';
 import * as PARTY from './achievements';
 
-export const SCENARIOS = [
-  {}, // dummy scenario 0, just to make indexing by scenario number easier - eg. scenarios[1] refers to scenario number 1
+export type Scenario = {
+  title: string,
+  globalAchievementsRequired: string[],
+  globalAchievementsRequiredIncomplete: string[],
+  partyAchievementsRequired: string[],
+  onlyOneAchievementRequired?: true
+};
+
+export type ScenarioWithStatus = Scenario & {id: number, status: 'Blocked'|'Available'|'Completed'};
+
+export const SCENARIOS: Scenario[] = [
+  {
+    title: 'dummy',
+    globalAchievementsRequired: [],
+    globalAchievementsRequiredIncomplete: [],
+    partyAchievementsRequired: []
+  }, // dummy scenario 0, just to make indexing by scenario number easier - eg. scenarios[1] refers to scenario number 1
   {
     title: 'Black Barrow',
     globalAchievementsRequired: [],
