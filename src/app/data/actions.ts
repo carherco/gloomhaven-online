@@ -1,6 +1,7 @@
 import { CharacterClass } from '../model/character-class';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
+import { GLOBAL_ACHIEVEMENTS, PARTY_ACHIEVEMENTS } from './achievements';
 import { Brute, Cragheart, Doomstalker, Elementalist, Mindthief, Spellweaver, Sunkeeper, Tinkerer } from './charactersDef';
 import { PersonalQuestDef, PERSONAL_QUESTS } from './personal-quests';
 
@@ -42,8 +43,8 @@ export interface CompleteScenarioPayload {
   level: number;
   playersResults: {playerName: string, playerResults: {xp: number, g?: number, t?: number, pq?: number, items?: number[] }}[];
   rewards?: {
-    partyAchievement?: string,
-    globalAchievement?: string,
+    partyAchievements?: string[],
+    globalAchievements?: string[],
     prosperity?: number,
     reputation?: number,
     gold?: number,
@@ -82,8 +83,8 @@ export interface ResolveCityEventPayload {
   eventId: number;
   playersResults?: {playerName: string, playerResults: {xp?: number, g?: number, t?: number, items?: number[]}}[];
   rewards?: {
-    partyAchievement?: string,
-    globalAchievement?: string,
+    partyAchievements?: string[],
+    globalAchievements?: string[],
     prosperity?: number,
     reputation?: number,
     addCityEvents?: number[],
@@ -97,8 +98,8 @@ export interface ResolveRoadEventPayload {
   eventId: number;
   playersResults?: {playerName: string, playerResults: {xp?: number, g?: number, t?: number, items?: number[]}}[];
   rewards?: {
-    partyAchievement?: string,
-    globalAchievement?: string,
+    partyAchievements?: string[],
+    globalAchievements?: string[],
     prosperity?: number,
     reputation?: number,
     addCityEvents?: number[],
@@ -193,7 +194,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Psycho', playerResults: {xp: 8, g: 4} },
     ],
     rewards: {
-      partyAchievement: 'First Steps',
+      partyAchievements: [PARTY_ACHIEVEMENTS.FIRST_STEPS],
     },
     scenariosUnlocked: [2]
   });
@@ -244,7 +245,7 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Lorkham', playerResults: {g: -3} },
     { playerName: 'Farts Like Thunder', playerResults: {g: -4, items: [125]} },
     { playerName: 'Psycho', playerResults: {g: -3} },
-  ], rewards: {partyAchievement: 'Ancient Technology'}, discard: true});
+  ], rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_1]}, discard: true});
 
   campaign.resolveRoadEvent({eventId: 3, discard: false});
 
@@ -264,13 +265,12 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [11, 12]
   });
 
-  //TODO: Este evento necesita más payload (añadir evento ciudad 70 )
   campaign.resolveCityEvent({eventId: 16, playersResults: [
     { playerName: 'Lorkham', playerResults: {g: -4} },
     { playerName: 'Farts Like Thunder', playerResults: {g: -2} },
     { playerName: 'Nightmare', playerResults: {g: -2} },
     { playerName: 'Psycho', playerResults: {g: -2} },
-  ],rewards: {}, discard: true});
+  ], rewards: {addCityEvents: [70]}, discard: true});
 
   campaign.failScenario({
     scenarioId: 11,
@@ -299,8 +299,6 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Psycho', playerResults: {t: -1} },
   ], rewards: {reputation: 1}, discard: true});
 
-  // TODO: Diseño de item 113
-  // TODO: 2 global achievements
   campaign.completeScenario({
     scenarioId: 11,
     level: 2,
@@ -313,7 +311,7 @@ export function loadCampaing(): CampaignStatus {
     rewards: {
       prosperity: 2,
       gold: 15,
-      globalAchievement: "City Rule: Economic y End of Invasion",
+      globalAchievements: [GLOBAL_ACHIEVEMENTS.CITY_RULE_ECONOMIC, GLOBAL_ACHIEVEMENTS.END_OF_THE_INVASION],
       itemDesigns: [113]
     },
     scenariosUnlocked: [16, 18]
@@ -478,7 +476,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Nightmare', playerResults: {xp: 6, g: 0, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 11, g: 3, t: 1} },
     ],
-    rewards: {globalAchievement: 'Ancient Technology', partyAchievement: 'Through the ruins'}
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2], partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]}
   });
 
   campaign.resolveCityEvent({eventId: 70, rewards: {reputation: -1}, discard: false});
@@ -495,7 +493,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Nightmare', playerResults: {xp: 6, g: 13, t: 2} },
       { playerName: 'Psycho', playerResults: {xp: 13, g: 3} },
     ],
-    rewards: {reputation: 1, prosperity: 2, partyAchievement: 'Through the ruins'}
+    rewards: {reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]},
+    scenariosUnlocked: [22]
   });
 
   campaign.resolveCityEvent({eventId: 5, playersResults: [
@@ -577,7 +576,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 8, g: 12, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 7, g: 36} },
     ],
-    rewards: {globalAchievement: 'The Power of Enhancement'},
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_POWER_OF_ENHANCEMENT]},
   });
 
   campaign.resolveCityEvent({eventId: 2, playersResults: [
@@ -623,7 +622,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 18, g: 9, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 12, g: 3, t: 1, items: [98]} },
     ],
-    rewards: {globalAchievement: 'Water Breath'},
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.WATER_BREATHING]},
   });
 
   campaign.buyItem({playerName: 'Medea', itemId: 27});
@@ -713,7 +712,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 6, g: 12, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 5, g: 12} },
     ],
-    rewards: {partyAchievement: 'The Voice’s Command'}
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND]}
   });
 
   campaign.resolveCityEvent({eventId: 19, playersResults: [
@@ -734,7 +733,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 5, g: 6, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 7, g: 0, t: 1} },
     ],
-    rewards: {partyAchievement: 'The Scepter and the Voice', gold: 10}
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_SCEPTER_AND_THE_VOICE], gold: 10}
   });
 
   campaign.resolveCityEvent({eventId: 7, playersResults: [
@@ -756,7 +755,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 6, g: 6, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 9, t: 1} },
     ],
-    rewards: {globalAchievement: `The Voice's Silenced`}
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_SILENCED]}
   });
 
   // THE CREATOR HAS MADE A REQUEST FOR OUR SPOILS
@@ -791,7 +790,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 11, g: 0, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 11, g: 15, t: 1} },
     ],
-    rewards: {partyAchievement: `The Drake's Command`}
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]}
   });
 
   campaign.resolveCityEvent({eventId: 45, rewards: {addCityEvents: [62]}, discard: true});
@@ -800,13 +799,12 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveRoadEvent({eventId: 38, rewards: {prosperity: 1}, discard: true});
 
-    // TODO: 5 forest imps
   campaign.failScenario({
     scenarioId: 72,
     level: 4,
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 9, g: 12} },
-      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 0} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 0, pq: 5} },
       { playerName: 'Medea', playerResults: {xp: 13, g: 8} },
       { playerName: 'Einar', playerResults: {xp: 9, g: 12} },
     ]
@@ -829,13 +827,12 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveRoadEvent({eventId: 15, discard: false});
 
-  // TODO: 3 forest imps
   campaign.completeScenario({
     scenarioId: 72,
     level: 4,
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 6, g: 0} },
-      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 4} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 0, g: 4, pq: 3} },
       { playerName: 'Medea', playerResults: {xp: 19, g: 16, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 16, g: 20, t: 1} },
     ],
@@ -1008,7 +1005,6 @@ export function loadCampaing(): CampaignStatus {
   campaign.resolveCityEvent({eventId: 71, rewards: {addCityEvents: [72]}, discard: true});
   campaign.resolveRoadEvent({eventId: 14, discard: false});
 
-  // TODO: Item design 123
   campaign.completeScenario({
     scenarioId: 4,
     level: 4,
