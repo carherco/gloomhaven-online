@@ -234,15 +234,26 @@ export class CampaignStatusService {
     this.status.party.achievements = this.status.party.achievements.filter( item => item !== payload.name );
   }
 
+  gainReputation(amount: number = 1) {
+    this.status = this.cloneStatus();
+    this.status.party.reputation += amount;
+    this.status.shop.priceModifier = PRICE_MODIFIER_MAP[20 - this.status.party.reputation];
+  }
+
   gainProsperity(amount: number = 1) {
     this.status = this.cloneStatus();
     this.status.city.prosperityPoints += amount;
     if (this.status.city.prosperityPoints >= PROSPERITY_MILESTONES[this.status.city.prosperityLevel - 1]) {
-      this.status.city.prosperityLevel += 1;
-      const newItems = PROSPERITY_LEVEL_ITEMS[this.status.city.prosperityLevel];
-      // Quitar ítems repetidos y ya puestos, ordenar ítems
-      this.status.shop.items = Array.from(new Set(this.status.shop.items.concat(newItems))).sort((a,b)=>a-b);
+      this.levelUpCityProsperityLevel();
     }
+  }
+
+  levelUpCityProsperityLevel() {
+    this.status = this.cloneStatus();
+    this.status.city.prosperityLevel += 1;
+    const newItems = PROSPERITY_LEVEL_ITEMS[this.status.city.prosperityLevel];
+    // Quitar ítems repetidos y ya puestos, ordenar ítems
+    this.status.shop.items = Array.from(new Set(this.status.shop.items.concat(newItems))).sort((a, b) => a - b);
   }
 
   private checkLevelUps() {
@@ -279,7 +290,7 @@ export class CampaignStatusService {
 
     // Other Rewards
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
-    this.status.party.reputation += payload.rewards?.reputation ?? 0;
+    if (payload.rewards?.reputation) { this.gainReputation(payload.rewards.reputation); }
     if (payload.scenariosUnlocked) {this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.scenariosUnlocked); }
     if (payload.rewards?.globalAchievements) {
       payload.rewards?.globalAchievements.forEach( achievement => this.gainGlobalAchievement({type: 'todo-type', name: achievement}));
@@ -349,7 +360,7 @@ export class CampaignStatusService {
     const character = this.findCharacterByName(payload.playerName);
     const itemIndex = payload.itemId - 1;
     const item = ITEMS[itemIndex];
-    const priceModifier = PRICE_MODIFIER_MAP[20 - this.status.party.reputation];
+    const priceModifier = this.status.shop.priceModifier;
     character.gold -= (item.price + priceModifier);
     character.ownedItems.push(payload.itemId);
   }
@@ -402,7 +413,7 @@ export class CampaignStatusService {
 
     // Other Rewards
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
-    this.status.party.reputation += payload.rewards?.reputation ?? 0;
+    if (payload.rewards?.reputation) { this.gainReputation(payload.rewards.reputation); }
     if (payload.rewards?.addCityEvents) { payload.rewards?.addCityEvents.forEach( eventId => this.addCityEvent(eventId) ); }
     if (payload.rewards?.addRoadEvents) { payload.rewards?.addRoadEvents.forEach( eventId => this.addRoadEvent(eventId) ); }
 
@@ -450,7 +461,7 @@ export class CampaignStatusService {
 
     // Other Rewards
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
-    this.status.party.reputation += payload.rewards?.reputation ?? 0;
+    if (payload.rewards?.reputation) { this.gainReputation(payload.rewards.reputation); }
     if (payload.rewards?.addCityEvents) { payload.rewards?.addCityEvents.forEach( eventId => this.addCityEvent(eventId) ); }
     if (payload.rewards?.addRoadEvents) { payload.rewards?.addRoadEvents.forEach( eventId => this.addRoadEvent(eventId) ); }
 
