@@ -188,6 +188,16 @@ export class CampaignStatusService {
     this.status.party.achievements.push(payload.name);
   }
 
+  looseGlobalAchievement(payload: GainGlobalAchievementPayload) {
+    this.status = this.cloneStatus();
+    this.status.city.achievements = this.status.city.achievements.filter( item => item !== payload.name );
+  }
+
+  loosePartyAchievement(payload: GainPartyAchievementPayload) {
+    this.status = this.cloneStatus();
+    this.status.party.achievements = this.status.party.achievements.filter( item => item !== payload.name );
+  }
+
   gainProsperity(amount: number = 1) {
     this.status = this.cloneStatus();
     this.status.city.prosperityPoints += amount;
@@ -229,7 +239,18 @@ export class CampaignStatusService {
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
     this.status.party.reputation += payload.rewards?.reputation ?? 0;
     if (payload.scenariosUnlocked) {this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.scenariosUnlocked); }
-
+    if (payload.rewards?.globalAchievements) {
+      payload.rewards?.globalAchievements.forEach( achievement => this.gainGlobalAchievement({type: 'todo-type', name: achievement}));
+    }
+    if (payload.rewards?.partyAchievements) {
+      payload.rewards?.partyAchievements.forEach( achievement => this.gainPartyAchievement({name: achievement}));
+    }
+    if (payload.rewards?.looseGlobalAchievements) {
+      payload.rewards?.looseGlobalAchievements.forEach( achievement => this.looseGlobalAchievement({type: 'todo-type', name: achievement}));
+    }
+    if (payload.rewards?.loosePartyAchievements) {
+      payload.rewards?.loosePartyAchievements.forEach( achievement => this.loosePartyAchievement({name: achievement}));
+    }
     // Check if any player has leveled up
     this.checkLevelUps();
   }
@@ -326,6 +347,13 @@ export class CampaignStatusService {
     if (payload.rewards?.addCityEvents) { payload.rewards?.addCityEvents.forEach( eventId => this.addCityEvent(eventId) ); }
     if (payload.rewards?.addRoadEvents) { payload.rewards?.addRoadEvents.forEach( eventId => this.addRoadEvent(eventId) ); }
 
+    if (payload.rewards?.globalAchievements) {
+      payload.rewards?.globalAchievements.forEach( achievement => this.gainGlobalAchievement({type: 'todo-type', name: achievement}));
+    }
+    if (payload.rewards?.partyAchievements) {
+      payload.rewards?.partyAchievements.forEach( achievement => this.gainPartyAchievement({name: achievement}));
+    }
+
     // Discard or not
     if (payload.discard) {
       this.status.cityEventsDeck = this.status.cityEventsDeck.filter(
@@ -343,7 +371,7 @@ export class CampaignStatusService {
     this.status = this.cloneStatus();
 
     // Player Results
-    if(payload.playersResults) {
+    if (payload.playersResults) {
       payload.playersResults.forEach(
         player => {
           const character = this.findCharacterByName(player.playerName);
@@ -353,6 +381,13 @@ export class CampaignStatusService {
           character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
         }
       );
+    }
+
+    if (payload.rewards?.globalAchievements) {
+      payload.rewards?.globalAchievements.forEach( achievement => this.gainGlobalAchievement({type: 'todo-type', name: achievement}));
+    }
+    if (payload.rewards?.partyAchievements) {
+      payload.rewards?.partyAchievements.forEach( achievement => this.gainPartyAchievement({name: achievement}));
     }
 
     // Other Rewards

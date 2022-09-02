@@ -50,6 +50,8 @@ export interface CompleteScenarioPayload {
     gold?: number,
     xp?: number,
     itemDesigns?: number[],
+    loosePartyAchievements?: string[],
+    looseGlobalAchievements?: string[],
   };
   scenariosUnlocked?: number[];
 }
@@ -745,7 +747,6 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveRoadEvent({eventId: 12, rewards: {reputation: 1}, discard: true});
 
-  // TODO: Lost Party Achievement: The Voice's Command,
   campaign.completeScenario({
     scenarioId: 42,
     level: 3,
@@ -755,7 +756,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 6, g: 6, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 9, t: 1} },
     ],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_SILENCED]}
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_SILENCED], loosePartyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND]}
   });
 
   // THE CREATOR HAS MADE A REQUEST FOR OUR SPOILS
