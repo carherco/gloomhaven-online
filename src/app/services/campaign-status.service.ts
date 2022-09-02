@@ -1,11 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Player } from '../model/player';
-import { CharacterClass } from '../model/character-class';
 import { Character } from '../model/character';
-import { PersonalQuestDef, PERSONAL_QUESTS } from '../data/personal-quests';
+import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { ITEMS } from '../data/items';
-import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, FailScenarioPayload, RetireCharacterPayload, EnhanceAbilityPayload, CompleteSoloScenarioPayload, UnblockCharacterPayload } from '../data/actions';
-import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
+import {
+  CreateCharacterPayload,
+  GainGlobalAchievementPayload,
+  GainPartyAchievementPayload,
+  CompleteScenarioPayload,
+  BuyItemPayload,
+  SellItemPayload,
+  MakeDonationPayload,
+  ResolveCityEventPayload,
+  ResolveRoadEventPayload,
+  FailScenarioPayload,
+  RetireCharacterPayload,
+  EnhanceAbilityPayload,
+  CompleteSoloScenarioPayload,
+  UnblockCharacterPayload
+} from '../data/actions';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface CampaignStatus {
   party: {
@@ -101,10 +115,6 @@ export class CampaignStatusService {
   }
 
   cloneStatus() {
-    // console.log('Prosperity: ' + this.status.city.prosperityPoints);
-    // console.log('Reputation: ' + this.status.party.reputation);
-    // console.log('E: ' + this.findCharacterByName('Einar')?.gold);
-
     return {
       party: {
         name: this.status.party.name,
@@ -143,7 +153,7 @@ export class CampaignStatusService {
       name: payload.name,
       characterClass: payload.characterClass,
       personalQuest: {...payload.personalQuest, progress: 0},
-      level: level,
+      level,
       hitPoints: 0,
       experience: EXPERIENCE_MILESTONES[level - 1],
       gold: 15 * level + 15,
@@ -320,7 +330,7 @@ export class CampaignStatusService {
     const character = this.findCharacterByName(payload.playerName);
     character.gold -= 10;
     this.status.amountGoldDonated += 10;
-    if(character.personalQuest.id === PERSONAL_QUESTS[525].id) {
+    if (character.personalQuest.id === PERSONAL_QUESTS[525].id) {
       character.personalQuest.progress += 10;
     }
     if (DONATIONS_MILESTONES.includes(this.status.amountGoldDonated)) {
@@ -333,7 +343,7 @@ export class CampaignStatusService {
     this.status = this.cloneStatus();
 
     // Player Results
-    if(payload.playersResults) {
+    if (payload.playersResults) {
       payload.playersResults.forEach(
         player => {
           const character = this.findCharacterByName(player.playerName);
