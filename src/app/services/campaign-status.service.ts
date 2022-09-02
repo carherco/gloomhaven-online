@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Player } from '../model/player';
 import { CharacterClass } from '../model/character-class';
 import { Character } from '../model/character';
-import { PersonalQuestDef } from '../data/personal-quests';
+import { PersonalQuestDef, PERSONAL_QUESTS } from '../data/personal-quests';
 import { ITEMS } from '../data/items';
 import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, FailScenarioPayload, RetireCharacterPayload, EnhanceAbilityPayload, CompleteSoloScenarioPayload, UnblockCharacterPayload } from '../data/actions';
 import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
@@ -320,9 +320,13 @@ export class CampaignStatusService {
     const character = this.findCharacterByName(payload.playerName);
     character.gold -= 10;
     this.status.amountGoldDonated += 10;
+    if(character.personalQuest.id === PERSONAL_QUESTS[525].id) {
+      character.personalQuest.progress += 10;
+    }
     if (DONATIONS_MILESTONES.includes(this.status.amountGoldDonated)) {
       this.gainProsperity(1);
     }
+
   }
 
   resolveCityEvent(payload: ResolveCityEventPayload) {

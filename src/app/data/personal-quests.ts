@@ -20,7 +20,7 @@ export const PERSONAL_QUESTS = {
   522: {id: 522, title: 'The Thin Places', total: 6 },
   523: {id: 523, title: 'Aberrant Slayer', total: 6 },
   524: {id: 524, title: 'Fearless Stand', total: 20 },
-  525: {id: 525, title: 'Piety in all Things', total: 12 },
+  525: {id: 525, title: 'Piety in all Things', total: 120 },
   526: {id: 526, title: 'Vengeance', total: 4 },
   527: {id: 527, title: 'Zealot of the Blood God', total: 12 },
   528: {id: 528, title: 'Goliath Toppler', total: 4 },
