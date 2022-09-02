@@ -87,6 +87,16 @@ const PRICE_MODIFIER_MAP = [
   0, 0, 0, 0, 0,
   1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5
 ];
+const PROSPERITY_LEVEL_ITEMS = [
+  [], // dummy level 0
+  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], // level 1 items
+  [15, 16, 17, 18, 19, 20, 21], // level 2 items
+  [22, 23, 24, 25, 26, 27, 28], // level 3 items
+  [29, 30, 31, 32, 33, 34, 35], // level 4 items
+  [36, 37, 38, 39, 40, 41, 42], // level 5 items
+  [43, 44, 45, 46, 47, 48, 49], // level 6 items
+  [50, 51, 52, 53, 54, 55, 56], // level 7 items
+];
 
 @Injectable({
   providedIn: 'root'
@@ -229,6 +239,9 @@ export class CampaignStatusService {
     this.status.city.prosperityPoints += amount;
     if (this.status.city.prosperityPoints >= PROSPERITY_MILESTONES[this.status.city.prosperityLevel - 1]) {
       this.status.city.prosperityLevel += 1;
+      const newItems = PROSPERITY_LEVEL_ITEMS[this.status.city.prosperityLevel];
+      // Quitar ítems repetidos y ya puestos, ordenar ítems
+      this.status.shop.items = Array.from(new Set(this.status.shop.items.concat(newItems))).sort((a,b)=>a-b);
     }
   }
 
