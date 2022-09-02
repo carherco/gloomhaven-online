@@ -27,6 +27,8 @@ export interface RetireCharacterPayload {
   name: string;
   cityEventsToAdd: number[];
   roadEventsToAdd: number[];
+  scenariosUnlocked?: number[];
+  itemDesigns?: number[];
 }
 
 export interface GainGlobalAchievementPayload {
@@ -686,10 +688,7 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Psycho', playerResults: {g: -3} },
   ], discard: false});
 
-  campaign.retireCharacter({name: 'Psycho', cityEventsToAdd: [47], roadEventsToAdd: [47]});
-  // TODO:
-  // - Random Item 076 Chain Hood
-  // - Random Map 68 Toxic Moor
+  campaign.retireCharacter({name: 'Psycho', cityEventsToAdd: [47], roadEventsToAdd: [47], itemDesigns: [76], scenariosUnlocked: [68]});
 
   campaign.createCharacter({
     playerId: players[3].uid,
@@ -846,7 +845,6 @@ export function loadCampaing(): CampaignStatus {
   campaign.sellItem({playerName: 'Divayth Fyr', itemId: 147});
   campaign.buyItem({playerName: 'Einar', itemId: 20});
 
-  // Aquí va 1 de prosperity automático ya contemplado
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
 
   // Enhancement: Divayth Fyr: XXXXXXX, Bless (-50g)
@@ -894,8 +892,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
   campaign.makeDonation({playerName: 'Medea'});
 
-  // Random Item 077, Random Map 65
-  campaign.retireCharacter({name: 'Farts Like Thunder', cityEventsToAdd: [43], roadEventsToAdd: [43]});
+  campaign.retireCharacter({name: 'Farts Like Thunder', cityEventsToAdd: [43], roadEventsToAdd: [43], itemDesigns: [77], scenariosUnlocked: [65]});
 
   campaign.createCharacter({
     playerId: players[1].uid,
