@@ -1,5 +1,9 @@
-export const TREASURES = [
-	{ }, // dummy treasure zero (there is no treasure zero)
+export type Treasure = {
+  title: string;
+};
+
+export const TREASURES: Treasure[] = [
+	{ title: 'dummy' }, // dummy treasure zero (there is no treasure zero)
 	{ title: 'Random Item Design' },
 	{ title: 'Tower Shield (Item 32)' },
 	{ title: 'Splintmail (Item 44)' },

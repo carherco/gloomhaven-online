@@ -51,6 +51,7 @@ import { ReputationTrackComponent } from './components/reputation-track/reputati
 import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
 import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/player-campaigns-page.component';
 import { LocationsTrackerComponent } from './components/locations-tracker/locations-tracker.component';
+import { TreasuresTrackerComponent } from './components/treasures-tracker/treasures-tracker.component';
 
 
 @NgModule({
@@ -94,7 +95,8 @@ import { LocationsTrackerComponent } from './components/locations-tracker/locati
     ReputationTrackComponent,
     ScenariosPageComponent,
     PlayerCampaignsPageComponent,
-    LocationsTrackerComponent
+    LocationsTrackerComponent,
+    TreasuresTrackerComponent
   ],
   imports: [
     BrowserModule,
