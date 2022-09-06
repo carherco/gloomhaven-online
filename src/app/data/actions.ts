@@ -67,6 +67,13 @@ export interface FailScenarioPayload {
   scenarioId: number;
   level: number;
   playersResults: {playerName: string, playerResults: {xp: number, g?: number, pq?: number, items?: number[]}}[];
+  rewards?: { // Puede haber premios en tesoros
+    prosperity?: number,
+    reputation?: number,
+    gold?: number,
+    xp?: number,
+    itemDesigns?: number[],
+  };
 }
 
 export interface BuyItemPayload {
@@ -235,7 +242,8 @@ export function loadCampaing(): CampaignStatus {
     ],
     rewards: {
       prosperity: 1,
-      gold: 15
+      gold: 15,
+      itemDesigns: [107]
     },
     scenariosUnlocked: [8, 9]
   });
@@ -340,7 +348,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Farts Like Thunder', playerResults: {xp: 15, g: 15} },
       { playerName: 'Nightmare', playerResults: {xp: 8, g: 27} },
       { playerName: 'Psycho', playerResults: {xp: 11, g: 27} },
-    ]
+    ],
+    rewards: {itemDesigns: [81]},
   });
 
   campaign.resolveCityEvent({eventId: 15, rewards: {reputation: -2}, discard: true});
@@ -364,6 +373,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Nightmare', playerResults: {xp: 5, g: 0, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 13, g: 15, t: 1} },
     ],
+    rewards: {itemDesigns: [88]},
     scenariosUnlocked: [24, 25]
   });
 
@@ -480,7 +490,11 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Nightmare', playerResults: {xp: 6, g: 0, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 11, g: 3, t: 1} },
     ],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2], partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]}
+    rewards: {
+      itemDesigns: [116],
+      globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2],
+      partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]
+    }
   });
 
   campaign.resolveCityEvent({eventId: 70, rewards: {reputation: -1}, discard: false});
@@ -654,6 +668,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 5, g: 13, t: 0} },
       { playerName: 'Psycho', playerResults: {xp: 14, g: 3, t: 1} },
     ],
+    scenariosUnlocked: [56]
   });
 
   campaign.makeDonation({playerName: 'Psycho'});
@@ -671,12 +686,12 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 56,
     level: 3,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 11, g: 10, t: 2} },
-      { playerName: 'Farts Like Thunder', playerResults: {xp: 8, g: 25, t: 1} },
-      { playerName: 'Medea', playerResults: {xp: 12, g: 22, t: 2} },
-      { playerName: 'Psycho', playerResults: {xp: 13, g: 19, t: 1} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 11, g: 0, t: 2} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 8, g: 15, t: 1} },
+      { playerName: 'Medea', playerResults: {xp: 12, g: 12, t: 2} },
+      { playerName: 'Psycho', playerResults: {xp: 13, g: 9, t: 1} },
     ],
-    rewards: {reputation: 2}
+    rewards: {reputation: 2, gold: 10}
   });
 
   campaign.makeDonation({playerName: 'Psycho'});
@@ -713,7 +728,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 6, g: 12, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 5, g: 12} },
     ],
-    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND]}
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND]},
+    scenariosUnlocked: [30, 32]
   });
 
   campaign.resolveCityEvent({eventId: 19, playersResults: [
@@ -734,7 +750,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 5, g: 6, t: 2} },
       { playerName: 'Einar', playerResults: {xp: 7, g: 0, t: 1} },
     ],
-    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_SCEPTER_AND_THE_VOICE], gold: 10}
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_SCEPTER_AND_THE_VOICE], gold: 10},
+    scenariosUnlocked: [42]
   });
 
   campaign.resolveCityEvent({eventId: 7, playersResults: [
@@ -790,7 +807,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Medea', playerResults: {xp: 11, g: 0, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 11, g: 15, t: 1} },
     ],
-    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]}
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]},
+    scenariosUnlocked: [33, 34]
   });
 
   campaign.resolveCityEvent({eventId: 45, rewards: {addCityEvents: [62]}, discard: true});
@@ -892,7 +910,13 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
   campaign.makeDonation({playerName: 'Medea'});
 
-  campaign.retireCharacter({name: 'Farts Like Thunder', cityEventsToAdd: [43], roadEventsToAdd: [43], itemDesigns: [77], scenariosUnlocked: [65]});
+  campaign.retireCharacter({
+    name: 'Farts Like Thunder',
+    cityEventsToAdd: [43],
+    roadEventsToAdd: [43],
+    itemDesigns: [77],
+    scenariosUnlocked: [65]
+  });
 
   campaign.createCharacter({
     playerId: players[1].uid,
@@ -920,10 +944,10 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 68,
     level: 4,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 4, g: 8, items: [19]} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 4, g: 8, items: [19, 27]} },
       { playerName: 'Lux Lucitana', playerResults: {xp: 10, g: 16} },
       { playerName: 'Medea', playerResults: {xp: 20, g: 8} },
-      { playerName: 'Einar', playerResults: {xp: 11, g: 28, t: 1} },
+      { playerName: 'Einar', playerResults: {xp: 11, g: 28, t: 1, items: [27]} },
     ]
   });
 
@@ -964,7 +988,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 24} },
       { playerName: 'El Alquimista', playerResults: {xp: 6, g: 24, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 6, g: 15, t: 1} },
-    ]
+    ],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_3], itemDesigns: [112]}
   });
 
   campaign.buyItem({playerName: 'Einar', itemId: 18});
@@ -992,7 +1017,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Lux Lucitana', playerResults: {xp: 7, g: 12} },
       { playerName: 'El Alquimista', playerResults: {xp: 6, g: 4, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 10, g: 0, pq: 1} },
-    ], rewards: {gold: 20, reputation: 2, prosperity: 1}
+    ], rewards: {gold: 20, reputation: 2, prosperity: 1, globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_DRAKE_SLAIN], loosePartyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]}
   });
 
   campaign.sellItem({playerName: 'Divayth Fyr', itemId: 103});
@@ -1046,7 +1071,6 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'El Alquimista', itemId: 20});
   campaign.buyItem({playerName: 'El Alquimista', itemId: 33});
   campaign.makeDonation({playerName: 'El Alquimista'});
-  campaign.buyItem({playerName: 'Divayth Fyr', itemId: 27});
 
   campaign.resolveCityEvent({eventId: 43, playersResults: [
     { playerName: 'Divayth Fyr', playerResults: {g: -5} },

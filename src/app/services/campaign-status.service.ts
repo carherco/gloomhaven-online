@@ -202,7 +202,7 @@ export class CampaignStatusService {
     this.gainProsperity();
     if (payload.scenariosUnlocked) {this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.scenariosUnlocked); }
     if (payload.itemDesigns) {
-      payload.itemDesigns.forEach( itemId => this.status.shop.items.push(itemId));
+      payload.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
     }
   }
 
@@ -283,7 +283,7 @@ export class CampaignStatusService {
         character.personalQuest.progress += player.playerResults.pq ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
         if (player.playerResults.items) {
-          player.playerResults.items.forEach( itemId => this.status.shop.items.push(itemId));
+          player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
         }
       }
     );
@@ -305,7 +305,7 @@ export class CampaignStatusService {
       payload.rewards?.loosePartyAchievements.forEach( achievement => this.loosePartyAchievement({name: achievement}));
     }
     if (payload.rewards?.itemDesigns) {
-      payload.rewards?.itemDesigns.forEach( itemId => this.status.shop.items.push(itemId));
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
     }
     // Check if any player has leveled up
     this.checkLevelUps();
@@ -324,7 +324,7 @@ export class CampaignStatusService {
         character.perkTicks += player.playerResults.t ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
         if (player.playerResults.items) {
-          player.playerResults.items.forEach( itemId => this.status.shop.items.push(itemId));
+          player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
         }
       }
     );
@@ -333,7 +333,6 @@ export class CampaignStatusService {
     this.checkLevelUps();
   }
 
-  // TODO: También puede haber algunos premios al fallar escenarios por tesoros encontrados
   failScenario(payload: FailScenarioPayload) {
     this.status = this.cloneStatus();
 
@@ -346,10 +345,17 @@ export class CampaignStatusService {
         character.personalQuest.progress += player.playerResults.pq ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
         if (player.playerResults.items) {
-          player.playerResults.items.forEach( itemId => this.status.shop.items.push(itemId));
+          player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
         }
       }
     );
+
+    // Other Rewards (por tesoros)
+    if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
+    if (payload.rewards?.reputation) { this.gainReputation(payload.rewards.reputation); }
+    if (payload.rewards?.itemDesigns) {
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+    }
 
     // Check if any player has leveled up
     this.checkLevelUps();
@@ -405,7 +411,7 @@ export class CampaignStatusService {
           character.perkTicks += player.playerResults.t ?? 0;
           character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
           if (player.playerResults.items) {
-            player.playerResults.items.forEach( itemId => this.status.shop.items.push(itemId));
+            player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
           }
         }
       );
@@ -424,7 +430,7 @@ export class CampaignStatusService {
       payload.rewards?.partyAchievements.forEach( achievement => this.gainPartyAchievement({name: achievement}));
     }
     if (payload.rewards?.itemDesigns) {
-      payload.rewards?.itemDesigns.forEach( itemId => this.status.shop.items.push(itemId));
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
     }
 
     // Discard or not
@@ -453,7 +459,7 @@ export class CampaignStatusService {
           character.perkTicks += player.playerResults.t ?? 0;
           character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
           if (player.playerResults.items) {
-            player.playerResults.items.forEach( itemId => this.status.shop.items.push(itemId));
+            player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
           }
         }
       );
@@ -472,7 +478,7 @@ export class CampaignStatusService {
       payload.rewards?.partyAchievements.forEach( achievement => this.gainPartyAchievement({name: achievement}));
     }
     if (payload.rewards?.itemDesigns) {
-      payload.rewards?.itemDesigns.forEach( itemId => this.status.shop.items.push(itemId));
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
     }
 
     // Discard or not
@@ -489,7 +495,7 @@ export class CampaignStatusService {
   }
 
   addCityEvent(eventId: number) {
-    this.status = this.cloneStatus();
+    //this.status = this.cloneStatus();
     this.status.cityEventsDeck.push(eventId);
   }
 
@@ -511,5 +517,12 @@ export class CampaignStatusService {
     this.status = this.cloneStatus();
     payload.cityEventsToAdd.forEach( eventId => this.addCityEvent(eventId));
     payload.roadEventsToAdd.forEach( eventId => this.addRoadEvent(eventId));
+  }
+
+  addItemToShop(itemId: number) {
+    this.status = this.cloneStatus();
+    this.status.shop.items.push(itemId);
+    // Quitar ítems repetidos y ya puestos, ordenar ítems
+    this.status.shop.items = Array.from(new Set(this.status.shop.items)).sort((a: number, b: number) => a - b);
   }
 }

@@ -21,7 +21,7 @@ export class ShopPageComponent {
     75, 133
   ];
 
-// Faltan estos 5 en el cálculo automatizado: 107,81(tesoro nº 63),88(tesoro nº 01),116,112
+// Hay uno extra en el cálculo automatizado: 125
 
   items: ItemDef[] = [];
   itemTypeSelected: ItemType = 'all';
@@ -35,6 +35,7 @@ export class ShopPageComponent {
       status => {
         this.prosperityLevel = status.city.prosperityLevel;
         this.priceModifier = status.shop.priceModifier;
+        this.itemIndexes = status.shop.items;
       }
     );
 
