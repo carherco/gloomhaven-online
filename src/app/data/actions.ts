@@ -473,7 +473,7 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[530]
   });
 
-  campaign.resolveCityEvent({eventId: 21, discard: false});
+  campaign.resolveCityEvent({eventId: 21, discard: true});
 
   campaign.buyItem({playerName: 'Divayth Fyr', itemId: 1});
   campaign.buyItem({playerName: 'Divayth Fyr', itemId: 13});
@@ -506,12 +506,12 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 26,
     level: 2,
     playersResults: [
-      { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 16, t: 1} },
-      { playerName: 'Farts Like Thunder', playerResults: {xp: 15, g: 16, t: 1, items: [33]} },
-      { playerName: 'Nightmare', playerResults: {xp: 6, g: 13, t: 2} },
+      { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 6, t: 1} },
+      { playerName: 'Farts Like Thunder', playerResults: {xp: 15, g: 6, t: 1, items: [33]} },
+      { playerName: 'Nightmare', playerResults: {xp: 6, g: 3, t: 2} },
       { playerName: 'Psycho', playerResults: {xp: 13, g: 3} },
     ],
-    rewards: {reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]},
+    rewards: {gold: 10, reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.FOLLOWING_CLUES]},
     scenariosUnlocked: [22]
   });
 
@@ -865,7 +865,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.makeDonation({playerName: 'Farts Like Thunder'});
 
-  // Enhancement: Divayth Fyr: XXXXXXX, Bless (-50g)
+  // Enhancement: Divayth Fyr: A Moment's Peace, Bless (-50g)
   campaign.enhanceAbility({playerName: 'Divayth Fyr', gold: 50});
   // Enhancement: Medea: Impaling Eruption, +1 Range (-60g)
   campaign.enhanceAbility({playerName: 'Medea', gold: 60});
@@ -945,9 +945,9 @@ export function loadCampaing(): CampaignStatus {
     level: 4,
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 4, g: 8, items: [19, 27]} },
-      { playerName: 'Lux Lucitana', playerResults: {xp: 10, g: 16} },
+      { playerName: 'Lux Lucitana', playerResults: {xp: 10, g: 16, items: [27]} },
       { playerName: 'Medea', playerResults: {xp: 20, g: 8} },
-      { playerName: 'Einar', playerResults: {xp: 11, g: 28, t: 1, items: [27]} },
+      { playerName: 'Einar', playerResults: {xp: 11, g: 28, t: 1} },
     ]
   });
 
@@ -1005,7 +1005,7 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Einar', playerResults: {g: -2} },
     { playerName: 'Divayth Fyr', playerResults: {g: -1} },
     { playerName: 'El Alquimista', playerResults: {g: -1} },
-  ], discard: true});
+  ], rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.TREMORS]}, discard: true});
 
   campaign.resolveRoadEvent({eventId: 3, discard: false});
 

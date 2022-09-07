@@ -200,6 +200,8 @@ export class CampaignStatusService {
       c => c.name !== payload.name
     );
     this.gainProsperity();
+    payload.cityEventsToAdd.forEach( eventId => this.addCityEvent(eventId));
+    payload.roadEventsToAdd.forEach( eventId => this.addRoadEvent(eventId));
     if (payload.scenariosUnlocked) {this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.scenariosUnlocked); }
     if (payload.itemDesigns) {
       payload.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
