@@ -101,6 +101,7 @@ export interface ResolveCityEventPayload {
     addCityEvents?: number[],
     addRoadEvents?: number[],
     itemDesigns?: number[],
+    scenariosUnlocked?: number[]
   };
   discard: boolean;
 }
@@ -116,6 +117,7 @@ export interface ResolveRoadEventPayload {
     addCityEvents?: number[],
     addRoadEvents?: number[],
     itemDesigns?: number[],
+    scenariosUnlocked?: number[]
   };
   discard: boolean;
 }
@@ -403,8 +405,10 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [14, 23, 26, 43]
   });
 
-  // TODO: Unlock scenario 81
-  campaign.resolveCityEvent({eventId: 17, discard: true});
+  campaign.resolveCityEvent({eventId: 17,
+    rewards: {scenariosUnlocked: [81]},
+    discard: true
+  });
 
   campaign.makeDonation({playerName: 'Lorkham'});
   campaign.makeDonation({playerName: 'Nightmare'});
@@ -939,7 +943,6 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveRoadEvent({eventId: 1, discard: false});
 
-  // Premio de 2 Major Healing Potion
   campaign.completeScenario({
     scenarioId: 68,
     level: 4,

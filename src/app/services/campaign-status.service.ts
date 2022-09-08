@@ -435,6 +435,10 @@ export class CampaignStatusService {
       payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
     }
 
+    if (payload.rewards?.scenariosUnlocked) {
+      this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.rewards?.scenariosUnlocked);
+    }
+
     // Discard or not
     if (payload.discard) {
       this.status.cityEventsDeck = this.status.cityEventsDeck.filter(
@@ -481,6 +485,10 @@ export class CampaignStatusService {
     }
     if (payload.rewards?.itemDesigns) {
       payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+    }
+
+    if (payload.rewards?.scenariosUnlocked) {
+      this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.rewards?.scenariosUnlocked);
     }
 
     // Discard or not
