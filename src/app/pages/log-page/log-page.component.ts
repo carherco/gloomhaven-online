@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CampaignStatusService } from 'src/app/services/campaign-status.service';
+import { CampaignStatus, CampaignStatusService } from 'src/app/services/campaign-status.service';
 import { tap } from 'rxjs/operators';
 import { SCENARIOS, ScenarioWithStatus } from 'src/app/data/scenarios';
 import { SCENARIO_TREAURES, TREASURES, TREASURE_SCENARIOS } from 'src/app/data/treasures';
@@ -15,6 +15,7 @@ function sortScenarios(a: number, b: number): number {
 })
 export class LogPageComponent {
 
+  public status: CampaignStatus;
   public scenarios: ScenarioWithStatus[] = [];
   private unlockedButNotPlayedScenarios: ScenarioWithStatus[];
   private completedScenarios: ScenarioWithStatus[];
@@ -24,6 +25,7 @@ export class LogPageComponent {
   constructor(private campaign: CampaignStatusService) {
     const status$ = this.campaign.getStatus$();
     status$.pipe(
+      tap(status => this.status = status),
       tap(
         status => {
           const unlockedScenariosIds = status.unlockedScenarios;
