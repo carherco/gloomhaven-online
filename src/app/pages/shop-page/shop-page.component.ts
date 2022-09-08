@@ -16,12 +16,10 @@ export class ShopPageComponent {
     22, 23, 24, 25, 26, 27, 28,
     29, 30, 31, 32, 33, 34, 35,
     36, 37, 38, 39, 40, 41, 42,
-    107, 113, 81, 88, 130, 116, 74, 44, 98, 77,
+    125, 107, 113, 81, 88, 130, 116, 74, 44, 98, 77,
     135, 139, 147, 76, 108, 112, 103, 123,
     75, 133
   ];
-
-// Hay uno extra en el cálculo automatizado: 125
 
   items: ItemDef[] = [];
   itemTypeSelected: ItemType = 'all';
@@ -36,9 +34,10 @@ export class ShopPageComponent {
         this.prosperityLevel = status.city.prosperityLevel;
         this.priceModifier = status.shop.priceModifier;
         this.itemIndexes = status.shop.items;
+        this.items = ITEMS.filter( (_item, index) => this.itemIndexes.includes(index + 1) );
       }
     );
 
-    this.items = ITEMS.filter( (item, index) => this.itemIndexes.includes(index + 1) );
+
   }
 }
