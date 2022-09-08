@@ -7,6 +7,7 @@ export interface ItemDef {
   type: ItemType;
   use: ItemAction;
   price: number;
+  amount: number;
   points?: number;
   xws?: string;
 }
