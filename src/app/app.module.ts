@@ -52,6 +52,7 @@ import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.co
 import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/player-campaigns-page.component';
 import { LocationsTrackerComponent } from './components/locations-tracker/locations-tracker.component';
 import { TreasuresTrackerComponent } from './components/treasures-tracker/treasures-tracker.component';
+import { PlayerSheetComponent } from './components/player-sheet/player-sheet.component';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { TreasuresTrackerComponent } from './components/treasures-tracker/treasu
     ScenariosPageComponent,
     PlayerCampaignsPageComponent,
     LocationsTrackerComponent,
-    TreasuresTrackerComponent
+    TreasuresTrackerComponent,
+    PlayerSheetComponent
   ],
   imports: [
     BrowserModule,

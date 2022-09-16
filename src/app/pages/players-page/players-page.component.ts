@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Character } from 'src/app/model/character';
 import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-players-page',
@@ -13,13 +12,8 @@ export class PlayersPageComponent {
   characters: Character[];
   selectedCharacter: Character;
 
-  constructor(private campService: CampaignManagerService, private modalService: NgbModal) {
+  constructor(private campService: CampaignManagerService, ) {
     this.characters = this.campService.getCharacters();
-  }
-
-  openPQModal(modalContent, character: Character) {
-    this.selectedCharacter = character;
-    this.modalService.open(modalContent, { centered: true });
   }
 
 }

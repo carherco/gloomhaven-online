@@ -1,0 +1,42 @@
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{character.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <img src="assets/images/personal-goals/pg-{{character.personalQuest.id}}.png">
+  </div>
+</ng-template>
+
+<div  class="player" >
+  <div class="row">
+    <div align="center" class="col-12 player-name">{{character.name}}</div>
+  </div>
+  <div class="row">
+    <div class="player-img">
+        <img class="character" src="./assets/{{character.characterClass.image}}" />
+    </div>
+    <div class="player-stats">
+      <div>{{character.characterClass.race}} {{character.characterClass.className}}</div>
+      <div>Personal Quest: </div>
+      <div>
+        {{character.personalQuest.title}} ({{character.personalQuest.progress}} / {{character.personalQuest.total}})
+        <span (click)="openPQModal(modalContent)">
+          <svg class="bi bi-eye-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5 8a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+            <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" clip-rule="evenodd"/>
+          </svg>
+        </span>
+      </div>
+      <div>Level: {{character.level}}</div>
+      <div>XP: {{character.experience}}</div>
+      <div>Gold: {{character.gold}}</div>
+      <div>Perk ticks: {{character.perkTicks}}</div>
+    </div>
+    <div class="player-items">
+      <img *ngFor="let item of character.ownedItems" [src]="item|getSrcItem" width="120">
+    </div>
+  </div>
+</div>

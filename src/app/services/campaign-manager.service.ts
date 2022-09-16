@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Characters } from 'src/app/data/characters';
 import { Character } from 'src/app/model/character';
 import { Token } from '../model/token';
 import { Scenarios } from '../data/mapsDef';
+import { tap } from 'rxjs/operators';
+import { CampaignStatusService } from './campaign-status.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CampaignManagerService {
 
-  players: Character[] = Characters;
+  characters: Character[] = [];
 
-  constructor() { }
+  constructor(private campaign: CampaignStatusService) {
+    const status$ = this.campaign.getStatus$();
+    status$.pipe(
+      tap(status => this.characters = status.characters)
+    ).subscribe();
+   }
 
   getCharacters(): Character[] {
-    return this.players;
+    return this.characters;
   }
 
   getScenarios() {
@@ -22,14 +28,14 @@ export class CampaignManagerService {
   }
 
   getCharactersTokens(): Token[] {
-    const playerTokens: Token[] = this.players.map( player => {
+    const playerTokens: Token[] = this.characters.map( characters => {
       return {
-        id: 'player' + player.name,
+        id: 'player' + characters.name,
         type: 'player',
-        src: 'assets/' + player.characterClass.id + '_token.png',
-        maxHealth: player.hitPoints,
+        src: 'assets/' + characters.characterClass.id + '_token.png',
+        maxHealth: characters.hitPoints,
         stats: {
-          h: player.hitPoints
+          h: characters.hitPoints
         },
         status: {}
       };
