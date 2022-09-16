@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { loadCampaing } from './data/actions';
-import { Stats } from './data/enemiesDefs';
-import { MONSTERS } from './data/mosters';
+import { loadCampaing } from './actions/actions';
 import { CampaignStatusService } from './services/campaign-status.service';
 
 @Component({

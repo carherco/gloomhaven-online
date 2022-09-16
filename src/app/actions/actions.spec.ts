@@ -1,17 +1,8 @@
-import { Player } from '../model/player';
 import { Cragheart, Tinkerer } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
-import {
-  CreateCharacterPayload,
-  GainGlobalAchievementPayload,
-  GainPartyAchievementPayload,
-  CompleteScenarioPayload,
-  BuyItemPayload, SellItemPayload,
-  MakeDonationPayload,
-  ResolveCityEventPayload,
-  ResolveRoadEventPayload
-} from '../data/actions';
-import { INITIAL_STATUS, CampaignStatusService, CampaignStatus } from '../services/campaign-status.service';
+import { CreateCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload } from '../model/actions';
+import { Player } from '../model/player';
+import { CampaignStatus, INITIAL_STATUS, CampaignStatusService } from '../services/campaign-status.service';
 
 const players: Player[] = [
   {uid: 'uuid1', email: 'email1@gmail.com', displayName: 'carherco', photoURL: '', emailVerified: true },
@@ -34,6 +25,10 @@ function getClonedInitialStatus(): CampaignStatus {
       prosperityPoints: INITIAL_STATUS.city.prosperityPoints,
       prosperityLevel: INITIAL_STATUS.city.prosperityLevel,
       achievements: [...INITIAL_STATUS.city.achievements]
+    },
+    shop: {
+      items: [...INITIAL_STATUS.shop.items],
+      priceModifier: INITIAL_STATUS.shop.priceModifier
     },
     amountGoldDonated: INITIAL_STATUS.amountGoldDonated,
     cityEventsDeck: [...INITIAL_STATUS.cityEventsDeck],
@@ -294,7 +289,7 @@ fdescribe('Scenarios', () => {
         { playerName: 'Psycho', playerResults: {xp: 8, g: 4} },
       ],
       rewards: {
-        partyAchievement: 'First Steps',
+        partyAchievements: ['First Steps'],
         prosperity: 1,
         reputation: 1
       },
