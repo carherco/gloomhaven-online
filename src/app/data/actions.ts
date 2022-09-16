@@ -721,7 +721,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Einar', itemId: 7});
   campaign.buyItem({playerName: 'Einar', itemId: 34});
 
-  campaign.resolveRoadEvent({eventId: 19, rewards: {reputation: 1} ,discard: true});
+  campaign.resolveRoadEvent({eventId: 19, rewards: {reputation: 1}, discard: true});
 
   campaign.completeScenario({
     scenarioId: 24,
@@ -1020,7 +1020,11 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Lux Lucitana', playerResults: {xp: 7, g: 12} },
       { playerName: 'El Alquimista', playerResults: {xp: 6, g: 4, t: 1} },
       { playerName: 'Einar', playerResults: {xp: 10, g: 0, pq: 1} },
-    ], rewards: {gold: 20, reputation: 2, prosperity: 1, globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_DRAKE_SLAIN], loosePartyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]}
+    ], rewards: {
+      gold: 20, reputation: 2, prosperity: 1,
+      globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_DRAKE_SLAIN],
+      loosePartyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]
+    }
   });
 
   campaign.sellItem({playerName: 'Divayth Fyr', itemId: 103});
