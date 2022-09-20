@@ -70,7 +70,7 @@
       </div>
     </div>
     <div align="center" class="col-12">
-      <button id = "play-cards-button" (click)="onPlayCardsButton()" class="button visible" type="button" [disabled]="handCardsSelectedCount !== 2 || playedCards.length > 0" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
+      <button id = "play-cards-button" (click)="onPlayCardsButton()" class="button visible" type="button" [disabled]="handCardsSelectedCount !== 2 || playedCards.length > 0" title="Must Select 2 Cards, Not Have Any Cards In Play, And Not Be Resting">Play Cards</button>
       <button id = "lose-hand-card" (click)="onLoseHandCardButton()" class="button visible" type = "button" [disabled]="handCardsSelectedCount !== 1" title="Must Have One Card Selected">Lose Card To Avoid Damage</button>
     </div>
   </div>
@@ -104,7 +104,7 @@
         <img class= "lost" [src]="card.src" (click)="onLostCardClick(card)" [class.add-border]="card.selected"/>
       </span>
 
-      <button id="recover-lost" (click)="onRecoverLostCardButton()" class="button" type="button" [disabled]="lostCardsSelectedCount !== 1" title="Must Have a Lost Card Selected">Recover Lost Card</button>
+      <button id="recover-lost" (click)="onRecoverLostCardButton()" class="button" type="button" [disabled]="lostCardsSelectedCount !== 1" title="Must Have a Lost Card Selected">Recover Lost Card</button>
     </div>
   </div>
 
