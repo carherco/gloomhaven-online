@@ -15,7 +15,7 @@ import { MonsterAbilityCardBack, MonsterAbilityCardFront, EnemyTracker } from '.
 import { MonsterAbilityCards } from '../data/monster-ability-cards';
 import { EnemyDef, EnemyDefs } from '../data/enemiesDefs';
 import { SCENARIOS } from '../data/scenarios';
-import { SCENARIO_MONSTERS } from '../data/scenario_mosnters';
+import { SCENARIO_MONSTERS } from '../data/scenario_monsters';
 
 @Injectable({
   providedIn: 'root'
