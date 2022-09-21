@@ -112,11 +112,65 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       `"Mirad, podéis ir a hacer su encargo como buenos perritos falderos si lo deseáis, pero si loque queréis en realidad es ayudar a mantener la paz en la ciudad y que no se convierta en una tiranía, tengo una idea diferente; Llegaremos al fondo del asunto, descubriremos sus planes y expondremos quien realmente es Jekserah.” <strong>(8-Gloomhaven Warehouse)</strong>`
     ]
   },
-    { name: '#4 Crypt of the Damned'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  {
+    name: '#4 Crypt of the Damned',
+    introduction: [
+      `Las proclamaciones del comandante bandido de
+      un "Gloom" no te sientan bien en el estómago
+      mientras buscas en la curva del Río Tranquilo -
+      hay algo aquí que interesa a estos maníacos.`,
+      `Te sorprende un poco encontrar las ruinas de
+      una antigua cripta medio cubierta de musgo
+      y hiedra. La historia de este lugar es vieja y
+      oscura. Sin más información que seguir, te
+      diriges hacia las profundidades. Lo que sea
+      que traten estos supuestos bandidos, estás
+      decidido a descubrirlo, incluso después de
+      tropezarte con un gran grupo de ellos y más
+      muertos vivientes al pie de las escaleras.`,
+      `"Has cometido un error al venir aquí", sisea
+      uno de los bandidos. No estás de acuerdo.
+      Estás justo donde quieres estar."`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Golpeas la puerta, pensando que estás
+          preparado para cualquier cosa. Ante ti, sin
+          embargo, se encuentra una criatura de energía
+          elemental pura, enfurecida y demoníaca. Te
+          lleva un segundo recuperarte. Como si animar a
+          los muertos no fuera suficiente para estos
+          lunáticos.`,
+        ]
+      }
+    ],
+    conclusion: [
+      `Está claro que has interrumpido algún tipo de
+      ritual aquí. Estos demonios elementales
+      pertenecen a un plano de existencia
+      completamente diferente, pero los sectarios de
+      alguna manera lograron llevarlos a éste.`,
+      `En el altar en la habitación de atrás, hay una
+      gran cantidad de garabatos en estos rituales. No
+      toda la escritura es inteligible, pero se tiene la
+      sensación de que esta cripta es un lugar de
+      poder utilizado una vez por una civilización
+      antigua. Los antiguos aprovecharon el poder de
+      los elementos para mejorar sus propias vidas, y
+      aunque su destino exacto está más allá de tu
+      conocimiento, claramente no terminó bien.`,
+      `Entre las escrituras también encontrará notas
+      sobre otros lugares de poder en la zona. Uno
+      parece ser algo muy utilizado por el culto y el
+      otro está marcado como invadido por perversos
+      muertos vivientes. Parece como si tuvieras la
+      oportunidad de estropear algo más de su
+      trabajo <strong>(5-Ruinous Crypt)</strong> o de obtener su beneplácito
+      ayudando a eliminar una amenaza. <strong>(5-Decaying Crypt)</strong>`
+    ]
+  },
     { name: '#5 Ruinous Crypt'
     , introduction: [],
     milestones: [],
@@ -243,26 +297,129 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#15 Shrine of Strength'
-    , introduction: [],
+  {
+    name: '#15 Shrine of Strength',
+    introduction: [],
     milestones: [],
     conclusion: []
-    },
-    { name: '#16 Mountain Pass'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  },
+  {
+    name: '#16 Mountain Pass',
+    introduction: [
+      `La gente suele menear la cabeza cuando habláis
+      de dragones, como si vuestro interlocutor no
+      pudiera ni siquiera creer lo que está hablando.
+      Los dragones no existen, dicen, pero hay una
+      bestia gigante alada que se ha visto al norte,
+      por lo que partís para ver qué hay de cierto.`,
+      `Vuestro objetivo es Icecrag (Riscohelado), la
+      montaña más alta de las Coppernecks
+      (Cuellocobre). Para llegar allí, no obstante,
+      debéis atravesar el paso del norte, un corredor
+      estrecho entre dos gigantescos acantilados de
+      piedra de los que suelen desprenderse
+      avalanchas frecuentes, así como otros peligros.`,
+      `Avanzáis con cautela, vigilando cualquier signo
+      de emboscada desde las alturas. Esta precaución
+      es la que os salva de ser aplastados por una
+      lluvia de piedras que caen por el lateral de uno
+      de los acantilados. Buscáis cobertura conforme
+      las piedras golpean el suelo, justo a tiempo para
+      mirar hacia arriba y ver un grupo de Inox salir
+      de una cueva en uno de los laterales del paso.`,
+      `Os han intentado matar con las piedras. No
+      obstante, vuestra supervivencia los ha motivado
+      para buscar una forma de eliminaros más
+      convencional.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Con el paso bloqueado por la avalancha, entráis
+          en la cueva para enfrentaros a vuestros
+          agresores. Dentro, vislumbráis una red de
+          pasadizos que se adentran en la montaña.
+          Quizás merezca la pena explorarlos una vez
+          acabéis con vuestros enemigos.`
+        ]
+      }
+    ],
+    conclusion: [
+      `¿Qué estaban haciendo juntos esos Inox y
+      Demonios? ¿Y además tan al norte? Examináis
+      sus pertenencias, buscando algún indicio de sus
+      motivos. Todo lo que encontráis es algunos
+      garabatos que referencian a la "voz".`,
+      `Observáis la cueva. Debe haber más pistas en
+      los túneles profundos. Hacia el norte, el Pico
+      Riscohelado (Icecrag Peak) se yergue
+      majestuoso en la distancia <strong>(25-Icecrag Ascent)</strong> . Aun así, sentís
+      que algo os llama a explorar la cueva <strong>(24-Echo Chamber)</strong>
+      No es audible, pero os reclama con una sutil
+      aunque poderosa urgencia.`,
+      `Miráis los garabatos de los Inox. Una "voz".
+      Sí, algo que os suena familiar. Casi podéis oirla.`
+    ]
+  },
     { name: '#17 Lost Island'
     , introduction: [],
     milestones: [],
     conclusion: []
     },
-    { name: '#18 Abandoned Sewers'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  {
+    name: '#18 Abandoned Sewers',
+    introduction: [
+      `Desde el centro del Puente Silencioso, un
+      guarda de la ciudad os señala una rejilla que se
+      abre en la orilla oeste. "Es la mejor forma de
+      entrar en ese agujero inmundo. Buena suerte".`,
+      `Descendéis por entre los barrotes, que han sido
+      doblados y corroídos por el tiempo, alcanzando
+      el fondo. Encendéis una antorcha y entráis al
+      interior, caminando por un pasillo estrecho
+      ligeramente inclinado, evitando el flujo de
+      líquido marrón que baja en la dirección
+      opuesta. Tras unos pocos minutos, el camino se
+      abre en una serie de pasillos ramificados.`,
+      `Miráis alrededor, decidiendo qué camino coger,
+      cuando un sonido sutil resuena en la piedra
+      que os rodea. Rápidamente, cogéis vuestras
+      armas, justo a tiempo para ver unas figuras
+      reptantes que se aproximan.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Navegando por los pasillos, alcanzáis una
+          enorme sala abierta con un depósito de agua en
+          el centro. Alrededor de la cisterna hay un grupo
+          de Vermlings, que detienen su canto con
+          vuestra interrupción y gruñen en vuestra
+          dirección. Deben ser la causa del agua
+          envenenada.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Los Vermlings yacen muertos, con su sangre
+      negra mezclándose con el agua del suelo. Tras
+      una profunda investigación, encontráis que no
+      hay ningún veneno en sus cuerpos. ¿Es posible
+      que estos Vermlings no fueran la causa, sino
+      que simplemente estuvieran viviendo ahí, a
+      salvo de las miradas de los guardias? Al fondo
+      de la habitación, la grandes grietas en el muro,
+      mostrando un pasaje que se abre hacia lo
+      desconocido. <strong>(23-Deep Ruins)</strong>`,
+      `Y si tenéis alguna forma de respirar bajo el agua
+      <strong>(14-Frozen Hollow)</strong>, <strong>(43-Drake Nest)</strong>,
+      incluso podríais entrar a la cisterna y
+      encontrar la fuente del veneno directamente
+      <strong>(26-Ancient Cistern)</strong> .`
+    ]
+  },
     { name: '#19 Forgotten Crypt'
     , introduction: [],
     milestones: [],
@@ -574,11 +731,55 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#81 Temple of the Eclipse'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  {
+    name: '#81 Temple of the Eclipse',
+    introduction: [
+      `En vuestro camino a la ubicación indicada por
+      el Aesther, nubes oscuras se ciernen sobre
+      vosotros. Una ligera llovizna comienza a caer
+      cuando os acercáis a un pequeño templo
+      escondido en el Bosque de las Dagas.`,
+      `El edificio parece abandonado, pero una vez
+      estáis dentro, quedáis estupefactos por un
+      espectáculo fascinante: un cielo crepuscular
+      eterno se extiende sobre vosotros. Atrapada
+      entre el día y la noche, la habitación está
+      iluminada por un extraño resplandor. Sin
+      embargo, una rápida inspección por sus
+      alrededores indica que no sois bienvenidos.
+      Demonios de la luz y las sombras se aproximan.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Finalmente llegando a la entrada del santuario,
+          os preparáis para el último desafío. Abrís la
+          puerta que da a un lugar atrapado entre la
+          oscuridad eterna y la luz cegadora. Dos
+          enormes demonios flanquean un Savvas cuyo
+          pecho late con luces negras y doradas. Savvas
+          normalmente no puede dominar esos
+          elementos, pero por la mirada en su cara,
+          intuyes que al hacerlo se volvió loco.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Con todas tus fuerzas, metes tu arma en el
+      pecho del Savvas, destrozando sus entrañas. De
+      repente, la luz y la oscuridad antinaturales son
+      arrastradas hacia la herida, acumulándose
+      dentro de ella antes de estallar en una enorme
+      explosión. El cuerpo vacío del Savvas
+      cae muerto al suelo.`,
+      `El crepúsculo a vuestro alrededor vuelve a la
+      normalidad cuando recogéis vuestro botín y
+      salís del templo. Por última vez, os quedáis
+      mirando al techo y os maravilláis ante la
+      imposibilidad de este lugar.`
+    ]
+  },
     { name: '#82 Burning Mountain'
     , introduction: [],
     milestones: [],
