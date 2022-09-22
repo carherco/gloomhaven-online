@@ -292,11 +292,98 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#14 Frozen Hollow'
-    , introduction: [],
+  {
+    name: '#14 Frozen Hollow',
+    introduction: [
+      `Así que toca buscar a un encantador, allá
+      vamos.`,
+      `Nos informan de una Aesther en el
+      Distrito Caldera, con lo que nos dirigimos
+      hacia una taberna abandonada y decrépita
+      en la zona, el Hueso Torcido. Al acceder nos
+      encontramos el interior que esperábamos a
+      expensas del exterior: telarañas, taburetes
+      astillados y cristal roto y polvoriento.`,
+      `Tras pasar el umbral, una mujer traslúcida
+      aparece repentinamente ante nosotros. - ¿Por
+      qué habéis venido, mercenarios? Vuestra
+      presencia no es deseada e interrumpís mis
+      estudios.`,
+      `Rápidamente le explicamos nuestros motivos y
+      la mujer frunce el ceño aún más. - "Oh, buscad
+      a la mujer Aesther. Ella puede cumplir vuestros
+      deseos. Le basta con mover las manos y
+      vuestros sueños más salvajes se harán realidad."
+      - Suspira frustrada y, de hecho, mueve las
+      manos. - Dejadme en paz.`,
+      `No nos movemos. Nos clava su mirada.`,
+      `- Bueno, en lugar de interrumpir, tal vez seáis
+      útiles. Hoy por ti, mañana por mí. Así
+      funcionan las cosas, ¿no? - La mujer se gira y se
+      dirige hacia unas escaleras destrozadas, pero
+      tras unos pasos, se desvanece por completo.`,
+      `- Necesito un orbe de Hueco Congelado, se
+      encuentra en las Montañas de Cuello de Cobre.
+      - La voz de la mujer viene desde nuestro
+      interior, como si no se hubiera movido. -
+      Traédmelo y puede que os ayude.`,
+      `Un mapa cae a nuestros pies. - Por cierto, mi
+      nombre es Hail. No volváis sin el orbe.`,
+      `El mapa es fácil de seguir. En lo profundo de las
+      Montañas de Cuello de Cobre, oculto por
+      ventiscas de nieve, encontramos la entrada a
+      una cueva oscura y estrecha. Las pisadas de
+      lobo en la entrada son un signo de problemas,
+      pero con resolución firme, entramos.`
+    ],
     milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      `Tras acabar con el último de los enemigos nos
+      acercamos al fondo de la sala, donde una esfera
+      azul flota a centímetros del suelo. Lentamente
+      acercamos la mano y agarramos el frío orbe,
+      tan frío que resulta apenas soportable.
+      Rápidamente lo metemos en la mochila y nos
+      dirigimos de vuelta al Hueso Torcido.`,
+      `Entramos en la taberna abandonada y llamamos
+      a Hail. No hay respuesta, investigamos,
+      revisamos el caótico desastre que nos rodea.
+      Cómo será posible que trabaje cómoda en un
+      sitio así. Al acercarnos a la barra, Hail aparece
+      ante nosotros, con el orbe en la mano.`,
+      `- Muy interesante. - No parece darse cuenta de
+      que estamos ahí. - Una grieta en nuestro plano
+      de alguna forma contenida dentro de esta
+      barrera esférica. Menos mal que no la
+      rompisteis en el viaje. Habríais sido
+      transportados a un mundo de puro frío y
+      congelados antes de llegar siquiera a respirar.
+      O algo peor podría haber sucedido.`,
+      `- Es tan confuso. ¿Quién tendría el poder para
+      hacer esto? - Hail se mueve lateralmente y
+      desaparece.`,
+      `Esperamos por lo que parecen ser horas,
+      pasando de sentarnos en los pocos taburetes
+      aún enteros. De vez en cuando decimos su
+      nombre sin éxito.`,
+      `- Oh, seguís aquí. - Nos giramos para ver a Hail
+      en el centro de la habitación. - Bien, me
+      gustaría experimentar con vosotros si os parece
+      bien. - Se acerca a nosotros y tropezamos al
+      recular, cayendo sobre una vieja mesa que se
+      astilla en cientos de trozos.-`,
+      `Oh, no temáis. Estoy bastante segura de que
+      acabará bien.`,
+      `Hail nos explica que quiere acumular poder
+      puro de otro plano y guardarlo en un pequeño
+      orbe que daría grandes poderes a quien lo
+      tuviera. El proceso de almacenamiento, sin
+      embargo, requiere mucho oro.`,
+      `- Ya que me habéis ayudado en mis estudios,
+      supongo que os devolveré el favor, - suspira
+      Hail. - Así que, ¿qué es lo que queréis?`
+    ]
+  },
   {
     name: '#15 Shrine of Strength',
     introduction: [],
@@ -440,26 +527,221 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#23 Deep Ruins'
-    , introduction: [],
+  {
+    name: '#23 Deep Ruins',
+    introduction: [
+      `Desafiando los oscuros pasadizos debajo de las
+      alcantarillas de Gloomhaven, encendéis una antorcha
+      en el lugar más profundo, el ladrillo descascarillado da
+      paso a piedra intrincada en un estado de extremo
+      desgaste.`,
+      `Veis un idioma rúnico irreconocible grabado en las
+      paredes. Las grietas y trozos de roca impiden leerlo
+      incluso para gente que conoce el idioma.`,
+      `Después del pasadizo, el camino da a una habitación
+      más grande llena de extrañas maquinas en ruinas que
+      no puedes entender. Una puerta se ve en la pared
+      opuesta, a continuación, un sonido metálico atraviesa la
+      habitación, como si alertara de algo. Entonces la
+      maquina empieza a moverse y cobra vida; es
+      claramente palpable la intención de atacar a los
+      intrusos, empezando por ti.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Lucháis para haceros paso a través de la
+          habitación de la máquina; encontráis pasillos a
+          izquierda y derecha. Oís la alarma sonando en
+          ambas direcciones. Para apagarla, puede que
+          tengáis que dividiros.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Con la última placa pulsada, la alarma
+      finalmente se silencia. Las luces de los cañones
+      se apagan y sus armas miran hacia abajo,
+      inactivos.`,
+      `La máquina se tambalea y cae; los engranajes se
+      detienen y paran de rotar. En cuestión de
+      segundos, la cámara parece tan vacía como
+      antes, dejándoos explorar en paz.`,
+      `Ponéis rumbo a un estrecho pasillo; en la parte
+      trasera de la habitación izquierda se encuentra
+      un pasillo que desciende a una piscina de
+      líquido salobre; podéis ver una luz que vaga a
+      cierta distancia bajo el agua.`,
+      `Un chapuzón rápido os llevara más lejos en este
+      mundo subterráneo.<strong>(26-Ancient Cistern)</strong>`
+    ]
+  },
+  {
+    name: '#24 Echo Chamber',
+    introduction: [
+      `Entráis en la cueva haciendo caso omiso de la
+      voz en vuestras cabezas. Os atrae el peligro,
+      podríais caer en una trampa, como un corderito
+      desvalido en un juego macabro; con estos
+      miedos la Voz os intenta convencer.
+      “Todo estará bien, solo continúa descendiendo a
+      la oscuridad ”`,
+      `Contra toda razón continuáis vuestro camino.`,
+      `Imágenes y pensamientos intermitentes llegan a
+      vosotros y la voz intenta explicarse. Ha sido
+      atrapada por una poderosa fuerza en las
+      profundidades de la tierra. Necesita tu ayuda
+      para salir; os preguntáis quien la encarceló y
+      por qué pero la voz desaparece en vuestros
+      pensamientos.`,
+      `Y el silencio se hace preocupante; en las
+      profundidades de la oscuridad, estás
+      irremediablemente perdido, hasta que la voz
+      regresa y continúa dirigiéndose a vosotros sin
+      respuestas para vuestras preguntas.`,
+      `La voz muestra imágenes de lugares donde se
+      esconden monstruos. Y te da un plan: Si podéis
+      conectar todas las habitaciones de su cámara, la
+      voz resonará y tomará forma una vez más,
+      dándoos la capacidad de ahuyentar a los
+      secuestradores.`,
+      `La voz os dice que estáis cerca. Os dice que os
+      preparéis...`
+    ],
     milestones: [],
-    conclusion: []
-    },
-    { name: '#24 Echo Chamber'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      `La última niebla se disipa e inmediatamente un
+      viento te encoge, circulando a lo largo de las
+      cámaras de la prisión. Su velocidad crece
+      rápidamente, comenzando como una brisa que
+      crece a ciclón en cuestión de segundos.`,
+      `Y entonces oís la voz: un sonido llevado por el
+      viento, un sonido enorme y terrible. Un grito
+      poderoso y el resto de monstruos son
+      destruidos, desintegrados y dispersos entre la
+      tormenta.`,
+      `“Gracias amigos míos, es bueno deshacerse de
+      estas cosas” La voz suena como si unos huesos
+      estuvieran hablando “y ahora que está hecho te
+      pido que me ayudes de nuevo; sigo siendo un
+      prisionero atrapado por el viento, con el fin de
+      tener una forma más corpórea y dejar esta
+      tierra exijo que sean devueltas mis vasijas de
+      poder.”`,
+      `Caéis de rodillas mientras el sonido se apaga,
+      vuestras cabezas retumban de la vibración. La
+      voz acaba de destruir a sus adversarios como si
+      no fueran nada. No os podéis imaginar lo que
+      sería capaz si le dáis más poder.`,
+      `“No te preocupes no tengo ningún deseo de
+      traer el mal a esta tierra. Solo deseo seguir mi
+      camino para ser libre y no estar atrapado por
+      este mal. Os proporcionaré una visión para
+      saber dónde encontrar la primera vasija.
+      Pensaron en esconderla de mí, pero puedo verla
+      como si estuviera en esta misma cámara”.`,
+      `"Por favor traédmela”`,
+      `De vuelta a la entrada de la cueva. Muy lejos de
+      su influencia, podéis tomar la decisión de hacer
+      lo que propone <strong>(32-Decrepit Wood)</strong> o podéis intentar llegar al
+      fondo del asunto de qué es exactamente lo que
+      quiere hacer la Voz con sus poderes y que no
+      alcanzas a entender. <strong>(30-Shrine of the Depths)</strong>`
+    ]
+  },
     { name: '#25 Icecrag Ascent'
     , introduction: [],
     milestones: [],
     conclusion: []
     },
-    { name: '#26 Ancient Cistern'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  {
+    name: '#26 Ancient Cistern',
+    introduction: [
+      `El agua se vuelve oscura, negra como un cielo
+      nocturno nublado. No puedes ver tus manos
+      remar frente a tu cara, pero continúas. En poco
+      tiempo, se ve una luz en la distancia. Necesitas
+      todas las fuerzas que te quedan, pero
+      finalmente la luz se hace más grande y emerges
+      de un charco de agua fétida, agradecido de que
+      puedas respirar libremente una vez más.`,
+      `El alivio, sin embargo, es efímero. La habitación
+      está plagada de amenazantes masas verdes de
+      cieno y no muertos. Te desplomas en tierra
+      firme y tratas de recuperar el aliento,
+      preparando tus armas para otra batalla.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Siguiendo las señales de corrupción, te diriges a
+          la sala final de la cámara, con la esperanza de
+          acabar con el resto de tus adversarios
+          rápidamente. En cambio, el horror invade tu
+          mente al ver la escena que tienes delante.`,
+          `Cuatro tuberías verticales se encuentran en la
+          parte posterior de la sala; conductos
+          transparentes para el bombeo del agua de la
+          ciudad. Sin embargo, pegadas a las tuberías hay
+          masas negras retorcidas que envenenan el agua
+          que corre. Cuando entras, parte de la masa
+          negra gotea desde las tuberías y se fusiona en
+          forma de pequeñas protuberancias bulbosas con
+          bocas llenas de dientes.`,
+          `La horda de demonios y muertos vivientes
+          tampoco es un espectáculo agradable.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Para cuando la pelea termina, las paredes y el
+      piso son un desastre de cieno negro. Sin
+      embargo, nada de ese cieno tiene vida, lo que
+      es un paso en la dirección correcta. Una simple
+      fregona puede limpiar los restos, ahora que se
+      ha eliminado la presencia oscura.`,
+      `Te acercas a la pared de atrás y con un gesto
+      de la mano limpias con perplejidad un poco de
+      la mugre. La mayor parte se desprende
+      fácilmente, pero sigue habiendo una mancha
+      negra calcárea. Curioso, tomas tu manga y
+      comienzas a limpiar la pared más
+      vigorosamente, revelando rápidamente algún
+      tipo de lenguaje rúnico. Limpiando lo suficiente,
+      encontrará letras que cubren toda la pared
+      posterior.`,
+      `Las letras son irreconocibles, pero las anotas y
+      regresas a la ciudad, llevando las escrituras a un
+      experto en idiomas de la Universidad.`,
+      `"Es parte de un ritual", dice un Quatryl con
+      gafas, mirando con detalle tus notas. "No estoy
+      completamente familiarizado con los detalles,
+      pero parece ser un ritual para 'Welspar' ... err,
+      corrupto.`,
+      `"Creo que tal corrupción requeriría el uso de
+      un conductor." El Quatryl parece mirar aún
+      más atentamente las escrituras. "Ah, aquí! Algo
+      conocido como 'The Artifact', ubicado en el
+      Templo de los Elementos. '`,
+      `El Quatryl se precipita sobre una biblioteca
+      repleta de textos, "¡Ah, interesante! He oído
+      hablar de eso antes." Desaparece detrás de una
+      gran pila de tomos.`,
+      `"¡Sí! El Templo de los Elementos." Su cabeza
+      aparece por encima de los libros. "El Templo de
+      los Elementos, que se dice que alberga la Vasija
+      de los Elementos, un poderoso artefacto
+      antiguo capaz de dar forma y poder a los
+      residuos elementales que nos rodean.`,
+      `"El libro dice que el templo no está muy lejos
+      de aquí, en algún lugar alrededor de la
+      bifurcación en el Río Beso de Serpiente
+      (Serpent's Kiss River). Si quieres encontrar el
+      fondo de esta corrupción, comienza allí". <strong>(22-Temple of the Elements)</strong>`
+    ]
+  },
     { name: '#27 Ruinous Rift'
     , introduction: [],
     milestones: [],
@@ -475,11 +757,93 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#30 Shrine of the Depths'
-    , introduction: [],
+  {
+    name: '#30 Shrine of the Depths',
+    introduction: [
+      `"Así que, ¿hay una voz sin cuerpo en alguna
+      parte en lo profundo de las Montañas de Cuello
+      de Cobre (Copperneck Mountains), y quiere
+      que acumuléis vasijas que le ayuden a escapar
+      de su confinamiento?" Un bibliotecario Quatryl
+      de la Universidad se ajusta las gafas para
+      miraros. "¿Y queréis saber exactamente qué es
+      esta voz?"`,
+      `Se ríe nerviosamente. "Heh, vale, bueno, haré lo
+      que pueda. Empezaré con rituales que podrían
+      separar una voz de su anfitrión..." El Quatryl se
+      desvía en medio de su frase y deambula por
+      unos estantes de libros, donde hojea varios
+      textos.`,
+      `Decidís ir al mercado por unas horas. Cuando
+      regresáis, el Quatryl se apresura con emoción.`,
+      `"¡Lo he encontrado!" Os pone un libro en la
+      cara. "Encontré varios callejones sin salida hasta
+      que me di cuenta de que la voz no estaba
+      separada, si no que era la única cosa que
+      puede atravesar la barrera creada para
+      encarcelarlo, lo que implica que la barrera en sí
+      era extra-planar, probablemente creada por los
+      Aesthers hace siglos.`,
+      `"Así que examiné todos los textos que tenemos
+      sobre los rituales de los Aesthers -que no es
+      mucho, son muy reticentes con esos asuntos pero
+      por suerte encontré este libro. Es un
+      relato concreto de la atadura de un demonio en
+      la región de Cuello de Cobre (Copperneck) a la
+      que os referisteis. Aparentemente la criatura
+      era tan fuerte, que los Aesthers solicitaron la
+      ayuda de los Savvas y también la de los
+      Harrowers. Dicen que fue lo suficientemente
+      poderoso como para arrasar con todo el
+      continente.`,
+      `"Si os está pidiendo que le ayudéis a liberarse,
+      recomendaría encarecidamente que no lo
+      hicierais. La fiabilidad del texto es un poco
+      cuestionable la verdad, pero sea lo que sea esta
+      voz, estaba sellada por alguna razón."`,
+      `El Quatryl, por fin, deja de agitar el libro y
+      empieza a hojear las páginas. "De hecho, si
+      podéis escuchar la voz desde el exterior de la
+      cueva, y tiene una influencia tan fuerte sobre
+      vosotros, parece como si la barrera estuviera
+      debilitándose, tal y como advierte el autor.`,
+      `"Por lo que parece, hay un cetro que podría ser
+      utilizado para fortalecer el ritual de unión, pero
+      el autor dice que ha sido colocado en una isla a
+      lo largo de la costa sur por seguridad. En el
+      texto se encuentra detallado un sencillo
+      encantamiento para abrir la puerta del
+      santuario."`,
+      `Dos días después, os encontráis ante la
+      estructura en ruinas semisumergida en la tierra
+      encharcada. Pronunciáis unas pocas palabras
+      extrañas y la puerta se abre de golpe. Tenéis el
+      fuerte presentimiento de que la puerta no es lo
+      único que se interpone entre ese cetro y
+      vosotros.`
+    ],
     milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      `Os hacéis con el cetro y toda la edificación
+      tiembla violentamente. Una energía oscura
+      irrumpe, perforando los cuerpos de los
+      monstruos que aún os atacan.`,
+      `Todos ellos caen muertos y el temblor se
+      detiene.`,
+      `Sin embargo, al poneros en pie, un punzante
+      dolor os atraviesa el cráneo de repente.`,
+      `"Habéis sido engañados", dice la Voz en
+      vuestras mentes. "¡No traigáis ese cetro hasta
+      mí! Si me liberáis, os garantizo que no os haré
+      ningún daño. Pero no puedo decir lo mismo si
+      venís con el cetro. Sea lo que sea que estáis
+      haciendo, estáis equivocados."`,
+      `Tan rápido como llegó, el dolor se detiene.
+      Aseguráis el cetro y salís corriendo de la capilla,
+      deseosos de llevarlo a la Cámara del Eco (Echo
+      Chamber) y silenciar la Voz. <strong>(42-Realm of the Voice)</strong>`
+    ]
+  },
     { name: '#31 Plane of the Night'
     , introduction: [],
     milestones: [],
@@ -540,11 +904,62 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#43 - Drake Nest'
-    , introduction: [],
+  {
+    name: '#43 - Drake Nest',
+    introduction: [
+      `"¿Así que pensáis que puedo ayudaros a
+      respirar bajo el agua? Sois adorables." dice Hail
+      con una mirada exhasperante. "¿Me refiero a
+      que quién creéis que soy? ¿Por dónde podría
+      empezar?".`,
+      `Hail se da la vuelta y comienza a caminar.
+      "Necesitaréis escamas de dragón, y algo para
+      filtrar el aire del agua. Y si además consideráis
+      las propiedades del agua por separado...".
+      Se aleja y desaparece.`,
+      `Estáis acostumbrados a este tipo de
+      comportamientos por lo que esperáis
+      pacientemente. Aparece una hora después.`,
+      `"Ok, me habéis intrigado. Acepto vuestra
+      propuesta. Traedme algunas esacamas de
+      dragón, y veremos lo que puedo hacer. Conozco
+      un nido de dragones en las montañas
+      Cuellocobre (Coppernecks). Os dibujaré un
+      mapa."`,
+      `El mapa no es gran cosa, pero os lleva hasta la
+      entrada de una caverna de la cual emana un
+      silbido escalofriante. Hail quiere que consigáis
+      todas las escamas que podáis, por lo que debéis
+      empezar la carnicería.`
+    ],
     milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      `Las oleadas de lagartos rojizos parecen nunca
+      acabar, así que consideráis que ya habéis
+      recopilado un número significante de cadáveres
+      como para empezar la retirada.
+      En la entrada de la cueva empezáis a correr,
+      huyendo de la horda de dragones que parecen
+      poco interesados en seguiros. Allí empieza la
+      dura vuelta cargando el botín hasta el Hueso
+      Torcido (Crooked Bone).`,
+      `En cuanto llegáis, Hail os quita en silencio la
+      mole sangrienta de escamas. Desaparece durante
+      dos horas. Cuando regresa, sostiene un puñado
+      de pequeños orbes azules.`,
+      `"Bien, todo lo que tenéis que hacer es meter esto
+      en vuestras gargantas cuando estéis bajo el agua.
+      Debería filtrar cuando inhaléis y exhaléis bajo el
+      agua."`,
+      `"Será increíblemente doloroso, y os costará
+      sacároslo cuando volváis a tierra firme. No os
+      envidio, pero alguien va a tener que hacer el
+      trabajo sucio."`,
+      `Hail sonrie de oreja a oreja. "Estoy muy contenta
+      con el resultado. Gracias por proporcionarme
+      este interesante desafío. Ahora salid de mi casa."`
+    ]
+  },
     { name: '#44 Tribal Assault'
     , introduction: [],
     milestones: [],
@@ -600,27 +1015,217 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    // TODO Show message that this is random, use deck tab instead
-    { name: '#55 Foggy Thicket'
-    , introduction: [],
+  // TODO Show message that this is random, use deck tab instead
+  {
+    name: '#55 Foggy Thicket',
+    introduction: [
+      `Fue en vuestra última incursión en el bosque de
+      las dagas cuando lo visteis - ese inconfundible
+      tono púrpura - un pequeño trozo de tela
+      rasgado por la rama de un árbol. No es mucho,
+      pero es suficiente para vosotros.`,
+      `Encontrásteis un rastro y lo seguisteis hasta
+      que os envolvió una espesa y persistente niebla.
+      Perdisteis el rastro, pero decidisteis volver
+      pronto, una vez que la niebla se hubiese
+      disipado.`,
+      `Así que aquí estáis, días después, y la espesa
+      niebla continua bloqueando vuestro camino.
+      Entre tanto, no habéis pensado en nada más,
+      excepto en vengaros de los bandidos que
+      destruyeron vuestra aldea. La niebla os detuvo
+      una vez, pero ahora estáis decididos. No logrará
+      deteneros de nuevo.`,
+      `Os recomponéis y entráis en lo desconocido.`
+    ],
     milestones: [],
-    conclusion: []
-    },
-    { name: '#56 Bandit\'s Wood'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#57 Investigation'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#58 Bloody Shack'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      `La niebla parece estar agotando vuestras
+      fuerzas a medida que la atravesáis; cada paso
+      que dáis es doloroso. Sin embargo, justo
+      cuando pensáis que no podéis llegar más lejos,
+      encontráis una caja oculta de suministros
+      marcada con el emblema púrpura de vuestra
+      presa.`,
+      `Rápidamente abrís la caja y encontráis un mapa
+      detallado de la zona con instrucciones precisas
+      para llegar hasta el campamento. Lo guardáis y
+      huis hacia los árboles, lejos de la niebla.`,
+      `Con este mapa, sentís que vuestra búsqueda
+      finalmente está llegando a su fin. <strong>(56-Bandit's Wood)</strong>`
+    ]
+  },
+  {
+    name: '#56 Bandit\'s Wood',
+    introduction: [
+      `Conociendo el camino correcto al campamento
+      de los bandidos, seguís los puntos de referencia y
+      os abrís camino a través del bosque con
+      facilidad. Entráis en un tosco sendero, donde os
+      recibe un grupo de bandidos y sus perros.`,
+      `"Bueno, ¿qué tipo de carne fresca es esta?",
+      Pregunta uno de ellos, soltando las correas de
+      los perros. "Acabáis de tomar vuestro último
+      camino equivocado". Oís gritos en la distancia y
+      os olvidáis de la amenaza del bandido, no
+      queriendo perder más tiempo con esta chusma.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Llegáis al campamento bandido situado en un
+          gran claro abierto. Al mirar más allá de la
+          fuerza formidable de los enemigos que tenéis
+          delante, veis a un grupo de Orquídeas
+          harapientas a un lado: más víctimas de estos
+          monstruos.`,
+          `Los Orquídeas cautivos advierten vuestra
+          llegada y aprovechan la oportunidad para
+          escabullirse de sus ataduras y atacar a uno de
+          sus captores distraídos. Sonríes, sabiendo que
+          tu familia se vengará este día.`,
+          `Los bandidos miran hacia uno y otro lado entre
+          vosotros y los cautivos que escapan presa del
+          pánico. Uno de los guardias empuña su espada
+          y carga. "¡Matarlos a todos! ¡Nadie escapará!`
+        ]
+      }
+    ],
+    conclusion: [
+      `Con el último de los bandidos muerto, uno de
+      los cautivos supervivientes se acerca a tu grupo
+      y cae de rodillas. "gracias por rescatarnos", dice
+      en voz baja. "Saber que mi tribu siempre será
+      tu aliada".`,
+      `Mientras reúne a sus compañeros y se dirige al
+      bosque de vuelta a su hogar, analizas la
+      carnicería a vuestro alrededor. El grupo de
+      bandidos ha sido erradicado y sientes alivio al
+      saber que lse ha vengado a tu pueblo. Aquí
+      también hay muchos botines para ayudarte a
+      comenzar una nueva vida: un primer paso hacia
+      un futuro más seguro.`
+    ]
+  },
+  {
+    name: '#57 Investigation',
+    introduction: [
+      `Reunir información sobre la muerte de vuestro
+      amigo no fue una tarea fácil, pero vuestra
+      implacable investigación finalmente os lleva a
+      conocer a cierto teniente corrupto destinado en
+      los cuarteles del oeste. Aparentemente es
+      conocido por hacer la vista gorda ante ciertos crímenes en el Mercado del
+      Hundimiento y estaba de guardia la noche en
+      que vuestro amigo fue asesinado. Ahora es el
+      momento de derribar algunas puertas, y
+      obtener algunas respuestas a partir de
+      cualquier medio que se considere necesario.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: []
+      },
+      {
+        key: '2',
+        texts: [
+          `Habéis encontrado el cuartel principal, y al
+          abrirse la puerta, un presentimiento os invade.
+          Reconoceis al teniente de la esquina gritando
+          órdenes. "¡Alarma! ¡Intrusos! ¡No dejéis que se
+          escapen! ¡Matadlos!" Estáis en el buen camino.
+          Llevadlo ante la justicia y buscad pistas en sus
+          restos.`
+        ]
+      },
+      {
+        key: '3',
+        texts: [
+          `"¡Alto! ¡Intrusos! ¿Qué estáis haciendo en el
+          almacén de provisiones de la guardia de la
+          ciudad?" Os dais la vuelta para ver a dos
+          guardias salir de una puerta detrás de vosotros.
+          Esto no era lo que estábais buscando, pero no
+          tenéis tiempo para explicaciones. Ojalá podáis
+          despachar a los guardias rápidamente.`
+        ]
+      },
+      {
+        key: '4',
+        texts: [
+          `Interrumpís un ejercicio de entrenamiento para
+          varios reclutas nuevos. El maestro no está
+          contento con la interrupción y hace un
+          llamamiento a sus alumnos para que practiquen
+          sus habilidades con sus invitados no
+          bienvenidos.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Buscando entre los restos del Infiltrado,
+      encontráis un horario para una reunión fuera
+      de la ciudad en una choza remota. Hay notas
+      sobre una cosecha de cadáveres. Estáis
+      deseando colaros en esta reunión y exigir
+      vuestra venganza. <strong>(58-Bloody Shack)</strong> Con el espía revelado, el
+      resto de la guardia de la ciudad os da las
+      gracias por desenmascararlo.`
+    ]
+  },
+  {
+    name: '#58 Bloody Shack',
+    introduction: [
+      `Rodeáis la pequeña choza en Hook Coast y
+      preparáis vuestras armas. Sin embargo, el
+      dueño de este lugar no está totalmente
+      desprevenido. Grandes elementales de tierra y
+      una patrulla de Harrowers acompañados por
+      grotescos diablillos negros vigilan ambas
+      entradas. Entráis en acción con la esperanza de
+      deshaceros de todos ellos antes de que puedan
+      dar la alarma.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Cuando entráis por la puerta principal, veis un
+          pedestal de aspecto extraño cubierto de sangre.
+          Tiene una daga curvada y dentada que se
+          ilumina en rojo. Recordando las heridas de
+          vuestro amigo muerto, tenéis una fuerte
+          sospecha de que ésta fue el arma que lo
+          asesinó. Es hora de devolver el favor a su
+          dueño.`
+        ]
+      },
+      {
+        key: '2',
+        texts: [
+          `Montones de huesos podridos adornados con
+          glifos ocultos os reciben cuando entráis en la
+          habitación de atrás. En el centro, una figura
+          humana maliciosa se sienta en un trono de
+          calaveras. Está reuniendo energías
+          nigrománticas de las pilas de huesos
+          circundantes. "Siento que el deseo de venganza
+          brilla intensamente dentro de tu corazón. ¡Me
+          daré un banquete con eso!"`
+        ]
+      }
+    ],
+    conclusion: [
+      `La sed de sangre es algo extraño. Una vez que
+      está saciada, deja tras de sí una persona vacía
+      como un caparazón hueco. La daga cae al suelo
+      cuando una sensación fría y entumecida se
+      extiende a través de ti. El trabajo está hecho, y
+      es hora de seguir adelante, por duro que sea.`
+    ]
+  },
     { name: '#59 Forgotten Grove'
     , introduction: [],
     milestones: [],
