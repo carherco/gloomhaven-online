@@ -13,7 +13,7 @@ export class PlayerSheetComponent {
 
   constructor(private modalService: NgbModal) { }
 
-  openPQModal(modalContent) {
+  openPQModal(modalContent: any) {
     this.modalService.open(modalContent, { centered: true });
   }
 

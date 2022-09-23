@@ -15,7 +15,7 @@ export class SelectHandComponent implements OnInit {
 
   private character: Character;
   characterClass: CharacterClass;
-  cardsList = [];
+  cardsList: any[] = [];
   cardCount = 0;
   constructor(private router: Router, private game: GameManagerService) {
     this.character = this.game.getCharacter();
@@ -34,7 +34,7 @@ export class SelectHandComponent implements OnInit {
 
   ngOnInit() { }
 
-  onCardClick(card) {
+  onCardClick(card: any) {
     if (card.selected) {
       this.cardCount--;
       card.selected = false;

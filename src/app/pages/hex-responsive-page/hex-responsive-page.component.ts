@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Token } from 'src/app/model/token';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
 // import { Map18Tokens, Map16Matrix, Map16Tokens, Map24Matrix, Map24Tokens, Map25Matrix, Map25Tokens } from './../../data/mapsDef';
@@ -16,18 +16,18 @@ import { CampaignManagerService } from 'src/app/services/campaign-manager.servic
 })
 export class HexResponsivePageComponent implements OnInit {
 
-  @Input() originalMatrix;
-  @Input() availableTokens;
+  @Input() originalMatrix!: string[][];
+  @Input() availableTokens!: Token[];
 
-  scenarioId: number;
-  scenarioAvatar: string;
-  scenarioName: string;
-  scenarioGoal: string;
+  scenarioId!: number;
+  scenarioAvatar!: string;
+  scenarioName!: string;
+  scenarioGoal!: string;
   currentMatrix: Token[][][];
-  currentMatrixFirebaseId: string;
+  currentMatrixFirebaseId!: string;
 
-  private dragType: 'fromPool'|'fromMap' = null;
-  private dragContent: Token;
+  private dragType: 'fromPool'|'fromMap'|null = null;
+  private dragContent!: Token|null;
 
   private dragOrigin = {
     row: -1,
@@ -40,11 +40,11 @@ export class HexResponsivePageComponent implements OnInit {
   };
 
   showStats = false;
-  elementSelected: Token;
-  rowSelected: number;
-  columnSelected: number;
+  elementSelected!: Token;
+  rowSelected!: number;
+  columnSelected!: number;
 
-  firebaseItemsCollection;
+  firebaseItemsCollection!: any;
 
   constructor(
     private scenarioCreator: ScenarioCreatorService,
@@ -56,7 +56,7 @@ export class HexResponsivePageComponent implements OnInit {
     ) {
     this.currentMatrix = [];
     this.route.params.subscribe( p => {
-      this.scenarioId = p.id;
+      this.scenarioId = p['id'];
       const scenario = this.scenarioCreator.getScenarioData(this.scenarioId);
       this.originalMatrix = scenario.matrix;
       this.availableTokens =  this.campaignManager.getCharactersTokens().concat(scenario.tokens);
@@ -122,21 +122,21 @@ export class HexResponsivePageComponent implements OnInit {
     this.dragContent = this.currentMatrix[this.dragOrigin.row][this.dragOrigin.column].slice(-1)[0];
   }
 
-  drop(row: number, column: number, event) {
+  drop(row: number, column: number, event: any) {
     event.preventDefault();
     this.dragEnd = {row, column};
 
-    if (['terrain', 'difficult-terrain', 'door'].includes(this.dragContent.type)) {
+    if (['terrain', 'difficult-terrain', 'door'].includes(this.dragContent!.type)) {
       return null;
     }
 
     if (this.dragType === 'fromPool') {
-      this.currentMatrix[this.dragEnd.row][this.dragEnd.column].push(this.dragContent);
+      this.currentMatrix[this.dragEnd.row][this.dragEnd.column].push(this.dragContent!);
     }
 
     if (this.dragType === 'fromMap') {
       this.currentMatrix[this.dragOrigin.row][this.dragOrigin.column].pop();
-      this.currentMatrix[this.dragEnd.row][this.dragEnd.column].push(this.dragContent);
+      this.currentMatrix[this.dragEnd.row][this.dragEnd.column].push(this.dragContent!);
     }
 
     this.currentMatrix = [...this.currentMatrix];
@@ -145,11 +145,11 @@ export class HexResponsivePageComponent implements OnInit {
     this.save();
   }
 
-  allowDrop(event) {
+  allowDrop(event: any) {
     event.preventDefault();
   }
 
-  onShowStats(token: Token, row: number, column: number, modalContent) {
+  onShowStats(token: Token, row: number, column: number, modalContent: any) {
     this.elementSelected = token;
     this.rowSelected = row;
     this.columnSelected = column;
@@ -158,20 +158,20 @@ export class HexResponsivePageComponent implements OnInit {
   }
 
   damageButtonClick() {
-    this.elementSelected.stats.h--;
+    this.elementSelected.stats!.h--;
   }
 
   healButtonClick() {
-    this.elementSelected.stats.h++;
+    this.elementSelected.stats!.h++;
   }
 
-  closeModal(modal) {
+  closeModal(modal: any) {
     this.showStats = false;
     this.save();
     modal.close();
   }
 
-  removeToken(modal) {
+  removeToken(modal: any) {
     if (this.currentMatrix[this.rowSelected][this.columnSelected].length > 1) {
       this.currentMatrix[this.rowSelected][this.columnSelected].pop();
     }

@@ -10,7 +10,7 @@ import { CampaignManagerService } from 'src/app/services/campaign-manager.servic
 export class PlayersPageComponent {
 
   characters: Character[];
-  selectedCharacter: Character;
+  selectedCharacter!: Character;
 
   constructor(private campService: CampaignManagerService, ) {
     this.characters = this.campService.getCharacters();

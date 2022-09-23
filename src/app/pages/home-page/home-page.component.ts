@@ -8,10 +8,10 @@ import { CampaignStatusService } from 'src/app/services/campaign-status.service'
 })
 export class HomePageComponent implements OnInit {
 
-  prosperityPoints: number;
-  prosperityLevel: number;
-  amountGoldDonated: number;
-  reputation: number;
+  prosperityPoints!: number;
+  prosperityLevel!: number;
+  amountGoldDonated!: number;
+  reputation!: number;
   constructor(private campaign: CampaignStatusService) {
     const status$ = this.campaign.getStatus$();
     status$.subscribe(

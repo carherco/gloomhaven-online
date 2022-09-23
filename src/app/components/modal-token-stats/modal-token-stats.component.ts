@@ -7,18 +7,18 @@ import { Token } from 'src/app/model/token';
   styleUrls: ['./modal-token-stats.component.css']
 })
 export class ModalTokenStatsComponent implements OnInit {
-  @Input() token: Token;
+  @Input() token!: Token;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   damageButtonClick() {
-    this.token.stats.h--;
+    this.token.stats!.h--;
   }
 
   healButtonClick() {
-    this.token.stats.h++;
+    this.token.stats!.h++;
   }
 
 }

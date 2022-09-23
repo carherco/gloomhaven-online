@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { Campaign } from 'src/app/data/campaign';
 
@@ -11,7 +11,7 @@ import { Campaign } from 'src/app/data/campaign';
 export class PlayerCampaignsPageComponent implements OnInit {
 
   campaigns: Campaign[] = [];
-  campaigns$: Observable<Campaign[]>;
+  campaigns$!: Observable<Campaign[]>;
 
   constructor(private afs: AngularFirestore) { }
 

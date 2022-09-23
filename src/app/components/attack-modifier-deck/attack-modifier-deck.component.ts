@@ -10,9 +10,9 @@ import { Modifier } from 'src/app/model/modifier';
 export class AttackModifierDeckComponent implements OnInit {
 
   @Input() modifierDeck: Modifier[] = defaultDeck;
-  initialModifierDeck: Modifier[];
+  initialModifierDeck: Modifier[] = [];
   playedModifierDeck: Modifier[] = [];
-  lastModifier: Modifier;
+  lastModifier: Modifier|null = null;
   extraBlesses = 0;
   extraCurses = 0;
   mustShuffle = false;
@@ -71,7 +71,7 @@ export class AttackModifierDeckComponent implements OnInit {
     this.mustShuffle = false;
   }
 
-  private shuffle(a) {
+  private shuffle(a: any[]) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];

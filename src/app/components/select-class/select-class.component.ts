@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SelectClassComponent implements OnInit {
 
-  characterSelected: CharacterClass = null;
+  characterSelected!: CharacterClass;
   characters: CharacterClass[] = AvailableCharacters;
   level = 1;
   constructor(private router: Router) { }

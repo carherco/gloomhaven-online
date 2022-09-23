@@ -194,11 +194,11 @@ export class CampaignStatusService {
   }
 
   private findPlayerByUid(uid: string): Player {
-    return this.status.players.find( p => p.uid === uid);
+    return this.status.players.find( p => p.uid === uid)!;
   }
 
   private findCharacterByName(name: string): Character {
-    return this.status.characters.find( c => c.name === name);
+    return this.status.characters.find( c => c.name === name)!;
   }
 
   gainGlobalAchievement(payload: GainGlobalAchievementPayload) {

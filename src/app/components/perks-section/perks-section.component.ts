@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class PerksSectionComponent implements OnInit {
 
-  @Input() perks = [];
+  @Input() perks: {id: any, checked: boolean}[] = [];
   @Input() selectedPerks = [];
-  perksList = [];
+  perksList: {id: any, checked: boolean}[] = [];
 
   constructor(private router: Router) {}
 
@@ -21,7 +21,7 @@ export class PerksSectionComponent implements OnInit {
     this.perksList = this.perks.map( p => { p.checked = false; return p; });
 
     this.selectedPerks.forEach( sp => {
-      let selectedPerk = this.perksList.find( p => p.id === sp );
+      let selectedPerk = this.perksList.find( p => p.id === sp )!;
       selectedPerk.checked = true;
     });
   }

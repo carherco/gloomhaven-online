@@ -14,10 +14,10 @@ export class MapCreatorPageComponent implements DoCheck {
   // availableTokens: TokenDef[] = Scenarios[16].tokens;
   textAreaValue: string;
 
-  scenarioId: number;
+  scenarioId!: number;
   currentMatrix: Token[][][];
 
-  matrixForSave: string;
+  matrixForSave!: string;
 
   constructor(private scenarioCreator: ScenarioCreatorService) {
     this.currentMatrix = this.scenarioCreator.createFromMatrix(this.originalMatrix);

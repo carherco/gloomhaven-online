@@ -11,7 +11,7 @@ import { GameManagerService } from 'src/app/services/game-manager.service';
 export class SelectPerksPageComponent implements OnInit {
 
   player: Character;
-  availablePerks = [];
+  availablePerks: any[] = [];
   selectedPerks: string[] = [];
 
   constructor(private game: GameManagerService) {

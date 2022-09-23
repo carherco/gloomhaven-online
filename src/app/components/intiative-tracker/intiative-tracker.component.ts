@@ -31,12 +31,12 @@ export interface PlayerTracker {
 })
 export class IntiativeTrackerComponent implements OnInit {
 
-  scenarioId: number;
+  scenarioId!: number;
   playersTrackers: PlayerTracker[] = [];
   summonsTrackers = [];
   enemiesTrackers: EnemyTracker[] = [];
-  allTrackersOrderedByInitiative;
-  roundStatus: 'pre-round' | 'round';
+  allTrackersOrderedByInitiative!: any;
+  roundStatus!: 'pre-round' | 'round';
 
   constructor(
     private route: ActivatedRoute,
@@ -44,7 +44,7 @@ export class IntiativeTrackerComponent implements OnInit {
     private campaignManager: CampaignManagerService
   ) {
     this.route.params.subscribe( p => {
-      this.scenarioId = p.id;
+      this.scenarioId = p['id'];
       const scenario = this.scenarioCreator.getScenarioData(this.scenarioId);
       const playersTokens =  this.campaignManager.getCharactersTokens().filter( t => t.type === 'player');
       const enemies: TokenDef[] = scenario.tokens.filter( t => ['enemy', 'boss'].includes(t.type));
@@ -121,10 +121,10 @@ export class IntiativeTrackerComponent implements OnInit {
     const allTrackers: Tracker[] = this.playersTrackers.concat(this.enemiesTrackers);
     this.allTrackersOrderedByInitiative = [...allTrackers].sort(
       (a, b) => {
-        if (a.currentInitiative < b.currentInitiative) {
+        if (a.currentInitiative! < b.currentInitiative!) {
           return -1;
         }
-        if (a.currentInitiative > b.currentInitiative) {
+        if (a.currentInitiative! > b.currentInitiative!) {
           return 1;
         }
         return a.type === 'player' ? -1 : 1; // En caso de empate, preferencia para el jugador frente a los monstruos

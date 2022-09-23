@@ -11,7 +11,7 @@ import { GameManagerService } from 'src/app/services/game-manager.service';
 })
 export class SelectPlayerPageComponent implements OnInit {
 
-  playerSelected: Character = null;
+  playerSelected!: Character;
   players: Character[] = Characters;
   constructor(private router: Router, private game: GameManagerService) { }
 

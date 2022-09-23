@@ -10,7 +10,7 @@ import { CampaignStatusService } from 'src/app/services/campaign-status.service'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopPageComponent {
-  itemIndexes = [];
+  itemIndexes: number[] = [];
 
   items: ItemDef[] = [];
   itemTypeSelected: ItemType = 'all';
