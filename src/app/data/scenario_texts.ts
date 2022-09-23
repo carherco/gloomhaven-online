@@ -1,4 +1,4 @@
-type ScenarioText = {
+export type ScenarioText = {
   name: string,
   introduction: string[],
   milestones: {key: string, texts: string[]}[],
@@ -11,8 +11,8 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     introduction: [
       'Todo el mundo necesita comer.',
       'Cualquiera que sea tu razón para venir a Gloomhaven, aquí en el borde del mundo, ese simple hecho nunca va a cambiar. Un mercenario no puede luchar con el estómago vacío.',
-      'Así que cuando Jekserah, una mujer de Valrath con un manto rojo y joyas de oro suficientes para mantenerte alimentado durante una década, se te acerca en el León Durmiente (Sleeping Lion) y ofrece pagarte diez monedas de oro para localizar a un ladrón y recuperar algunos bienes robados ... Bueno, parece una excusa tan buena como cualquiera para ponerse sobrio y comenzar a pagar tu cuenta.',
-      '"Este ladrón ha robado algunos documentos importantes", dice la comerciante de piel roja, agitando la colacon agitación. "No me importa lo que le hagas a él. Solo trae lo que es mío ".',
+      'Así que cuando Jekserah, una mujer Valrath con un manto rojo y joyas de oro suficientes para mantenerte alimentado durante una década, se te acerca en el León Durmiente (Sleeping Lion) y ofrece pagarte diez monedas de oro para localizar a un ladrón y recuperar algunos bienes robados ... Bueno, parece una excusa tan buena como cualquiera para ponerse sobrio y comenzar a pagar tu cuenta.',
+      '"Este ladrón ha robado algunos documentos importantes", dice la comerciante de piel roja, agitando la cola con agitación. "No me importa lo que le hagas a él. Solo trae lo que es mío ".',
       'Basándoos en la descripción de Jekserah, fue bastante fácil golpear a algunos matones callejeros y obtener una ubicación de la guarida de los ladrones. No te ganas la vida como mercenario en Gloomhaven sin saber cómo romper algunos cráneos.',
       'Entonces vuestro objetivo es Black Barrow. Suena como un lugar encantador.'
     ],
