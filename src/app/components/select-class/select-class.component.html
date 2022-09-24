@@ -14,7 +14,7 @@
     <div *ngFor="let character of characters" style="float:left">
       <img class="character" (click)="select(character)" [class.character-selected]="character === characterSelected" src="./assets/{{character.image}}" />
       <br/>
-      <p class = "character-title" align = "center">{{ character.class }}
+      <p class = "character-title" align = "center">{{ character.className }}
     </div>
   </div>
 </div>

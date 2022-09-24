@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class PerksSectionComponent implements OnInit {
 
-  @Input() perks: {id: any, checked: boolean}[] = [];
+  @Input() perks: {id: any, title: string, checked: boolean}[] = [];
   @Input() selectedPerks: string[] = [];
-  perksList: {id: any, checked: boolean}[] = [];
+  perksList: {id: any, title: string, checked: boolean}[] = [];
 
   constructor(private router: Router) {}
 
