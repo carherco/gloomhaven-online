@@ -9,23 +9,21 @@ import { defaultDeck } from '../data/modifiers';
 })
 export class GameManagerService {
 
-  player: Character;
-  handCards;
-  playedCards: [];
-  activeCards: [];
-  discardedCards: [];
-  LostCards: [];
+  player!: Character;
+  handCards!: any[];
+  playedCards!: any[];
+  activeCards!: any[];
+  discardedCards!: any[];
+  LostCards!: any[];
 
-  constructor() { }
-
-  setPlayer(player) {
+  setPlayer(player: Character) {
     this.player = player;
     localStorage.setItem('player', JSON.stringify(this.player));
   }
 
-  getCharacter(): Character {
+  getCharacter(): Character|null {
 
-    let player;
+    let player: Character|null;
 
     player = this.player;
 
@@ -33,7 +31,7 @@ export class GameManagerService {
       return player;
     }
 
-    player = JSON.parse(localStorage.getItem('player'));
+    player = JSON.parse(localStorage.getItem('player')!);
 
     if (player) {
       this.player = player;
@@ -47,13 +45,13 @@ export class GameManagerService {
     return this.getCharacter() ? true : false;
   }
 
-  setHand(handCards) {
+  setHand(handCards: any[]) {
     this.handCards = handCards.map(c => ({...c, selected: false }));
     localStorage.setItem('handCards', JSON.stringify(this.handCards));
   }
 
   getHand(): any[] {
-    return this.handCards || JSON.parse(localStorage.getItem('handCards'));
+    return this.handCards || JSON.parse(localStorage.getItem('handCards')!);
   }
 
   getAttackModifierDeck(): Modifier[] {

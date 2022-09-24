@@ -25,6 +25,6 @@ export interface EnemyTracker {
   cards: MonsterAbilityCardFront[];
   deckCards: MonsterAbilityCardFront[];
   drawnCards: MonsterAbilityCardFront[];
-  currentCard: MonsterAbilityCardFront;
-  currentInitiative: number;
+  currentCard: MonsterAbilityCardFront | null;
+  currentInitiative: number | null;
 }

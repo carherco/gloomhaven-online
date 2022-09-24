@@ -12,8 +12,8 @@ import {
 } from '../model/token';
 import { Scenarios, TokenDef } from '../data/mapsDef';
 import { MonsterAbilityCardBack, MonsterAbilityCardFront, EnemyTracker } from '../model/monsterAbilityCard';
-import { MonsterAbilityCards } from '../data/monster-ability-cards';
-import { EnemyDef, EnemyDefs } from '../data/enemiesDefs';
+import { MonsterAbilityCard, MonsterAbilityCards } from '../data/monster-ability-cards';
+import { EnemyDefs } from '../data/enemiesDefs';
 import { SCENARIOS } from '../data/scenarios';
 import { SCENARIO_MONSTERS } from '../data/scenario_monsters';
 
@@ -23,7 +23,6 @@ import { SCENARIO_MONSTERS } from '../data/scenario_monsters';
 export class ScenarioCreatorService {
 
   scenarioLevel = 4;
-  constructor() { }
 
   createFromMatrix(matrix: string[][]): Token[][][] {
     return matrix.map(
@@ -67,7 +66,7 @@ export class ScenarioCreatorService {
   getScenarioTokens(id): Token[] {
 
 
-    const tokensIds = Scenarios[id].tokens;
+    const tokensIds: Token[] = Scenarios[id].tokens;
     const mapTokens = tokensIds.flatMap(
       t => {
         let tokens: Token[];
@@ -101,7 +100,7 @@ export class ScenarioCreatorService {
 
     const enemyTokens: Token[] = [];
     SCENARIO_MONSTERS[id].monsters.forEach(
-      mosnter => {
+      (mosnter: any) => {
         const normalToken = new EnemyToken(mosnter.name, 'normal', this.scenarioLevel) as Token;
         const eliteToken = new EnemyToken(mosnter.name, 'elite', this.scenarioLevel) as Token;
         enemyTokens.push(normalToken, eliteToken)
@@ -120,7 +119,7 @@ export class ScenarioCreatorService {
   getEnemyDeck(cardsId: string): [MonsterAbilityCardBack, MonsterAbilityCardFront[]] {
     const cards = MonsterAbilityCards.filter( c => c.name.includes('-' + cardsId + '-'));
     return [
-      cards.find(c => c.name.includes('back')),
+      cards.find(c => c.name.includes('back')) as MonsterAbilityCardBack,
       cards.filter(c => !c.name.includes('back')) as MonsterAbilityCardFront[]
     ];
   }
