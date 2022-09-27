@@ -4,7 +4,7 @@
   <h6 id ="blessesInDeck" style = "color: white">Extra Blesses in Deck: {{ extraBlesses }}</h6>
   <h6 id ="cursesInDeck" style = "color: white">Extra Curses in Deck: {{ extraCurses }}</h6>
   <img *ngIf="modifierDeck.length" id ="amDeck" (click)="drawCard()" class="attack-modifier" src="./assets/amBack.png"/>
-  <img *ngIf="playedModifierDeck.length" id = "playedModifiers" class = "attack-modifier" src="assets/{{lastModifier.src}}"/>
+  <img *ngIf="playedModifierDeck.length" id = "playedModifiers" class = "attack-modifier" src="assets/{{lastModifier?.src}}"/>
   <br/>
   <button id ="shuffleMods" (click)="shuffleClick()" class="button" type="button">Shuffle Modifiers</button><br/>
   <button id ="bless" (click)="addBless()" class = "button" type = "button">Bless</button>
