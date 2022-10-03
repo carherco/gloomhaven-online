@@ -67,7 +67,7 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 1,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 10, g: 8, t: 1} },
+      { playerName: 'Raticate', playerResults: {xp: 10, g: 18, t: 1} },
       { playerName: 'Bruto', playerResults: {xp: 14, g: 8, t: 1, pq: 1} },
       { playerName: 'Maga', playerResults: {xp: 12, g: 0, t: 2} },
       { playerName: 'Carlos', playerResults: {xp: 10, g: 4, t: 2} },
@@ -75,14 +75,14 @@ export function loadCampaing(): CampaignStatus {
     rewards: {
       partyAchievements: [PARTY_ACHIEVEMENTS.FIRST_STEPS],
     },
-    scenariosUnlocked: [2]
+    scenariosUnlocked: [2, 65]
   });
 
   campaign.completeScenario({
     scenarioId: 2,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 3, g: 14, t: 2} },
+      { playerName: 'Raticate', playerResults: {xp: 3, g: 20, t: 2} },
       { playerName: 'Bruto', playerResults: {xp: 12, g: 6, t: 1, pq: 1} },
       { playerName: 'Maga', playerResults: {xp: 11, g: 12, t: 1} },
       { playerName: 'Carlos', playerResults: {xp: 10, g: 16, t: 1} },

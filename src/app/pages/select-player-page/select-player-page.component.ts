@@ -3,6 +3,7 @@ import { Character } from 'src/app/model/character';
 import { Characters } from 'src/app/data/characters';
 import { Router } from '@angular/router';
 import { GameManagerService } from 'src/app/services/game-manager.service';
+import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
 
 @Component({
   selector: 'app-select-player-page',
@@ -12,8 +13,10 @@ import { GameManagerService } from 'src/app/services/game-manager.service';
 export class SelectPlayerPageComponent implements OnInit {
 
   playerSelected!: Character;
-  players: Character[] = Characters;
-  constructor(private router: Router, private game: GameManagerService) { }
+  characters: Character[] = Characters;
+  constructor(private router: Router, private game: GameManagerService, private campService: CampaignManagerService) {
+    this.characters = this.campService.getCharacters();
+  }
 
   ngOnInit(): void { }
 

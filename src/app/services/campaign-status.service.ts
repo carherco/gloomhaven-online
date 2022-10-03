@@ -165,7 +165,10 @@ export class CampaignStatusService {
       experience: EXPERIENCE_MILESTONES[level - 1],
       gold: 15 * level + 15,
       perkTicks: 0,
-      ownedAbilityCards: [],
+      ownedAbilityCards: [ // TODO: añadir/elegir cartas del nivel
+        ...payload.characterClass.levelXCards,
+        ...payload.characterClass.level1Cards,
+      ],
       ownedItems: [],
       scenarioAbilityCards: [],
       scenarioItems: [],

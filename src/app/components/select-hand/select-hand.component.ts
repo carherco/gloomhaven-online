@@ -5,6 +5,7 @@ import { Cragheart } from 'src/app/data/charactersDef';
 import { Character } from 'src/app/model/character';
 import { Router } from '@angular/router';
 import { Characters } from 'src/app/data/characters';
+import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
 
 @Component({
   selector: 'app-select-hand',
@@ -17,8 +18,8 @@ export class SelectHandComponent implements OnInit {
   characterClass: CharacterClass;
   cardsList: any[] = [];
   cardCount = 0;
-  constructor(private router: Router, private game: GameManagerService) {
-    this.character = this.game.getCharacter();
+  constructor(private router: Router, private game: GameManagerService, private campService: CampaignManagerService) {
+    this.character = this.game.getCharacter()!;
     this.characterClass = this.character.characterClass;
     const previousSelectedCards = this.game.getHand() || [];
     this.cardsList = this.character.ownedAbilityCards.map(

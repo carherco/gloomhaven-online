@@ -12,7 +12,7 @@ export class PlayersPageComponent {
   characters: Character[];
   selectedCharacter!: Character;
 
-  constructor(private campService: CampaignManagerService, ) {
+  constructor(private campService: CampaignManagerService) {
     this.characters = this.campService.getCharacters();
   }
 
