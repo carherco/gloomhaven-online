@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Token } from 'src/app/model/token';
-//import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';

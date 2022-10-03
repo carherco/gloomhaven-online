@@ -1,9 +1,5 @@
 import { Injectable, NgZone, OnDestroy, Optional } from '@angular/core';
 import { Auth, authState, signInAnonymously, signOut, User as FirebaseUser, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
-// import { auth } from 'firebase/app';
-// import firebase from 'firebase/compat/app';
-// import { AngularFireAuth } from '@angular/fire/compat/auth';
-// import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { User } from '../model/player';
 import { EMPTY, Observable, Subscription } from 'rxjs';
