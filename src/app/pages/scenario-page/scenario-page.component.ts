@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Token } from 'src/app/model/token';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, docData } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
@@ -68,22 +68,35 @@ export class ScenarioPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    console.log('escenarios/' + this.currentMatrixFirebaseId);
     this.firebaseItemsCollection = collection(this.afs, 'escenarios', 'escenarios/' + this.currentMatrixFirebaseId);
     const items$ = collectionData(this.firebaseItemsCollection);
 
-    // Para hacer un Get del escenario
-    items$.subscribe(
-      doc => {
+    const ref = doc(this.afs, 'escenarios/' + this.currentMatrixFirebaseId);
+    const testDocValue$ = docData(ref).subscribe(
+      (doc: any) => {
         console.log(doc);
-        // if (doc) {
-        //   this.currentMatrix = JSON.parse(doc.currentMatrix);
-        // } else {
-        //   this.currentMatrix = [];
-        // }
-        // this.cdr.detectChanges();
+        if (doc) {
+          this.currentMatrix = JSON.parse(doc.currentMatrix);
+        } else {
+          this.currentMatrix = [];
+        }
+        this.cdr.detectChanges();
       }
     );
+
+    // Para hacer un Get del escenario
+    // items$.subscribe(
+    //   (doc: any) => {
+    //     console.log(doc);
+    //     if (doc) {
+    //       this.currentMatrix = JSON.parse(doc.currentMatrix);
+    //     } else {
+    //       this.currentMatrix = [];
+    //     }
+    //     this.cdr.detectChanges();
+    //   }
+    // );
   }
 
   registerMap() {
