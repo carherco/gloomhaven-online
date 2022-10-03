@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Token } from 'src/app/model/token';
-import { Firestore, collection, collectionData, doc, docData } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, docData, updateDoc, DocumentReference } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
@@ -44,6 +44,7 @@ export class ScenarioPageComponent implements OnInit {
   columnSelected!: number;
 
   firebaseItemsCollection!: any;
+  doc!: DocumentReference;
 
   constructor(
     private scenarioCreator: ScenarioCreatorService,
@@ -72,8 +73,8 @@ export class ScenarioPageComponent implements OnInit {
     this.firebaseItemsCollection = collection(this.afs, 'escenarios', 'escenarios/' + this.currentMatrixFirebaseId);
     const items$ = collectionData(this.firebaseItemsCollection);
 
-    const ref = doc(this.afs, 'escenarios/' + this.currentMatrixFirebaseId);
-    const testDocValue$ = docData(ref).subscribe(
+    this.doc = doc(this.afs, 'escenarios/' + this.currentMatrixFirebaseId);
+    docData(this.doc).subscribe(
       (doc: any) => {
         console.log(doc);
         if (doc) {
@@ -193,7 +194,7 @@ export class ScenarioPageComponent implements OnInit {
 
   save() {
     const preparedDoc = {scenarioId: this.scenarioId, currentMatrix: JSON.stringify(this.currentMatrix)};
-    this.firebaseItemsCollection.doc(this.currentMatrixFirebaseId).set(preparedDoc);
+    updateDoc(this.doc, preparedDoc);
   }
 
 }
