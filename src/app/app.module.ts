@@ -55,6 +55,7 @@ import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/play
 import { LocationsTrackerComponent } from './components/locations-tracker/locations-tracker.component';
 import { TreasuresTrackerComponent } from './components/treasures-tracker/treasures-tracker.component';
 import { PlayerSheetComponent } from './components/player-sheet/player-sheet.component';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -110,6 +111,7 @@ import { PlayerSheetComponent } from './components/player-sheet/player-sheet.com
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
     //ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [

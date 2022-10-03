@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Token } from 'src/app/model/token';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+//import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { ScenarioSnapshot } from 'src/app/model/scenario';
 import { ActivatedRoute } from '@angular/router';
 import { ScenarioCreatorService } from 'src/app/services/scenario-creator.service';
@@ -49,7 +50,7 @@ export class ScenarioPageComponent implements OnInit {
     private scenarioCreator: ScenarioCreatorService,
     private campaignManager: CampaignManagerService,
     private route: ActivatedRoute,
-    private afs: AngularFirestore,
+    private afs: Firestore,
     private cdr: ChangeDetectorRef,
     private modalService: NgbModal
     ) {
@@ -69,18 +70,19 @@ export class ScenarioPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.firebaseItemsCollection = this.afs.collection<ScenarioSnapshot>('escenarios');
+    this.firebaseItemsCollection = collection(this.afs, 'escenarios', 'escenarios/' + this.currentMatrixFirebaseId);
+    const items$ = collectionData(this.firebaseItemsCollection);
 
     // Para hacer un Get del escenario
-    const currentMatrixDoc = this.afs.doc<ScenarioSnapshot>('escenarios/' + this.currentMatrixFirebaseId);
-    currentMatrixDoc.valueChanges().subscribe(
+    items$.subscribe(
       doc => {
-        if (doc) {
-          this.currentMatrix = JSON.parse(doc.currentMatrix);
-        } else {
-          this.currentMatrix = [];
-        }
-        this.cdr.detectChanges();
+        console.log(doc);
+        // if (doc) {
+        //   this.currentMatrix = JSON.parse(doc.currentMatrix);
+        // } else {
+        //   this.currentMatrix = [];
+        // }
+        // this.cdr.detectChanges();
       }
     );
   }
@@ -106,7 +108,7 @@ export class ScenarioPageComponent implements OnInit {
     };
 
     // Para dar de alta el escenario en la base de datos
-    this.firebaseItemsCollection = this.afs.collection<ScenarioSnapshot>('escenarios');
+    this.firebaseItemsCollection = collection(this.afs, 'escenarios', 'escenarios/' + this.currentMatrixFirebaseId);
     this.firebaseItemsCollection.doc(this.currentMatrixFirebaseId).set({ id: this.currentMatrixFirebaseId, scenarioId: this.scenarioId, currentMatrix: scenarioSnapshot.currentMatrix});
   }
 
