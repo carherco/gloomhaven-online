@@ -38,5 +38,9 @@
   </li>
 </ul>
 <div class="player-items">
-  <img *ngFor="let item of items | filterItemsByTipe:itemTypeSelected" [src]="item.image|prefix:'assets/images/'" width="180">
+  <img *ngFor="let item of items | filterItemsByTipe:itemTypeSelected"
+      [src]="item.image|prefix:'assets/images/'"
+      title="Id: {{item.points! + 1}}"
+      alt="Image of card {{item.name}}"
+      width="180">
 </div>
