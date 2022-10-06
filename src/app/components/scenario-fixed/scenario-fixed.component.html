@@ -44,9 +44,9 @@
               <img *ngIf="uppestToken.status.invisible" class="status" src = "./assets/invisible.png"/>
               <img *ngIf="uppestToken.status.strengthened" class="status" src = "./assets/Strengthen.png"/>
             </div>
-            <div class="info" *ngIf="uppestToken.stats?.h">{{uppestToken.stats.h}} <ng-container *ngIf="uppestToken.stats?.s"> - ({{uppestToken.stats.s}})</ng-container><ng-container *ngIf="uppestToken.stats?.re"> - *{{uppestToken.stats.re}}</ng-container></div>
+            <div class="info" *ngIf="uppestToken.stats?.h">{{uppestToken.stats!.h}} <ng-container *ngIf="uppestToken.stats?.s"> - ({{uppestToken.stats!.s}})</ng-container><ng-container *ngIf="uppestToken.stats?.re"> - *{{uppestToken.stats!.re}}</ng-container></div>
             <h1 *ngIf="['enemy','enemy elite','summon_player'].includes(uppestToken.type)">{{uppestToken.name}}</h1>
-            <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.stats.m}}M {{uppestToken.stats.a}}A {{uppestToken.stats.r}}R</p>
+            <p *ngIf="['enemy','enemy elite'].includes(uppestToken.type)">{{uppestToken.stats!.m}}M {{uppestToken.stats!.a}}A {{uppestToken.stats!.r}}R</p>
           </a>
         </div>
       </li>
