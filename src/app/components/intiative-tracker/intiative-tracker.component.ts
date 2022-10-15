@@ -4,7 +4,6 @@ import { ScenarioCreatorService } from 'src/app/services/scenario-creator.servic
 import { CampaignManagerService } from 'src/app/services/campaign-manager.service';
 import { EnemyTracker } from 'src/app/model/monsterAbilityCard';
 import { TokenDef } from 'src/app/data/mapsDef';
-import { Stats } from 'src/app/data/enemiesDefs';
 
 export interface Tracker {
   id: string;
@@ -70,7 +69,7 @@ export class IntiativeTrackerComponent implements OnInit {
     this.playersTrackers = this.playersTrackers.map( pt => ({...pt, currentInitiative: null}) );
   }
 
-  private shuffle(a) {
+  private shuffle(a: any[]) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
@@ -109,7 +108,7 @@ export class IntiativeTrackerComponent implements OnInit {
   drawMonstersCards() {
     this.enemiesTrackers = this.enemiesTrackers.map(
       tracker => {
-        tracker.currentCard = tracker.deckCards.pop();
+        tracker.currentCard = tracker.deckCards.pop()!;
         tracker.drawnCards.push(tracker.currentCard);
         tracker.currentInitiative = tracker.currentCard.initiative;
         return {...tracker};

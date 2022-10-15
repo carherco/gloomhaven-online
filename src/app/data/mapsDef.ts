@@ -7,6 +7,15 @@ export interface TokenDef {
   src?: string;
 }
 
+type Scenario = {
+  id: number,
+  name: string,
+  requirements: string[],
+  goal: string,
+  matrix: string[][],
+  tokens: TokenDef[]
+}
+
 const Scenario18Matrix = [
   ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
     ['0', '0', 'W', '0', '0', '0', 'D', '0', '0', '0', '0', '0', '0'],
@@ -35,9 +44,10 @@ const Scenario18Tokens: TokenDef[] = [
   {id: 'coin-1', type: 'loot'},
 ];
 
-const Scenario18 = {
+const Scenario18: Scenario = {
   id: 18,
   name: 'Abandoned Sewers',
+  requirements: [],
   goal: 'Kill all enemies',
   matrix: Scenario18Matrix,
   tokens: Scenario18Tokens
@@ -69,9 +79,10 @@ const Scenario16Tokens: TokenDef[] = [
   {id: 'coin-1', type: 'loot' },
 ];
 
-const Scenario16 = {
+const Scenario16: Scenario = {
   id: 16,
   name: 'Mountain Pass',
+  requirements: [],
   goal: 'Kill all enemies',
   matrix: Scenario16Matrix,
   tokens: Scenario16Tokens
@@ -109,9 +120,10 @@ const Scenario23Tokens: TokenDef[] = [
   // {id: 'coin-1', type: 'loot' },
 ];
 
-const Scenario23 = {
+const Scenario23: Scenario = {
   id: 23,
   name: 'Deep Ruins',
+  requirements: [],
   goal: 'Occupy all pressure plates simultaneously',
   matrix: Scenario23Matrix,
   tokens: Scenario23Tokens
@@ -144,9 +156,10 @@ const Scenario24Tokens: TokenDef[] = [
   {id: 'coin-1', type: 'loot' },
 ];
 
-const Scenario24 = {
+const Scenario24: Scenario = {
   id: 24,
   name: 'Echo Chamber',
+  requirements: [],
   goal: 'Open all doors (fog tiles)',
   matrix: Scenario24Matrix,
   tokens: Scenario24Tokens
@@ -185,9 +198,10 @@ const Scenario25Tokens: TokenDef[] = [
   {id: 'coin-1', type: 'loot' },
 ];
 
-const Scenario25 = {
+const Scenario25: Scenario = {
   id: 25,
   name: 'Icecrag Ascent',
+  requirements: [],
   goal: 'All characters must escape through the exit',
   matrix: Scenario25Matrix,
   tokens: Scenario25Tokens
@@ -226,7 +240,7 @@ const Scenario57Tokens: TokenDef[] = [
   {id: 'coin-1', type: 'loot' },
 ];
 
-const Scenario57 = {
+const Scenario57: Scenario = {
   id: 57,
   name: 'Investigation',
   requirements: ['"Vengeance" personal quest'],
@@ -261,9 +275,10 @@ const Scenario81Tokens: TokenDef[] = [
   {id: 'coin-1', type: 'loot' },
 ];
 
-const Scenario81 = {
+const Scenario81: Scenario = {
   id: 81,
   name: 'Temple of the Eclipse',
+  requirements: [],
   goal: 'Kill the Colorless',
   matrix: Scenario81Matrix,
   tokens: Scenario81Tokens
