@@ -29,38 +29,38 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[1].uid,
     characterClass: Brute,
-    name: 'Bruto',
+    name: 'Ostiónix',
     personalQuest: PERSONAL_QUESTS[524]
   });
 
-  campaign.buyItem({playerName: 'Bruto', itemId: 1});
-  campaign.buyItem({playerName: 'Bruto', itemId: 12});
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 1});
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 12});
 
   campaign.createCharacter({
     playerId: players[2].uid,
     characterClass: Spellweaver,
-    name: 'Maga',
+    name: 'Maléfica',
     personalQuest: PERSONAL_QUESTS[516]
   });
 
-  campaign.buyItem({playerName: 'Maga', itemId: 5});
-  campaign.buyItem({playerName: 'Maga', itemId: 14});
+  campaign.buyItem({playerName: 'Maléfica', itemId: 5});
+  campaign.buyItem({playerName: 'Maléfica', itemId: 14});
 
   campaign.createCharacter({
     playerId: players[3].uid,
     characterClass: Tinkerer,
-    name: 'Carlos',
+    name: 'Brad',
     personalQuest: PERSONAL_QUESTS[531]
   });
 
-  campaign.buyItem({playerName: 'Carlos', itemId: 6});
+  campaign.buyItem({playerName: 'Brad', itemId: 6});
 
   campaign.resolveCityEvent({eventId: 29, discard: false});
   campaign.resolveRoadEvent({eventId: 4, playersResults: [
     { playerName: 'Raticate', playerResults: {g: 2} },
-    { playerName: 'Bruto', playerResults: {g: 2} },
-    { playerName: 'Maga', playerResults: {g: 2} },
-    { playerName: 'Carlos', playerResults: {g: 2} },
+    { playerName: 'Ostiónix', playerResults: {g: 2} },
+    { playerName: 'Maléfica', playerResults: {g: 2} },
+    { playerName: 'Brad', playerResults: {g: 2} },
   ], discard: true});
 
   campaign.completeScenario({
@@ -68,9 +68,9 @@ export function loadCampaing(): CampaignStatus {
     level: 1,
     playersResults: [
       { playerName: 'Raticate', playerResults: {xp: 10, g: 18, t: 1} },
-      { playerName: 'Bruto', playerResults: {xp: 14, g: 8, t: 1, pq: 1} },
-      { playerName: 'Maga', playerResults: {xp: 12, g: 0, t: 2} },
-      { playerName: 'Carlos', playerResults: {xp: 10, g: 4, t: 2} },
+      { playerName: 'Ostiónix', playerResults: {xp: 14, g: 8, t: 1, pq: 1} },
+      { playerName: 'Maléfica', playerResults: {xp: 12, g: 0, t: 2} },
+      { playerName: 'Brad', playerResults: {xp: 10, g: 4, t: 2} },
     ],
     rewards: {
       partyAchievements: [PARTY_ACHIEVEMENTS.FIRST_STEPS],
@@ -83,9 +83,9 @@ export function loadCampaing(): CampaignStatus {
     level: 1,
     playersResults: [
       { playerName: 'Raticate', playerResults: {xp: 3, g: 20, t: 2} },
-      { playerName: 'Bruto', playerResults: {xp: 12, g: 6, t: 1, pq: 1} },
-      { playerName: 'Maga', playerResults: {xp: 11, g: 12, t: 1} },
-      { playerName: 'Carlos', playerResults: {xp: 10, g: 16, t: 1} },
+      { playerName: 'Ostiónix', playerResults: {xp: 12, g: 6, t: 1, pq: 1} },
+      { playerName: 'Maléfica', playerResults: {xp: 11, g: 12, t: 1} },
+      { playerName: 'Brad', playerResults: {xp: 10, g: 16, t: 1} },
     ],
     rewards: {
       prosperity: 1,
@@ -93,6 +93,47 @@ export function loadCampaing(): CampaignStatus {
     },
     scenariosUnlocked: [3, 4]
   });
+
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 8});
+  campaign.buyItem({playerName: 'Brad', itemId: 9});
+  campaign.buyItem({playerName: 'Raticate', itemId: 2});
+  campaign.buyItem({playerName: 'Raticate', itemId: 5});
+  campaign.buyItem({playerName: 'Raticate', itemId: 13});
+  campaign.buyItem({playerName: 'Maléfica', itemId: 13});
+
+  campaign.resolveCityEvent({eventId: 19, playersResults: [
+    { playerName: 'Ostiónix', playerResults: {g: -6} },
+    { playerName: 'Maléfica', playerResults: {g: -12} },
+    { playerName: 'Brad', playerResults: {g: -2} },
+  ], discard: true});
+
+  campaign.resolveRoadEvent({eventId: 1, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 3,
+    level: 1,
+    playersResults: [
+      { playerName: 'Raticate', playerResults: {xp: 15, g: 16, t: 1} },
+      { playerName: 'Ostiónix', playerResults: {xp: 15, g: 6, t: 1} },
+      { playerName: 'Maléfica', playerResults: {xp: 17, g: 4} },
+      { playerName: 'Brad', playerResults: {xp: 9, g: 8, t: 2, pq: 1} },
+    ],
+    rewards: {
+      prosperity: 1,
+      gold: 15
+    },
+    scenariosUnlocked: [3, 4]
+  });
+
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 3});
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 7});
+  campaign.buyItem({playerName: 'Raticate', itemId: 8});
+
+
+  // Raticate: Hostile Takeover / Add three rolling muddle cards / Add two rolling +1 cards
+  // Ostiónix: Juggernaut / Ignore negative item effects and add one +1 card / Replace one -1 with one +1 card
+  // Maléfica: Icy Blast / Add one +1 wound card / Add two +1 cards
+  // Brad: Stamina Booster / Remove two -1 cards / Remove two -1 cards
 
   return campaign.getStatus();
 }
