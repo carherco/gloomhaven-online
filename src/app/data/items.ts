@@ -78,7 +78,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/1-14/heater-shield.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 20,
     xws: 'heatershield'
   },
   {
@@ -87,7 +87,7 @@ export const ITEMS: ItemDef[] = [
     points: 8,
     image: 'items/1-14/piercing-bow.png',
     type: 'two-hands',
-    use: 'spend',
+    use: 'consume',
     price: 30,
     xws: 'piercingbow'
   },
