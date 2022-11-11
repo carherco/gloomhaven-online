@@ -29,6 +29,8 @@ export interface CampaignStatus {
   roadEventsDeck: number[];
   completedScenarios: number[];
   unlockedScenarios: number[];
+  treasuresLooted: number[];
+  treasuresUnlooted: number[];
 }
 
 export const INITIAL_STATUS: CampaignStatus = {
@@ -62,6 +64,8 @@ export const INITIAL_STATUS: CampaignStatus = {
   ],
   completedScenarios: [],
   unlockedScenarios: [],
+  treasuresLooted: [],
+  treasuresUnlooted: [],
 };
 
 const EXPERIENCE_MILESTONES = [0, 45, 95, 150, 210, 275, 345, 420, 500];
@@ -141,6 +145,8 @@ export class CampaignStatusService {
       roadEventsDeck: [...this.status.roadEventsDeck],
       completedScenarios: [...this.status.completedScenarios],
       unlockedScenarios: [...this.status.unlockedScenarios],
+      treasuresLooted: [...this.status.treasuresLooted],
+      treasuresUnlooted: [...this.status.treasuresUnlooted],
     };
   }
 
@@ -297,6 +303,12 @@ export class CampaignStatusService {
     if (payload.rewards?.itemDesigns) {
       payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
     }
+
+    // Treasures
+    if (payload.treasuresLooted) {
+      this.status.treasuresLooted = this.status.treasuresLooted.concat(payload.treasuresLooted);
+    }
+
     // Check if any player has leveled up
     this.checkLevelUps();
   }
@@ -345,6 +357,11 @@ export class CampaignStatusService {
     if (payload.rewards?.reputation) { this.gainReputation(payload.rewards.reputation); }
     if (payload.rewards?.itemDesigns) {
       payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+    }
+
+    // Treasures
+    if (payload.treasuresLooted) {
+      this.status.treasuresLooted.concat(payload.treasuresLooted);
     }
 
     // Check if any player has leveled up

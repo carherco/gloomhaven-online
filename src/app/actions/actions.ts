@@ -72,6 +72,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Maléfica', playerResults: {xp: 12, g: 0, t: 2} },
       { playerName: 'Brad', playerResults: {xp: 10, g: 4, t: 2} },
     ],
+    treasuresLooted: [7],
     rewards: {
       partyAchievements: [PARTY_ACHIEVEMENTS.FIRST_STEPS],
     },
@@ -87,6 +88,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Maléfica', playerResults: {xp: 11, g: 12, t: 1} },
       { playerName: 'Brad', playerResults: {xp: 10, g: 16, t: 1} },
     ],
+    treasuresLooted: [67],
     rewards: {
       prosperity: 1,
       gold: 10
@@ -122,7 +124,7 @@ export function loadCampaing(): CampaignStatus {
       prosperity: 1,
       gold: 15
     },
-    scenariosUnlocked: [3, 4]
+    scenariosUnlocked: [9, 8]
   });
 
   campaign.buyItem({playerName: 'Ostiónix', itemId: 3});

@@ -8,5 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TreasuresTrackerComponent {
 
   @Input() treasures: {id: number, title: string}[] = [];
+  @Input() treasuresLooted: {id: number, title: string}[] = [];
 
 }

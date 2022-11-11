@@ -15,12 +15,13 @@ function sortScenarios(a: number, b: number): number {
 })
 export class LogPageComponent {
 
-  public status: CampaignStatus;
+  public status!: CampaignStatus;
   public scenarios: ScenarioWithStatus[] = [];
-  private unlockedButNotPlayedScenarios: ScenarioWithStatus[];
-  private completedScenarios: ScenarioWithStatus[];
+  private unlockedButNotPlayedScenarios!: ScenarioWithStatus[];
+  private completedScenarios!: ScenarioWithStatus[];
 
   public treasures: {id: number, title: string}[] = [];
+  public treasuresLooted: {id: number, title: string}[] = [];
 
   constructor(private campaign: CampaignStatusService) {
     const status$ = this.campaign.getStatus$();
@@ -42,6 +43,7 @@ export class LogPageComponent {
           const scenarioTreasures = SCENARIO_TREAURES[scenarioId];
           const treasuresWithTitle = scenarioTreasures.map( id => ({id, title: TREASURES[id].title}) );
           this.treasures = this.treasures.concat(treasuresWithTitle);
+          this.treasuresLooted = status.treasuresLooted.map( id => ({id, title: TREASURES[id].title}) );
         }
       ))
     ).subscribe();

@@ -52,6 +52,7 @@ export interface CompleteScenarioPayload {
     looseGlobalAchievements?: string[],
   };
   scenariosUnlocked?: number[];
+  treasuresLooted?: number[];
 }
 
 export interface CompleteSoloScenarioPayload {
@@ -70,6 +71,7 @@ export interface FailScenarioPayload {
     xp?: number,
     itemDesigns?: number[],
   };
+  treasuresLooted?: number[];
 }
 
 export interface BuyItemPayload {
