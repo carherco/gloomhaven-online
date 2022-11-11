@@ -1,17 +1,33 @@
-<pre>
+
 
 <h1>Campaña: (Poner nombre al equipo)</h1>
 
 <h2>City Rule: Militaristic</h2>
 
-<h2>Party Achievements</h2>
-- First Steps
+<h2>Global Achievements:</h2>
+<ul>
+  <li *ngFor="let achievement of globalAchievements">
+    {{achievement}}
+  </li>
+</ul>
+
+<h2>Party Achievements:</h2>
+<ul>
+  <li *ngFor="let achievement of partyAchievements">
+    {{achievement}}
+  </li>
+</ul>
 
 <app-locations-tracker [locations]="scenarios"></app-locations-tracker>
 
 <app-treasures-tracker [treasures]="treasures" [treasuresLooted]="treasuresLooted"></app-treasures-tracker>
 
+
+
 <!--
+
+<pre>
+
 Characters:
 - Lorkham (Cragheart) - Retired
 - Farts-like-thunder (Tinkerer)
@@ -758,7 +774,5 @@ RETIREMENT: FARTS LIKE THUNDER
 - Random Map 65 XXXXXX
 
 // TODO Desde crear Character Lux Lucitana
--->
-
-
 </pre>
+-->

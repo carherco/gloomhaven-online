@@ -122,7 +122,8 @@ export function loadCampaing(): CampaignStatus {
     ],
     rewards: {
       prosperity: 1,
-      gold: 15
+      gold: 15,
+      partyAchievements: [PARTY_ACHIEVEMENTS.JEKSERAHS_PLANS]
     },
     scenariosUnlocked: [9, 8]
   });

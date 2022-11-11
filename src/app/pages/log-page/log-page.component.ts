@@ -23,6 +23,9 @@ export class LogPageComponent {
   public treasures: {id: number, title: string}[] = [];
   public treasuresLooted: {id: number, title: string}[] = [];
 
+  public partyAchievements: string[] = [];
+  public globalAchievements: string[] = [];
+
   constructor(private campaign: CampaignStatusService) {
     const status$ = this.campaign.getStatus$();
     status$.pipe(
@@ -35,6 +38,8 @@ export class LogPageComponent {
 
           this.unlockedButNotPlayedScenarios = unlockedButNotPlayedScenariosIds.sort(sortScenarios).map( id => ({id, ...SCENARIOS[id], status: 'Available'}));
           this.completedScenarios = completedScenariosIds.sort(sortScenarios).map( id => ({id, ...SCENARIOS[id], status: 'Completed'}));
+          this.partyAchievements = status.party.achievements;
+          this.globalAchievements = status.city.achievements;
         }
       ),
       tap( _ => this.scenarios = this.completedScenarios.concat(this.unlockedButNotPlayedScenarios)),
