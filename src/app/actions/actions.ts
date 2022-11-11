@@ -98,7 +98,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Brad', itemId: 9});
   campaign.buyItem({playerName: 'Raticate', itemId: 2});
   campaign.buyItem({playerName: 'Raticate', itemId: 5});
-  campaign.buyItem({playerName: 'Raticate', itemId: 13});
+  campaign.buyItem({playerName: 'Raticate', itemId: 7});
   campaign.buyItem({playerName: 'Maléfica', itemId: 13});
 
   campaign.resolveCityEvent({eventId: 19, playersResults: [
