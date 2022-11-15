@@ -138,5 +138,17 @@ export function loadCampaing(): CampaignStatus {
   // Maléfica: Icy Blast / Add one +1 wound card / Add two +1 cards
   // Brad: Stamina Booster / Remove two -1 cards / Remove two -1 cards
 
+  campaign.resolveCityEvent({eventId: 15, playersResults: [
+    { playerName: 'Raticate', playerResults: {g: -11} },
+    { playerName: 'Brad', playerResults: {g: -4} },
+  ], discard: true});
+
+  campaign.resolveRoadEvent({eventId: 20, playersResults: [
+    { playerName: 'Raticate', playerResults: {xp: 3} },
+    { playerName: 'Brad', playerResults: {xp: 3} },
+    { playerName: 'Ostiónix', playerResults: {xp: 3} },
+    { playerName: 'Maléfica', playerResults: {xp: 3} },
+  ], discard: true});
+
   return campaign.getStatus();
 }
