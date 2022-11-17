@@ -150,5 +150,25 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Maléfica', playerResults: {xp: 3} },
   ], discard: true});
 
+  campaign.completeScenario({
+    scenarioId: 9,
+    level: 1,
+    playersResults: [
+      { playerName: 'Raticate', playerResults: {xp: 11, g: 6, t: 2} },
+      { playerName: 'Ostiónix', playerResults: {xp: 6, g: 10, t: 1, pq: 4} },
+      { playerName: 'Maléfica', playerResults: {xp: 6, g: 10, t:1, pq: 6} },
+      { playerName: 'Brad', playerResults: {xp: 14, g: 12, t: 1, pq: 1} },
+    ],
+    rewards: {
+      prosperity: 1,
+      gold: 20,
+      globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_DEAD_INVADE]
+    },
+    scenariosUnlocked: [9, 8]
+  });
+
+  // Raticate: Add two rolling +1 cards
+  // Brad: Ignore Negative Scenario Effects
+
   return campaign.getStatus();
 }
