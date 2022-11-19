@@ -132,20 +132,19 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [9, 8]
   });
 
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 3});
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 7});
-  campaign.buyItem({playerName: 'Raticate', itemId: 8});
-
-
-  // Raticate: Hostile Takeover / Add three rolling muddle cards / Add two rolling +1 cards
-  // Ostiónix: Juggernaut / Ignore negative item effects and add one +1 card / Replace one -1 with one +1 card
-  // Maléfica: Icy Blast / Add one +1 wound card / Add two +1 cards
-  // Brad: Stamina Booster
+  campaign.gainAbility({playerName: 'Ostiónix', ability: 'juggernaut'});
+  campaign.gainAbility({playerName: 'Maléfica', ability: 'icy-blast'});
+  campaign.gainAbility({playerName: 'Raticate', ability: 'hostile-takeover'});
+  campaign.gainAbility({playerName: 'Brad', ability: 'stamina-booster'});
   campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk11'});
   campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk2'});
   campaign.gainPerk({playerName: 'Maléfica', perkId: 'swPerk5'});
   campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk6-1'});
   campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk1-2'});
+
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 3});
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 7});
+  campaign.buyItem({playerName: 'Raticate', itemId: 8});
 
   campaign.resolveCityEvent({eventId: 15, playersResults: [
     { playerName: 'Raticate', playerResults: {g: -11} },

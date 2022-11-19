@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ITEMS } from '../data/items';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
-import { CreateCharacterPayload, RetireCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, CompleteSoloScenarioPayload, FailScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, EnhanceAbilityPayload, UnblockCharacterPayload, GainPerkPayload } from '../model/actions';
+import { CreateCharacterPayload, RetireCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, CompleteSoloScenarioPayload, FailScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, EnhanceAbilityPayload, UnblockCharacterPayload, GainPerkPayload, GainAbilityPayload } from '../model/actions';
 import { Character } from '../model/character';
 import { Player } from '../model/player';
 
@@ -524,6 +524,12 @@ export class CampaignStatusService {
   addRoadEvent(eventId: number) {
     this.status = this.cloneStatus();
     this.status.roadEventsDeck.push(eventId);
+  }
+
+  gainAbility(payload: GainAbilityPayload) {
+    this.status = this.cloneStatus();
+    const character = this.findCharacterByName(payload.playerName);
+    character.ownedAbilityCards.push(payload.ability);
   }
 
   enhanceAbility(payload: EnhanceAbilityPayload) {

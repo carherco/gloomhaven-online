@@ -125,6 +125,11 @@ export interface ResolveRoadEventPayload {
   discard: boolean;
 }
 
+export interface GainAbilityPayload {
+  playerName: string;
+  ability: string;
+}
+
 export interface EnhanceAbilityPayload {
   playerName: string;
   gold: number;
