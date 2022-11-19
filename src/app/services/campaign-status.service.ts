@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ITEMS } from '../data/items';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
-import { CreateCharacterPayload, RetireCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, CompleteSoloScenarioPayload, FailScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, EnhanceAbilityPayload, UnblockCharacterPayload } from '../model/actions';
+import { CreateCharacterPayload, RetireCharacterPayload, GainGlobalAchievementPayload, GainPartyAchievementPayload, CompleteScenarioPayload, CompleteSoloScenarioPayload, FailScenarioPayload, BuyItemPayload, SellItemPayload, MakeDonationPayload, ResolveCityEventPayload, ResolveRoadEventPayload, EnhanceAbilityPayload, UnblockCharacterPayload, GainPerkPayload } from '../model/actions';
 import { Character } from '../model/character';
 import { Player } from '../model/player';
 
@@ -403,6 +403,13 @@ export class CampaignStatusService {
       this.gainProsperity(1);
     }
 
+  }
+
+  gainPerk(payload: GainPerkPayload) {
+    this.status = this.cloneStatus();
+    const character = this.findCharacterByName(payload.playerName);
+    const perk = character.characterClass.perks.find( perk => perk.id === payload.perkId);
+    character.perks.push(perk!);
   }
 
   resolveCityEvent(payload: ResolveCityEventPayload) {

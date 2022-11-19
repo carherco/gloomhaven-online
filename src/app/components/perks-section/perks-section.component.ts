@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PerksSectionComponent implements OnInit {
 
   @Input() perks: {id: any, title: string, checked: boolean}[] = [];
-  @Input() selectedPerks: string[] = [];
+  @Input() selectedPerks: {id: any, title: string}[] = [];
   perksList: {id: any, title: string, checked: boolean}[] = [];
 
   constructor(private router: Router) {}
@@ -21,7 +21,7 @@ export class PerksSectionComponent implements OnInit {
     this.perksList = this.perks.map( p => { p.checked = false; return p; });
 
     this.selectedPerks.forEach( sp => {
-      let selectedPerk = this.perksList.find( p => p.id === sp )!;
+      let selectedPerk = this.perksList.find( p => p.id === sp.id )!;
       selectedPerk.checked = true;
     });
   }

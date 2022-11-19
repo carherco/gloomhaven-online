@@ -1,4 +1,4 @@
-import { CharacterClass } from './character-class';
+import { CharacterClass, Perk } from './character-class';
 import { Player } from './player';
 
 export interface Character {
@@ -20,5 +20,5 @@ export interface Character {
   ownedItems: number[];
   scenarioAbilityCards: any[];
   scenarioItems: any[];
-  perks: string[];
+  perks: Perk[];
 }

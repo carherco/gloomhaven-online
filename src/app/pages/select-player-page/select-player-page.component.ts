@@ -13,7 +13,7 @@ import { CampaignManagerService } from 'src/app/services/campaign-manager.servic
 export class SelectPlayerPageComponent implements OnInit {
 
   playerSelected!: Character;
-  characters: Character[] = Characters;
+  characters: Character[] = [];
   constructor(private router: Router, private game: GameManagerService, private campService: CampaignManagerService) {
     this.characters = this.campService.getCharacters();
   }

@@ -1,3 +1,12 @@
+import { Modifier } from './modifier';
+
+export interface Perk {
+  id: string,
+  title: string,
+  addModifiers: Modifier[],
+  removeModifiers: Modifier[]
+}
+
 export interface CharacterClass {
   id: string;
   key: string;
@@ -16,5 +25,5 @@ export interface CharacterClass {
   level7Cards: any[];
   level8Cards: any[];
   level9Cards: any[];
-  perks: any[];
+  perks: Perk[];
 }

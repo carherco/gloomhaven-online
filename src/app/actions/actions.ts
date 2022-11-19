@@ -96,6 +96,10 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [3, 4]
   });
 
+  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk1-1'});
+  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk8'});
+  campaign.gainPerk({playerName: 'Maléfica', perkId: 'swPerk3-1'});
+
   campaign.buyItem({playerName: 'Ostiónix', itemId: 8});
   campaign.buyItem({playerName: 'Brad', itemId: 9});
   campaign.buyItem({playerName: 'Raticate', itemId: 2});
@@ -136,7 +140,12 @@ export function loadCampaing(): CampaignStatus {
   // Raticate: Hostile Takeover / Add three rolling muddle cards / Add two rolling +1 cards
   // Ostiónix: Juggernaut / Ignore negative item effects and add one +1 card / Replace one -1 with one +1 card
   // Maléfica: Icy Blast / Add one +1 wound card / Add two +1 cards
-  // Brad: Stamina Booster / Remove two -1 cards / Remove two -1 cards
+  // Brad: Stamina Booster
+  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk11'});
+  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk2'});
+  campaign.gainPerk({playerName: 'Maléfica', perkId: 'swPerk5'});
+  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk6-1'});
+  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk1-2'});
 
   campaign.resolveCityEvent({eventId: 15, playersResults: [
     { playerName: 'Raticate', playerResults: {g: -11} },
@@ -164,11 +173,22 @@ export function loadCampaing(): CampaignStatus {
       gold: 20,
       globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_DEAD_INVADE]
     },
-    scenariosUnlocked: [9, 8]
+    scenariosUnlocked: [11, 12]
   });
 
-  // Raticate: Add two rolling +1 cards
-  // Brad: Ignore Negative Scenario Effects
+  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk11'});
+  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk6-2'});
+
+  campaign.resolveCityEvent({
+    eventId: 11,
+    playersResults: [
+      { playerName: 'Brad', playerResults: {g: -5} },
+    ],
+    rewards: {itemDesigns: [80]},
+    discard: true
+  });
+
+  campaign.buyItem({playerName: 'Maléfica', itemId: 6});
 
   return campaign.getStatus();
 }

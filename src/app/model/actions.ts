@@ -88,6 +88,11 @@ export interface MakeDonationPayload {
   playerName: string;
 }
 
+export interface GainPerkPayload {
+  playerName: string;
+  perkId: string;
+}
+
 export interface ResolveCityEventPayload {
   eventId: number;
   playersResults?: {playerName: string, playerResults: {xp?: number, g?: number, t?: number, items?: number[]}}[];

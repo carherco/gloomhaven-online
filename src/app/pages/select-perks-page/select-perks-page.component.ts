@@ -11,7 +11,7 @@ export class SelectPerksPageComponent {
 
   player: Character;
   availablePerks: any[] = [];
-  selectedPerks: string[] = [];
+  selectedPerks: {id: any, title: string}[] = [];
 
   constructor(private game: GameManagerService) {
     this.player = this.game.getCharacter()!;

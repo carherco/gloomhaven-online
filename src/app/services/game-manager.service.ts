@@ -58,11 +58,10 @@ export class GameManagerService {
     let deck: Modifier[] = [...defaultDeck];
     const playerPerksNames = this.player.perks;
     const characterPerks = this.player.characterClass.perks;
-    playerPerksNames.forEach(
-      perkName => {
-        const perkObject = characterPerks.find( p => p.id === perkName );
-        deck = this.addModifiers([...deck], [...perkObject.addModifiers], this.player.characterClass.key);
-        deck = this.removeModifiers([...deck], perkObject.removeModifiers, this.player.characterClass.key);
+    characterPerks.forEach(
+      perk => {
+        deck = this.addModifiers([...deck], [...perk.addModifiers], this.player.characterClass.key);
+        deck = this.removeModifiers([...deck], perk.removeModifiers, this.player.characterClass.key);
       }
     );
     return deck;
