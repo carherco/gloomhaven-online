@@ -14,6 +14,7 @@ import {
   ImmobilizeRolling,
   StunRolling,
   DisarmRolling,
+  Push1Rolling,
   Push2Rolling,
   EarthRolling,
   WindRolling,
@@ -35,8 +36,10 @@ import {
   Plus0Earth,
   Heal1,
   Shield1Rolling,
+  Plus1Shield1,
+  Pierce3Rolling,
   AddTargetRolling,
-  Plus0AddTarget
+  Plus0AddTarget,
 } from './modifiers';
 
 export const Brute: CharacterClass = {
@@ -61,7 +64,23 @@ export const Brute: CharacterClass = {
   level7Cards: ['crippling-offensive', 'deffensive-tactics'],
   level8Cards: ['frenzied-onslaught', 'selfish-retribution'],
   level9Cards: ['face-your-end', 'king-of-the-hill'],
-  perks: [],
+  perks: [
+    { id: 'brPerk1', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'brPerk2', title: 'Replace One -1 Card With One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'brPerk3-1', title: 'Add Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
+    { id: 'brPerk3-2', title: 'Add Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
+    { id: 'brPerk4', title: 'Add One +3 Card', addModifiers: [new Plus3()], removeModifiers: [] },
+    { id: 'brPerk5-1', title: 'Add three Rolling Push 1 Cards', addModifiers: [new Push1Rolling(), new Push1Rolling(), new Push1Rolling()], removeModifiers: [] },
+    { id: 'brPerk5-2', title: 'Add three Rolling Push 1 Cards', addModifiers: [new Push1Rolling(), new Push1Rolling(), new Push1Rolling()], removeModifiers: [] },
+    { id: 'brPerk6', title: 'Add Two Rolling Pierce 3 Card', addModifiers: [new Pierce3Rolling(), new Pierce3Rolling()], removeModifiers: [] },
+    { id: 'brPerk7-1', title: 'Add One Rolling Stun Card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'brPerk7-2', title: 'Add One Rolling Stun Card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'brPerk8', title: 'Add One Rolling Disarm Card and One Rolling Muddle Card', addModifiers: [new DisarmRolling(), new MuddleRolling()], removeModifiers: [] },
+    { id: 'brPerk9-1', title: 'Add One Rolling Add Target Card', addModifiers: [new AddTargetRolling()], removeModifiers: [] },
+    { id: 'brPerk9-2', title: 'Add One Rolling Add Target Card', addModifiers: [new AddTargetRolling()], removeModifiers: [] },
+    { id: 'brPerk10', title: 'Ignore One +1 Shield 1, Self Card', addModifiers: [new Plus1Shield1()], removeModifiers: [] },
+    { id: 'brPerk11', title: 'Ignore Negative Item Effects And Add One +1 Card', addModifiers: [new Plus1()], removeModifiers: [] },
+  ],
 };
 
 export const Cragheart: CharacterClass = {

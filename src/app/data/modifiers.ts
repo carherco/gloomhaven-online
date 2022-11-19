@@ -155,6 +155,11 @@ export class Plus2Fire {
   src = 'Plus2Fire.png';
 }
 
+export class Push1Rolling {
+  id = 'push1Rolling';
+  src = 'RollingPush1.png';
+}
+
 export class Push2Rolling {
   id = 'push2Rolling';
   src = 'RollingPush2.png';
@@ -222,6 +227,16 @@ export class Heal1 {
 export class Shield1Rolling {
   id = 'shield1Rolling';
   src = 'RollingShield1.png';
+}
+
+export class Plus1Shield1 {
+  id = 'plus1Shield1';
+  src = 'Plus1Shield.png';
+}
+
+export class Pierce3Rolling {
+  id = 'pierce3rolling';
+  src = 'RollingPierce3.png';
 }
 
 const mod1 = 'assets/plus0.png';

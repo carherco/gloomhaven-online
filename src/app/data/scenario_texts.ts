@@ -191,10 +191,56 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#9 Diamond Mine'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    {
+      name: '#9 Diamond Mine',
+      introduction: [
+        `Ignorando las advertencias de Argeise, llegas a
+        la mina de diamante. "Maquinaciones siniestras"
+        es una frase para meditar, sin duda, pero la
+        frase "recompensa considerable" la supera sin
+        duda.`,
+        `Rumbo a la húmeda caverna subterránea
+        suponías que unos cuantos Vermlings eran un
+        desafío sencillo de superar. Ciertamente, no
+        esperabas una jauría de perros rabiosos
+        vigilando la entrada. Encontrar ese diamante
+        puede resultar más difícil de lo que pensabas.`
+      ],
+      milestones: [
+        {
+          key: '1',
+          texts: [
+            `Te mueves a través de un estrecho pasaje
+            claramente más apropiado para criaturas como
+            los Vermlings, hasta que llegas a una gran
+            cámara llena de escombros y Vermling mineros
+            en estado de alerta. En la parte posterior de la
+            Cámara, un hombre con una túnica oscura
+            azota con el látigo y escupe órdenes a los
+            mineros, que alejan sus picos de la piedra y los
+            dirigen hacia ti.`,
+          ]
+        }
+      ],
+      conclusion: [
+        `Con el capataz muerto y el diamante en mano,
+        regresas a ver a Jekserah para reclamar tu
+        recompensa. Sus guardaespaldas te escoltan
+        dentro la mansión. La encuentras diferente, más
+        irascible y sombría.`,
+        `"Maravilloso." Intercambia contigo el diamante
+        por buen saco de monedas. “Esto servirá
+        magníficamente como foco para los conjuros.
+        Me pregunto si los cultistas sabían lo que se
+        puede lograr con algo como esto. Puedo
+        convocar a un ejército de muertos vivientes!"`,
+        `Ella se vuelve hacia ti con un extraño brillo en
+        los ojos. "¡Entonces! ¿Estás listo para derrocar a
+        los milicia de Gloomhaven y poner la ciudad
+        bajo el control del gremio de comerciantes? <strong>(11-Gloomhaven Square A)</strong>
+        ¿O no tienes estómago para hacer un verdadero
+        cambio?" <strong>(12-Gloomhaven Square B)</strong>`
+      ]
     },
     { name: '#10 Plane of Elemental Power'
     , introduction: [],
@@ -283,9 +329,88 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     ]
   },
     { name: '#12 Gloomhaven Square B'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    , introduction: [
+      `Mientras Jekserah esboza su plan, lentamente
+      salís de la habitación. Proteger esta ciudad
+      contra un ejército de nomuertos es una locura,
+      Pero no puedes entregar todo al poder a una
+      nigromante sin escrúpulos.`,
+      `En medio de la frase, Jekserah te mira y se
+      detiene. "¿Cuál es el problema?" frunce el
+      ceño. "¿Estáis perdiendo los nervios finalmente?
+      Habéis matado ya a tantos a mi servicio. Qué os
+      supondrían unos pocos más?"`,
+      `Rápidamente, os giráis y corréis hacia la puerta.
+      Su ejército es demasiado grande para
+      combatirlo sin ayuda."Estúpidos mercenarios",
+      se ríe detrás de tí. "Pensé que querríais uniros a
+      mí en este nuevo proyecto, pero si preferís
+      morir como el resto de la escoria militar, ¡eso
+      se puede arreglar!" Corréis a través de la plaza
+      de Gloomhaven hasta la Fortaleza Fantasma.
+      Los guardias te paran en la puerta y te
+      apresuras a explicar la amenaza que se avecina
+      detrás de ti.`,
+      `Frenéticamente los empujas a un lado,
+      buscando al Capitán de la Guardia.`,
+      `"Es realmente preocupante", dice el capitán,
+      después de que rápidamente expliques el plan
+      de Jekserah. "Debemos enfrentarnos a esa
+      nigromante inmediatamente!" El sonido de
+      acero sobre acero reverbera a través de la
+      habitación, seguido de los gritos del guardia en
+      el exterior.`,
+      `"¡Están sobre nosotros!" Las puertas se abren de
+      golpe y las figuras en descomposición de los
+      muertos vivientes fluyen al interior de la
+      habitación. "¡A las armas! ¡Debemos combatirlos
+      de nuevo!"`,
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Las olas de no-muertos que chocan contra
+          vuestras armas finalmente han amainado
+          cuando llegáis a la mansión de Jekserah y
+          pateáis la puerta y la veis en el vestíbulo, temblando de rabia.`,
+          `"¡No me derrotaréis! Mi ejército ha sido
+          reducido, pero los muertos son el combustible
+          de mi fuego. ¡Mi ejército es infinito y eterno!"`
+        ]
+      }
+    ],
+    conclusion: [
+      `Jekserah se derrumba, con la vida huyendo
+      de sus ojos. "Yo..." te susurra. "No tenéis ni
+      idea de lo que viene..." <strong>28 (Cámara Ritual
+      del exterior)</strong>. "Furioso." El Capitán de la
+      Guardia se acerca detrás de ti, limpiándose
+      la espada con su túnica.`,
+      `"Tanta muerte innecesaria, acabando con
+      nosotros mismos desde dentro. Al menos
+      ya se acabó". Mira desde el cadáver sin vida
+      de Jekserah a vosotros. "Escuchad, habéis
+      demostrado vuestra valía en este día. Sin
+      vuestra advertencia y sin vuestra fuerza,
+      habríamos sido superados por los nomuertos.
+      Si estáis interesados, puede que tenga algo más
+      de trabajo.`,
+      `"En primer lugar, hemos recibido informes del
+      norte sobre grandes criaturas voladoras.`,
+      `La gente le teme a los dragones". Sacude la
+      cabeza, molesto. "Me gustaría que os
+      dirigiéseis al paso del norte para investigar.
+      <strong>16 (Paso de las Montañas)</strong> "Por aquí cerca,
+      sin embargo, hay algunos problemas que se
+      están gestando en las cloacas bajo el
+      Mercado Hundido. Las cisternas allí parecen
+      estar envenenadas, y las alcantarillas están
+      infestadas de serpientes y Oozes, lo cual
+      dificulta la investigación.`,
+      `Necesito que descubráis la fuente del veneno."
+      <strong>18 (Alcantarillas abandonadas)</strong>`
+    ]
     },
     { name: '#13 Temple of the Seer'
     , introduction: [],
