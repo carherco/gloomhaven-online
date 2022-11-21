@@ -163,8 +163,8 @@ export function loadCampaing(): CampaignStatus {
     level: 1,
     playersResults: [
       { playerName: 'Raticate', playerResults: {xp: 11, g: 6, t: 2} },
-      { playerName: 'Ostiónix', playerResults: {xp: 6, g: 10, t: 1, pq: 4} },
-      { playerName: 'Maléfica', playerResults: {xp: 6, g: 10, t:1, pq: 6} },
+      { playerName: 'Ostiónix', playerResults: {xp: 10, g: 10, t: 1, pq: 4} },
+      { playerName: 'Maléfica', playerResults: {xp: 8, g: 10, t:1, pq: 6} },
       { playerName: 'Brad', playerResults: {xp: 14, g: 12, t: 1, pq: 1} },
     ],
     rewards: {
