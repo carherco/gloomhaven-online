@@ -188,6 +188,9 @@ export function loadCampaing(): CampaignStatus {
   });
 
   campaign.buyItem({playerName: 'Maléfica', itemId: 6});
+  campaign.buyItem({playerName: 'Maléfica', itemId: 1});
+  campaign.buyItem({playerName: 'Brad', itemId: 2});
+  campaign.buyItem({playerName: 'Brad', itemId: 14});
 
   return campaign.getStatus();
 }
