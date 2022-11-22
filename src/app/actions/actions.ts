@@ -192,5 +192,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Brad', itemId: 2});
   campaign.buyItem({playerName: 'Brad', itemId: 14});
 
+  campaign.resolveRoadEvent({eventId: 29, discard: true});
+
   return campaign.getStatus();
 }
