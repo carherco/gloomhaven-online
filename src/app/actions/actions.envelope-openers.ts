@@ -913,7 +913,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Lux Lucitana', itemId: 18});
 
   // Unlock "Demonic Rift (90)"
-  campaign.resolveRoadEvent({eventId: 44,  discard: true});
+  campaign.resolveRoadEvent({eventId: 44,  discard: true, rewards: {scenariosUnlocked: [90]}});
 
   campaign.completeScenario({
     scenarioId: 76,

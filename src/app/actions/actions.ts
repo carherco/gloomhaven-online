@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -7,10 +7,10 @@ import { CampaignStatus, CampaignStatusService } from '../services/campaign-stat
 export function loadCampaing(): CampaignStatus {
 
   const players: Player[] = [
-    {uid: 'uuid1', email: 'email1@gmail.com', displayName: 'carherco', photoURL: '', emailVerified: true },
-    {uid: 'uuid2', email: 'email2@gmail.com', displayName: 'otro', photoURL: '', emailVerified: true },
-    {uid: 'uuid3', email: 'email3@gmail.com', displayName: 'otro3', photoURL: '', emailVerified: true },
-    {uid: 'uuid4', email: 'email4@gmail.com', displayName: 'otro4', photoURL: '', emailVerified: true },
+    {uid: 'uuid1', email: 'email1@gmail.com', displayName: 'Adri', photoURL: '', emailVerified: true },
+    {uid: 'uuid2', email: 'email2@gmail.com', displayName: 'Álvaro', photoURL: '', emailVerified: true },
+    {uid: 'uuid3', email: 'email3@gmail.com', displayName: 'Isa', photoURL: '', emailVerified: true },
+    {uid: 'uuid4', email: 'email4@gmail.com', displayName: 'Carlos', photoURL: '', emailVerified: true },
   ];
 
   const campaign = new CampaignStatusService();
@@ -193,6 +193,37 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({playerName: 'Brad', itemId: 14});
 
   campaign.resolveRoadEvent({eventId: 29, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 65,
+    level: 1,
+    playersResults: [
+      { playerName: 'Raticate', playerResults: {xp: 15, g: 16, t: 1, pq: 1} },
+      { playerName: 'Ostiónix', playerResults: {xp: 10, g: 4, t: 1, pq: 3} },
+      { playerName: 'Maléfica', playerResults: {xp: 17, g: 6, t:0, pq: 9} },
+      { playerName: 'Brad', playerResults: {xp: 8, g: 16, t: 1, pq: 0} },
+    ],
+    rewards: {
+      itemDesigns: [112],
+      globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_1]
+    },
+  });
+
+  campaign.sellItem({playerName: 'Maléfica', itemId: 14});
+  campaign.makeDonation({playerName: 'Maléfica'});
+
+
+  campaign.retireCharacter({name: 'Maléfica', cityEventsToAdd: [44, 38], roadEventsToAdd: [44, 36]});
+
+  campaign.createCharacter({
+    playerId: players[2].uid,
+    characterClass: Berserker,
+    name: 'Berserker',
+    personalQuest: PERSONAL_QUESTS[531]
+  });
+
+  campaign.gainAbility({playerName: 'Berserker', ability: Berserker.level2Cards[0]});
+  campaign.gainAbility({playerName: 'Berserker', ability: Berserker.level2Cards[1]});
 
   return campaign.getStatus();
 }
