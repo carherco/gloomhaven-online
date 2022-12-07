@@ -63,8 +63,6 @@ export class LogPageComponent {
             }
           );
 
-          console.log(allScenariosWithStatus);
-
           this.availableScenarios = allScenariosWithStatus.sort(sortScenarios).filter( scenario => scenario.status === 'Available');
           this.blockedScenarios = allScenariosWithStatus.sort(sortScenarios).filter( scenario => scenario.status === 'Blocked');
           this.completedScenarios = allScenariosWithStatus.sort(sortScenarios).filter( scenario => scenario.status === 'Completed');
@@ -72,7 +70,7 @@ export class LogPageComponent {
           this.globalAchievements = status.city.achievements;
         }
       ),
-      tap( _ => this.scenarios = this.completedScenarios.concat(this.availableScenarios).concat(this.blockedScenarios)),
+      tap( _ => this.scenarios = this.completedScenarios.concat(this.blockedScenarios).concat(this.availableScenarios)),
       tap( status => status.completedScenarios.forEach(
         scenarioId => {
           const scenarioTreasures = SCENARIO_TREAURES[scenarioId];

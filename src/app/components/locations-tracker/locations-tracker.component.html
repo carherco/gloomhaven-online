@@ -2,6 +2,9 @@
 
 <ul>
   <li *ngFor="let location of locations" [class.available]="location.status === 'Available'" [class.completed]="location.status === 'Completed'" [class.blocked]="location.status === 'Blocked'">
+    <em *ngIf="location.status === 'Available'" class="material-symbols-outlined">radio_button_unchecked</em>
+    <em *ngIf="location.status === 'Completed'" class="material-symbols-outlined">check_circle</em>
+    <em *ngIf="location.status === 'Blocked'" class="material-symbols-outlined">block</em>
     {{location.id}} {{location.title}} ({{location.status}})
   </li>
 </ul>
