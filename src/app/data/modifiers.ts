@@ -100,6 +100,11 @@ export class Plus1Rolling {
   src = 'RollingPlus1.png';
 }
 
+export class Plus2Rolling {
+  id = 'plus2Rolling';
+  src = 'RollingPlus2.png';
+}
+
 export class Plus1Immobilize {
   id = 'plus1Immobilize';
   src = 'Plus1Immobilize.png';
@@ -190,6 +195,11 @@ export class DisarmRolling {
   src = 'RollingDisarm.png';
 }
 
+export class WoundRolling {
+  id = 'woundRolling';
+  src = 'RollingWound.png';
+}
+
 export class EarthRolling {
   id = 'earthRolling';
   src = 'RollingEarth.png';
@@ -221,8 +231,13 @@ export class AddTargetRolling {
 }
 
 export class Heal1 {
-  id = 'Heal1';
+  id = 'heal1';
   src = 'Heal1.png';
+}
+
+export class Heal1Rolling {
+  id = 'heal1Rolling';
+  src = 'RollingHeal1.png';
 }
 export class Shield1Rolling {
   id = 'shield1Rolling';

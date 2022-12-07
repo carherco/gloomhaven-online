@@ -9,11 +9,13 @@ import {
   Plus2,
   Plus2Ice,
   Plus1Rolling,
+  Plus2Rolling,
   Pull1Rolling,
   MuddleRolling,
   ImmobilizeRolling,
   StunRolling,
   DisarmRolling,
+  WoundRolling,
   Push1Rolling,
   Push2Rolling,
   EarthRolling,
@@ -35,6 +37,7 @@ import {
   Plus0Wind,
   Plus0Earth,
   Heal1,
+  Heal1Rolling,
   Shield1Rolling,
   Plus1Shield1,
   Pierce3Rolling,
@@ -396,6 +399,48 @@ export const Elementalist: CharacterClass = {
   ],
 };
 
+export const Berserker: CharacterClass = {
+  id: 'berserker',
+  key: 'BE',
+  race: 'Inox',
+  className: 'Berserker',
+  handCardSize: 10,
+  image: 'Berserker.png',
+  hitPoints: [10, 12, 14, 16, 18, 20, 22, 24, 26],
+  levelXCards: ['glass-hammer', 'numb-the-pain', 'unbridled-power'],
+  level1Cards: [
+    'blood-pact', 'bounce-back', 'cauterize',
+    'dazing-wound', 'defiance-of-death', 'from-the-brink',
+    'furious-aid', 'growing-rage', 'resolute-stand',
+    'strength-in-agony'
+  ],
+  level2Cards: ['break-the-chains', 'reckless-offensive'],
+  level3Cards: ['fatal-fury', 'spiked-armor'],
+  level4Cards: ['flurry-of-axes', 'shiny-distraction'],
+  level5Cards: ['final-fight', 'seeing-red'],
+  level6Cards: ['devil-horns', 'unstoppable-destruction'],
+  level7Cards: ['burning-hatred', 'careless-charge'],
+  level8Cards: ['bone-breaker', 'vengeful-barrage'],
+  level9Cards: ['immortality', 'the-maw-of-madness'],
+  perks: [
+    { id: 'bePerk1-1', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'elPerk2', title: 'Remove Four 0 Cards', addModifiers: [], removeModifiers: [new Plus0()] },
+    { id: 'elPerk3-1', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'elPerk3-2', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'elPerk4-1', title: 'Replace One 0 Card with One Rolling +2 Card', addModifiers: [new Plus2Rolling()], removeModifiers: [new Plus0()] },
+    { id: 'elPerk4-2', title: 'Replace One 0 Card with One Rolling +2 Card', addModifiers: [new Plus2Rolling()], removeModifiers: [new Plus0()] },
+    { id: 'elPerk5-1', title: 'Add Two +0 Rolling WOUND Cards', addModifiers: [new WoundRolling(), new WoundRolling()], removeModifiers: [] },
+    { id: 'elPerk5-2', title: 'Add Two +0 Rolling WOUND Cards', addModifiers: [new WoundRolling(), new WoundRolling()], removeModifiers: [] },
+    { id: 'elPerk6-1', title: 'Add Two +0 Rolling STUN Cards', addModifiers: [new StunRolling(), new StunRolling()], removeModifiers: [] },
+    { id: 'elPerk6-2', title: 'Add Two +0 Rolling STUN Cards', addModifiers: [new StunRolling(), new StunRolling()], removeModifiers: [] },
+    { id: 'elPerk7', title: 'Add One Rolling +1 DISARM Card', addModifiers: [new DisarmRolling()], removeModifiers: [] },
+    { id: 'elPerk8', title: 'Add Two Rolling Heal 1 Cards', addModifiers: [new Heal1Rolling(), new Heal1Rolling()], removeModifiers: [] },
+    { id: 'elPerk9-1', title: 'Add One +2 Infuse Fire Card', addModifiers: [new Plus2Fire()], removeModifiers: [] },
+    { id: 'elPerk9-2', title: 'Add One +2 Infuse Fire Card', addModifiers: [new Plus2Fire()], removeModifiers: [] },
+    { id: 'elPerk10', title: 'Ignore negative item effects', addModifiers: [], removeModifiers: [] },
+  ],
+};
+
 export const AvailableCharacters: CharacterClass[] = [
   Brute,
   Cragheart,
@@ -405,5 +450,6 @@ export const AvailableCharacters: CharacterClass[] = [
   Tinkerer,
   Doomstalker,
   Sunkeeper,
-  Elementalist
+  Elementalist,
+  Berserker
 ];
