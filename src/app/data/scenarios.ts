@@ -9,7 +9,8 @@ export type Scenario = {
   onlyOneAchievementRequired?: true
 };
 
-export type ScenarioWithStatus = Scenario & {id: number, status: 'Blocked'|'Available'|'Completed'};
+export type ScenarioStatus = 'Unavailable'|'Available'|'Completed'|'Blocked';
+export type ScenarioWithStatus = Scenario & {id: number, status: ScenarioStatus};
 
 export const SCENARIOS: Scenario[] = [
   {
