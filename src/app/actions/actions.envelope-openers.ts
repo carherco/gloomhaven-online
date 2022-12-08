@@ -591,7 +591,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Einar', playerResults: {xp: 5, g: 12} },
     ],
     rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND]},
-    scenariosUnlocked: [30, 32]
+    scenariosUnlocked: [30, 32, 71]
   });
 
   campaign.resolveCityEvent({eventId: 19, playersResults: [
