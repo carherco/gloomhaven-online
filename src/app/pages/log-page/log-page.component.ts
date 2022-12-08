@@ -48,18 +48,26 @@ export class LogPageComponent {
                 return {id, ...scenario, status: 'Completed'};
               }
 
-              if(unlockedScenariosIds.includes(id)) {
-                if( scenario.globalAchievementsRequired.every(achievement => globalAchievements.includes(achievement))
-                    && scenario.partyAchievementsRequired.every(achievement => partyAchievements.includes(achievement))
-                    && !scenario.globalAchievementsRequiredIncomplete.some(achievement => globalAchievements.includes(achievement))
-                ) {
-                  return {id, ...scenario, status: 'Available'};
-                } else {
-                  return {id, ...scenario, status: 'Blocked'};
-                }
+              if(!unlockedScenariosIds.includes(id)) {
+                return {id, ...SCENARIOS[id], status: 'Unavailable'}
               }
 
-              return {id, ...SCENARIOS[id], status: 'Unavailable'}
+              if(scenario.onlyOneAchievementRequired) {
+                if( scenario.globalAchievementsRequired.some(achievement => globalAchievements.includes(achievement))
+                    || scenario.partyAchievementsRequired.some(achievement => partyAchievements.includes(achievement))
+                ) {
+                  return {id, ...scenario, status: 'Available'};
+                }
+                return {id, ...scenario, status: 'Blocked'};
+              }
+
+              if( scenario.globalAchievementsRequired.every(achievement => globalAchievements.includes(achievement))
+                  && scenario.partyAchievementsRequired.every(achievement => partyAchievements.includes(achievement))
+                  && !scenario.globalAchievementsRequiredIncomplete.some(achievement => globalAchievements.includes(achievement))
+              ) {
+                return {id, ...scenario, status: 'Available'};
+              }
+              return {id, ...scenario, status: 'Blocked'};
             }
           );
 
