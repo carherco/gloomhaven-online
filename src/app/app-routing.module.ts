@@ -15,6 +15,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
 import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/player-campaigns-page.component';
+import { TownRecordsComponent } from './pages/town-records/town-records.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'select-hand', component: SelectHandPageComponent },
   { path: 'history', component: HistoryPageComponent },
   { path: 'log', component: LogPageComponent },
+  { path: 'town-records', component: TownRecordsComponent },
   { path: 'map-creator', component: MapCreatorPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'campaigns', component: PlayerCampaignsPageComponent },

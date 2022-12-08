@@ -1,0 +1,7 @@
+<div class="row">
+  <div *ngFor="let character of characters" class="col-md-6 col-sm-12 " [style.backgroundImage]="'url(assets/background.png)'">
+    <app-player-sheet [character]="character"></app-player-sheet>
+  </div>
+</div>
+
+

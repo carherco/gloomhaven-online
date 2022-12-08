@@ -53,6 +53,7 @@ import { LocationsTrackerComponent } from './components/locations-tracker/locati
 import { TreasuresTrackerComponent } from './components/treasures-tracker/treasures-tracker.component';
 import { PlayerSheetComponent } from './components/player-sheet/player-sheet.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { TownRecordsComponent } from './pages/town-records/town-records.component';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     //PlayerCampaignsPageComponent,
     LocationsTrackerComponent,
     TreasuresTrackerComponent,
-    PlayerSheetComponent
+    PlayerSheetComponent,
+    TownRecordsComponent
   ],
   imports: [
     BrowserModule,

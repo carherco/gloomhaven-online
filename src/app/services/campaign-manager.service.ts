@@ -11,16 +11,22 @@ import { CampaignStatusService } from './campaign-status.service';
 export class CampaignManagerService {
 
   characters: Character[] = [];
+  retiredCharacters: Character[] = [];
 
   constructor(private campaign: CampaignStatusService) {
     const status$ = this.campaign.getStatus$();
     status$.pipe(
-      tap(status => this.characters = status.characters)
+      tap(status => this.characters = status.characters),
+      tap(status => this.retiredCharacters = status.retiredCharacters)
     ).subscribe();
    }
 
   getCharacters(): Character[] {
     return this.characters;
+  }
+
+  getRetiredCharacters(): Character[] {
+    return this.retiredCharacters;
   }
 
   getScenarios() {
