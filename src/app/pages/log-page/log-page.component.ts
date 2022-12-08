@@ -44,12 +44,12 @@ export class LogPageComponent {
             id => {
               const scenario = SCENARIOS[id];
 
-              if(completedScenariosIds.includes(id)) {
-                return {id, ...scenario, status: 'Completed'};
-              }
-
               if(!unlockedScenariosIds.includes(id)) {
                 return {id, ...SCENARIOS[id], status: 'Unavailable'}
+              }
+
+              if(completedScenariosIds.includes(id)) {
+                return {id, ...scenario, status: 'Completed'};
               }
 
               if(scenario.onlyOneAchievementRequired) {
