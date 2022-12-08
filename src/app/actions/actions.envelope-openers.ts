@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Scoundrel } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -37,7 +37,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.createCharacter({
     playerId: players[2].uid,
-    characterClass: Spellweaver,
+    characterClass: Scoundrel,
     name: 'Nightmare',
     personalQuest: PERSONAL_QUESTS[526]
   });
@@ -74,7 +74,7 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 2,
     level: 1,
     playersResults: [
-      { playerName: 'Lorkham', playerResults: {xp: 4, g: 16} },
+      { playerName: 'Lorkham', playerResults: {xp: 4, g: 16, pq: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 13, g: 4, t: 1} },
       { playerName: 'Nightmare', playerResults: {xp: 7, g: 10, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 6, g: 4} },
@@ -98,7 +98,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Lorkham', playerResults: {xp: 6, g: 4} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 13, g: 0, t: 1} },
       { playerName: 'Nightmare', playerResults: {xp: 7, g: 8, t: 2} },
-      { playerName: 'Psycho', playerResults: {xp: 8, g: 6, t: 1} },
+      { playerName: 'Psycho', playerResults: {xp: 8, g: 6, t: 1, pq: 1} },
     ],
     rewards: {
       prosperity: 1,
@@ -125,7 +125,7 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 9,
     level: 1,
     playersResults: [
-      { playerName: 'Lorkham', playerResults: {xp: 8, g: 10} },
+      { playerName: 'Lorkham', playerResults: {xp: 8, g: 10, pq: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 19, g: 0, t: 2} },
       { playerName: 'Nightmare', playerResults: {xp: 6, g: 10, t: 1} },
       { playerName: 'Psycho', playerResults: {xp: 12, g: 6} },
@@ -175,9 +175,9 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 11,
     level: 2,
     playersResults: [
-      { playerName: 'Lorkham', playerResults: {xp: 6, g: 3} },
+      { playerName: 'Lorkham', playerResults: {xp: 6, g: 3, pq: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 16, g: 3, t: 1} },
-      { playerName: 'Nightmare', playerResults: {xp: 5, g: 3, t: 1} },
+      { playerName: 'Nightmare', playerResults: {xp: 5, g: 3, t: 1, pq: 1} },
       { playerName: 'Psycho', playerResults: {xp: 7, g: 3, t: 1} },
     ],
     rewards: {
@@ -257,7 +257,7 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Lorkham', playerResults: {xp: 10, g: 18, t: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 19, g: 0, t: 1} },
-      { playerName: 'Nightmare', playerResults: {xp: 5, g: 15, t: 1} },
+      { playerName: 'Nightmare', playerResults: {xp: 5, g: 15, t: 1, pq: 1} },
       { playerName: 'Psycho', playerResults: {xp: 9, g: 21, t: 1} },
     ],
     scenariosUnlocked: [14, 23, 26, 43]
@@ -312,10 +312,10 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 81,
     level: 2,
     playersResults: [
-      { playerName: 'Lorkham', playerResults: {xp: 4, g: 0, t: 1} },
+      { playerName: 'Lorkham', playerResults: {xp: 4, g: 0, t: 1, pq: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 5, g: 9, t: 1} },
       { playerName: 'Nightmare', playerResults: {xp: 4, g: 6, t: 2} },
-      { playerName: 'Psycho', playerResults: {xp: 10, g: 3, t: 1} },
+      { playerName: 'Psycho', playerResults: {xp: 10, g: 3, t: 1, pq: 1} },
     ],
     rewards: {xp: 10}
   });
@@ -349,7 +349,7 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 6, t: 2} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 10, g: 6, t: 1} },
-      { playerName: 'Nightmare', playerResults: {xp: 6, g: 0, t: 1} },
+      { playerName: 'Nightmare', playerResults: {xp: 6, g: 0, t: 1, pq: 1} },
       { playerName: 'Psycho', playerResults: {xp: 11, g: 3, t: 1} },
     ],
     rewards: {
@@ -370,7 +370,7 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 8, g: 6, t: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 15, g: 6, t: 1, items: [33]} },
-      { playerName: 'Nightmare', playerResults: {xp: 6, g: 3, t: 2} },
+      { playerName: 'Nightmare', playerResults: {xp: 6, g: 3, t: 2, pq: 1} },
       { playerName: 'Psycho', playerResults: {xp: 13, g: 3} },
     ],
     rewards: {gold: 10, reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.FOLLOWING_CLUES]},
@@ -453,7 +453,7 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 7, g: 20, t: 2} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 19, g: 0, t: 1} },
-      { playerName: 'Medea', playerResults: {xp: 8, g: 12, t: 1} },
+      { playerName: 'Medea', playerResults: {xp: 8, g: 12, t: 1, pq: 1} },
       { playerName: 'Psycho', playerResults: {xp: 7, g: 36} },
     ],
     rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_POWER_OF_ENHANCEMENT]},
@@ -499,8 +499,8 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Divayth Fyr', playerResults: {xp: 17, g: 0, t: 1} },
       { playerName: 'Farts Like Thunder', playerResults: {xp: 7, g: 21, t: 2} },
-      { playerName: 'Medea', playerResults: {xp: 18, g: 9, t: 1} },
-      { playerName: 'Psycho', playerResults: {xp: 12, g: 3, t: 1, items: [98]} },
+      { playerName: 'Medea', playerResults: {xp: 18, g: 9, t: 1, pq: 1} },
+      { playerName: 'Psycho', playerResults: {xp: 12, g: 3, t: 1, pq: 1, items: [98]} },
     ],
     rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.WATER_BREATHING]},
   });
