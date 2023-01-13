@@ -219,11 +219,15 @@ export function loadCampaing(): CampaignStatus {
     playerId: players[2].uid,
     characterClass: Berserker,
     name: 'Berserker',
-    personalQuest: PERSONAL_QUESTS[531]
+    personalQuest: PERSONAL_QUESTS[518]
   });
 
-  campaign.gainAbility({playerName: 'Berserker', ability: Berserker.level2Cards[0]});
-  campaign.gainAbility({playerName: 'Berserker', ability: Berserker.level2Cards[1]});
+  campaign.gainAbility({playerName: 'Berserker', ability: 'reckless-offensive'});
+  campaign.gainPerk({playerName: 'Berserker', perkId: 'bePerk8'});
+  campaign.gainPerk({playerName: 'Berserker', perkId: 'bePerk1'});
+
+  //campaign.buyItem({playerName: 'Berserker', itemId: 7});
+  campaign.buyItem({playerName: 'Berserker', itemId: 12});
 
   return campaign.getStatus();
 }
