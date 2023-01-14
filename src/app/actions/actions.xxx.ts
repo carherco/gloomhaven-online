@@ -240,7 +240,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Raticate', playerResults: {xp: 15, g: 6, t: 0, pq: 0} },
       { playerName: 'Ostiónix', playerResults: {xp: 19, g: 4, t: 0, pq: 4} },
       { playerName: 'Brad', playerResults: {xp: 12, g: 2, t: 1, pq: 1, items: [23]} },
-      { playerName: 'Berserker', playerResults: {xp: 10, g: 6, t:1, pq: 1} },
+      { playerName: 'Berserker', playerResults: {xp: 11, g: 10, t:1, pq: 1} },
     ],
     rewards: {
       gold: 15,
