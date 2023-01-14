@@ -212,8 +212,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.sellItem({playerName: 'Maléfica', itemId: 14});
   campaign.makeDonation({playerName: 'Maléfica'});
 
-
-  campaign.retireCharacter({name: 'Maléfica', cityEventsToAdd: [44, 38], roadEventsToAdd: [44, 36]});
+  campaign.retireCharacter({name: 'Maléfica', cityEventsToAdd: [44, 36], roadEventsToAdd: [44, 36]});
 
   campaign.createCharacter({
     playerId: players[2].uid,
@@ -226,8 +225,59 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({playerName: 'Berserker', perkId: 'bePerk8'});
   campaign.gainPerk({playerName: 'Berserker', perkId: 'bePerk1'});
 
-  //campaign.buyItem({playerName: 'Berserker', itemId: 7});
+  campaign.buyItem({playerName: 'Berserker', itemId: 1});
   campaign.buyItem({playerName: 'Berserker', itemId: 12});
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 112});
+  campaign.buyItem({playerName: 'Brad', itemId: 16});
+  campaign.buyItem({playerName: 'Brad', itemId: 13});
+
+  campaign.resolveCityEvent({eventId: 26, rewards: {reputation: 2}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 11,
+    level: 1,
+    playersResults: [
+      { playerName: 'Raticate', playerResults: {xp: 15, g: 6, t: 0, pq: 0} },
+      { playerName: 'Ostiónix', playerResults: {xp: 19, g: 4, t: 0, pq: 4} },
+      { playerName: 'Brad', playerResults: {xp: 12, g: 2, t: 1, pq: 1, items: [23]} },
+      { playerName: 'Berserker', playerResults: {xp: 10, g: 6, t:1, pq: 1} },
+    ],
+    rewards: {
+      gold: 15,
+      reputation: -2,
+      prosperity: 2,
+      itemDesigns: [113],
+      globalAchievements: [GLOBAL_ACHIEVEMENTS.END_OF_THE_INVASION, GLOBAL_ACHIEVEMENTS.CITY_RULE_ECONOMIC]
+    },
+  });
+
+  campaign.gainAbility({playerName: 'Ostiónix', ability: 'hook-and-chain'});
+  campaign.gainAbility({playerName: 'Raticate', ability: 'brain-leech'});
+  campaign.gainAbility({playerName: 'Brad', ability: 'crank-bow'});
+  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk1'});
+  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk12'});
+  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk4'});
+
+  campaign.sellItem({playerName: 'Brad', itemId: 23});
+  campaign.sellItem({playerName: 'Ostiónix', itemId: 3});
+  campaign.sellItem({playerName: 'Ostiónix', itemId: 8});
+  campaign.sellItem({playerName: 'Raticate', itemId: 7});
+  campaign.buyItem({playerName: 'Berserker', itemId: 4});
+  campaign.buyItem({playerName: 'Berserker', itemId: 11});
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 13});
+  campaign.buyItem({playerName: 'Ostiónix', itemId: 23});
+  campaign.buyItem({playerName: 'Raticate', itemId: 17});
+  campaign.buyItem({playerName: 'Brad', itemId: 20});
+  campaign.buyItem({playerName: 'Brad', itemId: 12});
+
+  campaign.resolveCityEvent({eventId: 24, playersResults: [
+    { playerName: 'Raticate', playerResults: {xp: 10} },
+    { playerName: 'Brad', playerResults: {xp: 10} },
+    { playerName: 'Ostiónix', playerResults: {xp: 10} },
+    { playerName: 'Berserker', playerResults: {xp: 10} },
+  ], discard: false});
+
+  campaign.resolveRoadEvent({eventId: 13, discard: true});
 
   return campaign.getStatus();
 }
