@@ -237,7 +237,7 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 11,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 15, g: 6, t: 0, pq: 0} },
+      { playerName: 'Raticate', playerResults: {xp: 15, g: 6, t: 0} },
       { playerName: 'Ostiónix', playerResults: {xp: 19, g: 4, t: 0, pq: 4} },
       { playerName: 'Brad', playerResults: {xp: 12, g: 2, t: 1, pq: 1, items: [23]} },
       { playerName: 'Berserker', playerResults: {xp: 11, g: 10, t:1, pq: 1} },
@@ -249,6 +249,7 @@ export function loadCampaing(): CampaignStatus {
       itemDesigns: [113],
       globalAchievements: [GLOBAL_ACHIEVEMENTS.END_OF_THE_INVASION, GLOBAL_ACHIEVEMENTS.CITY_RULE_ECONOMIC]
     },
+    scenariosUnlocked: [16, 18]
   });
 
   campaign.gainAbility({playerName: 'Ostiónix', ability: 'hook-and-chain'});
@@ -278,6 +279,25 @@ export function loadCampaing(): CampaignStatus {
   ], discard: false});
 
   campaign.resolveRoadEvent({eventId: 13, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 16,
+    level: 2,
+    playersResults: [
+      { playerName: 'Raticate', playerResults: {xp: 12, g: 9, t: 1} },
+      { playerName: 'Ostiónix', playerResults: {xp: 14, g: 3, t: 1, pq: 2} },
+      { playerName: 'Brad',     playerResults: {xp: 9, g: 9, t: 1, pq: 1} },
+      { playerName: 'Berserker', playerResults: {xp: 8, g: 15, t:1, pq: 1} },
+    ],
+    rewards: {
+      itemDesigns: [71]
+    },
+    scenariosUnlocked: [24, 25],
+    treasuresLooted: [1]
+  });
+
+  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk4'});
+  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk7-1'});
 
   return campaign.getStatus();
 }
