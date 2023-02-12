@@ -217,16 +217,16 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[2].uid,
     characterClass: Berserker,
-    name: 'Berserker',
+    name: 'Mystic',
     personalQuest: PERSONAL_QUESTS[518]
   });
 
-  campaign.gainAbility({playerName: 'Berserker', ability: 'reckless-offensive'});
-  campaign.gainPerk({playerName: 'Berserker', perkId: 'bePerk8'});
-  campaign.gainPerk({playerName: 'Berserker', perkId: 'bePerk1'});
+  campaign.gainAbility({playerName: 'Mystic', ability: 'reckless-offensive'});
+  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk8'});
+  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk1'});
 
-  campaign.buyItem({playerName: 'Berserker', itemId: 1});
-  campaign.buyItem({playerName: 'Berserker', itemId: 12});
+  campaign.buyItem({playerName: 'Mystic', itemId: 1});
+  campaign.buyItem({playerName: 'Mystic', itemId: 12});
   campaign.buyItem({playerName: 'Ostiónix', itemId: 112});
   campaign.buyItem({playerName: 'Brad', itemId: 16});
   campaign.buyItem({playerName: 'Brad', itemId: 13});
@@ -240,7 +240,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Raticate', playerResults: {xp: 15, g: 6, t: 0} },
       { playerName: 'Ostiónix', playerResults: {xp: 19, g: 4, t: 0, pq: 4} },
       { playerName: 'Brad', playerResults: {xp: 12, g: 2, t: 1, pq: 1, items: [23]} },
-      { playerName: 'Berserker', playerResults: {xp: 11, g: 10, t:1, pq: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 11, g: 10, t:1, pq: 1} },
     ],
     rewards: {
       gold: 15,
@@ -263,8 +263,8 @@ export function loadCampaing(): CampaignStatus {
   campaign.sellItem({playerName: 'Ostiónix', itemId: 3});
   campaign.sellItem({playerName: 'Ostiónix', itemId: 8});
   campaign.sellItem({playerName: 'Raticate', itemId: 7});
-  campaign.buyItem({playerName: 'Berserker', itemId: 4});
-  campaign.buyItem({playerName: 'Berserker', itemId: 11});
+  campaign.buyItem({playerName: 'Mystic', itemId: 4});
+  campaign.buyItem({playerName: 'Mystic', itemId: 11});
   campaign.buyItem({playerName: 'Ostiónix', itemId: 13});
   campaign.buyItem({playerName: 'Ostiónix', itemId: 23});
   campaign.buyItem({playerName: 'Raticate', itemId: 17});
@@ -275,7 +275,7 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Raticate', playerResults: {xp: 10} },
     { playerName: 'Brad', playerResults: {xp: 10} },
     { playerName: 'Ostiónix', playerResults: {xp: 10} },
-    { playerName: 'Berserker', playerResults: {xp: 10} },
+    { playerName: 'Mystic', playerResults: {xp: 10} },
   ], discard: false});
 
   campaign.resolveRoadEvent({eventId: 13, discard: true});
@@ -287,7 +287,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Raticate', playerResults: {xp: 12, g: 9, t: 1} },
       { playerName: 'Ostiónix', playerResults: {xp: 14, g: 3, t: 1, pq: 2} },
       { playerName: 'Brad',     playerResults: {xp: 9, g: 9, t: 1, pq: 1} },
-      { playerName: 'Berserker', playerResults: {xp: 8, g: 15, t:1, pq: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 8, g: 15, t:1, pq: 1} },
     ],
     rewards: {
       itemDesigns: [71]
@@ -298,6 +298,47 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk4'});
   campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk7-1'});
+
+  campaign.completeScenario({
+    scenarioId: 24,
+    level: 2,
+    playersResults: [
+      { playerName: 'Raticate', playerResults: {xp: 10, g: 6, t: 1} },
+      { playerName: 'Ostiónix', playerResults: {xp: 9, g: 3, t: 2, pq: 4} },
+      { playerName: 'Brad',     playerResults: {xp: 18, g: 9, t: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 7, g: 18, t:2, pq: 1} },
+    ],
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND]},
+    scenariosUnlocked: [30, 32, 67],
+    treasuresLooted: [70]
+  });
+
+  campaign.gainAbility({playerName: 'Ostiónix', ability: 'unstoppable-charge'});
+  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk3-1'});
+
+  // campaign.gainAbility({playerName: 'Raticate', ability: 'unstoppable-charge'});
+  // campaign.gainPerk({playerName: 'Raticate', perkId: 'brPerk3-1'});
+  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk5-1'});
+
+  campaign.gainAbility({playerName: 'Brad', ability: 'micro-bots'});
+  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk2'});
+
+  campaign.gainAbility({playerName: 'Mystic', ability: 'fatal-fury'});
+  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk2'});
+  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk10'});
+
+  campaign.resolveCityEvent({eventId: 5, discard: true,
+    playersResults: [
+      { playerName: 'Ostiónix', playerResults: {t: -1} },
+      { playerName: 'Brad',     playerResults: {t: -1} },
+      { playerName: 'Mystic', playerResults: {t: -1} },
+    ],
+    rewards: {prosperity: 1, reputation: 1}
+  });
+
+  campaign.makeDonation({playerName: 'Raticate'});
+  campaign.makeDonation({playerName: 'Ostiónix'});
+  campaign.makeDonation({playerName: 'Brad'});
 
   return campaign.getStatus();
 }
