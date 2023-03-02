@@ -316,8 +316,8 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({playerName: 'Ostiónix', ability: 'unstoppable-charge'});
   campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk3-1'});
 
-  // campaign.gainAbility({playerName: 'Raticate', ability: 'unstoppable-charge'});
-  // campaign.gainPerk({playerName: 'Raticate', perkId: 'brPerk3-1'});
+  campaign.gainAbility({playerName: 'Raticate', ability: 'cranium-overload'});
+  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk4'});
   campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk5-1'});
 
   campaign.gainAbility({playerName: 'Brad', ability: 'micro-bots'});
