@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -339,6 +339,92 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Raticate'});
   campaign.makeDonation({playerName: 'Ostiónix'});
   campaign.makeDonation({playerName: 'Brad'});
+
+  campaign.resolveRoadEvent({eventId: 2, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 30,
+    level: 2,
+    playersResults: [
+      { playerName: 'Raticate', playerResults: {xp: 5, g: 6, t: 1, pq: 1} },
+      { playerName: 'Ostiónix', playerResults: {xp: 10, g: 0, t: 1, pq: 2} },
+      { playerName: 'Brad',     playerResults: {xp: 10, g: 6, t: 1, pq: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 4, g: 3, t:2, pq: 1} },
+    ],
+    rewards: {gold: 10, partyAchievements: [PARTY_ACHIEVEMENTS.THE_SCEPTER_AND_THE_VOICE]},
+    scenariosUnlocked: [42]
+  });
+
+  campaign.makeDonation({playerName: 'Raticate'});
+  campaign.makeDonation({playerName: 'Ostiónix'});
+  campaign.makeDonation({playerName: 'Brad'});
+
+  campaign.retireCharacter({name: 'Ostiónix', cityEventsToAdd: [42, 41], roadEventsToAdd: [42, 41]});
+  campaign.retireCharacter({name: 'Raticate', cityEventsToAdd: [47, 37], roadEventsToAdd: [47, 37]});
+
+  campaign.createCharacter({
+    playerId: players[1].uid,
+    characterClass: BeastTyrant,
+    name: 'Beast',
+    personalQuest: PERSONAL_QUESTS[521]
+  });
+
+  // campaign.gainPerk({playerName: 'Beast', perkId: ''});
+  // campaign.gainPerk({playerName: 'Beast', perkId: ''});
+  // campaign.gainPerk({playerName: 'Beast', perkId: ''});
+
+  campaign.buyItem({playerName: 'Beast', itemId: 1});
+  campaign.buyItem({playerName: 'Beast', itemId: 13});
+  campaign.buyItem({playerName: 'Beast', itemId: 27});
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Soothsinger,
+    name: 'Sona',
+    personalQuest: PERSONAL_QUESTS[511]
+  });
+
+  // campaign.gainPerk({playerName: 'Sona', perkId: ''});
+  // campaign.gainPerk({playerName: 'Sona', perkId: ''});
+  // campaign.gainPerk({playerName: 'Sona', perkId: ''});
+
+  campaign.buyItem({playerName: 'Sona', itemId: 13});
+  campaign.buyItem({playerName: 'Sona', itemId: 17});
+
+  campaign.resolveCityEvent({eventId: 44, discard: true,
+    rewards: {reputation: 1}
+  });
+
+  campaign.resolveRoadEvent({eventId: 15, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 32,
+    level: 2,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 22, g: 12, t: 2} },
+      { playerName: 'Beast', playerResults: {xp: 15, g: 9, t: 1} },
+      { playerName: 'Brad',     playerResults: {xp: 11, g: 9, t: 1, pq: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 12, g: 15, t:1, pq: 1} },
+    ],
+    scenariosUnlocked: [33, 40]
+  });
+
+  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk3-1'});
+
+  campaign.makeDonation({playerName: 'Brad'});
+
+  campaign.retireCharacter({name: 'Brad', cityEventsToAdd: [43, 40], roadEventsToAdd: [43, 40]});
+
+  campaign.createCharacter({
+    playerId: players[1].uid,
+    characterClass: Elementalist,
+    name: 'Elementalist',
+    personalQuest: PERSONAL_QUESTS[529]
+  });
+
+  // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
+  // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
+  // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
 
   return campaign.getStatus();
 }
