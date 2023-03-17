@@ -974,10 +974,54 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#32 Decrepit Wood'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    {
+      name: '#32 Decrepit Wood',
+      introduction: [
+        `La madera gruesa retrocede a medida que os
+        acercáis a la localización de la primera vasija
+        de la Voz. A través de los árboles, se ve una
+        estructura de madera en descomposición con
+        paredes derrumbadas y una podredumbre que
+        parece que se está filtrando en la
+        zona circundante. Los árboles y
+        plantas alrededor del edificio están
+        igualmente desolados y decaídos.`,
+        `La Voz dice que el lugar es el
+        hogar de una secta de
+        Torturadores militarizados, muy
+        agresivos y territoriales. Nadie se
+        atrevería a acercarse a esta zona a
+        menos que tengan un deseo
+        extremo de morir.`,
+        `Así que no hay nada más que
+        hacer que derribar la puerta y
+        encontrar la vasija en alguno de
+        los cofres de los Torturadores.
+        Alternativamente, habéis explorado
+        una entrada lateral que podría
+        permitiros evitar alguna
+        confrontación, pero puede llevaros
+        a otros peligros.`
+      ],
+      milestones: [],
+      conclusion: [
+        `Los Torturadores resultaron bastante
+        difíciles de derrotar, pero al final
+        cayeron como cualquier otro enemigo.
+        Sintiendo la putrefacción del lugar
+        filtrándose en tus huesos, rápidamente
+        saqueas la morada y localizas la
+        pequeña olla de barro que te muestra
+        la Voz.`,
+        `Cuando la levantas, la Voz llena tu
+        cabeza. "¡Bien! Sí, ¡excelente! Los
+        infestadores no eran más que un
+        guardián empleado para bloquear mi
+        paso. Os doy ahora la segunda
+        ubicación. <strong>(33-Savvas Armory)</strong> Por favor, devuélveme
+        las vasijas. Te recompensaré
+        enormemente." <strong>(40-Ancient Defense Network)</strong>`
+      ]
     },
     { name: '#33 Savvas Armory'
     , introduction: [],
@@ -1014,10 +1058,54 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#40 Ancient Defense Network'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    {
+      name: '#40 Ancient Defense Network',
+      introduction: [
+        `"Solo queda una vasija", te dice la Voz.
+        "Estamos muy cerca".`,
+        `"El último grupo que trató de encarcelarme fue
+        un gremio de humanos que hace mucho que
+        dejaron esta tierra. Incluso se desconoce dónde
+        están sus tumbas".`,
+        `"Pero yo lo sé. Lo sé todo."`,
+        `Las visiones de una tumba llenan tu cabeza.
+        Está plagado de trampas y otros instrumentos
+        mortales. De alguna manera, tienes
+        conocimiento de cómo encontrarlo, en las
+        profundidades de las Coppernecks orientales.`,
+        `"La vasija fue enterrada con el líder del gremio,
+        en una tumba diseñada para matar a todos
+        aquellos lo suficientemente tonto como para entrar", dice
+        la Voz. "Esta será tu tarea más difícil. Antes de
+        que puedas entrar en la tumba, deberás
+        desactivar la red de defensa construida a su
+        alrededor."`,
+        `"Puedo mostrarte el camino para entrar. Una
+        vez allí, deberéis dividiros y activar
+        simultáneamente una serie de interruptores en
+        los lados opuestos de este pozo de sufrimiento.
+        Pensaron que podían ocultarme sus secretos,
+        pero estaban equivocados ".`,
+        `Efectivamente, puedes encontrar la entrada a la
+        tumba en una cueva debajo de las montañas. Te
+        precipitas a las ruinas y una alarma estridente
+        llena de inmediato la habitación. Toda la
+        extensión frente a ti se ilumina en rojo y un
+        grupo de cadáveres momificados comienzan a
+        moverse y levantarse.`,
+      ],
+      milestones: [],
+      conclusion: [
+        `Desde los extremos opuestos de la red, activáis
+        los interruptores en el orden que os indica la
+        Voz. Tan pronto como llegó, la alarma se apaga
+        y las paredes de las habitaciones se abren,
+        llevándoos de vuelta a la entrada. Allí, el centro
+        del suelo se desliza, revelando una estrecha
+        escalera que desciende hacia la oscuridad.`,
+        `"El camino a la tumba está despejado", dice la
+        Voz. "Ve ahora, y recupera lo que es mío". <strong>(41-Timeworn Tomb)</strong>`
+      ]
     },
     { name: '#41 Timeworn Tomb'
     , introduction: [],
