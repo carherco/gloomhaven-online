@@ -708,7 +708,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/boots-of-levitation.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'bootsoflevitation'
   },
   {

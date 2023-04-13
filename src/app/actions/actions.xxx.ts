@@ -426,5 +426,36 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
   // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
 
+  campaign.sellItem({playerName: 'Mystic', itemId: 1});
+  campaign.buyItem({playerName: 'Mystic', itemId: 71});
+  campaign.buyItem({playerName: 'Mystic', itemId: 23});
+
+  campaign.buyItem({playerName: 'Elementalist', itemId: 71});
+  campaign.buyItem({playerName: 'Elementalist', itemId: 13});
+
+  campaign.resolveCityEvent({eventId: 24, discard: false,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 10} },
+      { playerName: 'Beast',     playerResults: {xp: 10} },
+      { playerName: 'Elementalist', playerResults: {xp: 10} },
+      { playerName: 'Mystic', playerResults: {xp: 10} },
+    ],
+    rewards: {prosperity: 1, reputation: 1}
+  });
+
+  campaign.resolveRoadEvent({eventId: 7, discard: true});
+
+  campaign.failScenario({
+    scenarioId: 4,
+    level: 2,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 19, g: 15} },
+      { playerName: 'Beast', playerResults: {xp: 13, g: 0} },
+      { playerName: 'Elementalist', playerResults: {xp: 9, g: 15} },
+    ],
+    treasuresLooted: [46, 38],
+    rewards: {itemDesigns: [123]}
+  });
+
   return campaign.getStatus();
 }
