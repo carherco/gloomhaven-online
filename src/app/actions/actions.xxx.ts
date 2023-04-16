@@ -439,8 +439,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Beast',     playerResults: {xp: 10} },
       { playerName: 'Elementalist', playerResults: {xp: 10} },
       { playerName: 'Mystic', playerResults: {xp: 10} },
-    ],
-    rewards: {prosperity: 1, reputation: 1}
+    ]
   });
 
   campaign.resolveRoadEvent({eventId: 7, discard: true});
