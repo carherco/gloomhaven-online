@@ -456,5 +456,32 @@ export function loadCampaing(): CampaignStatus {
     rewards: {itemDesigns: [123]}
   });
 
+  campaign.buyItem({playerName: 'Elementalist', itemId: 20});
+  campaign.buyItem({playerName: 'Sona', itemId: 1});
+  campaign.buyItem({playerName: 'Sona', itemId: 20});
+
+  campaign.resolveCityEvent({eventId: 13, discard: false,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {g: -2} },
+      { playerName: 'Beast',     playerResults: {g: -3} },
+      { playerName: 'Elementalist', playerResults: {g: -3} },
+      { playerName: 'Mystic', playerResults: {g: -1} },
+    ]
+  });
+
+  campaign.resolveRoadEvent({eventId: 11, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 33,
+    level: 2,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 24, g: 12} },
+      { playerName: 'Beast', playerResults: {xp: 19, g: 0, t: 1} },
+      { playerName: 'Elementalist', playerResults: {xp: 9, g: 0, t: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 7, g: 12} },
+    ],
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_TREASURE, PARTY_ACHIEVEMENTS.THE_DRAKES_TREASURE]}
+  });
+
   return campaign.getStatus();
 }
