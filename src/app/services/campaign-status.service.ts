@@ -361,7 +361,7 @@ export class CampaignStatusService {
 
     // Treasures
     if (payload.treasuresLooted) {
-      this.status.treasuresLooted.concat(payload.treasuresLooted);
+      this.status.treasuresLooted = this.status.treasuresLooted.concat(payload.treasuresLooted);
     }
 
     // Check if any player has leveled up
