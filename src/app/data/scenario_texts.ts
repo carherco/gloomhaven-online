@@ -1023,10 +1023,61 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
         enormemente." <strong>(40-Ancient Defense Network)</strong>`
       ]
     },
-    { name: '#33 Savvas Armory'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    {
+      name: '#33 Savvas Armory',
+      introduction: [
+        `Comandado por una poderosa criatura para
+        recuperar un tesoro de valor incalculable,
+        ahora conspiráis para infiltraros en una
+        ciudad de Savvas y entrar en una armería en
+        lo profundo de su montaña.`,
+        `"Asaltar a los Savvas directamente es
+        imposible", dijo la criatura. "Pero hay un
+        pasaje en el lado norte de su ciudad que lleva
+        directamente a su cámara."`,
+        `Es un largo y tortuoso viaje, dirigiéndote por
+        el lado más lejano de la montaña, pero
+        finalmente encuentras la entrada oculta.`,
+        `"Tendréis que actuar rápido," advirtió la
+        criatura . "Tan pronto como entréis, los
+        Savvas activarán la alarma. Necesitaréis coger
+        lo que habéis venido a buscar y largaros antes
+        de que estéis atrapados por los refuerzos."`,
+        `Llegáis a una simple puerta de madera al final
+        del túnel. Intentando con cuidado abrir la
+        puerta, no se mueve. Es bastante endeble, así
+        que deberíais ser capaz de derribarla
+        fácilmente, pero tendrás que abandonar el
+        enfoque sigiloso.`
+      ],
+      milestones: [
+        {
+          key: '1',
+          texts: [
+            `Escucháis una alarma sonando claramente en
+            la distancia. Habéis golpeado un avispero y es
+            sólo cuestión de tiempo antes de que os
+            ataquen. Entráis en la cámara interior y
+            examináis la habitación. Hay un montón de
+            tesoros aquí. Es mejor agarrarlo todo.`
+          ]
+        }
+      ],
+      conclusion: [
+        `Dobláis la esquina justo cuando una bola de
+        fuego vuela hacia vosotros. Explota en un
+        muro lejano y derrumba el túnel detrás de
+        vosotros. Echáis a correr a toda velocidad y,
+        en cuestión de minutos, emergéis de la
+        montaña y seguís corriendo hacia las
+        estribaciones circundantes. Con una distancia
+        segura entre vosotros y vuestros
+        perseguidores, finalmente os desplomáis en el
+        suelo y descansáis. Después de un momento,
+        tenéis claro que ningún Savvas os persigue,
+        así que os levantáis y continuáis vuestra
+        búsqueda con el tesoro en la mano. <strong>(40-Ancient Defense Network)</strong>`
+      ]
     },
     { name: '#34 Scorched Summit'
     , introduction: [],
@@ -1107,10 +1158,100 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
         Voz. "Ve ahora, y recupera lo que es mío". <strong>(41-Timeworn Tomb)</strong>`
       ]
     },
-    { name: '#41 Timeworn Tomb'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    {
+      name: '#41 Timeworn Tomb',
+      introduction: [
+        `Después de descender por la escalera, te
+        arrastras a través de la tumba mohosa. Con la
+        red de defensa desactivada, todo parece
+        inactivo. Debería ser una simple cuestión de
+        recuperar la vasija y salir de este lugar
+        macabro.`,
+        `Te acercas al sarcófago en la cámara central y
+        te das cuenta de que la Voz no ha hablado
+        desde que entraste en la tumba. No piensas
+        mucho al respecto y agarras el recipiente al pie
+        del ataúd de piedra.`,
+        `El misterioso silencio vuelve a romperse por el
+        sonido agudo de una sirena. Reverbera por toda
+        la habitación pequeña y asalta tus oídos. Desde
+        las esquinas de las sombras, se ve movimiento:
+        armas automáticas diseñadas para matar a
+        todos los intrusos.`,
+        `Te enojas con la Voz por no advertirte sobre
+        esta seguridad extra, y
+        luego canalizas esa furia para hacer lo que sea
+        necesario para salir de esta tumba con vida.`
+      ],
+      milestones: [
+        {
+          key: '1',
+          texts: [
+            `Salís de la habitación principal hacia una
+            antecámara. Lo que una vez estuvo dormido
+            ahora está repleto de cadáveres vivientes de los
+            que hace mucho tiempo fueron sepultados aquí.
+            Y más que eso, el camino de regreso a la
+            superficie ahora está cerrado. Miráis a vuestro
+            alrededor, desesperados por encontrar alguna
+            forma de evitar que esta situación vaya de mal
+            en peor.`
+          ]
+        },
+        {
+          key: '2',
+          texts: [
+            `Empujáis la puerta desbloqueada, llegáis a la
+            entrada de la tumba, y vuestro corazón se encoje al
+            ver la estrecha escalera que conduce a la
+            libertad. Tendréis que escapar de esta trampa
+            mortal de una vez.`
+          ]
+        }
+      ],
+      conclusion: [
+        `Con el sonido rechinante de los golems que
+        llega desde abajo, saltas rápidamente de la
+        ruina. Solo entonces la Voz regresa a ti.`,
+        `"Me temo que mis captores fueron más listos
+        de lo que esperaba. Algo bloqueó mi influencia
+        para llegar dentro de la tumba.
+        Afortunadamente, fuiste capaz de sortear los
+        peligros sin mi ayuda. Estoy feliz de que hayas
+        encontrado mi prisión y de que decidieras ser
+        el artífice de mi liberación. Después de todo
+        este tiempo, finalmente seré libre ".`,
+        `Con las tres vasijas en la mano, regresas a la
+        cueva de la montaña en la Cámara del Eco.
+        Colocas las pequeñas ollas de barro en el centro
+        de la caverna y esperas.`,
+        `Es difícil notarlo al principio, pero con el
+        tiempo, un leve temblor en el piso y las paredes
+        comienza a crecer hasta que es difícil mantener
+        el equilibrio. Apenas te puedes apartar del
+        camino cuando una gran roca cae del techo.`,
+        `Luego hay un destello de luz, y frente a ti flota
+        una neblina verde que gira en forma de muchos
+        zarcillos largos entrelazados.`,
+        `"Casi había olvidado lo que era no estar
+        encarcelado". Por una vez, escuchas la voz no
+        desde dentro de tu propia cabeza, sino que
+        emana de la figura frente a ti. "Es bastante
+        maravilloso. Estoy seguro de que antes de que
+        pase mucho tiempo, olvidaré ese horrible
+        sentimiento de impotencia."`,
+        `"Es hora de dejar este reino", dice la Voz. "Hay
+        mucho que arreglar desde mi prolongada
+        ausencia. Pero primero, debo darte las gracias.
+        Voy a mantener mi parte del trato y otorgaros
+        gran poder y riqueza ".`,
+        `La luz verde se extiende y se ilumina,
+        proporcionándote la más maravillosa sensación
+        de calidez. Y luego se va.`,
+        `Todo lo que queda es una tabla de piedra en el
+        centro de la habitación con marcas extrañas y
+        crípticas.`
+      ]
     },
     { name: '#42 Realm of the Voice'
     , introduction: [],
