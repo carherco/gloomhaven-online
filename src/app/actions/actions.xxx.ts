@@ -365,17 +365,17 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[1].uid,
     characterClass: BeastTyrant,
-    name: 'Beast',
+    name: 'Adolfo',
     personalQuest: PERSONAL_QUESTS[521]
   });
 
-  // campaign.gainPerk({playerName: 'Beast', perkId: ''});
-  // campaign.gainPerk({playerName: 'Beast', perkId: ''});
-  // campaign.gainPerk({playerName: 'Beast', perkId: ''});
+  // campaign.gainPerk({playerName: 'Adolfo', perkId: ''});
+  // campaign.gainPerk({playerName: 'Adolfo', perkId: ''});
+  // campaign.gainPerk({playerName: 'Adolfo', perkId: ''});
 
-  campaign.buyItem({playerName: 'Beast', itemId: 1});
-  campaign.buyItem({playerName: 'Beast', itemId: 13});
-  campaign.buyItem({playerName: 'Beast', itemId: 27});
+  campaign.buyItem({playerName: 'Adolfo', itemId: 1});
+  campaign.buyItem({playerName: 'Adolfo', itemId: 13});
+  campaign.buyItem({playerName: 'Adolfo', itemId: 27});
 
   campaign.createCharacter({
     playerId: players[0].uid,
@@ -402,7 +402,7 @@ export function loadCampaing(): CampaignStatus {
     level: 2,
     playersResults: [
       { playerName: 'Sona', playerResults: {xp: 22, g: 12, t: 2} },
-      { playerName: 'Beast', playerResults: {xp: 15, g: 9, t: 1} },
+      { playerName: 'Adolfo', playerResults: {xp: 15, g: 9, t: 1} },
       { playerName: 'Brad',     playerResults: {xp: 11, g: 9, t: 1, pq: 1} },
       { playerName: 'Mystic', playerResults: {xp: 12, g: 15, t:1, pq: 1} },
     ],
@@ -418,26 +418,26 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[1].uid,
     characterClass: Elementalist,
-    name: 'Elementalist',
+    name: 'Víctor',
     personalQuest: PERSONAL_QUESTS[529]
   });
 
-  // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
-  // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
-  // campaign.gainPerk({playerName: 'Elementalist', perkId: ''});
+  // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
+  // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
+  // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
 
   campaign.sellItem({playerName: 'Mystic', itemId: 1});
   campaign.buyItem({playerName: 'Mystic', itemId: 71});
   campaign.buyItem({playerName: 'Mystic', itemId: 23});
 
-  campaign.buyItem({playerName: 'Elementalist', itemId: 71});
-  campaign.buyItem({playerName: 'Elementalist', itemId: 13});
+  campaign.buyItem({playerName: 'Víctor', itemId: 71});
+  campaign.buyItem({playerName: 'Víctor', itemId: 13});
 
   campaign.resolveCityEvent({eventId: 24, discard: false,
     playersResults: [
       { playerName: 'Sona', playerResults: {xp: 10} },
-      { playerName: 'Beast',     playerResults: {xp: 10} },
-      { playerName: 'Elementalist', playerResults: {xp: 10} },
+      { playerName: 'Adolfo',     playerResults: {xp: 10} },
+      { playerName: 'Víctor', playerResults: {xp: 10} },
       { playerName: 'Mystic', playerResults: {xp: 10} },
     ]
   });
@@ -449,22 +449,22 @@ export function loadCampaing(): CampaignStatus {
     level: 2,
     playersResults: [
       { playerName: 'Sona', playerResults: {xp: 19, g: 15} },
-      { playerName: 'Beast', playerResults: {xp: 13, g: 0} },
-      { playerName: 'Elementalist', playerResults: {xp: 9, g: 15} },
+      { playerName: 'Adolfo', playerResults: {xp: 13, g: 0} },
+      { playerName: 'Víctor', playerResults: {xp: 9, g: 15} },
     ],
     treasuresLooted: [46, 38],
     rewards: {itemDesigns: [123]}
   });
 
-  campaign.buyItem({playerName: 'Elementalist', itemId: 20});
+  campaign.buyItem({playerName: 'Víctor', itemId: 20});
   campaign.buyItem({playerName: 'Sona', itemId: 1});
   campaign.buyItem({playerName: 'Sona', itemId: 20});
 
   campaign.resolveCityEvent({eventId: 13, discard: false,
     playersResults: [
       { playerName: 'Sona', playerResults: {g: -2} },
-      { playerName: 'Beast',     playerResults: {g: -3} },
-      { playerName: 'Elementalist', playerResults: {g: -3} },
+      { playerName: 'Adolfo',     playerResults: {g: -3} },
+      { playerName: 'Víctor', playerResults: {g: -3} },
       { playerName: 'Mystic', playerResults: {g: -1} },
     ]
   });
@@ -476,8 +476,8 @@ export function loadCampaing(): CampaignStatus {
     level: 2,
     playersResults: [
       { playerName: 'Sona', playerResults: {xp: 24, g: 12} },
-      { playerName: 'Beast', playerResults: {xp: 19, g: 0, t: 1} },
-      { playerName: 'Elementalist', playerResults: {xp: 9, g: 0, t: 1} },
+      { playerName: 'Adolfo', playerResults: {xp: 19, g: 0, t: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 9, g: 0, t: 1} },
       { playerName: 'Mystic', playerResults: {xp: 7, g: 12, pq: 1} },
     ],
     rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_TREASURE, PARTY_ACHIEVEMENTS.THE_DRAKES_TREASURE]}
@@ -486,8 +486,8 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Mystic', ability: 'flurry-of-axes' });
   campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
 
-  //campaign.gainAbility({ playerName: 'Beast', ability: 'flurry-of-axes' });
-  //campaign.gainPerk({ playerName: 'Beast', perkId: 'bePerk3-2' });
+  //campaign.gainAbility({ playerName: 'Adolfo', ability: 'flurry-of-axes' });
+  //campaign.gainPerk({ playerName: 'Adolfo', perkId: 'bePerk3-2' });
 
   return campaign.getStatus();
 }
