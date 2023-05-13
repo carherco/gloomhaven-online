@@ -483,5 +483,11 @@ export function loadCampaing(): CampaignStatus {
     rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_TREASURE, PARTY_ACHIEVEMENTS.THE_DRAKES_TREASURE]}
   });
 
+  campaign.gainAbility({ playerName: 'Mystic', ability: 'flurry-of-axes' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
+
+  //campaign.gainAbility({ playerName: 'Beast', ability: 'flurry-of-axes' });
+  //campaign.gainPerk({ playerName: 'Beast', perkId: 'bePerk3-2' });
+
   return campaign.getStatus();
 }
