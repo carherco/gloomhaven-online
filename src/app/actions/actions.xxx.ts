@@ -478,7 +478,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Sona', playerResults: {xp: 24, g: 12} },
       { playerName: 'Beast', playerResults: {xp: 19, g: 0, t: 1} },
       { playerName: 'Elementalist', playerResults: {xp: 9, g: 0, t: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 7, g: 12} },
+      { playerName: 'Mystic', playerResults: {xp: 7, g: 12, pq: 1} },
     ],
     rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_TREASURE, PARTY_ACHIEVEMENTS.THE_DRAKES_TREASURE]}
   });
