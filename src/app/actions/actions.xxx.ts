@@ -489,5 +489,34 @@ export function loadCampaing(): CampaignStatus {
   //campaign.gainAbility({ playerName: 'Adolfo', ability: 'flurry-of-axes' });
   //campaign.gainPerk({ playerName: 'Adolfo', perkId: 'bePerk3-2' });
 
+  campaign.resolveCityEvent({eventId: 36, discard: true,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 5} },
+      { playerName: 'Adolfo', playerResults: {xp: 5} },
+      { playerName: 'Víctor', playerResults: {xp: 5} },
+      { playerName: 'Mystic', playerResults: {xp: 5} },
+    ],
+    rewards: {reputation: -2}
+  });
+
+  campaign.resolveRoadEvent({eventId: 5, discard: true,
+    playersResults: [
+      { playerName: 'Mystic', playerResults: {items: [106]} },
+    ]
+  });
+
+  campaign.completeScenario({
+    scenarioId: 40,
+    level: 2,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 7, g: 6, t: 1} },
+      { playerName: 'Adolfo', playerResults: {xp: 6, g: 3} },
+      { playerName: 'Víctor', playerResults: {xp: 4, g: 3} },
+      { playerName: 'Mystic', playerResults: {xp: 5, g: 6, pq: 1, items: [104]} },
+    ],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2]},
+    scenariosUnlocked: [41]
+  });
+
   return campaign.getStatus();
 }
