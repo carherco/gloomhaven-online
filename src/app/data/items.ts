@@ -1037,8 +1037,8 @@ export const ITEMS: ItemDef[] = [
     points: 103,
     image: 'items/64-151/steam-armor.png',
     type: 'body',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 50,
     xws: 'steamarmor'
   },
   {
@@ -1056,9 +1056,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 105,
     image: 'items/64-151/necklace-of-teeth.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'head',
+    use: 'permanent',
+    price: 40,
     xws: 'necklaceofteeth'
   },
   {
