@@ -514,6 +514,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Víctor', playerResults: {xp: 4, g: 3} },
       { playerName: 'Mystic', playerResults: {xp: 5, g: 6, pq: 1, items: [104]} },
     ],
+    treasuresLooted: [47],
     rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2]},
     scenariosUnlocked: [41]
   });
