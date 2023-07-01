@@ -422,6 +422,9 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[529]
   });
 
+  // campaign.gainAbility({ playerName: 'Víctor', ability: '' });
+  // campaign.gainAbility({ playerName: 'Víctor', ability: '' });
+  // campaign.gainAbility({ playerName: 'Víctor', ability: '' });
   // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
   // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
   // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
@@ -518,6 +521,34 @@ export function loadCampaing(): CampaignStatus {
     rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2]},
     scenariosUnlocked: [41]
   });
+
+  campaign.resolveCityEvent({eventId: 3, discard: true,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {g: -3, items: [125]} },
+      { playerName: 'Víctor', playerResults: {g: -5} },
+      { playerName: 'Mystic', playerResults: {g: -2} },
+    ],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_3]}
+  });
+
+  campaign.resolveRoadEvent({eventId: 2, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 4,
+    level: 2,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 16, g: 15} },
+      { playerName: 'Víctor', playerResults: {xp: 12, g: 12, t: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 8, g: 21, t: 1, pq: 1} },
+    ],
+    scenariosUnlocked: [5, 6]
+  });
+
+  // campaign.gainAbility({ playerName: 'Sona', ability: 'flurry-of-axes' });
+  // campaign.gainPerk({ playerName: 'Sona', perkId: 'bePerk3-2' });
+
+  // campaign.gainAbility({ playerName: 'Víctor', ability: 'flurry-of-axes' });
+  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'bePerk3-2' });
 
   return campaign.getStatus();
 }
