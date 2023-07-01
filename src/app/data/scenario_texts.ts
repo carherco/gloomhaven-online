@@ -168,7 +168,7 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       muertos vivientes. Parece como si tuvieras la
       oportunidad de estropear algo más de su
       trabajo <strong>(5-Ruinous Crypt)</strong> o de obtener su beneplácito
-      ayudando a eliminar una amenaza. <strong>(5-Decaying Crypt)</strong>`
+      ayudando a eliminar una amenaza. <strong>(6-Decaying Crypt)</strong>`
     ]
   },
     { name: '#5 Ruinous Crypt'
