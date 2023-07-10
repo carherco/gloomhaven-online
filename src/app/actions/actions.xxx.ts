@@ -550,5 +550,45 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainAbility({ playerName: 'Víctor', ability: 'flurry-of-axes' });
   // campaign.gainPerk({ playerName: 'Víctor', perkId: 'bePerk3-2' });
 
+  campaign.resolveCityEvent({eventId: 21, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 28,
+    playersResults: [{ playerName: 'Adolfo', playerResults: {g: 10} }],
+    discard: true
+  });
+
+  campaign.buyItem({playerName: 'Sona', itemId: 5});
+  campaign.buyItem({playerName: 'Sona', itemId: 7});
+  campaign.buyItem({playerName: 'Mystic', itemId: 27});
+
+  campaign.completeScenario({
+    scenarioId: 41,
+    level: 3,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 21, g: 0, t: 4} },
+      { playerName: 'Adolfo', playerResults: {xp: 7, g: 0, t: 2} },
+      { playerName: 'Víctor', playerResults: {xp: 3, g: 9, t: 3} },
+      { playerName: 'Mystic', playerResults: {xp: 6, g: 9, t: 4, pq: 1} },
+    ],
+    rewards: {gold: 50, xp: 25, prosperity: 2}, // y 2 ticks (que los he puesto en player results)
+    treasuresLooted: [24],
+  });
+
+  campaign.buyItem({playerName: 'Mystic', itemId: 8});
+  campaign.buyItem({playerName: 'Mystic', itemId: 13});
+  campaign.buyItem({playerName: 'Mystic', itemId: 112});
+
+  // campaign.gainAbility({ playerName: 'Sona', ability: 'flurry-of-axes' });
+  // campaign.gainPerk({ playerName: 'Sona', perkId: 'bePerk3-2' });
+  // campaign.gainPerk({ playerName: 'Sona', perkId: 'bePerk3-2' });
+
+  // campaign.gainAbility({ playerName: 'Mystic', ability: 'flurry-of-axes' });
+  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
+  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
+
+  // campaign.gainPerk({ playerName: 'Adolfo', perkId: 'bePerk3-2' });
+
+  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'bePerk3-2' });
+
   return campaign.getStatus();
 }
