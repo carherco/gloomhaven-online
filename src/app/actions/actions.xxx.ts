@@ -574,9 +574,7 @@ export function loadCampaing(): CampaignStatus {
     treasuresLooted: [24],
   });
 
-  campaign.buyItem({playerName: 'Mystic', itemId: 8});
   campaign.buyItem({playerName: 'Mystic', itemId: 13});
-  campaign.buyItem({playerName: 'Mystic', itemId: 112});
 
   // campaign.gainAbility({ playerName: 'Sona', ability: 'flurry-of-axes' });
   // campaign.gainPerk({ playerName: 'Sona', perkId: 'bePerk3-2' });
