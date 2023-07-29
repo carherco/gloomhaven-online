@@ -384,9 +384,11 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[511]
   });
 
-  // campaign.gainPerk({playerName: 'Sona', perkId: ''});
-  // campaign.gainPerk({playerName: 'Sona', perkId: ''});
-  // campaign.gainPerk({playerName: 'Sona', perkId: ''});
+  campaign.gainAbility({ playerName: 'Sona', ability: 'soothing-lullaby' });
+  campaign.gainAbility({ playerName: 'Sona', ability: 'echoing-aria' });
+  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk12-1'});
+  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk12-2'});
+  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk11'});
 
   campaign.buyItem({playerName: 'Sona', itemId: 13});
   campaign.buyItem({playerName: 'Sona', itemId: 17});
@@ -439,7 +441,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.resolveCityEvent({eventId: 24, discard: false,
     playersResults: [
       { playerName: 'Sona', playerResults: {xp: 10} },
-      { playerName: 'Adolfo',     playerResults: {xp: 10} },
+      { playerName: 'Adolfo', playerResults: {xp: 10} },
       { playerName: 'Víctor', playerResults: {xp: 10} },
       { playerName: 'Mystic', playerResults: {xp: 10} },
     ]
@@ -458,6 +460,9 @@ export function loadCampaing(): CampaignStatus {
     treasuresLooted: [46, 38],
     rewards: {itemDesigns: [123]}
   });
+
+  campaign.gainAbility({ playerName: 'Sona', ability: 'disorienting-dirge' });
+  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk10'});
 
   campaign.buyItem({playerName: 'Víctor', itemId: 20});
   campaign.buyItem({playerName: 'Sona', itemId: 1});
@@ -544,8 +549,8 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [5, 6]
   });
 
-  // campaign.gainAbility({ playerName: 'Sona', ability: 'flurry-of-axes' });
-  // campaign.gainPerk({ playerName: 'Sona', perkId: 'bePerk3-2' });
+  campaign.gainAbility({ playerName: 'Sona', ability: 'melody-and-harmony' });
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk2' });
 
   // campaign.gainAbility({ playerName: 'Víctor', ability: 'flurry-of-axes' });
   // campaign.gainPerk({ playerName: 'Víctor', perkId: 'bePerk3-2' });
@@ -570,15 +575,15 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Víctor', playerResults: {xp: 3, g: 9, t: 3} },
       { playerName: 'Mystic', playerResults: {xp: 6, g: 9, t: 4, pq: 1} },
     ],
-    rewards: {gold: 50, xp: 25, prosperity: 2}, // y 2 ticks (que los he puesto en player results)
+    rewards: {gold: 50, xp: 25, prosperity: 2, globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_FREED]}, // y 2 ticks (que los he puesto en player results)
     treasuresLooted: [24],
   });
 
   campaign.buyItem({playerName: 'Mystic', itemId: 13});
 
-  // campaign.gainAbility({ playerName: 'Sona', ability: 'flurry-of-axes' });
-  // campaign.gainPerk({ playerName: 'Sona', perkId: 'bePerk3-2' });
-  // campaign.gainPerk({ playerName: 'Sona', perkId: 'bePerk3-2' });
+  campaign.gainAbility({ playerName: 'Sona', ability: 'pull-the-strings' });
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk1-1' });
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk1-2' });
 
   // campaign.gainAbility({ playerName: 'Mystic', ability: 'flurry-of-axes' });
   // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });

@@ -492,7 +492,7 @@ export const BeastTyrant: CharacterClass = {
 
 export const Soothsinger: CharacterClass = {
   id: 'soothsinger',
-  key: 'BE',
+  key: 'SS',
   race: 'Quatryl',
   className: 'Soothsinger',
   handCardSize: 9,
