@@ -275,7 +275,7 @@ export class CampaignStatusService {
         const character = this.findCharacterByName(player.playerName);
         character.experience += bonusExperience + player.playerResults.xp + (payload.rewards?.xp ?? 0);
         character.gold += (player.playerResults.g ?? 0) + (payload.rewards?.gold ?? 0);
-        character.perkTicks += player.playerResults.t ?? 0;
+        character.perkTicks += (player.playerResults.t ?? 0) + (payload.rewards?.t ?? 0);
         character.personalQuest.progress += player.playerResults.pq ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
         if (player.playerResults.items) {

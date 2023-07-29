@@ -47,6 +47,7 @@ export interface CompleteScenarioPayload {
     reputation?: number,
     gold?: number,
     xp?: number,
+    t?: number,
     itemDesigns?: number[],
     loosePartyAchievements?: string[],
     looseGlobalAchievements?: string[],

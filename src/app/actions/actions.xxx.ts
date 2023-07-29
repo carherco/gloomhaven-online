@@ -570,12 +570,12 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 41,
     level: 3,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 21, g: 0, t: 4} },
-      { playerName: 'Adolfo', playerResults: {xp: 7, g: 0, t: 2} },
-      { playerName: 'Víctor', playerResults: {xp: 3, g: 9, t: 3} },
-      { playerName: 'Mystic', playerResults: {xp: 6, g: 9, t: 4, pq: 1} },
+      { playerName: 'Sona', playerResults: {xp: 21, g: 0, t: 2} },
+      { playerName: 'Adolfo', playerResults: {xp: 7, g: 0} },
+      { playerName: 'Víctor', playerResults: {xp: 3, g: 9, t: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 6, g: 9, t: 2, pq: 1} },
     ],
-    rewards: {gold: 50, xp: 25, prosperity: 2, globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_FREED]}, // y 2 ticks (que los he puesto en player results)
+    rewards: {gold: 50, xp: 25, prosperity: 2, t: 2, globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_FREED]},
     treasuresLooted: [24],
   });
 
