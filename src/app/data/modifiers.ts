@@ -185,6 +185,11 @@ export class Plus2Fire {
   src = 'Plus2Fire.png';
 }
 
+export class Plus2Earth {
+  id = 'plus2Earth';
+  src = 'Plus2Earth.png';
+}
+
 export class Push1Rolling {
   id = 'push1Rolling';
   src = 'RollingPush1.png';

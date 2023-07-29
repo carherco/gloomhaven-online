@@ -369,9 +369,11 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[521]
   });
 
-  // campaign.gainPerk({playerName: 'Adolfo', perkId: ''});
-  // campaign.gainPerk({playerName: 'Adolfo', perkId: ''});
-  // campaign.gainPerk({playerName: 'Adolfo', perkId: ''});
+  campaign.gainAbility({playerName: 'Adolfo', ability: 'energizing-strike'});
+  campaign.gainAbility({playerName: 'Adolfo', ability: 'vicious-ally'});
+  campaign.gainPerk({playerName: 'Adolfo', perkId: 'btPerk1'});
+  campaign.gainPerk({playerName: 'Adolfo', perkId: 'btPerk6-1'});
+  campaign.gainPerk({playerName: 'Adolfo', perkId: 'btPerk6-2'});
 
   campaign.buyItem({playerName: 'Adolfo', itemId: 1});
   campaign.buyItem({playerName: 'Adolfo', itemId: 13});
@@ -471,7 +473,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.resolveCityEvent({eventId: 13, discard: false,
     playersResults: [
       { playerName: 'Sona', playerResults: {g: -2} },
-      { playerName: 'Adolfo',     playerResults: {g: -3} },
+      { playerName: 'Adolfo', playerResults: {g: -3} },
       { playerName: 'Víctor', playerResults: {g: -3} },
       { playerName: 'Mystic', playerResults: {g: -1} },
     ]
@@ -494,8 +496,8 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Mystic', ability: 'flurry-of-axes' });
   campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
 
-  //campaign.gainAbility({ playerName: 'Adolfo', ability: 'flurry-of-axes' });
-  //campaign.gainPerk({ playerName: 'Adolfo', perkId: 'bePerk3-2' });
+  campaign.gainAbility({ playerName: 'Adolfo', ability: 'punch-through' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk6-3' });
 
   campaign.resolveCityEvent({eventId: 36, discard: true,
     playersResults: [
@@ -589,7 +591,9 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
   // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
 
-  // campaign.gainPerk({ playerName: 'Adolfo', perkId: 'bePerk3-2' });
+  campaign.gainAbility({ playerName: 'Adolfo', ability: 'rampage' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk2-1' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk2-2' });
 
   // campaign.gainPerk({ playerName: 'Víctor', perkId: 'bePerk3-2' });
 
