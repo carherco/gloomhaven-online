@@ -110,14 +110,29 @@ export class Plus1Immobilize {
   src = 'Plus1Immobilize.png';
 }
 
+export class Plus1Disarm {
+  id = 'plus1Disarm';
+  src = 'Plus1Disarm.png';
+}
+
 export class Plus1Poison {
   id = 'plus1poison';
   src = 'Plus1Poison.png';
 }
 
+export class Plus2Poison {
+  id = 'plus2poison';
+  src = 'Plus2Poison.png';
+}
+
 export class Plus1Wound {
   id = 'plus1wound';
   src = 'Plus1Wound.png';
+}
+
+export class Plus2Wound {
+  id = 'plus2wound';
+  src = 'Plus2Wound.png';
 }
 
 export class Plus1Heal2 {
@@ -128,6 +143,11 @@ export class Plus1Heal2 {
 export class Plus1Curse {
   id = 'plus1Curse';
   src = 'plus1Curse.png';
+}
+
+export class Plus2Curse {
+  id = 'plus2Curse';
+  src = 'plus2Curse.png';
 }
 
 export class Pull1Rolling {
@@ -141,6 +161,11 @@ export class Plus1Push1 {
 }
 
 export class Plus2Muddle {
+  id = 'plus2Muddle';
+  src = 'Plus2Muddle.png';
+}
+
+export class Plus3Muddle {
   id = 'plus2Muddle';
   src = 'Plus2Muddle.png';
 }
@@ -173,6 +198,11 @@ export class Push2Rolling {
 export class Plus3 {
   id = 'plus3';
   src = 'Plus3.png';
+}
+
+export class Plus4 {
+  id = 'plus4';
+  src = 'Plus4.png';
 }
 
 export class MuddleRolling {
