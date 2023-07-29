@@ -274,7 +274,7 @@ export const SCENARIOS: Scenario[] = [
   {
     title: 'Realm of the Voice',
     globalAchievementsRequired: [],
-    globalAchievementsRequiredIncomplete: [],
+    globalAchievementsRequiredIncomplete: [ACHIEVEMENTS.GLOBAL_ACHIEVEMENTS.THE_VOICE_FREED],
     partyAchievementsRequired: [PARTY.PARTY_ACHIEVEMENTS.THE_SCEPTER_AND_THE_VOICE]
   },
   {
