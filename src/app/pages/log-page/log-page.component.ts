@@ -28,6 +28,8 @@ export class LogPageComponent {
   public partyAchievements: string[] = [];
   public globalAchievements: string[] = [];
 
+  public decipheredMessages: string[] = [];
+
   constructor(private campaign: CampaignStatusService) {
     const status$ = this.campaign.getStatus$();
     status$.pipe(
@@ -76,6 +78,7 @@ export class LogPageComponent {
           this.completedScenarios = allScenariosWithStatus.sort(sortScenarios).filter( scenario => scenario.status === 'Completed');
           this.partyAchievements = status.party.achievements;
           this.globalAchievements = status.city.achievements;
+          this.decipheredMessages = status.decipheredMessages;
         }
       ),
       tap( _ => this.scenarios = this.completedScenarios.concat(this.blockedScenarios).concat(this.availableScenarios)),

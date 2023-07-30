@@ -580,6 +580,8 @@ export function loadCampaing(): CampaignStatus {
     treasuresLooted: [24],
   });
 
+  campaign.decipherMessage({message: 'THE CREATOR HAS MADE A REQUEST FOR OUR SPOILS. THE TWEELFTH LETTER HOLDS THE KEY.'});
+
   campaign.buyItem({playerName: 'Mystic', itemId: 13});
 
   campaign.gainAbility({ playerName: 'Sona', ability: 'pull-the-strings' });
