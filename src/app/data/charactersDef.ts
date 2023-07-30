@@ -432,7 +432,7 @@ export const Berserker: CharacterClass = {
   level9Cards: ['immortality', 'the-maw-of-madness'],
   perks: [
     { id: 'bePerk1', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
-    { id: 'bePerk2', title: 'Remove Four 0 Cards', addModifiers: [], removeModifiers: [new Plus0()] },
+    { id: 'bePerk2', title: 'Remove Four 0 Cards', addModifiers: [], removeModifiers: [new Plus0(), new Plus0(), new Plus0(), new Plus0()] },
     { id: 'bePerk3-1', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
     { id: 'bePerk3-2', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
     { id: 'bePerk4-1', title: 'Replace One 0 Card with One Rolling +2 Card', addModifiers: [new Plus2Rolling()], removeModifiers: [new Plus0()] },

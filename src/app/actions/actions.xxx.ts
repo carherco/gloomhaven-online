@@ -587,9 +587,9 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk1-1' });
   campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk1-2' });
 
-  // campaign.gainAbility({ playerName: 'Mystic', ability: 'flurry-of-axes' });
-  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
-  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-2' });
+  campaign.gainAbility({ playerName: 'Mystic', ability: 'shiny-distraction' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk4-1' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk5-1' });
 
   campaign.gainAbility({ playerName: 'Adolfo', ability: 'rampage' });
   campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk2-1' });
