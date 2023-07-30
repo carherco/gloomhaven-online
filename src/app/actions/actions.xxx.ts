@@ -426,12 +426,11 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[529]
   });
 
-  // campaign.gainAbility({ playerName: 'Víctor', ability: '' });
-  // campaign.gainAbility({ playerName: 'Víctor', ability: '' });
-  // campaign.gainAbility({ playerName: 'Víctor', ability: '' });
-  // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
-  // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
-  // campaign.gainPerk({playerName: 'Víctor', perkId: ''});
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'crystallizing-blast' });
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'chain-lightning' });
+  campaign.gainPerk({playerName: 'Víctor', perkId: 'elPerk1-1'});
+  campaign.gainPerk({playerName: 'Víctor', perkId: 'elPerk1-2'});
+  campaign.gainPerk({playerName: 'Víctor', perkId: 'elPerk8'});
 
   campaign.sellItem({playerName: 'Mystic', itemId: 1});
   campaign.buyItem({playerName: 'Mystic', itemId: 71});
@@ -554,8 +553,8 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Sona', ability: 'melody-and-harmony' });
   campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk2' });
 
-  // campaign.gainAbility({ playerName: 'Víctor', ability: 'flurry-of-axes' });
-  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'bePerk3-2' });
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'primal-duality' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk9' });
 
   campaign.resolveCityEvent({eventId: 21, discard: true});
 
@@ -595,7 +594,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk2-1' });
   campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk2-2' });
 
-  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'bePerk3-2' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk4' });
 
   return campaign.getStatus();
 }
