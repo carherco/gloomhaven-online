@@ -171,82 +171,221 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       ayudando a eliminar una amenaza. <strong>(6-Decaying Crypt)</strong>`
     ]
   },
-    { name: '#5 Ruinous Crypt'
-    , introduction: [],
+  {
+    name: '#5 Ruinous Crypt',
+    introduction: [
+      `Tu misión es clara. Estos cultistas elementales
+      están distorsionando el tejido del mundo y
+      deben ser detenidos. Con ese objetivo en
+      mente, te diriges a la zona más antigua de la
+      cripta. Crees que es la base de operaciones del
+      culto. Tomas coraje para el combate, derribas la
+      desvencijada puerta y entras a la cámara de la
+      cripta.`,
+      `Lo que tienes ante ti es maravilloso y
+      horripilante. Un grupo de cultistas está
+      realizando encantamientos rituales delante de
+      un oscuro y profundo agujero en la realidad. Se
+      vuelven hacia ti mientras gruñen y desenvainan
+      sus dagas de sacrificio.`,
+      `Detrás de ellos algo semejante a una tinta
+      profundamente negra se derrama del agujero y
+      luego se incorpora en una forma llena de
+      dientes y garras como salida de una pesadilla.
+      Sabes que debes enviar estos terrores del plano
+      elemental de vuelta al vacío, pero estás
+      paralizado por el miedo.`
+    ],
+    milestones: [],
+    conclusion: [
+      `Con los cultistas y sus secuaces muertos, parece
+      que la oscura grieta está inactiva. Sin embargo,
+      esto no la hace menos desconcertante. Tiras
+      una roca y desaparece en la nada. Debes
+      admitir que te preguntas si podrías atravesar la
+      grieta en la realidad y si sobrevivirías al viaje
+      para llegar al lugar donde haya terminado esa
+      roca <strong>(10-Plane of Elemental Power)</strong>`,
+      `Por otra parte, encontrar alguna manera de
+      cerrar la grieta probablemente sea la decisión
+      más prudente. Hay una encantadora Aesther en
+      Gloomhaven que puede saber más que vosotros sobre
+      este material interplanar. Antes de ayudar a
+      alguien, es conocida por pedir favores
+      imposibles <strong>(14-Frozen Hollow)</strong> <strong>(19-Forgotten Crypt)</strong>`
+    ]
+  },
+  {
+    name: '#6 Decaying Crypt',
+    introduction: [
+      `¿Qué es la vida sin un poco de intriga? Los
+      cultistas han marcado claramente esta cripta
+      como un lugar problemático para ellos. Tal vez
+      una limpieza aquí supondrá su agradecimiento o
+      tal vez puedas encontrar un tesoro fuera del
+      alcance de los saqueadores.`,
+      `Tan pronto llegas, es el olor el que te hace
+      arrepentirte de tu decisión más que cualquier
+      otra cosa. No es el hecho de que te hayas
+      enterado de este lugar explorando antiguas
+      ruinas decrépitas. No es el horror de las
+      trémulas sombras y los gemidos de los muertos
+      vivientes. Es el olor, el olor de la muerte. De la
+      carne podrida sin alma.`
+    ],
+    milestones: [],
+    conclusion: [
+      `Cuando se apagan los terribles gritos y
+      gemidos de los retornados, escuchas con
+      extrañeza y alarma que alguien aplaude. Al
+      voltearte, observas una figura encapuchada
+      cerca de tu antorcha y levantas tu arma. La
+      silueta de sonrisa en su cara supone una
+      amenaza, pero no como para enfrentarla
+      armado. Es un tipo de amenaza que nunca has
+      experimentado.`,
+      `“Muy bien, señores” -dice la figura-. "Notable.
+      Ciertamente ustedes saben desenvolverse, ¿no
+      creen?" “Han echado de esta cripta a sus
+      incómodos moradores. Ahora tienen nuestra
+      atención”. Nosotros preferimos la variedad de
+      no-muertos que podemos controlar,
+      lógicamente.`,
+      `La figura encapuchada hace una larga pausa
+      mientras os mira fijamente, sin dejar de sonreír.`,
+      `"Bueno, ¿serían tan amables de hacernos otro
+      favor? Después del cual habremos resuelto en
+      gran medida la cuestión del asesinato de
+      algunos de mis hermanos”. Ya no sonríe.`,
+      `“Hay una nigromante en Gloomhaven. Nos ha
+      estado dando problemas, enviando mercenarios
+      para hacer su trabajo sucio. Tal vez la hayan
+      conocido.”`,
+      `“Maten a Jekserah. Tráigannos su cabeza y
+      veremos si los dejamos Vivir" <strong>(8-Gloomhaven Warehouse)</strong>`
+    ]
+  },
+  {
+    name: '#7 Vibrant Grotto',
+    introduction: [],
     milestones: [],
     conclusion: []
-    },
-    { name: '#6 Decaying Crypt'
-    , introduction: [],
+  },
+  {
+    name: '#8 Gloomhaven Warehouse',
+    introduction: [
+      `A instancias de vuestro misterioso contacto, os
+      dirigís a escondidas hacia el almacén de
+      Jekserah, cubierto por la noche. Con un poco de
+      suerte, seréis capaces de descubrir sus planes y
+      ponerles fin.`,
+      `Guardas esperanzas de que el depósito esté
+      abandonado. En lugar de eso descubres que
+      está repleto de muertos vivientes. Al menos
+      tienes una mejor idea de sus planes. Claramente
+      ha estado usando el pergamino necromántico
+      que le entregaste para retornar a los muertos
+      dentro de las murallas de la ciudad. Ahora es el
+      momento de devolverlos al descanso.`,
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Atravesáis el depósito arrasando estantes,
+          trampas y muertos vivientes. Cuando
+          finalmente llegáis a la parte trasera del almacén,
+          os enfrentáis cara a cara con Jekserah y sus dos
+          guardaespaldas Inox.`,
+          `"¿Así que, habéis decidido interrumpir mis planes
+          en lugar de ayudarme? ¡Os arrepentiréis de vuestra
+          decisión cuando regreséis a Gloomhaven con una
+          legión de muertos vivientes tras de mi! "`,
+          `Moviéndose con gran velocidad, Jekserah gira,
+          corre y escapa por una ventana. Intentas
+          perseguirla, pero los dos gigantescos Inox
+          bloquean tu avance.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Con la batalla detrás de ti, buscas algún rastro
+      de la Valrath fuera de la ventana pero no ha
+      dejado ningún indicio de su huida. Has
+      detenido sus planes por ahora, pero después de
+      su breve conversación, está claro que tienes que
+      cazarla antes de que pueda concretar sus
+      amenazas <strong>(13-Temple of the Seer)</strong>`,
+      `"Ella está fuera de mi alcance", dice la guardia
+      de la ciudad Argeise encogiéndose de hombros
+      cuando le preguntas. "Nos gustaría asegurarnos
+      de que no causará más problemas, pero huyó
+      de la ciudad y yo no estoy como para ir de
+      paseo a la espesura”.`,
+      `"Podrías tener más suerte con la encantadora
+      Aesther de la ciudad.`,
+      `Probablemente pueda ubicar a esta cobarde
+      para ti, si logras conseguir que la encantadora
+      coopere" <strong>(14-Frozen Hollow)</strong> <strong>(17-Vibrant Grotto)</strong>`
+    ]
+  },
+  {
+    name: '#9 Diamond Mine',
+    introduction: [
+      `Ignorando las advertencias de Argeise, llegas a
+      la mina de diamante. "Maquinaciones siniestras"
+      es una frase para meditar, sin duda, pero la
+      frase "recompensa considerable" la supera sin
+      duda.`,
+      `Rumbo a la húmeda caverna subterránea
+      suponías que unos cuantos Vermlings eran un
+      desafío sencillo de superar. Ciertamente, no
+      esperabas una jauría de perros rabiosos
+      vigilando la entrada. Encontrar ese diamante
+      puede resultar más difícil de lo que pensabas.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Te mueves a través de un estrecho pasaje
+          claramente más apropiado para criaturas como
+          los Vermlings, hasta que llegas a una gran
+          cámara llena de escombros y Vermling mineros
+          en estado de alerta. En la parte posterior de la
+          Cámara, un hombre con una túnica oscura
+          azota con el látigo y escupe órdenes a los
+          mineros, que alejan sus picos de la piedra y los
+          dirigen hacia ti.`,
+        ]
+      }
+    ],
+    conclusion: [
+      `Con el capataz muerto y el diamante en mano,
+      regresas a ver a Jekserah para reclamar tu
+      recompensa. Sus guardaespaldas te escoltan
+      dentro la mansión. La encuentras diferente, más
+      irascible y sombría.`,
+      `"Maravilloso." Intercambia contigo el diamante
+      por buen saco de monedas. “Esto servirá
+      magníficamente como foco para los conjuros.
+      Me pregunto si los cultistas sabían lo que se
+      puede lograr con algo como esto. Puedo
+      convocar a un ejército de muertos vivientes!"`,
+      `Ella se vuelve hacia ti con un extraño brillo en
+      los ojos. "¡Entonces! ¿Estás listo para derrocar a
+      los milicia de Gloomhaven y poner la ciudad
+      bajo el control del gremio de comerciantes? <strong>(11-Gloomhaven Square A)</strong>
+      ¿O no tienes estómago para hacer un verdadero
+      cambio?" <strong>(12-Gloomhaven Square B)</strong>`
+    ]
+  },
+  {
+    name: '#10 Plane of Elemental Power',
+    introduction: [],
     milestones: [],
     conclusion: []
-    },
-    { name: '#7 Vibrant Grotto'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#8 Gloomhaven Warehouse'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    {
-      name: '#9 Diamond Mine',
-      introduction: [
-        `Ignorando las advertencias de Argeise, llegas a
-        la mina de diamante. "Maquinaciones siniestras"
-        es una frase para meditar, sin duda, pero la
-        frase "recompensa considerable" la supera sin
-        duda.`,
-        `Rumbo a la húmeda caverna subterránea
-        suponías que unos cuantos Vermlings eran un
-        desafío sencillo de superar. Ciertamente, no
-        esperabas una jauría de perros rabiosos
-        vigilando la entrada. Encontrar ese diamante
-        puede resultar más difícil de lo que pensabas.`
-      ],
-      milestones: [
-        {
-          key: '1',
-          texts: [
-            `Te mueves a través de un estrecho pasaje
-            claramente más apropiado para criaturas como
-            los Vermlings, hasta que llegas a una gran
-            cámara llena de escombros y Vermling mineros
-            en estado de alerta. En la parte posterior de la
-            Cámara, un hombre con una túnica oscura
-            azota con el látigo y escupe órdenes a los
-            mineros, que alejan sus picos de la piedra y los
-            dirigen hacia ti.`,
-          ]
-        }
-      ],
-      conclusion: [
-        `Con el capataz muerto y el diamante en mano,
-        regresas a ver a Jekserah para reclamar tu
-        recompensa. Sus guardaespaldas te escoltan
-        dentro la mansión. La encuentras diferente, más
-        irascible y sombría.`,
-        `"Maravilloso." Intercambia contigo el diamante
-        por buen saco de monedas. “Esto servirá
-        magníficamente como foco para los conjuros.
-        Me pregunto si los cultistas sabían lo que se
-        puede lograr con algo como esto. Puedo
-        convocar a un ejército de muertos vivientes!"`,
-        `Ella se vuelve hacia ti con un extraño brillo en
-        los ojos. "¡Entonces! ¿Estás listo para derrocar a
-        los milicia de Gloomhaven y poner la ciudad
-        bajo el control del gremio de comerciantes? <strong>(11-Gloomhaven Square A)</strong>
-        ¿O no tienes estómago para hacer un verdadero
-        cambio?" <strong>(12-Gloomhaven Square B)</strong>`
-      ]
-    },
-    { name: '#10 Plane of Elemental Power'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  },
   {
     name: '#11 Gloomhaven Square A',
     introduction: [
@@ -775,10 +914,84 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       alcanzas a entender. <strong>(30-Shrine of the Depths)</strong>`
     ]
   },
-    { name: '#25 Icecrag Ascent'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+  {
+    name: '#25 Icecrag Ascent',
+    introduction: [
+      `Las montañas Copperneck no son acogedoras.
+      Más allá del paso, el clima empeora
+      progresivamente cuanto más al norte se viaja.
+      Vuestras pertenencias se vuelven insoportablemente
+      pesadas. El frío cala en vuestros huesos. Y luego
+      comenzáis a escalar el Icecrag.`,
+      `Sin haber visto aún signos de una bestia
+      gigante alada, empiezáis a preguntaros si todos
+      estos problemas merecen la pena. Varias veces
+      contempláis dar marcha atrás, soñando con el
+      cálido resplandor del hogar del León
+      Durmiente.`,
+      `Pero comenzáis a escuchar algo extraño. Vuestros
+      oídos retienen un sonido chirriante en el viento.
+      No es grande, posiblemente sea solo el viento
+      que fluye a través de un espacio pequeño. Pero
+      aún así, es algo. Avanzáis, y luego véis los lobos.
+      Están sobre vosotros, pelaje blanco entre los cúmulos
+      de nieve.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Superáis los lobos, agradecidos de que la nieve
+          no os haya demorado demasiado. Asumís que la
+          pelea ha terminado, pero el chirrido comienza
+          de nuevo, esta vez mucho más cerca. Miráis a
+          través de la tormenta blanca y véis formas rojas
+          corriendo hacia vosotros.`
+        ]
+      },
+    ],
+    conclusion: [
+      `Todo tu ser quiere detenerse, caer y descansar
+      en la nieve. Pero sabes que no te levantarás.
+      Sabes que serías despedazado por enormes
+      garras rojas. Entonces sigues adelante, más allá
+      de toda razón. Hasta que, finalmente, los
+      dragones dejan de perseguirte y la cima de la
+      montaña está a la vista.`,
+      `El viento calma a medida que te acercas al pico.
+      Es un cambio agradable tras torrente de dolor
+      penetrante que vino antes. El aire es poco
+      denso, pero ahora estás sobre las nubes y el
+      clima es relativamente pacífico. Hace que sea
+      muy fácil ver al lagarto gigante alado posado
+      sobre una roca dentada.`,
+      `"Bienvenidos a mi montaña, intrépidos
+      aventureros." Una voz grave sale de la criatura,
+      sorprendiéndote con su elocuencia.
+      "Odio arrinconaros, pero ahora que habéis
+      acudido a mí, cara a cara, vuestras opciones son
+      lamentablemente limitadas.`,
+      `No estoy particularmente hambriento en este
+      momento, así que podría considerar el dejarte
+      vivir, si aceptas ayudarme en un pequeño
+      asunto.`,
+      `"Un grupo de Savvas me sometió mientras
+      dormía y sacó una de mis glándulas de fuego,
+      supuestamente para estudiarla. No puedo dejar
+      que este insulto quede impune y agradecería
+      mucho que me la trajeras de vuelta de su
+      ciudad, matando a tantos de ellos como puedas
+      en el proceso." El draco golpea con furia sus
+      garras contra su poste de piedra. <strong>(33-Savvas Armory)</strong>`,
+      `"O, si quieres ser un cliché", dice la criatura con
+      un suspiro, "simplemente podrías atacarme".
+      Mata al dragón, salva a la princesa y todo eso.`,
+      `"Excepto que no tengo princesa, y no soy un
+      dragón; solo un Draco que ha vivido mucho
+      tiempo y no desea terminar con su vida hoy.`,
+      `Entonces si me atacas, lucharé y seguramente
+      morirás ". <strong>(34-Scorched Summit)</strong>`
+    ]
     },
   {
     name: '#26 Ancient Cistern',
@@ -1079,10 +1292,41 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
         búsqueda con el tesoro en la mano. <strong>(40-Ancient Defense Network)</strong>`
       ]
     },
-    { name: '#34 Scorched Summit'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    {
+      name: '#34 Scorched Summit',
+      introduction: [
+        `De pie ante el gran y orgulloso Drake, no véis
+        nada que discutir con el monstruo. Si quiere
+        vuestra ayuda, es ciertamente para un
+        propósito nefasto. Los dragones que has
+        conocido anteriormente no han sido muy
+        amables. Preparáis vuestras armas con
+        determinación.`,
+        `"Así que, va a ser de esa manera, ¿no?" El
+        dragón suspira. "Bueno, supongo que podría
+        comer, si insistís." Respira hondo.`
+      ],
+      milestones: [],
+      conclusion: [
+        `Con un último chillido sangriento, el dragón
+        gigante se cae de su pedestal y cae al suelo
+        nevado. Parece que todavía está vivo, pero su
+        respiración es débil y poco profunda.`,
+        `"Hambriento y lento. No sé por qué debería
+        haber esperado más", susurra el dragón.
+        "Felicidades por tu impresionante éxito. Estoy
+        seguro de que seréis aclamados como héroes a
+        vuestro regreso triunfal. Adornado con coronas
+        de oro y capas de seda. Las riquezas serán
+        cargadas sobre ti y cinco mil..."`,
+        `Los susurros del dragón se desvanecen y se
+        detiene su respiración. No hace falta decir que
+        las predicciones sarcásticas del dragón no se
+        cumplen. Informáis de lo sucedido en
+        Gloomhaven y recibís una modesta recompensa
+        para añadir a la modesta cantidad de tesoros
+        que encontráis en la Cumbre Quemada.`
+      ]
     },
     { name: '#35 Gloomhaven Battlements A'
     , introduction: [],
