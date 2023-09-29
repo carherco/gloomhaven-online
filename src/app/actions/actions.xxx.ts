@@ -598,5 +598,43 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk4' });
 
+  campaign.buyItem({ playerName: 'Sona', itemId: 8 });
+
+  campaign.resolveCityEvent({eventId: 10, discard: true,
+    rewards: {reputation: 1}
+  });
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  // TODO: Abrir sobre B
+
+  campaign.resolveRoadEvent({eventId: 6, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 25,
+    level: 3,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 14, g: 18, t: 1} },
+      { playerName: 'Adolfo', playerResults: {xp: 11, g: 9, t: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 11, g: 9, items: [108]} },
+      { playerName: 'Mystic', playerResults: {xp: 5, g: 15, t: 2, pq: 1} },
+    ],
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]},
+    treasuresLooted: [58],
+    scenariosUnlocked: [33, 34]
+  });
+
+  campaign.gainGlobalAchievement({
+    type: '',
+    name: GLOBAL_ACHIEVEMENTS.THE_DRAKE_AIDED
+  });
+
+  campaign.addCityEvent(75);
+  campaign.addRoadEvent(66);
+
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'winters-edge' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk5' });
+
   return campaign.getStatus();
 }
