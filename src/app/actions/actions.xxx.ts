@@ -393,7 +393,9 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk11'});
 
   campaign.buyItem({playerName: 'Sona', itemId: 13});
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
   campaign.buyItem({playerName: 'Sona', itemId: 17});
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
 
   campaign.resolveCityEvent({eventId: 44, discard: true,
     rewards: {reputation: 1}
@@ -467,7 +469,9 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.buyItem({playerName: 'Víctor', itemId: 20});
   campaign.buyItem({playerName: 'Sona', itemId: 1});
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
   campaign.buyItem({playerName: 'Sona', itemId: 20});
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
 
   campaign.resolveCityEvent({eventId: 13, discard: false,
     playersResults: [
@@ -536,6 +540,7 @@ export function loadCampaing(): CampaignStatus {
     ],
     rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_3]}
   });
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
 
   campaign.resolveRoadEvent({eventId: 2, discard: false});
 
@@ -564,7 +569,9 @@ export function loadCampaing(): CampaignStatus {
   });
 
   campaign.buyItem({playerName: 'Sona', itemId: 5});
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
   campaign.buyItem({playerName: 'Sona', itemId: 7});
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
   campaign.buyItem({playerName: 'Mystic', itemId: 27});
 
   campaign.completeScenario({
@@ -599,6 +606,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk4' });
 
   campaign.buyItem({ playerName: 'Sona', itemId: 8 });
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
 
   campaign.resolveCityEvent({eventId: 10, discard: true,
     rewards: {reputation: 1}
@@ -633,8 +641,39 @@ export function loadCampaing(): CampaignStatus {
   campaign.addCityEvent(75);
   campaign.addRoadEvent(66);
 
+  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'elPerk5' });
   campaign.gainAbility({ playerName: 'Víctor', ability: 'winters-edge' });
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk5' });
+
+  // Open envelope "When you deserve it"
+  campaign.unlockScenario({scenariosUnlocked: [76]})
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Mystic'});
+
+  campaign.resolveCityEvent({eventId: 4,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {t: -1} },
+      { playerName: 'Adolfo', playerResults: {t: -1} },
+      { playerName: 'Víctor', playerResults: {t: -1} },
+      { playerName: 'Mystic', playerResults: {t: -1} },
+    ], rewards: {reputation: 1}, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 41, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 6,
+    level: 3,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 15, g: 18} },
+      { playerName: 'Adolfo', playerResults: {xp: 15, g: 9, t: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 6, g: 15} },
+      { playerName: 'Mystic', playerResults: {xp: 5, g: 3, t: 1, pq: 1, items: [101]} },
+    ],
+    rewards: {gold: 5, partyAchievements: [PARTY_ACHIEVEMENTS.JEKSERAHS_PLANS, PARTY_ACHIEVEMENTS.DARK_BOUNTY]},
+    treasuresLooted: [50],
+    scenariosUnlocked: [8]
+  });
 
   return campaign.getStatus();
 }

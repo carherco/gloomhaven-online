@@ -142,12 +142,16 @@ export interface UnblockCharacterPayload {
   roadEventsToAdd: number[];
 }
 
+export interface AdvancePersonalQuestProgressPayload {
+  playerName: string;
+}
+
 export type PAYLOAD =
   CreateCharacterPayload
   | GainGlobalAchievementPayload | GainPartyAchievementPayload
   | CompleteScenarioPayload | FailScenarioPayload
   | BuyItemPayload | SellItemPayload
-  | MakeDonationPayload
+  | MakeDonationPayload | AdvancePersonalQuestProgressPayload
   | ResolveCityEventPayload | ResolveRoadEventPayload;
 
 export interface Action {
