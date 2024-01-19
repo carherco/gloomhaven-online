@@ -715,8 +715,8 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Sona', playerResults: {xp: 13, g: 8, t: 1} },
       { playerName: 'Adolfo', playerResults: {xp: 13, g: 8, t: 2} },
-      { playerName: 'Víctor', playerResults: {xp: 6, g: 16, t: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 6, g: 16, t: 1, pq: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 6, g: 31, t: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 6, g: 31, t: 1, pq: 1} },
     ],
     treasuresLooted: [4, 28],
     scenariosUnlocked: [10, 14, 19]
@@ -737,6 +737,8 @@ export function loadCampaing(): CampaignStatus {
     name: '?????',
     personalQuest: PERSONAL_QUESTS[510]
   });
+
+  campaign.unlockScenario({scenariosUnlocked: [72]});
 
   return campaign.getStatus();
 }
