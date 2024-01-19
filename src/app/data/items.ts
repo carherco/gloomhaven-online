@@ -1003,12 +1003,12 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'second skin',
-    amount: 4,
+    amount: 1,
     points: 100,
     image: 'items/64-151/second-skin.png',
-    type: 'legs',
+    type: 'body',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'secondskin'
   },
   {
@@ -1248,7 +1248,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/curious-gear.png',
     type: 'small-item',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'curiousgear'
   },
   {

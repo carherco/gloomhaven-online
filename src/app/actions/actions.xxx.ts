@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -641,7 +641,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.addCityEvent(75);
   campaign.addRoadEvent(66);
 
-  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'elPerk5' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk4-2' });
   campaign.gainAbility({ playerName: 'Víctor', ability: 'winters-edge' });
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk5' });
 
@@ -673,6 +673,69 @@ export function loadCampaing(): CampaignStatus {
     rewards: {gold: 5, partyAchievements: [PARTY_ACHIEVEMENTS.JEKSERAHS_PLANS, PARTY_ACHIEVEMENTS.DARK_BOUNTY]},
     treasuresLooted: [50],
     scenariosUnlocked: [8]
+  });
+
+  campaign.gainAbility({ playerName: 'Adolfo', ability: 'blood-hunger' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk3-1' });
+
+  campaign.resolveCityEvent({eventId: 24,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 10} },
+      { playerName: 'Adolfo', playerResults: {xp: 10} },
+      { playerName: 'Víctor', playerResults: {xp: 10} },
+      { playerName: 'Mystic', playerResults: {xp: 10} },
+    ], discard: false});
+
+  campaign.gainAbility({ playerName: 'Mystic', ability: 'devil-horns' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk9-1' });
+
+  campaign.gainAbility({ playerName: 'Sona', ability: 'nightmare-serenade' });
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk6' });
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Mystic'});
+
+  campaign.sellItem({ playerName: 'Mystic', itemId: 101 });
+  campaign.buyItem({ playerName: 'Adolfo', itemId: 101 });
+
+  campaign.buyItem({ playerName: 'Sona', itemId: 3 });
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.buyItem({ playerName: 'Sona', itemId: 12 });
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.buyItem({ playerName: 'Sona', itemId: 11 });
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.buyItem({ playerName: 'Sona', itemId: 18 });
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+
+  campaign.resolveRoadEvent({eventId: 22, rewards: {addCityEvents: [74]}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 5,
+    level: 4,
+    playersResults: [
+      { playerName: 'Sona', playerResults: {xp: 13, g: 8, t: 1} },
+      { playerName: 'Adolfo', playerResults: {xp: 13, g: 8, t: 2} },
+      { playerName: 'Víctor', playerResults: {xp: 6, g: 16, t: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 6, g: 16, t: 1, pq: 1} },
+    ],
+    treasuresLooted: [4, 28],
+    scenariosUnlocked: [10, 14, 19]
+  });
+
+  campaign.sellItem({ playerName: 'Sona', itemId: 125 });
+  campaign.buyItem({ playerName: 'Sona', itemId: 14 });
+  campaign.buyItem({ playerName: 'Sona', itemId: 2 });
+  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+
+  campaign.makeDonation({playerName: 'Sona'});
+
+  campaign.retireCharacter({name: 'Sona', cityEventsToAdd: [54, 32], roadEventsToAdd: [54, 32]});
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Quartermaster,
+    name: '?????',
+    personalQuest: PERSONAL_QUESTS[510]
   });
 
   return campaign.getStatus();

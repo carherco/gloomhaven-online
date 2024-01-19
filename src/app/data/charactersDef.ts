@@ -521,7 +521,7 @@ export const Soothsinger: CharacterClass = {
     { id: 'ssPerk3-2', title: 'Replace Two +1 Cards with One +4 Card', addModifiers: [new Plus4()], removeModifiers: [new Plus1(), new Plus1()] },
     { id: 'ssPerk4', title: 'Replace One 0 Card with One +1 Immobilize Card', addModifiers: [new Plus1Immobilize()], removeModifiers: [new Plus0()] },
     { id: 'ssPerk5', title: 'Replace One 0 Card with One +1 Disarm Card', addModifiers: [new Plus1Disarm()], removeModifiers: [new Plus0()] },
-    { id: 'ssPerk6', title: 'Replace One 0 Card with One +2 Wound Card', addModifiers: [new Plus2Wound()], removeModifiers: [new Plus0()] },
+    { id: 'ssPerk6', title: 'Replace One 0 Card with One 1 Wound Card', addModifiers: [new Plus2Wound()], removeModifiers: [new Plus0()] },
     { id: 'ssPerk7', title: 'Replace One 0 Card with One +2 Poison Card', addModifiers: [new Plus2Poison()], removeModifiers: [new Plus0()] },
     { id: 'ssPerk8', title: 'Replace One 0 Card with One +2 Curse Card', addModifiers: [new Plus2Curse()], removeModifiers: [new Plus0()] },
     { id: 'ssPerk9', title: 'Replace One 0 Card with One +3 Muddle Card', addModifiers: [new Plus3Muddle()], removeModifiers: [new Plus0()] },
@@ -529,6 +529,47 @@ export const Soothsinger: CharacterClass = {
     { id: 'ssPerk11', title: 'Add Three Rolling +1 Cards', addModifiers: [new Plus1Rolling()], removeModifiers: [] },
     { id: 'ssPerk12-1', title: 'Add Two Curse Cards', addModifiers: [new Curse()], removeModifiers: [] },
     { id: 'ssPerk12-2', title: 'Add Two Curse Cards', addModifiers: [new Curse()], removeModifiers: [] },
+  ]
+};
+
+export const Quartermaster: CharacterClass = {
+  id: 'quartermaster',
+  key: 'QM',
+  race: 'Valthrat',
+  className: 'Quartermaster',
+  handCardSize: 9,
+  image: 'Quartermaster.png',
+  hitPoints: [10, 12, 14, 16, 18, 20, 22, 24, 26],
+  levelXCards: ['crushing-hammer', 'reserved-energy', 'scroll-of-recall'],
+  level1Cards: [
+    'cleaving-axe', 'crippling-bow', 'hastened-step',
+    'impaling-spear', 'iron-bulwark', 'proficiency',
+    'restock', 'sharpening-kit', 'oversized-pack',
+  ],
+  level2Cards: ['bladed-boomerang', 'reforge'],
+  level3Cards: ['continual-supply', 'scroll-of-lightning'],
+  level4Cards: ['giant-club', 'side-pouch'],
+  level5Cards: ['reinforced-steel', 'scroll-of-judgment'],
+  level6Cards: ['catastrophic-bomb', 'quiver-of-arrows'],
+  level7Cards: ['refreshment', 'scroll-of-blizzards'],
+  level8Cards: ['fortified-position', 'portable-ballista'],
+  level9Cards: ['bag-of-holding', 'scroll-of-annihilation'],
+  perks: [
+    { id: 'qmPerk1-1', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'qmPerk1-2', title: 'Remove Two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'qmPerk2', title: 'Remove four 0 Cards', addModifiers: [], removeModifiers: [new Plus0(), new Plus0(), new Plus0(), new Plus0()] },
+    { id: 'qmPerk3-1', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'qmPerk3-2', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'qmPerk4-1', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'qmPerk4-2', title: 'Add Two Rolling +1 Cards', addModifiers: [new Plus1Rolling(), new Plus1Rolling()], removeModifiers: [] },
+    { id: 'qmPerk5', title: 'Add Three Rolling Muddle Cards', addModifiers: [new Plus2Wound()], removeModifiers: [new Plus0()] },
+    { id: 'qmPerk6', title: 'Add Two Rolling Pierce 3 Cards', addModifiers: [new Plus2Poison()], removeModifiers: [new Plus0()] },
+    { id: 'qmPerk7', title: 'Add One Rolling Stun Card', addModifiers: [new Plus2Curse()], removeModifiers: [new Plus0()] },
+    { id: 'qmPerk8', title: 'Add One Rolling Add Target Card', addModifiers: [new Plus3Muddle()], removeModifiers: [new Plus0()] },
+    { id: 'qmPerk9-1', title: 'Add one 0 Refresh an item Card', addModifiers: [new Plus0Stun()], removeModifiers: [new Minus1()] },
+    { id: 'qmPerk9-2', title: 'Add one 0 Refresh an item Card', addModifiers: [new Plus1Rolling()], removeModifiers: [] },
+    { id: 'qmPerk9-3', title: 'Add one 0 Refresh an item Card', addModifiers: [new Curse()], removeModifiers: [] },
+    { id: 'qmPerk10', title: 'Ignore negative item effects and add Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
   ]
 };
 
@@ -545,4 +586,5 @@ export const AvailableCharacters: CharacterClass[] = [
   Berserker,
   BeastTyrant,
   Soothsinger,
+  Quartermaster,
 ];
