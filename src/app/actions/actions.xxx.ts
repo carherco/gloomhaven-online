@@ -734,11 +734,75 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[0].uid,
     characterClass: Quartermaster,
-    name: '?????',
-    personalQuest: PERSONAL_QUESTS[510]
+    name: 'Garen',
+    personalQuest: PERSONAL_QUESTS[533]
   });
 
+  campaign.buyItem({ playerName: 'Garen', itemId: 7 });
+  campaign.buyItem({ playerName: 'Garen', itemId: 12 });
+  campaign.buyItem({ playerName: 'Garen', itemId: 23 });
+  campaign.buyItem({ playerName: 'Garen', itemId: 34 });
+
   campaign.unlockScenario({scenariosUnlocked: [72]});
+
+  campaign.resolveCityEvent({eventId: 54, rewards: {reputation: 1}, discard: true});
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Mystic'});
+
+  campaign.resolveRoadEvent({eventId: 14, rewards: {reputation: 1}, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 14,
+    level: 3,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 14, g: 3, t: 1} },
+      { playerName: 'Garen', playerResults: {xp: 4, g: 48, t: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 8, g: 0, t: 2} },
+      { playerName: 'Mystic', playerResults: {xp: 7, g: 26, t: 1, pq: 1} },
+    ],
+    treasuresLooted: [26],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_POWER_OF_ENHANCEMENT]},
+  });
+
+  campaign.sellItem({ playerName: 'Mystic', itemId: 23 });
+  campaign.sellItem({ playerName: 'Mystic', itemId: 4 });
+  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk9-1' });
+
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'simulacrum' });
+  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk5' });
+
+  campaign.enhanceAbility({ playerName: 'Víctor', gold: 50 });
+  campaign.buyItem({ playerName: 'Víctor', itemId: 5 });
+  campaign.buyItem({ playerName: 'Víctor', itemId: 27 });
+
+  campaign.buyItem({ playerName: 'Garen', itemId: 33 });
+
+  campaign.enhanceAbility({ playerName: 'Mystic', gold: 50 });
+  campaign.enhanceAbility({ playerName: 'Mystic', gold: 75 });
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+
+  campaign.resolveCityEvent({eventId: 13, playersResults:[
+    { playerName: 'Garen', playerResults: {g: -3} },
+    { playerName: 'Adolfo', playerResults: {g: -3} },
+    { playerName: 'Víctor', playerResults: {g: -3} },
+    { playerName: 'Mystic', playerResults: {g: -3} },
+  ], discard: false});
+  campaign.resolveRoadEvent({eventId: 30, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 19,
+    level: 4,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 17, g: 8, t: 1} },
+      { playerName: 'Garen', playerResults: {xp: 6, g: 56, t: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 12, g: 36, t: 1, pq: 1} },
+      { playerName: 'Mystic', playerResults: {xp: 8, g: 44, t: 0, pq: 1} },
+    ],
+    treasuresLooted: [17],
+    rewards: {prosperity: 1, globalAchievements: [PARTY_ACHIEVEMENTS.STONEBREAKERS_CENSER]},
+  });
 
   return campaign.getStatus();
 }
