@@ -2,9 +2,19 @@
 
 <ul>
   <li *ngFor="let location of locations" [class.available]="location.status === 'Available'" [class.completed]="location.status === 'Completed'" [class.blocked]="location.status === 'Blocked'">
-    <em *ngIf="location.status === 'Available'" class="material-symbols-outlined">radio_button_unchecked</em>
-    <em *ngIf="location.status === 'Completed'" class="material-symbols-outlined">check_circle</em>
-    <em *ngIf="location.status === 'Blocked'" class="material-symbols-outlined">block</em>
-    {{location.id}} {{location.title}} ({{location.status}})
+    <div class="col-md-12 col-sm-12" style="clear: both; width: 100%">
+      <div style="width: 20%; float: left;"><img src="assets/images/world-map/{{location.id}}.png" style="width: 100%" /></div>
+      <div style="width: 80%; float: left;">
+        <div style="">
+          <em *ngIf="location.status === 'Available'" class="material-symbols-outlined">radio_button_unchecked</em>
+          <em *ngIf="location.status === 'Completed'" class="material-symbols-outlined">check_circle</em>
+          <em *ngIf="location.status === 'Blocked'" class="material-symbols-outlined">block</em>
+          ({{location.status}})
+          [Required: {{location.globalAchievementsRequired.concat(location.partyAchievementsRequired).join(' AND ')}}] [Required INCOMPLETE: {{location.globalAchievementsRequiredIncomplete.join(' AND ')}}]
+        </div>
+        <div>{{location.id}} {{location.title}}</div>
+        <div>Location: {{location.location}}</div>
+      </div>
+    </div>
   </li>
 </ul>
