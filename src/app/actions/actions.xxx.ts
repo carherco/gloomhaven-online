@@ -767,10 +767,10 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.sellItem({ playerName: 'Mystic', itemId: 23 });
   campaign.sellItem({ playerName: 'Mystic', itemId: 4 });
-  // campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk9-1' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk6-1' });
 
   campaign.gainAbility({ playerName: 'Víctor', ability: 'simulacrum' });
-  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk5' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk2' });
 
   campaign.enhanceAbility({ playerName: 'Víctor', gold: 50 });
   campaign.buyItem({ playerName: 'Víctor', itemId: 5 });
@@ -801,7 +801,8 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Mystic', playerResults: {xp: 8, g: 44, t: 0, pq: 1} },
     ],
     treasuresLooted: [17],
-    rewards: {prosperity: 1, globalAchievements: [PARTY_ACHIEVEMENTS.STONEBREAKERS_CENSER]},
+    rewards: {prosperity: 1, partyAchievements: [PARTY_ACHIEVEMENTS.STONEBREAKERS_CENSER]},
+    scenariosUnlocked: [27]
   });
 
   return campaign.getStatus();
