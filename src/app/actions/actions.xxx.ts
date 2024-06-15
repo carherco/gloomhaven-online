@@ -587,7 +587,7 @@ export function loadCampaing(): CampaignStatus {
     treasuresLooted: [24],
   });
 
-  campaign.decipherMessage({message: 'THE CREATOR HAS MADE A REQUEST FOR OUR SPOILS. THE TWEELFTH LETTER HOLDS THE KEY.'});
+  campaign.decipherMessage({message: 'The creator has made a request for our spoils. The tweelfth letter holds the key.'});
 
   campaign.buyItem({playerName: 'Mystic', itemId: 13});
 
@@ -889,6 +889,42 @@ export function loadCampaing(): CampaignStatus {
   });
 
   campaign.buyItem({ playerName: 'Víctor', itemId: 9 });
+  campaign.buyItem({ playerName: 'Adolfo', itemId: 34 });
+  campaign.buyItem({ playerName: 'Garen', itemId: 6 });
+  campaign.buyItem({ playerName: 'Garen', itemId: 13 });
+  campaign.buyItem({ playerName: 'Master of Minions', itemId: 34 });
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Garen'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.resolveCityEvent({eventId: 12, playersResults:[
+    { playerName: 'Garen', playerResults: {g: 10, t: -1} },
+    { playerName: 'Adolfo', playerResults: {g: 10, t: -1} },
+    { playerName: 'Víctor', playerResults: {g: 10, t: -1} },
+    { playerName: 'Master of Minions', playerResults: {g: 10, t: -1} },
+  ],rewards: {reputation: 1}, discard: true});
+
+  campaign.buyItem({ playerName: 'Master of Minions', itemId: 27 });
+
+  campaign.resolveRoadEvent({eventId: 36, discard: true});
+  campaign.decipherMessage({message: 'Record the page, the word, and the letter - 834.'});
+
+  campaign.completeScenario({
+    scenarioId: 67,
+    level: 3,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 11, g: 6, t: 1} },
+      { playerName: 'Garen', playerResults: {xp: 8, g: 18, t: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 16, g: 12, t: 1} },
+      { playerName: 'Master of Minions', playerResults: {xp: 15, g: 6, t: 1, items: [132]} },
+    ],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_4]}, treasuresLooted: [14],
+  });
+
+
+
+
 
   return campaign.getStatus();
 }
