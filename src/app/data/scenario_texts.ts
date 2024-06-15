@@ -382,9 +382,66 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
   },
   {
     name: '#10 Plane of Elemental Power',
-    introduction: [],
+    introduction: [
+      `La visión cambia y se desenfoca a vuestro
+      alrededor. Lamentos de pesadilla perforan
+      vuestros oídos. Sentís las extremidades que
+      se extienden, como si el universo estuviera
+      tratando de desgarraros.`,
+      `Y de repente se detiene. Abrís los ojos y
+      veis que vuestros pies están en tierra
+      firme, pero alrededor giran
+      extrañas energías elementales:
+      fuego mezclado con hielo
+      en forma de energía torrencial.
+      Recobráis el aliento y echáis
+      un vistazo atrás, aliviados
+      al ver un vacío de oscuridad
+      similar al que os trajo a este lugar.`,
+      `El alivio es momentáneo, ya que una
+      retumbante voz llena el aire de
+      chisporroteo: ¿"Quienes sois para matar a
+      mis siervos e invadir mi reino? Esta afrenta
+      no quedará sin castigo."`,
+      `Delante devosotros la energía en el aire
+      comienza a producir formas demoníacas. Para
+      seguir en este lugar sobrenatural, debéis luchar.`
+    ],
     milestones: [],
-    conclusion: []
+    conclusion: [
+      `Viendo al último demonio gritar y disiparse
+      en el viento, caéis de rodillas, agradecidos
+      de que la batalla haya cesado.`,
+      `"Muy interesante". La voz aparece dentro de
+      vuestras cabezas, estremeciendo vuestros
+      cerebros con sus palabras. "Intrusos, sois
+      inesperadamente capaces.`,
+      `Podría ciertamente utilizar vuestras habilidades
+      para encontrar algo en vuestro propio
+      plano."`,
+      `La roca roja retumba y se
+      resquebraja, abriendo una grieta ardiente a
+      vuestros pies. "Os abro mi reino. Venid,
+      quiero hablar con vosotros cara a cara".`,
+      `Ya habiendo realizado un acto de fe hoy,
+      decidís que no hay nada de malo en
+      realizar otro. El calor aumenta, más y más
+      intenso conforme descendéis. Oleadas de
+      aire hirviendo suben y retardan vuestra
+      caída. Aterrizáis con seguridad en lo que
+      parece ser un templo subterráneo. Ante
+      vosotros se encuentra una criatura
+      monstruosa, con terroríficos cuernos,
+      sosteniendo un tridente y plantado sobre
+      cuatro curvadas patas.
+      Su voz todavía resuena en el interior de vuestra
+      cabeza.`,
+      `"Valientes y tontos. Debéis servirme bien.
+      Hay un artefacto de gran poder situado en
+      un templo olvidado a lo largo del rio del
+      beso de la serpiente. Podéis ir a traérmelo,
+      <strong>(22-Temple of the Elements)</strong> o podéis morir aquí y ahora. <strong>(21-Infernal Throne)</strong>`
+    ]
   },
   {
     name: '#11 Gloomhaven Square A',
@@ -771,26 +828,255 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       <strong>(26-Ancient Cistern)</strong> .`
     ]
   },
-    { name: '#19 Forgotten Crypt'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#20 Necromancer\'s Sanctum'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#21 Infernal Throne'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#22 Temple of the Elements'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  { name: '#19 Forgotten Crypt',
+    introduction: [
+      `¿Que deseáis hacer?" Hail nos mira fijamente
+      sin comprender. "Habéis encontrado una grieta
+      en el plano de la energía Elemental y deseáis
+      cerrarla?" Ella suspira.`,
+      `"Bien, acepto ayudaros". Hail comienza a lanzar
+      el orbe que recuperamos hacia arriba y hacia
+      abajo mientras piensa. "Está bien, basándome
+      en vuestra descripción, nos va a tomar un poco
+      de trabajo cerrar una brecha de esa magnitud.
+      Podría hacerlo yo mismo sin ayuda extra, pero
+      llevaría un tiempo, y podría resultar molesto ser
+      atacados en medio del conjuro. Sería mucho
+      más fácil de hacer si tuviera un incensario
+      elemental, que, realmente, es muy conveniente,
+      porque he querido poseerlo para mis estudios
+      de todos modos.`,
+      `"Sabía de un chamán poderoso que tenía uno
+      hace muchos años. Él está muerto ahora, pero
+      os llevaré a su cripta personalmente. No os
+      aconsejaría manejar el incensario vosotros
+      solos."`,
+      `Después de viaje de unos días, encontráis un
+      mausoleo antiguo, cubierto de maleza a lo largo
+      del Río del beso de la serpiente.`,
+      `"Stonebreaker realmente era un buen
+      muchacho, aunque ser aplastado por enormes
+      rocas es uno de los peligros de ser un chamán".
+      Después de apartar la maleza , bajáis a la cripta.`,
+      `"¡Oh genial! "dice Hail.`,
+      `"Estos hechiceros devastadores están por todas
+      partes hoy en día. Probablemente buscando el
+      incensario. O simplemente no desean que yo lo
+      tenga."`,
+      `Mira Hail con confusión, y apunta a las
+      sombras, donde surgen figuras oscuras con
+      túnicas negras.`,
+      `"No deberías haber venido aquí" dice uno de
+      ellos`,
+      `"¡Ugh," Hail suspira. "Despachad rápidamente a
+      estos incautos. Estoy ya aburrida de ellos."`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `No hay descanso posible entre estos malditos
+          muertos vivientes. Tras derribar a patadas la
+          puerta de la habitación de al lado, escuchamos
+          más revuelo en la entrada. "Hay más de ellos
+          detrás de nosotros!" Grita Hail.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Hail se mueve hacia adelante y agarra el
+      incensario. Lo levanta en alto y pronuncia unas
+      pocas palabras en un idioma desconocido. El
+      fuego estalla e inmola a los restantes muertos
+      vivientes, reduciéndolos a ceniza. Hail sonríe
+      vagamente.`,
+      `"Bueno, ahora que se ha resuelto esta molestia,
+      vamos a seguir con la diversión real.
+      Mostradme esa grieta." <strong>(14-Ruinous Rift)</strong>`
+    ]
+  },
+  { name: '#20 Necromancer\'s Sanctum',
+    introduction: [
+      `Una cosa es segura: no habríais encontrado la
+      guarida de Jekserah sin ayuda. En lo más
+      profundo del Bosque de las Dagas, os habríais
+      perdidos durante horas si las direcciones
+      detalladas que lleváis con vosotros.`,
+      `Tras varios giros y recovecos, os encontráis
+      frente a un antiguo mausoleo, escondido en la
+      espesura del bosque. El tronco de un árbol
+      enorme bloquea casi toda la entrada. Este
+      edificio debe haber sido construido hace
+      milenios, tras lo que fue olvidado por el tiempo.`,
+      `Os escurrís para pasar junto al tronco, hacia las
+      oscuras estancias de la tumba. Encendéis una
+      antorcha y os sentáis en silencio, escuchando
+      los sonidos que os rodean. Es muy débil, pero
+      hacia vuestra izquierda se oye algo que se
+      arrastra. Os acercáis y abrís unos portones de
+      piedra. Delante de vosotros, la luz de la
+      antorcha proyecta las sombras de muertos
+      vivientes. Parace que Jekserah ha estado
+      trabajando en su nuevo ejército.`,
+
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Jekserah ha tenido, por desgracia, mucho
+          tiempo para renimar los cuerpos de la cripta,
+          pero no suponen un gran desafío frente a
+          vuestras habilidades. Tiráis abajo la última
+          puerta para encontraros cara a cara con la
+          nigromante.`,
+          `"No sé cómo me habéis encontrado, ni me
+          importa. Os habéis equivocado pensando que
+          huí porque tenía miedo de luchar contra
+          vosotros. Simplemente tenía la esperanza de
+          que entrarías en razón con el tiempo. Es una
+          pena que vuestras mentes no pueden pensar
+          más allá de dar unos espadazos. Los cadáveres
+          que habéis destruido serán reemplaazdos por
+          vuestros propios cuerpos.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Jekserah se desploma, con la vida escapando de
+      su mirada. "Yo ..." susurra. "No tenéis ni idea de
+      lo que viene ..." <strong>(28-Outer Ritual Chamber)</strong>`,
+      `Con el último mandoble de vuestra espada,
+      separáis su cabeza muerta de su cuerpo y dejáis
+      aquel terrible lugar lleno de cuerpos mutilados.
+      Devolvéis la cabeza al Capitán de la Guarda y
+      os pagan con generosidad la recompensa
+      acordada.`,
+      `"Si estáis interesados, tengo más trabajo para
+      vosotros", dice con una voz sombría.`,
+      `"En primer lugar, tenemos informes de nuestros
+      exploradores al norte sobre una criatura
+      gigantesca voladora. Tienen miedo de los
+      dragones." Mueve su cabeza con incredulidad.
+      "Me gustaría que os acercáseis al paso del norte
+      para investigar." <strong>(16-Mountain Pass)</strong>`,
+      `"Sin embargo, más cerca de casa, hay ciertos
+      disturbios en las cloacas bajo el Mercado
+      Hundido (Sinking Market). Los pozos en la
+      zona parece que han sido envenenados, y las
+      cloacas han aparecido infestadas con serpientes
+      y peligrosos lodos, haciendo más difícil la
+      investigación. Necesito que descubráis el origen
+      del envenenamiento." <strong>(18-Abandoned Sewers)</strong>`
+    ]
+  },
+  { name: '#21 Infernal Throne',
+    introduction: [
+      `Antes de que podáis alcanzar vuestras armas, el
+      demonio conoce vuestra intención.`,
+      `“¡Tontos! “Su voz resuena en tu cráneo como
+      un tambor: “Os atrevéis a ir en mi contra en mi
+      poderosa casa” habéis cometido un grave error.`,
+      `Con un estallido de fuego su enorme forma
+      desaparece en la oscuridad. “ Venid a mí, mis
+      siervos! Lapidad a estos mortales, decorar
+      mi palacio con sus entrañas!`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `El velo oscuro se levanta poco a poco
+          revelando la sala principal del Palacio. En el
+          centro ves un enorme demonio riendo.
+          “Teníais que haber dejado mi reino mientras
+          tuvisteis oportunidad, ¡gusanos!. En este lugar
+          no es posible hacerme daño”. Coloca una
+          mano gigante con garras sobre un altar de
+          vidrio negro delante de él; de pronto emerge
+          un remolino de energía cromática, bañando al
+          demonio en un aura de protección.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Con un golpe final, la fisura crece sin control y
+      gira salvajemente, escupiendo rayos de energía
+      en ángulos extraños. Un agudo gemido emerge
+      de él y aumenta en intensidad hasta que el
+      sonido retumba por todo el palacio. Con un
+      brillante destello de luz, la voz se colapsa en sí
+      misma y luego explota fuera, enviando una
+      onda expansiva que destruye todos los
+      demonios en su camino.`,
+      `Mientras la ola golpea al demonio principal, su
+      aura se disipa y un grito perfora vuestras
+      mentes. Sus piernas se entrelazan debajo de él
+      y se derrumba, explotando en innumerables
+      fragmentos de roca.`,
+      `Cuando esto pasa, los gritos se detienen y el
+      Palacio queda extrañamente tranquilo. Con la
+      amenaza destruida, lo único que queda por
+      hacer es saquear el lugar y regresar a tu propia
+      dimensión.`
+    ]
+  },
+  { name: '#22 Temple of the Elements',
+    introduction: [
+      `Vuestro camino os lleva hasta el Templo de los
+      Elementos en busca de un artefacto antiguo.
+      Aparentemente tiene un gran poder, pero hay
+      algo más que eso. Entráis en la estructura de la
+      maltrecha piedra y veis de qué se trata ese
+      alboroto.`,
+      `Al entrar, captas signos de visitantes recientes,
+      una rama rota, huellas de pisadas en el polvo.
+      Os acercáis a la cámara principal y preparáis
+      vuestras armas, las figuras de un grupo de
+      encapuchados emergen de las sombras.`,
+      `“Es demasiado tarde, ¡tontos!. Controlamos este
+      templo ahora y todo su poder nos sirve a
+      nosotros”`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Pasáis la cámara de la entrada, encontráis una
+          gran sala central con muchas salidas. En el
+          centro un grupo de cultitas preparando
+          encantamientos alrededor de un bloque de
+          arcilla rojiza, más o menos del tamaño de un
+          cráneo.`,
+          `“El artefacto es nuestro” y ha hecho a
+          nuestra gente más poderosa que nunca. No
+          puedes parar lo que avecina; si nos golpeas
+          la penumbra caerá y será el fin. Los
+          cultistas levantan las manos y una barrera
+          rodea el artefacto.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Con los altares destruidos, los demonios se
+      desvanecen, la barrera protectora alrededor del
+      artefacto se disipa, os acercáis al centro del
+      templo y extendéis la mano hacia la vasija, pero
+      os detenéis. Sentís como que una poderosa
+      oscuridad emana del recipiente y tras ello una
+      profunda tristeza.`,
+      `La vasija ha sido corrompida y casi parece ser
+      consciente de este hecho. Los sentimientos
+      encontrados aparecen como un flash en
+      vuestras mentes, como si fueran de advertencia;
+      podrían ser usados para hacer el mal pero,
+      ¿lucharéis por ese mal? <strong>(35-Gloomhaven Battlements A)</strong> ¿O contra él? <strong>(36-Gloomhaven Battlements B)</strong>`,
+      `Después de un poco de esfuerzo utilizáis un
+      paño grueso para meter la vasija en vuestras
+      mochilas. Tal vez sería mejor llevarlo a un
+      hechicero en lugar de tener problemas con él. <strong>(14-Frozen Hollow)</strong> <strong>(31-Plane of Night)</strong>`
+    ]
+  },
   {
     name: '#23 Deep Ruins',
     introduction: [
@@ -1080,21 +1366,92 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       fondo de esta corrupción, comienza allí". <strong>(22-Temple of the Elements)</strong>`
     ]
   },
-    { name: '#27 Ruinous Rift'
-    , introduction: [],
+  { name: '#27 Ruinous Rift',
+    introduction: [
+      `En el camino de regreso a las ruinas de la
+      Cripta, Hail parece casi feliz mientras camina a
+      través del barro contigo, ansiosa por luchar de
+      nuevo contra demonios y no-muertos.`,
+      `"Ha pasado tanto tiempo desde la última vez
+      que salí de Gloomhaven," dice, balanceando el
+      incensario elemental de un lado a otro mientras
+      camina. "La ciudad es necesaria para mis
+      estudios. Aunque sienta bien tomar un
+      pequeño descanso y viajar en este plano otra
+      vez. Y con menos peligro esta vez."`,
+      `Miráis a la Aesther interrogativamente. "Claro,
+      los hechiceros y los demonios no son
+      exactamente amistosos encuentros, pero la
+      última vez que viajé por estas tierras... bueno,
+      es algo que juré nunca volver a mencionar."`,
+      `Hail calla hasta que llegamos a la cripta. Al
+      abrir las antiguas puertas, casi esperamos que
+      el lugar esté repleto de hechiceros y demonios
+      una vez más, pero las salas de piedra se
+      encuentran tan silenciosas y estériles como la
+      muerte. Nos desplazamos hacia la cámara
+      principal donde se encuentra la grieta gigante,
+      flotando sobre un altar demoníaco.`,
+      `"Bueno, ciertamente no estabas bromeando".
+      dice. "¡Esta cosa es una belleza! La
+      circunferencia y estabilidad... ¡muy
+      impresionante!" Hail pasea alrededor del
+      perímetro del altar, lanzando arena al aire y
+      viéndola caer.`,
+      `"Estoy bastante segura de que puedo cerrarla,
+      gracias al viejo incensario de Stonebreak.
+      Aunque puedo imaginarme que las fuerzas al
+      otro lado de esta grieta no van a estar muy
+      contentas por ello".`,
+      `Hail levanta el incensario por encima de su
+      cabeza con un brazo y hunde el otro hasta el
+      codo en la grieta. "Acérquense, damas y
+      caballeros. Esto va a ser una gran fiesta."`
+    ],
+    milestones: [],
+    conclusion: [
+      `Hail grita con una intensidad espeluznante. La
+      miráis, con miedo de que más demonios os
+      pasen y la ataquen. En vez de eso, la ves
+      sacando su mano de la grieta. Su antebrazo está
+      marchito y humeando.`,
+      `A medida que sus nudosos dedos despejan las
+      caóticas energías de la grieta, se tambalea y
+      comienza a encogerse. Un gran viento se
+      levanta en la cámara y los demonios que luchan
+      contigo muestran miedo por primera vez. En
+      lugar de clavarte las garras, se agarran al suelo
+      de piedra, desesperados por detener el tirón de
+      la grieta.`,
+      `Sin embargo, sus esfuerzos son inútiles. Hasta
+      el último de ellos es succionado de vuelta a su
+      propio plano. La rasgadura se encoge hasta un
+      punto brillante y desaparece.`,
+      `Hail se derrumba, y vosotros corréis a su lado.
+      "Oh, no os preocupéis por mí", tose. "Estaré
+      bien. Este viejo cuerpo ha visto cosas mucho
+      peores."`,
+      `Estalla en un ataque de tos, que pronto se
+      convierte en risa. "Eso estuvo muy bien, ¿no?
+      Si hay algo en lo que puedo confiar, es en un
+      desafío."`,
+      `"Venid, ayudadme a levantarme. Necesito volver
+      a Gloomhaven inmediatamente. Tengo muchas
+      ideas nuevas para mi investigación. No dudéis
+      en venir cuando queráis y encontraré la forma
+      de agradecéroslo"`
+    ]
+  },
+  { name: '#28 Outer Ritual Chamber',
+    introduction: [],
     milestones: [],
     conclusion: []
-    },
-    { name: '#28 Outer Ritual Chamber'
-    , introduction: [],
+  },
+  { name: '#29 Sanctuary of Gloom',
+    introduction: [],
     milestones: [],
     conclusion: []
-    },
-    { name: '#29 Sanctuary of Gloom'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+  },
   {
     name: '#30 Shrine of the Depths',
     introduction: [
@@ -1824,116 +2181,173 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       es hora de seguir adelante, por duro que sea.`
     ]
   },
-    { name: '#59 Forgotten Grove'
-    , introduction: [],
+  { name: '#59 Forgotten Grove'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#60 Alchemy Lab'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#61 Fading Lighthouse'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#62 Pit of Souls'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#63 Magma Pit'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#64 Underwater Lagoon'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#65 Sulfur Mine'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#66 Clockwork Cove'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#67 Arcane Library'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#68 Toxic Moor'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#69 Well of the Unfortunate'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#70 Chained Isle'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#71 Windswept Highlands'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#72 Oozing Grove'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#73 Rockslide Ridge'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#74 Merchant Ship'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#75 Overgrown Graveyard'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#76 Harrower Hive',
+    introduction: [
+      `"Así que, ¿creéis que tenéis lo que hace falta
+      para en este trabajo? Creéis que sois hábiles
+      para vivir una vida larga y fructífera y que el
+      tiempo en este mundo no se os vea sesgado por
+      la espada de un Vermling?"`,
+      `Un anciano con cicatrices cruzándole la cara os
+      mira fijamente con su único ojo bueno. Nunca
+      lo habíamos visto antes de que se sentara frente
+      a nosotros en el León Durmiente, pero con
+      total seguridad respondemos a su pregunta.`,
+      `"Ja-ja-ja, bueno, teneis las agallas al menos", se
+      ríe. "Eso es algo, pero no es ni de lejos todo lo
+      necesario"`,
+      `"Las noticias que vienen
+      directamente de la Capital dicen que
+      hay un grupo de Harrowers
+      matando gente en el Camino del
+      Este. No sabemos por qué, pero
+      creemos que de alguna manera
+      hemos localizado su colmena al sur,
+      en el borde de las Montañas
+      Vigilantes (Watcher Mountains). El
+      problema es, sin embargo, que no
+      podemos encontrar a nadie lo
+      suficientemente valiente o estúpido
+      para ir allí tras ellos.`,
+      `"¿Qué decís? ¿Estáis listos para el
+      desafío? Podríais regresar como
+      héroes, o también podríais
+      simplemente conseguir que os chupe
+      la cara entera uno de esos bichos."`,
+      `No sois de los que se rinden ante un desafío.
+      Marcháis hacia las Montañas Vigilantes, donde
+      el viejo dijo que habría una colmena Harrower.
+      Vagabundeáis por las colinas durante horas sin
+      encontrar ningún tipo de evidencia de ella y
+      entonces empezáis a oír un débil zumbido.`,
+      `Os acercáis a la cara cercana del acantilado y el
+      zumbido se hace más fuerte. Los Harrowers
+      están en las rocas, y vais a tener que
+      desenterrarlos.`
+    ],
     milestones: [],
-    conclusion: []
-    },
-    { name: '#60 Alchemy Lab'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#61 Fading Lighthouse'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#62 Pit of Souls'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#63 Magma Pit'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#64 Underwater Lagoon'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#65 Sulfur Mine'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#66 Clockwork Cove'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#67 Arcane Library'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#68 Toxic Moor'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#69 Well of the Unfortunate'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#70 Chained Isle'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#71 Windswept Highlands'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#72 Oozing Grove'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#73 Rockslide Ridge'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#74 Merchant Ship'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#75 Overgrown Graveyard'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#76 Harrower Hive'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#77 Vault of Secrets'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#78 Sacrifice Pit'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#79 Lost Temple'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#80 Vigil Keep'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      `Demonios de la noche y muertos animados;
+      ciertamente una asquerosa congregación de
+      Harrowers que no hacía presagiar nada bueno.
+      Cuando volvéis a Gloomhaven para encontraros
+      con el viejo en el lugar acordado, no lo
+      encontráis. Preguntando por ahí en el León
+      Durmiente, nadie parece recordar que alguna
+      vez estuvo allí.`,
+      `Después de unas horas de búsqueda, empezáis a
+      preguntaros si lo habéis soñado. Los Harrowers
+      eran reales, seguro. Tal vez el bastardo no
+      quería pagaros por el trabajo terminado y huyó.
+      Todo este trabajo para nada. Será mejor que no
+      asome su cara por aquí otra vez.`
+    ]
+  },
+  { name: '#77 Vault of Secrets'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#78 Sacrifice Pit'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#79 Lost Temple'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#80 Vigil Keep'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
   {
     name: '#81 Temple of the Eclipse',
     introduction: [
@@ -1983,212 +2397,265 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       imposibilidad de este lugar.`
     ]
   },
-    { name: '#82 Burning Mountain'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#83 Shadows Within'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#84 Crystalline Cave'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#85 Sun Temple'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#86 Harried Village'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#87 Corrupted Cove'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#88 Plane of Water'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#89 Syndicate Hideout'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#90 Demonic Rift'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#91 Wild Melee'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#92 Back Alley Brawl'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#93 Sunken Vessel'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#94 Vermling Nest'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#95 Payment Due'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    // Kickstarter scenarios
-    { name: '#K1 Just Another Night'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K2 A Quatryl Scorned'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K3 Unreliable Medicine'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K4 Unlikely Allies'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K5 The Sun Spire'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K6 A Ship in a Storm'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K7 Arrival in Chains'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K8 The Doctor\'s Lab'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K9 Skewed Perspective'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#K10 Panic Room'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    // solo scenarios
-    { name: '#S1 - Brute - Return to the Black Barrow'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S2 - Tinkerer - An Unfortunate Intrusion'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S3 - Spellweaver - Corrupted Library'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S4 - Scoundrel - Armory Heist'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S5 - Cragheart - Stone Defense'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S6 - Mindthief - Rodent Liberation'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S7 - Sunkeeper - Caravan Escort'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S8 - Berserker - Unnatural Insults'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S9 - Quartermaster - Storage Fees'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S10 - Summoner - Plane of the Wild Beasts'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S11 - Nightshroud - Harvesting the Night'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S12 - Plagueherald - Plagued Crypt'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S13 - Soothsinger - Battle of the Bards'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S14 - Doomstalker - Corrupted Hunt'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S15 - Sawbones - Aftermath'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S16 - Elementalist - Elemental Secrets'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-    { name: '#S17 - Beast Tyrant - The Caged Bear'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
-    },
-
+  { name: '#82 Burning Mountain',
+    introduction: [
+      `Siguiendo el camino de los Inox, encontráis
+      los restos de su aldea, quemados y
+      derrumbados en una grieta. Una nube oscura
+      cuelga sobre la montaña. Siigues un viejo
+      camino de piedra, aparentemente intacto, que
+      serpentea por el terreno chamuscado y
+      termina en un acantilado de varios cientos de
+      metros de altura.`,
+      `Encontráis un par de grandes puertas de
+      piedra, cálidas al tacto e intrincadamente
+      talladas en el lado de la montaña. Una vez
+      dentro de las puertas, veis charcos de llamas
+      líquidas iluminando la habitación de más allá
+      en un misterioso resplandor rojo. Los
+      cadáveres carbonizados de Savvas están
+      dispersos por todas partes. La tierra tiembla
+      violentamente y un grupo de demonios
+      vuelven su mirada hacia vosotros.`,
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Los Savvas se reunieron en esta cámara trasera
+          para su última batalla. Algunos de ellos
+          descansan alrededor del área, con sus cuerpos
+          destrozados y abrasados. Un trono ocupa el
+          centro de la habitación, y encima se encuentra
+          el cuerpo de un Savvas sosteniendo un martillo
+          y un casco. Quemado contra la pared detrás de
+          él lees las palabras: "Locura. La Bestia se
+          despierta. Imposible controlar el poder de la
+          montaña. Devuélvelas y podrá dormir de
+          nuevo."`
+        ]
+      }
+    ],
+    conclusion: [
+      `CONCLUSIÓN A: Arrojaste el objeto a la creciente llama líquida a
+      tu alrededor. Chisporrotea y engulle el objeto.
+      El estruendo y temblor, constantes hasta este
+      punto, comienzan a disiparse. Los golems cesan
+      sus movimientos, y los demonios parecen haber
+      desaparecido. La nube de hollín todavía cuelga
+      en el cielo mientras caminas de nuevo a casa,
+      pero la montaña parece dormir. Por ahora.`,
+      `CONCLUSIÓN B: Irrumpís a través de las puertas de piedra, con
+      las cenizas lamiendo vuestras espaldas. El
+      temblor de la montaña llega a un crescendo
+      mientras os deslizáis por el viejo camino de
+      piedra, ahora con fisuras. El cielo se ha vuelto
+      negro y grandes rocas llegan retumbando por
+      las laderas. Apenas escapáis de vuelta a
+      Gloomhaven, pero la devastación del volcán se
+      sintió incluso allí.`
+    ]
+  },
+  { name: '#83 Shadows Within'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#84 Crystalline Cave'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#85 Sun Temple'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#86 Harried Village'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#87 Corrupted Cove'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#88 Plane of Water'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#89 Syndicate Hideout'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#90 Demonic Rift'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#91 Wild Melee'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#92 Back Alley Brawl'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#93 Sunken Vessel'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#94 Vermling Nest'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#95 Payment Due'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  // Kickstarter scenarios
+  { name: '#K1 Just Another Night'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K2 A Quatryl Scorned'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K3 Unreliable Medicine'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K4 Unlikely Allies'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K5 The Sun Spire'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K6 A Ship in a Storm'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K7 Arrival in Chains'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K8 The Doctor\'s Lab'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K9 Skewed Perspective'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#K10 Panic Room'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  // solo scenarios
+  { name: '#S1 - Brute - Return to the Black Barrow'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S2 - Tinkerer - An Unfortunate Intrusion'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S3 - Spellweaver - Corrupted Library'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S4 - Scoundrel - Armory Heist'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S5 - Cragheart - Stone Defense'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S6 - Mindthief - Rodent Liberation'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S7 - Sunkeeper - Caravan Escort'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S8 - Berserker - Unnatural Insults'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S9 - Quartermaster - Storage Fees'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S10 - Summoner - Plane of the Wild Beasts'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S11 - Nightshroud - Harvesting the Night'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S12 - Plagueherald - Plagued Crypt'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S13 - Soothsinger - Battle of the Bards'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S14 - Doomstalker - Corrupted Hunt'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S15 - Sawbones - Aftermath'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S16 - Elementalist - Elemental Secrets'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
+  { name: '#S17 - Beast Tyrant - The Caged Bear'
+  , introduction: [],
+  milestones: [],
+  conclusion: []
+  },
 ];

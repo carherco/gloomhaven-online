@@ -158,6 +158,7 @@ export class CampaignStatusService {
     newStatus.party.name = partyName;
     newStatus.players = players;
     this.status = newStatus;
+    this.unlockScenario({scenariosUnlocked: [1]});
   }
 
   createCharacter(payload: CreateCharacterPayload): void {

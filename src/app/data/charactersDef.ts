@@ -51,6 +51,7 @@ import {
   Plus3Muddle,
   Curse,
   Plus2Earth,
+  PoisonRolling,
 } from './modifiers';
 
 export const Brute: CharacterClass = {
@@ -573,6 +574,47 @@ export const Quartermaster: CharacterClass = {
   ]
 };
 
+export const Summoner: CharacterClass = {
+  id: 'summoner',
+  key: 'SU',
+  race: 'Aesther',
+  className: 'Summoner',
+  handCardSize: 9,
+  image: 'Summoner.png',
+  hitPoints: [8, 9, 11, 12, 14, 15, 17, 18, 20],
+  levelXCards: ['ethereal-vines', 'leathery-wings', 'volatile-flame'],
+  level1Cards: [
+    'biting-wind', 'black-fire', 'bonded-might',
+    'mighty-bond', 'forged-ferocity', 'living-night',
+    'unending-dominance', 'unwavering-hand', 'wild-animation',
+  ],
+  level2Cards: ['earthen-steed', 'grasping-the-void'],
+  level3Cards: ['oozing-manifestation', 'tear-the-fabric'],
+  level4Cards: ['divided-mind', 'living-mountain'],
+  level5Cards: ['conjured-aid', 'strength-in-numbers'],
+  level6Cards: ['endless-spikes', 'inexorable-momentum'],
+  level7Cards: ['negative-energy', 'staff-of-visions'],
+  level8Cards: ['intervening-apparitions', 'otherworldly-rage'],
+  level9Cards: ['horned-majesty', 'interplanar-mastery'],
+  perks: [
+    { id: 'suPerk1', title: 'Remove two -1 Cards', addModifiers: [], removeModifiers: [new Minus1(), new Minus1()] },
+    { id: 'suPerk2', title: 'Replace one -2 card with one 0 Cards', addModifiers: [new Plus0()], removeModifiers: [new Minus2()] },
+    { id: 'suPerk3-1', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'suPerk3-2', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'suPerk3-3', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'suPerk4-1', title: 'Add one +2 card', addModifiers: [new Plus2()], removeModifiers: [] },
+    { id: 'suPerk4-2', title: 'Add one +2 card', addModifiers: [new Plus2()], removeModifiers: [] },
+    { id: 'suPerk5', title: 'Add two Rolling Wound Cards', addModifiers: [new WoundRolling(), new WoundRolling()], removeModifiers: [] },
+    { id: 'suPerk6', title: 'Add two Rolling Poison Cards', addModifiers: [new PoisonRolling(), new PoisonRolling()], removeModifiers: [] },
+    { id: 'suPerk7-1', title: 'Add two Heal +1 cards', addModifiers: [new Heal1(), new Heal1()], removeModifiers: [] },
+    { id: 'suPerk7-2', title: 'Add two Heal +1 cards', addModifiers: [new Heal1(), new Heal1()], removeModifiers: [] },
+    { id: 'suPerk7-3', title: 'Add two Heal +1 cards', addModifiers: [new Heal1(), new Heal1()], removeModifiers: [] },
+    { id: 'suPerk8', title: 'Add one rolling Fire card and one rolling Wind card', addModifiers: [new FireRolling(), new WindRolling()], removeModifiers: [] },
+    { id: 'suPerk9', title: 'Add one rolling Night card and one rolling Earth card', addModifiers: [new DarkRolling(), new EarthRolling()], removeModifiers: [] },
+    { id: 'suPerk10', title: 'Ignore negative scenario effects and add Two +1 Cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
+  ]
+};
+
 export const AvailableCharacters: CharacterClass[] = [
   Brute,
   Cragheart,
@@ -587,4 +629,5 @@ export const AvailableCharacters: CharacterClass[] = [
   BeastTyrant,
   Soothsinger,
   Quartermaster,
+  Summoner,
 ];

@@ -235,6 +235,11 @@ export class WoundRolling {
   src = 'RollingWound.png';
 }
 
+export class PoisonRolling {
+  id = 'woundRolling';
+  src = 'RollingWound.png';
+}
+
 export class EarthRolling {
   id = 'earthRolling';
   src = 'RollingEarth.png';

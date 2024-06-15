@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -771,6 +771,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.gainAbility({ playerName: 'Víctor', ability: 'simulacrum' });
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk2' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk3-1' });
 
   campaign.enhanceAbility({ playerName: 'Víctor', gold: 50 });
   campaign.buyItem({ playerName: 'Víctor', itemId: 5 });
@@ -804,6 +805,90 @@ export function loadCampaing(): CampaignStatus {
     rewards: {prosperity: 1, partyAchievements: [PARTY_ACHIEVEMENTS.STONEBREAKERS_CENSER]},
     scenariosUnlocked: [27]
   });
+
+  campaign.enhanceAbility({ playerName: 'Garen', gold: 50 });
+  campaign.enhanceAbility({ playerName: 'Mystic', gold: 50 });
+  campaign.makeDonation({playerName: 'Adolfo'});
+
+  campaign.resolveCityEvent({eventId: 13, playersResults:[
+    { playerName: 'Garen', playerResults: {g: -3} },
+    { playerName: 'Adolfo', playerResults: {g: -3} },
+    { playerName: 'Víctor', playerResults: {g: -3} },
+    { playerName: 'Mystic', playerResults: {g: -3} },
+  ], discard: false});
+
+  campaign.resolveRoadEvent({eventId: 24, playersResults:[
+    { playerName: 'Garen', playerResults: {g: 4} },
+    { playerName: 'Adolfo', playerResults: {g: 3} },
+    { playerName: 'Víctor', playerResults: {g: 3} },
+    { playerName: 'Mystic', playerResults: {g: 0} },
+  ], rewards: {scenariosUnlocked: [82]}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 76,
+    level: 4,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 10, g: 20} },
+      { playerName: 'Garen', playerResults: {xp: 3, g: 28, t: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 4, g: 28} },
+      { playerName: 'Mystic', playerResults: {xp: 6, g: 0, pq: 1} },
+    ],
+    treasuresLooted: [75],
+  });
+
+  campaign.decipherMessage({message: 'We burrow deep but the central clue cannot be found. It is lost to us. The only thing left to do is ask the creator directly. Send him "dust" and nothing else.'});
+
+  campaign.sellItem({ playerName: 'Mystic', itemId: 11 });
+  campaign.makeDonation({playerName: 'Mystic'});
+  campaign.retireCharacter({name: 'Mystic', cityEventsToAdd: [53, 33], roadEventsToAdd: [53, 33]});
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Summoner,
+    name: 'Master of Minions',
+    personalQuest: PERSONAL_QUESTS[520]
+  });
+
+  campaign.completeSoloScenario({
+    level: 3,
+    playersResults: [
+      { playerName: 'Víctor', playerResults: {xp: 12, g: 15, t: 1, items: [149]} },
+    ]
+  });
+
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'vengeance' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk3-2' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk13' });
+
+  campaign.buyItem({ playerName: 'Master of Minions', itemId: 113 });
+  campaign.buyItem({ playerName: 'Master of Minions', itemId: 13 });
+
+  campaign.resolveCityEvent({eventId: 29, rewards: {prosperity: 1}, discard: true});
+
+  campaign.buyItem({ playerName: 'Garen', itemId: 71 });
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+
+  campaign.resolveRoadEvent({eventId: 66, playersResults:[
+    { playerName: 'Garen', playerResults: {g: 25} },
+    { playerName: 'Adolfo', playerResults: {g: 25} },
+    { playerName: 'Víctor', playerResults: {g: 25} },
+    { playerName: 'Master of Minions', playerResults: {g: 25} },
+  ], discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 82,
+    level: 3,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 19, g: 3, t: 1} },
+      { playerName: 'Garen', playerResults: {xp: 7, g: 27, t: 1, items: [115]} },
+      { playerName: 'Víctor', playerResults: {xp: 9, g: 30, t: 1} },
+      { playerName: 'Master of Minions', playerResults: {xp: 14, g: 12, t: 1} },
+    ],
+    rewards: {reputation: 1}, treasuresLooted: [62],
+  });
+
+  campaign.buyItem({ playerName: 'Víctor', itemId: 9 });
 
   return campaign.getStatus();
 }
