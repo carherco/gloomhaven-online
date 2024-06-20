@@ -883,7 +883,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Adolfo', playerResults: {xp: 19, g: 3, t: 1} },
       { playerName: 'Garen', playerResults: {xp: 7, g: 27, t: 1, items: [115]} },
       { playerName: 'Víctor', playerResults: {xp: 9, g: 30, t: 1} },
-      { playerName: 'Master of Minions', playerResults: {xp: 14, g: 12, t: 1} },
+      { playerName: 'Master of Minions', playerResults: {xp: 14, g: 12, t: 2} },
     ],
     rewards: {reputation: 1}, treasuresLooted: [62],
   });
