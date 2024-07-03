@@ -2211,20 +2211,115 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
   milestones: [],
   conclusion: []
   },
-  { name: '#65 Sulfur Mine'
-  , introduction: [],
-  milestones: [],
-  conclusion: []
+  {
+    name: '#65 Sulfur Mine',
+    introduction: [
+      `No es precisamente un secreto la ubicación de
+      la mina de azufre; su hedor es fácilmente
+      perceptible desde una milla de distancia. Sin
+      embargo, el mapa que encontrásteis también hace
+      mención particular de un poderoso artefacto de
+      una civilización muerta, una especie de taladro a
+      vapor que podría tener muchos usos si se
+      coloca en las manos adecuadas.`,
+      `A medida que os acercáis, el olor a podrido se
+      hace más fuerte hasta que apenas podéis
+      respirar.`,
+      `Ya os estáis preguntando si este viaje vale la
+      pena incluso antes de que notéis signos
+      distintivos de un nido Vermling y escuchéis un
+      aullido profundo que sale de la boca de la mina.`,
+      `Con Vermlings corriendo por todos lados, dudáis
+      de que algún tipo de artilugio intrincado haya
+      quedado intacto, pero sin embargo mantienéis la
+      respiración y os adentráis en el túnel. Tal vez se
+      pueda salvar algo de información sobre el
+      taladro de esta desafortunada situación.`
+    ],
+    milestones: [],
+    conclusion: [
+      `Ni siquiera os molestáis en leer todos los
+      recortes de papel que habéis encontrado en la
+      mina. Simplemente los metéis en vuestras
+      mochilas mientras acabáis con todas las
+      criaturas que se interponen en vuestro camino.`,
+      `Una vez en el exterior, cuando volvéis a poder
+      respirar libremente, intentáis juntar los distintos
+      fragmentos de lo que parece algún tipo de
+      esquema. Hay muchas y complejas fórmulas en
+      los papeles, escritas en un arcaico lenguaje.`,
+      `Con suerte, con suficiente estudio y las
+      herramientas adecuadas, podréis reconstruir ese
+      fabuloso taladro.`
+    ]
   },
   { name: '#66 Clockwork Cove'
   , introduction: [],
   milestones: [],
   conclusion: []
   },
-  { name: '#67 Arcane Library'
-  , introduction: [],
-  milestones: [],
-  conclusion: []
+  {
+    name: '#67 Arcane Library',
+    introduction: [
+      `Parece que los viejos escritos que encontrasteis
+      sobre el místico loco Morsbane eran ciertos.
+      Sus divagaciones hablaban de un gran tesoro
+      que guardaba bajo llave, que aumentaría en
+      poder y valor con el tiempo. El maligno
+      bastardo ya hace tiempo que está muerto, pero,
+      siguiendo las escrituras, encontráis las ruinas de
+      la que en una vez fuera su grandiosa torre.`,
+      `Ahora, es poco más que escombros. Cualquier
+      tesoro que hubiera probalemente haya sido
+      robado o esté profundamente enterrado, pero
+      no sois tan fáciles de disuadir. En la base de la
+      colina, veis una puerta de piedra gigante.
+      Desafortunadamente, está custodiada por
+      muchas criaturas del bosque con aspecto
+      amenazador.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `La puerta casi se cae de sus bisagras oxidadas al
+          empujarla, permitiéndoos entrar en un túnel
+          anegado debajo de la torre.`,
+          `Observando la habitación, inmediatamente veis
+          palabras grabadas profundamente en la pared
+          de piedra: "Soy un monstruo. Soy malvado. No
+          tengo alma.`
+        ]
+      },
+      {
+        key: '2',
+        texts: [
+          `La puerta se abre para revelar una prístina
+          biblioteca con un enorme golem de piedra en
+          su centro. Sorprendentemente, el golem habla
+          con voz grave y dura.`,
+          `"¡No! ¿Por qué habéis venido
+          aquí? He destruido todo lo que había que
+          tomar.`,
+          `¿Por qué me obligáis a matar?"`
+        ]
+      }
+    ],
+    conclusion: [
+      `Los glifos de las extremidades del golem
+      comienzan a desvanecerse y trozos de piedra
+      caen de su esqueleto mientras pronuncia una
+      palabra más: "Gracias". Revisando la biblioteca,
+      encontrais un diario que detalla cómo se le dio
+      al golem inteligencia y la capacidad de
+      aprender.`,
+      `Lo que aprendió, sin embargo, fue que era un
+      ser sin alma, y que no podría entrar en
+      contacto con nada más ya que se le ordenó no
+      salir nunca y matar a todos los intrusos.
+      También encuentráis un núcleo de energía
+      incandescente en el interior del gólem.`
+    ]
   },
   { name: '#68 Toxic Moor'
   , introduction: [],
@@ -2246,10 +2341,60 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
   milestones: [],
   conclusion: []
   },
-  { name: '#72 Oozing Grove'
-  , introduction: [],
-  milestones: [],
-  conclusion: []
+  {
+    name: '#72 Oozing Grove',
+    introduction: [
+      `"Entrad." El rico concejal Greymare te acompaña
+      a su oficina, luego se sienta en su escritorio.
+      "Dominic me dice que está escribiendo un libro
+      sobre la corrupción de los militares y necesita
+      mi apoyo para evitar que termine encadenado
+      debajo de la Fortaleza Fantasma (Ghost
+      Fortress). Es un favor complicado, pero puede
+      que tengáis suerte, porque tengo un favor
+      igualmente complicado que pediros para el que
+      estáis perfectamente preparados.`,
+      `"Hasta hace poco, tenía una propiedad en
+      Corpsewood que estaba produciendo frutas y
+      verduras. Las buenas tierras de cultivo son un
+      lujo aquí, y pensé que si la finca estaba
+      escondida y protegida, debería haber sido capaz
+      de mantenerse. Desafortunadamente, no he
+      tenido noticias de mis encargados en más de
+      una semana. Envié algunos hombres para
+      investigar, pero tampoco han regresado ".`,
+      `Greymare suspira. "Necesito a alguien capaz de
+      ir y descubrir lo que está pasando. También
+      sería bueno si pudieráis arreglar lo que esté
+      pasando para poder recuperar mi tierra de
+      cultivo. Hazlo y apoyaré vuestro pequeño libro "`,
+      `Aceptáis y os dirigís hacia el bosque de los
+      cadáveres para localizar la propiedad de
+      Greymare. Esperando Vermellings y cosas por
+      el estilo, os sorprendéis por la escena que
+      encuentráis a vuestra llegada. El cortijo está cubierto
+      de un moho espeso y viscoso y encuentras
+      numerosos esqueletos, completamente limpios,
+      alrededor de la propiedad. Es como si este lugar
+      hubiera sido abandonado durante años, no días.`,
+      `Seguís el rastro del moho denso sobre una
+      arboleda de árboles frutales. Aquí, el lodo es
+      más grueso, y cuando lo pinchas con tu arma,
+      se ondula y reacciona. De repente, el terreno
+      está lleno de movimiento y hostilidad.`
+    ],
+    milestones: [],
+    conclusion: [
+      `El moho verde que cubre el suelo se ondula y
+      convulsiona cuando el último árbol se estrella
+      contra la tierra. Tal vez sea tu imaginación,
+      pero casi lo oyes gritar.`,
+      `Entonces todo el lodo se vuelve marrón. No
+      estás seguro de que esta tierra vaya a crecer
+      alguna vez pero neutralizaste la amenaza.
+      Esperemos que eso sea suficiente para que
+      Greymare cumpla con su parte del trato.`
+    ]
   },
   { name: '#73 Rockslide Ridge'
   , introduction: [],

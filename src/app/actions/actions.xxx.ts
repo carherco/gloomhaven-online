@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner, Scoundrel } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -738,6 +738,15 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[533]
   });
 
+  campaign.gainAbility({ playerName: 'Garen', ability: 'reforge' });
+  campaign.gainAbility({ playerName: 'Garen', ability: 'scroll-of-lightning' });
+  campaign.gainAbility({ playerName: 'Garen', ability: 'side-pouch' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk10' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk1-1' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk1-2' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk2' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk4-1' });
+
   campaign.buyItem({ playerName: 'Garen', itemId: 7 });
   campaign.buyItem({ playerName: 'Garen', itemId: 12 });
   campaign.buyItem({ playerName: 'Garen', itemId: 23 });
@@ -849,6 +858,15 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[520]
   });
 
+  campaign.gainAbility({ playerName: 'Master of Minions', ability: 'grasping-the-void' });
+  campaign.gainAbility({ playerName: 'Master of Minions', ability: 'earthen-steed' });
+  campaign.gainAbility({ playerName: 'Master of Minions', ability: 'divided-mind' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk10' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk1' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk2' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk6' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk7-1' });
+
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
@@ -922,8 +940,83 @@ export function loadCampaing(): CampaignStatus {
     rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_4]}, treasuresLooted: [14],
   });
 
+  //Buscar su sitio correcto
+  campaign.gainAbility({ playerName: 'Adolfo', ability: 'storm-sigil' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk3-2' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk8' });
+  //campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk4-1' });
+  campaign.gainAbility({ playerName: 'Garen', ability: 'reinforced-steel' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk4-2' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk6' });
 
+  // Última subida de nivel
+  campaign.gainAbility({ playerName: 'Adolfo', ability: 'lash-out' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk4-1' });
 
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Garen'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.resolveCityEvent({eventId: 18, playersResults:[
+    { playerName: 'Garen', playerResults: {g: 2} },
+    { playerName: 'Adolfo', playerResults: {g: 2} },
+    { playerName: 'Víctor', playerResults: {g: 2} },
+    { playerName: 'Master of Minions', playerResults: {g: 2} },
+  ], discard: false});
+
+  campaign.resolveRoadEvent({eventId: 42, discard: true});
+
+  campaign.failScenario({
+    scenarioId: 72,
+    level: 3,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 0, g: 0} },
+      { playerName: 'Garen', playerResults: {xp: 0, g: 0} },
+      { playerName: 'Víctor', playerResults: {xp: 0, g: 0} },
+      { playerName: 'Master of Minions', playerResults: {xp: 0, g: 0} },
+    ]
+  });
+
+  campaign.resolveCityEvent({eventId: 47,
+    rewards:{
+      reputation: -1,
+      scenariosUnlocked: [87],
+      partyAchievements: [PARTY_ACHIEVEMENTS.THE_POISONS_SOURCE]
+    }, discard: true});
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Garen'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.resolveRoadEvent({eventId: 37, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 72,
+    level: 3,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 15, g: 9} },
+      { playerName: 'Garen', playerResults: {xp: 8, g: 15, t: 1, pq: 3} },
+      { playerName: 'Víctor', playerResults: {xp: 6, g: 6} },
+      { playerName: 'Master of Minions', playerResults: {xp: 13, g: 0, t: 2} },
+    ], rewards: {reputation: 1, prosperity: 1}
+  });
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Scoundrel,
+    name: '??????',
+    personalQuest: PERSONAL_QUESTS[526]
+  });
+
+  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
+  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
+  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
+  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
+  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk3-2' });
+  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
+  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk3-2' });
+  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
+  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
 
 
   return campaign.getStatus();
