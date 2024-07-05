@@ -926,8 +926,8 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 92,
     image: 'items/64-151/scroll-of-power.png',
-    type: 'legs',
-    use: 'spend',
+    type: 'small-item',
+    use: 'consume',
     price: 10,
     xws: 'scrollofpower'
   },
@@ -936,8 +936,8 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 93,
     image: 'items/64-151/scroll-of-healing.png',
-    type: 'legs',
-    use: 'spend',
+    type: 'small-item',
+    use: 'consume',
     price: 10,
     xws: 'scrollofhealing'
   },
@@ -946,9 +946,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 94,
     image: 'items/64-151/scroll-of-stamina.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'small-item',
+    use: 'consume',
+    price: 50,
     xws: 'scrollofstamina'
   },
   {
@@ -1146,9 +1146,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 114,
     image: 'items/64-151/mountain-hammer.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'two-hands',
+    use: 'consume',
+    price: 50,
     xws: 'mountainhammer'
   },
   {
@@ -1316,9 +1316,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 131,
     image: 'items/64-151/power-core.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'small-item',
+    use: 'consume',
+    price: 75,
     xws: 'powercore'
   },
   {
@@ -1488,7 +1488,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/elemental-boots.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'elementalboots'
   },
   {

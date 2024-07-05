@@ -1001,6 +1001,8 @@ export function loadCampaing(): CampaignStatus {
     ], rewards: {reputation: 1, prosperity: 1}
   });
 
+  campaign.addCityEvent(80);
+
   campaign.createCharacter({
     playerId: players[0].uid,
     characterClass: Scoundrel,
@@ -1017,7 +1019,35 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk3-2' });
   // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
   // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
+  campaign.buyItem({ playerName: '??????', itemId: 2 });
+  campaign.buyItem({ playerName: '??????', itemId: 12 });
+  campaign.buyItem({ playerName: '??????', itemId: 26 });
+  campaign.buyItem({ playerName: '??????', itemId: 30 });
 
+  campaign.gainAbility({ playerName: 'Master of Minions', ability: 'strength-in-numbers' });
+  // campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'btPerk3-2' });
+  // campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'btPerk8' });
+
+  campaign.buyItem({ playerName: 'Víctor', itemId: 41 });
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.resolveCityEvent({eventId: 6, playersResults:[
+    { playerName: 'Garen', playerResults: {xp: 5} },
+    { playerName: 'Adolfo', playerResults: {xp: 5} },
+    { playerName: 'Víctor', playerResults: {xp: 5} },
+    { playerName: 'Master of Minions', playerResults: {xp: 5} },
+    { playerName: '??????', playerResults: {xp: 5} },
+  ], rewards: {prosperity: 1}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 18,
+    level: 3,
+    playersResults: [
+      { playerName: '??????', playerResults: {xp: 3, g: 21, t:1, pq: 1} },
+      { playerName: 'Víctor', playerResults: {xp: 9, g: 24} },
+      { playerName: 'Master of Minions', playerResults: {xp: 18, g: 21, t: 1} },
+    ], treasuresLooted: [63], rewards: {itemDesigns: [95]},  scenariosUnlocked: [14, 23, 26, 43]
+  });
 
   return campaign.getStatus();
 }
