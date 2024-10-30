@@ -1049,7 +1049,7 @@ export function loadCampaing(): CampaignStatus {
     ], treasuresLooted: [63], rewards: {itemDesigns: [95]},  scenariosUnlocked: [14, 23, 26, 43]
   });
 
-  campaign.gainAbility({ playerName: 'Víctor', ability: 'pragmatic-reinforcements' });
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'pragmatic-reinforcement' });
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk6' });
 
   campaign.makeDonation({playerName: 'Adolfo'});
