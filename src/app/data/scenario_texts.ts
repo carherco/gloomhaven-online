@@ -2621,10 +2621,57 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
   milestones: [],
   conclusion: []
   },
-  { name: '#87 Corrupted Cove'
-  , introduction: [],
-  milestones: [],
-  conclusion: []
+  {
+    name: '#87 Corrupted Cove',
+    introduction: [
+      `Con la fuente de la corrupción inaccesible por
+      tierra, cogéis un bote pequeño en la cala,
+      rodeada por grandes muros de roca por tres
+      lados. En la base del lejano acantilado, podéis
+      ver una entrada en la base de la caverna oscura,
+      de la que sale agua de un verde enfermizo.`,
+      `Amarráis el bote dentro de la caverna y saltáis
+      sobre un suelo de piedra cubierto de una
+      mugre verde y pegajosa. Estáis resueltos a
+      encontrar la fuente de tal horrible corrupción,
+      pero un grupo de Lurkers frente a vosotros
+      quieren deteneros.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Luchando a través de los Lurkers, os adentráis
+          en la cámara principal de la caverna, la cual está
+          goteando con una baba espesa y pútrida. En el
+          centro de la habitación se encuentra un bulto
+          enorme de mugre latiente, el cual late con una
+          maligna bilis.`,
+          `A vuestro alrededor, otras oscuras criaturas
+          emergen de la suciedad. La masa del centro
+          parace que las controla. Si pudieseis encontrar
+          algo para destruirla, pondriais fin a la
+          corrupción.`
+        ]
+      }
+    ],
+    conclusion: [
+      `Incapaz de sostenerse por más tiempo, la masa
+      gigante tiembla y luego pierde su forma,
+      extendiendo su sustancia gelatinosa por todo el
+      suelo ya viscoso. Las otras criaturas a vuestro
+      alrededor también se disuelven en el lodo.`,
+      `Limpiáis la mugre de vuestras armas y cuerpo,
+      agradecidos de que cualquier mal cancerígeno
+      que haya estado aquí ahora haya sido destruido.`,
+      `Parte de este líquido venenoso aún puede
+      filtrarse en el océano, y llevará mucho tiempo
+      hasta que los efectos de lo que ya está allí se
+      disipen, pero al menos no empeorarán.`,
+      `Cuando regresáis a vuestro bote, podéis ver
+      cómo el flujo del lodo se desvanece. Vuelves a
+      Gloomhaven e informas de las noticias.`
+    ]
   },
   { name: '#88 Plane of Water'
   , introduction: [],

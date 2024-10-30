@@ -52,6 +52,8 @@ import {
   Curse,
   Plus2Earth,
   PoisonRolling,
+  Plus1Wind,
+  CurseRolling,
 } from './modifiers';
 
 export const Brute: CharacterClass = {
@@ -615,6 +617,48 @@ export const Summoner: CharacterClass = {
   ]
 };
 
+export const Plagueherald: CharacterClass = {
+  id: 'plagueherald',
+  key: 'PH',
+  race: 'Harrower',
+  className: 'Plagueherald',
+  handCardSize: 11,
+  image: 'Plagueherald.png',
+  hitPoints: [6, 7, 8, 9, 10, 11, 12, 13, 14],
+  levelXCards: ['blistering-vortex', 'epidemic', 'virulent-strain'],
+  level1Cards: [
+    'biting-gnats', 'creeping-curse', 'foul-wind',
+    'gathering-doom', 'grasping-vermin', 'paralyzing-bite',
+    'scattered-terror', 'spread-the-plague', 'vile-pestilence',
+    'winged-congregation', 'wretched-swarm'
+  ],
+  level2Cards: ['rot-maggots', 'under-the-skin'],
+  level3Cards: ['fetid-flurry', 'succumb-to-the-gift'],
+  level4Cards: ['nightmarish-affliction', 'storm-of-wings'],
+  level5Cards: ['accelerated-end', 'willing-sacrifice'],
+  level6Cards: ['black-tides', 'stinging-cloud'],
+  level7Cards: ['airborne-toxin', 'baneful-hex'],
+  level8Cards: ['grim-bargain', 'spreading-scourge'],
+  level9Cards: ['convert-the-flock', 'mass-extinction'],
+  perks: [
+    { id: 'phPerk1', title: 'Replace one -2 card with one 0 Card', addModifiers: [new Plus0()], removeModifiers: [new Minus2()] },
+    { id: 'phPerk2-1', title: 'Replace one -1 card with one +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'phPerk2-2', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'phPerk3-1', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'phPerk3-2', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'phPerk4', title: 'Add two +1 cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
+    { id: 'phPerk5-1', title: 'Add one +1 Wind card', addModifiers: [new Plus1Wind()], removeModifiers: [] },
+    { id: 'phPerk5-2', title: 'Add one +1 Wind card', addModifiers: [new Plus1Wind()], removeModifiers: [] },
+    { id: 'phPerk5-3', title: 'Add one +1 Wind card', addModifiers: [new Plus1Wind()], removeModifiers: [] },
+    { id: 'phPerk6', title: 'Add three rolling Poisin cards', addModifiers: [new PoisonRolling(), new PoisonRolling(), new PoisonRolling()], removeModifiers: [] },
+    { id: 'phPerk7', title: 'Add two rolling Curse cards', addModifiers: [new CurseRolling(), new CurseRolling()], removeModifiers: [] },
+    { id: 'phPerk8', title: 'Add two rolling Immobilize cards', addModifiers: [new ImmobilizeRolling(), new ImmobilizeRolling()], removeModifiers: [] },
+    { id: 'phPerk9-1', title: 'Add one rolling Stun card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'phPerk9-2', title: 'Add one rolling Stun card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'phPerk10', title: 'Ignore negative scenario effects and add one +1 Cards', addModifiers: [new Plus1()], removeModifiers: [] },
+  ]
+};
+
 export const AvailableCharacters: CharacterClass[] = [
   Brute,
   Cragheart,
@@ -630,4 +674,5 @@ export const AvailableCharacters: CharacterClass[] = [
   Soothsinger,
   Quartermaster,
   Summoner,
+  Plagueherald,
 ];

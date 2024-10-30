@@ -90,6 +90,11 @@ export class Plus0Wind {
   src = 'Plus0Wind.png';
 }
 
+export class Plus1Wind {
+  id = 'plus1Wind';
+  src = 'Plus1Wind.png';
+}
+
 export class Plus0Earth {
   id = 'plus0Earth';
   src = 'Plus0Earth.png';
@@ -238,6 +243,11 @@ export class WoundRolling {
 export class PoisonRolling {
   id = 'woundRolling';
   src = 'RollingWound.png';
+}
+
+export class CurseRolling {
+  id = 'curseRolling';
+  src = 'RollingCurse.png';
 }
 
 export class EarthRolling {

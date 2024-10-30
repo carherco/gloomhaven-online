@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner, Scoundrel } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner, Scoundrel, Plagueherald } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -1010,23 +1010,23 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[526]
   });
 
-  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
-  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
-  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
-  // campaign.gainAbility({ playerName: '??????', ability: 'storm-sigil' });
-  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk3-2' });
-  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
-  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk3-2' });
-  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
-  // campaign.gainPerk({ playerName: '??????', perkId: 'btPerk8' });
+  campaign.gainAbility({ playerName: '??????', ability: 'open-wound' });
+  campaign.gainAbility({ playerName: '??????', ability: 'duelist-advance' });
+  campaign.gainAbility({ playerName: '??????', ability: 'flurry-of-blades' });
+  campaign.gainAbility({ playerName: '??????', ability: 'cull-the-weak' });
+  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk1-1' });
+  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk1-2' });
+  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk3' });
+  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk4' });
+  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk5-1' });
   campaign.buyItem({ playerName: '??????', itemId: 2 });
   campaign.buyItem({ playerName: '??????', itemId: 12 });
   campaign.buyItem({ playerName: '??????', itemId: 26 });
   campaign.buyItem({ playerName: '??????', itemId: 30 });
 
   campaign.gainAbility({ playerName: 'Master of Minions', ability: 'strength-in-numbers' });
-  // campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'btPerk3-2' });
-  // campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'btPerk8' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk3-1' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk3-2' });
 
   campaign.buyItem({ playerName: 'Víctor', itemId: 41 });
   campaign.makeDonation({playerName: 'Víctor'});
@@ -1048,6 +1048,95 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Master of Minions', playerResults: {xp: 18, g: 21, t: 1} },
     ], treasuresLooted: [63], rewards: {itemDesigns: [95]},  scenariosUnlocked: [14, 23, 26, 43]
   });
+
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'pragmatic-reinforcements' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk6' });
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Garen'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.resolveCityEvent({eventId: 42,
+    rewards:{
+      reputation: 1,
+      prosperity: 1,
+    }, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 26,
+    rewards:{
+      reputation: 1,
+    }, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 43,
+    level: 4,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 19, g: 0, t:1, pq: 1} },
+      { playerName: 'Garen', playerResults: {xp: 11, g: 32, t:1, pq: 3, items: [98]} },
+      { playerName: 'Víctor', playerResults: {xp: 12, g: 20} },
+      { playerName: 'Master of Minions', playerResults: {xp: 28, g: 18} },
+    ], rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.WATER_BREATHING]}, treasuresLooted: [35]
+  });
+
+  campaign.gainAbility({ playerName: 'Garen', ability: 'catastrophic-bomb' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk3-1' });
+  campaign.gainPerk({ playerName: 'Garen', perkId: 'qmPerk3-2' });
+
+  campaign.gainAbility({ playerName: 'Master of Minions', ability: 'livinf-mountain' });
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk3-3' });
+
+  campaign.makeDonation({playerName: 'Garen'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.buyItem({ playerName: 'Master of Minions', itemId: 16 });
+  campaign.buyItem({ playerName: 'Master of Minions', itemId: 12 });
+  campaign.buyItem({ playerName: 'Garen', itemId: 41 });
+
+  campaign.resolveCityEvent({eventId: 41, playersResults:[
+    { playerName: 'Garen', playerResults: {g: -10} },
+    { playerName: '??????', playerResults: {items: [34]} },
+  ], discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 87,
+    level: 4,
+    playersResults: [
+      { playerName: 'Garen', playerResults: {xp: 9, g: 8, t:2, pq: 3} },
+      { playerName: 'Víctor', playerResults: {xp: 7, g: 4, t:1} },
+      { playerName: 'Master of Minions', playerResults: {xp: 12, g: 4, t:1} },
+    ], rewards: {reputation: 1, prosperity: 1, itemDesigns: [89]}, treasuresLooted: [40]
+  });
+
+  campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk4-1' });
+
+  campaign.sellItem({ playerName: 'Garen', itemId: 98 });
+  campaign.makeDonation({playerName: 'Garen'});
+  campaign.retireCharacter({name: 'Garen', cityEventsToAdd: [49, 35], roadEventsToAdd: [49, 35]});
+
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Plagueherald,
+    name: 'Cthulhu',
+    personalQuest: PERSONAL_QUESTS[525]
+  });
+
+  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'open-wound' });
+  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'duelist-advance' });
+  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'flurry-of-blades' });
+  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'cull-the-weak' });
+  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'cull-the-weak' });
+  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk1-1' });
+  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk1-2' });
+  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk3' });
+  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk4' });
+  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk5-1' });
+  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk5-1' });
+  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk5-1' });
+  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 2 });
+  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 12 });
+  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 26 });
+  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 30 });
 
   return campaign.getStatus();
 }
