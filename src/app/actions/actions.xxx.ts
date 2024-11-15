@@ -1011,7 +1011,7 @@ export function loadCampaing(): CampaignStatus {
   });
 
   campaign.gainAbility({ playerName: '??????', ability: 'open-wound' });
-  campaign.gainAbility({ playerName: '??????', ability: 'duelist-advance' });
+  campaign.gainAbility({ playerName: '??????', ability: 'duelists-advance' });
   campaign.gainAbility({ playerName: '??????', ability: 'flurry-of-blades' });
   campaign.gainAbility({ playerName: '??????', ability: 'cull-the-weak' });
   campaign.gainPerk({ playerName: '??????', perkId: 'scPerk1-1' });
@@ -1117,26 +1117,58 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[0].uid,
     characterClass: Plagueherald,
-    name: 'Cthulhu',
+    name: 'Epidemus',
     personalQuest: PERSONAL_QUESTS[525]
   });
 
-  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'open-wound' });
-  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'duelist-advance' });
-  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'flurry-of-blades' });
-  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'cull-the-weak' });
-  // campaign.gainAbility({ playerName: 'Cthulhu', ability: 'cull-the-weak' });
-  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk1-1' });
-  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk1-2' });
-  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk3' });
-  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk4' });
-  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk5-1' });
-  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk5-1' });
-  // campaign.gainPerk({ playerName: 'Cthulhu', perkId: 'scPerk5-1' });
-  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 2 });
-  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 12 });
-  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 26 });
-  // campaign.buyItem({ playerName: 'Cthulhu', itemId: 30 });
+  campaign.gainAbility({ playerName: 'Epidemus', ability: 'rot-maggots' });
+  campaign.gainAbility({ playerName: 'Epidemus', ability: 'fetid-flurry' });
+  campaign.gainAbility({ playerName: 'Epidemus', ability: 'nightmarish-affliction' });
+  campaign.gainAbility({ playerName: 'Epidemus', ability: 'accelerated-end' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk1' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk2-1' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk2-2' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk6' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk7' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk9-1' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk10' });
+
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 1 });
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 12 });
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 13 });
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 34 });
+
+  campaign.resolveCityEvent({eventId: 49, rewards: {prosperity: 1}, discard: true});
+
+  campaign.buyItem({ playerName: 'Víctor', itemId: 16 });
+  campaign.buyItem({ playerName: 'Víctor', itemId: 42 });
+  campaign.buyItem({ playerName: 'Víctor', itemId: 89 });
+
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.completeScenario({
+    scenarioId: 26,
+    level: 3,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 7, g: 15} },
+      { playerName: 'Víctor', playerResults: {xp: 14, g: 9} },
+      { playerName: 'Master of Minions', playerResults: {xp: 7, g: 3, pq:4} },
+      { playerName: '??????', playerResults: {xp: 10, g: 15, t:1, pq: 1, items:[33]} },
+    ], rewards: {gold: 10, reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.FOLLOWING_CLUES]},
+      treasuresLooted: [66], scenariosUnlocked: [22]
+  });
+
+  campaign.unlockScenario({scenariosUnlocked: [73]})
+  campaign.unblockCharacter({name: 'Sunkeeper', cityEventsToAdd: [31], roadEventsToAdd: [31]});
+
+  // campaign.gainAbility({ playerName: '??????', ability: 'cull-the-weak' });
+  // campaign.gainPerk({ playerName: '??????',, perkId: 'scPerk1-1' });
+
+  // campaign.gainAbility({ playerName: 'Epidemus', ability: 'cull-the-weak' });
+  // campaign.gainPerk({ playerName: 'Epidemus', perkId: 'scPerk1-1' });
+
+  campaign.buyItem({ playerName: 'Víctor', itemId: 48 });
 
   return campaign.getStatus();
 }

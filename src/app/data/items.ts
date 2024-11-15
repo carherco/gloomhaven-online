@@ -428,7 +428,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/43-49/boots-of-quickness.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 75,
     xws: 'bootsofquickness'
   },
   {
@@ -446,9 +446,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 44,
     image: 'items/43-49/pendant-of-dark-pacts.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'head',
+    use: 'consume',
+    price: 75,
     xws: 'pendantofdarkpacts'
   },
   {
@@ -458,7 +458,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/43-49/spiked-shield.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'spikedshield'
   },
   {
@@ -466,9 +466,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 46,
     image: 'items/43-49/reaping-scythe.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'two-hands',
+    use: 'consume',
+    price: 40,
     xws: 'reapingscythe'
   },
   {
@@ -477,8 +477,8 @@ export const ITEMS: ItemDef[] = [
     points: 47,
     image: 'items/43-49/major-mana-potion.png',
     type: 'small-item',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 30,
     xws: 'majormanapotion'
   },
   {
@@ -487,8 +487,8 @@ export const ITEMS: ItemDef[] = [
     points: 48,
     image: 'items/43-49/sun-earring.png',
     type: 'small-item',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 40,
     xws: 'sunearring'
   },
   {
@@ -497,8 +497,8 @@ export const ITEMS: ItemDef[] = [
     points: 49,
     image: 'items/50-56/steel-sabatons.png',
     type: 'legs',
-    use: 'spend',
-    price: 10,
+    use: 'permanent',
+    price: 60,
     xws: 'steelsabatons'
   },
   {
@@ -507,8 +507,8 @@ export const ITEMS: ItemDef[] = [
     points: 50,
     image: 'items/50-56/shadow-armor.png',
     type: 'body',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 30,
     xws: 'shadowarmor'
   },
   {
@@ -516,9 +516,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 51,
     image: 'items/50-56/protective-charm.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'head',
+    use: 'permanent',
+    price: 60,
     xws: 'protectivecharm'
   },
   {
@@ -526,9 +526,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 52,
     image: 'items/50-56/black-knife.png',
-    type: 'legs',
+    type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 25,
     xws: 'blackknife'
   },
   {
@@ -536,9 +536,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 53,
     image: 'items/50-56/staff-of-eminence.png',
-    type: 'legs',
+    type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 60,
     xws: 'staffofeminence'
   },
   {
@@ -547,8 +547,8 @@ export const ITEMS: ItemDef[] = [
     points: 54,
     image: 'items/50-56/super-healing-potion.png',
     type: 'small-item',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 50,
     xws: 'superhealingpotion'
   },
   {
@@ -557,8 +557,8 @@ export const ITEMS: ItemDef[] = [
     points: 55,
     image: 'items/50-56/ring-of-brutality.png',
     type: 'small-item',
-    use: 'spend',
-    price: 10,
+    use: 'consume',
+    price: 40,
     xws: 'ringofbrutality'
   },
   {
@@ -567,8 +567,8 @@ export const ITEMS: ItemDef[] = [
     points: 56,
     image: 'items/57-63/serene-sandals.png',
     type: 'legs',
-    use: 'spend',
-    price: 10,
+    use: 'permanent',
+    price: 75,
     xws: 'serenesandals'
   },
   {
@@ -576,9 +576,9 @@ export const ITEMS: ItemDef[] = [
     amount: 4,
     points: 57,
     image: 'items/57-63/cloak-of-phasing.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'body',
+    use: 'permanent',
+    price: 75,
     xws: 'cloakofphasing'
   },
   {
