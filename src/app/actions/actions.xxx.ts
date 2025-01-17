@@ -615,7 +615,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Adolfo'});
   campaign.makeDonation({playerName: 'Víctor'});
 
-  // TODO: Abrir sobre B
+  // TODO: Open envelope B
 
   campaign.resolveRoadEvent({eventId: 6, discard: false});
 
@@ -852,7 +852,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.retireCharacter({name: 'Mystic', cityEventsToAdd: [53, 33], roadEventsToAdd: [53, 33]});
 
   campaign.createCharacter({
-    playerId: players[0].uid,
+    playerId: players[2].uid,
     characterClass: Summoner,
     name: 'Master of Minions',
     personalQuest: PERSONAL_QUESTS[520]
@@ -926,7 +926,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Master of Minions', itemId: 27 });
 
   campaign.resolveRoadEvent({eventId: 36, discard: true});
-  campaign.decipherMessage({message: 'Record the page, the word, and the letter - 834.'});
+  campaign.decipherMessage({message: 'Record the page, the word, and the letter - 634.'});
 
   campaign.completeScenario({
     scenarioId: 67,
@@ -1006,23 +1006,23 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[0].uid,
     characterClass: Scoundrel,
-    name: '??????',
+    name: 'Mandrágora',
     personalQuest: PERSONAL_QUESTS[526]
   });
 
-  campaign.gainAbility({ playerName: '??????', ability: 'open-wound' });
-  campaign.gainAbility({ playerName: '??????', ability: 'duelists-advance' });
-  campaign.gainAbility({ playerName: '??????', ability: 'flurry-of-blades' });
-  campaign.gainAbility({ playerName: '??????', ability: 'cull-the-weak' });
-  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk1-1' });
-  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk1-2' });
-  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk3' });
-  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk4' });
-  campaign.gainPerk({ playerName: '??????', perkId: 'scPerk5-1' });
-  campaign.buyItem({ playerName: '??????', itemId: 2 });
-  campaign.buyItem({ playerName: '??????', itemId: 12 });
-  campaign.buyItem({ playerName: '??????', itemId: 26 });
-  campaign.buyItem({ playerName: '??????', itemId: 30 });
+  campaign.gainAbility({ playerName: 'Mandrágora', ability: 'open-wound' });
+  campaign.gainAbility({ playerName: 'Mandrágora', ability: 'duelists-advance' });
+  campaign.gainAbility({ playerName: 'Mandrágora', ability: 'flurry-of-blades' });
+  campaign.gainAbility({ playerName: 'Mandrágora', ability: 'cull-the-weak' });
+  campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
+  campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-2' });
+  campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk3' });
+  campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk4' });
+  campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk5-1' });
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 2 });
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 12 });
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 26 });
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 30 });
 
   campaign.gainAbility({ playerName: 'Master of Minions', ability: 'strength-in-numbers' });
   campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk3-1' });
@@ -1036,14 +1036,14 @@ export function loadCampaing(): CampaignStatus {
     { playerName: 'Adolfo', playerResults: {xp: 5} },
     { playerName: 'Víctor', playerResults: {xp: 5} },
     { playerName: 'Master of Minions', playerResults: {xp: 5} },
-    { playerName: '??????', playerResults: {xp: 5} },
+    { playerName: 'Mandrágora', playerResults: {xp: 5} },
   ], rewards: {prosperity: 1}, discard: true});
 
   campaign.completeScenario({
     scenarioId: 18,
     level: 3,
     playersResults: [
-      { playerName: '??????', playerResults: {xp: 3, g: 21, t:1, pq: 1} },
+      { playerName: 'Mandrágora', playerResults: {xp: 3, g: 21, t:1, pq: 1} },
       { playerName: 'Víctor', playerResults: {xp: 9, g: 24} },
       { playerName: 'Master of Minions', playerResults: {xp: 18, g: 21, t: 1} },
     ], treasuresLooted: [63], rewards: {itemDesigns: [95]},  scenariosUnlocked: [14, 23, 26, 43]
@@ -1094,7 +1094,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveCityEvent({eventId: 41, playersResults:[
     { playerName: 'Garen', playerResults: {g: -10} },
-    { playerName: '??????', playerResults: {items: [34]} },
+    { playerName: 'Mandrágora', playerResults: {items: [34]} },
   ], discard: true});
 
   campaign.completeScenario({
@@ -1154,21 +1154,58 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Epidemus', playerResults: {xp: 7, g: 15} },
       { playerName: 'Víctor', playerResults: {xp: 14, g: 9} },
       { playerName: 'Master of Minions', playerResults: {xp: 7, g: 3, pq:4} },
-      { playerName: '??????', playerResults: {xp: 10, g: 15, t:1, pq: 1, items:[33]} },
+      { playerName: 'Mandrágora', playerResults: {xp: 10, g: 15, t:1, pq: 1, items:[33]} },
     ], rewards: {gold: 10, reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.FOLLOWING_CLUES]},
       treasuresLooted: [66], scenariosUnlocked: [22]
   });
 
-  campaign.unlockScenario({scenariosUnlocked: [73]})
+  campaign.levelUpCharacterToCityLevel({playerName: 'Mandrágora' });
+  campaign.levelUpCharacterToCityLevel({playerName: 'Epidemus' });
+
+  campaign.unlockScenario({scenariosUnlocked: [73]});
   campaign.unblockCharacter({name: 'Sunkeeper', cityEventsToAdd: [31], roadEventsToAdd: [31]});
 
-  // campaign.gainAbility({ playerName: '??????', ability: 'cull-the-weak' });
-  // campaign.gainPerk({ playerName: '??????',, perkId: 'scPerk1-1' });
+  // campaign.gainAbility({ playerName: 'Mandrágora', ability: 'cull-the-weak' });
+  // campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
 
   // campaign.gainAbility({ playerName: 'Epidemus', ability: 'cull-the-weak' });
   // campaign.gainPerk({ playerName: 'Epidemus', perkId: 'scPerk1-1' });
 
+  // campaign.gainAbility({ playerName: 'Víctor', ability: 'cull-the-weak' });
+  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'scPerk1-1' });
+
   campaign.buyItem({ playerName: 'Víctor', itemId: 48 });
+  campaign.sellItem({ playerName: 'Mandrágora', itemId: 33 });
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 6 });
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 14 });
+
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({playerName: 'Víctor'});
+
+  campaign.resolveCityEvent({eventId: 17, rewards: {scenariosUnlocked: [81]}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 23,
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 4, g: 8, t: 1, items:[33]} },
+      { playerName: 'Víctor', playerResults: {xp: 6, g: 4, t: 1} },
+      { playerName: 'Master of Minions', playerResults: {xp: 5, g: 4,t: 1, pq: 3} },
+      { playerName: 'Mandrágora', playerResults: {xp: 9, g: 12, t: 1, pq: 1} },
+    ], rewards: {itemDesigns: [116], globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_5], partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]},
+      treasuresLooted: [39, 72]
+  });
+
+  // Open envelope A
+  campaign.makeDonation({playerName: 'Master of Minions'});
+  campaign.retireCharacter({name: 'Master of Minions', cityEventsToAdd: [50], roadEventsToAdd: [50], scenariosUnlocked: [66], itemDesigns: [92]});
+
+  campaign.createCharacter({
+    playerId: players[2].uid,
+    characterClass: Sunkeeper,
+    name: 'Paladina',
+    personalQuest: PERSONAL_QUESTS[525]
+  });
 
   return campaign.getStatus();
 }

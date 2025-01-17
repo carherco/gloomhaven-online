@@ -572,4 +572,15 @@ export class CampaignStatusService {
 
     character.personalQuest.progress += 1;
   }
+
+  levelUpCharacterToCityLevel(payload: { playerName: string; }) {
+    const character = this.findCharacterByName(payload.playerName);
+    console.log(character);
+    if ( character.experience < EXPERIENCE_MILESTONES[this.status.city.prosperityLevel-1]) {
+      character.experience = EXPERIENCE_MILESTONES[this.status.city.prosperityLevel-1];
+      character.level = this.status.city.prosperityLevel;
+      console.log(character);
+    }
+
+  }
 }
