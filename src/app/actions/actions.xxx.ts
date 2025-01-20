@@ -1190,7 +1190,7 @@ export function loadCampaing(): CampaignStatus {
     playersResults: [
       { playerName: 'Epidemus', playerResults: {xp: 4, g: 8, t: 2, items:[33]} },
       { playerName: 'Víctor', playerResults: {xp: 6, g: 4, t: 1} },
-      { playerName: 'Master of Minions', playerResults: {xp: 5, g: 4,t: 1, pq: 3} },
+      { playerName: 'Master of Minions', playerResults: {xp: 5, g: 4, t: 1, pq: 3} },
       { playerName: 'Mandrágora', playerResults: {xp: 9, g: 12, t: 1, pq: 1} },
     ], rewards: {itemDesigns: [116], globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_5], partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]},
       treasuresLooted: [39, 72]
@@ -1203,7 +1203,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[2].uid,
     characterClass: Sunkeeper,
-    name: 'Paladina',
+    name: 'Solete',
     personalQuest: PERSONAL_QUESTS[525]
   });
 
