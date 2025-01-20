@@ -1188,7 +1188,7 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 23,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 4, g: 8, t: 1, items:[33]} },
+      { playerName: 'Epidemus', playerResults: {xp: 4, g: 8, t: 2, items:[33]} },
       { playerName: 'Víctor', playerResults: {xp: 6, g: 4, t: 1} },
       { playerName: 'Master of Minions', playerResults: {xp: 5, g: 4,t: 1, pq: 3} },
       { playerName: 'Mandrágora', playerResults: {xp: 9, g: 12, t: 1, pq: 1} },
