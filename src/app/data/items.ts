@@ -1338,7 +1338,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/imposing-blade.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'imposingblade'
   },
   {
@@ -1358,7 +1358,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/volatile-elixir.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'volatileelixir'
   },
   {
@@ -1368,7 +1368,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/silent-stiletto.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'silentstiletto'
   },
   {
@@ -1378,7 +1378,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/stone-charm.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'stonecharm'
   },
   {
@@ -1398,7 +1398,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/sun-shield.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'sunshield'
   },
   {
@@ -1406,9 +1406,9 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 140,
     image: 'items/64-151/utility-belt.png',
-    type: 'legs',
-    use: 'spend',
-    price: 10,
+    type: 'small-item',
+    use: 'consume',
+    price: 50,
     xws: 'utilitybelt'
   },
   {
@@ -1418,7 +1418,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/phasing-idol.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'phasingidol'
   },
   {
@@ -1428,7 +1428,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/smoke-elixir.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'smokeelixir'
   },
   {
@@ -1436,9 +1436,9 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 143,
     image: 'items/64-151/pendant-of-the-plague.png',
-    type: 'legs',
+    type: 'head',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'pendantoftheplague'
   },
   {
@@ -1448,7 +1448,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/mask-of-death.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'maskofdeath'
   },
   {
@@ -1458,7 +1458,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/masters-lute.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'masterslute'
   },
   {
@@ -1478,7 +1478,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/doctors-coat.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'doctors coat'
   },
   {
@@ -1496,9 +1496,9 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 149,
     image: 'items/64-151/staff-of-command.png',
-    type: 'legs',
+    type: 'two-hands',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'staffofcommand'
   },
   {
@@ -1508,7 +1508,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/sword-of-the-sands.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'swordofthesands'
   }
 ];
