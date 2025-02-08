@@ -1168,8 +1168,8 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainAbility({ playerName: 'Mandrágora', ability: 'cull-the-weak' });
   // campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
 
-  // campaign.gainAbility({ playerName: 'Epidemus', ability: 'cull-the-weak' });
-  // campaign.gainPerk({ playerName: 'Epidemus', perkId: 'scPerk1-1' });
+  campaign.gainAbility({ playerName: 'Epidemus', ability: 'stinging-cloud' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk3-1' });
 
   // campaign.gainAbility({ playerName: 'Víctor', ability: 'cull-the-weak' });
   // campaign.gainPerk({ playerName: 'Víctor', perkId: 'scPerk1-1' });
@@ -1188,7 +1188,7 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 23,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 4, g: 8, t: 2, items:[33]} },
+      { playerName: 'Epidemus', playerResults: {xp: 4, g: 8, t: 2} },
       { playerName: 'Víctor', playerResults: {xp: 6, g: 4, t: 1} },
       { playerName: 'Master of Minions', playerResults: {xp: 5, g: 4, t: 1, pq: 3} },
       { playerName: 'Mandrágora', playerResults: {xp: 9, g: 12, t: 1, pq: 1} },
@@ -1200,12 +1200,80 @@ export function loadCampaing(): CampaignStatus {
   campaign.makeDonation({playerName: 'Master of Minions'});
   campaign.retireCharacter({name: 'Master of Minions', cityEventsToAdd: [50], roadEventsToAdd: [50], scenariosUnlocked: [66], itemDesigns: [92]});
 
+  campaign.completeSoloScenario({
+    level: 4,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 17, g: 4, items: [150]} },
+    ]
+  });
+
+  campaign.completeSoloScenario({
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 9, g: 18, items: [144]} },
+    ]
+  });
+
+  campaign.sellItem({ playerName: 'Víctor', itemId: 13 });
+  campaign.sellItem({ playerName: 'Víctor', itemId: 149 });
+
   campaign.createCharacter({
     playerId: players[2].uid,
     characterClass: Sunkeeper,
     name: 'Solete',
-    personalQuest: PERSONAL_QUESTS[525]
+    personalQuest: PERSONAL_QUESTS[522]
   });
+
+  campaign.buyItem({ playerName: 'Solete', itemId: 38 });
+  campaign.buyItem({ playerName: 'Solete', itemId: 71 });
+  campaign.buyItem({ playerName: 'Solete', itemId: 12 });
+  campaign.buyItem({ playerName: 'Solete', itemId: 13 });
+  campaign.buyItem({ playerName: 'Solete', itemId: 20 });
+
+  campaign.createCharacter({
+    playerId: players[3].uid,
+    characterClass: Quartermaster,
+    name: 'Oswin el Previsor',
+    personalQuest: PERSONAL_QUESTS[522]
+  });
+
+  campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'reforge' });
+  campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'continual-supply' });
+  campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'side-pouch' });
+  campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'scroll-of-judgment' });
+  campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'catastrophic-bomb' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk10' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-1' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-2' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk2' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk10' });
+
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 36 });
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 12 });
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 13 });
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 95 });
+
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 5 });
+  campaign.makeDonation({playerName: 'Epidemus'});
+
+  campaign.resolveCityEvent({eventId: 53, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 21, playersResults:[
+    { playerName: 'Epidemus', playerResults: {t: -1} }
+  ], discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 73,
+    level: 3,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 11, g: 12, t: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 10, g: 12} },
+      { playerName: 'Solete', playerResults: {xp: 15, g: 6, pq: 1} },
+    ], rewards: {reputation: 1}
+  });
+
 
   return campaign.getStatus();
 }
