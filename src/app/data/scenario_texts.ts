@@ -2253,10 +2253,50 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       fabuloso taladro.`
     ]
   },
-  { name: '#66 Clockwork Cove'
-  , introduction: [],
-  milestones: [],
-  conclusion: []
+  { name: '#66 Clockwork Cove',
+    introduction: [
+      `Los escritos que descubristeis afirman que hay
+      algún tipo de maquinaria antigua que se
+      encuentra a lo largo de la costa norte de
+      Gloomhaven. Las indicaciones muestran que el
+      lugar solía fabricar algo en una época muy
+      lejana.`,
+      `Quién sabe qué valiosa tecnología que hay
+      para encontrar enterrada en las ruinas?`,
+      `Alquiláis una pequeña nave y os embarcáis.
+      Navegando a lo largo de la costa, finalmente
+      encontráis una pequeña entrada indicada en el
+      mapa. Echáis el ancla, y os dirigís a la orilla
+      rocosa donde veis una entrada en la cara del
+      acantilado. Sin saber lo que os espera, entráis.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Después de atraversar la entrada, abrís una
+          pesada puerta de metal, desatando una
+          cacofonía de engranajes giratorios y maquinaria
+          en movimiento. La totalidad de la antigua
+          caverna es parte de algun enorme e intrincado
+          sistema mecánico que esta todavía activo y
+          opera en las profundidades de la tierra.`,
+          `Desafortunadamente, sus guardianes están
+          todavía vivos; será necesaría más que fuerza
+          bruta para atravesar todo este caos.`
+        ]
+      },
+    ],
+    conclusion: [
+      `Con la última placa activada, un enorme ruido
+      resuena por toda la cámara y los engranajes se
+      detienen lentamente.`,
+      `Afortunadamente, esto también parece socavar
+      el poder de los guardianes, y lo que una vez fue
+      un estruendoso tumulto ahora está
+      espeluznantemente en silencio. Los engranajes
+      están inactivos y la maquinaria ya no zumba.`
+    ]
   },
   {
     name: '#67 Arcane Library',
@@ -2396,10 +2436,55 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       Greymare cumpla con su parte del trato.`
     ]
   },
-  { name: '#73 Rockslide Ridge'
-  , introduction: [],
-  milestones: [],
-  conclusion: []
+  {
+    name: '#73 Rockslide Ridge',
+    introduction: [
+      `A medida que escalas esta zona de las
+      montañas Vigilantes, empezáis a daros cuenta
+      de por qué nadie intentó recuperar el Codex. Si
+      fueras un Inox tratando de proteger a tu tribu,
+      éste parece ser un lugar bastante ideal para
+      establecer un campamento.`,
+      `Constantes temblores en la tierra causan
+      frecuentes deslizamientos de rocas a lo largo de
+      la ladera de la montaña, lo que hace que la
+      escalada sea increíblemente difícil. Los Inox
+      deben tener otro camino, pero sin ningún
+      conocimiento de la zona, decidís que la única
+      forma es la más difícil. Preparáis vuestras armas
+      mientras escucháis el estruendo de las rocas que
+      caen.`
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          `Entráis en la boca de la cueva y os encontráis
+          cara a cara con un chamán Inox enojado.`,
+          `"¡Volved, ratas de ciudad! ¡Esta tierra es
+          nuestra y no será contaminada! ¡Corred hacia la
+          montaña o sentid nuestra ira!"`,
+          `Sonreís con ironía al Inox. No habéis subido hasta
+          aquí solo para iros a casa con las manos vacías.`
+        ]
+      },
+    ],
+    conclusion: [
+      `Con el Inox muerto, hacéis un inventario de lo
+      que encontráis en la cueva. En su mayoría son
+      ollas de barro llenas de ceniza y pedazos de
+      hueso, pero entre sus pertenencias, se
+      encuentra un gran tomo. Está raído y se está
+      cayendo a pedazos, pero la mayoría de las
+      páginas aún son legibles. Lo guardáis
+      cuidadosamente en vuestra mochila y volvéis a
+      Gloomhaven.`,
+      `"¡Sois mis héroes!", Dice Dominic cuando
+      regresas con el Codex. "Esto es todo lo que
+      podría haber esperado. Quiero decir, seguro,
+      podría estar en mejor estado, pero no importa.
+      Comenzaré a estudiarlo de inmediato ".`
+    ]
   },
   { name: '#74 Merchant Ship'
   , introduction: [],
