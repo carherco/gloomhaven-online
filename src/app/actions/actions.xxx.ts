@@ -1255,7 +1255,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 13 });
   campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 95 });
 
-  campaign.buyItem({ playerName: 'Epidemus', itemId: 117 });
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 5 });
   campaign.makeDonation({playerName: 'Epidemus'});
 
   campaign.resolveCityEvent({eventId: 53, discard: true});
