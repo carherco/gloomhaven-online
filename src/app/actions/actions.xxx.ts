@@ -1234,7 +1234,7 @@ export function loadCampaing(): CampaignStatus {
     playerId: players[3].uid,
     characterClass: Quartermaster,
     name: 'Oswin el Previsor',
-    personalQuest: PERSONAL_QUESTS[522]
+    personalQuest: PERSONAL_QUESTS[530]
   });
 
   campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'reforge' });
@@ -1255,7 +1255,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 13 });
   campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 95 });
 
-  campaign.buyItem({ playerName: 'Epidemus', itemId: 5 });
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 117 });
   campaign.makeDonation({playerName: 'Epidemus'});
 
   campaign.resolveCityEvent({eventId: 53, discard: true});
