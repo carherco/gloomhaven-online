@@ -453,7 +453,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'spiked shield',
-    amount: 4,
+    amount: 2,
     points: 45,
     image: 'items/43-49/spiked-shield.png',
     type: 'one-hand',
@@ -463,7 +463,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'reaping scythe',
-    amount: 4,
+    amount: 2,
     points: 46,
     image: 'items/43-49/reaping-scythe.png',
     type: 'two-hands',
@@ -483,7 +483,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'sun earring',
-    amount: 4,
+    amount: 2,
     points: 48,
     image: 'items/43-49/sun-earring.png',
     type: 'small-item',
@@ -703,7 +703,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'boots of levitation',
-    amount: 4,
+    amount: 2,
     points: 70,
     image: 'items/64-151/boots-of-levitation.png',
     type: 'legs',
@@ -883,7 +883,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'minor cure potion',
-    amount: 4,
+    amount: 2,
     points: 88,
     image: 'items/64-151/minor-cure-potion.png',
     type: 'small-item',
@@ -913,7 +913,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'dampening ring',
-    amount: 4,
+    amount: 2,
     points: 91,
     image: 'items/64-151/dampening-ring.png',
     type: 'small-item',
@@ -923,7 +923,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'scroll of power',
-    amount: 4,
+    amount: 2,
     points: 92,
     image: 'items/64-151/scroll-of-power.png',
     type: 'small-item',
@@ -1033,7 +1033,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'steam armor',
-    amount: 4,
+    amount: 1,
     points: 103,
     image: 'items/64-151/steam-armor.png',
     type: 'body',
@@ -1053,7 +1053,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'necklace of teeth',
-    amount: 4,
+    amount: 1,
     points: 105,
     image: 'items/64-151/necklace-of-teeth.png',
     type: 'head',
@@ -1143,7 +1143,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'mountain hammer',
-    amount: 4,
+    amount: 1,
     points: 114,
     image: 'items/64-151/mountain-hammer.png',
     type: 'two-hands',
@@ -1313,7 +1313,7 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'power core',
-    amount: 4,
+    amount: 1,
     points: 131,
     image: 'items/64-151/power-core.png',
     type: 'small-item',

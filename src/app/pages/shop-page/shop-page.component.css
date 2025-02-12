@@ -1,0 +1,4 @@
+.out-of-stock {
+  filter: grayscale(100%) opacity(0.6);  /* Blanco y negro + opacidad */
+  /*pointer-events: none;*/  /* Opcional: Deshabilita la interacción con la imagen */
+}

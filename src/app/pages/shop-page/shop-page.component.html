@@ -40,6 +40,7 @@
 <div class="player-items">
   <img *ngFor="let item of items | filterItemsByTipe:itemTypeSelected"
       [src]="item.image|prefix:'assets/images/'"
+      [class.out-of-stock]="item.amount === item.timesOwned"
       title="Id: {{item.points! + 1}}"
       alt="Image of card {{item.name}}"
       width="180">

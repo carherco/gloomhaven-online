@@ -2,6 +2,16 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemType, ItemDef } from 'src/app/model/item';
 import { ITEMS } from 'src/app/data/items';
 import { CampaignStatusService } from 'src/app/services/campaign-status.service';
+import { Character } from 'src/app/model/character';
+
+interface CountOfItem {
+  id: number;
+  timesOwned: number;
+}
+
+export interface ShopItemDef extends ItemDef {
+  timesOwned: number;
+}
 
 @Component({
   selector: 'app-shop-page',
@@ -10,9 +20,7 @@ import { CampaignStatusService } from 'src/app/services/campaign-status.service'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopPageComponent {
-  itemIndexes: number[] = [];
-
-  items: ItemDef[] = [];
+  items: ShopItemDef[] = [];
   itemTypeSelected: ItemType = 'all';
 
   priceModifier = 0;
@@ -24,8 +32,25 @@ export class ShopPageComponent {
       status => {
         this.prosperityLevel = status.city.prosperityLevel;
         this.priceModifier = status.shop.priceModifier;
-        this.itemIndexes = status.shop.items;
-        this.items = ITEMS.filter( (_item, index) => this.itemIndexes.includes(index + 1) );
+
+        const itemIndexesOwnedByPlayers: number[] = status.characters.flatMap((character: Character) => character.ownedItems);
+        const countOfitemsOwnedByPlayers: CountOfItem[] = Object.entries(
+          itemIndexesOwnedByPlayers.reduce<Record<number, number>>((acc, item) => {
+              acc[item] = (acc[item] || 0) + 1;
+              return acc;
+          }, {})
+        ).map(([id, timesOwned]) => ({ id: Number(id), timesOwned }));
+
+        const ItemsWithTimesOwnedProperty: ShopItemDef[] = ITEMS.map((item, index) => {
+          const countItem = countOfitemsOwnedByPlayers.find(ci => ci.id === index + 1);
+          return {
+              ...item,
+              timesOwned: countItem ? countItem.timesOwned : 0,
+          };
+        });
+
+        this.items = ItemsWithTimesOwnedProperty.filter( (_item, index) => status.shop.items.includes(index + 1) );
+
       }
     );
   }
