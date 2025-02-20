@@ -1171,8 +1171,8 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Epidemus', ability: 'stinging-cloud' });
   campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk3-1' });
 
-  // campaign.gainAbility({ playerName: 'Víctor', ability: 'cull-the-weak' });
-  // campaign.gainPerk({ playerName: 'Víctor', perkId: 'scPerk1-1' });
+  campaign.gainAbility({ playerName: 'Víctor', ability: 'eternal-equilibrium' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'scPerk12' });
 
   campaign.buyItem({ playerName: 'Víctor', itemId: 48 });
   campaign.sellItem({ playerName: 'Mandrágora', itemId: 33 });
@@ -1272,6 +1272,27 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Oswin el Previsor', playerResults: {xp: 10, g: 12} },
       { playerName: 'Solete', playerResults: {xp: 15, g: 6, pq: 1} },
     ], rewards: {reputation: 1}
+  });
+
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({playerName: 'Adolfo'});
+
+  campaign.resolveCityEvent({eventId: 8, playersResults:[
+    { playerName: 'Víctor', playerResults: {g: -15} }
+  ], rewards: {scenariosUnlocked: [93], partyAchievements: [PARTY_ACHIEVEMENTS.A_MAP_TO_TREASURE]}, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 9, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 81,
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 9, g: 12, t: 1, items: [130]} },
+      { playerName: 'Víctor', playerResults: {xp: 10, g: 24, t: 1} },
+      { playerName: 'Solete', playerResults: {xp: 5, g: 20, t: 2, pq: 1} },
+      { playerName: 'Adolfo', playerResults: {xp: 15, g: 4, pq: 1} }
+    ], rewards: {xp: 10}, treasuresLooted: [68]
   });
 
 
