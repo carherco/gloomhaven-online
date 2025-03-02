@@ -22,6 +22,7 @@ export interface CampaignStatus {
   };
   shop: {
     items: number[];
+    oneCopyItems: number[];
     priceModifier: number;
   };
   amountGoldDonated: number;
@@ -50,6 +51,7 @@ export const INITIAL_STATUS: CampaignStatus = {
   },
   shop: {
     items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+    oneCopyItems: [],
     priceModifier: 0,
   },
   amountGoldDonated: 0,
@@ -123,7 +125,7 @@ export class CampaignStatusService {
     this.status = this.cloneStatus();
   }
 
-  cloneStatus() {
+  cloneStatus(): CampaignStatus {
     return {
       party: {
         name: this.status.party.name,
@@ -140,6 +142,7 @@ export class CampaignStatusService {
       },
       shop: {
         items: [...this.status.shop.items],
+        oneCopyItems: [...this.status.shop.oneCopyItems],
         priceModifier: this.status.shop.priceModifier
       },
       amountGoldDonated: this.status.amountGoldDonated,
@@ -197,12 +200,13 @@ export class CampaignStatusService {
     this.status.characters = this.status.characters.filter(
       c => c.name !== payload.name
     );
+    character.ownedItems.forEach(item => this.addItemToShop(item));
     this.gainProsperity();
     payload.cityEventsToAdd.forEach( eventId => this.addCityEvent(eventId));
     payload.roadEventsToAdd.forEach( eventId => this.addRoadEvent(eventId));
     if (payload.scenariosUnlocked) {this.status.unlockedScenarios = this.status.unlockedScenarios.concat(payload.scenariosUnlocked); }
     if (payload.itemDesigns) {
-      payload.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+      payload.itemDesigns.forEach( itemId => this.addItemDesignToShop(itemId));
     }
   }
 
@@ -254,6 +258,8 @@ export class CampaignStatusService {
     const newItems = PROSPERITY_LEVEL_ITEMS[this.status.city.prosperityLevel];
     // Quitar ítems repetidos y ya puestos, ordenar ítems
     this.status.shop.items = Array.from(new Set(this.status.shop.items.concat(newItems))).sort((a, b) => a - b);
+    // Quitar items de this.status.shop.oneCopyItems si ya han aparecido en la tienda por nivel de prosperidad
+    this.status.shop.oneCopyItems = this.status.shop.oneCopyItems.filter( item => !this.status.shop.items.includes(item));
   }
 
   private checkLevelUps() {
@@ -282,9 +288,9 @@ export class CampaignStatusService {
         character.perkTicks += (player.playerResults.t ?? 0) + (payload.rewards?.t ?? 0);
         character.personalQuest.progress += player.playerResults.pq ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
-        if (player.playerResults.items) {
-          player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
-        }
+        // if (player.playerResults.items) {
+        //   player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
+        // }
       }
     );
 
@@ -305,7 +311,7 @@ export class CampaignStatusService {
       payload.rewards?.loosePartyAchievements.forEach( achievement => this.loosePartyAchievement({name: achievement}));
     }
     if (payload.rewards?.itemDesigns) {
-      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemDesignToShop(itemId));
     }
 
     // Treasures
@@ -329,9 +335,9 @@ export class CampaignStatusService {
         character.gold += (player.playerResults.g ?? 0);
         character.perkTicks += player.playerResults.t ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
-        if (player.playerResults.items) {
-          player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
-        }
+        // if (player.playerResults.items) {
+        //   player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
+        // }
       }
     );
 
@@ -350,9 +356,9 @@ export class CampaignStatusService {
         character.gold += (player.playerResults.g ?? 0);
         character.personalQuest.progress += player.playerResults.pq ?? 0;
         character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
-        if (player.playerResults.items) {
-          player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
-        }
+        // if (player.playerResults.items) {
+        //   player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
+        // }
       }
     );
 
@@ -360,7 +366,7 @@ export class CampaignStatusService {
     if (payload.rewards?.prosperity) { this.gainProsperity(payload.rewards.prosperity); }
     if (payload.rewards?.reputation) { this.gainReputation(payload.rewards.reputation); }
     if (payload.rewards?.itemDesigns) {
-      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemDesignToShop(itemId));
     }
 
     // Treasures
@@ -393,6 +399,7 @@ export class CampaignStatusService {
       id => id !== payload.itemId
     );
 
+    this.addItemToShop(payload.itemId);
   }
 
   makeDonation(payload: MakeDonationPayload) {
@@ -428,9 +435,9 @@ export class CampaignStatusService {
           character.gold += player.playerResults.g ?? 0;
           character.perkTicks += player.playerResults.t ?? 0;
           character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
-          if (player.playerResults.items) {
-            player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
-          }
+          // if (player.playerResults.items) {
+          //   player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
+          // }
         }
       );
     }
@@ -448,7 +455,7 @@ export class CampaignStatusService {
       payload.rewards?.partyAchievements.forEach( achievement => this.gainPartyAchievement({name: achievement}));
     }
     if (payload.rewards?.itemDesigns) {
-      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemDesignToShop(itemId));
     }
 
     if (payload.rewards?.scenariosUnlocked) {
@@ -480,9 +487,9 @@ export class CampaignStatusService {
           character.gold += player.playerResults.g ?? 0;
           character.perkTicks += player.playerResults.t ?? 0;
           character.ownedItems = character.ownedItems.concat(player.playerResults.items ?? []);
-          if (player.playerResults.items) {
-            player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
-          }
+          // if (player.playerResults.items) {
+          //   player.playerResults.items.forEach( itemId => this.addItemToShop(itemId));
+          // }
         }
       );
     }
@@ -500,7 +507,7 @@ export class CampaignStatusService {
       payload.rewards?.partyAchievements.forEach( achievement => this.gainPartyAchievement({name: achievement}));
     }
     if (payload.rewards?.itemDesigns) {
-      payload.rewards?.itemDesigns.forEach( itemId => this.addItemToShop(itemId));
+      payload.rewards?.itemDesigns.forEach( itemId => this.addItemDesignToShop(itemId));
     }
 
     if (payload.rewards?.scenariosUnlocked) {
@@ -553,7 +560,18 @@ export class CampaignStatusService {
 
   addItemToShop(itemId: number) {
     this.status = this.cloneStatus();
+    if (!this.status.shop.items.includes(itemId)) {
+      this.status.shop.oneCopyItems.push(itemId);
+    }
+
+    // Quitar ítems repetidos y ya puestos, ordenar ítems
+    this.status.shop.oneCopyItems = Array.from(new Set(this.status.shop.oneCopyItems)).sort((a: number, b: number) => a - b);
+  }
+
+  addItemDesignToShop(itemId: number) {
+    this.status = this.cloneStatus();
     this.status.shop.items.push(itemId);
+
     // Quitar ítems repetidos y ya puestos, ordenar ítems
     this.status.shop.items = Array.from(new Set(this.status.shop.items)).sort((a: number, b: number) => a - b);
   }

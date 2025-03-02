@@ -41,16 +41,17 @@ export class ShopPageComponent {
           }, {})
         ).map(([id, timesOwned]) => ({ id: Number(id), timesOwned }));
 
-        const ItemsWithTimesOwnedProperty: ShopItemDef[] = ITEMS.map((item, index) => {
+        const itemsWithTimesOwnedPropertyAndFixedAmount: ShopItemDef[] = ITEMS.map((item, index) => {
           const countItem = countOfitemsOwnedByPlayers.find(ci => ci.id === index + 1);
           return {
               ...item,
+              amount: status.shop.oneCopyItems.includes(index + 1) ? 1 : item.amount,
               timesOwned: countItem ? countItem.timesOwned : 0,
           };
         });
 
-        this.items = ItemsWithTimesOwnedProperty.filter( (_item, index) => status.shop.items.includes(index + 1) );
-
+        this.items = itemsWithTimesOwnedPropertyAndFixedAmount.filter( (_item, index) => status.shop.items.includes(index + 1) );
+        this.items = this.items.concat(itemsWithTimesOwnedPropertyAndFixedAmount.filter( (_item, index) => status.shop.oneCopyItems.includes(index + 1) ));
       }
     );
   }
