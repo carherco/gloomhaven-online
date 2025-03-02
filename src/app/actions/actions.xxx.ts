@@ -1295,6 +1295,44 @@ export function loadCampaing(): CampaignStatus {
     ], rewards: {xp: 10}, treasuresLooted: [68]
   });
 
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.gainAbility({ playerName: 'Epidemus', ability: 'baneful-hex' });
+  campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk9-2' });
+  campaign.buyItem({playerName: 'Mandrágora', itemId: 112});
+
+  campaign.resolveCityEvent({eventId: 25, playersResults:[
+    { playerName: 'Víctor', playerResults: {g: -10} }
+  ], discard: true});
+
+  campaign.resolveRoadEvent({eventId: 17, rewards: {prosperity: 1}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 10,
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 12, g: 28, t: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 9, g: 24, t: 1} },
+      { playerName: 'Solete', playerResults: {xp: 12, g: 20, t: 1} },
+      { playerName: 'Mandrágora', playerResults: {xp: 13, g: 8} }
+    ], rewards: {itemDesigns: [83]}, treasuresLooted: [11]
+  });
+
+  campaign.completeSoloScenario({
+    level: 3,
+    playersResults: [
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 6, g: 12, items: [141]} },
+    ]
+  });
+
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 16 });
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 34 });
+
+  campaign.completeSoloScenario({
+    level: 4,
+    playersResults: [
+      { playerName: 'Solete', playerResults: {xp: 10, g: 16, items: [140]} },
+    ]
+  });
 
   return campaign.getStatus();
 }
