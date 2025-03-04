@@ -10,11 +10,11 @@
           <em *ngIf="location.status === 'Completed'" class="material-symbols-outlined">check_circle</em>
           <em *ngIf="location.status === 'Blocked'" class="material-symbols-outlined">block</em>
           ({{location.status}})
-          <ng-container *ngIf="location.globalAchievementsRequired.length > 0 ||location.partyAchievementsRequired.length > 0">
-            [Required: {{location.globalAchievementsRequired.concat(location.partyAchievementsRequired).join(' AND ')}}]
+          <ng-container *ngIf="location.globalAchievementsRequired.length > 0 || location.partyAchievementsRequired.length > 0">
+            [Required: {{location.globalAchievementsRequired.concat(location.partyAchievementsRequired).join(location.onlyOneAchievementRequired ? ' OR ' : ' AND ')}}]
           </ng-container>
           <ng-container *ngIf="location.globalAchievementsRequiredIncomplete.length > 0">
-            [Required INCOMPLETE: {{location.globalAchievementsRequiredIncomplete.join(' AND ')}}]
+            [Required INCOMPLETE: {{location.globalAchievementsRequiredIncomplete.join(location.onlyOneAchievementRequired ? ' OR ' : ' AND ')}}]
           </ng-container>
         </div>
         <div>{{location.id}} {{location.title}}</div>
