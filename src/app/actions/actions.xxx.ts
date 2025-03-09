@@ -1314,7 +1314,7 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Oswin el Previsor', playerResults: {xp: 9, g: 24, t: 1} },
       { playerName: 'Solete', playerResults: {xp: 12, g: 20, t: 1} },
       { playerName: 'Mandrágora', playerResults: {xp: 13, g: 8} }
-    ], rewards: {itemDesigns: [83]}, treasuresLooted: [11]
+    ], rewards: {itemDesigns: [83]}, treasuresLooted: [11], scenariosUnlocked: [21, 22]
   });
 
   campaign.completeSoloScenario({
@@ -1331,6 +1331,13 @@ export function loadCampaing(): CampaignStatus {
     level: 4,
     playersResults: [
       { playerName: 'Solete', playerResults: {xp: 10, g: 16, items: [140]} },
+    ]
+  });
+
+  campaign.completeSoloScenario({
+    level: 3,
+    playersResults: [
+      { playerName: 'Mandrágora', playerResults: {xp: 11, g: 15, items: [137]} },
     ]
   });
 
