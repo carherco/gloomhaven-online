@@ -892,7 +892,7 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       vagamente.`,
       `"Bueno, ahora que se ha resuelto esta molestia,
       vamos a seguir con la diversión real.
-      Mostradme esa grieta." <strong>(14-Ruinous Rift)</strong>`
+      Mostradme esa grieta." <strong>(27-Ruinous Rift)</strong>`
     ]
   },
   { name: '#20 Necromancer\'s Sanctum',

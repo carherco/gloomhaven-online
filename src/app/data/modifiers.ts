@@ -115,6 +115,11 @@ export class Plus1Immobilize {
   src = 'Plus1Immobilize.png';
 }
 
+export class Plus1Muddle {
+  id = 'plus1Muddle';
+  src = 'Plus1Muddle.png';
+}
+
 export class Plus1Disarm {
   id = 'plus1Disarm';
   src = 'Plus1Disarm.png';
@@ -163,6 +168,11 @@ export class Pull1Rolling {
 export class Plus1Push1 {
   id = 'plus1Push1';
   src = 'Plus1Push1.png';
+}
+
+export class Plus1Invisible {
+  id = 'plus1Invisible';
+  src = 'Plus1Invisible.png';
 }
 
 export class Plus2Muddle {
@@ -297,6 +307,11 @@ export class Shield1Rolling {
 export class Plus1Shield1 {
   id = 'plus1Shield1';
   src = 'Plus1Shield.png';
+}
+
+export class Pierce1Rolling {
+  id = 'pierce1rolling';
+  src = 'RollingPierce1.png';
 }
 
 export class Pierce3Rolling {

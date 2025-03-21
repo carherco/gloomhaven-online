@@ -1172,7 +1172,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk3-1' });
 
   campaign.gainAbility({ playerName: 'Víctor', ability: 'eternal-equilibrium' });
-  campaign.gainPerk({ playerName: 'Víctor', perkId: 'scPerk12' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk12' });
 
   campaign.buyItem({ playerName: 'Víctor', itemId: 48 });
   campaign.sellItem({ playerName: 'Mandrágora', itemId: 33 });
