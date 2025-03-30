@@ -1341,5 +1341,31 @@ export function loadCampaing(): CampaignStatus {
     ]
   });
 
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({playerName: 'Mandrágora'});
+  campaign.sellItem({ playerName: 'Mandrágora', itemId: 112 });
+  campaign.sellItem({ playerName: 'Mandrágora', itemId: 26 });
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 11 });
+
+  campaign.resolveCityEvent({eventId: 16, playersResults:[
+    { playerName: 'Víctor', playerResults: {g: -10} }
+  ], rewards: {addCityEvents: [70]}, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 3, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 22,
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 6, g: 24, t: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 16, g: 28, t: 1} },
+      { playerName: 'Solete', playerResults: {xp: 9, g: 4} },
+      { playerName: 'Mandrágora', playerResults: {xp: 6, g: 8, t: 2} }
+    ],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ARTIFACT_RECOVERED]},
+    treasuresLooted: [21],
+    scenariosUnlocked: [31, 35, 36]
+  });
+
   return campaign.getStatus();
 }
