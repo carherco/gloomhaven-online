@@ -1248,7 +1248,6 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk2' });
   campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
   campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
-  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk10' });
 
   campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 36 });
   campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 12 });
@@ -1314,7 +1313,10 @@ export function loadCampaing(): CampaignStatus {
       { playerName: 'Oswin el Previsor', playerResults: {xp: 9, g: 24, t: 1} },
       { playerName: 'Solete', playerResults: {xp: 12, g: 20, t: 1} },
       { playerName: 'Mandrágora', playerResults: {xp: 13, g: 8} }
-    ], rewards: {itemDesigns: [83]}, treasuresLooted: [11], scenariosUnlocked: [21, 22]
+    ],
+    rewards: {itemDesigns: [83], partyAchievements: [PARTY_ACHIEVEMENTS.A_DEMONS_ERRAND]},
+    treasuresLooted: [11],
+    scenariosUnlocked: [21, 22]
   });
 
   campaign.completeSoloScenario({
@@ -1366,6 +1368,41 @@ export function loadCampaing(): CampaignStatus {
     treasuresLooted: [21],
     scenariosUnlocked: [31, 35, 36]
   });
+
+  campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'scroll-of-blizzards' });
+  campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk9-1' });
+  campaign.gainAbility({ playerName: 'Mandrágora', ability: 'stick-to-the-shadows' });
+  //campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
+  //campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
+
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({playerName: 'Mandrágora'});
+
+  campaign.buyItem({playerName: 'Solete', itemId: 44});
+  campaign.buyItem({playerName: 'Solete', itemId: 18});
+  campaign.buyItem({playerName: 'Epidemus', itemId: 33});
+
+  campaign.resolveCityEvent({eventId: 40, playersResults:[
+    { playerName: 'Oswin el Previsor', playerResults: {items: [102]} }
+  ], rewards: {reputation: 1}, discard: true});
+
+  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 102});
+
+  campaign.completeScenario({
+    scenarioId: 31,
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 9, g: 4, t: 1, items: [100]} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 11, g: 32, t: 1} },
+      { playerName: 'Solete', playerResults: {xp: 11, g: 12, t: 1} },
+      { playerName: 'Mandrágora', playerResults: {xp: 22, g: 8, t: 1, pq: 1} }
+    ],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ARTIFACT_CLEANSED]},
+    treasuresLooted: [69],
+    scenariosUnlocked: [43, 37, 38, 39]
+  });
+
+  campaign.unlockScenario({scenariosUnlocked: [57]});
 
   return campaign.getStatus();
 }

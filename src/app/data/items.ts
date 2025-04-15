@@ -993,12 +993,12 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'robes of summoning',
-    amount: 4,
+    amount: 1,
     points: 99,
     image: 'items/64-151/robes-of-summoning.png',
-    type: 'legs',
+    type: 'body',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'robesofsummoning'
   },
   {
@@ -1013,12 +1013,12 @@ export const ITEMS: ItemDef[] = [
   },
   {
     name: 'sacrificial robes',
-    amount: 4,
+    amount: 1,
     points: 101,
     image: 'items/64-151/sacrificial-robes.png',
-    type: 'legs',
+    type: 'body',
     use: 'spend',
-    price: 10,
+    price: 50,
     xws: 'sacrificialrobes'
   },
   {

@@ -707,9 +707,51 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
   },
   {
     name: '#15 Shrine of Strength',
-    introduction: [],
+    introduction: [
+      `Ubicado en un alto valle en lo profundo de las
+      Montañas de Copperneck, este santuario no es
+      fácil de encontrar ni muy accesible, pero
+      afortunadamente, ya conocéis el camino.`,
+      `El santuario se encuentra en el borde de un
+      lago congelado gigante rodeado de árboles
+      antiguos e imponentes. Adornando la cara de
+      piedra de la entrada hay innumerables símbolos
+      de poder y fuerza, pero no se puede determinar
+      si el santuario estaba dedicado a alguna entidad
+      específica o simplemente al concepto general de
+      fortaleza.`,
+      `Entráis por las grandes puertas de piedra,
+      esperando encontrar algo dentro que aumente
+      vuestro propio poder. Mientras camináis por la
+      entrada, véis una cantidad de inscripciones
+      rúnicas talladas en las paredes. Son difíciles de
+      entender, pero creéis que profesan una ideología
+      de "La fuerza engendra fuerza." Para aumentar
+      la propia fuerza, primero se debe demostrar la
+      fuerza.`,
+      `Abrís el siguiente conjunto de puertas y os
+      encuentráis cara a cara con esa ideología llevada
+      a la práctica. Un poderoso Savvas se materializa
+      frente a vosotros y sin palabras comienza a canalizar
+      una fuerza destructiva en vuestra dirección. Tendréis
+      que demostrar vuestra valía para llegar a lo que sea
+      que esté en este templo.`
+    ],
     milestones: [],
-    conclusion: []
+    conclusion: [
+      `Os apresuráis hacia adelante y agarráis la runa
+      de la fuerza que yace sobre un pedestal en la
+      cámara interior. Inmediatamente, un poder
+      abrumador surge a través de vosotros y todos vuestros
+      enemigos desaparecen tan rápido como habían
+      aparecido.`,
+      `Sentís una gran fuerza que brota dentro de vosotros.
+      Por un instante, vuestra visión se apaga, y véis
+      imágenes de un extraño alfabeto rúnico.`,
+      `El poder se disipa y vuestra visión regresa.
+      Rápidamente anotáis los símbolos que visteis,
+      aunque no sabéis su significado.`
+    ]
   },
   {
     name: '#16 Mountain Pass',
@@ -1539,10 +1581,122 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       Chamber) y silenciar la Voz. <strong>(42-Realm of the Voice)</strong>`
     ]
   },
-    { name: '#31 Plane of the Night'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    {
+      name: '#31 Plane of the Night',
+      introduction: [
+        `Hail se frotaba las manos con emoción.`,
+        `"En el día de hoy, puedo deciros que, por
+        primera vez, no me arrepiento de haberos
+        puesto del revés cuando nos conocimos", dijo
+        con naturalidad. "La Vasija de los Elementos! ¿Y
+        decís que estuvo delante de mis narices todo el
+        rato? Es increíble cómo algunas cosas se
+        olvidan tan fácilmente".`,
+        `Ella alargó la mano para tocarlo, pero
+        rápidamente la retiró. "Oh, ¿así que esto es por
+        lo que me lo trajisteis? Y yo que pensaba que era
+        una muestra de amistad". Dijo frunciendo el
+        ceño.`,
+        `"Éste", dijo, señalando el artefacto, "es un claro
+        ejemplo de un mal regalo. Váis a tener que
+        limpiarlo antes de que pueda aceptarlo.`,
+        `"El artefacto ha sido sintonizado con el Plano
+        de la Noche (Plane of the Night), capaz de
+        corromper y destruir todo lo que entra en
+        contacto con él. Podríais causar muchos
+        estragos con esto, pero con una sintonización
+        tan fuerte, no hay forma de controlar su poder.
+        Necesitaréis romper la conexión para
+        balancearlo."`,
+        `Os quedáis mirando fijamente a Hail. "Oh, es
+        que, ¿tengo que hacerlo todo?" preguntó con
+        incredulidad. "Vale, mirad, no voy a entrar y
+        arreglarlo, pero supongo que puedo transportar
+        vuestras esencias al otro lado para que puedan
+        cortar el enlace de sombra por vosotros".`,
+        `Hail comienza a mover sus manos con suavidad
+        hacia delante y hacia atrás. De vez en cuando
+        una mano se desliza hasta su muñeca, sólo para
+        resurgir, aferrándose a la magia de colores, que
+        ella comienza a esparcir sobre vosotros.`,
+        `"Así todo es muy simple. Pronto os encontraréis
+        en el Plano de la Noche (Plane of the Night).
+        Sólo mirad alrededor en busca de un gigantesco
+        pilar negro que se extiende infinitamente en el
+        cielo, y entonces destruidlo. Una vez que lo
+        hagáis, os traeré de vuelta aquí."`,
+        `Incluso antes de que tengáis tiempo de
+        protestar, vuestra visión se oscurece. Al
+        principio sentís como si estuvierais cayendo,
+        pero luego os dais cuenta de que estáis en
+        tierra firme.`,
+        `Vuestra visión se ajusta, y empezáis a ver
+        rasgos en vuestro entorno. Estáis en una cueva,
+        cubierta de un resbaladizo limo negro. Y hay
+        demonios, muchos demonios.`
+      ],
+      milestones: [
+        {
+          key: '1',
+          texts: [
+            `Cuando empezáis a pensar que Hail os envió al
+            lugar equivocado, véis con alegría el contorno de
+            una torre a lo lejos. La construcción es enorme,
+            con retorcidas cuerdas de oscuridad entrando y
+            saliendo unas de otras, que llegan a través de
+            una abertura en el techo de la caverna que hay
+            sobre tu cabeza.`
+          ]
+        }
+      ],
+      conclusion: [
+        `Con un último golpe, la torre de cuerda negra
+        se parte. Las hebras se retuercen y azotan
+        alrededor, subiendo rápidamente fuera de la
+        cueva, como si estuvieran cayendo en el cielo.
+        El suelo tiembla. Se forman grietas debajo de
+        los pies y hay un fuerte ruido de enrejado
+        mientras toda la cámara se mueve y comienza a
+        venirse abajo.`,
+        `A medida que el pánico crece, sois
+        transportados de vuelta al Hueso Torcido
+        (Crooked Bone) con Hail de pie en frente vuestro.`,
+        `"Cielos, esa conexión retrocedió mucho más
+        rápido de lo que había previsto. Tuvistéis suerte
+        de que pudiera sacaros de allí antes de que todo
+        el lugar se colapsara."`,
+        `"La sintonía ha sido ciertamente interrumpida.
+        El artefacto está perfectamente calibrado". Hail
+        coge la vasija con sus manos y la estudia de
+        cerca. "Una verdadera maravilla".`,
+        `"Dejando a un lado la diversión, si estáis
+        buscando a la entidad que podría haberlo
+        sintonizado de tal manera, puede que tenga
+        algo para vosotros." Ella dejó el recipiente y sacó un
+        mapa del aire, poniéndolo sobre una mesa
+        desvencijada. "Después de que la conexión con
+        el Plano de la Noche (Plane of the Night) fuese
+        cortada, sentí brevemente un tirón en el
+        artefacto desde tres lugares diferentes. Estaba
+        siendo utilizado como fuente de energía, pero
+        cuando la fuente se agotó, la conexión se
+        detuvo casi inmediatamente.`,
+        `"Todavía soy capaz de identificar los lugares",
+        dijo Hail triunfalmente, marcando el mapa.
+        "Aquí, en el Mar Neblinoso (Misty Sea), en lo
+        profundo de la superficie. <strong>(43-Drake Nest)</strong> <strong>(37-Doom Trench)</strong>
+        Otro en las partes oscuras del Bosque de las Dagas (Dagger
+        Forest) <strong>(38-Slave Pens)</strong>. y finalmente uno alto en la cima
+        de los picos de los Cuellos de Cobre
+        (Coppernecks) <strong>(39-Treacherous Divide)</strong>."`,
+        `Hail se puso recta y alcanzó el artefacto.
+        "Mantendré esto a salvo."`,
+        `La miráis con desaprobación. " Esta bien", dijo
+        ella. "Puedes quedártela. Probablemente estará
+        más seguro contigo. Sólo prométeme que me
+        dejarás echarle un vistazo más de cerca alguna
+        vez."`
+      ]
     },
     {
       name: '#32 Decrepit Wood',
@@ -2081,7 +2235,14 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [
       {
         key: '1',
-        texts: []
+        texts: [
+          `Parece que habéis interrumpido al maestro de
+          caza alimentando a sus perros. No parece muy
+          contento por vuestra intrusión.`,
+          `"Supongo que a mis mascotas les vendría bien
+          un poco de carne fresca", refunfuña, soltando
+          las cadenas....`
+        ]
       },
       {
         key: '2',
