@@ -1404,5 +1404,59 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.unlockScenario({scenariosUnlocked: [57]});
 
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({playerName: 'Mandrágora'});
+
+  campaign.resolveCityEvent({eventId: 1, playersResults:[
+      { playerName: 'Epidemus', playerResults: {xp: 10, g: -5} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 10, g: -5} },
+      { playerName: 'Solete', playerResults: {xp: 10, g: -5} },
+      { playerName: 'Mandrágora', playerResults: {xp: 10, g: -5} },
+      { playerName: 'Adolfo', playerResults: {xp: 10, g: -5} },
+      { playerName: 'Víctor', playerResults: {xp: 10, g: -5} }
+  ], discard: false});
+
+  campaign.enhanceAbility({ playerName: 'Mandrágora', gold: 30 });
+  campaign.buyItem({playerName: 'Oswin el Previsor', itemId: 41});
+
+  campaign.completeScenario({
+    scenarioId: 57,
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 5, g: 8} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 4, g: 16, items: [44]} },
+      { playerName: 'Solete', playerResults: {xp: 9, g: 4, pq: 1} },
+      { playerName: 'Mandrágora', playerResults: {xp: 6, g: 8, t: 1} }
+    ],
+    rewards: {reputation: 1, itemDesigns: [90]},
+    treasuresLooted: [22, 3],
+    scenariosUnlocked: [58]
+  });
+
+  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 44});
+  campaign.buyItem({playerName: 'Oswin el Previsor', itemId: 17});
+  campaign.buyItem({playerName: 'Oswin el Previsor', itemId: 10});
+
+  campaign.makeDonation({playerName: 'Epidemus'});
+
+  campaign.resolveCityEvent({eventId: 70, rewards: {prosperity: 1}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 58,
+    level: 4,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 6, g: 0, t: 2} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 14, g: 32, t: 1} },
+      { playerName: 'Solete', playerResults: {xp: 6, g: 32, t: 2, pq: 1} },
+      { playerName: 'Mandrágora', playerResults: {xp: 9, g: 12, t: 1} }
+    ],
+    rewards: {reputation: 2}
+  });
+
+  campaign.makeDonation({playerName: 'Mandrágora'});
+  campaign.retireCharacter({name: 'Mandrágora', cityEventsToAdd: [45], roadEventsToAdd: [45]});
+  campaign.openEnvelopeX();
+
+
   return campaign.getStatus();
 }

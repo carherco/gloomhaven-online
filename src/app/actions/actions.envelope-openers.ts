@@ -415,12 +415,7 @@ export function loadCampaing(): CampaignStatus {
     rewards: {reputation: 2},
   });
 
-  // TODO: Open envelope X
-  // "We call from de dust.
-  // From the aged bones of those you have killed.
-  // Speak our name into his web and we will be free.
-  // 10 clues you must find. -10 letters to our name-.
-  // Here is our first: B."
+  campaign.openEnvelopeX();
 
   campaign.buyItem({playerName: 'Farts Like Thunder', itemId: 15});
 

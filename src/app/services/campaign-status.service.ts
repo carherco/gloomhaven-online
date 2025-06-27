@@ -601,4 +601,10 @@ export class CampaignStatusService {
     }
 
   }
+
+  openEnvelopeX() {
+    this.decipherMessage({message: 'We call from de dust. From the aged bones of those you have killed. Speak our name into his web and we will be free. 10 clues you must find. -10 letters to our name-. Here is our first: B.'});
+    let lastMessage = this.status.decipheredMessages.pop();
+    this.status.decipheredMessages.unshift(lastMessage!);
+  }
 }
