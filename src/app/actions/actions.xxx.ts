@@ -1457,6 +1457,25 @@ export function loadCampaing(): CampaignStatus {
   campaign.retireCharacter({name: 'Mandrágora', cityEventsToAdd: [45], roadEventsToAdd: [45]});
   campaign.openEnvelopeX();
 
+  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.enhanceAbility({ playerName: 'Solete', gold: 50 });
+
+  campaign.resolveCityEvent({eventId: 9, rewards: {prosperity: 1}, discard: true});
+  campaign.resolveRoadEvent({eventId: 19, rewards: {reputation: 1}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 38,
+    level: 5,
+    playersResults: [
+      { playerName: 'Epidemus', playerResults: {xp: 3, g: 16, t: 0} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 14, g: 32, t: 1} },
+      { playerName: 'Solete', playerResults: {xp: 7, g: 4, t: 1, items: [97]} },
+      { playerName: 'Adolfo', playerResults: {xp: 10, g: 0, t: 1, pq: 1} }
+    ],
+    rewards: {reputation: 1, partyAchievements: [PARTY_ACHIEVEMENTS.REDTHORNS_AID]}, treasuresLooted: [29], scenariosUnlocked: [44, 48]
+  });
+
+  campaign.sellItem({playerName: 'Solete', itemId: 97});
 
   return campaign.getStatus();
 }
