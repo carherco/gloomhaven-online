@@ -1,5 +1,5 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner, Scoundrel, Plagueherald } from '../data/charactersDef';
+import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner, Scoundrel, Plagueherald, Sawbones } from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -1476,6 +1476,61 @@ export function loadCampaing(): CampaignStatus {
   });
 
   campaign.sellItem({playerName: 'Solete', itemId: 97});
+  campaign.makeDonation({playerName: 'Epidemus'});
+
+  campaign.resolveCityEvent({eventId: 45, rewards: {addCityEvents: [62]}, discard: true});
+  campaign.resolveRoadEvent({eventId: 35, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 55,
+    level: 5,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 7, g: 32, t: 1} },
+      { playerName: 'Epidemus', playerResults: {xp: 7, g: 0, t: 2} },
+      { playerName: 'Solete', playerResults: {xp: 7, g: 4, t: 0, pq: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 7, g: 16, t: 1} },
+    ],
+    rewards: {gold: 10}, scenariosUnlocked: [56]
+  });
+
+  campaign.buyItem({playerName: 'Solete', itemId: 34});
+  //campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk9-2' });
+  campaign.makeDonation({playerName: 'Epidemus'});
+
+  campaign.retireCharacter({name: 'Epidemus', cityEventsToAdd: [52, 39], roadEventsToAdd: [52, 39]});
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Sawbones,
+    name: 'Adri',
+    personalQuest: PERSONAL_QUESTS[530]
+  });
+
+  campaign.completeSoloScenario({
+    level: 4,
+    playersResults: [
+      { playerName: 'Adri', playerResults: {xp: 0, g: 0, items: [148]} },
+    ]
+  });
+
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'reforge' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'continual-supply' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'side-pouch' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'scroll-of-judgment' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'catastrophic-bomb' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk10' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-1' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-2' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk2' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
+
+  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 36 });
+  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 12 });
+  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 13 });
+  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 95 });
+
+  campaign.enhanceAbility({ playerName: 'Oswin el Previsor', gold: 50 });
 
   return campaign.getStatus();
 }
