@@ -74,7 +74,7 @@ export const INITIAL_STATUS: CampaignStatus = {
 
 const EXPERIENCE_MILESTONES = [0, 45, 95, 150, 210, 275, 345, 420, 500];
 const PROSPERITY_MILESTONES = [4, 9, 15, 22, 30, 39];
-const DONATIONS_MILESTONES = [100, 150, 200, 250, 300, 350, 400, 450, 500];
+const DONATIONS_MILESTONES = [100, 150, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000];
 const PRICE_MODIFIER_MAP = [
   -5, -5, -4, -4, -4, -4, -3, -3, -3, -3, -2, -2, -2, -2, -1, -1, -1, -1,
   0, 0, 0, 0, 0,
@@ -181,6 +181,12 @@ export class CampaignStatusService {
       ownedAbilityCards: [ // TODO: añadir/elegir cartas del nivel
         ...payload.characterClass.levelXCards,
         ...payload.characterClass.level1Cards,
+        ...payload.characterClass.level2Cards,
+        ...payload.characterClass.level3Cards,
+        ...payload.characterClass.level4Cards,
+        ...payload.characterClass.level5Cards,
+        ...payload.characterClass.level6Cards,
+        ...payload.characterClass.level7Cards,
       ],
       ownedItems: [],
       scenarioAbilityCards: [],

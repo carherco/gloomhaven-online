@@ -818,7 +818,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/night-blade.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'nightblade'
   },
   {
@@ -1366,7 +1366,7 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 136,
     image: 'items/64-151/silent-stiletto.png',
-    type: 'legs',
+    type: 'one-hand',
     use: 'spend',
     price: 50,
     xws: 'silentstiletto'

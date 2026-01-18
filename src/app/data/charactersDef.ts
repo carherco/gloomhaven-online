@@ -724,6 +724,48 @@ export const Sawbones: CharacterClass = {
   ]
 };
 
+export const Nightshroud: CharacterClass = {
+  id: 'nightshroud',
+  key: 'NS',
+  race: 'Aesther',
+  className: 'Nightshroud',
+  handCardSize: 11,
+  image: 'Nightshroud.png',
+  hitPoints: [8, 9, 11, 12, 14, 15, 17, 18, 20],
+  levelXCards: ['prevention-is-key', 'teamwork', 'vaccine'],
+  level1Cards: [
+    'battlefield-medicine', 'bloody-saw', 'booster-shot',
+    'curative-mixture', 'first-aid', 'hand-of-the-surgeon',
+    'hold-back-the-pain', 'mobile-response', 'syringe',
+    'triage'
+  ],
+  level2Cards: ['hamstring', 'precaution'],
+  level3Cards: ['regenerative-tissue', 'vital-strike'],
+  level4Cards: ['blood-transfusion', 'do-no-harm'],
+  level5Cards: ['amputate', 'research-the-cure'],
+  level6Cards: ['euthanize', 'prescription'],
+  level7Cards: ['master-physician', 'surgeons-satchel'],
+  level8Cards: ['bedside-manner', 'gentlemans-anger'],
+  level9Cards: ['grisly-trauma', 'prep-for-surgery'],
+  perks: [
+    { id: 'sbPerk1', title: 'Replace one -2 card with one 0 Card', addModifiers: [new Plus0()], removeModifiers: [new Minus2()] },
+    { id: 'sbPerk2-1', title: 'Replace one -1 card with one +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'sbPerk2-2', title: 'Replace One -1 Card with One +1 Card', addModifiers: [new Plus1()], removeModifiers: [new Minus1()] },
+    { id: 'sbPerk3-1', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'sbPerk3-2', title: 'Replace One 0 Card with One +2 Card', addModifiers: [new Plus2()], removeModifiers: [new Plus0()] },
+    { id: 'sbPerk4', title: 'Add two +1 cards', addModifiers: [new Plus1(), new Plus1()], removeModifiers: [] },
+    { id: 'sbPerk5-1', title: 'Add one +1 Wind card', addModifiers: [new Plus1Wind()], removeModifiers: [] },
+    { id: 'sbPerk5-2', title: 'Add one +1 Wind card', addModifiers: [new Plus1Wind()], removeModifiers: [] },
+    { id: 'sbPerk5-3', title: 'Add one +1 Wind card', addModifiers: [new Plus1Wind()], removeModifiers: [] },
+    { id: 'sbPerk6', title: 'Add three rolling Poisin cards', addModifiers: [new PoisonRolling(), new PoisonRolling(), new PoisonRolling()], removeModifiers: [] },
+    { id: 'sbPerk7', title: 'Add two rolling Curse cards', addModifiers: [new CurseRolling(), new CurseRolling()], removeModifiers: [] },
+    { id: 'sbPerk8', title: 'Add two rolling Immobilize cards', addModifiers: [new ImmobilizeRolling(), new ImmobilizeRolling()], removeModifiers: [] },
+    { id: 'sbPerk9-1', title: 'Add one rolling Stun card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'sbPerk9-2', title: 'Add one rolling Stun card', addModifiers: [new StunRolling()], removeModifiers: [] },
+    { id: 'sbPerk10', title: 'Ignore negative scenario effects and add one +1 Cards', addModifiers: [new Plus1()], removeModifiers: [] },
+  ]
+};
+
 export const AvailableCharacters: CharacterClass[] = [
   Brute,
   Cragheart,
@@ -741,4 +783,5 @@ export const AvailableCharacters: CharacterClass[] = [
   Summoner,
   Plagueherald,
   Sawbones,
+  Nightshroud,
 ];

@@ -1,5 +1,23 @@
 import { PARTY_ACHIEVEMENTS, GLOBAL_ACHIEVEMENTS } from '../data/achievements';
-import { Cragheart, Tinkerer, Spellweaver, Mindthief, Doomstalker, Brute, Sunkeeper, Elementalist, Berserker, BeastTyrant, Soothsinger, Quartermaster, Summoner, Scoundrel, Plagueherald, Sawbones } from '../data/charactersDef';
+import {
+  Cragheart,
+  Tinkerer,
+  Spellweaver,
+  Mindthief,
+  Doomstalker,
+  Brute,
+  Sunkeeper,
+  Elementalist,
+  Berserker,
+  BeastTyrant,
+  Soothsinger,
+  Quartermaster,
+  Summoner,
+  Scoundrel,
+  Plagueherald,
+  Sawbones,
+  Nightshroud
+} from '../data/charactersDef';
 import { PERSONAL_QUESTS } from '../data/personal-quests';
 import { Player } from '../model/player';
 import { CampaignStatus, CampaignStatusService } from '../services/campaign-status.service';
@@ -1499,6 +1517,8 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.retireCharacter({name: 'Epidemus', cityEventsToAdd: [52, 39], roadEventsToAdd: [52, 39]});
 
+  campaign.unlockScenario({scenariosUnlocked: [77]});
+
   campaign.createCharacter({
     playerId: players[0].uid,
     characterClass: Sawbones,
@@ -1525,12 +1545,160 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
   // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
 
-  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 36 });
-  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 12 });
-  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 13 });
-  // campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 95 });
+  campaign.buyItem({ playerName: 'Adri', itemId: 34 });
+  campaign.buyItem({ playerName: 'Adri', itemId: 13 });
 
   campaign.enhanceAbility({ playerName: 'Oswin el Previsor', gold: 50 });
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Solete'});
+
+  campaign.resolveCityEvent({eventId: 32, playersResults:[
+      { playerName: 'Oswin el Previsor', playerResults: {g: 5} },
+      { playerName: 'Adri', playerResults: {g: 10} },
+  ], rewards: {reputation: 1}, discard: true});
+
+  campaign.resolveRoadEvent({eventId: 14, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 56,
+    level: 5,
+    playersResults: [
+      { playerName: 'Adolfo', playerResults: {xp: 7, g: 4, t: 1} },
+      { playerName: 'Adri', playerResults: {xp: 20, g: 40, t: 1} },
+      { playerName: 'Solete', playerResults: {xp: 5, g: 12, t: 0, pq: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 14, g: 28, t: 2} },
+    ],
+    rewards: {gold: 10, reputation: 2, itemDesigns: [82]}, treasuresLooted: [45]
+  });
+
+  campaign.addCityEvent(76);
+  campaign.addRoadEvent(67);
+
+  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({playerName: 'Solete'});
+
+  campaign.retireCharacter({name: 'Adolfo', cityEventsToAdd: [58, 38], roadEventsToAdd: [58, 38]});
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Doomstalker,
+    name: 'Álvaro',
+    personalQuest: PERSONAL_QUESTS[517]
+  });
+
+  campaign.completeSoloScenario({
+    level: 4,
+    playersResults: [
+      { playerName: 'Álvaro', playerResults: {xp: 0, g: 0, items: [147]} },
+    ]
+  });
+
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'reforge' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'continual-supply' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'side-pouch' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'scroll-of-judgment' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'catastrophic-bomb' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk10' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-1' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-2' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk2' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
+
+  campaign.buyItem({ playerName: 'Álvaro', itemId: 15 });
+  campaign.buyItem({ playerName: 'Álvaro', itemId: 6 });
+  campaign.buyItem({ playerName: 'Álvaro', itemId: 33 });
+  campaign.buyItem({ playerName: 'Álvaro', itemId: 12 });
+  campaign.buyItem({ playerName: 'Álvaro', itemId: 13 });
+  campaign.buyItem({ playerName: 'Álvaro', itemId: 41 });
+
+  campaign.retireCharacter({name: 'Solete', cityEventsToAdd: [48, 34], roadEventsToAdd: [48, 34]});
+
+  campaign.createCharacter({
+    playerId: players[0].uid,
+    characterClass: Nightshroud,
+    name: 'Sueñito',
+    personalQuest: PERSONAL_QUESTS[528]
+  });
+
+  campaign.completeSoloScenario({
+    level: 4,
+    playersResults: [
+      { playerName: 'Sueñito', playerResults: {xp: 0, g: 0, items: [143]} },
+    ]
+  });
+
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'reforge' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'continual-supply' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'side-pouch' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'scroll-of-judgment' });
+  // campaign.gainAbility({ playerName: 'Oswin el Previsor', ability: 'catastrophic-bomb' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk10' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-1' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk1-2' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk2' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
+  // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
+
+  campaign.buyItem({ playerName: 'Sueñito', itemId: 71 });
+  campaign.buyItem({ playerName: 'Sueñito', itemId: 5 });
+  campaign.buyItem({ playerName: 'Sueñito', itemId: 82 });
+  campaign.buyItem({ playerName: 'Sueñito', itemId: 34 });
+  campaign.buyItem({ playerName: 'Sueñito', itemId: 12 });
+  campaign.buyItem({ playerName: 'Sueñito', itemId: 13 });
+
+  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 13});
+  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 16});
+  campaign.enhanceAbility({ playerName: 'Oswin el Previsor', gold: 100 });
+
+  campaign.resolveRoadEvent({eventId: 39, rewards: {addCityEvents: [65]}, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 77,
+    level: 4,
+    playersResults: [
+      { playerName: 'Álvaro', playerResults: {xp: 14, g: 8, t: 1, pq: 4} },
+      { playerName: 'Sueñito', playerResults: {xp: 15, g: 28, t: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 11, g: 36, t: 1} },
+    ],
+    rewards: {xp: 5}
+  });
+
+  campaign.buyItem({playerName: 'Adri', itemId: 17});
+  campaign.buyItem({playerName: 'Adri', itemId: 27});
+  campaign.sellItem({playerName: 'Víctor', itemId: 71});
+  campaign.buyItem({playerName: 'Adri', itemId: 71});
+
+  campaign.resolveCityEvent({eventId: 35, discard: true});
+  campaign.resolveRoadEvent({eventId: 52, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 44,
+    level: 4,
+    playersResults: [
+      { playerName: 'Adri', playerResults: {xp: 13, g: 32, t: 1 } },
+      { playerName: 'Álvaro', playerResults: {xp: 15, g: 4, t: 2, pq: 4} },
+      { playerName: 'Sueñito', playerResults: {xp: 9, g: 20, t: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 13, g: 28, t: 1} },
+    ],
+    rewards: {reputation: 2, itemDesigns: [78]}, scenariosUnlocked: [63]
+  });
+
+  campaign.resolveCityEvent({eventId: 33, rewards: {reputation: 2}, discard: true});
+  campaign.resolveRoadEvent({eventId: 67, rewards: {prosperity: 1}, discard: false});
+
+  campaign.completeScenario({
+    scenarioId: 48,
+    level: 4,
+    playersResults: [
+      { playerName: 'Adri', playerResults: {xp: 4, g: 34, t: 2 } },
+      { playerName: 'Álvaro', playerResults: {xp: 5, g: 0, t: 2, pq: 2} },
+      { playerName: 'Sueñito', playerResults: {xp: 6, g: 4, t: 1, pq: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 6, g: 12, t: 1} },
+    ],
+    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.END_OF_CORRUPTION_1]}, treasuresLooted: [64], scenariosUnlocked: [51]
+  });
 
   return campaign.getStatus();
 }
