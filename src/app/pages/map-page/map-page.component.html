@@ -1,0 +1,34 @@
+<div class="map-container">
+  <div class="map-wrapper" style="position: relative; display: inline-block;">
+    <img src="assets/images/world-map/gloomhaven-map-orig.png" alt="Gloomhaven Map" class="world-map">
+    
+    <div class="prosperity-overlay">
+      <div *ngFor="let check of checks; let i = index" class="tick-mark" [class.milestone]="milestones.includes(i + 1)">
+        <span *ngIf="check" class="material-icons">{{check}}</span>
+      </div>
+    </div>
+
+    <!-- Scenario Markers -->
+    <ng-container *ngFor="let s of scenarios">
+      <div 
+           [style.top.%]="s.top" 
+           [style.left.%]="s.left"
+           class="scenario-marker"
+           [class.status-available]="s.status === 'Available'"
+           [class.status-completed]="s.status === 'Completed'"
+           [class.status-blocked]="s.status === 'Blocked'"
+           *ngIf="s.top && s.left"
+           title="{{s.title}} ({{s.status}})">
+           {{s.id}}
+      </div>
+    </ng-container>
+  </div>
+  
+  <div class="prosperity-info">
+    <div>City Prosperity: {{prosperityPoints}} - Level: {{prosperityLevel}}</div>
+  </div>
+
+  <div class="locations-container">
+    <app-locations-tracker [locations]="scenarios"></app-locations-tracker>
+  </div>
+</div>

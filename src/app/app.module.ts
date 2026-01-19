@@ -54,6 +54,7 @@ import { TreasuresTrackerComponent } from './components/treasures-tracker/treasu
 import { PlayerSheetComponent } from './components/player-sheet/player-sheet.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { TownRecordsComponent } from './pages/town-records/town-records.component';
+import { MapPageComponent } from './pages/map-page/map-page.component';
 
 
 @NgModule({
@@ -100,7 +101,8 @@ import { TownRecordsComponent } from './pages/town-records/town-records.componen
     LocationsTrackerComponent,
     TreasuresTrackerComponent,
     PlayerSheetComponent,
-    TownRecordsComponent
+    TownRecordsComponent,
+    MapPageComponent
   ],
   imports: [
     BrowserModule,

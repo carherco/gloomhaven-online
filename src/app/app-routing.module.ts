@@ -16,6 +16,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ScenariosPageComponent } from './pages/scenarios-page/scenarios-page.component';
 import { PlayerCampaignsPageComponent } from './pages/player-campaigns-page/player-campaigns-page.component';
 import { TownRecordsComponent } from './pages/town-records/town-records.component';
+import { MapPageComponent } from './pages/map-page/map-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'players', component: PlayersPageComponent },
   { path: 'shop', component: ShopPageComponent },
   { path: 'maps', component: ScenariosPageComponent},
+  { path: 'world-map', component: MapPageComponent },
   { path: 'map/:id', component: ScenarioPageComponent },
   { path: 'play', component: GamePageComponent, canActivate: [PlayerSelectedGuard] },
   { path: 'select-player', component: SelectPlayerPageComponent },

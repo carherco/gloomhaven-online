@@ -1,0 +1,101 @@
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.world-map {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* Overlay Positioning */
+.prosperity-overlay {
+    position: absolute;
+    bottom: 2.3%; 
+    left: 10.5%;
+    width: 77%;
+    height: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tick-mark {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.material-icons {
+    font-size: 1.2vw;
+    color: #ce2a2a;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.tick-mark.milestone .material-icons {
+    color: #e6b800;
+    font-size: 1.5vw;
+}
+
+/* Scenario Markers */
+.scenario-marker {
+    position: absolute;
+    width: 2.5%; /* Relative size */
+    height: 3.5%; /* Relative size */
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    text-shadow: 0 0 2px black;
+}
+
+.scenario-marker.status-completed {
+    background-color: #28a745; /* Green */
+    border: 2px solid white;
+    color: white;
+}
+
+.scenario-marker.status-available {
+    background-color: #007bff;
+    border: 2px solid white;
+}
+
+.scenario-marker.status-blocked {
+    background-color: #dc3545;
+    border: 2px solid white;
+    opacity: 0.7;
+}
+
+.prosperity-info {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.locations-container {
+    width: 100%;
+    padding: 0 10px;
+}
