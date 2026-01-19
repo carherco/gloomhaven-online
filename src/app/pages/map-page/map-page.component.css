@@ -74,11 +74,13 @@
     background-color: #28a745; /* Green */
     border: 2px solid white;
     color: white;
+    opacity: 0.8; /* Slightly transparent */
 }
 
 .scenario-marker.status-available {
     background-color: #007bff;
     border: 2px solid white;
+    opacity: 0.8; /* Slightly transparent */
 }
 
 .scenario-marker.status-blocked {
