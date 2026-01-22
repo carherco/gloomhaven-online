@@ -22,7 +22,8 @@ export class MapPageComponent implements OnInit {
   milestones = [4, 9, 15, 22, 30, 39, 50, 64];
 
   private allScenarioIds: number[] = [...Array(95).keys()];
-  public scenarios: (ScenarioWithStatus & {top?: number, left?: number})[] = [];
+  public scenarios: (ScenarioWithStatus & {top?: number, left?: number, missingRequirements?: string})[] = [];
+  public selectedScenario: (ScenarioWithStatus & {top?: number, left?: number, missingRequirements?: string}) | null = null;
 
   constructor(private campaign: CampaignStatusService) {
     const status$ = this.campaign.getStatus$();
@@ -51,6 +52,7 @@ export class MapPageComponent implements OnInit {
           id => {
             const scenario = SCENARIOS[id];
             let status: 'Unavailable'|'Available'|'Completed'|'Blocked' = 'Unavailable';
+            let missingRequirements: string | undefined;
 
             if(!unlockedScenariosIds.includes(id)) {
                status = 'Unavailable';
@@ -63,6 +65,12 @@ export class MapPageComponent implements OnInit {
                 status = 'Available';
               } else {
                 status = 'Blocked';
+                // Calculate missing requirements (One of these is needed)
+                const reqs = [
+                    ...scenario.globalAchievementsRequired, 
+                    ...scenario.partyAchievementsRequired
+                ];
+                missingRequirements = `Requires ONE of: ${reqs.join(', ')}`;
               }
             } else {
               if( scenario.globalAchievementsRequired.every(achievement => globalAchievements.includes(achievement))
@@ -72,6 +80,21 @@ export class MapPageComponent implements OnInit {
                 status = 'Available';
               } else {
                 status = 'Blocked';
+                // Calculate missing requirements (ALL required)
+                const missing: string[] = [];
+                scenario.globalAchievementsRequired.forEach(req => {
+                    if (!globalAchievements.includes(req)) missing.push(req);
+                });
+                scenario.partyAchievementsRequired.forEach(req => {
+                    if (!partyAchievements.includes(req)) missing.push(req);
+                });
+                scenario.globalAchievementsRequiredIncomplete.forEach(req => {
+                    if (globalAchievements.includes(req)) missing.push(`CANNOT HAVE ${req}`);
+                });
+                
+                if (missing.length > 0) {
+                     missingRequirements = `Requires: ${missing.join(', ')}`;
+                }
               }
             }
             
@@ -81,6 +104,7 @@ export class MapPageComponent implements OnInit {
               id, 
               ...scenario, 
               status,
+              missingRequirements,
               top: coords ? coords.top : undefined,
               left: coords ? coords.left : undefined
             };
@@ -97,6 +121,19 @@ export class MapPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  selectScenario(scenario: any) {
+    // Toggle if clicking the same one
+    if (this.selectedScenario && this.selectedScenario.id === scenario.id) {
+      this.selectedScenario = null;
+    } else {
+      this.selectedScenario = scenario;
+    }
+  }
+
+  clearSelection() {
+    this.selectedScenario = null;
   }
 
 

@@ -1,5 +1,5 @@
 <div class="map-container">
-  <div class="map-wrapper" style="position: relative; display: inline-block;">
+  <div class="map-wrapper" style="position: relative; display: inline-block;" (click)="clearSelection()">
     <img src="assets/images/world-map/gloomhaven-map-orig.png" alt="Gloomhaven Map" class="world-map">
     
     <div class="prosperity-overlay">
@@ -17,15 +17,39 @@
            [class.status-available]="s.status === 'Available'"
            [class.status-completed]="s.status === 'Completed'"
            [class.status-blocked]="s.status === 'Blocked'"
+           [class.selected]="selectedScenario && selectedScenario.id === s.id"
            *ngIf="s.top && s.left"
-           title="{{s.title}} ({{s.status}})">
+           (click)="selectScenario(s); $event.stopPropagation()">
            {{s.id}}
+           
+           <div class="custom-tooltip">
+             <img [src]="'assets/images/world-map/' + s.id + '.png'" alt="Scenario {{s.id}}" class="scenario-thumb">
+             <div class="tooltip-content">
+               <strong>#{{s.id}} {{s.title}}</strong>
+               <div *ngIf="s.status === 'Blocked' && s.missingRequirements" class="requirements-text">
+                 {{s.missingRequirements}}
+               </div>
+             </div>
+           </div>
       </div>
     </ng-container>
   </div>
   
   <div class="prosperity-info">
     <div>City Prosperity: {{prosperityPoints}} - Level: {{prosperityLevel}}</div>
+  </div>
+
+  <!-- Mobile Detail Panel -->
+  <div class="scenario-detail-panel" *ngIf="selectedScenario">
+    <button class="close-btn" (click)="clearSelection()">×</button>
+    <img [src]="'assets/images/world-map/' + selectedScenario.id + '.png'" alt="Scenario {{selectedScenario.id}}" class="scenario-detail-thumb">
+    <div class="detail-content">
+      <h3>#{{selectedScenario.id}} {{selectedScenario.title}}</h3>
+      <div class="status-badge" [ngClass]="'status-' + selectedScenario.status.toLowerCase()">{{selectedScenario.status}}</div>
+      <div *ngIf="selectedScenario.status === 'Blocked' && selectedScenario.missingRequirements" class="requirements-text">
+        {{selectedScenario.missingRequirements}}
+      </div>
+    </div>
   </div>
 
   <div class="locations-container">
