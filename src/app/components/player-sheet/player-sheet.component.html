@@ -10,6 +10,41 @@
   </div>
 </ng-template>
 
+<ng-template #shopModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Shop - {{selectedSlotType | titlecase}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="shop-info">
+      <p><strong>Character Gold:</strong> {{character.gold}}</p>
+      <p *ngIf="priceModifier !== 0" [class.text-danger]="priceModifier > 0" [class.text-success]="priceModifier < 0">
+        <strong>Price Modifier:</strong> {{priceModifier > 0 ? '+' : ''}}{{priceModifier}}
+      </p>
+    </div>
+    <div class="shop-items-grid">
+      <div *ngFor="let item of shopItems" class="shop-item-wrapper">
+        <img 
+          [src]="'assets/images/' + item.image" 
+          [class.out-of-stock]="item.isOutOfStock"
+          [class.insufficient-gold]="!item.canAfford && !item.isOutOfStock"
+          [title]="item.name + ' - ' + item.adjustedPrice + ' gold'"
+          class="shop-item-img">
+        <div class="item-price" [class.too-expensive]="!item.canAfford">
+          {{item.adjustedPrice}}g
+        </div>
+        <div class="item-status" *ngIf="item.isOutOfStock">Out of Stock</div>
+        <div class="item-status insufficient" *ngIf="!item.canAfford && !item.isOutOfStock">Not enough gold</div>
+      </div>
+    </div>
+    <div *ngIf="shopItems.length === 0" class="no-items">
+      No items available for this slot.
+    </div>
+  </div>
+</ng-template>
+
 <div class="player-sheet">
   <!-- Character Name Header -->
   <div class="player-name">{{character.name}}</div>
@@ -68,14 +103,14 @@
     
     <div class="equipment-grid">
       <!-- Head Slot -->
-      <div class="equipment-slot head">
+      <div class="equipment-slot head clickable" (click)="openShopModal('head', shopModal)">
         <div class="slot-label" *ngIf="!getItemForSlot('head')">Head</div>
         <img *ngIf="getItemForSlot('head')" [src]="'assets/images/' + getItemForSlot('head')!.image" class="item-img">
         <div *ngIf="!getItemForSlot('head')" class="empty-slot">Empty</div>
       </div>
 
       <!-- Left Hand Slot -->
-      <div class="equipment-slot hand-left">
+      <div class="equipment-slot hand-left clickable" (click)="openShopModal(getTwoHandedItem() ? 'two-hands' : 'one-hand', shopModal)">
         <div class="slot-label" *ngIf="!getTwoHandedItem() && !getOneHandItems()[0]">Left Hand</div>
         <img *ngIf="getTwoHandedItem()" [src]="'assets/images/' + getTwoHandedItem()!.image" class="item-img">
         <img *ngIf="!getTwoHandedItem() && getOneHandItems()[0]" [src]="'assets/images/' + getOneHandItems()[0].image" class="item-img">
@@ -83,14 +118,14 @@
       </div>
 
       <!-- Body Slot -->
-      <div class="equipment-slot body">
+      <div class="equipment-slot body clickable" (click)="openShopModal('body', shopModal)">
         <div class="slot-label" *ngIf="!getItemForSlot('body')">Body</div>
         <img *ngIf="getItemForSlot('body')" [src]="'assets/images/' + getItemForSlot('body')!.image" class="item-img">
         <div *ngIf="!getItemForSlot('body')" class="empty-slot">Empty</div>
       </div>
 
       <!-- Right Hand Slot -->
-      <div class="equipment-slot hand-right">
+      <div class="equipment-slot hand-right clickable" (click)="openShopModal('one-hand', shopModal)">
         <div class="slot-label" *ngIf="!getTwoHandedItem() && !getOneHandItems()[1]">Right Hand</div>
         <img *ngIf="!getTwoHandedItem() && getOneHandItems()[1]" [src]="'assets/images/' + getOneHandItems()[1].image" class="item-img">
         <div *ngIf="!getTwoHandedItem() && !getOneHandItems()[1]" class="empty-slot">Empty</div>
@@ -98,7 +133,7 @@
       </div>
 
       <!-- Legs Slot -->
-      <div class="equipment-slot legs">
+      <div class="equipment-slot legs clickable" (click)="openShopModal('legs', shopModal)">
         <div class="slot-label" *ngIf="!getItemForSlot('legs')">Legs</div>
         <img *ngIf="getItemForSlot('legs')" [src]="'assets/images/' + getItemForSlot('legs')!.image" class="item-img">
         <div *ngIf="!getItemForSlot('legs')" class="empty-slot">Empty</div>
