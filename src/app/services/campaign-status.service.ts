@@ -247,7 +247,8 @@ export class CampaignStatusService {
   gainReputation(amount: number = 1) {
     this.status = this.cloneStatus();
     this.status.party.reputation += amount;
-    this.status.shop.priceModifier = PRICE_MODIFIER_MAP[20 - this.status.party.reputation];
+    const index = Math.max(0, Math.min(PRICE_MODIFIER_MAP.length - 1, 20 - this.status.party.reputation));
+    this.status.shop.priceModifier = PRICE_MODIFIER_MAP[index];
   }
 
   gainProsperity(amount: number = 1) {
