@@ -2069,11 +2069,22 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       este interesante desafío. Ahora salid de mi casa."`
     ]
   },
-    { name: '#44 Tribal Assault'
-    , introduction: [],
+  {
+    name: '#44 Tribal Assault',
+    introduction: [
+      'Redthorn os conduce fuera de la ruina del arrasado campamento de esclavos de Inox al noreste dentro del denso bosque. "El otro pueblo no está muy lejos de aquí. Está bien escondido, pero me temo lo peor."',
+      'Incluso cuando se enfrenta a aparentemente intransitables muros de vegetación, la Orquídea se mueve rápidamente y sin esfuerzo a través de los árboles y abre pasadizos para que vosotros también podáis pasar. "Los Inox y las Orquídeas solían vivir en relativa armonía. No éramos necesariamente amigos, pero nos dejábamos en paz.',
+      '"En los últimos años, sin embargo, los Inox se han vuelto cada vez más agresivos y territoriales, invadiendo nuestra tierra y atacando a nuestra gente. La destrucción de mi aldea es sólo el último paso de un largo camino de destrucción. No sé qué causó el comportamiento, pero después de ver a mi familia morir frente a mí, creo que el único modo de proceder es exterminar a los monstruos antes de que ellos quemen todas las aldeas de Orquídeas en el bosque".',
+      'Redthorn queda en silencio y tranquilamente os mueve hacia adelante. Señala hacia los árboles. Al principio no se ve nada, pero luego identificáis las aberraciones en los edificios de follaje, bien ocultos entre los árboles. Al reconocerlos, también comenzáis a percibir figuras moviéndose alrededor de un claro cerca de los edificios. Figuras con cuernos. "¡Inox! Espero que no sea demasiado tarde!" Redthorn prepara su arco y comienza a arrastrarse hacia delante. " Venid, mercenarios. Ayudadme a salvar a mi pueblo y a librar al mundo de estas criaturas salvajes".',
+      'Os movéis rápidamente entre los árboles, saliendo al claro con las armas desenvainadas. Vuestra llegada no llega demasiado pronto, ya que veis a un gran Inox en el centro del claro preparándose para matar a una de las Orquídeas cautivas. Redthorn le clava una flecha en el arco. "¡Ninguna Orquídea morirá hoy!"'
+    ],
     milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      'Con los Inox muertos, os movéis alrededor del campamento, desatando las orquídeas prisioneras y ayudándolas a ponerse de pie. Os ofrecen sus tímidos agradecimientos con asentamientos de su cabezas. "Somos un pueblo reservado", dice Redthorn mientras se acerca. "No esperéis que os hagab una fiesta, pero que sepáis que habéis hecho un enorme bien aquí . La mayoría de los habitantes habrían sido masacrados si no hubiésemos llegado a tiempo."',
+      'Se queda en silencio con la mirada abatida. "Todavía lo siento en la boca del estómago. Pensé que matar a mis captores lo haría desaparecer. Pensé que salvar a otro pueblo compensaría mi fracaso para con el mío. Pero no ha sido así. La culpa sigue ahí, y yo he cambiado por ello.',
+      '"Esta no es mi aldea, pero incluso auque lo fuera, no me quedaría. Ya no pertenezco a ella. Si necesitas mi ayuda en el futuro, podrás encontrarme entre los árboles".'
+    ]
+  },
     { name: '#45 Rebel Swamp'
     , introduction: [],
     milestones: [],
@@ -2089,11 +2100,25 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     milestones: [],
     conclusion: []
     },
-    { name: '#48 - Shadow Weald'
-    , introduction: [],
+  {
+    name: '#48 - Shadow Weald',
+    introduction: [
+      'Redthorn os lleva a lo profundo del Bosque de las Dagas. La maleza se hace más densa, y los pasajes retorcidos a través del follaje silvestre os dejan totalmente confundidos. Todas las zarzas, matorrales y espinas comienzan a verse deprimentemente iguales. A menudo el camino parece completamente bloqueado, pero de alguna manera el huérfano encuentra una manera de pasar.',
+      'De repente, una fina niebla gris comienza a impregnar vuestros alrededores y os encontráis con un lúgubre y oscuro claro.',
+      '"Esto fue una vez el corazón del bosque," susurra Redthorn. "Inalcanzable por cualquier medio normal. Seguro y perfecto.',
+      '"Y entonces llegó. Ahora este lugar sólo alberga horrores y pesadillas".',
+      'El huérfano mira hacia abajo a la tierra negra. "En verdad, este lugar me aterroriza. Cualquier criatura que persiga estas sombras… no puedo ayudaros a combatirlas, pero si sobrevivís, os mostraré el camino de regreso."',
+      'A medida que Redthorn desaparece en la niebla, empiezáis a ver otras formas moviéndose en el borde de vuestra visión. Y luego se oyen los cascos, como un terrible trueno retumbando entre los árboles. El sonido se acerca cada vez más hasta que el suelo bajo vuestros pies comienza a temblar.'
+    ],
     milestones: [],
-    conclusion: []
-    },
+    conclusion: [
+      'El espectro sin cabeza grita al recibir el golpe final, y su forma empieza a disiparse, negros destellos de humo escapan de las grietas de su armadura.',
+      'El caballo de guerra gigante sigue pisando el claro, pero envejece rápidamente ante tus ojos. Las canas brotan febrilmente de sus crines, y el caballo se encoge a medida que sus músculos disminuyen.',
+      'Antes de que llegue al borde del claro, el caballo se cae mientras sus frágiles huesos ceden, y con él, una vacía armadura oxidada. En cuestión de segundos, el caballo y su jinete se reducen a polvo.',
+      'Redthorn aparece entre la niebla. "No sé cómo lo hicisteis, pero ya puedo sentir el bosque liberado. Llevará mucho tiempo, pero creo que el corazón del bosque algún día podrá ser restaurado. (51-The Void)',
+      '"Gracias", sonríe el Orquídea. "Venid, déjadme llevaros de vuelta a la civilización."'
+    ]
+  },
     { name: '#49 Rebel\'s Stand'
     , introduction: [],
     milestones: [],
@@ -2719,10 +2744,26 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
       asome su cara por aquí otra vez.`
     ]
   },
-  { name: '#77 Vault of Secrets'
-  , introduction: [],
-  milestones: [],
-  conclusion: []
+  {
+    name: '#77 Vault of Secrets',
+    introduction: [
+      'Miráis el papel que Dominic te dio. La Vigilia se desarrolla en la finca de un poderoso noble de la capital llamado Deslin. Toda la propiedad está fuertemente custodiada, pero Dominic de alguna manera descubrió un túnel secreto hacia la bóveda por debajo de la finca Deslin, a través de la pared oeste del Nuevo Mercado.',
+      'Bajo el manto de la noche, buscáis la entrada secreta y os dirigís a los túneles. Dominic advierte que la seguridad de la Vigilia es más avanzada que cualquier otra en la ciudad. Si se hace sonar alguna alarma, todas las salidas se cerrarán y seréis asediados y asesinados por más guardias de los que puedas contar.',
+      'Vuestra única esperanza es infiltraros en la bóveda de la Vigilia en secreto y asegurarse de que cualquier guardia alertado de vuestra presencia no tenga la oportunidad de activar la alarma.',
+      'Al final del túnel, os preparáis para abrir la puerta y silenciar toda la oposición de camino a las bibliotecas secretas de la bóveda.'
+    ],
+    milestones: [
+      {
+        key: '1',
+        texts: [
+          '¿Qué demonios...?" Un guardia moviendo barriles salta sorprendido. "¡Intrusos! ¡Activen la alarma! ¡Liberen a los perros! ¡Enciendan los golems! La Vigilia se mantendrá en pie!'
+        ]
+      }
+    ],
+    conclusion: [
+      'Buscando en las bibliotecas de la bóveda, encontráis tanto el libro del Códice como el de Dominic sin demasiados problemas. Entre los estantes hay muchos otros textos extraños: "Golems y Construcciones", "El Algox del Norte". Hay mucho conocimiento oculto aquí, pero no hay tiempo para ordenarlo todo. Más de la Vigilia podrían bajar las escaleras en cualquier momento y alertar a toda la finca de vuestra presencia.',
+      'Agarráis lo que vinisteis a buscar y corréis hacia la salida, pasando por encima de los cadáveres de los guardias que se interponían en vuestro camino. Apenas os alejáis de los túneles cuando oís una potente alarma al otro lado de la pared del mercado. Sin dudarlo, proseguís vuestra huida, alejándoos lo más posible de la finca. Entonces ya no es mas que una simple cuestión de tiempo el devolverle los libros a Dominic.'
+    ]
   },
   { name: '#78 Sacrifice Pit'
   , introduction: [],
