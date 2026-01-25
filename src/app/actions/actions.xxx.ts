@@ -1652,7 +1652,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 16});
   campaign.enhanceAbility({ playerName: 'Oswin el Previsor', gold: 100 });
 
-  campaign.resolveRoadEvent({eventId: 39, rewards: {addCityEvents: [65]}, discard: false});
+  campaign.resolveCityEvent({eventId: 39, rewards: {addCityEvents: [65]}, discard: true});
 
   campaign.completeScenario({
     scenarioId: 77,
