@@ -2,12 +2,6 @@
   <div class="map-wrapper" style="position: relative; display: inline-block;" (click)="clearSelection()">
     <img src="assets/images/world-map/gloomhaven-map-orig.png" alt="Gloomhaven Map" class="world-map">
     
-    <div class="prosperity-overlay">
-      <div *ngFor="let check of checks; let i = index" class="tick-mark" [class.milestone]="milestones.includes(i + 1)">
-        <span *ngIf="check" class="material-icons">{{check}}</span>
-      </div>
-    </div>
-
     <!-- Scenario Markers -->
     <ng-container *ngFor="let s of scenarios">
       <div 
@@ -35,10 +29,6 @@
     </ng-container>
   </div>
   
-  <div class="prosperity-info">
-    <div>City Prosperity: {{prosperityPoints}} - Level: {{prosperityLevel}}</div>
-  </div>
-
   <!-- Mobile Detail Panel -->
   <div class="scenario-detail-panel" *ngIf="selectedScenario">
     <button class="close-btn" (click)="clearSelection()">×</button>
@@ -52,7 +42,4 @@
     </div>
   </div>
 
-  <div class="locations-container">
-    <app-locations-tracker [locations]="scenarios"></app-locations-tracker>
-  </div>
 </div>
