@@ -778,7 +778,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/storm-blade.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'stormblade'
   },
   {
@@ -798,7 +798,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/tremor-blade.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'tremorblade'
   },
   {
@@ -828,7 +828,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/wand-of-frost.png',
     type: 'one-hand',
     use: 'spend',
-    price: 10,
+    price: 30,
     xws: 'wandoffrost'
   },
   {
@@ -968,7 +968,7 @@ export const ITEMS: ItemDef[] = [
     image: 'items/64-151/endurance-footwraps.png',
     type: 'legs',
     use: 'spend',
-    price: 10,
+    price: 40,
     xws: 'endurancefootwraps'
   },
   {
