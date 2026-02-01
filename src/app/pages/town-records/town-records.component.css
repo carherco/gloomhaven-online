@@ -1,0 +1,70 @@
+.town-records-container {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  margin-top: 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.narration {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.book-quote {
+  position: relative;
+  background: #fdf5e6; /* Old Lace - parchment color */
+  color: #2c1e13; /* Dark earthy brown */
+  padding: 25px 40px;
+  margin: 30px 0;
+  border-left: 8px solid #8b4513; /* Saddle Brown */
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  border-radius: 2px;
+}
+
+.book-quote::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 4rem;
+  color: rgba(139, 69, 19, 0.2);
+  font-family: 'serif';
+}
+
+.book-quote p {
+    margin-bottom: 15px;
+}
+
+.book-quote p:last-child {
+    margin-bottom: 0;
+}
+
+.game-instruction {
+  background: #4a0404;
+  color: #ffffff;
+  padding: 10px 15px;
+  margin: 20px 0;
+  border: 1px solid #ff0000;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.scenario-unlock {
+  background: #1a3a1a;
+  color: #90ee90;
+  padding: 10px 15px;
+  margin: 15px 0;
+  border: 1px solid #00ff00;
+  font-weight: bold;
+  text-align: center;
+}
