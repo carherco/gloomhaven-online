@@ -1426,7 +1426,7 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 142,
     image: 'items/64-151/smoke-elixir.png',
-    type: 'legs',
+    type: 'small-item',
     use: 'spend',
     price: 50,
     xws: 'smokeelixir'
@@ -1446,7 +1446,7 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 144,
     image: 'items/64-151/mask-of-death.png',
-    type: 'legs',
+    type: 'head',
     use: 'spend',
     price: 50,
     xws: 'maskofdeath'
@@ -1456,7 +1456,7 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 145,
     image: 'items/64-151/masters-lute.png',
-    type: 'legs',
+    type: 'two-hands',
     use: 'spend',
     price: 50,
     xws: 'masterslute'
@@ -1476,7 +1476,7 @@ export const ITEMS: ItemDef[] = [
     amount: 1,
     points: 147,
     image: 'items/64-151/doctors-coat.png',
-    type: 'legs',
+    type: 'body',
     use: 'spend',
     price: 50,
     xws: 'doctors coat'

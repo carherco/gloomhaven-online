@@ -1522,14 +1522,14 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[0].uid,
     characterClass: Sawbones,
-    name: 'Adri',
-    personalQuest: PERSONAL_QUESTS[530]
+    name: 'Bardo',
+    personalQuest: PERSONAL_QUESTS[512]
   });
 
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Adri', playerResults: {xp: 0, g: 0, items: [148]} },
+      { playerName: 'Bardo', playerResults: {xp: 0, g: 0, items: [148]} },
     ]
   });
 
@@ -1545,8 +1545,8 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
   // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
 
-  campaign.buyItem({ playerName: 'Adri', itemId: 34 });
-  campaign.buyItem({ playerName: 'Adri', itemId: 13 });
+  campaign.buyItem({ playerName: 'Bardo', itemId: 34 });
+  campaign.buyItem({ playerName: 'Bardo', itemId: 13 });
 
   campaign.enhanceAbility({ playerName: 'Oswin el Previsor', gold: 50 });
 
@@ -1555,7 +1555,7 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.resolveCityEvent({eventId: 32, playersResults:[
       { playerName: 'Oswin el Previsor', playerResults: {g: 5} },
-      { playerName: 'Adri', playerResults: {g: 10} },
+      { playerName: 'Bardo', playerResults: {g: 10} },
   ], rewards: {reputation: 1}, discard: true});
 
   campaign.resolveRoadEvent({eventId: 14, discard: false});
@@ -1565,7 +1565,7 @@ export function loadCampaing(): CampaignStatus {
     level: 5,
     playersResults: [
       { playerName: 'Adolfo', playerResults: {xp: 7, g: 4, t: 1} },
-      { playerName: 'Adri', playerResults: {xp: 20, g: 40, t: 1} },
+      { playerName: 'Bardo', playerResults: {xp: 20, g: 40, t: 1} },
       { playerName: 'Solete', playerResults: {xp: 5, g: 12, t: 0, pq: 1} },
       { playerName: 'Oswin el Previsor', playerResults: {xp: 14, g: 28, t: 2} },
     ],
@@ -1583,14 +1583,14 @@ export function loadCampaing(): CampaignStatus {
   campaign.createCharacter({
     playerId: players[0].uid,
     characterClass: Doomstalker,
-    name: 'Álvaro',
+    name: 'Doom Thorn',
     personalQuest: PERSONAL_QUESTS[517]
   });
 
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Álvaro', playerResults: {xp: 0, g: 0, items: [147]} },
+      { playerName: 'Doom Thorn', playerResults: {xp: 0, g: 0, items: [147]} },
     ]
   });
 
@@ -1606,12 +1606,12 @@ export function loadCampaing(): CampaignStatus {
   // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-1' });
   // campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk3-2' });
 
-  campaign.buyItem({ playerName: 'Álvaro', itemId: 15 });
-  campaign.buyItem({ playerName: 'Álvaro', itemId: 6 });
-  campaign.buyItem({ playerName: 'Álvaro', itemId: 33 });
-  campaign.buyItem({ playerName: 'Álvaro', itemId: 12 });
-  campaign.buyItem({ playerName: 'Álvaro', itemId: 13 });
-  campaign.buyItem({ playerName: 'Álvaro', itemId: 41 });
+  campaign.buyItem({ playerName: 'Doom Thorn', itemId: 15 });
+  campaign.buyItem({ playerName: 'Doom Thorn', itemId: 6 });
+  campaign.buyItem({ playerName: 'Doom Thorn', itemId: 33 });
+  campaign.buyItem({ playerName: 'Doom Thorn', itemId: 12 });
+  campaign.buyItem({ playerName: 'Doom Thorn', itemId: 13 });
+  campaign.buyItem({ playerName: 'Doom Thorn', itemId: 41 });
 
   campaign.retireCharacter({name: 'Solete', cityEventsToAdd: [48, 34], roadEventsToAdd: [48, 34]});
 
@@ -1658,17 +1658,17 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 77,
     level: 4,
     playersResults: [
-      { playerName: 'Álvaro', playerResults: {xp: 14, g: 8, t: 1, pq: 4} },
+      { playerName: 'Doom Thorn', playerResults: {xp: 14, g: 8, t: 1, pq: 4} },
       { playerName: 'Sueñito', playerResults: {xp: 15, g: 28, t: 1} },
       { playerName: 'Oswin el Previsor', playerResults: {xp: 11, g: 36, t: 1} },
     ],
     rewards: {xp: 5}
   });
 
-  campaign.buyItem({playerName: 'Adri', itemId: 17});
-  campaign.buyItem({playerName: 'Adri', itemId: 27});
+  campaign.buyItem({playerName: 'Bardo', itemId: 17});
+  campaign.buyItem({playerName: 'Bardo', itemId: 27});
   campaign.sellItem({playerName: 'Víctor', itemId: 71});
-  campaign.buyItem({playerName: 'Adri', itemId: 71});
+  campaign.buyItem({playerName: 'Bardo', itemId: 71});
 
   campaign.resolveCityEvent({eventId: 35, discard: true});
   campaign.resolveRoadEvent({eventId: 52, discard: true});
@@ -1677,8 +1677,8 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 44,
     level: 4,
     playersResults: [
-      { playerName: 'Adri', playerResults: {xp: 13, g: 32, t: 1 } },
-      { playerName: 'Álvaro', playerResults: {xp: 15, g: 4, t: 2, pq: 4} },
+      { playerName: 'Bardo', playerResults: {xp: 13, g: 32, t: 1 } },
+      { playerName: 'Doom Thorn', playerResults: {xp: 15, g: 4, t: 2, pq: 4} },
       { playerName: 'Sueñito', playerResults: {xp: 9, g: 20, t: 1} },
       { playerName: 'Oswin el Previsor', playerResults: {xp: 13, g: 28, t: 1} },
     ],
@@ -1692,12 +1692,26 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 48,
     level: 4,
     playersResults: [
-      { playerName: 'Adri', playerResults: {xp: 4, g: 34, t: 2 } },
-      { playerName: 'Álvaro', playerResults: {xp: 5, g: 0, t: 2, pq: 2} },
+      { playerName: 'Bardo', playerResults: {xp: 4, g: 34, t: 2 } },
+      { playerName: 'Doom Thorn', playerResults: {xp: 5, g: 0, t: 2, pq: 2} },
       { playerName: 'Sueñito', playerResults: {xp: 6, g: 4, t: 1, pq: 1} },
       { playerName: 'Oswin el Previsor', playerResults: {xp: 6, g: 12, t: 1} },
     ],
     rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.END_OF_CORRUPTION_1]}, treasuresLooted: [64], scenariosUnlocked: [51]
+  });
+
+  campaign.resolveCityEvent({eventId: 76, rewards: {scenariosUnlocked: [74], partyAchievements: [PARTY_ACHIEVEMENTS.HIGH_SEA_ESCORT]}, discard: true});
+
+  campaign.completeScenario({
+    scenarioId: 37,
+    level: 5,
+    playersResults: [
+      { playerName: 'Bardo', playerResults: {xp: 20, g: 4, t: 1 } },
+      { playerName: 'Doom Thorn', playerResults: {xp: 11, g: 24, t: 1, pq: 2} },
+      { playerName: 'Sueñito', playerResults: {xp: 11, g: 16, t: 1} },
+      { playerName: 'Oswin el Previsor', playerResults: {xp: 13, g: 8, t: 1} },
+    ],
+    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_TRENCH]}, treasuresLooted: [49], scenariosUnlocked: [17, 47]
   });
 
   return campaign.getStatus();
