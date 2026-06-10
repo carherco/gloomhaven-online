@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Outfit:wght@300;400;600&family=IM+Fell+English:ital@0;1&display=swap');
+
+.chronicle-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'IM Fell English', 'Palatino Linotype', Georgia, serif;
+  color: #f5eedc;
+}
+
+.chronicle-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.chronicle-title {
+  font-family: 'Cinzel', 'Palatino Linotype', serif;
+  font-size: 3rem;
+  color: #c59d5f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(197, 157, 95, 0.4);
+}
+
+.chronicle-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  color: #bfa888;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.gold-divider {
+  height: 3px;
+  background: linear-gradient(90deg, rgba(197, 157, 95, 0) 0%, rgba(197, 157, 95, 0.8) 50%, rgba(197, 157, 95, 0) 100%);
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.gold-divider::after {
+  content: '♦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #c59d5f;
+  background-color: #000;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+/* Parchment Card Styles */
+.parchment-card {
+  background-image: linear-gradient(rgba(247, 239, 225, 0.92), rgba(247, 239, 225, 0.92)), url('../../../assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  border: 1px solid rgba(60, 45, 30, 0.35);
+  margin-bottom: 50px;
+  animation: fadeInUp 0.8s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f2e3c6;
+  color: #1a0f05; /* Very dark brown ink color for high contrast */
+}
+
+.parchment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 15px rgba(197, 157, 95, 0.15);
+}
+
+.card-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(60, 45, 30, 0) 0%, rgba(60, 45, 30, 0.4) 50%, rgba(60, 45, 30, 0) 100%);
+}
+
+.card-edge.top {
+  top: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-edge.bottom {
+  bottom: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Prologue Specific Styles */
+.prologue-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #7b1414; /* Crimson ink */
+  text-align: center;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px dashed rgba(123, 20, 20, 0.2);
+  padding-bottom: 10px;
+}
+
+.story-text {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.story-text p {
+  margin-bottom: 1.5rem;
+  text-indent: 1.5rem;
+}
+
+.story-text p:first-of-type,
+.story-text p.drop-cap {
+  text-indent: 0;
+}
+
+.drop-cap::first-letter {
+  font-family: 'Cinzel', 'Palatino Linotype', Georgia, serif;
+  font-size: 3.8rem;
+  float: left;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  color: #7b1414; /* Crimson drop cap */
+  font-weight: bold;
+}
+
+/* Timeline and Chapters Layout */
+.chapters-container {
+  position: relative;
+  margin-top: 60px;
+  padding-left: 60px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    #c59d5f 0%, 
+    rgba(197, 157, 95, 0.5) 50%, 
+    rgba(197, 157, 95, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+.chapter-section {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* Timeline Node */
+.chapter-section::before {
+  content: '✦';
+  position: absolute;
+  left: -51px; /* Center alignment with the timeline-line */
+  top: 25px;
+  width: 24px;
+  height: 24px;
+  line-height: 18px;
+  border-radius: 50%;
+  background-color: #140f0a;
+  border: 2px solid #c59d5f;
+  color: #c59d5f;
+  text-align: center;
+  font-size: 12px;
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(197, 157, 95, 0.6);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.chapter-section:hover::before {
+  transform: rotate(45deg) scale(1.2);
+  background-color: #c59d5f;
+  color: #140f0a;
+  box-shadow: 0 0 15px rgba(197, 157, 95, 0.9);
+}
+
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(60, 45, 30, 0.15);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #3c2d1e;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.chapter-badge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #3c2d1e;
+  color: #f7e7ce;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.story-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.story-block {
+  position: relative;
+}
+
+.block-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: #7b1414; /* Crimson headings */
+  letter-spacing: 1.5px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.block-title::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(123, 20, 20, 0.25) 0%, rgba(123, 20, 20, 0) 100%);
+}
+
+/* Milestones Stylings */
+.milestones-block {
+  margin: 10px 0;
+}
+
+.milestone-card {
+  background-color: rgba(60, 45, 30, 0.04);
+  border-left: 3px solid #7b1414;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 0 6px 6px 0;
+  box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.02);
+}
+
+.milestone-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7b1414;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.milestone-card .story-text {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #4a3828;
+}
+
+/* Conclusion specific overrides */
+.conclusion-block .story-text {
+  font-size: 1.25rem;
+  border-left: 2px solid rgba(60, 45, 30, 0.1);
+  padding-left: 15px;
+}
+
+/* Custom styling inside innerHtml for Location Badges/Links */
+::ng-deep .story-text strong {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(123, 20, 20, 0.08) !important;
+  color: #7b1414 !important;
+  border: 1px solid rgba(123, 20, 20, 0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 4px;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+::ng-deep .story-text strong:hover {
+  background-color: #7b1414 !important;
+  color: #ffffff !important;
+  border-color: #7b1414;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(123, 20, 20, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .chronicle-title {
+    font-size: 2.2rem;
+  }
+  
+  .parchment-card {
+    padding: 25px;
+  }
+  
+  .chapters-container {
+    padding-left: 30px;
+  }
+  
+  .timeline-line {
+    left: 5px;
+  }
+  
+  .chapter-section::before {
+    left: -36px;
+    width: 20px;
+    height: 20px;
+    line-height: 14px;
+    font-size: 10px;
+  }
+  
+  .story-text {
+    font-size: 1.15rem;
+    text-align: left;
+  }
+  
+  .prologue-title {
+    font-size: 1.8rem;
+  }
+  
+  .chapter-title {
+    font-size: 1.5rem;
+  }
+}

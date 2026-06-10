@@ -1,23 +1,81 @@
-<h1>Gloomhaven by Envelope Openers</h1>
+<div class="chronicle-container">
+  <header class="chronicle-header">
+    <h1 class="chronicle-title">Crónicas de Gloomhaven</h1>
+    <p class="chronicle-subtitle">por Envelope Openers</p>
+    <div class="gold-divider"></div>
+  </header>
 
-<div>
-  <h2>INTRODUCTION</h2>
-  <p *ngFor="let paragraph of introductionParagraphs">{{ paragraph }}</p>
+  <!-- Prologue / Campaign Introduction -->
+  <section class="chronicle-section prologue-section">
+    <div class="parchment-card">
+      <div class="card-edge top"></div>
+      <div class="card-body">
+        <h2 class="prologue-title">Prólogo</h2>
+        <div class="story-text">
+          <p *ngFor="let paragraph of introductionParagraphs; let first = first" [class.drop-cap]="first">
+            {{ paragraph }}
+          </p>
+        </div>
+      </div>
+      <div class="card-edge bottom"></div>
+    </div>
+  </section>
+
+  <!-- Completed Scenarios / Chapters -->
+  <div class="chapters-container" *ngIf="completedScenarios.length > 0">
+    <div class="timeline-line"></div>
+    
+    <section *ngFor="let scenario of completedScenarios" class="chronicle-section chapter-section">
+      <div class="parchment-card">
+        <div class="card-edge top"></div>
+        <div class="card-body">
+          <header class="chapter-header">
+            <h2 class="chapter-title">{{ scenario.name }}</h2>
+            <div class="chapter-badge">Completado</div>
+          </header>
+
+          <div class="story-sections">
+            <!-- Scenario Introduction -->
+            <div class="story-block intro-block">
+              <h3 class="block-title">Introducción</h3>
+              <div class="story-text">
+                <p *ngFor="let paragraph of scenario.introduction">{{ paragraph }}</p>
+              </div>
+            </div>
+
+            <!-- Milestones (if any) -->
+            <div *ngIf="scenario.milestones && scenario.milestones.length > 0" class="milestones-block">
+              <div *ngFor="let milestone of scenario.milestones" class="milestone-card">
+                <h4 class="milestone-title">Hito ({{ milestone.key }})</h4>
+                <div class="story-text">
+                  <p *ngFor="let paragraph of milestone.texts">{{ paragraph }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scenario Conclusion -->
+            <div class="story-block conclusion-block">
+              <h3 class="block-title">Conclusión</h3>
+              <div class="story-text">
+                <p *ngFor="let paragraph of scenario.conclusion" [innerHtml]="paragraph"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-edge bottom"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Empty State if no scenarios completed -->
+  <div *ngIf="completedScenarios.length === 0" class="empty-state-card parchment-card">
+    <div class="card-edge top"></div>
+    <div class="card-body" style="text-align: center;">
+      <h2 class="chapter-title" style="text-align: center; margin-bottom: 15px;">Las Crónicas están Vacías</h2>
+      <div class="story-text" style="font-style: italic; text-align: center;">
+        <p>Aún no habéis completado ningún escenario en vuestra campaña. ¡Adentraros en las profundidades del Bosque Cadavérico y completad vuestro primer escenario para comenzar a escribir vuestra historia!</p>
+      </div>
+    </div>
+    <div class="card-edge bottom"></div>
+  </div>
 </div>
-
-<div *ngFor="let scenario of completedScenarios">
-  <h2>{{ scenario.name }}</h2>
-
-  <h3>Introduction</h3>
-  <p *ngFor="let paragraph of scenario.introduction">{{ paragraph }}</p>
-
-  <ng-container *ngFor="let milestone of scenario.milestones">
-  <h3>({{ milestone.key }})</h3>
-  <p *ngFor="let paragraph of milestone.texts">{{ paragraph }}</p>
-  </ng-container>
-
-
-  <h3>Conclusion</h3>
-  <p *ngFor="let paragraph of scenario.conclusion" [innerHtml]="paragraph"></p>
-</div>
-
