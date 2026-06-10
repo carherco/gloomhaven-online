@@ -1850,9 +1850,19 @@ export const SCENARIO_TEXTS: ScenarioText[] = [
     conclusion: []
     },
     { name: '#37 Doom Trench'
-    , introduction: [],
-    milestones: [],
-    conclusion: []
+    , introduction: [
+        'Miráis la primera ubicación en el mapa de Hail. En el medio del océano, muy por debajo de las olas. Por supuesto...',
+        'Miráis el interminable Mar Nebuloso. De acuerdo con el mapa, habéis llegado a las coordenadas adecuadas. No queda otra cosa que hacer salvo meteros el orbe de respiración por la garganta y sumergiros en las profundidades.',
+        'Usando unas pequeñas piedras que emanan luz, os hundís en las profundidades. Después de unos minutos, la incomodidad extrema de respirar a través del orbe da paso a una mera molestia leve. Y seguís descendiendo.',
+        'Alcanzáis el fondo de una fosa, y figuras oscuras emergen de las aguas turbias. Guardianes de lo que sea que estéis buscando, sin dudas. Lo último que queréis hacer ahora es luchar, pero debéis continuar.'
+      ],
+      milestones: [],
+      conclusion: [
+        'Seguís hacia delante, dejando la maldita fosa. Mirando hacia atrás, veis las figuras de más Lurkers esperando en las sombras, pero no os persiguen. Tal vez tengan miedo de lo que sea que les depare el futuro.',
+        'Vais más profundo a través de una grieta en la tierra hasta que vuestro camino cambia de repente hacia arriba.',
+        'Emergéis del agua fría e implacable en una bolsa de aire bajo las olas. Escupís vuestros orbes de respiración, agradecidos de finalmente respirar normalmente y descansar un poco.',
+        'A través de la oscuridad veis una caverna enorme, que alberga una gran estructura de piedra. Este espectáculo antinatural, tan alejado de cualquier cosa con la que estéis familiarizados, os llena de un temor irracional y premonitorio. <strong>(47-Lair of the Unseeing Eye)</strong>'
+      ]
     },
     { name: '#38 Slave Pens'
     , introduction: [],
