@@ -33,7 +33,6 @@
   font-weight: 700;
   color: #C9A24A; /* Gloomhaven Gold */
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 15px rgba(201, 162, 74, 0.2);
   margin: 0;
 }
