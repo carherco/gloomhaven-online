@@ -25,14 +25,17 @@
   <div class="chapters-container" *ngIf="completedScenarios.length > 0">
     <div class="timeline-line"></div>
     
-    <section *ngFor="let scenario of completedScenarios" class="chronicle-section chapter-section">
+    <section *ngFor="let scenario of completedScenarios; let i = index" class="chronicle-section chapter-section">
       <div class="parchment-card">
         <div class="card-edge top"></div>
         <div class="card-body">
-          <header class="chapter-header">
-            <h2 class="chapter-title">{{ scenario.name }}</h2>
-            <div class="chapter-badge">Completado</div>
-          </header>
+          <div class="chapter-top">
+            <img class="scenario-image" [src]="'assets/images/world-map/' + (i+1) + '.png'" alt="{{ scenario.name }} image" />
+            <div class="chapter-header">
+              <h2 class="chapter-title">{{ scenario.name }}</h2>
+              <div class="chapter-badge">Completado</div>
+            </div>
+          </div>
 
           <div class="story-sections">
             <!-- Scenario Introduction -->

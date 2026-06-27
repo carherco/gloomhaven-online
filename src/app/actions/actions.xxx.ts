@@ -25,10 +25,10 @@ import { CampaignStatus, CampaignStatusService } from '../services/campaign-stat
 export function loadCampaing(): CampaignStatus {
 
   const players: Player[] = [
-    {uid: 'uuid1', email: 'email1@gmail.com', displayName: 'Adri', photoURL: '', emailVerified: true },
-    {uid: 'uuid2', email: 'email2@gmail.com', displayName: 'Álvaro', photoURL: '', emailVerified: true },
-    {uid: 'uuid3', email: 'email3@gmail.com', displayName: 'Isa', photoURL: '', emailVerified: true },
-    {uid: 'uuid4', email: 'email4@gmail.com', displayName: 'Carlos', photoURL: '', emailVerified: true },
+    { uid: 'uuid1', email: 'email1@gmail.com', displayName: 'Adri', photoURL: '', emailVerified: true },
+    { uid: 'uuid2', email: 'email2@gmail.com', displayName: 'Álvaro', photoURL: '', emailVerified: true },
+    { uid: 'uuid3', email: 'email3@gmail.com', displayName: 'Isa', photoURL: '', emailVerified: true },
+    { uid: 'uuid4', email: 'email4@gmail.com', displayName: 'Carlos', photoURL: '', emailVerified: true },
   ];
 
   const campaign = new CampaignStatusService();
@@ -41,8 +41,8 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[532]
   });
 
-  campaign.buyItem({playerName: 'Raticate', itemId: 11});
-  campaign.buyItem({playerName: 'Raticate', itemId: 13});
+  campaign.buyItem({ playerName: 'Raticate', itemId: 11 });
+  campaign.buyItem({ playerName: 'Raticate', itemId: 13 });
 
   campaign.createCharacter({
     playerId: players[1].uid,
@@ -51,8 +51,8 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[524]
   });
 
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 1});
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 12});
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 1 });
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 12 });
 
   campaign.createCharacter({
     playerId: players[2].uid,
@@ -61,8 +61,8 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[516]
   });
 
-  campaign.buyItem({playerName: 'Maléfica', itemId: 5});
-  campaign.buyItem({playerName: 'Maléfica', itemId: 14});
+  campaign.buyItem({ playerName: 'Maléfica', itemId: 5 });
+  campaign.buyItem({ playerName: 'Maléfica', itemId: 14 });
 
   campaign.createCharacter({
     playerId: players[3].uid,
@@ -71,24 +71,26 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[531]
   });
 
-  campaign.buyItem({playerName: 'Brad', itemId: 6});
+  campaign.buyItem({ playerName: 'Brad', itemId: 6 });
 
-  campaign.resolveCityEvent({eventId: 29, discard: false});
-  campaign.resolveRoadEvent({eventId: 4, playersResults: [
-    { playerName: 'Raticate', playerResults: {g: 2} },
-    { playerName: 'Ostiónix', playerResults: {g: 2} },
-    { playerName: 'Maléfica', playerResults: {g: 2} },
-    { playerName: 'Brad', playerResults: {g: 2} },
-  ], discard: true});
+  campaign.resolveCityEvent({ eventId: 29, discard: false });
+  campaign.resolveRoadEvent({
+    eventId: 4, playersResults: [
+      { playerName: 'Raticate', playerResults: { g: 2 } },
+      { playerName: 'Ostiónix', playerResults: { g: 2 } },
+      { playerName: 'Maléfica', playerResults: { g: 2 } },
+      { playerName: 'Brad', playerResults: { g: 2 } },
+    ], discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 1,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 10, g: 18, t: 1} },
-      { playerName: 'Ostiónix', playerResults: {xp: 14, g: 8, t: 1, pq: 1} },
-      { playerName: 'Maléfica', playerResults: {xp: 12, g: 0, t: 2} },
-      { playerName: 'Brad', playerResults: {xp: 10, g: 4, t: 2} },
+      { playerName: 'Raticate', playerResults: { xp: 10, g: 18, t: 1 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 14, g: 8, t: 1, pq: 1 } },
+      { playerName: 'Maléfica', playerResults: { xp: 12, g: 0, t: 2 } },
+      { playerName: 'Brad', playerResults: { xp: 10, g: 4, t: 2 } },
     ],
     treasuresLooted: [7],
     rewards: {
@@ -101,10 +103,10 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 2,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 3, g: 20, t: 2} },
-      { playerName: 'Ostiónix', playerResults: {xp: 12, g: 6, t: 1, pq: 1} },
-      { playerName: 'Maléfica', playerResults: {xp: 11, g: 12, t: 1} },
-      { playerName: 'Brad', playerResults: {xp: 10, g: 16, t: 1} },
+      { playerName: 'Raticate', playerResults: { xp: 3, g: 20, t: 2 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 12, g: 6, t: 1, pq: 1 } },
+      { playerName: 'Maléfica', playerResults: { xp: 11, g: 12, t: 1 } },
+      { playerName: 'Brad', playerResults: { xp: 10, g: 16, t: 1 } },
     ],
     treasuresLooted: [67],
     rewards: {
@@ -114,33 +116,35 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [3, 4]
   });
 
-  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk1-1'});
-  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk8'});
-  campaign.gainPerk({playerName: 'Maléfica', perkId: 'swPerk3-1'});
+  campaign.gainPerk({ playerName: 'Brad', perkId: 'tiPerk1-1' });
+  campaign.gainPerk({ playerName: 'Raticate', perkId: 'mtPerk8' });
+  campaign.gainPerk({ playerName: 'Maléfica', perkId: 'swPerk3-1' });
 
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 8});
-  campaign.buyItem({playerName: 'Brad', itemId: 9});
-  campaign.buyItem({playerName: 'Raticate', itemId: 2});
-  campaign.buyItem({playerName: 'Raticate', itemId: 5});
-  campaign.buyItem({playerName: 'Raticate', itemId: 7});
-  campaign.buyItem({playerName: 'Maléfica', itemId: 13});
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 8 });
+  campaign.buyItem({ playerName: 'Brad', itemId: 9 });
+  campaign.buyItem({ playerName: 'Raticate', itemId: 2 });
+  campaign.buyItem({ playerName: 'Raticate', itemId: 5 });
+  campaign.buyItem({ playerName: 'Raticate', itemId: 7 });
+  campaign.buyItem({ playerName: 'Maléfica', itemId: 13 });
 
-  campaign.resolveCityEvent({eventId: 19, playersResults: [
-    { playerName: 'Ostiónix', playerResults: {g: -6} },
-    { playerName: 'Maléfica', playerResults: {g: -12} },
-    { playerName: 'Brad', playerResults: {g: -2} },
-  ], discard: true});
+  campaign.resolveCityEvent({
+    eventId: 19, playersResults: [
+      { playerName: 'Ostiónix', playerResults: { g: -6 } },
+      { playerName: 'Maléfica', playerResults: { g: -12 } },
+      { playerName: 'Brad', playerResults: { g: -2 } },
+    ], discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 1, discard: false});
+  campaign.resolveRoadEvent({ eventId: 1, discard: false });
 
   campaign.completeScenario({
     scenarioId: 3,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 15, g: 16, t: 1} },
-      { playerName: 'Ostiónix', playerResults: {xp: 15, g: 6, t: 1} },
-      { playerName: 'Maléfica', playerResults: {xp: 17, g: 4} },
-      { playerName: 'Brad', playerResults: {xp: 9, g: 8, t: 2, pq: 1} },
+      { playerName: 'Raticate', playerResults: { xp: 15, g: 16, t: 1 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 15, g: 6, t: 1 } },
+      { playerName: 'Maléfica', playerResults: { xp: 17, g: 4 } },
+      { playerName: 'Brad', playerResults: { xp: 9, g: 8, t: 2, pq: 1 } },
     ],
     rewards: {
       prosperity: 1,
@@ -150,40 +154,44 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [9, 8]
   });
 
-  campaign.gainAbility({playerName: 'Ostiónix', ability: 'juggernaut'});
-  campaign.gainAbility({playerName: 'Maléfica', ability: 'icy-blast'});
-  campaign.gainAbility({playerName: 'Raticate', ability: 'hostile-takeover'});
-  campaign.gainAbility({playerName: 'Brad', ability: 'stamina-booster'});
-  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk11'});
-  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk2'});
-  campaign.gainPerk({playerName: 'Maléfica', perkId: 'swPerk5'});
-  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk6-1'});
-  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk1-2'});
+  campaign.gainAbility({ playerName: 'Ostiónix', ability: 'juggernaut' });
+  campaign.gainAbility({ playerName: 'Maléfica', ability: 'icy-blast' });
+  campaign.gainAbility({ playerName: 'Raticate', ability: 'hostile-takeover' });
+  campaign.gainAbility({ playerName: 'Brad', ability: 'stamina-booster' });
+  campaign.gainPerk({ playerName: 'Ostiónix', perkId: 'brPerk11' });
+  campaign.gainPerk({ playerName: 'Ostiónix', perkId: 'brPerk2' });
+  campaign.gainPerk({ playerName: 'Maléfica', perkId: 'swPerk5' });
+  campaign.gainPerk({ playerName: 'Raticate', perkId: 'mtPerk6-1' });
+  campaign.gainPerk({ playerName: 'Brad', perkId: 'tiPerk1-2' });
 
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 3});
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 7});
-  campaign.buyItem({playerName: 'Raticate', itemId: 8});
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 3 });
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 7 });
+  campaign.buyItem({ playerName: 'Raticate', itemId: 8 });
 
-  campaign.resolveCityEvent({eventId: 15, playersResults: [
-    { playerName: 'Raticate', playerResults: {g: -11} },
-    { playerName: 'Brad', playerResults: {g: -4} },
-  ], discard: true});
+  campaign.resolveCityEvent({
+    eventId: 15, playersResults: [
+      { playerName: 'Raticate', playerResults: { g: -11 } },
+      { playerName: 'Brad', playerResults: { g: -4 } },
+    ], discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 20, playersResults: [
-    { playerName: 'Raticate', playerResults: {xp: 3} },
-    { playerName: 'Brad', playerResults: {xp: 3} },
-    { playerName: 'Ostiónix', playerResults: {xp: 3} },
-    { playerName: 'Maléfica', playerResults: {xp: 3} },
-  ], discard: true});
+  campaign.resolveRoadEvent({
+    eventId: 20, playersResults: [
+      { playerName: 'Raticate', playerResults: { xp: 3 } },
+      { playerName: 'Brad', playerResults: { xp: 3 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 3 } },
+      { playerName: 'Maléfica', playerResults: { xp: 3 } },
+    ], discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 9,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 11, g: 6, t: 2} },
-      { playerName: 'Ostiónix', playerResults: {xp: 10, g: 10, t: 1, pq: 4} },
-      { playerName: 'Maléfica', playerResults: {xp: 8, g: 10, t:1, pq: 6} },
-      { playerName: 'Brad', playerResults: {xp: 14, g: 12, t: 1, pq: 1} },
+      { playerName: 'Raticate', playerResults: { xp: 11, g: 6, t: 2 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 10, g: 10, t: 1, pq: 4 } },
+      { playerName: 'Maléfica', playerResults: { xp: 8, g: 10, t: 1, pq: 6 } },
+      { playerName: 'Brad', playerResults: { xp: 14, g: 12, t: 1, pq: 1 } },
     ],
     rewards: {
       prosperity: 1,
@@ -193,33 +201,33 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [11, 12]
   });
 
-  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk11'});
-  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk6-2'});
+  campaign.gainPerk({ playerName: 'Brad', perkId: 'tiPerk11' });
+  campaign.gainPerk({ playerName: 'Raticate', perkId: 'mtPerk6-2' });
 
   campaign.resolveCityEvent({
     eventId: 11,
     playersResults: [
-      { playerName: 'Brad', playerResults: {g: -5} },
+      { playerName: 'Brad', playerResults: { g: -5 } },
     ],
-    rewards: {itemDesigns: [80]},
+    rewards: { itemDesigns: [80] },
     discard: true
   });
 
-  campaign.buyItem({playerName: 'Maléfica', itemId: 6});
-  campaign.buyItem({playerName: 'Maléfica', itemId: 1});
-  campaign.buyItem({playerName: 'Brad', itemId: 2});
-  campaign.buyItem({playerName: 'Brad', itemId: 14});
+  campaign.buyItem({ playerName: 'Maléfica', itemId: 6 });
+  campaign.buyItem({ playerName: 'Maléfica', itemId: 1 });
+  campaign.buyItem({ playerName: 'Brad', itemId: 2 });
+  campaign.buyItem({ playerName: 'Brad', itemId: 14 });
 
-  campaign.resolveRoadEvent({eventId: 29, discard: true});
+  campaign.resolveRoadEvent({ eventId: 29, discard: true });
 
   campaign.completeScenario({
     scenarioId: 65,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 15, g: 16, t: 1, pq: 1} },
-      { playerName: 'Ostiónix', playerResults: {xp: 10, g: 4, t: 1, pq: 3} },
-      { playerName: 'Maléfica', playerResults: {xp: 17, g: 6, t:0, pq: 9} },
-      { playerName: 'Brad', playerResults: {xp: 8, g: 16, t: 1, pq: 0} },
+      { playerName: 'Raticate', playerResults: { xp: 15, g: 16, t: 1, pq: 1 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 10, g: 4, t: 1, pq: 3 } },
+      { playerName: 'Maléfica', playerResults: { xp: 17, g: 6, t: 0, pq: 9 } },
+      { playerName: 'Brad', playerResults: { xp: 8, g: 16, t: 1, pq: 0 } },
     ],
     rewards: {
       itemDesigns: [112],
@@ -227,10 +235,10 @@ export function loadCampaing(): CampaignStatus {
     },
   });
 
-  campaign.sellItem({playerName: 'Maléfica', itemId: 14});
-  campaign.makeDonation({playerName: 'Maléfica'});
+  campaign.sellItem({ playerName: 'Maléfica', itemId: 14 });
+  campaign.makeDonation({ playerName: 'Maléfica' });
 
-  campaign.retireCharacter({name: 'Maléfica', cityEventsToAdd: [44, 36], roadEventsToAdd: [44, 36]});
+  campaign.retireCharacter({ name: 'Maléfica', cityEventsToAdd: [44, 36], roadEventsToAdd: [44, 36] });
 
   campaign.createCharacter({
     playerId: players[2].uid,
@@ -239,26 +247,26 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[518]
   });
 
-  campaign.gainAbility({playerName: 'Mystic', ability: 'reckless-offensive'});
-  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk8'});
-  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk1'});
+  campaign.gainAbility({ playerName: 'Mystic', ability: 'reckless-offensive' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk8' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk1' });
 
-  campaign.buyItem({playerName: 'Mystic', itemId: 1});
-  campaign.buyItem({playerName: 'Mystic', itemId: 12});
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 112});
-  campaign.buyItem({playerName: 'Brad', itemId: 16});
-  campaign.buyItem({playerName: 'Brad', itemId: 13});
+  campaign.buyItem({ playerName: 'Mystic', itemId: 1 });
+  campaign.buyItem({ playerName: 'Mystic', itemId: 12 });
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 112 });
+  campaign.buyItem({ playerName: 'Brad', itemId: 16 });
+  campaign.buyItem({ playerName: 'Brad', itemId: 13 });
 
-  campaign.resolveCityEvent({eventId: 26, rewards: {reputation: 2}, discard: true});
+  campaign.resolveCityEvent({ eventId: 26, rewards: { reputation: 2 }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 11,
     level: 1,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 15, g: 6, t: 0} },
-      { playerName: 'Ostiónix', playerResults: {xp: 19, g: 4, t: 0, pq: 4} },
-      { playerName: 'Brad', playerResults: {xp: 12, g: 2, t: 1, pq: 1, items: [23]} },
-      { playerName: 'Mystic', playerResults: {xp: 11, g: 10, t:1, pq: 1} },
+      { playerName: 'Raticate', playerResults: { xp: 15, g: 6, t: 0 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 19, g: 4, t: 0, pq: 4 } },
+      { playerName: 'Brad', playerResults: { xp: 12, g: 2, t: 1, pq: 1, items: [23] } },
+      { playerName: 'Mystic', playerResults: { xp: 11, g: 10, t: 1, pq: 1 } },
     ],
     rewards: {
       gold: 15,
@@ -270,42 +278,44 @@ export function loadCampaing(): CampaignStatus {
     scenariosUnlocked: [16, 18]
   });
 
-  campaign.gainAbility({playerName: 'Ostiónix', ability: 'hook-and-chain'});
-  campaign.gainAbility({playerName: 'Raticate', ability: 'brain-leech'});
-  campaign.gainAbility({playerName: 'Brad', ability: 'crank-bow'});
-  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk1'});
-  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk12'});
-  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk4'});
+  campaign.gainAbility({ playerName: 'Ostiónix', ability: 'hook-and-chain' });
+  campaign.gainAbility({ playerName: 'Raticate', ability: 'brain-leech' });
+  campaign.gainAbility({ playerName: 'Brad', ability: 'crank-bow' });
+  campaign.gainPerk({ playerName: 'Ostiónix', perkId: 'brPerk1' });
+  campaign.gainPerk({ playerName: 'Raticate', perkId: 'mtPerk12' });
+  campaign.gainPerk({ playerName: 'Brad', perkId: 'tiPerk4' });
 
-  campaign.sellItem({playerName: 'Brad', itemId: 23});
-  campaign.sellItem({playerName: 'Ostiónix', itemId: 3});
-  campaign.sellItem({playerName: 'Ostiónix', itemId: 8});
-  campaign.sellItem({playerName: 'Raticate', itemId: 7});
-  campaign.buyItem({playerName: 'Mystic', itemId: 4});
-  campaign.buyItem({playerName: 'Mystic', itemId: 11});
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 13});
-  campaign.buyItem({playerName: 'Ostiónix', itemId: 23});
-  campaign.buyItem({playerName: 'Raticate', itemId: 17});
-  campaign.buyItem({playerName: 'Brad', itemId: 20});
-  campaign.buyItem({playerName: 'Brad', itemId: 12});
+  campaign.sellItem({ playerName: 'Brad', itemId: 23 });
+  campaign.sellItem({ playerName: 'Ostiónix', itemId: 3 });
+  campaign.sellItem({ playerName: 'Ostiónix', itemId: 8 });
+  campaign.sellItem({ playerName: 'Raticate', itemId: 7 });
+  campaign.buyItem({ playerName: 'Mystic', itemId: 4 });
+  campaign.buyItem({ playerName: 'Mystic', itemId: 11 });
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 13 });
+  campaign.buyItem({ playerName: 'Ostiónix', itemId: 23 });
+  campaign.buyItem({ playerName: 'Raticate', itemId: 17 });
+  campaign.buyItem({ playerName: 'Brad', itemId: 20 });
+  campaign.buyItem({ playerName: 'Brad', itemId: 12 });
 
-  campaign.resolveCityEvent({eventId: 24, playersResults: [
-    { playerName: 'Raticate', playerResults: {xp: 10} },
-    { playerName: 'Brad', playerResults: {xp: 10} },
-    { playerName: 'Ostiónix', playerResults: {xp: 10} },
-    { playerName: 'Mystic', playerResults: {xp: 10} },
-  ], discard: false});
+  campaign.resolveCityEvent({
+    eventId: 24, playersResults: [
+      { playerName: 'Raticate', playerResults: { xp: 10 } },
+      { playerName: 'Brad', playerResults: { xp: 10 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 10 } },
+      { playerName: 'Mystic', playerResults: { xp: 10 } },
+    ], discard: false
+  });
 
-  campaign.resolveRoadEvent({eventId: 13, discard: true});
+  campaign.resolveRoadEvent({ eventId: 13, discard: true });
 
   campaign.completeScenario({
     scenarioId: 16,
     level: 2,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 12, g: 9, t: 1} },
-      { playerName: 'Ostiónix', playerResults: {xp: 14, g: 3, t: 1, pq: 2} },
-      { playerName: 'Brad',     playerResults: {xp: 9, g: 9, t: 1, pq: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 8, g: 15, t:1, pq: 1} },
+      { playerName: 'Raticate', playerResults: { xp: 12, g: 9, t: 1 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 14, g: 3, t: 1, pq: 2 } },
+      { playerName: 'Brad', playerResults: { xp: 9, g: 9, t: 1, pq: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 8, g: 15, t: 1, pq: 1 } },
     ],
     rewards: {
       itemDesigns: [71]
@@ -314,71 +324,72 @@ export function loadCampaing(): CampaignStatus {
     treasuresLooted: [1]
   });
 
-  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk4'});
-  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk7-1'});
+  campaign.gainPerk({ playerName: 'Ostiónix', perkId: 'brPerk4' });
+  campaign.gainPerk({ playerName: 'Brad', perkId: 'tiPerk7-1' });
 
   campaign.completeScenario({
     scenarioId: 24,
     level: 2,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 10, g: 6, t: 1} },
-      { playerName: 'Ostiónix', playerResults: {xp: 9, g: 3, t: 2, pq: 4} },
-      { playerName: 'Brad',     playerResults: {xp: 18, g: 9, t: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 7, g: 18, t:2, pq: 1} },
+      { playerName: 'Raticate', playerResults: { xp: 10, g: 6, t: 1 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 9, g: 3, t: 2, pq: 4 } },
+      { playerName: 'Brad', playerResults: { xp: 18, g: 9, t: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 7, g: 18, t: 2, pq: 1 } },
     ],
-    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND]},
+    rewards: { partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_COMMAND] },
     scenariosUnlocked: [30, 32, 67],
     treasuresLooted: [70]
   });
 
-  campaign.gainAbility({playerName: 'Ostiónix', ability: 'unstoppable-charge'});
-  campaign.gainPerk({playerName: 'Ostiónix', perkId: 'brPerk3-1'});
+  campaign.gainAbility({ playerName: 'Ostiónix', ability: 'unstoppable-charge' });
+  campaign.gainPerk({ playerName: 'Ostiónix', perkId: 'brPerk3-1' });
 
-  campaign.gainAbility({playerName: 'Raticate', ability: 'cranium-overload'});
-  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk4'});
-  campaign.gainPerk({playerName: 'Raticate', perkId: 'mtPerk5-1'});
+  campaign.gainAbility({ playerName: 'Raticate', ability: 'cranium-overload' });
+  campaign.gainPerk({ playerName: 'Raticate', perkId: 'mtPerk4' });
+  campaign.gainPerk({ playerName: 'Raticate', perkId: 'mtPerk5-1' });
 
-  campaign.gainAbility({playerName: 'Brad', ability: 'micro-bots'});
-  campaign.gainPerk({playerName: 'Brad', perkId: 'tiPerk2'});
+  campaign.gainAbility({ playerName: 'Brad', ability: 'micro-bots' });
+  campaign.gainPerk({ playerName: 'Brad', perkId: 'tiPerk2' });
 
-  campaign.gainAbility({playerName: 'Mystic', ability: 'fatal-fury'});
-  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk2'});
-  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk10'});
+  campaign.gainAbility({ playerName: 'Mystic', ability: 'fatal-fury' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk2' });
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk10' });
 
-  campaign.resolveCityEvent({eventId: 5, discard: true,
+  campaign.resolveCityEvent({
+    eventId: 5, discard: true,
     playersResults: [
-      { playerName: 'Ostiónix', playerResults: {t: -1} },
-      { playerName: 'Brad',     playerResults: {t: -1} },
-      { playerName: 'Mystic', playerResults: {t: -1} },
+      { playerName: 'Ostiónix', playerResults: { t: -1 } },
+      { playerName: 'Brad', playerResults: { t: -1 } },
+      { playerName: 'Mystic', playerResults: { t: -1 } },
     ],
-    rewards: {prosperity: 1, reputation: 1}
+    rewards: { prosperity: 1, reputation: 1 }
   });
 
-  campaign.makeDonation({playerName: 'Raticate'});
-  campaign.makeDonation({playerName: 'Ostiónix'});
-  campaign.makeDonation({playerName: 'Brad'});
+  campaign.makeDonation({ playerName: 'Raticate' });
+  campaign.makeDonation({ playerName: 'Ostiónix' });
+  campaign.makeDonation({ playerName: 'Brad' });
 
-  campaign.resolveRoadEvent({eventId: 2, discard: false});
+  campaign.resolveRoadEvent({ eventId: 2, discard: false });
 
   campaign.completeScenario({
     scenarioId: 30,
     level: 2,
     playersResults: [
-      { playerName: 'Raticate', playerResults: {xp: 5, g: 6, t: 1, pq: 1} },
-      { playerName: 'Ostiónix', playerResults: {xp: 10, g: 0, t: 1, pq: 2} },
-      { playerName: 'Brad',     playerResults: {xp: 10, g: 6, t: 1, pq: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 4, g: 3, t:2, pq: 1} },
+      { playerName: 'Raticate', playerResults: { xp: 5, g: 6, t: 1, pq: 1 } },
+      { playerName: 'Ostiónix', playerResults: { xp: 10, g: 0, t: 1, pq: 2 } },
+      { playerName: 'Brad', playerResults: { xp: 10, g: 6, t: 1, pq: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 4, g: 3, t: 2, pq: 1 } },
     ],
-    rewards: {gold: 10, partyAchievements: [PARTY_ACHIEVEMENTS.THE_SCEPTER_AND_THE_VOICE]},
+    rewards: { gold: 10, partyAchievements: [PARTY_ACHIEVEMENTS.THE_SCEPTER_AND_THE_VOICE] },
     scenariosUnlocked: [42]
   });
 
-  campaign.makeDonation({playerName: 'Raticate'});
-  campaign.makeDonation({playerName: 'Ostiónix'});
-  campaign.makeDonation({playerName: 'Brad'});
+  campaign.makeDonation({ playerName: 'Raticate' });
+  campaign.makeDonation({ playerName: 'Ostiónix' });
+  campaign.makeDonation({ playerName: 'Brad' });
 
-  campaign.retireCharacter({name: 'Ostiónix', cityEventsToAdd: [42, 41], roadEventsToAdd: [42, 41]});
-  campaign.retireCharacter({name: 'Raticate', cityEventsToAdd: [47, 37], roadEventsToAdd: [47, 37]});
+  campaign.retireCharacter({ name: 'Ostiónix', cityEventsToAdd: [42, 41], roadEventsToAdd: [42, 41] });
+  campaign.retireCharacter({ name: 'Raticate', cityEventsToAdd: [47, 37], roadEventsToAdd: [47, 37] });
 
   campaign.createCharacter({
     playerId: players[1].uid,
@@ -387,15 +398,15 @@ export function loadCampaing(): CampaignStatus {
     personalQuest: PERSONAL_QUESTS[521]
   });
 
-  campaign.gainAbility({playerName: 'Adolfo', ability: 'energizing-strike'});
-  campaign.gainAbility({playerName: 'Adolfo', ability: 'vicious-ally'});
-  campaign.gainPerk({playerName: 'Adolfo', perkId: 'btPerk1'});
-  campaign.gainPerk({playerName: 'Adolfo', perkId: 'btPerk6-1'});
-  campaign.gainPerk({playerName: 'Adolfo', perkId: 'btPerk6-2'});
+  campaign.gainAbility({ playerName: 'Adolfo', ability: 'energizing-strike' });
+  campaign.gainAbility({ playerName: 'Adolfo', ability: 'vicious-ally' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk1' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk6-1' });
+  campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk6-2' });
 
-  campaign.buyItem({playerName: 'Adolfo', itemId: 1});
-  campaign.buyItem({playerName: 'Adolfo', itemId: 13});
-  campaign.buyItem({playerName: 'Adolfo', itemId: 27});
+  campaign.buyItem({ playerName: 'Adolfo', itemId: 1 });
+  campaign.buyItem({ playerName: 'Adolfo', itemId: 13 });
+  campaign.buyItem({ playerName: 'Adolfo', itemId: 27 });
 
   campaign.createCharacter({
     playerId: players[0].uid,
@@ -406,38 +417,39 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.gainAbility({ playerName: 'Sona', ability: 'soothing-lullaby' });
   campaign.gainAbility({ playerName: 'Sona', ability: 'echoing-aria' });
-  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk12-1'});
-  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk12-2'});
-  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk11'});
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk12-1' });
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk12-2' });
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk11' });
 
-  campaign.buyItem({playerName: 'Sona', itemId: 13});
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
-  campaign.buyItem({playerName: 'Sona', itemId: 17});
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.buyItem({ playerName: 'Sona', itemId: 13 });
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
+  campaign.buyItem({ playerName: 'Sona', itemId: 17 });
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
 
-  campaign.resolveCityEvent({eventId: 44, discard: true,
-    rewards: {reputation: 1}
+  campaign.resolveCityEvent({
+    eventId: 44, discard: true,
+    rewards: { reputation: 1 }
   });
 
-  campaign.resolveRoadEvent({eventId: 15, discard: false});
+  campaign.resolveRoadEvent({ eventId: 15, discard: false });
 
   campaign.completeScenario({
     scenarioId: 32,
     level: 2,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 22, g: 12, t: 2} },
-      { playerName: 'Adolfo', playerResults: {xp: 15, g: 9, t: 1} },
-      { playerName: 'Brad',     playerResults: {xp: 11, g: 9, t: 1, pq: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 12, g: 15, t:1, pq: 1} },
+      { playerName: 'Sona', playerResults: { xp: 22, g: 12, t: 2 } },
+      { playerName: 'Adolfo', playerResults: { xp: 15, g: 9, t: 1 } },
+      { playerName: 'Brad', playerResults: { xp: 11, g: 9, t: 1, pq: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 12, g: 15, t: 1, pq: 1 } },
     ],
     scenariosUnlocked: [33, 40]
   });
 
-  campaign.gainPerk({playerName: 'Mystic', perkId: 'bePerk3-1'});
+  campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk3-1' });
 
-  campaign.makeDonation({playerName: 'Brad'});
+  campaign.makeDonation({ playerName: 'Brad' });
 
-  campaign.retireCharacter({name: 'Brad', cityEventsToAdd: [43, 40], roadEventsToAdd: [43, 40]});
+  campaign.retireCharacter({ name: 'Brad', cityEventsToAdd: [43, 40], roadEventsToAdd: [43, 40] });
 
   campaign.createCharacter({
     playerId: players[1].uid,
@@ -448,70 +460,72 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.gainAbility({ playerName: 'Víctor', ability: 'crystallizing-blast' });
   campaign.gainAbility({ playerName: 'Víctor', ability: 'chain-lightning' });
-  campaign.gainPerk({playerName: 'Víctor', perkId: 'elPerk1-1'});
-  campaign.gainPerk({playerName: 'Víctor', perkId: 'elPerk1-2'});
-  campaign.gainPerk({playerName: 'Víctor', perkId: 'elPerk8'});
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk1-1' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk1-2' });
+  campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk8' });
 
-  campaign.sellItem({playerName: 'Mystic', itemId: 1});
-  campaign.buyItem({playerName: 'Mystic', itemId: 71});
-  campaign.buyItem({playerName: 'Mystic', itemId: 23});
+  campaign.sellItem({ playerName: 'Mystic', itemId: 1 });
+  campaign.buyItem({ playerName: 'Mystic', itemId: 71 });
+  campaign.buyItem({ playerName: 'Mystic', itemId: 23 });
 
-  campaign.buyItem({playerName: 'Víctor', itemId: 71});
-  campaign.buyItem({playerName: 'Víctor', itemId: 13});
+  campaign.buyItem({ playerName: 'Víctor', itemId: 71 });
+  campaign.buyItem({ playerName: 'Víctor', itemId: 13 });
 
-  campaign.resolveCityEvent({eventId: 24, discard: false,
+  campaign.resolveCityEvent({
+    eventId: 24, discard: false,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 10} },
-      { playerName: 'Adolfo', playerResults: {xp: 10} },
-      { playerName: 'Víctor', playerResults: {xp: 10} },
-      { playerName: 'Mystic', playerResults: {xp: 10} },
+      { playerName: 'Sona', playerResults: { xp: 10 } },
+      { playerName: 'Adolfo', playerResults: { xp: 10 } },
+      { playerName: 'Víctor', playerResults: { xp: 10 } },
+      { playerName: 'Mystic', playerResults: { xp: 10 } },
     ]
   });
 
-  campaign.resolveRoadEvent({eventId: 7, discard: true});
+  campaign.resolveRoadEvent({ eventId: 7, discard: true });
 
   campaign.failScenario({
     scenarioId: 4,
     level: 2,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 19, g: 15} },
-      { playerName: 'Adolfo', playerResults: {xp: 13, g: 0} },
-      { playerName: 'Víctor', playerResults: {xp: 9, g: 15} },
+      { playerName: 'Sona', playerResults: { xp: 19, g: 15 } },
+      { playerName: 'Adolfo', playerResults: { xp: 13, g: 0 } },
+      { playerName: 'Víctor', playerResults: { xp: 9, g: 15 } },
     ],
     treasuresLooted: [46, 38],
-    rewards: {itemDesigns: [123]}
+    rewards: { itemDesigns: [123] }
   });
 
   campaign.gainAbility({ playerName: 'Sona', ability: 'disorienting-dirge' });
-  campaign.gainPerk({playerName: 'Sona', perkId: 'ssPerk10'});
+  campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk10' });
 
-  campaign.buyItem({playerName: 'Víctor', itemId: 20});
-  campaign.buyItem({playerName: 'Sona', itemId: 1});
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
-  campaign.buyItem({playerName: 'Sona', itemId: 20});
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.buyItem({ playerName: 'Víctor', itemId: 20 });
+  campaign.buyItem({ playerName: 'Sona', itemId: 1 });
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
+  campaign.buyItem({ playerName: 'Sona', itemId: 20 });
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
 
-  campaign.resolveCityEvent({eventId: 13, discard: false,
+  campaign.resolveCityEvent({
+    eventId: 13, discard: false,
     playersResults: [
-      { playerName: 'Sona', playerResults: {g: -2} },
-      { playerName: 'Adolfo', playerResults: {g: -3} },
-      { playerName: 'Víctor', playerResults: {g: -3} },
-      { playerName: 'Mystic', playerResults: {g: -1} },
+      { playerName: 'Sona', playerResults: { g: -2 } },
+      { playerName: 'Adolfo', playerResults: { g: -3 } },
+      { playerName: 'Víctor', playerResults: { g: -3 } },
+      { playerName: 'Mystic', playerResults: { g: -1 } },
     ]
   });
 
-  campaign.resolveRoadEvent({eventId: 11, discard: false});
+  campaign.resolveRoadEvent({ eventId: 11, discard: false });
 
   campaign.completeScenario({
     scenarioId: 33,
     level: 2,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 24, g: 12} },
-      { playerName: 'Adolfo', playerResults: {xp: 19, g: 0, t: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 9, g: 0, t: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 7, g: 12, pq: 1} },
+      { playerName: 'Sona', playerResults: { xp: 24, g: 12 } },
+      { playerName: 'Adolfo', playerResults: { xp: 19, g: 0, t: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 9, g: 0, t: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 7, g: 12, pq: 1 } },
     ],
-    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_TREASURE, PARTY_ACHIEVEMENTS.THE_DRAKES_TREASURE]}
+    rewards: { partyAchievements: [PARTY_ACHIEVEMENTS.THE_VOICES_TREASURE, PARTY_ACHIEVEMENTS.THE_DRAKES_TREASURE] }
   });
 
   campaign.gainAbility({ playerName: 'Mystic', ability: 'flurry-of-axes' });
@@ -520,19 +534,21 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Adolfo', ability: 'punch-through' });
   campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk6-3' });
 
-  campaign.resolveCityEvent({eventId: 36, discard: true,
+  campaign.resolveCityEvent({
+    eventId: 36, discard: true,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 5} },
-      { playerName: 'Adolfo', playerResults: {xp: 5} },
-      { playerName: 'Víctor', playerResults: {xp: 5} },
-      { playerName: 'Mystic', playerResults: {xp: 5} },
+      { playerName: 'Sona', playerResults: { xp: 5 } },
+      { playerName: 'Adolfo', playerResults: { xp: 5 } },
+      { playerName: 'Víctor', playerResults: { xp: 5 } },
+      { playerName: 'Mystic', playerResults: { xp: 5 } },
     ],
-    rewards: {reputation: -2}
+    rewards: { reputation: -2 }
   });
 
-  campaign.resolveRoadEvent({eventId: 5, discard: true,
+  campaign.resolveRoadEvent({
+    eventId: 5, discard: true,
     playersResults: [
-      { playerName: 'Mystic', playerResults: {items: [106]} },
+      { playerName: 'Mystic', playerResults: { items: [106] } },
     ]
   });
 
@@ -540,35 +556,36 @@ export function loadCampaing(): CampaignStatus {
     scenarioId: 40,
     level: 2,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 7, g: 6, t: 1} },
-      { playerName: 'Adolfo', playerResults: {xp: 6, g: 3} },
-      { playerName: 'Víctor', playerResults: {xp: 4, g: 3} },
-      { playerName: 'Mystic', playerResults: {xp: 5, g: 6, pq: 1, items: [104]} },
+      { playerName: 'Sona', playerResults: { xp: 7, g: 6, t: 1 } },
+      { playerName: 'Adolfo', playerResults: { xp: 6, g: 3 } },
+      { playerName: 'Víctor', playerResults: { xp: 4, g: 3 } },
+      { playerName: 'Mystic', playerResults: { xp: 5, g: 6, pq: 1, items: [104] } },
     ],
     treasuresLooted: [47],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2]},
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_2] },
     scenariosUnlocked: [41]
   });
 
-  campaign.resolveCityEvent({eventId: 3, discard: true,
+  campaign.resolveCityEvent({
+    eventId: 3, discard: true,
     playersResults: [
-      { playerName: 'Sona', playerResults: {g: -3, items: [125]} },
-      { playerName: 'Víctor', playerResults: {g: -5} },
-      { playerName: 'Mystic', playerResults: {g: -2} },
+      { playerName: 'Sona', playerResults: { g: -3, items: [125] } },
+      { playerName: 'Víctor', playerResults: { g: -5 } },
+      { playerName: 'Mystic', playerResults: { g: -2 } },
     ],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_3]}
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_3] }
   });
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
 
-  campaign.resolveRoadEvent({eventId: 2, discard: false});
+  campaign.resolveRoadEvent({ eventId: 2, discard: false });
 
   campaign.completeScenario({
     scenarioId: 4,
     level: 2,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 16, g: 15} },
-      { playerName: 'Víctor', playerResults: {xp: 12, g: 12, t: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 8, g: 21, t: 1, pq: 1} },
+      { playerName: 'Sona', playerResults: { xp: 16, g: 15 } },
+      { playerName: 'Víctor', playerResults: { xp: 12, g: 12, t: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 8, g: 21, t: 1, pq: 1 } },
     ],
     scenariosUnlocked: [5, 6]
   });
@@ -579,35 +596,36 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Víctor', ability: 'primal-duality' });
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk9' });
 
-  campaign.resolveCityEvent({eventId: 21, discard: true});
+  campaign.resolveCityEvent({ eventId: 21, discard: true });
 
-  campaign.resolveRoadEvent({eventId: 28,
-    playersResults: [{ playerName: 'Adolfo', playerResults: {g: 10} }],
+  campaign.resolveRoadEvent({
+    eventId: 28,
+    playersResults: [{ playerName: 'Adolfo', playerResults: { g: 10 } }],
     discard: true
   });
 
-  campaign.buyItem({playerName: 'Sona', itemId: 5});
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
-  campaign.buyItem({playerName: 'Sona', itemId: 7});
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
-  campaign.buyItem({playerName: 'Mystic', itemId: 27});
+  campaign.buyItem({ playerName: 'Sona', itemId: 5 });
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
+  campaign.buyItem({ playerName: 'Sona', itemId: 7 });
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
+  campaign.buyItem({ playerName: 'Mystic', itemId: 27 });
 
   campaign.completeScenario({
     scenarioId: 41,
     level: 3,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 21, g: 0, t: 2} },
-      { playerName: 'Adolfo', playerResults: {xp: 7, g: 0} },
-      { playerName: 'Víctor', playerResults: {xp: 3, g: 9, t: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 6, g: 9, t: 2, pq: 1} },
+      { playerName: 'Sona', playerResults: { xp: 21, g: 0, t: 2 } },
+      { playerName: 'Adolfo', playerResults: { xp: 7, g: 0 } },
+      { playerName: 'Víctor', playerResults: { xp: 3, g: 9, t: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 6, g: 9, t: 2, pq: 1 } },
     ],
-    rewards: {gold: 50, xp: 25, prosperity: 2, t: 2, globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_FREED]},
+    rewards: { gold: 50, xp: 25, prosperity: 2, t: 2, globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_VOICE_FREED] },
     treasuresLooted: [24],
   });
 
-  campaign.decipherMessage({message: 'The creator has made a request for our spoils. The tweelfth letter holds the key.'});
+  campaign.decipherMessage({ message: 'The creator has made a request for our spoils. The tweelfth letter holds the key.' });
 
-  campaign.buyItem({playerName: 'Mystic', itemId: 13});
+  campaign.buyItem({ playerName: 'Mystic', itemId: 13 });
 
   campaign.gainAbility({ playerName: 'Sona', ability: 'pull-the-strings' });
   campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk1-1' });
@@ -624,29 +642,30 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk4' });
 
   campaign.buyItem({ playerName: 'Sona', itemId: 8 });
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
 
-  campaign.resolveCityEvent({eventId: 10, discard: true,
-    rewards: {reputation: 1}
+  campaign.resolveCityEvent({
+    eventId: 10, discard: true,
+    rewards: { reputation: 1 }
   });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
   // TODO: Open envelope B
 
-  campaign.resolveRoadEvent({eventId: 6, discard: false});
+  campaign.resolveRoadEvent({ eventId: 6, discard: false });
 
   campaign.completeScenario({
     scenarioId: 25,
     level: 3,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 14, g: 18, t: 1} },
-      { playerName: 'Adolfo', playerResults: {xp: 11, g: 9, t: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 11, g: 9, items: [108]} },
-      { playerName: 'Mystic', playerResults: {xp: 5, g: 15, t: 2, pq: 1} },
+      { playerName: 'Sona', playerResults: { xp: 14, g: 18, t: 1 } },
+      { playerName: 'Adolfo', playerResults: { xp: 11, g: 9, t: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 11, g: 9, items: [108] } },
+      { playerName: 'Mystic', playerResults: { xp: 5, g: 15, t: 2, pq: 1 } },
     ],
-    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND]},
+    rewards: { partyAchievements: [PARTY_ACHIEVEMENTS.THE_DRAKES_COMMAND] },
     treasuresLooted: [58],
     scenariosUnlocked: [33, 34]
   });
@@ -664,31 +683,33 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk5' });
 
   // Open envelope "When you deserve it"
-  campaign.unlockScenario({scenariosUnlocked: [76]})
+  campaign.unlockScenario({ scenariosUnlocked: [76] })
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Mystic'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Mystic' });
 
-  campaign.resolveCityEvent({eventId: 4,
+  campaign.resolveCityEvent({
+    eventId: 4,
     playersResults: [
-      { playerName: 'Sona', playerResults: {t: -1} },
-      { playerName: 'Adolfo', playerResults: {t: -1} },
-      { playerName: 'Víctor', playerResults: {t: -1} },
-      { playerName: 'Mystic', playerResults: {t: -1} },
-    ], rewards: {reputation: 1}, discard: true});
+      { playerName: 'Sona', playerResults: { t: -1 } },
+      { playerName: 'Adolfo', playerResults: { t: -1 } },
+      { playerName: 'Víctor', playerResults: { t: -1 } },
+      { playerName: 'Mystic', playerResults: { t: -1 } },
+    ], rewards: { reputation: 1 }, discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 41, discard: true});
+  campaign.resolveRoadEvent({ eventId: 41, discard: true });
 
   campaign.completeScenario({
     scenarioId: 6,
     level: 3,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 15, g: 18} },
-      { playerName: 'Adolfo', playerResults: {xp: 15, g: 9, t: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 6, g: 15} },
-      { playerName: 'Mystic', playerResults: {xp: 5, g: 3, t: 1, pq: 1, items: [101]} },
+      { playerName: 'Sona', playerResults: { xp: 15, g: 18 } },
+      { playerName: 'Adolfo', playerResults: { xp: 15, g: 9, t: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 6, g: 15 } },
+      { playerName: 'Mystic', playerResults: { xp: 5, g: 3, t: 1, pq: 1, items: [101] } },
     ],
-    rewards: {gold: 5, partyAchievements: [PARTY_ACHIEVEMENTS.JEKSERAHS_PLANS, PARTY_ACHIEVEMENTS.DARK_BOUNTY]},
+    rewards: { gold: 5, partyAchievements: [PARTY_ACHIEVEMENTS.JEKSERAHS_PLANS, PARTY_ACHIEVEMENTS.DARK_BOUNTY] },
     treasuresLooted: [50],
     scenariosUnlocked: [8]
   });
@@ -696,13 +717,15 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Adolfo', ability: 'blood-hunger' });
   campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk3-1' });
 
-  campaign.resolveCityEvent({eventId: 24,
+  campaign.resolveCityEvent({
+    eventId: 24,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 10} },
-      { playerName: 'Adolfo', playerResults: {xp: 10} },
-      { playerName: 'Víctor', playerResults: {xp: 10} },
-      { playerName: 'Mystic', playerResults: {xp: 10} },
-    ], discard: false});
+      { playerName: 'Sona', playerResults: { xp: 10 } },
+      { playerName: 'Adolfo', playerResults: { xp: 10 } },
+      { playerName: 'Víctor', playerResults: { xp: 10 } },
+      { playerName: 'Mystic', playerResults: { xp: 10 } },
+    ], discard: false
+  });
 
   campaign.gainAbility({ playerName: 'Mystic', ability: 'devil-horns' });
   campaign.gainPerk({ playerName: 'Mystic', perkId: 'bePerk9-1' });
@@ -710,31 +733,31 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Sona', ability: 'nightmare-serenade' });
   campaign.gainPerk({ playerName: 'Sona', perkId: 'ssPerk6' });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Mystic'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Mystic' });
 
   campaign.sellItem({ playerName: 'Mystic', itemId: 101 });
   campaign.buyItem({ playerName: 'Adolfo', itemId: 101 });
 
   campaign.buyItem({ playerName: 'Sona', itemId: 3 });
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
   campaign.buyItem({ playerName: 'Sona', itemId: 12 });
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
   campaign.buyItem({ playerName: 'Sona', itemId: 11 });
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
   campaign.buyItem({ playerName: 'Sona', itemId: 18 });
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
 
-  campaign.resolveRoadEvent({eventId: 22, rewards: {addCityEvents: [74]}, discard: true});
+  campaign.resolveRoadEvent({ eventId: 22, rewards: { addCityEvents: [74] }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 5,
     level: 4,
     playersResults: [
-      { playerName: 'Sona', playerResults: {xp: 13, g: 8, t: 1} },
-      { playerName: 'Adolfo', playerResults: {xp: 13, g: 8, t: 2} },
-      { playerName: 'Víctor', playerResults: {xp: 6, g: 31, t: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 6, g: 31, t: 1, pq: 1} },
+      { playerName: 'Sona', playerResults: { xp: 13, g: 8, t: 1 } },
+      { playerName: 'Adolfo', playerResults: { xp: 13, g: 8, t: 2 } },
+      { playerName: 'Víctor', playerResults: { xp: 6, g: 31, t: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 6, g: 31, t: 1, pq: 1 } },
     ],
     treasuresLooted: [4, 28],
     scenariosUnlocked: [10, 14, 19]
@@ -743,11 +766,11 @@ export function loadCampaing(): CampaignStatus {
   campaign.sellItem({ playerName: 'Sona', itemId: 125 });
   campaign.buyItem({ playerName: 'Sona', itemId: 14 });
   campaign.buyItem({ playerName: 'Sona', itemId: 2 });
-  campaign.advancePersonalQuestProgress({playerName: 'Sona'});
+  campaign.advancePersonalQuestProgress({ playerName: 'Sona' });
 
-  campaign.makeDonation({playerName: 'Sona'});
+  campaign.makeDonation({ playerName: 'Sona' });
 
-  campaign.retireCharacter({name: 'Sona', cityEventsToAdd: [54, 32], roadEventsToAdd: [54, 32]});
+  campaign.retireCharacter({ name: 'Sona', cityEventsToAdd: [54, 32], roadEventsToAdd: [54, 32] });
 
   campaign.createCharacter({
     playerId: players[0].uid,
@@ -770,26 +793,26 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Garen', itemId: 23 });
   campaign.buyItem({ playerName: 'Garen', itemId: 34 });
 
-  campaign.unlockScenario({scenariosUnlocked: [72]});
+  campaign.unlockScenario({ scenariosUnlocked: [72] });
 
-  campaign.resolveCityEvent({eventId: 54, rewards: {reputation: 1}, discard: true});
+  campaign.resolveCityEvent({ eventId: 54, rewards: { reputation: 1 }, discard: true });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Mystic'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Mystic' });
 
-  campaign.resolveRoadEvent({eventId: 14, rewards: {reputation: 1}, discard: false});
+  campaign.resolveRoadEvent({ eventId: 14, rewards: { reputation: 1 }, discard: false });
 
   campaign.completeScenario({
     scenarioId: 14,
     level: 3,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 14, g: 3, t: 1} },
-      { playerName: 'Garen', playerResults: {xp: 4, g: 48, t: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 8, g: 0, t: 2} },
-      { playerName: 'Mystic', playerResults: {xp: 7, g: 26, t: 1, pq: 1} },
+      { playerName: 'Adolfo', playerResults: { xp: 14, g: 3, t: 1 } },
+      { playerName: 'Garen', playerResults: { xp: 4, g: 48, t: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 8, g: 0, t: 2 } },
+      { playerName: 'Mystic', playerResults: { xp: 7, g: 26, t: 1, pq: 1 } },
     ],
     treasuresLooted: [26],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_POWER_OF_ENHANCEMENT]},
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.THE_POWER_OF_ENHANCEMENT] },
   });
 
   campaign.sellItem({ playerName: 'Mystic', itemId: 23 });
@@ -809,65 +832,71 @@ export function loadCampaing(): CampaignStatus {
   campaign.enhanceAbility({ playerName: 'Mystic', gold: 50 });
   campaign.enhanceAbility({ playerName: 'Mystic', gold: 75 });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
 
-  campaign.resolveCityEvent({eventId: 13, playersResults:[
-    { playerName: 'Garen', playerResults: {g: -3} },
-    { playerName: 'Adolfo', playerResults: {g: -3} },
-    { playerName: 'Víctor', playerResults: {g: -3} },
-    { playerName: 'Mystic', playerResults: {g: -3} },
-  ], discard: false});
-  campaign.resolveRoadEvent({eventId: 30, discard: true});
+  campaign.resolveCityEvent({
+    eventId: 13, playersResults: [
+      { playerName: 'Garen', playerResults: { g: -3 } },
+      { playerName: 'Adolfo', playerResults: { g: -3 } },
+      { playerName: 'Víctor', playerResults: { g: -3 } },
+      { playerName: 'Mystic', playerResults: { g: -3 } },
+    ], discard: false
+  });
+  campaign.resolveRoadEvent({ eventId: 30, discard: true });
 
   campaign.completeScenario({
     scenarioId: 19,
     level: 4,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 17, g: 8, t: 1} },
-      { playerName: 'Garen', playerResults: {xp: 6, g: 56, t: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 12, g: 36, t: 1, pq: 1} },
-      { playerName: 'Mystic', playerResults: {xp: 8, g: 44, t: 0, pq: 1} },
+      { playerName: 'Adolfo', playerResults: { xp: 17, g: 8, t: 1 } },
+      { playerName: 'Garen', playerResults: { xp: 6, g: 56, t: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 12, g: 36, t: 1, pq: 1 } },
+      { playerName: 'Mystic', playerResults: { xp: 8, g: 44, t: 0, pq: 1 } },
     ],
     treasuresLooted: [17],
-    rewards: {prosperity: 1, partyAchievements: [PARTY_ACHIEVEMENTS.STONEBREAKERS_CENSER]},
+    rewards: { prosperity: 1, partyAchievements: [PARTY_ACHIEVEMENTS.STONEBREAKERS_CENSER] },
     scenariosUnlocked: [27]
   });
 
   campaign.enhanceAbility({ playerName: 'Garen', gold: 50 });
   campaign.enhanceAbility({ playerName: 'Mystic', gold: 50 });
-  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
 
-  campaign.resolveCityEvent({eventId: 13, playersResults:[
-    { playerName: 'Garen', playerResults: {g: -3} },
-    { playerName: 'Adolfo', playerResults: {g: -3} },
-    { playerName: 'Víctor', playerResults: {g: -3} },
-    { playerName: 'Mystic', playerResults: {g: -3} },
-  ], discard: false});
+  campaign.resolveCityEvent({
+    eventId: 13, playersResults: [
+      { playerName: 'Garen', playerResults: { g: -3 } },
+      { playerName: 'Adolfo', playerResults: { g: -3 } },
+      { playerName: 'Víctor', playerResults: { g: -3 } },
+      { playerName: 'Mystic', playerResults: { g: -3 } },
+    ], discard: false
+  });
 
-  campaign.resolveRoadEvent({eventId: 24, playersResults:[
-    { playerName: 'Garen', playerResults: {g: 4} },
-    { playerName: 'Adolfo', playerResults: {g: 3} },
-    { playerName: 'Víctor', playerResults: {g: 3} },
-    { playerName: 'Mystic', playerResults: {g: 0} },
-  ], rewards: {scenariosUnlocked: [82]}, discard: true});
+  campaign.resolveRoadEvent({
+    eventId: 24, playersResults: [
+      { playerName: 'Garen', playerResults: { g: 4 } },
+      { playerName: 'Adolfo', playerResults: { g: 3 } },
+      { playerName: 'Víctor', playerResults: { g: 3 } },
+      { playerName: 'Mystic', playerResults: { g: 0 } },
+    ], rewards: { scenariosUnlocked: [82] }, discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 76,
     level: 4,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 10, g: 20} },
-      { playerName: 'Garen', playerResults: {xp: 3, g: 28, t: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 4, g: 28} },
-      { playerName: 'Mystic', playerResults: {xp: 6, g: 0, pq: 1} },
+      { playerName: 'Adolfo', playerResults: { xp: 10, g: 20 } },
+      { playerName: 'Garen', playerResults: { xp: 3, g: 28, t: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 4, g: 28 } },
+      { playerName: 'Mystic', playerResults: { xp: 6, g: 0, pq: 1 } },
     ],
     treasuresLooted: [75],
   });
 
-  campaign.decipherMessage({message: 'We burrow deep but the central clue cannot be found. It is lost to us. The only thing left to do is ask the creator directly. Send him "dust" and nothing else.'});
+  campaign.decipherMessage({ message: 'We burrow deep but the central clue cannot be found. It is lost to us. The only thing left to do is ask the creator directly. Send him "dust" and nothing else.' });
 
   campaign.sellItem({ playerName: 'Mystic', itemId: 11 });
-  campaign.makeDonation({playerName: 'Mystic'});
-  campaign.retireCharacter({name: 'Mystic', cityEventsToAdd: [53, 33], roadEventsToAdd: [53, 33]});
+  campaign.makeDonation({ playerName: 'Mystic' });
+  campaign.retireCharacter({ name: 'Mystic', cityEventsToAdd: [53, 33], roadEventsToAdd: [53, 33] });
 
   campaign.createCharacter({
     playerId: players[2].uid,
@@ -888,7 +917,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
-      { playerName: 'Víctor', playerResults: {xp: 12, g: 15, t: 1, items: [149]} },
+      { playerName: 'Víctor', playerResults: { xp: 12, g: 15, t: 1, items: [149] } },
     ]
   });
 
@@ -899,29 +928,31 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Master of Minions', itemId: 113 });
   campaign.buyItem({ playerName: 'Master of Minions', itemId: 13 });
 
-  campaign.resolveCityEvent({eventId: 29, rewards: {prosperity: 1}, discard: true});
+  campaign.resolveCityEvent({ eventId: 29, rewards: { prosperity: 1 }, discard: true });
 
   campaign.buyItem({ playerName: 'Garen', itemId: 71 });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
 
-  campaign.resolveRoadEvent({eventId: 66, playersResults:[
-    { playerName: 'Garen', playerResults: {g: 25} },
-    { playerName: 'Adolfo', playerResults: {g: 25} },
-    { playerName: 'Víctor', playerResults: {g: 25} },
-    { playerName: 'Master of Minions', playerResults: {g: 25} },
-  ], discard: true});
+  campaign.resolveRoadEvent({
+    eventId: 66, playersResults: [
+      { playerName: 'Garen', playerResults: { g: 25 } },
+      { playerName: 'Adolfo', playerResults: { g: 25 } },
+      { playerName: 'Víctor', playerResults: { g: 25 } },
+      { playerName: 'Master of Minions', playerResults: { g: 25 } },
+    ], discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 82,
     level: 3,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 19, g: 3, t: 1} },
-      { playerName: 'Garen', playerResults: {xp: 7, g: 27, t: 1, items: [115]} },
-      { playerName: 'Víctor', playerResults: {xp: 9, g: 30, t: 1} },
-      { playerName: 'Master of Minions', playerResults: {xp: 14, g: 12, t: 2} },
+      { playerName: 'Adolfo', playerResults: { xp: 19, g: 3, t: 1 } },
+      { playerName: 'Garen', playerResults: { xp: 7, g: 27, t: 1, items: [115] } },
+      { playerName: 'Víctor', playerResults: { xp: 9, g: 30, t: 1 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 14, g: 12, t: 2 } },
     ],
-    rewards: {reputation: 1}, treasuresLooted: [62],
+    rewards: { reputation: 1 }, treasuresLooted: [62],
   });
 
   campaign.buyItem({ playerName: 'Víctor', itemId: 9 });
@@ -930,32 +961,34 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Garen', itemId: 13 });
   campaign.buyItem({ playerName: 'Master of Minions', itemId: 34 });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Garen'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Garen' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
-  campaign.resolveCityEvent({eventId: 12, playersResults:[
-    { playerName: 'Garen', playerResults: {g: 10, t: -1} },
-    { playerName: 'Adolfo', playerResults: {g: 10, t: -1} },
-    { playerName: 'Víctor', playerResults: {g: 10, t: -1} },
-    { playerName: 'Master of Minions', playerResults: {g: 10, t: -1} },
-  ],rewards: {reputation: 1}, discard: true});
+  campaign.resolveCityEvent({
+    eventId: 12, playersResults: [
+      { playerName: 'Garen', playerResults: { g: 10, t: -1 } },
+      { playerName: 'Adolfo', playerResults: { g: 10, t: -1 } },
+      { playerName: 'Víctor', playerResults: { g: 10, t: -1 } },
+      { playerName: 'Master of Minions', playerResults: { g: 10, t: -1 } },
+    ], rewards: { reputation: 1 }, discard: true
+  });
 
   campaign.buyItem({ playerName: 'Master of Minions', itemId: 27 });
 
-  campaign.resolveRoadEvent({eventId: 36, discard: true});
-  campaign.decipherMessage({message: 'Record the page, the word, and the letter - 634.'});
+  campaign.resolveRoadEvent({ eventId: 36, discard: true });
+  campaign.decipherMessage({ message: 'Record the page, the word, and the letter - 634.' });
 
   campaign.completeScenario({
     scenarioId: 67,
     level: 3,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 11, g: 6, t: 1} },
-      { playerName: 'Garen', playerResults: {xp: 8, g: 18, t: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 16, g: 12, t: 1} },
-      { playerName: 'Master of Minions', playerResults: {xp: 15, g: 6, t: 1, items: [132]} },
+      { playerName: 'Adolfo', playerResults: { xp: 11, g: 6, t: 1 } },
+      { playerName: 'Garen', playerResults: { xp: 8, g: 18, t: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 16, g: 12, t: 1 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 15, g: 6, t: 1, items: [132] } },
     ],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_4]}, treasuresLooted: [14],
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_4] }, treasuresLooted: [14],
   });
 
   //Buscar su sitio correcto
@@ -971,52 +1004,56 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Adolfo', ability: 'lash-out' });
   campaign.gainPerk({ playerName: 'Adolfo', perkId: 'btPerk4-1' });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Garen'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Garen' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
-  campaign.resolveCityEvent({eventId: 18, playersResults:[
-    { playerName: 'Garen', playerResults: {g: 2} },
-    { playerName: 'Adolfo', playerResults: {g: 2} },
-    { playerName: 'Víctor', playerResults: {g: 2} },
-    { playerName: 'Master of Minions', playerResults: {g: 2} },
-  ], discard: false});
+  campaign.resolveCityEvent({
+    eventId: 18, playersResults: [
+      { playerName: 'Garen', playerResults: { g: 2 } },
+      { playerName: 'Adolfo', playerResults: { g: 2 } },
+      { playerName: 'Víctor', playerResults: { g: 2 } },
+      { playerName: 'Master of Minions', playerResults: { g: 2 } },
+    ], discard: false
+  });
 
-  campaign.resolveRoadEvent({eventId: 42, discard: true});
+  campaign.resolveRoadEvent({ eventId: 42, discard: true });
 
   campaign.failScenario({
     scenarioId: 72,
     level: 3,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 0, g: 0} },
-      { playerName: 'Garen', playerResults: {xp: 0, g: 0} },
-      { playerName: 'Víctor', playerResults: {xp: 0, g: 0} },
-      { playerName: 'Master of Minions', playerResults: {xp: 0, g: 0} },
+      { playerName: 'Adolfo', playerResults: { xp: 0, g: 0 } },
+      { playerName: 'Garen', playerResults: { xp: 0, g: 0 } },
+      { playerName: 'Víctor', playerResults: { xp: 0, g: 0 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 0, g: 0 } },
     ]
   });
 
-  campaign.resolveCityEvent({eventId: 47,
-    rewards:{
+  campaign.resolveCityEvent({
+    eventId: 47,
+    rewards: {
       reputation: -1,
       scenariosUnlocked: [87],
       partyAchievements: [PARTY_ACHIEVEMENTS.THE_POISONS_SOURCE]
-    }, discard: true});
+    }, discard: true
+  });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Garen'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Garen' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
-  campaign.resolveRoadEvent({eventId: 37, discard: true});
+  campaign.resolveRoadEvent({ eventId: 37, discard: true });
 
   campaign.completeScenario({
     scenarioId: 72,
     level: 3,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 15, g: 9} },
-      { playerName: 'Garen', playerResults: {xp: 8, g: 15, t: 1, pq: 3} },
-      { playerName: 'Víctor', playerResults: {xp: 6, g: 6} },
-      { playerName: 'Master of Minions', playerResults: {xp: 13, g: 0, t: 2} },
-    ], rewards: {reputation: 1, prosperity: 1}
+      { playerName: 'Adolfo', playerResults: { xp: 15, g: 9 } },
+      { playerName: 'Garen', playerResults: { xp: 8, g: 15, t: 1, pq: 3 } },
+      { playerName: 'Víctor', playerResults: { xp: 6, g: 6 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 13, g: 0, t: 2 } },
+    ], rewards: { reputation: 1, prosperity: 1 }
   });
 
   campaign.addCityEvent(80);
@@ -1047,53 +1084,59 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk3-2' });
 
   campaign.buyItem({ playerName: 'Víctor', itemId: 41 });
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Víctor' });
 
-  campaign.resolveCityEvent({eventId: 6, playersResults:[
-    { playerName: 'Garen', playerResults: {xp: 5} },
-    { playerName: 'Adolfo', playerResults: {xp: 5} },
-    { playerName: 'Víctor', playerResults: {xp: 5} },
-    { playerName: 'Master of Minions', playerResults: {xp: 5} },
-    { playerName: 'Mandrágora', playerResults: {xp: 5} },
-  ], rewards: {prosperity: 1}, discard: true});
+  campaign.resolveCityEvent({
+    eventId: 6, playersResults: [
+      { playerName: 'Garen', playerResults: { xp: 5 } },
+      { playerName: 'Adolfo', playerResults: { xp: 5 } },
+      { playerName: 'Víctor', playerResults: { xp: 5 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 5 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 5 } },
+    ], rewards: { prosperity: 1 }, discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 18,
     level: 3,
     playersResults: [
-      { playerName: 'Mandrágora', playerResults: {xp: 3, g: 21, t:1, pq: 1} },
-      { playerName: 'Víctor', playerResults: {xp: 9, g: 24} },
-      { playerName: 'Master of Minions', playerResults: {xp: 18, g: 21, t: 1} },
-    ], treasuresLooted: [63], rewards: {itemDesigns: [95]},  scenariosUnlocked: [14, 23, 26, 43]
+      { playerName: 'Mandrágora', playerResults: { xp: 3, g: 21, t: 1, pq: 1 } },
+      { playerName: 'Víctor', playerResults: { xp: 9, g: 24 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 18, g: 21, t: 1 } },
+    ], treasuresLooted: [63], rewards: { itemDesigns: [95] }, scenariosUnlocked: [14, 23, 26, 43]
   });
 
   campaign.gainAbility({ playerName: 'Víctor', ability: 'pragmatic-reinforcement' });
   campaign.gainPerk({ playerName: 'Víctor', perkId: 'elPerk6' });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Garen'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Garen' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
-  campaign.resolveCityEvent({eventId: 42,
-    rewards:{
+  campaign.resolveCityEvent({
+    eventId: 42,
+    rewards: {
       reputation: 1,
       prosperity: 1,
-    }, discard: true});
+    }, discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 26,
-    rewards:{
+  campaign.resolveRoadEvent({
+    eventId: 26,
+    rewards: {
       reputation: 1,
-    }, discard: true});
+    }, discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 43,
     level: 4,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 19, g: 0, t:1, pq: 1} },
-      { playerName: 'Garen', playerResults: {xp: 11, g: 32, t:1, pq: 3, items: [98]} },
-      { playerName: 'Víctor', playerResults: {xp: 12, g: 20} },
-      { playerName: 'Master of Minions', playerResults: {xp: 28, g: 18} },
-    ], rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.WATER_BREATHING]}, treasuresLooted: [35]
+      { playerName: 'Adolfo', playerResults: { xp: 19, g: 0, t: 1, pq: 1 } },
+      { playerName: 'Garen', playerResults: { xp: 11, g: 32, t: 1, pq: 3, items: [98] } },
+      { playerName: 'Víctor', playerResults: { xp: 12, g: 20 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 28, g: 18 } },
+    ], rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.WATER_BREATHING] }, treasuresLooted: [35]
   });
 
   campaign.gainAbility({ playerName: 'Garen', ability: 'catastrophic-bomb' });
@@ -1103,33 +1146,35 @@ export function loadCampaing(): CampaignStatus {
   campaign.gainAbility({ playerName: 'Master of Minions', ability: 'livinf-mountain' });
   campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk3-3' });
 
-  campaign.makeDonation({playerName: 'Garen'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Garen' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
   campaign.buyItem({ playerName: 'Master of Minions', itemId: 16 });
   campaign.buyItem({ playerName: 'Master of Minions', itemId: 12 });
   campaign.buyItem({ playerName: 'Garen', itemId: 41 });
 
-  campaign.resolveCityEvent({eventId: 41, playersResults:[
-    { playerName: 'Garen', playerResults: {g: -10} },
-    { playerName: 'Mandrágora', playerResults: {items: [34]} },
-  ], discard: true});
+  campaign.resolveCityEvent({
+    eventId: 41, playersResults: [
+      { playerName: 'Garen', playerResults: { g: -10 } },
+      { playerName: 'Mandrágora', playerResults: { items: [34] } },
+    ], discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 87,
     level: 4,
     playersResults: [
-      { playerName: 'Garen', playerResults: {xp: 9, g: 8, t:2, pq: 3} },
-      { playerName: 'Víctor', playerResults: {xp: 7, g: 4, t:1} },
-      { playerName: 'Master of Minions', playerResults: {xp: 12, g: 4, t:1} },
-    ], rewards: {reputation: 1, prosperity: 1, itemDesigns: [89]}, treasuresLooted: [40]
+      { playerName: 'Garen', playerResults: { xp: 9, g: 8, t: 2, pq: 3 } },
+      { playerName: 'Víctor', playerResults: { xp: 7, g: 4, t: 1 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 12, g: 4, t: 1 } },
+    ], rewards: { reputation: 1, prosperity: 1, itemDesigns: [89] }, treasuresLooted: [40]
   });
 
   campaign.gainPerk({ playerName: 'Master of Minions', perkId: 'suPerk4-1' });
 
   campaign.sellItem({ playerName: 'Garen', itemId: 98 });
-  campaign.makeDonation({playerName: 'Garen'});
-  campaign.retireCharacter({name: 'Garen', cityEventsToAdd: [49, 35], roadEventsToAdd: [49, 35]});
+  campaign.makeDonation({ playerName: 'Garen' });
+  campaign.retireCharacter({ name: 'Garen', cityEventsToAdd: [49, 35], roadEventsToAdd: [49, 35] });
 
 
   campaign.createCharacter({
@@ -1156,32 +1201,32 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Epidemus', itemId: 13 });
   campaign.buyItem({ playerName: 'Epidemus', itemId: 34 });
 
-  campaign.resolveCityEvent({eventId: 49, rewards: {prosperity: 1}, discard: true});
+  campaign.resolveCityEvent({ eventId: 49, rewards: { prosperity: 1 }, discard: true });
 
   campaign.buyItem({ playerName: 'Víctor', itemId: 16 });
   campaign.buyItem({ playerName: 'Víctor', itemId: 42 });
   campaign.buyItem({ playerName: 'Víctor', itemId: 89 });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
   campaign.completeScenario({
     scenarioId: 26,
     level: 3,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 7, g: 15} },
-      { playerName: 'Víctor', playerResults: {xp: 14, g: 9} },
-      { playerName: 'Master of Minions', playerResults: {xp: 7, g: 3, pq:4} },
-      { playerName: 'Mandrágora', playerResults: {xp: 10, g: 15, t:1, pq: 1, items:[33]} },
-    ], rewards: {gold: 10, reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.FOLLOWING_CLUES]},
-      treasuresLooted: [66], scenariosUnlocked: [22]
+      { playerName: 'Epidemus', playerResults: { xp: 7, g: 15 } },
+      { playerName: 'Víctor', playerResults: { xp: 14, g: 9 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 7, g: 3, pq: 4 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 10, g: 15, t: 1, pq: 1, items: [33] } },
+    ], rewards: { gold: 10, reputation: 1, prosperity: 2, partyAchievements: [PARTY_ACHIEVEMENTS.FOLLOWING_CLUES] },
+    treasuresLooted: [66], scenariosUnlocked: [22]
   });
 
-  campaign.levelUpCharacterToCityLevel({playerName: 'Mandrágora' });
-  campaign.levelUpCharacterToCityLevel({playerName: 'Epidemus' });
+  campaign.levelUpCharacterToCityLevel({ playerName: 'Mandrágora' });
+  campaign.levelUpCharacterToCityLevel({ playerName: 'Epidemus' });
 
-  campaign.unlockScenario({scenariosUnlocked: [73]});
-  campaign.unblockCharacter({name: 'Sunkeeper', cityEventsToAdd: [31], roadEventsToAdd: [31]});
+  campaign.unlockScenario({ scenariosUnlocked: [73] });
+  campaign.unblockCharacter({ name: 'Sunkeeper', cityEventsToAdd: [31], roadEventsToAdd: [31] });
 
   // campaign.gainAbility({ playerName: 'Mandrágora', ability: 'cull-the-weak' });
   // campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
@@ -1197,38 +1242,38 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Mandrágora', itemId: 6 });
   campaign.buyItem({ playerName: 'Mandrágora', itemId: 14 });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
-  campaign.makeDonation({playerName: 'Víctor'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
+  campaign.makeDonation({ playerName: 'Víctor' });
 
-  campaign.resolveCityEvent({eventId: 17, rewards: {scenariosUnlocked: [81]}, discard: true});
+  campaign.resolveCityEvent({ eventId: 17, rewards: { scenariosUnlocked: [81] }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 23,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 4, g: 8, t: 2} },
-      { playerName: 'Víctor', playerResults: {xp: 6, g: 4, t: 1} },
-      { playerName: 'Master of Minions', playerResults: {xp: 5, g: 4, t: 1, pq: 3} },
-      { playerName: 'Mandrágora', playerResults: {xp: 9, g: 12, t: 1, pq: 1} },
-    ], rewards: {itemDesigns: [116], globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_5], partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS]},
-      treasuresLooted: [39, 72]
+      { playerName: 'Epidemus', playerResults: { xp: 4, g: 8, t: 2 } },
+      { playerName: 'Víctor', playerResults: { xp: 6, g: 4, t: 1 } },
+      { playerName: 'Master of Minions', playerResults: { xp: 5, g: 4, t: 1, pq: 3 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 9, g: 12, t: 1, pq: 1 } },
+    ], rewards: { itemDesigns: [116], globalAchievements: [GLOBAL_ACHIEVEMENTS.ANCIENT_TECHNOLOGY_5], partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_RUINS] },
+    treasuresLooted: [39, 72]
   });
 
   // Open envelope A
-  campaign.makeDonation({playerName: 'Master of Minions'});
-  campaign.retireCharacter({name: 'Master of Minions', cityEventsToAdd: [50], roadEventsToAdd: [50], scenariosUnlocked: [66], itemDesigns: [92]});
+  campaign.makeDonation({ playerName: 'Master of Minions' });
+  campaign.retireCharacter({ name: 'Master of Minions', cityEventsToAdd: [50], roadEventsToAdd: [50], scenariosUnlocked: [66], itemDesigns: [92] });
 
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 17, g: 4, items: [150]} },
+      { playerName: 'Adolfo', playerResults: { xp: 17, g: 4, items: [150] } },
     ]
   });
 
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 9, g: 18, items: [144]} },
+      { playerName: 'Epidemus', playerResults: { xp: 9, g: 18, items: [144] } },
     ]
   });
 
@@ -1273,66 +1318,72 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 95 });
 
   campaign.buyItem({ playerName: 'Epidemus', itemId: 5 });
-  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
 
-  campaign.resolveCityEvent({eventId: 53, discard: true});
+  campaign.resolveCityEvent({ eventId: 53, discard: true });
 
-  campaign.resolveRoadEvent({eventId: 21, playersResults:[
-    { playerName: 'Epidemus', playerResults: {t: -1} }
-  ], discard: true});
+  campaign.resolveRoadEvent({
+    eventId: 21, playersResults: [
+      { playerName: 'Epidemus', playerResults: { t: -1 } }
+    ], discard: true
+  });
 
   campaign.completeScenario({
     scenarioId: 73,
     level: 3,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 11, g: 12, t: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 10, g: 12} },
-      { playerName: 'Solete', playerResults: {xp: 15, g: 6, pq: 1} },
-    ], rewards: {reputation: 1}
+      { playerName: 'Epidemus', playerResults: { xp: 11, g: 12, t: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 10, g: 12 } },
+      { playerName: 'Solete', playerResults: { xp: 15, g: 6, pq: 1 } },
+    ], rewards: { reputation: 1 }
   });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
-  campaign.makeDonation({playerName: 'Víctor'});
-  campaign.makeDonation({playerName: 'Adolfo'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
+  campaign.makeDonation({ playerName: 'Víctor' });
+  campaign.makeDonation({ playerName: 'Adolfo' });
 
-  campaign.resolveCityEvent({eventId: 8, playersResults:[
-    { playerName: 'Víctor', playerResults: {g: -15} }
-  ], rewards: {scenariosUnlocked: [93], partyAchievements: [PARTY_ACHIEVEMENTS.A_MAP_TO_TREASURE]}, discard: true});
+  campaign.resolveCityEvent({
+    eventId: 8, playersResults: [
+      { playerName: 'Víctor', playerResults: { g: -15 } }
+    ], rewards: { scenariosUnlocked: [93], partyAchievements: [PARTY_ACHIEVEMENTS.A_MAP_TO_TREASURE] }, discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 9, discard: true});
+  campaign.resolveRoadEvent({ eventId: 9, discard: true });
 
   campaign.completeScenario({
     scenarioId: 81,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 9, g: 12, t: 1, items: [130]} },
-      { playerName: 'Víctor', playerResults: {xp: 10, g: 24, t: 1} },
-      { playerName: 'Solete', playerResults: {xp: 5, g: 20, t: 2, pq: 1} },
-      { playerName: 'Adolfo', playerResults: {xp: 15, g: 4, pq: 1} }
-    ], rewards: {xp: 10}, treasuresLooted: [68]
+      { playerName: 'Epidemus', playerResults: { xp: 9, g: 12, t: 1, items: [130] } },
+      { playerName: 'Víctor', playerResults: { xp: 10, g: 24, t: 1 } },
+      { playerName: 'Solete', playerResults: { xp: 5, g: 20, t: 2, pq: 1 } },
+      { playerName: 'Adolfo', playerResults: { xp: 15, g: 4, pq: 1 } }
+    ], rewards: { xp: 10 }, treasuresLooted: [68]
   });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
   campaign.gainAbility({ playerName: 'Epidemus', ability: 'baneful-hex' });
   campaign.gainPerk({ playerName: 'Epidemus', perkId: 'phPerk9-2' });
-  campaign.buyItem({playerName: 'Mandrágora', itemId: 112});
+  campaign.buyItem({ playerName: 'Mandrágora', itemId: 112 });
 
-  campaign.resolveCityEvent({eventId: 25, playersResults:[
-    { playerName: 'Víctor', playerResults: {g: -10} }
-  ], discard: true});
+  campaign.resolveCityEvent({
+    eventId: 25, playersResults: [
+      { playerName: 'Víctor', playerResults: { g: -10 } }
+    ], discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 17, rewards: {prosperity: 1}, discard: true});
+  campaign.resolveRoadEvent({ eventId: 17, rewards: { prosperity: 1 }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 10,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 12, g: 28, t: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 9, g: 24, t: 1} },
-      { playerName: 'Solete', playerResults: {xp: 12, g: 20, t: 1} },
-      { playerName: 'Mandrágora', playerResults: {xp: 13, g: 8} }
+      { playerName: 'Epidemus', playerResults: { xp: 12, g: 28, t: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 9, g: 24, t: 1 } },
+      { playerName: 'Solete', playerResults: { xp: 12, g: 20, t: 1 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 13, g: 8 } }
     ],
-    rewards: {itemDesigns: [83], partyAchievements: [PARTY_ACHIEVEMENTS.A_DEMONS_ERRAND]},
+    rewards: { itemDesigns: [83], partyAchievements: [PARTY_ACHIEVEMENTS.A_DEMONS_ERRAND] },
     treasuresLooted: [11],
     scenariosUnlocked: [21, 22]
   });
@@ -1340,7 +1391,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 6, g: 12, items: [141]} },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 6, g: 12, items: [141] } },
     ]
   });
 
@@ -1350,39 +1401,41 @@ export function loadCampaing(): CampaignStatus {
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Solete', playerResults: {xp: 10, g: 16, items: [140]} },
+      { playerName: 'Solete', playerResults: { xp: 10, g: 16, items: [140] } },
     ]
   });
 
   campaign.completeSoloScenario({
     level: 3,
     playersResults: [
-      { playerName: 'Mandrágora', playerResults: {xp: 11, g: 15, items: [137]} },
+      { playerName: 'Mandrágora', playerResults: { xp: 11, g: 15, items: [137] } },
     ]
   });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
-  campaign.makeDonation({playerName: 'Mandrágora'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
+  campaign.makeDonation({ playerName: 'Mandrágora' });
   campaign.sellItem({ playerName: 'Mandrágora', itemId: 112 });
   campaign.sellItem({ playerName: 'Mandrágora', itemId: 26 });
   campaign.buyItem({ playerName: 'Mandrágora', itemId: 11 });
 
-  campaign.resolveCityEvent({eventId: 16, playersResults:[
-    { playerName: 'Víctor', playerResults: {g: -10} }
-  ], rewards: {addCityEvents: [70]}, discard: true});
+  campaign.resolveCityEvent({
+    eventId: 16, playersResults: [
+      { playerName: 'Víctor', playerResults: { g: -10 } }
+    ], rewards: { addCityEvents: [70] }, discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 3, discard: false});
+  campaign.resolveRoadEvent({ eventId: 3, discard: false });
 
   campaign.completeScenario({
     scenarioId: 22,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 6, g: 24, t: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 16, g: 28, t: 1} },
-      { playerName: 'Solete', playerResults: {xp: 9, g: 4} },
-      { playerName: 'Mandrágora', playerResults: {xp: 6, g: 8, t: 2} }
+      { playerName: 'Epidemus', playerResults: { xp: 6, g: 24, t: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 16, g: 28, t: 1 } },
+      { playerName: 'Solete', playerResults: { xp: 9, g: 4 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 6, g: 8, t: 2 } }
     ],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ARTIFACT_RECOVERED]},
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.ARTIFACT_RECOVERED] },
     treasuresLooted: [21],
     scenariosUnlocked: [31, 35, 36]
   });
@@ -1393,131 +1446,135 @@ export function loadCampaing(): CampaignStatus {
   //campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
   //campaign.gainPerk({ playerName: 'Mandrágora', perkId: 'scPerk1-1' });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
-  campaign.makeDonation({playerName: 'Mandrágora'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
+  campaign.makeDonation({ playerName: 'Mandrágora' });
 
-  campaign.buyItem({playerName: 'Solete', itemId: 44});
-  campaign.buyItem({playerName: 'Solete', itemId: 18});
-  campaign.buyItem({playerName: 'Epidemus', itemId: 33});
+  campaign.buyItem({ playerName: 'Solete', itemId: 44 });
+  campaign.buyItem({ playerName: 'Solete', itemId: 18 });
+  campaign.buyItem({ playerName: 'Epidemus', itemId: 33 });
 
-  campaign.resolveCityEvent({eventId: 40, playersResults:[
-    { playerName: 'Oswin el Previsor', playerResults: {items: [102]} }
-  ], rewards: {reputation: 1}, discard: true});
+  campaign.resolveCityEvent({
+    eventId: 40, playersResults: [
+      { playerName: 'Oswin el Previsor', playerResults: { items: [102] } }
+    ], rewards: { reputation: 1 }, discard: true
+  });
 
-  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 102});
+  campaign.sellItem({ playerName: 'Oswin el Previsor', itemId: 102 });
 
   campaign.completeScenario({
     scenarioId: 31,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 9, g: 4, t: 1, items: [100]} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 11, g: 32, t: 1} },
-      { playerName: 'Solete', playerResults: {xp: 11, g: 12, t: 1} },
-      { playerName: 'Mandrágora', playerResults: {xp: 22, g: 8, t: 1, pq: 1} }
+      { playerName: 'Epidemus', playerResults: { xp: 9, g: 4, t: 1, items: [100] } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 11, g: 32, t: 1 } },
+      { playerName: 'Solete', playerResults: { xp: 11, g: 12, t: 1 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 22, g: 8, t: 1, pq: 1 } }
     ],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.ARTIFACT_CLEANSED]},
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.ARTIFACT_CLEANSED] },
     treasuresLooted: [69],
     scenariosUnlocked: [43, 37, 38, 39]
   });
 
-  campaign.unlockScenario({scenariosUnlocked: [57]});
+  campaign.unlockScenario({ scenariosUnlocked: [57] });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
-  campaign.makeDonation({playerName: 'Mandrágora'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
+  campaign.makeDonation({ playerName: 'Mandrágora' });
 
-  campaign.resolveCityEvent({eventId: 1, playersResults:[
-      { playerName: 'Epidemus', playerResults: {xp: 10, g: -5} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 10, g: -5} },
-      { playerName: 'Solete', playerResults: {xp: 10, g: -5} },
-      { playerName: 'Mandrágora', playerResults: {xp: 10, g: -5} },
-      { playerName: 'Adolfo', playerResults: {xp: 10, g: -5} },
-      { playerName: 'Víctor', playerResults: {xp: 10, g: -5} }
-  ], discard: false});
+  campaign.resolveCityEvent({
+    eventId: 1, playersResults: [
+      { playerName: 'Epidemus', playerResults: { xp: 10, g: -5 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 10, g: -5 } },
+      { playerName: 'Solete', playerResults: { xp: 10, g: -5 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 10, g: -5 } },
+      { playerName: 'Adolfo', playerResults: { xp: 10, g: -5 } },
+      { playerName: 'Víctor', playerResults: { xp: 10, g: -5 } }
+    ], discard: false
+  });
 
   campaign.enhanceAbility({ playerName: 'Mandrágora', gold: 30 });
-  campaign.buyItem({playerName: 'Oswin el Previsor', itemId: 41});
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 41 });
 
   campaign.completeScenario({
     scenarioId: 57,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 5, g: 8} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 4, g: 16, items: [44]} },
-      { playerName: 'Solete', playerResults: {xp: 9, g: 4, pq: 1} },
-      { playerName: 'Mandrágora', playerResults: {xp: 6, g: 8, t: 1} }
+      { playerName: 'Epidemus', playerResults: { xp: 5, g: 8 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 4, g: 16, items: [44] } },
+      { playerName: 'Solete', playerResults: { xp: 9, g: 4, pq: 1 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 6, g: 8, t: 1 } }
     ],
-    rewards: {reputation: 1, itemDesigns: [90]},
+    rewards: { reputation: 1, itemDesigns: [90] },
     treasuresLooted: [22, 3],
     scenariosUnlocked: [58]
   });
 
-  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 44});
-  campaign.buyItem({playerName: 'Oswin el Previsor', itemId: 17});
-  campaign.buyItem({playerName: 'Oswin el Previsor', itemId: 10});
+  campaign.sellItem({ playerName: 'Oswin el Previsor', itemId: 44 });
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 17 });
+  campaign.buyItem({ playerName: 'Oswin el Previsor', itemId: 10 });
 
-  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
 
-  campaign.resolveCityEvent({eventId: 70, rewards: {prosperity: 1}, discard: true});
+  campaign.resolveCityEvent({ eventId: 70, rewards: { prosperity: 1 }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 58,
     level: 4,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 6, g: 0, t: 2} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 14, g: 32, t: 1} },
-      { playerName: 'Solete', playerResults: {xp: 6, g: 32, t: 2, pq: 1} },
-      { playerName: 'Mandrágora', playerResults: {xp: 9, g: 12, t: 1} }
+      { playerName: 'Epidemus', playerResults: { xp: 6, g: 0, t: 2 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 14, g: 32, t: 1 } },
+      { playerName: 'Solete', playerResults: { xp: 6, g: 32, t: 2, pq: 1 } },
+      { playerName: 'Mandrágora', playerResults: { xp: 9, g: 12, t: 1 } }
     ],
-    rewards: {reputation: 2}
+    rewards: { reputation: 2 }
   });
 
-  campaign.makeDonation({playerName: 'Mandrágora'});
-  campaign.retireCharacter({name: 'Mandrágora', cityEventsToAdd: [45], roadEventsToAdd: [45]});
+  campaign.makeDonation({ playerName: 'Mandrágora' });
+  campaign.retireCharacter({ name: 'Mandrágora', cityEventsToAdd: [45], roadEventsToAdd: [45] });
   campaign.openEnvelopeX();
 
-  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
   campaign.enhanceAbility({ playerName: 'Solete', gold: 50 });
 
-  campaign.resolveCityEvent({eventId: 9, rewards: {prosperity: 1}, discard: true});
-  campaign.resolveRoadEvent({eventId: 19, rewards: {reputation: 1}, discard: true});
+  campaign.resolveCityEvent({ eventId: 9, rewards: { prosperity: 1 }, discard: true });
+  campaign.resolveRoadEvent({ eventId: 19, rewards: { reputation: 1 }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 38,
     level: 5,
     playersResults: [
-      { playerName: 'Epidemus', playerResults: {xp: 3, g: 16, t: 0} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 14, g: 32, t: 1} },
-      { playerName: 'Solete', playerResults: {xp: 7, g: 4, t: 1, items: [97]} },
-      { playerName: 'Adolfo', playerResults: {xp: 10, g: 0, t: 1, pq: 1} }
+      { playerName: 'Epidemus', playerResults: { xp: 3, g: 16, t: 0 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 14, g: 32, t: 1 } },
+      { playerName: 'Solete', playerResults: { xp: 7, g: 4, t: 1, items: [97] } },
+      { playerName: 'Adolfo', playerResults: { xp: 10, g: 0, t: 1, pq: 1 } }
     ],
-    rewards: {reputation: 1, partyAchievements: [PARTY_ACHIEVEMENTS.REDTHORNS_AID]}, treasuresLooted: [29], scenariosUnlocked: [44, 48]
+    rewards: { reputation: 1, partyAchievements: [PARTY_ACHIEVEMENTS.REDTHORNS_AID] }, treasuresLooted: [29], scenariosUnlocked: [44, 48]
   });
 
-  campaign.sellItem({playerName: 'Solete', itemId: 97});
-  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.sellItem({ playerName: 'Solete', itemId: 97 });
+  campaign.makeDonation({ playerName: 'Epidemus' });
 
-  campaign.resolveCityEvent({eventId: 45, rewards: {addCityEvents: [62]}, discard: true});
-  campaign.resolveRoadEvent({eventId: 35, discard: true});
+  campaign.resolveCityEvent({ eventId: 45, rewards: { addCityEvents: [62] }, discard: true });
+  campaign.resolveRoadEvent({ eventId: 35, discard: true });
 
   campaign.completeScenario({
     scenarioId: 55,
     level: 5,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 7, g: 32, t: 1} },
-      { playerName: 'Epidemus', playerResults: {xp: 7, g: 0, t: 2} },
-      { playerName: 'Solete', playerResults: {xp: 7, g: 4, t: 0, pq: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 7, g: 16, t: 1} },
+      { playerName: 'Adolfo', playerResults: { xp: 7, g: 32, t: 1 } },
+      { playerName: 'Epidemus', playerResults: { xp: 7, g: 0, t: 2 } },
+      { playerName: 'Solete', playerResults: { xp: 7, g: 4, t: 0, pq: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 7, g: 16, t: 1 } },
     ],
-    rewards: {gold: 10}, scenariosUnlocked: [56]
+    rewards: { gold: 10 }, scenariosUnlocked: [56]
   });
 
-  campaign.buyItem({playerName: 'Solete', itemId: 34});
+  campaign.buyItem({ playerName: 'Solete', itemId: 34 });
   //campaign.gainPerk({ playerName: 'Oswin el Previsor', perkId: 'qmPerk9-2' });
-  campaign.makeDonation({playerName: 'Epidemus'});
+  campaign.makeDonation({ playerName: 'Epidemus' });
 
-  campaign.retireCharacter({name: 'Epidemus', cityEventsToAdd: [52, 39], roadEventsToAdd: [52, 39]});
+  campaign.retireCharacter({ name: 'Epidemus', cityEventsToAdd: [52, 39], roadEventsToAdd: [52, 39] });
 
-  campaign.unlockScenario({scenariosUnlocked: [77]});
+  campaign.unlockScenario({ scenariosUnlocked: [77] });
 
   campaign.createCharacter({
     playerId: players[0].uid,
@@ -1529,7 +1586,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Bardo', playerResults: {xp: 0, g: 0, items: [148]} },
+      { playerName: 'Bardo', playerResults: { xp: 0, g: 0, items: [148] } },
     ]
   });
 
@@ -1550,35 +1607,37 @@ export function loadCampaing(): CampaignStatus {
 
   campaign.enhanceAbility({ playerName: 'Oswin el Previsor', gold: 50 });
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Solete'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Solete' });
 
-  campaign.resolveCityEvent({eventId: 32, playersResults:[
-      { playerName: 'Oswin el Previsor', playerResults: {g: 5} },
-      { playerName: 'Bardo', playerResults: {g: 10} },
-  ], rewards: {reputation: 1}, discard: true});
+  campaign.resolveCityEvent({
+    eventId: 32, playersResults: [
+      { playerName: 'Oswin el Previsor', playerResults: { g: 5 } },
+      { playerName: 'Bardo', playerResults: { g: 10 } },
+    ], rewards: { reputation: 1 }, discard: true
+  });
 
-  campaign.resolveRoadEvent({eventId: 14, discard: false});
+  campaign.resolveRoadEvent({ eventId: 14, discard: false });
 
   campaign.completeScenario({
     scenarioId: 56,
     level: 5,
     playersResults: [
-      { playerName: 'Adolfo', playerResults: {xp: 7, g: 4, t: 1} },
-      { playerName: 'Bardo', playerResults: {xp: 20, g: 40, t: 1} },
-      { playerName: 'Solete', playerResults: {xp: 5, g: 12, t: 0, pq: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 14, g: 28, t: 2} },
+      { playerName: 'Adolfo', playerResults: { xp: 7, g: 4, t: 1 } },
+      { playerName: 'Bardo', playerResults: { xp: 20, g: 40, t: 1 } },
+      { playerName: 'Solete', playerResults: { xp: 5, g: 12, t: 0, pq: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 14, g: 28, t: 2 } },
     ],
-    rewards: {gold: 10, reputation: 2, itemDesigns: [82]}, treasuresLooted: [45]
+    rewards: { gold: 10, reputation: 2, itemDesigns: [82] }, treasuresLooted: [45]
   });
 
   campaign.addCityEvent(76);
   campaign.addRoadEvent(67);
 
-  campaign.makeDonation({playerName: 'Adolfo'});
-  campaign.makeDonation({playerName: 'Solete'});
+  campaign.makeDonation({ playerName: 'Adolfo' });
+  campaign.makeDonation({ playerName: 'Solete' });
 
-  campaign.retireCharacter({name: 'Adolfo', cityEventsToAdd: [58, 38], roadEventsToAdd: [58, 38]});
+  campaign.retireCharacter({ name: 'Adolfo', cityEventsToAdd: [58, 38], roadEventsToAdd: [58, 38] });
 
   campaign.createCharacter({
     playerId: players[0].uid,
@@ -1590,7 +1649,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Doom Thorn', playerResults: {xp: 0, g: 0, items: [147]} },
+      { playerName: 'Doom Thorn', playerResults: { xp: 0, g: 0, items: [147] } },
     ]
   });
 
@@ -1613,7 +1672,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Doom Thorn', itemId: 13 });
   campaign.buyItem({ playerName: 'Doom Thorn', itemId: 41 });
 
-  campaign.retireCharacter({name: 'Solete', cityEventsToAdd: [48, 34], roadEventsToAdd: [48, 34]});
+  campaign.retireCharacter({ name: 'Solete', cityEventsToAdd: [48, 34], roadEventsToAdd: [48, 34] });
 
   campaign.createCharacter({
     playerId: players[0].uid,
@@ -1625,7 +1684,7 @@ export function loadCampaing(): CampaignStatus {
   campaign.completeSoloScenario({
     level: 4,
     playersResults: [
-      { playerName: 'Sueñito', playerResults: {xp: 0, g: 0, items: [143]} },
+      { playerName: 'Sueñito', playerResults: { xp: 0, g: 0, items: [143] } },
     ]
   });
 
@@ -1648,70 +1707,91 @@ export function loadCampaing(): CampaignStatus {
   campaign.buyItem({ playerName: 'Sueñito', itemId: 12 });
   campaign.buyItem({ playerName: 'Sueñito', itemId: 13 });
 
-  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 13});
-  campaign.sellItem({playerName: 'Oswin el Previsor', itemId: 16});
+  campaign.sellItem({ playerName: 'Oswin el Previsor', itemId: 13 });
+  campaign.sellItem({ playerName: 'Oswin el Previsor', itemId: 16 });
   campaign.enhanceAbility({ playerName: 'Oswin el Previsor', gold: 100 });
 
-  campaign.resolveCityEvent({eventId: 39, rewards: {addCityEvents: [65]}, discard: true});
+  campaign.resolveCityEvent({ eventId: 39, rewards: { addCityEvents: [65] }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 77,
     level: 4,
     playersResults: [
-      { playerName: 'Doom Thorn', playerResults: {xp: 14, g: 8, t: 1, pq: 4} },
-      { playerName: 'Sueñito', playerResults: {xp: 15, g: 28, t: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 11, g: 36, t: 1} },
+      { playerName: 'Doom Thorn', playerResults: { xp: 14, g: 8, t: 1, pq: 4 } },
+      { playerName: 'Sueñito', playerResults: { xp: 15, g: 28, t: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 11, g: 36, t: 1 } },
     ],
-    rewards: {xp: 5}
+    rewards: { xp: 5 }
   });
 
-  campaign.buyItem({playerName: 'Bardo', itemId: 17});
-  campaign.buyItem({playerName: 'Bardo', itemId: 27});
-  campaign.sellItem({playerName: 'Víctor', itemId: 71});
-  campaign.buyItem({playerName: 'Bardo', itemId: 71});
+  campaign.buyItem({ playerName: 'Bardo', itemId: 17 });
+  campaign.buyItem({ playerName: 'Bardo', itemId: 27 });
+  campaign.sellItem({ playerName: 'Víctor', itemId: 71 });
+  campaign.buyItem({ playerName: 'Bardo', itemId: 71 });
 
-  campaign.resolveCityEvent({eventId: 35, discard: true});
-  campaign.resolveRoadEvent({eventId: 52, discard: true});
+  campaign.resolveCityEvent({ eventId: 35, discard: true });
+  campaign.resolveRoadEvent({ eventId: 52, discard: true });
 
   campaign.completeScenario({
     scenarioId: 44,
     level: 4,
     playersResults: [
-      { playerName: 'Bardo', playerResults: {xp: 13, g: 32, t: 1 } },
-      { playerName: 'Doom Thorn', playerResults: {xp: 15, g: 4, t: 2, pq: 4} },
-      { playerName: 'Sueñito', playerResults: {xp: 9, g: 20, t: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 13, g: 28, t: 1} },
+      { playerName: 'Bardo', playerResults: { xp: 13, g: 32, t: 1 } },
+      { playerName: 'Doom Thorn', playerResults: { xp: 15, g: 4, t: 2, pq: 4 } },
+      { playerName: 'Sueñito', playerResults: { xp: 9, g: 20, t: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 13, g: 28, t: 1 } },
     ],
-    rewards: {reputation: 2, itemDesigns: [78]}, scenariosUnlocked: [63]
+    rewards: { reputation: 2, itemDesigns: [78] }, scenariosUnlocked: [63]
   });
 
-  campaign.resolveCityEvent({eventId: 33, rewards: {reputation: 2}, discard: true});
-  campaign.resolveRoadEvent({eventId: 67, rewards: {prosperity: 1}, discard: false});
+  campaign.resolveCityEvent({ eventId: 33, rewards: { reputation: 2 }, discard: true });
+  campaign.resolveRoadEvent({ eventId: 67, rewards: { prosperity: 1 }, discard: false });
 
   campaign.completeScenario({
     scenarioId: 48,
     level: 4,
     playersResults: [
-      { playerName: 'Bardo', playerResults: {xp: 4, g: 34, t: 2 } },
-      { playerName: 'Doom Thorn', playerResults: {xp: 5, g: 0, t: 2, pq: 2} },
-      { playerName: 'Sueñito', playerResults: {xp: 6, g: 4, t: 1, pq: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 6, g: 12, t: 1} },
+      { playerName: 'Bardo', playerResults: { xp: 4, g: 34, t: 2 } },
+      { playerName: 'Doom Thorn', playerResults: { xp: 5, g: 0, t: 2, pq: 2 } },
+      { playerName: 'Sueñito', playerResults: { xp: 6, g: 4, t: 1, pq: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 6, g: 12, t: 1 } },
     ],
-    rewards: {globalAchievements: [GLOBAL_ACHIEVEMENTS.END_OF_CORRUPTION_1]}, treasuresLooted: [64], scenariosUnlocked: [51]
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.END_OF_CORRUPTION_1] }, treasuresLooted: [64], scenariosUnlocked: [51]
   });
 
-  campaign.resolveCityEvent({eventId: 76, rewards: {scenariosUnlocked: [74], partyAchievements: [PARTY_ACHIEVEMENTS.HIGH_SEA_ESCORT]}, discard: true});
+  campaign.resolveCityEvent({ eventId: 76, rewards: { scenariosUnlocked: [74], partyAchievements: [PARTY_ACHIEVEMENTS.HIGH_SEA_ESCORT] }, discard: true });
 
   campaign.completeScenario({
     scenarioId: 37,
     level: 5,
     playersResults: [
-      { playerName: 'Bardo', playerResults: {xp: 20, g: 4, t: 1 } },
-      { playerName: 'Doom Thorn', playerResults: {xp: 11, g: 24, t: 1, pq: 2} },
-      { playerName: 'Sueñito', playerResults: {xp: 11, g: 16, t: 1} },
-      { playerName: 'Oswin el Previsor', playerResults: {xp: 13, g: 8, t: 1} },
+      { playerName: 'Bardo', playerResults: { xp: 20, g: 4, t: 1 } },
+      { playerName: 'Doom Thorn', playerResults: { xp: 11, g: 24, t: 1, pq: 2 } },
+      { playerName: 'Sueñito', playerResults: { xp: 11, g: 16, t: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 13, g: 8, t: 1 } },
     ],
-    rewards: {partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_TRENCH]}, treasuresLooted: [49], scenariosUnlocked: [17, 47]
+    rewards: { partyAchievements: [PARTY_ACHIEVEMENTS.THROUGH_THE_TRENCH] }, treasuresLooted: [49], scenariosUnlocked: [17, 47]
+  });
+
+  campaign.resolveCityEvent({
+    eventId: 17, playersResults: [
+      { playerName: 'Bardo', playerResults: { g: 5 } },
+      { playerName: 'Doom Thorn', playerResults: { g: 5 } },
+      { playerName: 'Sueñito', playerResults: { g: 5 } },
+      { playerName: 'Oswin el Previsor', playerResults: { g: 5 } },
+    ], rewards: { reputation: -1 }, discard: true
+  });
+
+  campaign.completeScenario({
+    scenarioId: 47,
+    level: 5,
+    playersResults: [
+      { playerName: 'Bardo', playerResults: { xp: 9, g: 20, t: 1 } },
+      { playerName: 'Doom Thorn', playerResults: { xp: 5, g: 19, t: 2, pq: 2 } },
+      { playerName: 'Sueñito', playerResults: { xp: 6, g: 15, t: 0, pq: 1 } },
+      { playerName: 'Oswin el Previsor', playerResults: { xp: 11, g: 4, t: 1 } },
+    ],
+    rewards: { globalAchievements: [GLOBAL_ACHIEVEMENTS.END_OF_CORRUPTION_2] }, treasuresLooted: [57, 18], scenariosUnlocked: [51]
   });
 
   return campaign.getStatus();

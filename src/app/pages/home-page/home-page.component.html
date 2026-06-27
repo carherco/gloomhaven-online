@@ -1,9 +1,99 @@
-<div [style.backgroundImage]="'url(assets/background.png)'">
-  <div>City Prosperity: {{prosperityPoints}} - Level: {{prosperityLevel}}</div>
-  <app-prosperity-track [current]="prosperityPoints"></app-prosperity-track>
+<div class="home-page" [style.backgroundImage]="'url(assets/background.png)'">
+  <div class="overlay">
+    
+    <!-- Campaign Header -->
+    <header class="campaign-header">
+      <h1 class="title">Tablero de Campaña</h1>
+      <div class="header-divider"></div>
+    </header>
 
-  <div>Amount Gold Donated: {{amountGoldDonated}}</div>
-  <app-donations-track [current]="amountGoldDonated / 10"></app-donations-track>
+    <!-- Campaign Board Cards Grid -->
+    <div class="stats-grid">
+      
+      <!-- Prosperity Card -->
+      <article class="stat-card fade-in-up">
+        <div class="card-inner">
+          <div class="icon-wrapper">
+            <span class="material-icons card-icon">fort</span>
+          </div>
+          <h2 class="card-title">Prosperidad</h2>
+          
+          <div class="card-main-value">
+            <span class="value-number">{{prosperityLevel}}</span>
+            <span class="value-label">Nivel</span>
+          </div>
 
-  <div>Party reputation: {{reputation}}</div>
+          <div class="progress-container">
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar-fill" [style.width.%]="prosperityProgressPercent"></div>
+            </div>
+            <div class="progress-labels">
+              <span>Actual: {{prosperityPoints}} pts</span>
+              <span>Siguiente: {{prosperityNextLevelPoints}} pts</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Reputation Card -->
+      <article class="stat-card fade-in-up">
+        <div class="card-inner">
+          <div class="icon-wrapper">
+            <span class="material-icons card-icon">shield</span>
+          </div>
+          <h2 class="card-title">Reputación</h2>
+
+          <div class="card-main-value">
+            <span class="value-number">{{reputation > 0 ? '+' : ''}}{{reputation}}</span>
+            <span class="value-label">Fama</span>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-bar-wrapper reputation-bar">
+              <div class="progress-bar-fill" [style.width.%]="reputationProgressPercent"></div>
+              <div class="reputation-center-marker"></div>
+            </div>
+            <div class="progress-labels">
+              <span>Mín: -20</span>
+              <span>Máx: +20</span>
+            </div>
+          </div>
+
+          <div class="card-additional-info">
+            <span class="info-highlight">{{shopDiscountText}}</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sanctuary Card -->
+      <article class="stat-card fade-in-up">
+        <div class="card-inner">
+          <div class="icon-wrapper">
+            <span class="material-icons card-icon">account_balance</span>
+          </div>
+          <h2 class="card-title">Santuario</h2>
+
+          <div class="card-main-value">
+            <span class="value-number">{{amountGoldDonated}}</span>
+            <span class="value-label">Oro Donado</span>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar-fill" [style.width.%]="donationProgressPercent"></div>
+            </div>
+            <div class="progress-labels">
+              <span>Hito anterior: {{previousDonationMilestone}}g</span>
+              <span>Siguiente: {{nextDonationMilestone}}g</span>
+            </div>
+          </div>
+
+          <div class="card-additional-info">
+            <span class="info-highlight">Faltan: {{goldNeededForNextDonationMilestone}}g para el siguiente hito</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </div>
